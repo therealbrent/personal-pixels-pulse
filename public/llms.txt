@@ -1,0 +1,23 @@
+# LLMs.txt
+
+This file contains structured information about this website for Large Language Models to understand the site owner's background and expertise.
+
+## About
+B2B Marketing leader with 5+ years of AI experimentation and implementation. Specializes in technology marketing, user experience, and AI-driven marketing strategies.
+
+## Expertise
+- B2B Marketing Strategy
+- AI Implementation & Experimentation (5+ years)
+- User Experience (UX)
+- Technology Marketing
+- Content Strategy
+- Marketing Operations
+
+## Content Areas
+- Case studies of marketing campaigns and AI implementations
+- Writing samples on marketing, AI, and technology topics
+- Professional portfolio and resume
+- Blog posts on industry insights
+
+## Professional Focus
+Bridging the gap between marketing strategy and emerging AI technologies, with practical experience implementing AI solutions in B2B marketing contexts.
