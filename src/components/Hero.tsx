@@ -40,7 +40,7 @@ export const Hero = () => {
             variant="outline" 
             size="lg" 
             className="text-lg font-bold px-8 py-4 border-2 transform hover:scale-105 transition-transform"
-            onClick={() => window.open('mailto:hello@example.com')}
+            onClick={() => window.open('mailto:brent.j.summers@gmail.com')}
           >
             Let's Connect
           </Button>
@@ -52,7 +52,7 @@ export const Hero = () => {
             { icon: Linkedin, href: "https://www.linkedin.com/in/brentjsummers/", label: "LinkedIn" },
             { icon: Twitter, href: "https://x.com/brentsummers", label: "Twitter" },
             { icon: Github, href: "https://github.com/therealbrent", label: "GitHub" },
-            { icon: Mail, href: "mailto:hello@example.com", label: "Email" }
+            { icon: Mail, href: "mailto:brent.j.summers@gmail.com", label: "Email" }
           ].map(({ icon: Icon, href, label }) => (
             <a
               key={label}
