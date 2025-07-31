@@ -49,7 +49,7 @@ export const Hero = () => {
         {/* Social Links */}
         <div className="flex justify-center space-x-6 mb-8">
           {[
-            { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/brentjsummers/", label: "LinkedIn" },
             { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
             { icon: Github, href: "https://github.com", label: "GitHub" },
             { icon: Mail, href: "mailto:hello@example.com", label: "Email" }
