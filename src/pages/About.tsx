@@ -107,7 +107,7 @@ export default function About() {
             {experience.map((exp, index) => (
               <div key={index} className="border-l-4 border-primary pl-6 pb-6 last:pb-0">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h3 className="text-xl font-bold text-foreground">{exp.title}</h3>
+                  <h3 className="text-xl font-bold text-foreground">Head of AI Platforms & GTM Innovation</h3>
                   <span className="text-muted-foreground font-semibold">{exp.period}</span>
                 </div>
                 <h4 className="text-lg font-semibold text-primary mb-2">{exp.company}</h4>
