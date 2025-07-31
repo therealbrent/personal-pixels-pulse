@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, GraduationCap, Zap, Users, Target, Brain } from "lucide-react";
-const skills = ["B2B Marketing Strategy", "AI Implementation", "User Experience (UX)", "Technology Marketing", "Content Strategy", "Marketing Operations", "Lead Generation", "Account-Based Marketing", "Marketing Automation", "Data Analytics", "Product Marketing", "Digital Marketing"];
+const skills = ["Account-Based Marketing", "Content Strategy", "Digital Marketing", "UX Strategy", "AI Platforms", "People Management", "Project Management", "Program Management"];
 const experience = [{
   title: "Senior Marketing Director",
   company: "TechCorp Inc.",
