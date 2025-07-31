@@ -56,18 +56,31 @@ export default function About() {
           </CardHeader>
           <CardContent className="text-lg space-y-4">
             <p>
-              I'm a B2B marketing leader who has been at the forefront of AI experimentation for the past 5 years. 
-              My journey began with traditional marketing strategies, but I quickly recognized the transformative 
-              potential of artificial intelligence in marketing operations.
+              Hi there 👋
             </p>
             <p>
-              With a strong foundation in technology and user experience, I bridge the gap between cutting-edge 
-              AI capabilities and practical marketing applications. My approach combines data-driven insights 
-              with human-centered design principles to create marketing strategies that truly resonate.
+              My career began at NASCAR, where I led transformative IT projects to improve the fan experience. 
+              Highlights include print-at-home ticketing (2007) and new websites for 13 race tracks (2010). 
+              These early experiences sparked my passion for the intersection of user experience, technology, 
+              and marketing—shaping my career ever since.
             </p>
             <p>
-              I specialize in implementing AI tools for customer segmentation, content optimization, lead scoring, 
-              and predictive analytics, helping organizations unlock new levels of marketing effectiveness.
+              Next, I moved agency-side where I learned to pitch big ideas, expand into new markets, and build 
+              quality-obsessed teams. All while shipping bold, impactful work.
+            </p>
+            <p>
+              Now, I am a champion for go-to-market innovation at Qualcomm Technologies. My team empowers 
+              marketing and sales with modern strategies, trustworthy data, and scalable platforms.
+            </p>
+            <ul className="space-y-2 ml-4">
+              <li>🔹 Account-Based Marketing (ABM) has become the backbone of our global GTM efforts</li>
+              <li>🔹 Established commercial channel marketing</li>
+              <li>🔹 Generative AI rapidly adopted across every marketing function</li>
+            </ul>
+            <p>
+              Outside of work, you'll find me volunteering in the San Diego design community, advocating for 
+              the arts, or catching performances at La Jolla Playhouse, The Old Globe, and The Rady Shell at 
+              Jacobs Park with my family.
             </p>
           </CardContent>
         </Card>
