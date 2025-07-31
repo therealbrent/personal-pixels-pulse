@@ -51,7 +51,7 @@ export const Hero = () => {
           {[
             { icon: Linkedin, href: "https://www.linkedin.com/in/brentjsummers/", label: "LinkedIn" },
             { icon: Twitter, href: "https://x.com/brentsummers", label: "Twitter" },
-            { icon: Github, href: "https://github.com", label: "GitHub" },
+            { icon: Github, href: "https://github.com/therealbrent", label: "GitHub" },
             { icon: Mail, href: "mailto:hello@example.com", label: "Email" }
           ].map(({ icon: Icon, href, label }) => (
             <a
