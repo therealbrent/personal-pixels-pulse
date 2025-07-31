@@ -50,7 +50,7 @@ export const Hero = () => {
         <div className="flex justify-center space-x-6 mb-8">
           {[
             { icon: Linkedin, href: "https://www.linkedin.com/in/brentjsummers/", label: "LinkedIn" },
-            { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+            { icon: Twitter, href: "https://x.com/brentsummers", label: "Twitter" },
             { icon: Github, href: "https://github.com", label: "GitHub" },
             { icon: Mail, href: "mailto:hello@example.com", label: "Email" }
           ].map(({ icon: Icon, href, label }) => (
