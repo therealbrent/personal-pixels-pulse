@@ -92,7 +92,37 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground font-space-grotesk;
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .animate-bounce {
+    animation: bounce 1s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+      transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+      transform: translate3d(0,-15px,0);
+    }
+    70% {
+      transform: translate3d(0,-7px,0);
+    }
+    90% {
+      transform: translate3d(0,-2px,0);
+    }
   }
 }
