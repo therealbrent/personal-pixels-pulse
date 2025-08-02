@@ -187,9 +187,9 @@ export default function App() {
                   Next, I moved agency-side where I learned to pitch big ideas, expand into new markets, 
                   and build quality-obsessed teams. All while shipping bold, impactful work.
                 </p>
-                <p>Now, I am a champion for go-to-market innovation at Qualcomm Technologies. My team empowers marketing and sales with modern strategies, trustworthy data, and scalable platforms.  
-🔹 Account-Based Marketing (ABM) has become the backbone of our global GTM efforts   
-🔹 Established commercial channel marketing and handed off to   
+                <p>Now, I am a champion for go-to-market innovation at Qualcomm Technologies. My team empowers marketing and sales with modern strategies, trustworthy data, and scalable platforms. 
+🔹 Account-Based Marketing (ABM) has become the backbone of our global GTM efforts 
+🔹 Established commercial channel marketing and handed off to   
 🔹 Generative AI rapidly adopted across every marketing function</p>
                 <p>
                   Outside of work, you'll find me volunteering in the San Diego design community, advocating 
@@ -207,9 +207,7 @@ export default function App() {
                 <h3 className="text-2xl font-bold">Core Skills</h3>
               </div>
               <div className="flex flex-wrap gap-3">
-                {["Account-Based Marketing", "AI Platform Strategy", "Content Strategy", "Demand Generation", "Digital Marketing", "People Management", "Performance Management", "Program Management", "Project Management", "Responsible AI Adoption", "UX Strategy"].map(skill => <span key={skill} className="bg-secondary text-secondary-foreground text-sm font-semibold px-3 py-2 border-2 border-foreground">
-                    {skill}
-                  </span>)}
+                {["Account-Based Marketing", "Content Strategy", "Digital Marketing", "UX Strategy", "AI Platforms", "People Management", "Project Management", "Program Management"].map(skill => {})}
               </div>
             </div>
           </div>
