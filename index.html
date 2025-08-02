@@ -1,400 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2B Marketing Leader | AI Strategist</title>
-    <meta name="description" content="B2B Marketing leader with 5+ years of AI experimentation. Portfolio showcasing AI-driven marketing strategies, case studies, and insights.">
-    <meta name="author" content="B2B Marketing Leader">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brent Summers | AI-First Marketing Leader</title>
+    <meta name="description" content="Brent Summers is the Global Lead for AI Platforms & GTM Innovation at Qualcomm Technologies. This is his personal portfolio." />
+    <meta name="author" content="Brent Summers" />
 
-    <meta property="og:title" content="B2B Marketing Leader | AI Strategist">
-    <meta property="og:description" content="B2B Marketing leader with 5+ years of AI experimentation. Portfolio showcasing AI-driven marketing strategies, case studies, and insights.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="brentsummers.com">
-    <meta property="og:site_name" content="Brent Summers | AI-First Marketing Leader">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:image" content="/lovable-uploads/94ba85f6-5c28-4eaf-9d91-9a2b0a8d7682.png">
+    <meta property="og:title" content="Brent Summers | AI-First Marketing Leader" />
+    <meta property="og:description" content="Brent Summers is the Global Lead for AI Platforms & GTM Innovation at Qualcomm Technologies. This is his personal portfolio." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@lovable_dev">
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@brentsummers" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Space Grotesk', sans-serif; background-color: #f2f2f2; color: #171717; line-height: 1.6; }
-        .container { max-width: 80rem; margin: 0 auto; padding: 0 1rem; }
-
-        /* Navigation */
-        .nav { position: sticky; top: 0; z-index: 50; background-color: #f2f2f2; border-bottom: 4px solid #171717; }
-        .nav-content { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
-        .logo { font-size: 1.25rem; font-weight: 700; color: #d97706; }
-        .nav-links { display: none; align-items: center; gap: 2rem; }
-        @media (min-width: 768px) { .nav-links { display: flex; } }
-        .nav-link { text-decoration: none; font-weight: 600; color: #171717; transition: color 0.3s; }
-        .nav-link:hover { color: #e11d48; }
-        .llms-link { background-color: #dc2626; color: white; padding: 0.5rem 1rem; font-weight: 700; text-decoration: none; transition: opacity 0.3s; }
-        .llms-link:hover { opacity: 0.9; }
-
-        /* Hero */
-        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; background: linear-gradient(135deg, rgba(215, 119, 6, 0.1), rgba(225, 29, 72, 0.1)); padding: 1rem; }
-        .hero-content { text-align: center; max-width: 64rem; margin: 0 auto; }
-        .hero-title { font-size: 3.75rem; font-weight: 700; margin-bottom: 1.5rem; color: #171717; letter-spacing: -0.025em; }
-        @media (min-width: 768px) { .hero-title { font-size: 5rem; } }
-        @media (min-width: 1024px) { .hero-title { font-size: 6rem; } }
-        .hero-title-accent { display: block; color: #d97706; }
-        .hero-card { background-color: #525252; padding: 1.5rem; border: 4px solid #171717; transform: rotate(1deg); transition: transform 0.3s; margin-bottom: 2rem; }
-        .hero-card:hover { transform: rotate(0deg); }
-        .hero-card-title { font-size: 1.25rem; font-weight: 600; color: #f2f2f2; }
-        @media (min-width: 768px) { .hero-card-title { font-size: 1.5rem; } }
-        .hero-card-subtitle { font-size: 1.125rem; color: #a3a3a3; margin-top: 0.5rem; }
-        @media (min-width: 768px) { .hero-card-subtitle { font-size: 1.25rem; } }
-        .hero-buttons { display: flex; flex-direction: column; gap: 1rem; justify-content: center; align-items: center; margin-bottom: 3rem; }
-        @media (min-width: 640px) { .hero-buttons { flex-direction: row; } }
-
-        /* Buttons */
-        .btn-primary { background-color: #d97706; color: #171717; font-size: 1.125rem; font-weight: 700; padding: 1rem 2rem; border: none; cursor: pointer; transition: transform 0.3s; }
-        .btn-primary:hover { transform: scale(1.05); }
-        .btn-card { width: 100%; background-color: #d97706; color: #171717; font-weight: 600; padding: 0.5rem 1rem; border: none; cursor: pointer; transition: opacity 0.3s; }
-        .btn-card:hover { opacity: 0.9; }
-        .btn-card.coming-soon { border: 2px solid #171717; background-color: transparent; color: #171717; }
-        .btn-card.coming-soon:hover { background-color: #e11d48; color: white; }
-        .btn-card.secondary { background-color: #525252; color: #f2f2f2; }
-
-        /* Social Links */
-        .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
-        .social-link { padding: 0.75rem; background-color: #f2f2f2; border: 2px solid #171717; color: #171717; text-decoration: none; transition: all 0.2s; }
-        .social-link:hover { background-color: #e11d48; color: white; transform: scale(1.1); }
-        .icon { width: 1.5rem; height: 1.5rem; }
-        .icon-large { width: 3rem; height: 3rem; }
-
-        /* Scroll Indicator */
-        .scroll-indicator { position: absolute; bottom: 2rem; background: none; border: none; color: #737373; cursor: pointer; animation: bounce 1s infinite; }
-        @keyframes bounce { 0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); } 40%, 43% { transform: translate3d(0,-15px,0); } 70% { transform: translate3d(0,-7px,0); } 90% { transform: translate3d(0,-2px,0); } }
-
-        /* Sections */
-        .work-section { padding: 4rem 0; }
-        .about-section { padding: 4rem 0; background-color: rgba(163, 163, 163, 0.2); }
-        .writing-section { padding: 4rem 0; }
-        .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: #171717; }
-        @media (min-width: 768px) { .section-title { font-size: 3.75rem; } }
-        .section-subtitle { font-size: 1.25rem; color: #737373; max-width: 48rem; margin: 0 auto; }
-
-        /* Cards */
-        .cards-grid { display: grid; gap: 2rem; margin-bottom: 4rem; }
-        @media (min-width: 768px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
-        .card { border: 4px solid #171717; background-color: white; padding: 1.5rem; transition: transform 0.3s; }
-        .card:hover { transform: scale(1.05); }
-        .card-icon { margin-bottom: 1rem; }
-        .card-icon.primary { color: #d97706; }
-        .card-icon.accent { color: #e11d48; }
-        .card-icon.destructive { color: #dc2626; }
-        .card-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
-        .card-text { color: #737373; margin-bottom: 1rem; }
-
-        /* Highlights */
-        .highlights { text-align: center; }
-        .highlights-title { font-size: 1.875rem; font-weight: 700; margin-bottom: 2rem; color: #171717; }
-        .highlights-grid { display: grid; gap: 1.5rem; max-width: 64rem; margin: 0 auto; }
-        @media (min-width: 768px) { .highlights-grid { grid-template-columns: repeat(2, 1fr); } }
-        .highlight-card { padding: 1.5rem; border: 4px solid #171717; transition: transform 0.3s; }
-        .highlight-card:hover { transform: rotate(0deg); }
-        .highlight-card.primary-bg { background-color: rgba(215, 119, 6, 0.1); }
-        .highlight-card.accent-bg { background-color: rgba(225, 29, 72, 0.1); }
-        .rotate-1 { transform: rotate(1deg); }
-        .rotate-minus-1 { transform: rotate(-1deg); }
-        .badge { display: inline-flex; padding: 0.25rem 0.75rem; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem; }
-        .badge.new { background-color: #dc2626; color: white; }
-        .badge.featured { border: 2px solid #171717; background-color: transparent; color: #171717; }
-        .highlight-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #171717; }
-        .highlight-text { color: #737373; margin-bottom: 1rem; }
-        .btn-highlight { background-color: #d97706; color: #171717; font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1rem; border: none; cursor: pointer; transition: opacity 0.3s; }
-        .btn-highlight:hover { opacity: 0.9; }
-        .btn-highlight.accent { background-color: #e11d48; color: white; }
-
-        /* About */
-        .about-hero-card { background-color: #d97706; padding: 1.5rem; border: 4px solid #171717; transform: rotate(-1deg); transition: transform 0.3s; max-width: 48rem; margin: 0 auto; }
-        .about-hero-card:hover { transform: rotate(0deg); }
-        .about-hero-text { font-size: 1.25rem; font-weight: 600; color: #171717; }
-        @media (min-width: 768px) { .about-hero-text { font-size: 1.5rem; } }
-        .about-content { max-width: 64rem; margin: 0 auto; }
-        .about-story { border: 4px solid #171717; background-color: white; padding: 2rem; margin-bottom: 3rem; }
-        .story-header { display: flex; align-items: center; margin-bottom: 1.5rem; }
-        .story-header .icon { color: #d97706; margin-right: 0.75rem; width: 2rem; height: 2rem; }
-        .story-title { font-size: 1.5rem; font-weight: 700; }
-        .story-content { font-size: 1.125rem; }
-        .story-content p { margin-bottom: 1rem; }
-        .skills-section { border: 4px solid #171717; background-color: white; padding: 2rem; }
-        .skills-header { display: flex; align-items: center; margin-bottom: 1.5rem; }
-        .skills-header .icon { color: #e11d48; margin-right: 0.75rem; width: 2rem; height: 2rem; }
-        .skills-title { font-size: 1.5rem; font-weight: 700; }
-        .skills-list { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-        .skill-tag { background-color: #e11d48; color: white; padding: 0.25rem 0.75rem; font-size: 0.875rem; font-weight: 600; border: 2px solid #171717; }
-
-        /* Articles */
-        .articles-grid { display: grid; gap: 2rem; max-width: 96rem; margin: 0 auto; }
-        @media (min-width: 768px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .articles-grid { grid-template-columns: repeat(3, 1fr); } }
-        .article-card { border: 4px solid #171717; background-color: white; padding: 1.5rem; cursor: pointer; transition: transform 0.3s; }
-        .article-card:hover { transform: scale(1.05); }
-        .article-badge { display: inline-flex; padding: 0.25rem 0.75rem; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; }
-        .article-badge.primary { background-color: #d97706; color: #171717; }
-        .article-badge.accent { background-color: #e11d48; color: white; }
-        .article-badge.secondary { background-color: #525252; color: #f2f2f2; }
-        .article-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
-        .article-text { color: #737373; margin-bottom: 1rem; }
-        .article-link { color: #d97706; font-weight: 600; }
-
-        /* Footer */
-        .footer { background-color: #171717; color: #f2f2f2; padding: 3rem 0; text-align: center; }
-        .footer-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
-        .footer-text { font-size: 1.125rem; margin-bottom: 2rem; opacity: 0.8; }
-        .footer-bottom { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(242, 242, 242, 0.2); }
-        .footer-copyright { opacity: 0.6; }
-    </style>
-</head>
-
-<body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">BRENT SUMMERS</div>
-                <div class="nav-links">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#work" class="nav-link">Work</a>
-                    <a href="#writing" class="nav-link">Writing</a>
-                    <a href="/llms.txt" target="_blank" rel="noopener noreferrer" class="llms-link">LLMS.txt</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                B2B MARKETING
-                <span class="hero-title-accent">LEADER</span>
-            </h1>
-            
-            <div class="hero-card">
-                <p class="hero-card-title">Leveraging Generative AI Since June 2020</p>
-                <p class="hero-card-subtitle">AI • User Experience • GTM Innovation</p>
-            </div>
-
-            <div class="hero-buttons">
-                <button class="btn-primary" onclick="scrollToSection('work')">
-                    Explore My Work
-                </button>
-            </div>
-
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/brentjsummers/" target="_blank" rel="noopener noreferrer" class="social-link">
-                    <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                </a>
-                <a href="https://x.com/brentsummers" target="_blank" rel="noopener noreferrer" class="social-link">
-                    <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                    </svg>
-                </a>
-                <a href="https://github.com/therealbrent" target="_blank" rel="noopener noreferrer" class="social-link">
-                    <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-
-        <button class="scroll-indicator" onclick="scrollToSection('work')">
-            <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M16.293 9.293L12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/>
-            </svg>
-        </button>
-    </section>
-
-    <!-- Work Section -->
-    <section id="work" class="work-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">WHAT I DO</h2>
-                <p class="section-subtitle">I am responsible for AI Platforms & GTM Innovation at Qualcomm Technologies. Outside of work, I am a devoted member of the design community and advocate for the Arts.</p>
-            </div>
-
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon primary">
-                        <svg class="icon-large" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M14 6V4h-4v2h4zM4 8v11h16V8H4zm16-2c1.11 0 2 .89 2 2v11c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2l.01-11c0-1.11.88-2 1.99-2h4V4c0-1.11.89-2 2-2h4c1.11 0 2 .89 2 2v2h4z"/>
-                        </svg>
-                    </div>
-                    <h3 class="card-title">Experience</h3>
-                    <p class="card-text">Two decades of experience at the intersection of marketing, technology, and UX.</p>
-                    <button class="btn-card" onclick="scrollToSection('about')">View Background →</button>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon accent">
-                        <svg class="icon-large" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
-                        </svg>
-                    </div>
-                    <h3 class="card-title">Case Studies</h3>
-                    <p class="card-text">Real results from projects and AI implementations that drove significant business impact.</p>
-                    <button class="btn-card coming-soon">COMING SOON</button>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon destructive">
-                        <svg class="icon-large" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
-                        </svg>
-                    </div>
-                    <h3 class="card-title">Writing</h3>
-                    <p class="card-text">Insights and musings on AI, marketing & content strategy, and user experience.</p>
-                    <button class="btn-card secondary" onclick="scrollToSection('writing')">Read Articles →</button>
-                </div>
-            </div>
-
-            <div class="highlights">
-                <h3 class="highlights-title">Recent Highlights</h3>
-                <div class="highlights-grid">
-                    <div class="highlight-card primary-bg rotate-1">
-                        <span class="badge new">NEW</span>
-                        <h4 class="highlight-title">9.6X ROI with WRITER</h4>
-                        <p class="highlight-text">Led the platform discovery, roll out, and scale up of WRITER at Qualcomm Technologies.</p>
-                        <button class="btn-highlight" onclick="window.open('https://writer.com/blog/qualcomm-customer-story/', '_blank')">Read Case Study →</button>
-                    </div>
-                    
-                    <div class="highlight-card accent-bg rotate-minus-1">
-                        <span class="badge featured">FEATURED</span>
-                        <h4 class="highlight-title">The UX Flywheel</h4>
-                        <p class="highlight-text">This is a user-centered alternative to the marketing funnel that I developed for Blink UX.</p>
-                        <button class="btn-highlight accent" onclick="window.open('https://www.youtube.com/watch?v=UYApYNEnaMM', '_blank')">Watch Presentation →</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">ABOUT ME</h2>
-                <div class="about-hero-card">
-                    <p class="about-hero-text">Where Marketing Strategy Meets AI Innovation</p>
-                </div>
-            </div>
-
-            <div class="about-content">
-                <div class="about-story">
-                    <div class="story-header">
-                        <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                        <h3 class="story-title">My Story</h3>
-                    </div>
-                    <div class="story-content">
-                        <p>My career began at NASCAR, where I led transformative IT projects to improve the fan experience. Highlights include print-at-home ticketing (2007) and new websites for 13 race tracks (2010). These early experiences sparked my passion for the intersection of user experience, technology, and marketing—shaping my career ever since.</p>
-                        <p>Next, I moved agency-side where I learned to pitch big ideas, expand into new markets, and build quality-obsessed teams. All while shipping bold, impactful work.</p>
-                        <p>Now, I am a champion for go-to-market innovation at Qualcomm Technologies. My team empowers marketing and sales with modern strategies, trustworthy data, and scalable platforms. 🔹 Account-Based Marketing (ABM) has become the backbone of our global GTM efforts 🔹 Established commercial channel marketing and handed off to 🔹 Generative AI rapidly adopted across every marketing function</p>
-                        <p>Outside of work, you'll find me volunteering in the San Diego design community, advocating for the arts, or catching performances at La Jolla Playhouse, The Old Globe, and The Rady Shell at Jacobs Park with my family.</p>
-                    </div>
-                </div>
-
-                <div class="skills-section">
-                    <div class="skills-header">
-                        <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                        <h3 class="skills-title">Core Skills</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span class="skill-tag">AI Platform Strategy</span>
-                        <span class="skill-tag">Account-Based Marketing</span>
-                        <span class="skill-tag">Content Strategy</span>
-                        <span class="skill-tag">Demand Generation</span>
-                        <span class="skill-tag">Digital Marketing</span>
-                        <span class="skill-tag">People Management</span>
-                        <span class="skill-tag">Performance Management</span>
-                        <span class="skill-tag">Project Management</span>
-                        <span class="skill-tag">Program Management</span>
-                        <span class="skill-tag">Responsible AI Adoption</span>
-                        <span class="skill-tag">UX Strategy</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Writing Section -->
-    <section id="writing" class="writing-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">WRITING</h2>
-                <p class="section-subtitle">Insights and perspectives on AI, marketing & content strategy, and User Experience. From my contributions around the web.</p>
-            </div>
-
-            <div class="articles-grid">
-                <article class="article-card" onclick="window.open('https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers', '_blank')">
-                    <span class="article-badge primary">AI Strategy</span>
-                    <h3 class="article-title">Why Qualcomm's Playbook For AI Starts With Intention—And Ends With A Human</h3>
-                    <p class="article-text">From brand voice guardrails to security-first agent design, my approach offers a blueprint for automating AI tasks with intention in marketing organizations.</p>
-                    <span class="article-link">Read more →</span>
-                </article>
-
-                <article class="article-card" onclick="window.open('https://contentstrategy.substack.com/p/my-favorite-content-strategy-frameworks', '_blank')">
-                    <span class="article-badge accent">Content Strategy</span>
-                    <h3 class="article-title">My Favorite Content Strategy Frameworks for Website Projects</h3>
-                    <p class="article-text">Clarify goals, make editorial decisions, and set priorities with these simple frameworks.</p>
-                    <span class="article-link">Read more →</span>
-                </article>
-
-                <article class="article-card" onclick="window.open('https://blinkux.com/ideas/evidence-driven-design-supports-innovation', '_blank')">
-                    <span class="article-badge secondary">Innovation</span>
-                    <h3 class="article-title">How Evidence-driven Design Supports Innovation</h3>
-                    <p class="article-text">I led marketing at Blink UX for three years. This is a story they explains the design philosophy used to create products for NASA, Amazon, Microsoft, and other notable clients.</p>
-                    <span class="article-link">Read more →</span>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <h3 class="footer-title">Let's Connect</h3>
-            <p class="footer-text">Did something spark your curiousity? I'd love to hear from you.</p>
-            <button class="btn-primary" onclick="window.open('mailto:brent.j.summers@gmail.com')">Get In Touch</button>
-            <div class="footer-bottom">
-                <p class="footer-copyright">© 2025 Brent Summers. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
         }
-
-        // Handle nav link clicks
-        document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                scrollToSection(this.getAttribute('href').substring(1));
-            });
-        });
-
-        console.log('Portfolio loaded successfully!');
+      }(window.location))
     </script>
-</body>
+    <!-- End Single Page Apps for GitHub Pages -->
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
