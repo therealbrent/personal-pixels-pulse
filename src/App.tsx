@@ -29,7 +29,7 @@ export default function App() {
           </h1>
           
           <div className="bg-secondary p-6 border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300 mb-8">
-            <p className="text-xl md:text-2xl font-semibold text-secondary-foreground">5+ Years Experimenting with AI</p>
+            <p className="text-xl md:text-2xl font-semibold text-secondary-foreground">Leveraging Generative AI Since June 2020</p>
             <p className="text-lg md:text-xl text-muted-foreground mt-2">AI • User Experience • GTM Innovation</p>
           </div>
 
