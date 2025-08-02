@@ -20,4 +20,22 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Ensure static files from root are copied to dist
+  publicDir: 'public',
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        llms: path.resolve(__dirname, 'llms.txt'),
+      },
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'llms.txt') {
+            return 'llms.txt';
+          }
+          return assetInfo.name || '';
+        },
+      },
+    },
+  },
 }));
