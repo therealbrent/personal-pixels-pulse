@@ -207,7 +207,7 @@ export default function App() {
                 <h3 className="text-2xl font-bold">Core Skills</h3>
               </div>
               <div className="flex flex-wrap gap-3">
-                {["Account-Based Marketing", "AI Platform Strategy", "Content Strategy", "Digital Marketing", "People Management", "Program Management", "Project Management", "Responsible AI Adoption", "UX Strategy"].map(skill => <span key={skill} className="bg-secondary text-secondary-foreground text-sm font-semibold px-3 py-2 border-2 border-foreground">
+                {["Account-Based Marketing", "AI Platform Strategy", "Content Strategy", "Demand Generation", "Digital Marketing", "People Management", "Performance Management", "Program Management", "Project Management", "Responsible AI Adoption", "UX Strategy"].map(skill => <span key={skill} className="bg-secondary text-secondary-foreground text-sm font-semibold px-3 py-2 border-2 border-foreground">
                     {skill}
                   </span>)}
               </div>
