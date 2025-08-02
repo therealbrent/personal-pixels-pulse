@@ -263,11 +263,9 @@ export default function App() {
       <footer className="bg-foreground text-background py-12">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-2xl font-bold mb-4">Let's Connect</h3>
-          <p className="text-lg mb-8 opacity-80">
-            Ready to discuss AI innovation in marketing? I'd love to hear from you.
-          </p>
-          <button onClick={() => window.open('https://www.linkedin.com/in/brentjsummers/', '_blank')} className="bg-primary text-primary-foreground text-lg font-bold px-8 py-4 hover:opacity-90 transition-opacity">
-            Connect with me on LinkedIn
+          <p className="text-lg mb-8 opacity-80">Did something spark your curiousity? I'd love to hear from you.</p>
+          <button onClick={() => window.open('mailto:brent.j.summers@gmail.com')} className="bg-primary text-primary-foreground text-lg font-bold px-8 py-4 hover:opacity-90 transition-opacity">
+            Get In Touch
           </button>
           <div className="mt-8 pt-8 border-t border-background/20">
             <p className="opacity-60">© {new Date().getFullYear()} Brent Summers. All rights reserved.</p>
