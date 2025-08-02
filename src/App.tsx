@@ -267,7 +267,7 @@ export default function App() {
             Ready to discuss AI innovation in marketing? I'd love to hear from you.
           </p>
           <button onClick={() => window.open('mailto:brent.j.summers@gmail.com')} className="bg-primary text-primary-foreground text-lg font-bold px-8 py-4 hover:opacity-90 transition-opacity">
-            Get In Touch
+            Connect with me on LinkedIn
           </button>
           <div className="mt-8 pt-8 border-t border-background/20">
             <p className="opacity-60">© {new Date().getFullYear()} Brent Summers. All rights reserved.</p>
