@@ -188,8 +188,8 @@ export default function App() {
                   and build quality-obsessed teams. All while shipping bold, impactful work.
                 </p>
                 <p>Now, I am a champion for go-to-market innovation at Qualcomm Technologies. My team empowers marketing and sales with modern strategies, trustworthy data, and scalable platforms.  
-🔹 Account-Based Marketing (ABM) has become the backbone of our global GTM efforts  
-🔹 Established commercial channel marketing and handed off to  
+🔹 Account-Based Marketing (ABM) has become the backbone of our global GTM efforts   
+🔹 Established commercial channel marketing and handed off to   
 🔹 Generative AI rapidly adopted across every marketing function</p>
                 <p>
                   Outside of work, you'll find me volunteering in the San Diego design community, advocating 
