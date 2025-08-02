@@ -223,9 +223,7 @@ export default function App() {
             <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">
               WRITING
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Insights and perspectives on AI, marketing strategy, and the future of technology.
-            </p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Insights and perspectives on AI, marketing & content strategy, and User Experience. From my contributions around the web.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -241,9 +239,7 @@ export default function App() {
             <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onClick={() => window.open('https://contentstrategy.substack.com/p/my-favorite-content-strategy-frameworks', '_blank')}>
               <span className="inline-flex bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold mb-4">Content Strategy</span>
               <h3 className="text-xl font-bold mb-3">My Favorite Content Strategy Frameworks for Website Projects</h3>
-              <p className="text-muted-foreground mb-4">
-                Clarify goals, make editorial decisions, and set priorities with these simple frameworks
-              </p>
+              <p className="text-muted-foreground mb-4">Clarify goals, make editorial decisions, and set priorities with these simple frameworks.</p>
               <span className="text-primary font-semibold">Read more →</span>
             </article>
 
