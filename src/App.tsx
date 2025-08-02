@@ -12,8 +12,8 @@ export default function App() {
               <a href="#about" className="font-semibold hover:text-accent transition-colors">About</a>
               <a href="#work" className="font-semibold hover:text-accent transition-colors">Work</a>
               <a href="#writing" className="font-semibold hover:text-accent transition-colors">Writing</a>
-              <a href="mailto:brent.j.summers@gmail.com" className="bg-destructive text-destructive-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity inline-block">
-                Contact
+              <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="bg-destructive text-destructive-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity inline-block">
+                LLMS.txt
               </a>
             </div>
           </div>
