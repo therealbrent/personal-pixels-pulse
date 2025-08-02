@@ -268,11 +268,14 @@ export default function App() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300">
+            <article 
+              className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+              onClick={() => window.open('https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers', '_blank')}
+            >
               <span className="inline-flex bg-primary text-primary-foreground px-3 py-1 text-sm font-semibold mb-4">AI Strategy</span>
-              <h3 className="text-xl font-bold mb-3">The Future of AI in B2B Marketing</h3>
+              <h3 className="text-xl font-bold mb-3">Why Qualcomm's Playbook For AI Starts With Intention—And Ends With A Human</h3>
               <p className="text-muted-foreground mb-4">
-                How artificial intelligence is reshaping the landscape of business-to-business marketing strategies.
+                From brand voice guardrails to security-first agent design, my approach offers a blueprint for automating AI tasks with intention in marketing organizations.
               </p>
               <span className="text-primary font-semibold">Read more →</span>
             </article>
