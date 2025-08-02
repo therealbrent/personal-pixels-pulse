@@ -1,4 +1,7 @@
-export default function App() {
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LLMSTextPage from './components/LLMSTextPage';
+
+function HomePage() {
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -234,5 +237,16 @@ export default function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/llms.txt" element={<LLMSTextPage />} />
+      </Routes>
+    </Router>
   );
 }
