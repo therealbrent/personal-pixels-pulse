@@ -1,4 +1,6 @@
 export default function App() {
+  console.log('App.tsx: App component rendering...');
+  
   return <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background border-b-4 border-foreground">
