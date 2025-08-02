@@ -1,22 +1,21 @@
 export default function App() {
-  console.log('App.tsx: App component rendering...');
-  
-  return <div className="min-h-screen bg-background text-foreground">
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background border-b-4 border-foreground">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <div className="text-xl font-bold text-primary">
-              BRENT SUMMERS
-            </div>
+            <div className="text-xl font-bold text-primary">BRENT SUMMERS</div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="font-semibold hover:text-accent transition-colors">Home</a>
-              <a href="#about" className="font-semibold hover:text-accent transition-colors">About</a>
-              <a href="#work" className="font-semibold hover:text-accent transition-colors">Work</a>
-              <a href="#writing" className="font-semibold hover:text-accent transition-colors">Writing</a>
-              <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="bg-destructive text-destructive-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity inline-block">
-                LLMS.txt
-              </a>
+              <button onClick={() => scrollToSection('home')} className="font-semibold hover:text-accent transition-colors">Home</button>
+              <button onClick={() => scrollToSection('about')} className="font-semibold hover:text-accent transition-colors">About</button>
+              <button onClick={() => scrollToSection('work')} className="font-semibold hover:text-accent transition-colors">Work</button>
+              <button onClick={() => scrollToSection('writing')} className="font-semibold hover:text-accent transition-colors">Writing</button>
+              <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="bg-destructive text-destructive-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity inline-block">LLMS.txt</a>
             </div>
           </div>
         </div>
@@ -36,13 +35,9 @@ export default function App() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button onClick={() => document.getElementById('work')?.scrollIntoView({
-            behavior: 'smooth'
-          })} className="bg-primary text-primary-foreground text-lg font-bold px-8 py-4 transform hover:scale-105 transition-transform">
+            <button onClick={() => scrollToSection('work')} className="bg-primary text-primary-foreground text-lg font-bold px-8 py-4 transform hover:scale-105 transition-transform">
               Explore My Work
             </button>
-            
-            
           </div>
 
           <div className="flex justify-center space-x-6 mb-8">
@@ -61,13 +56,10 @@ export default function App() {
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
             </a>
-            
           </div>
         </div>
 
-        <button onClick={() => document.getElementById('work')?.scrollIntoView({
-        behavior: 'smooth'
-      })} className="absolute bottom-8 animate-bounce">
+        <button onClick={() => scrollToSection('work')} className="absolute bottom-8 animate-bounce">
           <svg className="w-8 h-8 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
             <path d="M16.293 9.293L12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z" />
           </svg>
@@ -78,9 +70,7 @@ export default function App() {
       <section id="work" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-              WHAT I DO
-            </h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">WHAT I DO</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">I am responsible for AI Platforms & GTM Innovation at Qualcomm Technologies. Outside of work, I am a devoted member of the design community and advocate for the Arts.</p>
           </div>
 
@@ -93,9 +83,7 @@ export default function App() {
               </div>
               <h3 className="text-2xl font-bold mb-4">Experience</h3>
               <p className="text-muted-foreground mb-4">Two decades of experience at the intersection of marketing, technology, and UX.</p>
-              <button onClick={() => document.getElementById('about')?.scrollIntoView({
-              behavior: 'smooth'
-            })} className="w-full bg-primary text-primary-foreground font-semibold py-2 px-4 hover:opacity-90 transition-opacity">
+              <button onClick={() => scrollToSection('about')} className="w-full bg-primary text-primary-foreground font-semibold py-2 px-4 hover:opacity-90 transition-opacity">
                 View Background →
               </button>
             </div>
@@ -107,9 +95,7 @@ export default function App() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4">Case Studies</h3>
-              <p className="text-muted-foreground mb-4">
-                Real results from projects and AI implementations that drove significant business impact.
-              </p>
+              <p className="text-muted-foreground mb-4">Real results from projects and AI implementations that drove significant business impact.</p>
               <button className="w-full border-2 border-foreground bg-transparent text-foreground font-semibold py-2 px-4 hover:bg-accent hover:text-accent-foreground transition-colors">
                 COMING SOON
               </button>
@@ -123,9 +109,7 @@ export default function App() {
               </div>
               <h3 className="text-2xl font-bold mb-4">Writing</h3>
               <p className="text-muted-foreground mb-4">Insights and musings on AI, marketing & content strategy, and user experience.</p>
-              <button onClick={() => document.getElementById('writing')?.scrollIntoView({
-              behavior: 'smooth'
-            })} className="w-full bg-secondary text-secondary-foreground font-semibold py-2 px-4 hover:opacity-90 transition-opacity">
+              <button onClick={() => scrollToSection('writing')} className="w-full bg-secondary text-secondary-foreground font-semibold py-2 px-4 hover:opacity-90 transition-opacity">
                 Read Articles →
               </button>
             </div>
@@ -160,9 +144,7 @@ export default function App() {
       <section id="about" className="py-16 bg-muted/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">
-              ABOUT ME
-            </h2>
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">ABOUT ME</h2>
             <div className="bg-primary p-6 border-4 border-foreground transform -rotate-1 hover:rotate-0 transition-transform duration-300 max-w-3xl mx-auto">
               <p className="text-xl md:text-2xl font-semibold text-primary-foreground">
                 Where Marketing Strategy Meets AI Innovation
@@ -179,25 +161,10 @@ export default function App() {
                 <h3 className="text-2xl font-bold">My Story</h3>
               </div>
               <div className="space-y-4 text-lg">
-                <p>
-                  My career began at NASCAR, where I led transformative IT projects to improve the fan experience. 
-                  Highlights include print-at-home ticketing (2007) and new websites for 13 race tracks (2010). 
-                  These early experiences sparked my passion for the intersection of user experience, technology, 
-                  and marketing—shaping my career ever since.
-                </p>
-                <p>
-                  Next, I moved agency-side where I learned to pitch big ideas, expand into new markets, 
-                  and build quality-obsessed teams. All while shipping bold, impactful work.
-                </p>
-                <p>Now, I am a champion for go-to-market innovation at Qualcomm Technologies. My team empowers marketing and sales with modern strategies, trustworthy data, and scalable platforms. 
-🔹 Account-Based Marketing (ABM) has become the backbone of our global GTM efforts 
-🔹 Established commercial channel marketing and handed off to   
-🔹 Generative AI rapidly adopted across every marketing function</p>
-                <p>
-                  Outside of work, you'll find me volunteering in the San Diego design community, advocating 
-                  for the arts, or catching performances at La Jolla Playhouse, The Old Globe, and The Rady 
-                  Shell at Jacobs Park with my family.
-                </p>
+                <p>My career began at NASCAR, where I led transformative IT projects to improve the fan experience. Highlights include print-at-home ticketing (2007) and new websites for 13 race tracks (2010). These early experiences sparked my passion for the intersection of user experience, technology, and marketing—shaping my career ever since.</p>
+                <p>Next, I moved agency-side where I learned to pitch big ideas, expand into new markets, and build quality-obsessed teams. All while shipping bold, impactful work.</p>
+                <p>Now, I am a champion for go-to-market innovation at Qualcomm Technologies. My team empowers marketing and sales with modern strategies, trustworthy data, and scalable platforms. 🔹 Account-Based Marketing (ABM) has become the backbone of our global GTM efforts 🔹 Established commercial channel marketing and handed off to 🔹 Generative AI rapidly adopted across every marketing function</p>
+                <p>Outside of work, you'll find me volunteering in the San Diego design community, advocating for the arts, or catching performances at La Jolla Playhouse, The Old Globe, and The Rady Shell at Jacobs Park with my family.</p>
               </div>
             </div>
 
@@ -224,9 +191,7 @@ export default function App() {
       <section id="writing" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">
-              WRITING
-            </h2>
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">WRITING</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Insights and perspectives on AI, marketing & content strategy, and User Experience. From my contributions around the web.</p>
           </div>
 
@@ -234,9 +199,7 @@ export default function App() {
             <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onClick={() => window.open('https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers', '_blank')}>
               <span className="inline-flex bg-primary text-primary-foreground px-3 py-1 text-sm font-semibold mb-4">AI Strategy</span>
               <h3 className="text-xl font-bold mb-3">Why Qualcomm's Playbook For AI Starts With Intention—And Ends With A Human</h3>
-              <p className="text-muted-foreground mb-4">
-                From brand voice guardrails to security-first agent design, my approach offers a blueprint for automating AI tasks with intention in marketing organizations.
-              </p>
+              <p className="text-muted-foreground mb-4">From brand voice guardrails to security-first agent design, my approach offers a blueprint for automating AI tasks with intention in marketing organizations.</p>
               <span className="text-primary font-semibold">Read more →</span>
             </article>
 
@@ -250,9 +213,7 @@ export default function App() {
             <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onClick={() => window.open('https://blinkux.com/ideas/evidence-driven-design-supports-innovation', '_blank')}>
               <span className="inline-flex bg-secondary text-secondary-foreground px-3 py-1 text-sm font-semibold mb-4">Innovation</span>
               <h3 className="text-xl font-bold mb-3">How Evidence-driven Design Supports Innovation</h3>
-              <p className="text-muted-foreground mb-4">
-                I led marketing at Blink UX for three years. This is a story they explains the design philosophy used to create products for NASA, Amazon, Microsoft, and other notable clients.
-              </p>
+              <p className="text-muted-foreground mb-4">I led marketing at Blink UX for three years. This is a story they explains the design philosophy used to create products for NASA, Amazon, Microsoft, and other notable clients.</p>
               <span className="text-primary font-semibold">Read more →</span>
             </article>
           </div>
@@ -272,5 +233,6 @@ export default function App() {
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 }
