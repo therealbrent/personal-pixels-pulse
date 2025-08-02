@@ -1,0 +1,35 @@
+Contact: brent.j.summers@gmail.com
+Preferred-Languages: en
+Canonical: https://brentsummers.dev/security.txt
+
+# Security Policy
+
+If you discover a security vulnerability in this portfolio website, please report it responsibly by contacting me directly.
+
+## Reporting Guidelines
+
+1. Email security concerns to: brent.j.summers@gmail.com
+2. Please provide a detailed description of the vulnerability
+3. Include steps to reproduce the issue if applicable
+4. Allow reasonable time for response and remediation
+
+## Scope
+
+This policy applies to:
+- The portfolio website hosted at brentsummers.dev
+- Client-side JavaScript code
+- Any associated configuration files
+
+## Out of Scope
+
+- Third-party services and integrations
+- Social media links and external websites
+- Denial of service attacks
+
+## Response Timeline
+
+- Initial response: Within 72 hours
+- Status updates: Weekly until resolved
+- Resolution timeline: Varies based on severity
+
+Thank you for helping to keep this site secure.
