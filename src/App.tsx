@@ -270,7 +270,7 @@ export default function App() {
             Get In Touch
           </button>
           <div className="mt-8 pt-8 border-t border-background/20">
-            <p className="opacity-60">© 2024 Brent Summers. All rights reserved.</p>
+            <p className="opacity-60">© {new Date().getFullYear()} Brent Summers. All rights reserved.</p>
           </div>
         </div>
       </footer>
