@@ -25,6 +25,14 @@
       var pathSegmentsToKeep = 1;
 
       var l = window.location;
+      
+      // Don't redirect if this is a static file request
+      if (l.pathname.match(/\.(txt|pdf|xml|json|css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$/i)) {
+        // For static files, just show a 404 message instead of redirecting
+        document.body.innerHTML = '<h1>404 - File Not Found</h1><p>The requested file could not be found.</p>';
+        return;
+      }
+      
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
         l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
