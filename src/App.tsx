@@ -286,11 +286,14 @@ export default function App() {
               <span className="text-primary font-semibold">Read more →</span>
             </article>
 
-            <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300">
+            <article 
+              className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+              onClick={() => window.open('https://blinkux.com/ideas/evidence-driven-design-supports-innovation', '_blank')}
+            >
               <span className="inline-flex bg-secondary text-secondary-foreground px-3 py-1 text-sm font-semibold mb-4">Innovation</span>
-              <h3 className="text-xl font-bold mb-3">Scaling GTM Innovation</h3>
+              <h3 className="text-xl font-bold mb-3">How Evidence-driven Design Supports Innovation</h3>
               <p className="text-muted-foreground mb-4">
-                Lessons learned from implementing go-to-market innovations at enterprise scale.
+                I led marketing at Blink UX for three years. This is a story they explains the design philosophy used to create products for NASA, Amazon, Microsoft, and other notable clients.
               </p>
               <span className="text-primary font-semibold">Read more →</span>
             </article>
