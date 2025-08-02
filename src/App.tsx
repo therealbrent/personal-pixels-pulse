@@ -277,11 +277,14 @@ export default function App() {
               <span className="text-primary font-semibold">Read more →</span>
             </article>
 
-            <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300">
-              <span className="inline-flex bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold mb-4">UX Design</span>
-              <h3 className="text-xl font-bold mb-3">Building User-Centric Marketing Platforms</h3>
+            <article 
+              className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+              onClick={() => window.open('https://contentstrategy.substack.com/p/my-favorite-content-strategy-frameworks', '_blank')}
+            >
+              <span className="inline-flex bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold mb-4">Content Strategy</span>
+              <h3 className="text-xl font-bold mb-3">My Favorite Content Strategy Frameworks for Website Projects</h3>
               <p className="text-muted-foreground mb-4">
-                The intersection of user experience design and marketing technology for better outcomes.
+                Clarify goals, make editorial decisions, and set priorities with these simple frameworks
               </p>
               <span className="text-primary font-semibold">Read more →</span>
             </article>
