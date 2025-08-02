@@ -266,7 +266,7 @@ export default function App() {
           <p className="text-lg mb-8 opacity-80">
             Ready to discuss AI innovation in marketing? I'd love to hear from you.
           </p>
-          <button onClick={() => window.open('mailto:brent.j.summers@gmail.com')} className="bg-primary text-primary-foreground text-lg font-bold px-8 py-4 hover:opacity-90 transition-opacity">
+          <button onClick={() => window.open('https://www.linkedin.com/in/brentjsummers/', '_blank')} className="bg-primary text-primary-foreground text-lg font-bold px-8 py-4 hover:opacity-90 transition-opacity">
             Connect with me on LinkedIn
           </button>
           <div className="mt-8 pt-8 border-t border-background/20">
