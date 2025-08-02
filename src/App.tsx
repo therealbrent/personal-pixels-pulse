@@ -175,7 +175,13 @@ export default function App() {
               <div className="bg-accent/10 p-6 border-4 border-foreground transform -rotate-1 hover:rotate-0 transition-transform duration-300">
                 <span className="inline-flex border-2 border-foreground bg-transparent text-foreground px-3 py-1 text-sm font-semibold mb-3">FEATURED</span>
                 <h4 className="text-xl font-bold mb-2 text-foreground">The UX Flywheel</h4>
-                <p className="text-muted-foreground">Creating sustainable user experience improvements through iterative design processes.</p>
+                <p className="text-muted-foreground mb-4">Creating sustainable user experience improvements through iterative design processes.</p>
+                <button 
+                  onClick={() => window.open('https://www.youtube.com/watch?v=UYApYNEnaMM', '_blank')}
+                  className="bg-accent text-accent-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity"
+                >
+                  Watch Presentation →
+                </button>
               </div>
             </div>
           </div>
