@@ -45,12 +45,12 @@ export default function App() {
               Explore My Work
             </button>
             
-            <button 
-              onClick={() => window.open('mailto:brent.j.summers@gmail.com')}
-              className="border-2 border-foreground bg-transparent text-foreground text-lg font-bold px-8 py-4 transform hover:scale-105 transition-transform hover:bg-accent hover:text-accent-foreground"
+            <a 
+              href="mailto:brent.j.summers@gmail.com"
+              className="border-2 border-foreground bg-transparent text-foreground text-lg font-bold px-8 py-4 transform hover:scale-105 transition-transform hover:bg-accent hover:text-accent-foreground inline-block"
             >
               Let's Connect
-            </button>
+            </a>
           </div>
 
           <div className="flex justify-center space-x-6 mb-8">
