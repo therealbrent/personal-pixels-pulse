@@ -163,7 +163,13 @@ export default function App() {
               <div className="bg-primary/10 p-6 border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300">
                 <span className="inline-flex bg-destructive text-destructive-foreground px-3 py-1 text-sm font-semibold mb-3">NEW</span>
                 <h4 className="text-xl font-bold mb-2 text-foreground">9.6X ROI with WRITER</h4>
-                <p className="text-muted-foreground">Led the platform discovery, roll out, and scale up of WRITER at Qualcomm Technologies.</p>
+                <p className="text-muted-foreground mb-4">Led the platform discovery, roll out, and scale up of WRITER at Qualcomm Technologies.</p>
+                <button 
+                  onClick={() => window.open('https://writer.com/blog/qualcomm-customer-story/', '_blank')}
+                  className="bg-primary text-primary-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity"
+                >
+                  Read Case Study →
+                </button>
               </div>
               
               <div className="bg-accent/10 p-6 border-4 border-foreground transform -rotate-1 hover:rotate-0 transition-transform duration-300">
