@@ -134,7 +134,7 @@ export default function App() {
                 Real results from projects and AI implementations that drove significant business impact.
               </p>
               <button className="w-full border-2 border-foreground bg-transparent text-foreground font-semibold py-2 px-4 hover:bg-accent hover:text-accent-foreground transition-colors">
-                View Projects →
+                COMING SOON
               </button>
             </div>
 
