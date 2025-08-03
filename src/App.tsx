@@ -405,6 +405,24 @@ function HomePage() {
             />
             
             <CaseStudyCard
+              title="PIVOTAL"
+              tag="Proprietary"
+              client="Michelle Kerr, VP of Marketing"
+              description="I led this project which expanded on the core brand assets (logos, color, and type) to create a comprehensive visual design system."
+              details="Pivotal was born from a grab bag of EMC and VMware acquisitions including Cetas, Cloud Foundry, GemFire, GreenPlum, SpringSource, and Pivotal Labs. The company was spun out of EMC/VMware with a $105 million investment from GE. The project included a corporate website, a huge collection of icons and illustrations, plus guidelines for creating custom marketecture diagrams that are essential to technical sales."
+              contributions={[
+                "Visual design system expansion",
+                "Corporate website design",
+                "Icon and illustration collection",
+                "Marketecture diagram guidelines",
+                "Brand asset coordination",
+                "Technical sales enablement materials"
+              ]}
+              logoSrc="/placeholder.svg"
+              logoAlt="Pivotal logo"
+            />
+            
+            <CaseStudyCard
               title="NEW RELIC"
               tag="Prismic"
               client="Raf Alenda, Vice President - Online & Brand Marketing"
