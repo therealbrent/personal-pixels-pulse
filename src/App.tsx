@@ -83,11 +83,11 @@ function HomePage() {
             <div className="text-xl font-bold text-primary">BRENT SUMMERS</div>
             <div className="hidden md:flex items-center space-x-8">
               <button onClick={() => scrollToSection('home')} className="font-semibold hover:text-accent transition-colors">Home</button>
+              <button onClick={() => scrollToSection('work')} className="font-semibold hover:text-accent transition-colors">What I Do</button>
               <button onClick={() => scrollToSection('about')} className="font-semibold hover:text-accent transition-colors">About</button>
-              <button onClick={() => scrollToSection('work')} className="font-semibold hover:text-accent transition-colors">Work</button>
               <button onClick={() => scrollToSection('writing')} className="font-semibold hover:text-accent transition-colors">Writing</button>
               <button onClick={() => scrollToSection('case-studies')} className="font-semibold hover:text-accent transition-colors">Case Studies</button>
-              <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="bg-destructive text-destructive-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity inline-block">LLMS.txt</a>
+              <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="bg-background text-foreground border-4 border-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity inline-block">LLMS.txt</a>
             </div>
           </div>
         </div>
