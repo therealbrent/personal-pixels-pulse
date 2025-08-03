@@ -1,7 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 import LLMSTextPage from './components/LLMSTextPage';
 
 function HomePage() {
+  const [showFullStory, setShowFullStory] = useState(false);
+  
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -165,7 +168,6 @@ function HomePage() {
               </div>
               <div className="space-y-6 text-lg">
                 <div>
-                  <h4 className="text-xl font-bold mb-3 text-primary">Transformational Leader</h4>
                   <p>I drive measurable business impact through AI adoption and innovative go-to-market strategies. Currently leading AI Platforms & GTM Innovation at Qualcomm Technologies, I've pioneered enterprise-wide generative AI adoption achieving 8.6x ROI and built ABM programs influencing billions in pipeline.</p>
                 </div>
 
@@ -174,33 +176,48 @@ function HomePage() {
                   <p>My career shifted into high gear when I joined NASCAR in 2004. I started as a call center agent and was quickly promoted to trainer. Within two years, I moved into the IT organization as a Business Analyst where I defined the requirements for projects that improved the fan experience. Two of my significant projects include the implementation of print-at-home ticketing (2007) and new websites for 13 race tracks (2010). These early experiences sparked my passion for user experience, technology, and marketing — shaping my career ever since.</p>
                 </div>
 
-                <div>
-                  <h4 className="text-xl font-bold mb-3 text-primary">The proving ground that sharpened my leadership</h4>
-                  <p className="mb-4">Next, I moved agency-side where I learned to pitch big ideas, lead large quality-obsessed teams, and expand into new markets.</p>
-                  <ul className="space-y-3 list-disc list-inside text-base">
-                    <li><strong>At Digitaria,</strong> I was the Executive Producer on the Qualcomm account where I had 5 direct reports plus a dynamic project team that sometimes scaled to 40 contributing resources. Under my leadership, Qualcomm became an early adopter of cloud-computing and responsive design.</li>
-                    <li><strong>At Digital Telepathy,</strong> I pivoted away from providing client services to marketing leadership. Our GTM strategy included the incubation — and eventual sale — of digital products (Slide Deck, Hello Bar, and Filament), and inbound marketing driven primarily by our blog.</li>
-                    <li><strong>At Blink,</strong> I opened and scaled a studio in San Diego — winning our first few clients and growing the team from 3 employees to 12. After stabilizing the new office, I overhauled our Engineering practice to reach profitability and led a rebrand project following the acquisition of Tectonic.</li>
-                    <li><strong>At Metalab,</strong> I led the in-house team of three responsible for marketing strategy and sales enablement. In collaboration with freelancers another agency, we designed and executed a content strategy that delivered 3 marquee case studies and 20+ sales enablement decks — ultimately leading to $3.8M in influenced revenue, a 5.5x ROI.</li>
-                  </ul>
-                </div>
+                {!showFullStory && (
+                  <div className="text-center">
+                    <button 
+                      onClick={() => setShowFullStory(true)}
+                      className="bg-primary text-primary-foreground font-semibold px-6 py-3 transform hover:scale-105 transition-transform"
+                    >
+                      Keep reading...
+                    </button>
+                  </div>
+                )}
 
-                <div>
-                  <h4 className="text-xl font-bold mb-3 text-primary">The opportunity to drive outsized impact in an enterprise</h4>
-                  <p className="mb-4">I joined Qualcomm Technologies to build an ABM program. In pursuit of that goal, I became an early champion for Generative AI. Now, I am the Global Lead for AI Platforms & GTM Innovation. Some of my key achievements include:</p>
-                  <ul className="space-y-2 list-disc list-inside text-base">
-                    <li>Established and scaled an award-winning ABM program that influences billions in annual pipeline across several business units.</li>
-                    <li>Built and successfully transitioned commercial channel marketing to dedicated teams, onboarding more than a dozen partners worldwide.</li>
-                    <li>Pioneered enterprise-wide Generative AI adoption across marketing functions, achieving 8.6x ROI based purely on time savings.</li>
-                  </ul>
-                </div>
+                {showFullStory && (
+                  <>
+                    <div>
+                      <h4 className="text-xl font-bold mb-3 text-primary">The proving ground that sharpened my leadership</h4>
+                      <p className="mb-4">Next, I moved agency-side where I learned to pitch big ideas, lead large quality-obsessed teams, and expand into new markets.</p>
+                      <ul className="space-y-3 list-disc list-inside text-base">
+                        <li><strong>At Digitaria,</strong> I was the Executive Producer on the Qualcomm account where I had 5 direct reports plus a dynamic project team that sometimes scaled to 40 contributing resources. Under my leadership, Qualcomm became an early adopter of cloud-computing and responsive design.</li>
+                        <li><strong>At Digital Telepathy,</strong> I pivoted away from providing client services to marketing leadership. Our GTM strategy included the incubation — and eventual sale — of digital products (Slide Deck, Hello Bar, and Filament), and inbound marketing driven primarily by our blog.</li>
+                        <li><strong>At Blink,</strong> I opened and scaled a studio in San Diego — winning our first few clients and growing the team from 3 employees to 12. After stabilizing the new office, I overhauled our Engineering practice to reach profitability and led a rebrand project following the acquisition of Tectonic.</li>
+                        <li><strong>At Metalab,</strong> I led the in-house team of three responsible for marketing strategy and sales enablement. In collaboration with freelancers another agency, we designed and executed a content strategy that delivered 3 marquee case studies and 20+ sales enablement decks — ultimately leading to $3.8M in influenced revenue, a 5.5x ROI.</li>
+                      </ul>
+                    </div>
 
-                <div>
-                  <h4 className="text-xl font-bold mb-3 text-primary">The principles that guide my work</h4>
-                  <p className="mb-4">My leadership approach bridges the gap between visionary strategy and tactical execution. I believe transformative initiatives achieve the most success when they apply user empathy, data-driven decision making, and cross-functional collaboration.</p>
-                  <p className="mb-4">I'm recognized as a thought leader at the intersection of AI, marketing, and user experience, with recent speaking engagements at Webit, AI x Marketing Summit, and AI Leaders Forum. My expertise has been featured in CIO News, CMS Wire, and SmartSuite.</p>
-                  <p>Beyond my professional work, I am an ambassador for the San Diego / Tijuana design community, contributing to initiatives that shaped our region's recognition as World Design Capital 2024. I'm also an active member of San Diego Experience Design Professionals, where I participate in meetups and mentorship.</p>
-                </div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-3 text-primary">The opportunity to drive outsized impact in an enterprise</h4>
+                      <p className="mb-4">I joined Qualcomm Technologies to build an ABM program. In pursuit of that goal, I became an early champion for Generative AI. Now, I am the Global Lead for AI Platforms & GTM Innovation. Some of my key achievements include:</p>
+                      <ul className="space-y-2 list-disc list-inside text-base">
+                        <li>Established and scaled an award-winning ABM program that influences billions in annual pipeline across several business units.</li>
+                        <li>Built and successfully transitioned commercial channel marketing to dedicated teams, onboarding more than a dozen partners worldwide.</li>
+                        <li>Pioneered enterprise-wide Generative AI adoption across marketing functions, achieving 8.6x ROI based purely on time savings.</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="text-xl font-bold mb-3 text-primary">The principles that guide my work</h4>
+                      <p className="mb-4">My leadership approach bridges the gap between visionary strategy and tactical execution. I believe transformative initiatives achieve the most success when they apply user empathy, data-driven decision making, and cross-functional collaboration.</p>
+                      <p className="mb-4">I'm recognized as a thought leader at the intersection of AI, marketing, and user experience, with recent speaking engagements at Webit, AI x Marketing Summit, and AI Leaders Forum. My expertise has been featured in CIO News, CMS Wire, and SmartSuite.</p>
+                      <p>Beyond my professional work, I am an ambassador for the San Diego / Tijuana design community, contributing to initiatives that shaped our region's recognition as World Design Capital 2024. I'm also an active member of San Diego Experience Design Professionals, where I participate in meetups and mentorship.</p>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
 
