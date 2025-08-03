@@ -458,6 +458,32 @@ function HomePage() {
               logoAlt="New Relic logo"
             />
           </div>
+          
+          {/* Testimonials */}
+          <div className="mt-20">
+            <h3 className="text-3xl font-bold text-center mb-12 text-foreground">TESTIMONIALS</h3>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="border-4 border-foreground bg-card p-6">
+                <blockquote className="text-lg italic text-muted-foreground mb-6">
+                  "Brent brings a great mix of strategy and execution to our company's account. Like most fast-moving start-ups, we juggle needing great content along with 'big picture' thinking. Brent consistently manages the day-to-day while continuing to bring new, fresh ideas to our marketing strategy."
+                </blockquote>
+                <div className="text-right">
+                  <p className="font-bold text-foreground">Elyse Phillips</p>
+                  <p className="text-sm text-muted-foreground">VP of Marketing, Elastic</p>
+                </div>
+              </div>
+              
+              <div className="border-4 border-foreground bg-card p-6">
+                <blockquote className="text-lg italic text-muted-foreground mb-6">
+                  "Brent Summers is one of the smartest people I have ever had the pleasure to collaborate with. His attention to detail and care for the end user comes through in everything he does. Brent and his team helped us create a beautiful Web experience that eclipsed the previous site in every facet. From design to conversion, it was a revelation."
+                </blockquote>
+                <div className="text-right">
+                  <p className="font-bold text-foreground">Michael Weir</p>
+                  <p className="text-sm text-muted-foreground">Sr. Director of Marketing, Pivotal</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
