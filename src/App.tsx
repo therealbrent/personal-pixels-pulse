@@ -212,6 +212,21 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Brutalist Separator - Zigzag Pattern */}
+      <div className="relative overflow-hidden">
+        <div className="h-16 bg-gradient-to-br from-accent via-destructive to-primary relative">
+          <div className="absolute inset-0 bg-background/30">
+            <div className="h-full w-full bg-gradient-to-t from-foreground/10 to-transparent"></div>
+          </div>
+          <div className="absolute top-2 left-4 w-3 h-12 bg-accent border-2 border-foreground transform -skew-y-45"></div>
+          <div className="absolute top-1 left-16 w-5 h-5 bg-primary border-2 border-foreground"></div>
+          <div className="absolute bottom-1 left-28 w-8 h-3 bg-destructive border-2 border-foreground transform skew-x-45"></div>
+          <div className="absolute top-3 right-24 w-4 h-10 bg-secondary border-2 border-foreground transform rotate-30"></div>
+          <div className="absolute bottom-2 right-12 w-6 h-4 bg-accent border-2 border-foreground transform -rotate-30"></div>
+          <div className="absolute top-0 right-4 w-7 h-7 bg-primary border-3 border-foreground transform rotate-45"></div>
+        </div>
+      </div>
+
       {/* About Section */}
       <section id="about" className="py-16 bg-muted/20">
         <div className="container mx-auto px-4">
