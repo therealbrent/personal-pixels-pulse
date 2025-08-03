@@ -94,7 +94,7 @@ function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <header id="home" className="min-h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10 px-4">
+      <header id="home" className="h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10 px-4">
         <div className="text-center max-w-4xl mx-auto">
           <p className="text-sm md:text-base text-muted-foreground mb-4 font-bold tracking-wide uppercase">This site was vibe coded</p>
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 text-foreground tracking-tight">
