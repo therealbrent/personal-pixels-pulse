@@ -386,6 +386,25 @@ function HomePage() {
             />
             
             <CaseStudyCard
+              title="AMAZON"
+              tag="LEGO (Proprietary)"
+              client="Andrew Meyers, Sr. Product Manager"
+              description="I was part of a small team that overhauled sell.amazon.com to streamline several ingress points to becoming a seller on Amazon."
+              details="This project was informed by foundational user research and iterative evaluative testing during the design. The site is built on a proprietary drag-and-drop CMS called 'LEGO.' While I cannot disclose the specific metrics, I am happy to report that the conversion rate we achieved was triple the benchmark."
+              contributions={[
+                "Competitive analysis",
+                "Content strategy & copywriting",
+                "Product requirements",
+                "Backlog management",
+                "Scrum master",
+                "Content entry via CMS",
+                "Quality assurance testing"
+              ]}
+              logoSrc="/lovable-uploads/fcdc8d21-8816-48fb-ac54-3140bf151296.png"
+              logoAlt="Amazon logo"
+            />
+            
+            <CaseStudyCard
               title="NEW RELIC"
               tag="Prismic"
               client="Raf Alenda, Vice President - Online & Brand Marketing"
