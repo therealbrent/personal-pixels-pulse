@@ -340,7 +340,7 @@ function HomePage() {
       </section>
 
       {/* Case Studies Section */}
-      <section id="case-studies" className="py-16 bg-muted/20">
+      <section id="case-studies" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">CASE STUDIES</h2>
