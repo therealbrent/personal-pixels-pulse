@@ -19,7 +19,7 @@ function CaseStudyCard({ title, tag, client, description, details, contributions
     <Dialog>
       <DialogTrigger asChild>
         <div className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-col items-center space-y-4">
             <img src={logoSrc} alt={logoAlt} className="h-16 object-contain" />
             <span className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground">
               {tag}
