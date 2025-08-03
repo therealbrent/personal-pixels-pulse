@@ -418,7 +418,7 @@ function HomePage() {
                 "Brand asset coordination",
                 "Technical sales enablement materials"
               ]}
-              logoSrc="/placeholder.svg"
+              logoSrc="/lovable-uploads/f09455ec-ba6d-44e8-bf98-5b6023cd43fd.png"
               logoAlt="Pivotal logo"
             />
             
