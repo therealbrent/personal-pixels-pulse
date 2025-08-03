@@ -339,6 +339,19 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Brutalist Separator */}
+      <div className="relative overflow-hidden">
+        <div className="h-24 bg-gradient-to-r from-primary via-accent to-secondary relative">
+          <div className="absolute inset-0 bg-foreground/10">
+            <div className="h-full w-full bg-gradient-to-r from-transparent via-background/20 to-transparent transform -skew-y-1"></div>
+          </div>
+          <div className="absolute top-4 left-8 w-8 h-8 bg-destructive border-4 border-foreground transform rotate-45"></div>
+          <div className="absolute bottom-4 right-16 w-6 h-6 bg-accent border-2 border-foreground"></div>
+          <div className="absolute top-6 right-32 w-4 h-4 bg-primary border-2 border-foreground transform rotate-45"></div>
+          <div className="absolute bottom-6 left-24 w-10 h-4 bg-secondary border-2 border-foreground transform -skew-x-12"></div>
+        </div>
+      </div>
+
       {/* Case Studies Section */}
       <section id="case-studies" className="py-16">
         <div className="container mx-auto px-4">
