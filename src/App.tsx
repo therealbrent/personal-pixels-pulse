@@ -152,7 +152,7 @@ function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
-              <div className="text-primary mb-4">
+              <div className="text-pink-500 mb-4">
                 <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14 6V4h-4v2h4zM4 8v11h16V8H4zm16-2c1.11 0 2 .89 2 2v11c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2l.01-11c0-1.11.88-2 1.99-2h4V4c0-1.11.89-2 2-2h4c1.11 0 2 .89 2 2v2h4z" />
                 </svg>
@@ -165,20 +165,20 @@ function HomePage() {
             </div>
 
             <div className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
-              <div className="text-accent mb-4">
+              <div className="text-pink-500 mb-4">
                 <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4">Case Studies</h3>
-              <p className="text-muted-foreground mb-4">Real results from projects and AI implementations that drove significant business impact.</p>
-              <button className="w-full border-2 border-foreground bg-transparent text-foreground font-semibold py-2 px-4 hover:bg-accent hover:text-accent-foreground transition-colors">
-                COMING SOON
+              <p className="text-muted-foreground mb-4">Real projects and technology implementations for recognizable brands.</p>
+              <button onClick={() => scrollToSection('case-studies')} className="w-full border-2 border-foreground bg-transparent text-foreground font-semibold py-2 px-4 hover:bg-accent hover:text-accent-foreground transition-colors">
+                See Case Studies →
               </button>
             </div>
 
             <div className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
-              <div className="text-destructive mb-4">
+              <div className="text-pink-500 mb-4">
                 <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
                 </svg>
