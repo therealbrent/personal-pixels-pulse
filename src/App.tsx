@@ -2,6 +2,72 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import LLMSTextPage from './components/LLMSTextPage';
 
+interface CaseStudyCardProps {
+  title: string;
+  tag: string;
+  client: string;
+  description: string;
+  details: string;
+  contributions: string[];
+}
+
+function CaseStudyCard({ title, tag, client, description, details, contributions }: CaseStudyCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div 
+      className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+      onClick={() => setIsExpanded(!isExpanded)}
+    >
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-xl font-bold">{title}</h3>
+        <span className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground">
+          {tag}
+        </span>
+      </div>
+      
+      {!isExpanded && (
+        <div className="text-center py-4">
+          <p className="text-muted-foreground mb-2">Click to view details</p>
+          <svg className="w-6 h-6 mx-auto text-primary" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16.293 9.293L12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z" />
+          </svg>
+        </div>
+      )}
+      
+      {isExpanded && (
+        <div className="space-y-4">
+          <div>
+            <h4 className="font-semibold text-primary mb-2">Client</h4>
+            <p className="text-muted-foreground">{client}</p>
+          </div>
+          
+          <div>
+            <h4 className="font-semibold text-primary mb-2">Description</h4>
+            <p className="text-muted-foreground mb-3">{description}</p>
+            <p className="text-muted-foreground">{details}</p>
+          </div>
+          
+          <div>
+            <h4 className="font-semibold text-primary mb-2">My contributions</h4>
+            <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+              {contributions.map((contribution, index) => (
+                <li key={index}>{contribution}</li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="text-center pt-2">
+            <svg className="w-6 h-6 mx-auto text-primary transform rotate-180" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M16.293 9.293L12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z" />
+            </svg>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function HomePage() {
   const [showFullStory, setShowFullStory] = useState(false);
   
@@ -21,6 +87,7 @@ function HomePage() {
               <button onClick={() => scrollToSection('about')} className="font-semibold hover:text-accent transition-colors">About</button>
               <button onClick={() => scrollToSection('work')} className="font-semibold hover:text-accent transition-colors">Work</button>
               <button onClick={() => scrollToSection('writing')} className="font-semibold hover:text-accent transition-colors">Writing</button>
+              <button onClick={() => scrollToSection('case-studies')} className="font-semibold hover:text-accent transition-colors">Case Studies</button>
               <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="bg-destructive text-destructive-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity inline-block">LLMS.txt</a>
             </div>
           </div>
@@ -269,6 +336,34 @@ function HomePage() {
               <p className="text-muted-foreground mb-4">I led marketing at Blink UX for three years. This is a story they explains the design philosophy used to create products for NASA, Amazon, Microsoft, and other notable clients.</p>
               <span className="text-primary font-semibold">Read more →</span>
             </article>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section id="case-studies" className="py-16 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">CASE STUDIES</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">These are some of the successful projects that I've helped deliver. This list is not exhaustive.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <CaseStudyCard
+              title="SUMO LOGIC"
+              tag="Craft CMS"
+              client="Suku Krishnaraj, Chief Marketing Officer"
+              description="During a stint as Engineering Director at Blink, I led the pitch that won this website redesign project. The brand work was done by Tolleson."
+              details="This project included foundational user research and a few rounds of evaluative testing as we determined the best messaging and information architecture for three very technical types of users: Security Officers, DevOps Managers, and Cloud Architects. While my primary role was technical lead, I also advised the project team (mostly product designers) on web design best practices. Near the end of the project, Sumo Logic requested a change — localization into Japanese."
+              contributions={[
+                "Project estimation",
+                "Product requirements", 
+                "Platform recommendations",
+                "Implementation management",
+                "QA testing",
+                "Web strategy"
+              ]}
+            />
           </div>
         </div>
       </section>
