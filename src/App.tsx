@@ -97,7 +97,11 @@ function HomePage() {
       <section id="home" className="min-h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10 px-4">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 text-foreground tracking-tight">
-            AI-FIRST MARKETING
+            <span className="relative inline-block">
+              AI-FIRST
+              <div className="absolute bottom-2 left-0 w-full h-6 bg-pink-500/80 -z-10 transform -skew-x-12"></div>
+            </span>
+            {" "}MARKETING
             <span className="block text-primary">LEADER</span>
           </h1>
           
