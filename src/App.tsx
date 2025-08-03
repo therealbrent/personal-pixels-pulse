@@ -362,6 +362,24 @@ function HomePage() {
               logoSrc="/lovable-uploads/d1bb2915-782f-4b5a-b60b-08b9094dcdc1.png"
               logoAlt="Sumo Logic logo"
             />
+            
+            <CaseStudyCard
+              title="NEW RELIC"
+              tag="Prismic"
+              client="Raf Alenda, Vice President - Online & Brand Marketing"
+              description="New Relic was a long-standing client of Digital Telepathy. I got involved with the account around the time when New Relic announced their Series B funding."
+              details="I helped with several key initiatives during their growth phase, focusing on product launches, content strategy pivots, and campaign optimization."
+              contributions={[
+                "Product launch: Synthetics",
+                "Pivot to enterprise content strategy - Solutions by Industry",
+                "Pivot to enterprise content strategy - Solutions by Use Case",
+                "Landing page optimization for 'Data Nerd' campaign",
+                "Nurture program built on in-product events (using Intercom)",
+                "FutureStack 2014, 2015"
+              ]}
+              logoSrc="/lovable-uploads/6cbd7f55-af1e-4682-aaf1-58ae638c0c99.png"
+              logoAlt="New Relic logo"
+            />
           </div>
         </div>
       </section>
