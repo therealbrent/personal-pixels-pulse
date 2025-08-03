@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './components/ui/dialog';
 import LLMSTextPage from './components/LLMSTextPage';
 
 interface CaseStudyCardProps {
@@ -9,34 +10,35 @@ interface CaseStudyCardProps {
   description: string;
   details: string;
   contributions: string[];
+  logoSrc: string;
+  logoAlt: string;
 }
 
-function CaseStudyCard({ title, tag, client, description, details, contributions }: CaseStudyCardProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
-
+function CaseStudyCard({ title, tag, client, description, details, contributions, logoSrc, logoAlt }: CaseStudyCardProps) {
   return (
-    <div 
-      className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer"
-      onClick={() => setIsExpanded(!isExpanded)}
-    >
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-xl font-bold">{title}</h3>
-        <span className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground">
-          {tag}
-        </span>
-      </div>
-      
-      {!isExpanded && (
-        <div className="text-center py-4">
-          <p className="text-muted-foreground mb-2">Click to view details</p>
-          <svg className="w-6 h-6 mx-auto text-primary" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M16.293 9.293L12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z" />
-          </svg>
+    <Dialog>
+      <DialogTrigger asChild>
+        <div className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer">
+          <div className="flex items-center justify-between mb-6">
+            <img src={logoSrc} alt={logoAlt} className="h-12 object-contain" />
+            <span className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground">
+              {tag}
+            </span>
+          </div>
         </div>
-      )}
+      </DialogTrigger>
       
-      {isExpanded && (
-        <div className="space-y-4">
+      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto border-4 border-foreground">
+        <DialogHeader>
+          <DialogTitle className="flex items-center justify-between">
+            <img src={logoSrc} alt={logoAlt} className="h-8 object-contain" />
+            <span className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground">
+              {tag}
+            </span>
+          </DialogTitle>
+        </DialogHeader>
+        
+        <div className="space-y-6 pt-4">
           <div>
             <h4 className="font-semibold text-primary mb-2">Client</h4>
             <p className="text-muted-foreground">{client}</p>
@@ -56,15 +58,9 @@ function CaseStudyCard({ title, tag, client, description, details, contributions
               ))}
             </ul>
           </div>
-          
-          <div className="text-center pt-2">
-            <svg className="w-6 h-6 mx-auto text-primary transform rotate-180" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M16.293 9.293L12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z" />
-            </svg>
-          </div>
         </div>
-      )}
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 }
 
@@ -363,6 +359,8 @@ function HomePage() {
                 "QA testing",
                 "Web strategy"
               ]}
+              logoSrc="/lovable-uploads/d1bb2915-782f-4b5a-b60b-08b9094dcdc1.png"
+              logoAlt="Sumo Logic logo"
             />
           </div>
         </div>
