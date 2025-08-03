@@ -161,6 +161,22 @@ function HomePage() {
           <div className="max-w-4xl mx-auto">
             <div className="border-4 border-foreground bg-card p-8 mb-12">
               <div className="flex items-center mb-6">
+                <svg className="w-8 h-8 text-accent mr-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <h3 className="text-2xl font-bold">Core Skills</h3>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {["Strategic Marketing Leadership", "Operational Excellence & Scaling", "Human-Centered Technology Strategy"].map((skill, index) => (
+                  <span key={index} className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="border-4 border-foreground bg-card p-8">
+              <div className="flex items-center mb-6">
                 <svg className="w-8 h-8 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -218,22 +234,6 @@ function HomePage() {
                     </div>
                   </>
                 )}
-              </div>
-            </div>
-
-            <div className="border-4 border-foreground bg-card p-8">
-              <div className="flex items-center mb-6">
-                <svg className="w-8 h-8 text-accent mr-3" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                <h3 className="text-2xl font-bold">Core Skills</h3>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                {["Strategic Marketing Leadership", "Operational Excellence & Scaling", "Human-Centered Technology Strategy"].map((skill, index) => (
-                  <span key={index} className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground">
-                    {skill}
-                  </span>
-                ))}
               </div>
             </div>
           </div>
