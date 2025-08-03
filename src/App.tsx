@@ -364,6 +364,25 @@ function HomePage() {
             />
             
             <CaseStudyCard
+              title="ELASTIC"
+              tag="WordPress"
+              client="Elyse Phillips, VP Marketing"
+              description="I led project that established the Elasticsearch brand and launched the commercial product."
+              details="In collaboration with the founding team, Digital Telepathy designed two websites. elasticsearch.com was launched to support the new commercial product and elasticsearch.org was updated to reflect the growing capabilities of the open-source project. Another agency (UpTrending) handled the heavy-lifting of the build, but I managed content entry and quality assurance testing. As an early-stage startup, Elasticsearch moved quickly to add new features. The company made strategic acquisitions including Logstash, Kibana, and Beats. They integrated these products and introduced the ELK stack. Then added Marvel, an observability platform."
+              contributions={[
+                "Brand establishment for Elasticsearch",
+                "Commercial product launch strategy",
+                "Website design collaboration (elasticsearch.com)",
+                "Website update management (elasticsearch.org)",
+                "Content entry management",
+                "Quality assurance testing",
+                "Product integration strategy for acquisitions"
+              ]}
+              logoSrc="/lovable-uploads/26b28675-053b-424c-ad22-a082f58d3937.png"
+              logoAlt="Elastic logo"
+            />
+            
+            <CaseStudyCard
               title="NEW RELIC"
               tag="Prismic"
               client="Raf Alenda, Vice President - Online & Brand Marketing"
