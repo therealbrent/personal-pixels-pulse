@@ -423,6 +423,24 @@ function HomePage() {
             />
             
             <CaseStudyCard
+              title="HP"
+              tag="iOS & Android"
+              client="Shawn Piper, Senior Experience Design Manager"
+              description="This project overhauled the mobile app that controls modern HP printers and conceived how HP's new subscription business model would be communicated."
+              details="A six-person team at Blink worked with more than 20 stakeholders at HP to research and design an app experience to serve three primary personas: Individual at home/work, Small business owners, and IT administrators. As a follow-up to the app redesign, Blink conceived how HP's new subscription business model would be communicated on its storefront website."
+              contributions={[
+                "Value proposition clarity",
+                "Setup instructions design",
+                "Product commands interface",
+                "Content strategy for subscription model",
+                "Copywriting for concept website",
+                "eCommerce store consolidation strategy"
+              ]}
+              logoSrc="/lovable-uploads/5c60a0c9-273d-43a9-a4e6-226e8538a08c.png"
+              logoAlt="HP logo"
+            />
+            
+            <CaseStudyCard
               title="NEW RELIC"
               tag="Prismic"
               client="Raf Alenda, Vice President - Online & Brand Marketing"
