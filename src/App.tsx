@@ -214,16 +214,18 @@ function HomePage() {
 
       {/* Brutalist Separator - Zigzag Pattern */}
       <div className="relative overflow-hidden">
-        <div className="h-16 bg-gradient-to-br from-accent via-destructive to-primary relative">
+        <div className="h-20 bg-gradient-to-br from-accent via-destructive to-primary relative">
           <div className="absolute inset-0 bg-background/30">
             <div className="h-full w-full bg-gradient-to-t from-foreground/10 to-transparent"></div>
           </div>
-          <div className="absolute top-2 left-4 w-3 h-12 bg-accent border-2 border-foreground transform -skew-y-45"></div>
-          <div className="absolute top-1 left-16 w-5 h-5 bg-primary border-2 border-foreground"></div>
-          <div className="absolute bottom-1 left-28 w-8 h-3 bg-destructive border-2 border-foreground transform skew-x-45"></div>
-          <div className="absolute top-3 right-24 w-4 h-10 bg-secondary border-2 border-foreground transform rotate-30"></div>
-          <div className="absolute bottom-2 right-12 w-6 h-4 bg-accent border-2 border-foreground transform -rotate-30"></div>
-          <div className="absolute top-0 right-4 w-7 h-7 bg-primary border-3 border-foreground transform rotate-45"></div>
+          {/* Shapes that spill outside bounds */}
+          <div className="absolute -top-3 left-8 w-12 h-16 bg-accent border-3 border-foreground transform -skew-y-45"></div>
+          <div className="absolute top-2 left-24 w-8 h-8 bg-primary border-2 border-foreground transform rotate-45"></div>
+          <div className="absolute -bottom-2 left-40 w-16 h-6 bg-destructive border-2 border-foreground transform skew-x-45"></div>
+          <div className="absolute top-1 right-32 w-6 h-24 bg-secondary border-2 border-foreground transform rotate-30"></div>
+          <div className="absolute -bottom-4 right-16 w-10 h-10 bg-accent border-3 border-foreground transform -rotate-30"></div>
+          <div className="absolute -top-2 right-4 w-14 h-14 bg-primary border-4 border-foreground transform rotate-45"></div>
+          <div className="absolute top-6 left-64 w-4 h-12 bg-secondary border-2 border-foreground transform -skew-x-30"></div>
         </div>
       </div>
 
@@ -327,11 +329,14 @@ function HomePage() {
           <div className="absolute inset-0">
             <div className="h-full w-full bg-foreground/20 transform skew-x-12"></div>
           </div>
-          <div className="absolute top-3 left-12 w-12 h-3 bg-secondary border-2 border-foreground"></div>
-          <div className="absolute bottom-3 right-20 w-6 h-6 bg-primary border-3 border-foreground transform rotate-12"></div>
-          <div className="absolute top-5 right-8 w-8 h-8 bg-destructive border-2 border-foreground transform -rotate-45"></div>
-          <div className="absolute bottom-2 left-32 w-4 h-8 bg-accent border-2 border-foreground transform skew-y-12"></div>
-          <div className="absolute top-1 left-48 w-10 h-2 bg-secondary border-2 border-foreground"></div>
+          {/* Dynamic shapes with spillover */}
+          <div className="absolute -top-4 left-16 w-20 h-8 bg-secondary border-3 border-foreground transform -skew-x-12"></div>
+          <div className="absolute top-3 right-24 w-12 h-12 bg-primary border-4 border-foreground transform rotate-12"></div>
+          <div className="absolute -bottom-3 right-8 w-16 h-16 bg-destructive border-3 border-foreground transform -rotate-45"></div>
+          <div className="absolute top-1 left-48 w-6 h-18 bg-accent border-2 border-foreground transform skew-y-12"></div>
+          <div className="absolute -top-1 left-72 w-18 h-4 bg-secondary border-2 border-foreground transform rotate-60"></div>
+          <div className="absolute bottom-2 left-96 w-8 h-10 bg-primary border-2 border-foreground transform -skew-y-30"></div>
+          <div className="absolute -bottom-2 right-40 w-5 h-14 bg-accent border-2 border-foreground transform rotate-75"></div>
         </div>
       </div>
 
@@ -370,14 +375,18 @@ function HomePage() {
 
       {/* Brutalist Separator */}
       <div className="relative overflow-hidden">
-        <div className="h-24 bg-gradient-to-r from-primary via-accent to-secondary relative">
+        <div className="h-20 bg-gradient-to-r from-primary via-accent to-secondary relative">
           <div className="absolute inset-0 bg-foreground/10">
             <div className="h-full w-full bg-gradient-to-r from-transparent via-background/20 to-transparent transform -skew-y-1"></div>
           </div>
-          <div className="absolute top-4 left-8 w-8 h-8 bg-destructive border-4 border-foreground transform rotate-45"></div>
-          <div className="absolute bottom-4 right-16 w-6 h-6 bg-accent border-2 border-foreground"></div>
-          <div className="absolute top-6 right-32 w-4 h-4 bg-primary border-2 border-foreground transform rotate-45"></div>
-          <div className="absolute bottom-6 left-24 w-10 h-4 bg-secondary border-2 border-foreground transform -skew-x-12"></div>
+          {/* Explosive shape arrangement */}
+          <div className="absolute -top-6 left-12 w-16 h-16 bg-destructive border-4 border-foreground transform rotate-45"></div>
+          <div className="absolute top-4 right-20 w-10 h-12 bg-accent border-3 border-foreground transform -skew-x-45"></div>
+          <div className="absolute -bottom-4 right-40 w-8 h-8 bg-primary border-2 border-foreground transform rotate-45"></div>
+          <div className="absolute top-1 left-32 w-22 h-6 bg-secondary border-2 border-foreground transform -skew-x-12"></div>
+          <div className="absolute -top-2 left-64 w-6 h-18 bg-destructive border-2 border-foreground transform rotate-30"></div>
+          <div className="absolute bottom-1 right-8 w-12 h-4 bg-accent border-2 border-foreground transform skew-y-45"></div>
+          <div className="absolute -bottom-3 left-80 w-14 h-10 bg-primary border-3 border-foreground transform -rotate-60"></div>
         </div>
       </div>
 
