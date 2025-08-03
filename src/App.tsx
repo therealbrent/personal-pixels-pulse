@@ -99,7 +99,7 @@ function HomePage() {
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 text-foreground tracking-tight">
             <span className="relative inline-block">
               AI-FIRST
-              <div className="absolute bottom-2 left-0 w-full h-6 bg-pink-500/80 -z-10 transform -skew-x-12"></div>
+              <div className="absolute bottom-0 left-0 w-full h-8 bg-pink-500/70 -z-10 transform -skew-x-6"></div>
             </span>
             {" "}MARKETING
             <span className="block text-primary">LEADER</span>
