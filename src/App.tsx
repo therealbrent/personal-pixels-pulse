@@ -24,6 +24,9 @@ function CaseStudyCard({ title, tag, client, description, details, contributions
             <span className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground">
               {tag}
             </span>
+            <div className="text-center">
+              <p className="text-sm text-muted-foreground font-medium">{client}</p>
+            </div>
           </div>
         </div>
       </DialogTrigger>
