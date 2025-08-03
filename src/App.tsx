@@ -184,7 +184,7 @@ function HomePage() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4">Writing</h3>
-              <p className="text-muted-foreground mb-4">Insights and musings on AI, marketing & content strategy, and user experience.</p>
+              <p className="text-muted-foreground mb-4">Insights and musings on artificial intelligence, marketing & content strategy, and user experience.</p>
               <button onClick={() => scrollToSection('writing')} className="w-full bg-secondary text-secondary-foreground font-semibold py-2 px-4 hover:opacity-90 transition-opacity">
                 Read Articles →
               </button>
