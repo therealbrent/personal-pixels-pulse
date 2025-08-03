@@ -179,7 +179,7 @@ function HomePage() {
                 <h3 className="text-2xl font-bold">Core Skills</h3>
               </div>
               <div className="flex flex-wrap gap-3">
-                {["AI Platform Strategy", "Account-Based Marketing", "Content Strategy", "Demand Generation", "Digital Marketing", "People Management", "Performance Management", "Project Management", "Program Management", "Responsible AI Adoption", "UX Strategy"].map((skill, index) => (
+                {["Strategic Marketing Leadership", "Operational Excellence & Scaling", "Human-Centered Technology Strategy"].map((skill, index) => (
                   <span key={index} className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground">
                     {skill}
                   </span>
