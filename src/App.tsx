@@ -77,7 +77,7 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background border-b-4 border-foreground">
+      <nav className="sticky top-0 z-50 bg-background border-b-4 border-foreground" role="navigation" aria-label="Main navigation">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="text-xl font-bold text-primary">BRENT SUMMERS</div>
@@ -94,7 +94,7 @@ function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10 px-4">
+      <header id="home" className="min-h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10 px-4">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 text-foreground tracking-tight">
             <span className="relative inline-block">
@@ -140,9 +140,10 @@ function HomePage() {
             <path d="M16.293 9.293L12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z" />
           </svg>
         </button>
-      </section>
+      </header>
 
       {/* Work Section */}
+      <main>
       <section id="work" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -542,6 +543,8 @@ function HomePage() {
         </div>
       </section>
 
+      </main>
+      
       {/* Footer */}
       <footer className="bg-foreground text-background py-12">
         <div className="container mx-auto px-4 text-center">
