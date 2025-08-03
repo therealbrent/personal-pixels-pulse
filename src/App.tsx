@@ -306,6 +306,20 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Brutalist Separator - Diagonal Pattern */}
+      <div className="relative overflow-hidden">
+        <div className="h-20 bg-gradient-to-l from-destructive via-primary to-accent relative">
+          <div className="absolute inset-0">
+            <div className="h-full w-full bg-foreground/20 transform skew-x-12"></div>
+          </div>
+          <div className="absolute top-3 left-12 w-12 h-3 bg-secondary border-2 border-foreground"></div>
+          <div className="absolute bottom-3 right-20 w-6 h-6 bg-primary border-3 border-foreground transform rotate-12"></div>
+          <div className="absolute top-5 right-8 w-8 h-8 bg-destructive border-2 border-foreground transform -rotate-45"></div>
+          <div className="absolute bottom-2 left-32 w-4 h-8 bg-accent border-2 border-foreground transform skew-y-12"></div>
+          <div className="absolute top-1 left-48 w-10 h-2 bg-secondary border-2 border-foreground"></div>
+        </div>
+      </div>
+
       {/* Writing Section */}
       <section id="writing" className="py-16">
         <div className="container mx-auto px-4">
