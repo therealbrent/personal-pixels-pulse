@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './components/ui/dialog';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './components/ui/carousel';
 import LLMSTextPage from './components/LLMSTextPage';
 
 interface CaseStudyCardProps {
@@ -85,7 +86,7 @@ function HomePage() {
               <button onClick={() => scrollToSection('home')} className="font-semibold hover:text-accent transition-colors">Home</button>
               <button onClick={() => scrollToSection('work')} className="font-semibold hover:text-accent transition-colors">What I Do</button>
               <button onClick={() => scrollToSection('about')} className="font-semibold hover:text-accent transition-colors">About</button>
-              <button onClick={() => scrollToSection('writing')} className="font-semibold hover:text-accent transition-colors">Writing</button>
+              <button onClick={() => scrollToSection('writing')} className="font-semibold hover:text-accent transition-colors">Thought Leadership</button>
               <button onClick={() => scrollToSection('case-studies')} className="font-semibold hover:text-accent transition-colors">Case Studies</button>
               <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="bg-background text-foreground border-4 border-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity inline-block">LLMS.txt</a>
             </div>
@@ -168,10 +169,10 @@ function HomePage() {
                   <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Writing</h3>
+              <h3 className="text-2xl font-bold mb-4">Thought Leadership</h3>
               <p className="text-muted-foreground mb-4">Insights and musings on artificial intelligence, marketing & content strategy, and user experience.</p>
               <button onClick={() => scrollToSection('writing')} className="w-full bg-secondary text-secondary-foreground font-semibold py-2 px-4 hover:opacity-90 transition-opacity">
-                Read Articles →
+                View Content →
               </button>
             </div>
           </div>
@@ -329,35 +330,99 @@ function HomePage() {
         </div>
       </div>
 
-      {/* Writing Section */}
+      {/* Thought Leadership Section */}
       <section id="writing" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">WRITING</h2>
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">THOUGHT LEADERSHIP</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Insights and perspectives on AI, marketing & content strategy, and User Experience. From my contributions around the web.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onClick={() => window.open('https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers', '_blank')}>
-              <span className="inline-flex bg-primary text-primary-foreground px-3 py-1 text-sm font-semibold mb-4">AI Strategy</span>
-              <h3 className="text-xl font-bold mb-3">Why Qualcomm's Playbook For AI Starts With Intention—And Ends With A Human</h3>
-              <p className="text-muted-foreground mb-4">From brand voice guardrails to security-first agent design, my approach offers a blueprint for automating AI tasks with intention in marketing organizations.</p>
-              <span className="text-primary font-semibold">Read more →</span>
-            </article>
+          {/* Written Content */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold mb-8 text-center text-foreground">Written Content</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onClick={() => window.open('https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers', '_blank')}>
+                <span className="inline-flex bg-primary text-primary-foreground px-3 py-1 text-sm font-semibold mb-4">AI Strategy</span>
+                <h3 className="text-xl font-bold mb-3">Why Qualcomm's Playbook For AI Starts With Intention—And Ends With A Human</h3>
+                <p className="text-muted-foreground mb-4">From brand voice guardrails to security-first agent design, my approach offers a blueprint for automating AI tasks with intention in marketing organizations.</p>
+                <span className="text-primary font-semibold">Read more →</span>
+              </article>
 
-            <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onClick={() => window.open('https://contentstrategy.substack.com/p/my-favorite-content-strategy-frameworks', '_blank')}>
-              <span className="inline-flex bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold mb-4">Content Strategy</span>
-              <h3 className="text-xl font-bold mb-3">My Favorite Content Strategy Frameworks for Website Projects</h3>
-              <p className="text-muted-foreground mb-4">Clarify goals, make editorial decisions, and set priorities with these simple frameworks.</p>
-              <span className="text-primary font-semibold">Read more →</span>
-            </article>
+              <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onClick={() => window.open('https://contentstrategy.substack.com/p/my-favorite-content-strategy-frameworks', '_blank')}>
+                <span className="inline-flex bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold mb-4">Content Strategy</span>
+                <h3 className="text-xl font-bold mb-3">My Favorite Content Strategy Frameworks for Website Projects</h3>
+                <p className="text-muted-foreground mb-4">Clarify goals, make editorial decisions, and set priorities with these simple frameworks.</p>
+                <span className="text-primary font-semibold">Read more →</span>
+              </article>
 
-            <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onClick={() => window.open('https://blinkux.com/ideas/evidence-driven-design-supports-innovation', '_blank')}>
-              <span className="inline-flex bg-secondary text-secondary-foreground px-3 py-1 text-sm font-semibold mb-4">Innovation</span>
-              <h3 className="text-xl font-bold mb-3">How Evidence-driven Design Supports Innovation</h3>
-              <p className="text-muted-foreground mb-4">I led marketing at Blink UX for three years. This is a story they explains the design philosophy used to create products for NASA, Amazon, Microsoft, and other notable clients.</p>
-              <span className="text-primary font-semibold">Read more →</span>
-            </article>
+              <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onClick={() => window.open('https://blinkux.com/ideas/evidence-driven-design-supports-innovation', '_blank')}>
+                <span className="inline-flex bg-secondary text-secondary-foreground px-3 py-1 text-sm font-semibold mb-4">Innovation</span>
+                <h3 className="text-xl font-bold mb-3">How Evidence-driven Design Supports Innovation</h3>
+                <p className="text-muted-foreground mb-4">I led marketing at Blink UX for three years. This is a story they explains the design philosophy used to create products for NASA, Amazon, Microsoft, and other notable clients.</p>
+                <span className="text-primary font-semibold">Read more →</span>
+              </article>
+            </div>
+          </div>
+
+          {/* Video Content */}
+          <div>
+            <h3 className="text-3xl font-bold mb-8 text-center text-foreground">Speaking Engagements</h3>
+            <div className="max-w-4xl mx-auto">
+              <Carousel className="w-full">
+                <CarouselContent>
+                  <CarouselItem className="md:basis-1/1">
+                    <div className="border-4 border-foreground bg-card p-6">
+                      <div className="aspect-video mb-4">
+                        <iframe
+                          src="https://slideslive.com/embed/presentation/38925088"
+                          className="w-full h-full border-2 border-foreground"
+                          allowFullScreen
+                          title="Balancing Quantitative and Qualitative Perspectives in UX Strategy"
+                        />
+                      </div>
+                      <span className="inline-flex bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold mb-3">Convey UX, 2020</span>
+                      <h4 className="text-xl font-bold mb-2">Balancing Quantitative and Qualitative Perspectives in UX Strategy</h4>
+                      <p className="text-muted-foreground">A deep dive into how marketing leaders can balance data-driven insights with user-centered design principles.</p>
+                    </div>
+                  </CarouselItem>
+                  
+                  <CarouselItem className="md:basis-1/1">
+                    <div className="border-4 border-foreground bg-card p-6">
+                      <div className="aspect-video mb-4">
+                        <iframe
+                          src="https://www.youtube.com/embed/lzImt47DHiY?start=7420"
+                          className="w-full h-full border-2 border-foreground"
+                          allowFullScreen
+                          title="Five Tips for Avoiding Generative AI Buyer's Remorse"
+                        />
+                      </div>
+                      <span className="inline-flex bg-primary text-primary-foreground px-3 py-1 text-sm font-semibold mb-3">AI x Marketing Summit, 2025</span>
+                      <h4 className="text-xl font-bold mb-2">Five Tips for Avoiding Generative AI Buyer's Remorse</h4>
+                      <p className="text-muted-foreground">Practical guidance for marketing leaders to make smart AI platform investments and avoid common pitfalls.</p>
+                    </div>
+                  </CarouselItem>
+                  
+                  <CarouselItem className="md:basis-1/1">
+                    <div className="border-4 border-foreground bg-card p-6">
+                      <div className="aspect-video mb-4">
+                        <iframe
+                          src="https://www.youtube.com/embed/eEbuoK5DS30"
+                          className="w-full h-full border-2 border-foreground"
+                          allowFullScreen
+                          title="Beyond buzzwords: Real AI, real marketing, real results"
+                        />
+                      </div>
+                      <span className="inline-flex bg-destructive text-destructive-foreground px-3 py-1 text-sm font-semibold mb-3">Webit, 2025</span>
+                      <h4 className="text-xl font-bold mb-2">Beyond buzzwords: Real AI, real marketing, real results</h4>
+                      <p className="text-muted-foreground">Moving past AI hype to deliver tangible business results through thoughtful implementation and strategy.</p>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
           </div>
         </div>
       </section>
