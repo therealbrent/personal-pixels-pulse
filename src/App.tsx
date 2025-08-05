@@ -375,9 +375,10 @@ function HomePage() {
                     <div className="border-4 border-foreground bg-card p-6">
                       <div className="aspect-video mb-4">
                         <iframe
-                          src="https://slideslive.com/embed/presentation/38925088"
+                          src="https://slideslive.com/embed/presentation/38925088?embed_parent_url=https%3A%2F%2Fslideslive.com&embed_container_origin=https%3A%2F%2Fslideslive.com"
                           className="w-full h-full border-2 border-foreground"
                           allowFullScreen
+                          frameBorder="0"
                           title="Balancing Quantitative and Qualitative Perspectives in UX Strategy"
                         />
                       </div>
@@ -391,9 +392,12 @@ function HomePage() {
                     <div className="border-4 border-foreground bg-card p-6">
                       <div className="aspect-video mb-4">
                         <iframe
-                          src="https://www.youtube.com/embed/lzImt47DHiY?start=7420"
+                          src="https://www.youtube.com/embed/lzImt47DHiY?si=dQw4w9WgXcQ&start=7420"
                           className="w-full h-full border-2 border-foreground"
                           allowFullScreen
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
                           title="Five Tips for Avoiding Generative AI Buyer's Remorse"
                         />
                       </div>
@@ -407,9 +411,12 @@ function HomePage() {
                     <div className="border-4 border-foreground bg-card p-6">
                       <div className="aspect-video mb-4">
                         <iframe
-                          src="https://www.youtube.com/embed/eEbuoK5DS30"
+                          src="https://www.youtube.com/embed/eEbuoK5DS30?si=dQw4w9WgXcQ"
                           className="w-full h-full border-2 border-foreground"
                           allowFullScreen
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
                           title="Beyond buzzwords: Real AI, real marketing, real results"
                         />
                       </div>
