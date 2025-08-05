@@ -31,10 +31,10 @@ function CaseStudyCard({ title, tag, client, description, details, contributions
         </div>
       </DialogTrigger>
       
-      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto border-4 border-foreground bg-white">
+      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto border-4 border-foreground">
         <DialogHeader>
-          <DialogTitle className="flex flex-col items-center space-y-3">
-            <img src={logoSrc} alt={logoAlt} className="h-12 md:h-24 object-contain" />
+          <DialogTitle className="flex items-center justify-between">
+            <img src={logoSrc} alt={logoAlt} className="h-8 object-contain" />
             <span className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground">
               {tag}
             </span>
@@ -177,7 +177,7 @@ function HomePage() {
           </div>
 
           <div className="text-center">
-            <h3 className="text-3xl font-bold mb-8 text-foreground">Recent Highlights</h3>
+            <h3 className="text-3xl font-bold mb-8 text-foreground">Highlights</h3>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div className="bg-primary/10 p-6 border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300">
                 <span className="inline-flex bg-destructive text-destructive-foreground px-3 py-1 text-sm font-semibold mb-3">NEW</span>
