@@ -52,11 +52,13 @@ const SlotMachineCarousel = () => {
       
       if (spinCount >= maxSpins) {
         clearInterval(spinInterval);
-        // Final selection - ensure it's different from the starting item
+        // Final selection - ensure it's different from the starting item if possible
         let finalIndex = Math.floor(Math.random() * allItems.length);
-        const startingIndex = allItems.findIndex(item => item === currentItem);
-        while (finalIndex === startingIndex && allItems.length > 1) {
-          finalIndex = Math.floor(Math.random() * allItems.length);
+        if (allItems.length > 1) {
+          const startingIndex = allItems.findIndex(item => item === currentItem);
+          while (finalIndex === startingIndex) {
+            finalIndex = Math.floor(Math.random() * allItems.length);
+          }
         }
         setCurrentItem(allItems[finalIndex]);
         setIsSpinning(false);
