@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import placeholder1 from '../assets/placeholder-1.jpg';
+import placeholder2 from '../assets/placeholder-2.jpg';
+import placeholder3 from '../assets/placeholder-3.jpg';
 
 interface RSSItem {
   title: string;
@@ -15,7 +18,7 @@ const SlotMachineCarousel = () => {
   const [isSpinning, setIsSpinning] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // Mock RSS data for now - in production you'd fetch from your RSS feeds
+  // Expanded RSS data with more variety - excluding the three articles shown in WRITING cards
   const mockRSSItems: RSSItem[] = [
     {
       title: "Success is Found Through a Series of Imperfect Steps",
@@ -25,28 +28,102 @@ const SlotMachineCarousel = () => {
       source: "200 MAX"
     },
     {
-      title: "My Favorite Content Strategy Frameworks for Website Projects",
-      description: "Clarify goals, make editorial decisions, and set priorities with these simple frameworks.",
-      link: "https://contentstrategy.substack.com/p/content-strategy-frameworks",
-      source: "Content Strategy"
-    },
-    {
-      title: "How Evidence-driven Design Supports Innovation",
-      description: "Design philosophy used to create products for NASA, Amazon, Microsoft, and other notable clients.",
-      link: "https://blinkux.com/ideas/evidence-driven-design-supports-innovation",
-      source: "Content Strategy"
-    },
-    {
-      title: "The UX Flywheel: A User-Centered Alternative to Marketing Funnels",
-      description: "A revolutionary framework for understanding customer experience beyond traditional marketing approaches.",
-      link: "https://www.youtube.com/watch?v=UYApYNEnaMM",
-      source: "Content Strategy"
-    },
-    {
-      title: "AI-First Marketing: Lessons from the Frontlines",
-      description: "Real-world insights from leading AI adoption in enterprise marketing teams.",
+      title: "The Psychology of Decision Fatigue in Digital Products",
+      description: "How cognitive overload affects user behavior and what designers can do about it.",
       link: "#",
+      image: placeholder1,
+      source: "Content Strategy"
+    },
+    {
+      title: "AI Agents: The Next Frontier in Marketing Automation",
+      description: "Building intelligent systems that understand context, intent, and brand voice.",
+      link: "#",
+      image: placeholder2,
       source: "200 MAX"
+    },
+    {
+      title: "Designing for Accessibility: Beyond Compliance",
+      description: "Creating inclusive experiences that delight users across all abilities and contexts.",
+      link: "#",
+      image: placeholder3,
+      source: "Content Strategy"
+    },
+    {
+      title: "The Death of the Marketing Funnel",
+      description: "Why traditional funnel thinking fails in the age of social commerce and peer influence.",
+      link: "#",
+      image: placeholder1,
+      source: "200 MAX"
+    },
+    {
+      title: "Micro-Interactions: The Art of Digital Delight",
+      description: "Small design details that create memorable user experiences and drive engagement.",
+      link: "#",
+      image: placeholder2,
+      source: "Content Strategy"
+    },
+    {
+      title: "Content Strategy for Voice Interfaces",
+      description: "Adapting editorial thinking for conversational AI and smart speaker experiences.",
+      link: "#",
+      image: placeholder3,
+      source: "Content Strategy"
+    },
+    {
+      title: "Building Trust in AI-Generated Content",
+      description: "Strategies for maintaining authenticity while leveraging generative AI at scale.",
+      link: "#",
+      image: placeholder1,
+      source: "200 MAX"
+    },
+    {
+      title: "The Rise of Ambient Computing",
+      description: "How invisible technology is reshaping our relationship with digital interfaces.",
+      link: "#",
+      image: placeholder2,
+      source: "200 MAX"
+    },
+    {
+      title: "Emotional Design in Enterprise Software",
+      description: "Why B2B doesn't have to be boring: bringing joy to workplace tools.",
+      link: "#",
+      image: placeholder3,
+      source: "Content Strategy"
+    },
+    {
+      title: "Data Storytelling for Non-Data People",
+      description: "Making analytics accessible and actionable for creative and marketing teams.",
+      link: "#",
+      image: placeholder1,
+      source: "Content Strategy"
+    },
+    {
+      title: "The Future of Personalization",
+      description: "Moving beyond demographic targeting to behavioral and contextual intelligence.",
+      link: "#",
+      image: placeholder2,
+      source: "200 MAX"
+    },
+    {
+      title: "Design Systems at Scale",
+      description: "Lessons from building and maintaining consistent experiences across enterprise teams.",
+      link: "#",
+      image: placeholder3,
+      source: "Content Strategy"
+    },
+    {
+      title: "The ROI of Good Writing",
+      description: "Quantifying the business impact of clear, compelling, and strategic communication.",
+      link: "#",
+      image: placeholder1,
+      source: "200 MAX"
+    },
+    {
+      title: "Cognitive Load Theory in UX Design",
+      description: "Using psychology principles to create more intuitive and learnable interfaces.",
+      link: "#",
+      image: placeholder2,
+      source: "Content Strategy"
     }
   ];
 
@@ -139,19 +216,17 @@ const SlotMachineCarousel = () => {
                   </span>
                 </div>
 
-                {/* Featured Image */}
-                {currentItem.image && (
-                  <div className="mb-4 border-2 border-foreground overflow-hidden">
-                    <img 
-                      src={currentItem.image} 
-                      alt="" 
-                      className="w-full h-32 object-cover"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
-                  </div>
-                )}
+                {/* Featured Image - Always show with consistent height */}
+                <div className="mb-4 border-2 border-foreground overflow-hidden h-32">
+                  <img 
+                    src={currentItem.image || placeholder1} 
+                    alt="" 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = placeholder1;
+                    }}
+                  />
+                </div>
 
                 {/* Title */}
                 <h4 className="text-xl font-bold mb-3 text-foreground leading-tight">
