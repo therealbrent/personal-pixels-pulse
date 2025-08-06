@@ -108,7 +108,7 @@ export const rssContent: RSSItem[] = [
     pubDate: "2025-01-01T16:49:30Z"
   },
   
-  // From Content Strategy (Substack) - REAL CONTENT ONLY  
+  // From Content Strategy (Substack) - ALL ARTICLES
   {
     title: "Content Strategy Puts Your Writing in Focus",
     description: "Content strategy is everything you do before beginning to write. It's your brief, your outline, your style guide, or anything else you use to plan content.",
@@ -116,6 +116,66 @@ export const rssContent: RSSItem[] = [
     image: "https://substackcdn.com/image/fetch/w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F3a391ff2-d257-4c62-8999-042fc0b6878b_800x419.gif",
     source: "Content Strategy",
     pubDate: "2020-07-12T13:36:59Z"
+  },
+  {
+    title: "Content Strategy for a Better PPC Landing Page",
+    description: "Welcome to the ninth edition of Full Stack Content - lessons and opportunities of content strategy found in the wild.",
+    link: "https://contentstrategy.substack.com/p/content-strategy-for-a-better-ppc",
+    image: "https://substackcdn.com/image/fetch/w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fcf07f6d5-8fb7-4eda-b5cd-ac80e1c2258e_1200x628.png",
+    source: "Content Strategy",
+    pubDate: "2020-06-28T13:13:36Z"
+  },
+  {
+    title: "Contrary to Popular Belief, Headlines Should S.C.R.E.A.M.",
+    description: "Headlines are some of the most important business writing you'll ever do. Learn the SCREAM framework for writing better headlines.",
+    link: "https://contentstrategy.substack.com/p/contrary-to-popular-belief-headlines",
+    image: "https://substackcdn.com/image/fetch/w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fd74e8a26-2ad6-43c3-9af6-24a6e08e9882_600x450.gif",
+    source: "Content Strategy",
+    pubDate: "2020-06-21T13:12:18Z"
+  },
+  {
+    title: "It's Not Strategy Without Metrics",
+    description: "How can I increase my influence at work? Focus on outcomes over outputs and understand how success will be measured.",
+    link: "https://contentstrategy.substack.com/p/its-not-strategy-without-metrics",
+    image: "https://substackcdn.com/image/fetch/w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F6bf82f1d-f849-48fe-bcd1-a71138c0647a_1200x628.png",
+    source: "Content Strategy",
+    pubDate: "2020-06-14T13:13:15Z"
+  },
+  {
+    title: "Frameworks and Free Tools to Improve Your UX Writing",
+    description: "Welcome to the sixth edition of Full Stack Content. Learn science-backed frameworks to write better copy and improve user experience.",
+    link: "https://contentstrategy.substack.com/p/frameworks-and-free-tools-to-improve",
+    image: "https://substackcdn.com/image/fetch/w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F2a6c6782-c0f9-418b-ac6c-5296bdaf1538_1920x1080.png",
+    source: "Content Strategy",
+    pubDate: "2020-06-07T12:13:50Z"
+  },
+  {
+    title: "Celebrating Black Art: The Weary Blues",
+    description: "Welcome to the fifth installment of Full Stack Content celebrating Black art and creativity.",
+    link: "https://contentstrategy.substack.com/p/celebrating-black-art-the-weary-blues",
+    source: "Content Strategy",
+    pubDate: "2020-05-31T12:12:51Z"
+  },
+  {
+    title: "Examining the Structure of Persuasive Content",
+    description: "Learn the psychological principles and frameworks that make content more persuasive and engaging.",
+    link: "https://contentstrategy.substack.com/p/examining-the-structure-of-persuasive",
+    source: "Content Strategy",
+    pubDate: "2020-05-24T13:40:48Z"
+  },
+  {
+    title: "My Favorite Content Strategy Frameworks for Website Projects",
+    description: "Clarify goals, make editorial decisions, and set priorities with these simple frameworks.",
+    link: "https://contentstrategy.substack.com/p/my-favorite-content-strategy-frameworks",
+    source: "Content Strategy",
+    pubDate: "2020-05-17T13:36:59Z"
+  },
+  {
+    title: "Answered: What is Your Content Strategy?",
+    description: "A strategic approach to content planning that focuses on user needs and business goals.",
+    link: "https://contentstrategy.substack.com/p/answered-what-is-your-content-strategy",
+    source: "Content Strategy",
+    pubDate: "2020-05-10T13:36:59Z"
   }
 ];
 
