@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { getRSSContent } from '../utils/rssParser';
 import placeholder1 from '../assets/placeholder-1.jpg';
 import placeholder2 from '../assets/placeholder-2.jpg';
 import placeholder3 from '../assets/placeholder-3.jpg';
@@ -17,121 +18,20 @@ const SlotMachineCarousel = () => {
   const [allItems, setAllItems] = useState<RSSItem[]>([]);
   const [isSpinning, setIsSpinning] = useState(false);
   const [loading, setLoading] = useState(true);
-
-  // Expanded RSS data with more variety - excluding the three articles shown in WRITING cards
-  const mockRSSItems: RSSItem[] = [
-    {
-      title: "Success is Found Through a Series of Imperfect Steps",
-      description: "Musing on the idea of dreaming vs doing",
-      link: "https://www.in200max.com/p/finding-success",
-      image: "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/8ef7bfa3-1051-4223-998b-312f706000a6/Dreamers_vs_Doers.png",
-      source: "200 MAX"
-    },
-    {
-      title: "The Psychology of Decision Fatigue in Digital Products",
-      description: "How cognitive overload affects user behavior and what designers can do about it.",
-      link: "#",
-      image: placeholder1,
-      source: "Content Strategy"
-    },
-    {
-      title: "AI Agents: The Next Frontier in Marketing Automation",
-      description: "Building intelligent systems that understand context, intent, and brand voice.",
-      link: "#",
-      image: placeholder2,
-      source: "200 MAX"
-    },
-    {
-      title: "Designing for Accessibility: Beyond Compliance",
-      description: "Creating inclusive experiences that delight users across all abilities and contexts.",
-      link: "#",
-      image: placeholder3,
-      source: "Content Strategy"
-    },
-    {
-      title: "The Death of the Marketing Funnel",
-      description: "Why traditional funnel thinking fails in the age of social commerce and peer influence.",
-      link: "#",
-      image: placeholder1,
-      source: "200 MAX"
-    },
-    {
-      title: "Micro-Interactions: The Art of Digital Delight",
-      description: "Small design details that create memorable user experiences and drive engagement.",
-      link: "#",
-      image: placeholder2,
-      source: "Content Strategy"
-    },
-    {
-      title: "Content Strategy for Voice Interfaces",
-      description: "Adapting editorial thinking for conversational AI and smart speaker experiences.",
-      link: "#",
-      image: placeholder3,
-      source: "Content Strategy"
-    },
-    {
-      title: "Building Trust in AI-Generated Content",
-      description: "Strategies for maintaining authenticity while leveraging generative AI at scale.",
-      link: "#",
-      image: placeholder1,
-      source: "200 MAX"
-    },
-    {
-      title: "The Rise of Ambient Computing",
-      description: "How invisible technology is reshaping our relationship with digital interfaces.",
-      link: "#",
-      image: placeholder2,
-      source: "200 MAX"
-    },
-    {
-      title: "Emotional Design in Enterprise Software",
-      description: "Why B2B doesn't have to be boring: bringing joy to workplace tools.",
-      link: "#",
-      image: placeholder3,
-      source: "Content Strategy"
-    },
-    {
-      title: "Data Storytelling for Non-Data People",
-      description: "Making analytics accessible and actionable for creative and marketing teams.",
-      link: "#",
-      image: placeholder1,
-      source: "Content Strategy"
-    },
-    {
-      title: "The Future of Personalization",
-      description: "Moving beyond demographic targeting to behavioral and contextual intelligence.",
-      link: "#",
-      image: placeholder2,
-      source: "200 MAX"
-    },
-    {
-      title: "Design Systems at Scale",
-      description: "Lessons from building and maintaining consistent experiences across enterprise teams.",
-      link: "#",
-      image: placeholder3,
-      source: "Content Strategy"
-    },
-    {
-      title: "The ROI of Good Writing",
-      description: "Quantifying the business impact of clear, compelling, and strategic communication.",
-      link: "#",
-      image: placeholder1,
-      source: "200 MAX"
-    },
-    {
-      title: "Cognitive Load Theory in UX Design",
-      description: "Using psychology principles to create more intuitive and learnable interfaces.",
-      link: "#",
-      image: placeholder2,
-      source: "Content Strategy"
-    }
-  ];
+  const placeholders = [placeholder1, placeholder2, placeholder3];
 
   useEffect(() => {
-    // Simulate loading RSS feeds
+    // Load RSS content from your actual feeds
     setTimeout(() => {
-      setAllItems(mockRSSItems);
-      setCurrentItem(mockRSSItems[0]);
+      const rssItems = getRSSContent();
+      // Add placeholder images to items that don't have them
+      const itemsWithPlaceholders = rssItems.map((item, index) => ({
+        ...item,
+        image: item.image || placeholders[index % placeholders.length]
+      }));
+      
+      setAllItems(itemsWithPlaceholders);
+      setCurrentItem(itemsWithPlaceholders[0]);
       setLoading(false);
     }, 1000);
   }, []);
