@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './components/ui/dialog';
 import LLMSTextPage from './components/LLMSTextPage';
+import SlotMachineCarousel from './components/SlotMachineCarousel';
 
 interface CaseStudyCardProps {
   title: string;
@@ -358,6 +359,11 @@ function HomePage() {
               <p className="text-muted-foreground mb-4">I led marketing at Blink UX for three years. This is a story they explains the design philosophy used to create products for NASA, Amazon, Microsoft, and other notable clients.</p>
               <span className="text-primary font-semibold">Read more →</span>
             </article>
+          </div>
+          
+          {/* Slot Machine Carousel */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <SlotMachineCarousel />
           </div>
         </div>
       </section>
