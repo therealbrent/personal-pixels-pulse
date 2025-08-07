@@ -14,9 +14,9 @@ interface RSSItem {
 }
 
 const SlotMachineCarousel = () => {
-  const [currentItem, setCurrentItem] = useState<RSSItem | null>(null);
+  const [reels, setReels] = useState<[RSSItem | null, RSSItem | null, RSSItem | null]>([null, null, null]);
   const [allItems, setAllItems] = useState<RSSItem[]>([]);
-  const [isSpinning, setIsSpinning] = useState(false);
+  const [isSpinning, setIsSpinning] = useState([false, false, false]);
   const [loading, setLoading] = useState(true);
   const placeholders = [placeholder1, placeholder2, placeholder3];
 
@@ -31,39 +31,124 @@ const SlotMachineCarousel = () => {
       }));
       
       setAllItems(itemsWithPlaceholders);
-      setCurrentItem(itemsWithPlaceholders[0]);
+      // Initialize all reels with random items
+      const initialReels: [RSSItem, RSSItem, RSSItem] = [
+        itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)],
+        itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)],
+        itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)]
+      ];
+      setReels(initialReels);
       setLoading(false);
     }, 1000);
   }, []);
 
+  const getRandomItem = () => {
+    if (allItems.length === 0) return null;
+    return allItems[Math.floor(Math.random() * allItems.length)];
+  };
+
   const handleSpin = () => {
-    if (isSpinning || allItems.length === 0) return;
+    if (isSpinning.some(spinning => spinning) || allItems.length === 0) return;
     
-    setIsSpinning(true);
+    // Start all reels spinning
+    setIsSpinning([true, true, true]);
     
-    // Create spinning effect with multiple rapid changes
-    let spinCount = 0;
-    const maxSpins = 8 + Math.floor(Math.random() * 5); // 8-12 spins
-    
-    const spinInterval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * allItems.length);
-      setCurrentItem(allItems[randomIndex]);
-      spinCount++;
-      
-      if (spinCount >= maxSpins) {
-        clearInterval(spinInterval);
-        // Final selection - ensure it's different from the starting item if possible
-        let finalIndex = Math.floor(Math.random() * allItems.length);
-        if (allItems.length > 1) {
-          const startingIndex = allItems.findIndex(item => item === currentItem);
-          while (finalIndex === startingIndex) {
-            finalIndex = Math.floor(Math.random() * allItems.length);
-          }
+    // Spin each reel rapidly
+    const spinIntervals = [0, 1, 2].map((reelIndex) => {
+      return setInterval(() => {
+        const randomItem = getRandomItem();
+        if (randomItem) {
+          setReels(prev => {
+            const newReels: [RSSItem | null, RSSItem | null, RSSItem | null] = [...prev];
+            newReels[reelIndex] = randomItem;
+            return newReels;
+          });
         }
-        setCurrentItem(allItems[finalIndex]);
-        setIsSpinning(false);
+      }, 100); // Fast spinning
+    });
+
+    // Stop reels one by one from left to right
+    setTimeout(() => {
+      // Stop first reel
+      clearInterval(spinIntervals[0]);
+      setIsSpinning(prev => [false, prev[1], prev[2]]);
+      // Set final item for first reel
+      const finalItem1 = getRandomItem();
+      if (finalItem1) {
+        setReels(prev => [finalItem1, prev[1], prev[2]]);
       }
-    }, 150); // Fast spinning
+    }, 1500); // Stop after 1.5 seconds
+
+    setTimeout(() => {
+      // Stop second reel
+      clearInterval(spinIntervals[1]);
+      setIsSpinning(prev => [prev[0], false, prev[2]]);
+      // Set final item for second reel
+      const finalItem2 = getRandomItem();
+      if (finalItem2) {
+        setReels(prev => [prev[0], finalItem2, prev[2]]);
+      }
+    }, 2500); // Stop after 2.5 seconds
+
+    setTimeout(() => {
+      // Stop third reel
+      clearInterval(spinIntervals[2]);
+      setIsSpinning(prev => [prev[0], prev[1], false]);
+      // Set final item for third reel
+      const finalItem3 = getRandomItem();
+      if (finalItem3) {
+        setReels(prev => [prev[0], prev[1], finalItem3]);
+      }
+    }, 3500); // Stop after 3.5 seconds
+  };
+
+  const ReelContent = ({ item, isSpinning: spinning }: { item: RSSItem | null, isSpinning: boolean }) => {
+    if (!item) return null;
+
+    return (
+      <div className={`h-full transition-all duration-200 ${spinning ? 'blur-sm scale-95' : 'blur-0 scale-100'}`}>
+        {/* Source Badge */}
+        <div className="mb-3">
+          <span className={`inline-flex px-2 py-1 text-xs font-bold border-2 border-foreground ${
+            item.source === '200 MAX' 
+              ? 'bg-destructive text-destructive-foreground' 
+              : 'bg-secondary text-secondary-foreground'
+          }`}>
+            {item.source}
+          </span>
+        </div>
+
+        {/* Featured Image - 16:9 aspect ratio */}
+        <div className="mb-3 border-2 border-foreground overflow-hidden aspect-video">
+          <img 
+            src={item.image || placeholder1} 
+            alt="" 
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              e.currentTarget.src = placeholder1;
+            }}
+          />
+        </div>
+
+        {/* Title */}
+        <h4 className="text-sm font-bold mb-2 text-foreground leading-tight line-clamp-2">
+          {item.title}
+        </h4>
+
+        {/* Description */}
+        <p className="text-xs text-muted-foreground mb-3 leading-relaxed line-clamp-3">
+          {item.description}
+        </p>
+
+        {/* Read More Link */}
+        <button 
+          onClick={() => window.open(item.link, '_blank')}
+          className="w-full bg-primary text-primary-foreground font-semibold py-2 px-3 text-xs border-2 border-foreground hover:bg-primary/90 transition-colors"
+        >
+          Read Article →
+        </button>
+      </div>
+    );
   };
 
   if (loading) {
@@ -72,7 +157,11 @@ const SlotMachineCarousel = () => {
         <div className="text-center">
           <div className="animate-pulse">
             <div className="h-8 bg-muted rounded mb-4"></div>
-            <div className="h-32 bg-muted rounded mb-4"></div>
+            <div className="grid grid-cols-3 gap-4 mb-4">
+              <div className="h-32 bg-muted rounded"></div>
+              <div className="h-32 bg-muted rounded"></div>
+              <div className="h-32 bg-muted rounded"></div>
+            </div>
             <div className="h-4 bg-muted rounded"></div>
           </div>
         </div>
@@ -92,63 +181,24 @@ const SlotMachineCarousel = () => {
         <p className="text-muted-foreground font-medium">Fresh insight from my RSS feeds.</p>
       </div>
 
-      {/* Slot Machine Window */}
+      {/* Slot Machine Window - 3 Reels */}
       <div className="relative">
         {/* Slot machine frame */}
-        <div className="bg-card border-4 border-foreground relative overflow-hidden min-h-[300px]">
-          {/* Spinning indicator overlay */}
-          {isSpinning && (
+        <div className="bg-card border-4 border-foreground relative overflow-hidden">
+          {/* Global spinning indicator overlay */}
+          {isSpinning.some(spinning => spinning) && (
             <div className="absolute inset-0 bg-accent/20 flex items-center justify-center z-10">
               <div className="text-4xl font-bold text-foreground animate-pulse">🎰</div>
             </div>
           )}
           
-          {/* Content Card */}
-          <div className={`p-6 transition-all duration-200 ${isSpinning ? 'blur-sm scale-95' : 'blur-0 scale-100'}`}>
-            {currentItem && (
-              <>
-                {/* Source Badge */}
-                <div className="mb-4">
-                  <span className={`inline-flex px-3 py-1 text-sm font-bold border-2 border-foreground ${
-                    currentItem.source === '200 MAX' 
-                      ? 'bg-destructive text-destructive-foreground' 
-                      : 'bg-secondary text-secondary-foreground'
-                  }`}>
-                    {currentItem.source}
-                  </span>
-                </div>
-
-                {/* Featured Image - Always show with consistent height */}
-                <div className="mb-4 border-2 border-foreground overflow-hidden h-32">
-                  <img 
-                    src={currentItem.image || placeholder1} 
-                    alt="" 
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = placeholder1;
-                    }}
-                  />
-                </div>
-
-                {/* Title */}
-                <h4 className="text-xl font-bold mb-3 text-foreground leading-tight">
-                  {currentItem.title}
-                </h4>
-
-                {/* Description */}
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  {currentItem.description}
-                </p>
-
-                {/* Read More Link */}
-                <button 
-                  onClick={() => window.open(currentItem.link, '_blank')}
-                  className="w-full bg-primary text-primary-foreground font-semibold py-3 px-4 border-2 border-foreground hover:bg-primary/90 transition-colors"
-                >
-                  Read Full Article →
-                </button>
-              </>
-            )}
+          {/* Three Reels Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+            {reels.map((item, index) => (
+              <div key={index} className="bg-background border-2 border-foreground p-4 min-h-[350px] flex flex-col">
+                <ReelContent item={item} isSpinning={isSpinning[index]} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -157,14 +207,14 @@ const SlotMachineCarousel = () => {
       <div className="text-center mt-6">
         <button
           onClick={handleSpin}
-          disabled={isSpinning}
+          disabled={isSpinning.some(spinning => spinning)}
           className={`font-bold py-4 px-8 border-4 border-foreground transform transition-all duration-200 ${
-            isSpinning 
+            isSpinning.some(spinning => spinning)
               ? 'bg-muted text-muted-foreground cursor-not-allowed scale-95' 
               : 'bg-accent text-accent-foreground hover:scale-105 hover:bg-accent/90'
           }`}
         >
-          {isSpinning ? '🎰 SPINNING...' : '🎰 SPIN FOR RANDOM ARTICLE'}
+          {isSpinning.some(spinning => spinning) ? '🎰 SPINNING...' : '🎰 SPIN FOR RANDOM ARTICLES'}
         </button>
       </div>
 
