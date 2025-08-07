@@ -153,7 +153,7 @@ const SlotMachineCarousel = () => {
 
   if (loading) {
     return (
-      <div className="bg-muted/20 border-4 border-foreground p-8 transform rotate-1">
+      <div className="bg-muted/20 border-4 border-foreground p-8">
         <div className="text-center">
           <div className="animate-pulse">
             <div className="h-8 bg-muted rounded mb-4"></div>
@@ -170,7 +170,7 @@ const SlotMachineCarousel = () => {
   }
 
   return (
-    <div className="bg-gradient-to-br from-primary/10 via-accent/5 to-destructive/10 border-4 border-foreground p-8 transform rotate-1 hover:rotate-0 transition-transform duration-300">
+    <div className="bg-gradient-to-br from-primary/10 via-accent/5 to-destructive/10 border-4 border-foreground p-8">
       {/* Slot Machine Header */}
       <div className="text-center mb-6">
         <div className="flex items-center justify-center gap-4 mb-4">
@@ -178,19 +178,13 @@ const SlotMachineCarousel = () => {
           <h3 className="text-2xl font-bold text-foreground tracking-wide">REALLY SIMPLY SLOT MACHINE</h3>
           <div className="w-6 h-6 bg-accent border-2 border-foreground transform -rotate-45"></div>
         </div>
-        <p className="text-muted-foreground font-medium">Fresh insight from my RSS feeds.</p>
+        <p className="text-muted-foreground font-medium">Fresh insights from my RSS feeds.</p>
       </div>
 
       {/* Slot Machine Window - 3 Reels */}
       <div className="relative">
         {/* Slot machine frame */}
         <div className="bg-card border-4 border-foreground relative overflow-hidden">
-          {/* Global spinning indicator overlay */}
-          {isSpinning.some(spinning => spinning) && (
-            <div className="absolute inset-0 bg-accent/20 flex items-center justify-center z-10">
-              <div className="text-4xl font-bold text-foreground animate-pulse">🎰</div>
-            </div>
-          )}
           
           {/* Three Reels Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
