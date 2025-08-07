@@ -86,10 +86,10 @@ const SlotMachineCarousel = () => {
       <div className="text-center mb-6">
         <div className="flex items-center justify-center gap-4 mb-4">
           <div className="w-6 h-6 bg-destructive border-2 border-foreground transform rotate-45"></div>
-          <h3 className="text-2xl font-bold text-foreground tracking-wide">WRITING ROULETTE</h3>
+          <h3 className="text-2xl font-bold text-foreground tracking-wide">REALLY SIMPLY SLOT MACHINE</h3>
           <div className="w-6 h-6 bg-accent border-2 border-foreground transform -rotate-45"></div>
         </div>
-        <p className="text-muted-foreground font-medium">Fresh insights from my content universe</p>
+        <p className="text-muted-foreground font-medium">Fresh insight from my RSS feeds.</p>
       </div>
 
       {/* Slot Machine Window */}

@@ -334,8 +334,8 @@ function HomePage() {
       <section id="writing" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">WRITING</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Insights and perspectives on AI, marketing & content strategy, and User Experience. From my contributions around the web.</p>
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">THOUGHT LEADERSHIP</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Insights and perspectives on AI, leadership, marketing, user experience, and may</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
