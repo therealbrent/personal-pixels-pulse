@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
+import ConfettiEffect from './ConfettiEffect';
 
 interface CaseStudyCardProps {
   title: string;
@@ -25,9 +26,19 @@ function AccessibleCaseStudyCard({
   cardIndex 
 }: CaseStudyCardProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  const handleOpenChange = (open: boolean) => {
+    setIsOpen(open);
+    if (open) {
+      setShowConfetti(true);
+    } else {
+      setShowConfetti(false);
+    }
+  };
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer focus:ring-2 focus:ring-focus-ring focus:ring-offset-2">
           <div className="flex flex-col items-center space-y-4">
@@ -102,6 +113,11 @@ function AccessibleCaseStudyCard({
           </section>
         </div>
       </DialogContent>
+      
+      <ConfettiEffect 
+        isActive={showConfetti} 
+        onComplete={() => setShowConfetti(false)} 
+      />
     </Dialog>
   );
 }
