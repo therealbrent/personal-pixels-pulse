@@ -27,6 +27,7 @@ function AccessibleCaseStudyCard({
 }: CaseStudyCardProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [origin, setOrigin] = useState<{ x: number; y: number } | null>(null);
 
   const handleOpenChange = (open: boolean) => {
     setIsOpen(open);
@@ -40,7 +41,13 @@ function AccessibleCaseStudyCard({
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
-        <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer focus:ring-2 focus:ring-focus-ring focus:ring-offset-2">
+        <article 
+          className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer focus:ring-2 focus:ring-focus-ring focus:ring-offset-2"
+          onClick={(e) => {
+            const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+            setOrigin({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
+          }}
+        >
           <div className="flex flex-col items-center space-y-4">
             <img 
               src={logoSrc} 
@@ -116,6 +123,7 @@ function AccessibleCaseStudyCard({
       
       <ConfettiEffect 
         isActive={showConfetti} 
+        origin={origin ?? undefined}
         onComplete={() => setShowConfetti(false)} 
       />
     </Dialog>

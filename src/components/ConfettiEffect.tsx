@@ -13,10 +13,11 @@ interface ConfettiPiece {
 
 interface ConfettiEffectProps {
   isActive: boolean;
+  origin?: { x: number; y: number };
   onComplete?: () => void;
 }
 
-function ConfettiEffect({ isActive, onComplete }: ConfettiEffectProps) {
+function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
   const [confetti, setConfetti] = useState<ConfettiPiece[]>([]);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -69,13 +70,12 @@ function ConfettiEffect({ isActive, onComplete }: ConfettiEffectProps) {
           key={piece.id}
           className={`absolute animate-confetti-complete ${piece.shape === 'triangle' ? 'confetti-triangle' : 'confetti-square'}`}
           style={{
-            left: `${piece.x}%`,
-            top: `${piece.y}%`,
+            left: origin ? `${origin.x - piece.size / 2}px` : `${piece.x}%`,
+            top: origin ? `${origin.y - piece.size / 2}px` : `${piece.y}%`,
             width: `${piece.size}px`,
             height: `${piece.size}px`,
             backgroundColor: piece.shape === 'square' ? piece.color : 'transparent',
             borderColor: piece.shape === 'triangle' ? piece.color : 'transparent',
-            transform: `rotate(${piece.rotation}deg)`,
             animationDelay: `${piece.delay}s`,
             '--random-x': Math.random() - 0.5, // Random horizontal drift
           } as React.CSSProperties & { '--random-x': number }}
