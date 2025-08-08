@@ -24,14 +24,14 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
   useEffect(() => {
     if (isActive) {
       // Generate confetti pieces
-      const pieces: ConfettiPiece[] = Array.from({ length: 18 }, (_, i) => ({
+      const pieces: ConfettiPiece[] = Array.from({ length: 28 }, (_, i) => ({
         id: i,
         x: Math.random() * 100, // Random horizontal position (%)
         y: Math.random() * 10 + 45, // Start from center area
         rotation: Math.random() * 360,
-        size: Math.random() * 32 + 16, // 16-48px (another 200% larger)
+        size: Math.random() * 48 + 12, // 12-60px dramatic size range
         color: ['hsl(var(--accent))', 'hsl(var(--primary))', 'hsl(var(--card))'][Math.floor(Math.random() * 3)],
-        delay: Math.random() * 0.2, // Tighter stagger
+        delay: Math.random() * 0.15, // Staggered delays for realistic burst
         shape: Math.random() > 0.5 ? 'square' : 'triangle'
       }));
 
@@ -43,7 +43,7 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
         setIsVisible(false);
         setConfetti([]);
         onComplete?.();
-      }, 4500);
+      }, 4700); // Extended for longer drift phase
 
       return () => clearTimeout(timer);
     }
@@ -68,7 +68,7 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
       {confetti.map((piece) => (
         <div
           key={piece.id}
-          className={`absolute animate-confetti-complete ${piece.shape === 'triangle' ? 'confetti-triangle' : 'confetti-square'}`}
+          className={`absolute animate-confetti-physics ${piece.shape === 'triangle' ? 'confetti-triangle' : 'confetti-square'}`}
           style={{
             left: origin ? `${origin.x - piece.size / 2}px` : `${piece.x}%`,
             top: origin ? `${origin.y - piece.size / 2}px` : `${piece.y}%`,
@@ -80,9 +80,10 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
             borderRightWidth: piece.shape === 'triangle' ? `${(piece.size / 2).toFixed(0)}px` : undefined,
             borderBottomWidth: piece.shape === 'triangle' ? `${(piece.size * 0.9).toFixed(0)}px` : undefined,
             animationDelay: `${piece.delay}s`,
-            '--random-x': Math.random() - 0.5, // Random horizontal drift
-            '--spread': `${Math.round(50 + Math.random() * 20)}vw`, // 50-70% viewport width
-          } as React.CSSProperties & { '--random-x': number; '--spread': string }}
+            '--drift-x': (Math.random() - 0.5) * 2, // Enhanced horizontal drift (-1 to 1)
+            '--spread-multiplier': Math.random() * 0.3 + 0.7, // Individual spread variation (0.7-1.0)
+            '--rotation-speed': Math.random() * 360 + 360, // Variable rotation speed (360-720deg)
+          } as React.CSSProperties & { '--drift-x': number; '--spread-multiplier': number; '--rotation-speed': number }}
         />
       ))}
       

@@ -93,27 +93,25 @@ export default {
 						height: '0'
 					}
 				},
-				'confetti-burst': {
+				'confetti-physics': {
 					'0%': {
 						transform: 'translate(0, 0) rotate(0deg) scale(1)',
 						opacity: '1'
 					},
-					'30%': {
-						transform: 'translate(calc(var(--random-x, 0) * 100px), -80vh) rotate(180deg) scale(1.2)',
+					'15%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 10vw), -60vh) rotate(calc(var(--rotation-speed, 540deg) * 0.15)) scale(1.1)',
+						opacity: '1'
+					},
+					'25%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 15vw), -65vh) rotate(calc(var(--rotation-speed, 540deg) * 0.25)) scale(1)',
+						opacity: '1'
+					},
+					'75%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 70vw * var(--spread-multiplier, 1)), 80vh) rotate(calc(var(--rotation-speed, 540deg) * 0.75)) scale(0.9)',
 						opacity: '1'
 					},
 					'100%': {
-						transform: 'translate(calc(var(--random-x, 0) * 100px), -80vh) rotate(360deg) scale(1)',
-						opacity: '1'
-					}
-				},
-				'confetti-drift': {
-					'0%': {
-						transform: 'translate(calc(var(--random-x, 0) * 100px), -80vh) rotate(360deg) scale(1)',
-						opacity: '1'
-					},
-					'100%': {
-						transform: 'translate(calc(var(--random-x, 0) * var(--spread, 60vw)), 120vh) rotate(720deg) scale(0.8)',
+						transform: 'translate(calc(var(--drift-x, 0) * 90vw * var(--spread-multiplier, 1)), 120vh) rotate(var(--rotation-speed, 540deg)) scale(0.7)',
 						opacity: '0'
 					}
 				}
@@ -121,7 +119,7 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'confetti-complete': 'confetti-burst 1s ease-out forwards, confetti-drift 3.5s 1s ease-in forwards'
+				'confetti-physics': 'confetti-physics 4.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards'
 			}
 		}
 	},
