@@ -113,7 +113,7 @@ export default {
 						opacity: '1'
 					},
 					'100%': {
-						transform: 'translate(calc(var(--random-x, 0) * 120px), 120vh) rotate(720deg) scale(0.8)',
+						transform: 'translate(calc(var(--random-x, 0) * var(--spread, 60vw)), 120vh) rotate(720deg) scale(0.8)',
 						opacity: '0'
 					}
 				}

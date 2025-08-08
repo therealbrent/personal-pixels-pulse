@@ -29,7 +29,7 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
         x: Math.random() * 100, // Random horizontal position (%)
         y: Math.random() * 10 + 45, // Start from center area
         rotation: Math.random() * 360,
-        size: Math.random() * 16 + 8, // 8-24px (200% larger)
+        size: Math.random() * 32 + 16, // 16-48px (another 200% larger)
         color: ['hsl(var(--accent))', 'hsl(var(--primary))', 'hsl(var(--card))'][Math.floor(Math.random() * 3)],
         delay: Math.random() * 0.2, // Tighter stagger
         shape: Math.random() > 0.5 ? 'square' : 'triangle'
@@ -76,9 +76,13 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
             height: `${piece.size}px`,
             backgroundColor: piece.shape === 'square' ? piece.color : 'transparent',
             borderColor: piece.shape === 'triangle' ? piece.color : 'transparent',
+            borderLeftWidth: piece.shape === 'triangle' ? `${(piece.size / 2).toFixed(0)}px` : undefined,
+            borderRightWidth: piece.shape === 'triangle' ? `${(piece.size / 2).toFixed(0)}px` : undefined,
+            borderBottomWidth: piece.shape === 'triangle' ? `${(piece.size * 0.9).toFixed(0)}px` : undefined,
             animationDelay: `${piece.delay}s`,
             '--random-x': Math.random() - 0.5, // Random horizontal drift
-          } as React.CSSProperties & { '--random-x': number }}
+            '--spread': `${Math.round(50 + Math.random() * 20)}vw`, // 50-70% viewport width
+          } as React.CSSProperties & { '--random-x': number; '--spread': string }}
         />
       ))}
       
