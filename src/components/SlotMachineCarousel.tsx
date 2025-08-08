@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getRSSContent } from '../utils/rssParser';
+import { useIsMobile } from '../hooks/use-mobile';
 import placeholder1 from '../assets/placeholder-1.jpg';
 import placeholder2 from '../assets/placeholder-2.jpg';
 import placeholder3 from '../assets/placeholder-3.jpg';
@@ -18,6 +19,9 @@ const SlotMachineCarousel = () => {
   const [allItems, setAllItems] = useState<RSSItem[]>([]);
   const [isSpinning, setIsSpinning] = useState([false, false, false]);
   const [loading, setLoading] = useState(true);
+  const isMobile = useIsMobile();
+  const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+  const isDesktop = window.innerWidth >= 1024;
   const placeholders = [placeholder1, placeholder2, placeholder3];
 
   useEffect(() => {
@@ -186,9 +190,9 @@ const SlotMachineCarousel = () => {
         {/* Slot machine frame */}
         <div className="bg-card border-4 border-foreground relative overflow-hidden">
           
-          {/* Three Reels Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-            {reels.map((item, index) => (
+          {/* Responsive Reels Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4">
+            {reels.slice(0, isDesktop ? 3 : 1).map((item, index) => (
               <div key={index} className="bg-background border-2 border-foreground p-4 min-h-[350px] flex flex-col">
                 <ReelContent item={item} isSpinning={isSpinning[index]} />
               </div>
