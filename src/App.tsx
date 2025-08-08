@@ -3,8 +3,6 @@ import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './components/ui/dialog';
 import LLMSTextPage from './components/LLMSTextPage';
 import SlotMachineCarousel from './components/SlotMachineCarousel';
-import CaseStudyModal from './components/CaseStudyModal';
-import ConfettiEffect from './components/ConfettiEffect';
 
 interface CaseStudyCardProps {
   title: string;
@@ -72,7 +70,6 @@ function CaseStudyCard({ title, tag, client, description, details, contributions
 
 function HomePage() {
   const [showFullStory, setShowFullStory] = useState(false);
-  const [activeModal, setActiveModal] = useState<string | null>(null);
   
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -187,10 +184,7 @@ function HomePage() {
                 <span className="inline-flex bg-destructive text-destructive-foreground px-3 py-1 text-sm font-semibold mb-3">NEW</span>
                 <h4 className="text-xl font-bold mb-2 text-foreground">9.6X ROI with WRITER</h4>
                 <p className="text-muted-foreground mb-4">Led the platform discovery, roll out, and scale up of WRITER at Qualcomm Technologies.</p>
-                <button onClick={() => {
-                  console.log('Writer button clicked');
-                  setActiveModal('writer');
-                }} className="bg-primary text-primary-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity">
+                <button onClick={() => window.open('https://writer.com/blog/qualcomm-customer-story/', '_blank')} className="bg-primary text-primary-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity">
                   Read Case Study →
                 </button>
               </div>
@@ -199,7 +193,7 @@ function HomePage() {
                 <span className="inline-flex border-2 border-foreground bg-transparent text-foreground px-3 py-1 text-sm font-semibold mb-3">FEATURED</span>
                 <h4 className="text-xl font-bold mb-2 text-foreground">The UX Flywheel</h4>
                 <p className="text-muted-foreground mb-4">This is a user-centered alternative to the marketing funnel that I developed for Blink UX.</p>
-                <button onClick={() => setActiveModal('ux-flywheel')} className="bg-accent text-accent-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity">
+                <button onClick={() => window.open('https://www.youtube.com/watch?v=UYApYNEnaMM', '_blank')} className="bg-accent text-accent-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity">
                   Watch Presentation →
                 </button>
               </div>
@@ -568,25 +562,6 @@ function HomePage() {
           </div>
         </div>
       </footer>
-      
-      {/* Case Study Modals */}
-      <CaseStudyModal
-        isOpen={activeModal === 'writer'}
-        onClose={() => setActiveModal(null)}
-        title="9.6X ROI with WRITER"
-        description="Led the platform discovery, roll out, and scale up of WRITER at Qualcomm Technologies. This case study demonstrates how strategic AI adoption can drive measurable business value through improved productivity and content quality across marketing, legal, and analytics teams."
-        link="https://writer.com/blog/qualcomm-customer-story/"
-        buttonText="Read Full Case Study →"
-      />
-      
-      <CaseStudyModal
-        isOpen={activeModal === 'ux-flywheel'}
-        onClose={() => setActiveModal(null)}
-        title="The UX Flywheel"
-        description="This presentation introduces a user-centered alternative to the traditional marketing funnel that I developed during my time at Blink UX. The UX Flywheel focuses on creating continuous value for users while driving sustainable business growth through better user experiences."
-        link="https://www.youtube.com/watch?v=UYApYNEnaMM"
-        buttonText="Watch Presentation →"
-      />
     </div>
   );
 }
