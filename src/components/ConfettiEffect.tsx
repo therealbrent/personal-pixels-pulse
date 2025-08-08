@@ -55,7 +55,6 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
     <div 
       className="fixed inset-0 pointer-events-none z-[51] overflow-hidden"
       aria-hidden="true"
-      style={{ display: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'none' : 'block' }}
     >
       <div 
         className="sr-only" 
@@ -82,8 +81,9 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
             animationDelay: `${piece.delay}s`,
             '--drift-x': (Math.random() - 0.5) * 2, // Enhanced horizontal drift (-1 to 1)
             '--spread-multiplier': Math.random() * 0.3 + 0.7, // Individual spread variation (0.7-1.0)
-            '--rotation-speed': Math.random() * 360 + 360, // Variable rotation speed (360-720deg)
-          } as React.CSSProperties & { '--drift-x': number; '--spread-multiplier': number; '--rotation-speed': number }}
+            '--rotation-speed': `${Math.round(Math.random() * 360 + 360)}deg`, // Variable rotation speed with unit
+            willChange: 'transform, opacity'
+          } as React.CSSProperties & { '--drift-x': number; '--spread-multiplier': number; '--rotation-speed': string }}
         />
       ))}
       
