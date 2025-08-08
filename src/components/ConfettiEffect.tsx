@@ -26,11 +26,11 @@ function ConfettiEffect({ isActive, onComplete }: ConfettiEffectProps) {
       const pieces: ConfettiPiece[] = Array.from({ length: 18 }, (_, i) => ({
         id: i,
         x: Math.random() * 100, // Random horizontal position (%)
-        y: Math.random() * 20 + 40, // Start from center area
+        y: Math.random() * 10 + 45, // Start from center area
         rotation: Math.random() * 360,
-        size: Math.random() * 8 + 4, // 4-12px
+        size: Math.random() * 16 + 8, // 8-24px (200% larger)
         color: ['hsl(var(--accent))', 'hsl(var(--primary))', 'hsl(var(--card))'][Math.floor(Math.random() * 3)],
-        delay: Math.random() * 0.3, // Stagger animations
+        delay: Math.random() * 0.2, // Tighter stagger
         shape: Math.random() > 0.5 ? 'square' : 'triangle'
       }));
 
@@ -42,7 +42,7 @@ function ConfettiEffect({ isActive, onComplete }: ConfettiEffectProps) {
         setIsVisible(false);
         setConfetti([]);
         onComplete?.();
-      }, 4000);
+      }, 4500);
 
       return () => clearTimeout(timer);
     }
@@ -77,7 +77,8 @@ function ConfettiEffect({ isActive, onComplete }: ConfettiEffectProps) {
             borderColor: piece.shape === 'triangle' ? piece.color : 'transparent',
             transform: `rotate(${piece.rotation}deg)`,
             animationDelay: `${piece.delay}s`,
-          }}
+            '--random-x': Math.random() - 0.5, // Random horizontal drift
+          } as React.CSSProperties & { '--random-x': number }}
         />
       ))}
       
@@ -90,9 +91,9 @@ function ConfettiEffect({ isActive, onComplete }: ConfettiEffectProps) {
           .confetti-triangle {
             width: 0 !important;
             height: 0 !important;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-bottom: 8px solid;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 14px solid;
             background: transparent !important;
           }
         `

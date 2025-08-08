@@ -98,28 +98,30 @@ export default {
 						transform: 'translate(0, 0) rotate(0deg) scale(1)',
 						opacity: '1'
 					},
-					'15%': {
-						transform: 'translate(var(--burst-x, 0), var(--burst-y, 0)) rotate(180deg) scale(1.1)',
+					'30%': {
+						transform: 'translate(calc(var(--random-x, 0) * 100px), -80vh) rotate(180deg) scale(1.2)',
 						opacity: '1'
 					},
 					'100%': {
-						transform: 'translate(var(--final-x, 0), var(--final-y, 0)) rotate(720deg) scale(0.8)',
-						opacity: '0'
+						transform: 'translate(calc(var(--random-x, 0) * 100px), -80vh) rotate(360deg) scale(1)',
+						opacity: '1'
 					}
 				},
 				'confetti-drift': {
 					'0%': {
-						transform: 'translateY(0) rotate(0deg)'
+						transform: 'translate(calc(var(--random-x, 0) * 100px), -80vh) rotate(360deg) scale(1)',
+						opacity: '1'
 					},
 					'100%': {
-						transform: 'translateY(100vh) rotate(360deg)'
+						transform: 'translate(calc(var(--random-x, 0) * 120px), 120vh) rotate(720deg) scale(0.8)',
+						opacity: '0'
 					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'confetti-complete': 'confetti-burst 0.5s ease-out forwards, confetti-drift 3.5s 0.5s ease-in forwards'
+				'confetti-complete': 'confetti-burst 1s ease-out forwards, confetti-drift 3.5s 1s ease-in forwards'
 			}
 		}
 	},
