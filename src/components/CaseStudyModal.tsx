@@ -15,8 +15,10 @@ const CaseStudyModal = ({ isOpen, onClose, title, description, link, buttonText 
   const [showConfetti, setShowConfetti] = useState(false);
 
   const handleOpenChange = (open: boolean) => {
+    console.log('Modal open state changed:', open);
     if (open) {
       setShowConfetti(true);
+      console.log('Setting confetti to true');
     } else {
       setShowConfetti(false);
       onClose();

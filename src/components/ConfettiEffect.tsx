@@ -44,6 +44,8 @@ const ConfettiEffect = ({ isActive, onComplete }: ConfettiEffectProps) => {
       });
     }
 
+    console.log('Created confetti pieces:', newPieces.length);
+
     setPieces(newPieces);
 
     const animationDuration = 4000; // 4 seconds

@@ -187,7 +187,10 @@ function HomePage() {
                 <span className="inline-flex bg-destructive text-destructive-foreground px-3 py-1 text-sm font-semibold mb-3">NEW</span>
                 <h4 className="text-xl font-bold mb-2 text-foreground">9.6X ROI with WRITER</h4>
                 <p className="text-muted-foreground mb-4">Led the platform discovery, roll out, and scale up of WRITER at Qualcomm Technologies.</p>
-                <button onClick={() => setActiveModal('writer')} className="bg-primary text-primary-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity">
+                <button onClick={() => {
+                  console.log('Writer button clicked');
+                  setActiveModal('writer');
+                }} className="bg-primary text-primary-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity">
                   Read Case Study →
                 </button>
               </div>
