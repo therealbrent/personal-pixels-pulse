@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './components/ui/dialog';
 import LLMSTextPage from './components/LLMSTextPage';
-import SlotMachineCarousel from './components/SlotMachineCarousel';
+import AccessibleSlotMachine from './components/AccessibleSlotMachine';
+import AccessibleCaseStudyCard from './components/AccessibleCaseStudyCard';
 
 interface CaseStudyCardProps {
   title: string;
@@ -15,58 +15,7 @@ interface CaseStudyCardProps {
   logoAlt: string;
 }
 
-function CaseStudyCard({ title, tag, client, description, details, contributions, logoSrc, logoAlt }: CaseStudyCardProps) {
-  return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <div className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-          <div className="flex flex-col items-center space-y-4">
-            <img src={logoSrc} alt={logoAlt} className="h-16 object-contain" />
-            <span className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground">
-              {tag}
-            </span>
-            <div className="text-center">
-              <p className="text-sm text-muted-foreground font-medium">{client}</p>
-            </div>
-          </div>
-        </div>
-      </DialogTrigger>
-      
-      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto border-4 border-foreground bg-white">
-        <DialogHeader>
-          <DialogTitle className="flex flex-col items-center space-y-3">
-            <img src={logoSrc} alt={logoAlt} className="h-12 md:h-24 object-contain" />
-            <span className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground">
-              {tag}
-            </span>
-          </DialogTitle>
-        </DialogHeader>
-        
-        <div className="space-y-6 pt-4">
-          <div>
-            <h4 className="font-semibold text-primary mb-2">Client</h4>
-            <p className="text-muted-foreground">{client}</p>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold text-primary mb-2">Description</h4>
-            <p className="text-muted-foreground mb-3">{description}</p>
-            <p className="text-muted-foreground">{details}</p>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold text-primary mb-2">My contributions</h4>
-            <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-              {contributions.map((contribution, index) => (
-                <li key={index}>{contribution}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </DialogContent>
-    </Dialog>
-  );
-}
+// Component moved to separate file for better maintainability
 
 function HomePage() {
   const [showFullStory, setShowFullStory] = useState(false);
@@ -77,18 +26,65 @@ function HomePage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Skip to content link for accessibility */}
+      <a 
+        href="#main-content" 
+        className="skip-to-content"
+        aria-label="Skip to main content"
+      >
+        Skip to main content
+      </a>
+
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background border-b-4 border-foreground" role="navigation" aria-label="Main navigation">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <div className="text-xl font-bold text-primary">BRENT SUMMERS</div>
+            <div className="text-xl font-bold text-primary" role="banner">BRENT SUMMERS</div>
             <div className="hidden md:flex items-center space-x-8">
-              <button onClick={() => scrollToSection('home')} className="font-semibold hover:text-accent transition-colors">Home</button>
-              <button onClick={() => scrollToSection('work')} className="font-semibold hover:text-accent transition-colors">What I Do</button>
-              <button onClick={() => scrollToSection('about')} className="font-semibold hover:text-accent transition-colors">About</button>
-              <button onClick={() => scrollToSection('writing')} className="font-semibold hover:text-accent transition-colors">Writing</button>
-              <button onClick={() => scrollToSection('case-studies')} className="font-semibold hover:text-accent transition-colors">Case Studies</button>
-              <a href="/llms.txt" target="_blank" rel="noopener noreferrer" className="bg-background text-foreground border-4 border-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity inline-block">LLMS.txt</a>
+              <button 
+                onClick={() => scrollToSection('home')} 
+                className="font-semibold hover:text-accent transition-colors focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] px-2"
+                aria-label="Navigate to home section"
+              >
+                Home
+              </button>
+              <button 
+                onClick={() => scrollToSection('work')} 
+                className="font-semibold hover:text-accent transition-colors focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] px-2"
+                aria-label="Navigate to what I do section"
+              >
+                What I Do
+              </button>
+              <button 
+                onClick={() => scrollToSection('about')} 
+                className="font-semibold hover:text-accent transition-colors focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] px-2"
+                aria-label="Navigate to about section"
+              >
+                About
+              </button>
+              <button 
+                onClick={() => scrollToSection('writing')} 
+                className="font-semibold hover:text-accent transition-colors focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] px-2"
+                aria-label="Navigate to writing section"
+              >
+                Writing
+              </button>
+              <button 
+                onClick={() => scrollToSection('case-studies')} 
+                className="font-semibold hover:text-accent transition-colors focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] px-2"
+                aria-label="Navigate to case studies section"
+              >
+                Case Studies
+              </button>
+              <a 
+                href="/llms.txt" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-background text-foreground border-4 border-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity min-h-[44px] flex items-center"
+                aria-label="View LLMS.txt file - Opens in new tab"
+              >
+                LLMS.txt
+              </a>
             </div>
           </div>
         </div>
@@ -97,123 +93,183 @@ function HomePage() {
       {/* Hero Section */}
       <header id="home" className="h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10 px-4">
         <div className="text-center max-w-4xl mx-auto">
-          <p className="text-sm md:text-base text-muted-foreground mb-4 font-bold tracking-wide uppercase">This site was vibe coded</p>
+          <p className="text-sm md:text-base text-muted-foreground mb-4 font-bold tracking-wide uppercase">
+            This site was vibe coded
+          </p>
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 text-foreground tracking-tight">
             <span className="relative inline-block">
               AI-FIRST
-              <div className="absolute bottom-0 left-0 w-full h-8 bg-pink-500/70 -z-10 transform -skew-x-6"></div>
+              <div className="absolute bottom-0 left-0 w-full h-8 bg-accent/70 -z-10 transform -skew-x-6" aria-hidden="true"></div>
             </span>
             {" "}MARKETING
             <span className="block text-primary">LEADER</span>
           </h1>
           
           <div className="bg-secondary p-6 border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300 mb-8">
-            <p className="text-xl md:text-2xl font-semibold text-secondary-foreground">Leveraging Generative AI Since June 2020</p>
-            <p className="text-lg md:text-xl text-muted-foreground mt-2">AI • User Experience • GTM Innovation</p>
+            <p className="text-xl md:text-2xl font-semibold text-secondary-foreground">
+              Leveraging Generative AI Since June 2020
+            </p>
+            <p className="text-lg md:text-xl text-secondary-foreground/80 mt-2">
+              AI • User Experience • GTM Innovation
+            </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button onClick={() => scrollToSection('work')} className="bg-primary text-primary-foreground text-lg font-bold px-8 py-4 transform hover:scale-105 transition-transform">
+            <button 
+              onClick={() => scrollToSection('work')} 
+              className="bg-primary text-primary-foreground text-lg font-bold px-8 py-4 transform hover:scale-105 transition-transform focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
+              aria-label="Navigate to my work section"
+            >
               Explore My Work
             </button>
           </div>
-
         </div>
 
-        <button onClick={() => scrollToSection('work')} className="absolute bottom-8 animate-bounce">
-          <svg className="w-8 h-8 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+        <button 
+          onClick={() => scrollToSection('work')} 
+          className="absolute bottom-8 animate-bounce focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] min-w-[44px]"
+          aria-label="Scroll down to view my work"
+        >
+          <svg className="w-8 h-8 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M16.293 9.293L12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z" />
           </svg>
         </button>
       </header>
 
       {/* Work Section */}
-      <main>
+      <main id="main-content">
       <section id="work" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">WHAT I DO</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">I am responsible for AI Platforms & GTM Innovation at Qualcomm Technologies. Outside of work, I am a devoted member of the design community and advocate for the Arts.</p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              I am responsible for AI Platforms & GTM Innovation at Qualcomm Technologies. 
+              Outside of work, I am a devoted member of the design community and advocate for the Arts.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
-              <div className="text-pink-500 mb-4">
+            <article className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
+              <div className="text-accent mb-4" aria-hidden="true">
                 <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14 6V4h-4v2h4zM4 8v11h16V8H4zm16-2c1.11 0 2 .89 2 2v11c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2l.01-11c0-1.11.88-2 1.99-2h4V4c0-1.11.89-2 2-2h4c1.11 0 2 .89 2 2v2h4z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4">Experience</h3>
-              <p className="text-muted-foreground mb-4">Two decades of experience at the intersection of marketing, technology, and UX.</p>
-              <button onClick={() => scrollToSection('about')} className="w-full bg-primary text-primary-foreground font-semibold py-2 px-4 hover:opacity-90 transition-opacity">
+              <p className="text-muted-foreground mb-4">
+                Two decades of experience at the intersection of marketing, technology, and UX.
+              </p>
+              <button 
+                onClick={() => scrollToSection('about')} 
+                className="w-full bg-primary text-primary-foreground font-semibold py-2 px-4 hover:opacity-90 transition-opacity focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
+                aria-label="Navigate to background section"
+              >
                 View Background →
               </button>
-            </div>
+            </article>
 
-            <div className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
-              <div className="text-pink-500 mb-4">
+            <article className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
+              <div className="text-accent mb-4" aria-hidden="true">
                 <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4">Case Studies</h3>
-              <p className="text-muted-foreground mb-4">Real projects and technology implementations for recognizable brands.</p>
-              <button onClick={() => scrollToSection('case-studies')} className="w-full border-2 border-foreground bg-transparent text-foreground font-semibold py-2 px-4 hover:bg-accent hover:text-accent-foreground transition-colors">
+              <p className="text-muted-foreground mb-4">
+                Real projects and technology implementations for recognizable brands.
+              </p>
+              <button 
+                onClick={() => scrollToSection('case-studies')} 
+                className="w-full border-2 border-foreground bg-transparent text-foreground font-semibold py-2 px-4 hover:bg-accent hover:text-accent-foreground transition-colors focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
+                aria-label="Navigate to case studies section"
+              >
                 See Case Studies →
               </button>
-            </div>
+            </article>
 
-            <div className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
-              <div className="text-pink-500 mb-4">
+            <article className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
+              <div className="text-accent mb-4" aria-hidden="true">
                 <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4">Writing</h3>
-              <p className="text-muted-foreground mb-4">Insights and musings on artificial intelligence, marketing & content strategy, and user experience.</p>
-              <button onClick={() => scrollToSection('writing')} className="w-full bg-secondary text-secondary-foreground font-semibold py-2 px-4 hover:opacity-90 transition-opacity">
+              <p className="text-muted-foreground mb-4">
+                Insights and musings on artificial intelligence, marketing & content strategy, and user experience.
+              </p>
+              <button 
+                onClick={() => scrollToSection('writing')} 
+                className="w-full bg-secondary text-secondary-foreground font-semibold py-2 px-4 hover:opacity-90 transition-opacity focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
+                aria-label="Navigate to writing section"
+              >
                 Read Articles →
               </button>
-            </div>
+            </article>
           </div>
 
           <div className="text-center">
             <h3 className="text-3xl font-bold mb-8 text-foreground">Highlights</h3>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="bg-primary/10 p-6 border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300">
-                <span className="inline-flex bg-destructive text-destructive-foreground px-3 py-1 text-sm font-semibold mb-3">NEW</span>
+              <article className="bg-primary/10 p-6 border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                <span 
+                  className="inline-flex bg-destructive text-destructive-foreground px-3 py-1 text-sm font-semibold mb-3"
+                  aria-label="New highlight"
+                >
+                  NEW
+                </span>
                 <h4 className="text-xl font-bold mb-2 text-foreground">9.6X ROI with WRITER</h4>
-                <p className="text-muted-foreground mb-4">Led the platform discovery, roll out, and scale up of WRITER at Qualcomm Technologies.</p>
-                <button onClick={() => window.open('https://writer.com/blog/qualcomm-customer-story/', '_blank')} className="bg-primary text-primary-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity">
+                <p className="text-muted-foreground mb-4">
+                  Led the platform discovery, roll out, and scale up of WRITER at Qualcomm Technologies.
+                </p>
+                <a 
+                  href="https://writer.com/blog/qualcomm-customer-story/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-primary text-primary-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center"
+                  aria-label="Read WRITER case study - Opens in new tab"
+                >
                   Read Case Study →
-                </button>
-              </div>
+                </a>
+              </article>
               
-              <div className="bg-accent/10 p-6 border-4 border-foreground transform -rotate-1 hover:rotate-0 transition-transform duration-300">
-                <span className="inline-flex border-2 border-foreground bg-transparent text-foreground px-3 py-1 text-sm font-semibold mb-3">FEATURED</span>
+              <article className="bg-accent/10 p-6 border-4 border-foreground transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+                <span 
+                  className="inline-flex border-2 border-foreground bg-card text-foreground px-3 py-1 text-sm font-semibold mb-3"
+                  aria-label="Featured highlight"
+                >
+                  FEATURED
+                </span>
                 <h4 className="text-xl font-bold mb-2 text-foreground">The UX Flywheel</h4>
-                <p className="text-muted-foreground mb-4">This is a user-centered alternative to the marketing funnel that I developed for Blink UX.</p>
-                <button onClick={() => window.open('https://www.youtube.com/watch?v=UYApYNEnaMM', '_blank')} className="bg-accent text-accent-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity">
+                <p className="text-muted-foreground mb-4">
+                  This is a user-centered alternative to the marketing funnel that I developed for Blink UX.
+                </p>
+                <a 
+                  href="https://www.youtube.com/watch?v=UYApYNEnaMM"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-accent text-accent-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center"
+                  aria-label="Watch UX Flywheel presentation on YouTube - Opens in new tab"
+                >
                   Watch Presentation →
-                </button>
-              </div>
+                </a>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
       {/* Brutalist Separator - Zigzag Pattern */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden" role="presentation" aria-hidden="true">
         <div className="h-20 bg-gradient-to-br from-accent via-destructive to-primary relative">
           <div className="absolute inset-0 bg-background/30">
             <div className="h-full w-full bg-gradient-to-t from-foreground/10 to-transparent"></div>
           </div>
-          {/* Shapes that spill outside bounds */}
-          <div className="absolute -top-3 left-8 w-12 h-16 bg-accent border-3 border-foreground transform -skew-y-45"></div>
+          {/* Decorative shapes that spill outside bounds */}
+          <div className="absolute -top-3 left-8 w-12 h-16 bg-accent border-2 border-foreground transform -skew-y-45"></div>
           <div className="absolute top-2 left-24 w-8 h-8 bg-primary border-2 border-foreground transform rotate-45"></div>
           <div className="absolute -bottom-2 left-40 w-16 h-6 bg-destructive border-2 border-foreground transform skew-x-45"></div>
           <div className="absolute top-1 right-32 w-6 h-24 bg-secondary border-2 border-foreground transform rotate-30"></div>
-          <div className="absolute -bottom-4 right-16 w-10 h-10 bg-accent border-3 border-foreground transform -rotate-30"></div>
+          <div className="absolute -bottom-4 right-16 w-10 h-10 bg-accent border-2 border-foreground transform -rotate-30"></div>
           <div className="absolute -top-2 right-4 w-14 h-14 bg-primary border-4 border-foreground transform rotate-45"></div>
           <div className="absolute top-6 left-64 w-4 h-12 bg-secondary border-2 border-foreground transform -skew-x-30"></div>
         </div>
@@ -363,7 +419,7 @@ function HomePage() {
           
           {/* Slot Machine Carousel */}
           <div className="mt-16 max-w-4xl mx-auto">
-            <SlotMachineCarousel />
+            <AccessibleSlotMachine />
           </div>
         </div>
       </section>
@@ -394,7 +450,7 @@ function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <CaseStudyCard
+            <AccessibleCaseStudyCard
               title="SUMO LOGIC"
               tag="Craft CMS"
               client="Suku Krishnaraj, Chief Marketing Officer"
@@ -410,9 +466,10 @@ function HomePage() {
               ]}
               logoSrc="/lovable-uploads/d1bb2915-782f-4b5a-b60b-08b9094dcdc1.png"
               logoAlt="Sumo Logic logo"
+              cardIndex={0}
             />
             
-            <CaseStudyCard
+            <AccessibleCaseStudyCard
               title="ELASTIC"
               tag="WordPress"
               client="Elyse Phillips, VP Marketing"
@@ -429,9 +486,10 @@ function HomePage() {
               ]}
               logoSrc="/lovable-uploads/26b28675-053b-424c-ad22-a082f58d3937.png"
               logoAlt="Elastic logo"
+              cardIndex={1}
             />
             
-            <CaseStudyCard
+            <AccessibleCaseStudyCard
               title="AMAZON"
               tag="LEGO (Proprietary)"
               client="Andrew Meyers, Sr. Product Manager"
@@ -448,9 +506,10 @@ function HomePage() {
               ]}
               logoSrc="/lovable-uploads/fcdc8d21-8816-48fb-ac54-3140bf151296.png"
               logoAlt="Amazon logo"
+              cardIndex={2}
             />
             
-            <CaseStudyCard
+            <AccessibleCaseStudyCard
               title="PIVOTAL"
               tag="Proprietary"
               client="Michelle Kerr, VP of Marketing"
@@ -466,9 +525,10 @@ function HomePage() {
               ]}
               logoSrc="/lovable-uploads/f09455ec-ba6d-44e8-bf98-5b6023cd43fd.png"
               logoAlt="Pivotal logo"
+              cardIndex={3}
             />
             
-            <CaseStudyCard
+            <AccessibleCaseStudyCard
               title="HP"
               tag="iOS & Android"
               client="Shawn Piper, Senior Experience Design Manager"
@@ -484,9 +544,10 @@ function HomePage() {
               ]}
               logoSrc="/lovable-uploads/5c60a0c9-273d-43a9-a4e6-226e8538a08c.png"
               logoAlt="HP logo"
+              cardIndex={4}
             />
             
-            <CaseStudyCard
+            <AccessibleCaseStudyCard
               title="NEW RELIC"
               tag="Prismic"
               client="Raf Alenda, Vice President - Online & Brand Marketing"
@@ -502,6 +563,7 @@ function HomePage() {
               ]}
               logoSrc="/lovable-uploads/6cbd7f55-af1e-4682-aaf1-58ae638c0c99.png"
               logoAlt="New Relic logo"
+              cardIndex={5}
             />
           </div>
           
