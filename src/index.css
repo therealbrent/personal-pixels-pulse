@@ -19,7 +19,7 @@ All colors MUST be HSL with AAA contrast ratios.
     --popover-foreground: 0 0% 5%;
 
     /* Enhanced primary with AAA contrast */
-    --primary: 38 84% 35%;
+    --primary: 43 100% 52%;
     --primary-foreground: 0 0% 100%;
 
     /* High-contrast secondary */
@@ -31,7 +31,7 @@ All colors MUST be HSL with AAA contrast ratios.
     --muted-foreground: 0 0% 25%;
 
     /* Accessible accent with AAA contrast */
-    --accent: 338 88% 40%;
+    --accent: 328 100% 54%;
     --accent-foreground: 0 0% 100%;
 
     /* High-contrast destructive */
@@ -41,7 +41,7 @@ All colors MUST be HSL with AAA contrast ratios.
     /* Enhanced borders and inputs */
     --border: 0 0% 15%;
     --input: 0 0% 100%;
-    --ring: 38 84% 35%;
+    --ring: 43 100% 52%;
 
     /* Focus states for accessibility */
     --focus-ring: 220 100% 50%;
@@ -83,7 +83,7 @@ All colors MUST be HSL with AAA contrast ratios.
     --muted-foreground: 0 0% 75%;
 
     /* Accessible accent for dark mode */
-    --accent: 338 88% 60%;
+    --accent: 328 100% 60%;
     --accent-foreground: 0 0% 8%;
 
     /* High-contrast destructive for dark mode */
