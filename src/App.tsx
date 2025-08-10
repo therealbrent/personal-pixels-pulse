@@ -265,13 +265,13 @@ function HomePage() {
             <div className="h-full w-full bg-gradient-to-t from-foreground/10 to-transparent"></div>
           </div>
           {/* Decorative shapes that spill outside bounds */}
-          <div className="absolute -top-3 left-8 w-12 h-16 bg-accent border-2 border-foreground transform -skew-y-45"></div>
-          <div className="absolute top-2 left-24 w-8 h-8 bg-primary border-2 border-foreground transform rotate-45"></div>
-          <div className="absolute -bottom-2 left-40 w-16 h-6 bg-destructive border-2 border-foreground transform skew-x-45"></div>
-          <div className="absolute top-1 right-32 w-6 h-24 bg-secondary border-2 border-foreground transform rotate-30"></div>
-          <div className="absolute -bottom-4 right-16 w-10 h-10 bg-accent border-2 border-foreground transform -rotate-30"></div>
-          <div className="absolute -top-2 right-4 w-14 h-14 bg-primary border-4 border-foreground transform rotate-45"></div>
-          <div className="absolute top-6 left-64 w-4 h-12 bg-secondary border-2 border-foreground transform -skew-x-30"></div>
+          <div className="absolute -top-3 left-8 w-12 h-16 bg-accent border-2 border-foreground transform -skew-y-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "2px", ["--p-y" as any]: "-2px", ["--p-rot" as any]: "3deg" }}></div>
+          <div className="absolute top-2 left-24 w-8 h-8 bg-primary border-2 border-foreground transform rotate-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "3px", ["--p-y" as any]: "2px", ["--p-rot" as any]: "4deg" }}></div>
+          <div className="absolute -bottom-2 left-40 w-16 h-6 bg-destructive border-2 border-foreground transform skew-x-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "-2px", ["--p-y" as any]: "2px", ["--p-rot" as any]: "-3deg" }}></div>
+          <div className="absolute top-1 right-32 w-6 h-24 bg-secondary border-2 border-foreground transform rotate-30 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "-3px", ["--p-y" as any]: "-1px", ["--p-rot" as any]: "3deg" }}></div>
+          <div className="absolute -bottom-4 right-16 w-10 h-10 bg-accent border-2 border-foreground transform -rotate-30 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "3px", ["--p-y" as any]: "-2px", ["--p-rot" as any]: "-4deg" }}></div>
+          <div className="absolute -top-2 right-4 w-14 h-14 bg-primary border-4 border-foreground transform rotate-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "4px", ["--p-y" as any]: "-3px", ["--p-rot" as any]: "5deg" }}></div>
+          <div className="absolute top-6 left-64 w-4 h-12 bg-secondary border-2 border-foreground transform -skew-x-30 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "1px", ["--p-y" as any]: "-1px", ["--p-rot" as any]: "2deg" }}></div>
         </div>
       </div>
 
@@ -376,13 +376,13 @@ function HomePage() {
             <div className="h-full w-full bg-foreground/20 transform skew-x-12"></div>
           </div>
           {/* Dynamic shapes with spillover */}
-          <div className="absolute -top-4 left-16 w-20 h-8 bg-secondary border-3 border-foreground transform -skew-x-12"></div>
-          <div className="absolute top-3 right-24 w-12 h-12 bg-primary border-4 border-foreground transform rotate-12"></div>
-          <div className="absolute -bottom-3 right-8 w-16 h-16 bg-destructive border-3 border-foreground transform -rotate-45"></div>
-          <div className="absolute top-1 left-48 w-6 h-18 bg-accent border-2 border-foreground transform skew-y-12"></div>
-          <div className="absolute -top-1 left-72 w-18 h-4 bg-secondary border-2 border-foreground transform rotate-60"></div>
-          <div className="absolute bottom-2 left-96 w-8 h-10 bg-primary border-2 border-foreground transform -skew-y-30"></div>
-          <div className="absolute -bottom-2 right-40 w-5 h-14 bg-accent border-2 border-foreground transform rotate-75"></div>
+          <div className="absolute -top-4 left-16 w-20 h-8 bg-secondary border-3 border-foreground transform -skew-x-12 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "2px", ["--p-y" as any]: "-1px", ["--p-rot" as any]: "3deg" }}></div>
+          <div className="absolute top-3 right-24 w-12 h-12 bg-primary border-4 border-foreground transform rotate-12 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "3px", ["--p-y" as any]: "-2px", ["--p-rot" as any]: "4deg" }}></div>
+          <div className="absolute -bottom-3 right-8 w-16 h-16 bg-destructive border-3 border-foreground transform -rotate-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "4px", ["--p-y" as any]: "3px", ["--p-rot" as any]: "-5deg" }}></div>
+          <div className="absolute top-1 left-48 w-6 h-18 bg-accent border-2 border-foreground transform skew-y-12 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "1px", ["--p-y" as any]: "-2px", ["--p-rot" as any]: "2deg" }}></div>
+          <div className="absolute -top-1 left-72 w-18 h-4 bg-secondary border-2 border-foreground transform rotate-60 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "2px", ["--p-y" as any]: "-1px", ["--p-rot" as any]: "3deg" }}></div>
+          <div className="absolute bottom-2 left-96 w-8 h-10 bg-primary border-2 border-foreground transform -skew-y-30 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "2px", ["--p-y" as any]: "1px", ["--p-rot" as any]: "-3deg" }}></div>
+          <div className="absolute -bottom-2 right-40 w-5 h-14 bg-accent border-2 border-foreground transform rotate-75 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "1px", ["--p-y" as any]: "2px", ["--p-rot" as any]: "2deg" }}></div>
         </div>
       </div>
 
@@ -431,13 +431,13 @@ function HomePage() {
             <div className="h-full w-full bg-gradient-to-r from-transparent via-background/20 to-transparent transform -skew-y-1"></div>
           </div>
           {/* Explosive shape arrangement */}
-          <div className="absolute -top-6 left-12 w-16 h-16 bg-destructive border-4 border-foreground transform rotate-45"></div>
-          <div className="absolute top-4 right-20 w-10 h-12 bg-accent border-3 border-foreground transform -skew-x-45"></div>
-          <div className="absolute -bottom-4 right-40 w-8 h-8 bg-primary border-2 border-foreground transform rotate-45"></div>
-          <div className="absolute top-1 left-32 w-22 h-6 bg-secondary border-2 border-foreground transform -skew-x-12"></div>
-          <div className="absolute -top-2 left-64 w-6 h-18 bg-destructive border-2 border-foreground transform rotate-30"></div>
-          <div className="absolute bottom-1 right-8 w-12 h-4 bg-accent border-2 border-foreground transform skew-y-45"></div>
-          <div className="absolute -bottom-3 left-80 w-14 h-10 bg-primary border-3 border-foreground transform -rotate-60"></div>
+          <div className="absolute -top-6 left-12 w-16 h-16 bg-destructive border-4 border-foreground transform rotate-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "4px", ["--p-y" as any]: "-2px", ["--p-rot" as any]: "5deg" }}></div>
+          <div className="absolute top-4 right-20 w-10 h-12 bg-accent border-3 border-foreground transform -skew-x-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "2px", ["--p-y" as any]: "1px", ["--p-rot" as any]: "-3deg" }}></div>
+          <div className="absolute -bottom-4 right-40 w-8 h-8 bg-primary border-2 border-foreground transform rotate-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "2px", ["--p-y" as any]: "-2px", ["--p-rot" as any]: "3deg" }}></div>
+          <div className="absolute top-1 left-32 w-22 h-6 bg-secondary border-2 border-foreground transform -skew-x-12 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "1px", ["--p-y" as any]: "1px", ["--p-rot" as any]: "-2deg" }}></div>
+          <div className="absolute -top-2 left-64 w-6 h-18 bg-destructive border-2 border-foreground transform rotate-30 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "2px", ["--p-y" as any]: "-1px", ["--p-rot" as any]: "3deg" }}></div>
+          <div className="absolute bottom-1 right-8 w-12 h-4 bg-accent border-2 border-foreground transform skew-y-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "2px", ["--p-y" as any]: "1px", ["--p-rot" as any]: "3deg" }}></div>
+          <div className="absolute -bottom-3 left-80 w-14 h-10 bg-primary border-3 border-foreground transform -rotate-60 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "-3px", ["--p-y" as any]: "2px", ["--p-rot" as any]: "-4deg" }}></div>
         </div>
       </div>
 
