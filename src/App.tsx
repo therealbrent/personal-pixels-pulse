@@ -41,7 +41,7 @@ function HomePage() {
           <div className="flex items-center justify-between h-16">
             <button 
               onClick={() => scrollToSection('home')} 
-              className="text-xl font-bold text-foreground hover:text-accent transition-colors focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] px-2"
+              className="text-xl font-bold text-primary hover:text-accent transition-colors focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] px-2"
               role="banner"
               aria-label="Navigate to home section"
             >
