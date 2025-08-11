@@ -54,14 +54,14 @@ export default function LastUpdated() {
   if (!content) {
     // Fallback if build info is missing
     return (
-      <p className="text-xs text-muted-foreground opacity-80" aria-live="polite">
+      <p className="text-xs text-accent mb-4 md:mb-6" aria-live="polite">
         Last updated: Unknown
       </p>
     );
   }
 
   return (
-    <p className="text-xs sm:text-sm text-muted-foreground opacity-80" aria-live="polite">
+    <p className="text-xs sm:text-sm text-accent mb-4 md:mb-6" aria-live="polite">
       Last updated: <time dateTime={content.iso}>{content.absolute}</time> • {content.relative}
     </p>
   );
