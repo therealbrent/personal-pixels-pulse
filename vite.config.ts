@@ -1,7 +1,35 @@
-import { defineConfig } from "vite";
+import { defineConfig, Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import fs from "fs";
+
+// Generate build info JSON in public folder at build time
+const buildInfoPlugin: Plugin = {
+  name: "build-info-plugin",
+  apply: "build",
+  buildStart() {
+    const timestamp = new Date().toISOString();
+    const buildInfo = {
+      timestamp,
+      meta: {
+        node: process.version,
+        gitSha: process.env.GITHUB_SHA || null,
+        gitRef: process.env.GITHUB_REF || null,
+        env: process.env.NODE_ENV || null,
+      },
+    } as const;
+    const targetPath = path.resolve(__dirname, "public", "build-info.json");
+    try {
+      fs.writeFileSync(targetPath, JSON.stringify(buildInfo, null, 2), { encoding: "utf-8" });
+      // eslint-disable-next-line no-console
+      console.log(`[build-info-plugin] Wrote ${targetPath}`);
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error("[build-info-plugin] Failed to write build-info.json", err);
+    }
+  },
+};
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -12,8 +40,8 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    buildInfoPlugin,
+    mode === 'development' && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {

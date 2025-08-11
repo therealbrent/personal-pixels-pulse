@@ -3,6 +3,7 @@ import { useState } from 'react';
 import LLMSTextPage from './components/LLMSTextPage';
 import AccessibleSlotMachine from './components/AccessibleSlotMachine';
 import AccessibleCaseStudyCard from './components/AccessibleCaseStudyCard';
+import LastUpdated from './components/LastUpdated';
 
 interface CaseStudyCardProps {
   title: string;
@@ -590,6 +591,7 @@ function HomePage() {
             </a>
           </div>
           <div className="mt-8 pt-8 border-t border-background/20">
+            <LastUpdated />
             <p className="opacity-60">© {new Date().getFullYear()} Brent Summers. All rights reserved.</p>
           </div>
         </div>
