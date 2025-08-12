@@ -32,20 +32,11 @@ const buildInfoPlugin: Plugin = {
 };
 
 // CSP injector plugin to support Visual Editor in dev while keeping prod strict
-const cspPlugin: Plugin = {
+const cspPlugin = (isDev: boolean): Plugin => ({
   name: "csp-injector",
-  // Run early to replace any existing meta tags
-  enforce: "pre",
-  configResolved(config) {
-    // store command (serve|build) on plugin instance
-    ;(this as any).__command = config.command;
-  },
   transformIndexHtml: {
-    enforce: "pre",
-    transform(html) {
-      const command = (this as any).__command || "build";
-      const isDev = command === "serve";
-
+    order: "pre",
+    handler(html) {
       const devCsp = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://*.lovable.app https://*.lovable.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' ws: wss: https://*.lovable.app https://*.lovable.dev; frame-ancestors 'self' https://*.lovable.app https://*.lovable.dev;";
       const prodCsp = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self';";
       const csp = isDev ? devCsp : prodCsp;
@@ -64,7 +55,7 @@ const cspPlugin: Plugin = {
       return out;
     },
   },
-};
+});
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -75,7 +66,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    cspPlugin,
+    cspPlugin(mode === 'development'),
     buildInfoPlugin,
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
