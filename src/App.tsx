@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import LLMSTextPage from './components/LLMSTextPage';
+import SpeakingMediaPage from './components/SpeakingMediaPage';
 import AccessibleSlotMachine from './components/AccessibleSlotMachine';
 import AccessibleCaseStudyCard from './components/AccessibleCaseStudyCard';
 import LastUpdated from './components/LastUpdated';
@@ -48,15 +49,24 @@ function HomePage() {
             >
               BRENT SUMMERS
             </button>
-            <a 
-              href="/llms.txt" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-background text-foreground border-4 border-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity min-h-[44px] flex items-center"
-              aria-label="View LLMS.txt file - Opens in new tab"
-            >
-              LLMS.txt
-            </a>
+            <div className="flex gap-4">
+              <a 
+                href="/speaking-media" 
+                className="bg-accent text-accent-foreground border-4 border-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity min-h-[44px] flex items-center"
+                aria-label="View Speaking & Media page"
+              >
+                SPEAKING & MEDIA
+              </a>
+              <a 
+                href="/llms.txt" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-background text-foreground border-4 border-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity min-h-[44px] flex items-center"
+                aria-label="View LLMS.txt file - Opens in new tab"
+              >
+                LLMS.txt
+              </a>
+            </div>
           </div>
         </div>
       </nav>
@@ -603,10 +613,11 @@ function HomePage() {
 export default function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/llms.txt" element={<LLMSTextPage />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/llms.txt" element={<LLMSTextPage />} />
+          <Route path="/speaking-media" element={<SpeakingMediaPage />} />
+        </Routes>
     </Router>
   );
 }
