@@ -540,36 +540,79 @@ function HomePage() {
       
       {/* Footer */}
       <footer className="bg-foreground text-background py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="text-2xl font-bold mb-4">Let's Connect</h3>
-          <p className="text-lg mb-8 opacity-80">Did something spark your curiousity? I'd love to hear from you.</p>
-          
-          {/* Navigation Links */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 pb-8 border-b border-background/20">
-            <a 
-              href="/speaking-media" 
-              className="text-background hover:text-accent transition-colors duration-200 font-semibold"
-            >
-              Speaking & Media
-            </a>
-            <a 
-              href="https://contentstrategy.substack.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-background hover:text-accent transition-colors duration-200 font-semibold"
-            >
-              Full Stack Content
-            </a>
-            <a 
-              href="https://in200max.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-background hover:text-accent transition-colors duration-200 font-semibold"
-            >
-              200 MAX
-            </a>
+        <div className="container mx-auto px-4">
+          {/* Upper Footer - Links Section */}
+          <div className="relative mb-12 pb-8 border-b border-background/20">
+            <h3 className="text-2xl font-bold mb-8 text-center">Let's Connect</h3>
+            <p className="text-lg mb-12 opacity-80 text-center">Did something spark your curiousity? I'd love to hear from you.</p>
+            
+            {/* Neo-brutalist link layout */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {/* Speaking & Media - Large featured block */}
+              <div className="md:col-span-2 relative">
+                <a 
+                  href="/speaking-media" 
+                  className="block bg-accent text-accent-foreground p-6 border-4 border-background transform hover:scale-105 transition-all duration-300 hover:shadow-lg group"
+                >
+                  <div className="absolute top-2 right-2 w-4 h-4 bg-background transform rotate-45"></div>
+                  <h4 className="text-xl font-bold mb-2">SPEAKING & MEDIA</h4>
+                  <p className="text-sm opacity-80">Talks, interviews, and media appearances</p>
+                  <div className="mt-4 flex items-center">
+                    <span className="text-sm font-semibold">View Portfolio</span>
+                    <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+
+              {/* Side stack of smaller blocks */}
+              <div className="space-y-4">
+                {/* Full Stack Content */}
+                <a 
+                  href="https://contentstrategy.substack.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block bg-primary text-primary-foreground p-4 border-4 border-background transform hover:scale-105 transition-all duration-300 hover:shadow-lg group"
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="font-bold text-sm">FULL STACK</h4>
+                      <h4 className="font-bold text-sm">CONTENT</h4>
+                    </div>
+                    <svg className="w-5 h-5 transform group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                  </div>
+                  <p className="text-xs opacity-80 mt-2">Newsletter</p>
+                </a>
+
+                {/* 200 MAX */}
+                <a 
+                  href="https://in200max.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block bg-destructive text-destructive-foreground p-4 border-4 border-background transform hover:scale-105 transition-all duration-300 hover:shadow-lg group"
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="font-bold text-lg">200 MAX</h4>
+                    </div>
+                    <svg className="w-5 h-5 transform group-hover:rotate-45 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  </div>
+                  <p className="text-xs opacity-80 mt-1">Platform</p>
+                </a>
+              </div>
+            </div>
+
+            {/* Decorative elements */}
+            <div className="absolute top-0 left-0 w-6 h-6 bg-accent border-2 border-background transform rotate-45 -translate-x-3 -translate-y-3"></div>
+            <div className="absolute bottom-4 right-0 w-4 h-12 bg-primary border-2 border-background transform skew-x-12"></div>
           </div>
           
+          {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-8">
             <a href="https://www.linkedin.com/in/brentjsummers/" target="_blank" rel="noopener noreferrer" className="p-3 bg-background text-foreground border-2 border-background hover:bg-primary hover:text-primary-foreground transform hover:scale-110 transition-all duration-200">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
