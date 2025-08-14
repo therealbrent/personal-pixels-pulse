@@ -543,6 +543,33 @@ function HomePage() {
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-2xl font-bold mb-4">Let's Connect</h3>
           <p className="text-lg mb-8 opacity-80">Did something spark your curiousity? I'd love to hear from you.</p>
+          
+          {/* Navigation Links */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 pb-8 border-b border-background/20">
+            <a 
+              href="/speaking-media" 
+              className="text-background hover:text-accent transition-colors duration-200 font-semibold"
+            >
+              Speaking & Media
+            </a>
+            <a 
+              href="https://contentstrategy.substack.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-background hover:text-accent transition-colors duration-200 font-semibold"
+            >
+              Full Stack Content
+            </a>
+            <a 
+              href="https://in200max.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-background hover:text-accent transition-colors duration-200 font-semibold"
+            >
+              200 MAX
+            </a>
+          </div>
+          
           <div className="flex justify-center space-x-6 mb-8">
             <a href="https://www.linkedin.com/in/brentjsummers/" target="_blank" rel="noopener noreferrer" className="p-3 bg-background text-foreground border-2 border-background hover:bg-primary hover:text-primary-foreground transform hover:scale-110 transition-all duration-200">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
