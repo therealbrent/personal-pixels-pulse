@@ -567,57 +567,47 @@ function HomePage() {
             
             {/* Neo-brutalist link layout */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {/* Speaking & Media - Large featured block */}
-              <div className="md:col-span-2 relative">
-                <a 
-                  href="/speaking-media" 
-                  className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-accent hover:text-accent-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group"
-                >
-                  <div className="absolute top-2 right-2 w-4 h-4 bg-background/30 group-hover:bg-background transform rotate-45"></div>
-                  <h4 className="text-xl font-bold mb-2">SPEAKING & MEDIA</h4>
-                  <p className="text-sm opacity-80">Talks, interviews, and media appearances</p>
-                </a>
-              </div>
+              {/* Speaking & Media */}
+              <a 
+                href="/speaking-media" 
+                className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-accent hover:text-accent-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group"
+              >
+                <div className="absolute top-2 right-2 w-4 h-4 bg-background/30 group-hover:bg-background transform rotate-45"></div>
+                <h4 className="text-xl font-bold mb-2">SPEAKING & MEDIA</h4>
+                <p className="text-sm opacity-80">Talks, interviews, and media appearances</p>
+              </a>
 
-              {/* Side stack of smaller blocks */}
-              <div className="space-y-4">
-                {/* Full Stack Content */}
-                <a 
-                  href="https://contentstrategy.substack.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block bg-background/10 text-background border-2 border-background/30 p-4 transform hover:bg-primary hover:text-primary-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group"
-                >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h4 className="font-bold text-sm">FULL STACK</h4>
-                      <h4 className="font-bold text-sm">CONTENT</h4>
-                    </div>
-                    <svg className="w-5 h-5 transform group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-                    </svg>
-                  </div>
-                  <p className="text-xs opacity-80 mt-2">Newsletter</p>
-                </a>
+              {/* Full Stack Content */}
+              <a 
+                href="https://contentstrategy.substack.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-primary hover:text-primary-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-bold text-xl">FULL STACK CONTENT</h4>
+                  <svg className="w-5 h-5 transform group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                  </svg>
+                </div>
+                <p className="text-sm opacity-80">Newsletter</p>
+              </a>
 
-                {/* 200 MAX */}
-                <a 
-                  href="https://in200max.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block bg-background/10 text-background border-2 border-background/30 p-4 transform hover:bg-destructive hover:text-destructive-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group"
-                >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h4 className="font-bold text-lg">200 MAX</h4>
-                    </div>
-                    <svg className="w-5 h-5 transform group-hover:rotate-45 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
-                  </div>
-                  <p className="text-xs opacity-80 mt-1">Platform</p>
-                </a>
-              </div>
+              {/* 200 MAX */}
+              <a 
+                href="https://in200max.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-destructive hover:text-destructive-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-bold text-xl">200 MAX</h4>
+                  <svg className="w-5 h-5 transform group-hover:rotate-45 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </div>
+                <p className="text-sm opacity-80">Platform</p>
+              </a>
             </div>
 
             {/* Decorative elements */}
@@ -625,7 +615,7 @@ function HomePage() {
             <div className="absolute bottom-4 right-0 w-4 h-12 bg-background/20 border-2 border-background/30 transform skew-x-12"></div>
           </div>
           
-          <div className="mt-8 pt-8">
+          <div className="mt-8 pt-8 text-center">
             <LastUpdated />
             <p className="opacity-60">© {new Date().getFullYear()} Brent Summers. All rights reserved.</p>
           </div>
