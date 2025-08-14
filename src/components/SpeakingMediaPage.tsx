@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Button } from './ui/button';
-import { Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Download, Play, X } from 'lucide-react';
+import { ExternalLink, Download, Play } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
+import Header from './Header';
 import LastUpdated from './LastUpdated';
 
 export default function SpeakingMediaPage() {
@@ -29,38 +29,7 @@ export default function SpeakingMediaPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Skip to content link for accessibility */}
-      <a 
-        href="#main-content" 
-        className="skip-to-content"
-        aria-label="Skip to main content"
-      >
-        Skip to main content
-      </a>
-
-      {/* Navigation - Neo-Brutalist Style */}
-      <nav className="sticky top-0 z-50 bg-background border-b-8 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))]" role="navigation" aria-label="Main navigation">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
-            <Link 
-              to="/" 
-              className="text-2xl font-black text-primary hover:text-accent transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] px-4 border-4 border-transparent hover:border-foreground transform hover:rotate-1 transition-transform duration-200"
-              role="banner"
-              aria-label="Navigate to home section"
-            >
-              BRENT SUMMERS
-            </Link>
-            <div className="hidden md:flex space-x-2">
-              <Link 
-                to="/" 
-                className="px-6 py-3 text-lg font-bold bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150"
-              >
-                HOME
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       <main id="main-content" className="container mx-auto px-4 py-12 lg:py-20">
         {/* Hero Section - Neo-Brutalist */}

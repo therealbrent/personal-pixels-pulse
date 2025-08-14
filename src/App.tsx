@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
+import Header from './components/Header';
 import LLMSTextPage from './components/LLMSTextPage';
 import SpeakingMediaPage from './components/SpeakingMediaPage';
 import AccessibleSlotMachine from './components/AccessibleSlotMachine';
@@ -28,48 +29,7 @@ function HomePage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Skip to content link for accessibility */}
-      <a 
-        href="#main-content" 
-        className="skip-to-content"
-        aria-label="Skip to main content"
-      >
-        Skip to main content
-      </a>
-
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background border-b-4 border-foreground" role="navigation" aria-label="Main navigation">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <button 
-              onClick={() => scrollToSection('home')} 
-              className="text-xl font-bold text-primary hover:text-accent transition-colors focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] px-2"
-              role="banner"
-              aria-label="Navigate to home section"
-            >
-              BRENT SUMMERS
-            </button>
-            <div className="flex gap-4">
-              <a 
-                href="/speaking-media" 
-                className="bg-accent text-accent-foreground border-4 border-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity min-h-[44px] flex items-center"
-                aria-label="View Speaking & Media page"
-              >
-                SPEAKING & MEDIA
-              </a>
-              <a 
-                href="/llms.txt" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-background text-foreground border-4 border-foreground px-4 py-2 font-bold hover:opacity-90 transition-opacity min-h-[44px] flex items-center"
-                aria-label="View LLMS.txt file - Opens in new tab"
-              >
-                LLMS.txt
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero Section */}
       <header id="home" className="h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10 px-4">
