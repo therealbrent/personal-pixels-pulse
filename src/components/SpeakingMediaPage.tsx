@@ -126,20 +126,21 @@ export default function SpeakingMediaPage() {
                     WATCH NOW
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-4xl w-[95vw] h-[80vh] p-0 border-8 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))]">
+                <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] p-0 border-8 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))]">
                   <DialogHeader className="p-6 bg-primary text-primary-foreground border-b-4 border-foreground">
                     <DialogTitle className="text-2xl font-black">FIVE TIPS TO AVOID GENERATIVE AI BUYER'S REMORSE</DialogTitle>
                   </DialogHeader>
-                  <div className="flex-1 bg-background">
+                  <div className="relative w-full aspect-video bg-background">
                     <iframe
                       width="100%"
                       height="100%"
-                      src="https://www.youtube.com/embed/d3A-gHkwiBE"
-                      title="Five Tips to Avoid Generative AI Buyer's Remorse"
+                      src="https://www.youtube.com/embed/d3A-gHkwiBE?si=q-K2uDwd9cHUJvBB"
+                      title="YouTube video player"
                       frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
                       allowFullScreen
-                      className="w-full h-full"
+                      className="absolute inset-0 w-full h-full"
                     ></iframe>
                   </div>
                 </DialogContent>
