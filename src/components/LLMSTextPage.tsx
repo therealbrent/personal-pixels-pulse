@@ -1,28 +1,16 @@
 import { useEffect } from 'react';
+import Header from './Header';
+import Footer from './Footer';
 
 const LLMSTextPage = () => {
   useEffect(() => {
-    // Set the content type to plain text
-    document.title = 'llms.txt';
+    document.title = 'llms.txt - Brent Summers';
     
-    // Remove all CSS styling to make it look like a plain text file
-    const style = document.createElement('style');
-    style.textContent = `
-      body { 
-        font-family: monospace; 
-        white-space: pre-wrap; 
-        margin: 0; 
-        padding: 20px; 
-        background: white; 
-        color: black;
-        line-height: 1.4;
-      }
-    `;
-    document.head.appendChild(style);
-    
-    return () => {
-      document.head.removeChild(style);
-    };
+    // SEO meta tags
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'AI-first marketing leader Brent Summers. Enterprise AI adoption expert with 8.6x ROI achievements and award-winning ABM strategies.');
+    }
   }, []);
 
   const llmsContent = `# Brent Summers, AI Platforms & GTM Innovation Leader
@@ -84,8 +72,18 @@ const LLMSTextPage = () => {
 - Brent also occassionally shares his expertise on [Content Strategy](https://contentstrategy.substack.com) and other insights (briefly) on [200 MAX](https://www.in200max.com/).`;
 
   return (
-    <div style={{ fontFamily: 'monospace', whiteSpace: 'pre-wrap' }}>
-      {llmsContent}
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+      
+      <main id="main-content" className="container mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="border-4 border-foreground bg-card p-8 font-mono whitespace-pre-wrap text-sm leading-relaxed">
+            {llmsContent}
+          </div>
+        </div>
+      </main>
+      
+      <Footer />
     </div>
   );
 };
