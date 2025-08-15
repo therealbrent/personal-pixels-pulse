@@ -124,28 +124,7 @@ export default function SpeakingMediaPage() {
             AS SEEN IN
           </h2>
           
-          {/* Events */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-black mb-8 text-center text-foreground">SPEAKING ENGAGEMENTS</h3>
-            <div className="flex flex-wrap justify-center items-center gap-12 mb-8">
-              <div className="border-4 border-foreground p-4 bg-background shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transform hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] transition-all duration-150">
-                <img src="/lovable-uploads/28bc7865-3df1-4fae-ad2c-6ae83fdda755.png" alt="ConveyUX" className="h-16 object-contain" />
-              </div>
-              <div className="border-4 border-foreground p-4 bg-background shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transform hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] transition-all duration-150">
-                <img src="/lovable-uploads/7d46eb0b-bead-4d9d-a4a0-f8dc09a272ee.png" alt="Webit" className="h-16 object-contain" />
-              </div>
-              <div className="border-4 border-foreground p-4 bg-accent text-accent-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transform hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] transition-all duration-150">
-                <span className="text-xl font-black">AI LEADERS FORUM</span>
-              </div>
-              <div className="border-4 border-foreground p-4 bg-primary text-primary-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transform hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] transition-all duration-150">
-                <span className="text-xl font-black">AI x MARKETING SUMMIT</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Media Coverage */}
           <div>
-            <h3 className="text-2xl font-black mb-8 text-center text-foreground">MEDIA COVERAGE</h3>
             <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
               {/* CIO News */}
               <div className="border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
