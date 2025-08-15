@@ -126,88 +126,88 @@ export default function SpeakingMediaPage() {
           
           <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {/* CIO News */}
-            <div className="border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-              <div className="mb-6">
-                <span className="text-2xl font-black text-foreground">CIO NEWS</span>
+            <a 
+              href="https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
+            >
+              <div className="mb-4">
+                <span className="text-sm font-black text-foreground/60 tracking-wider">CIO NEWS</span>
               </div>
               <h4 className="font-black mb-6 text-primary text-xl leading-tight">
                 Why Qualcomm's Playbook For Scaling AI Starts With Intention -- And Ends With A Human
               </h4>
               <blockquote className="mb-6 border-l-4 border-primary pl-6 italic text-foreground/80 text-lg leading-relaxed">
-                "We expect a human to verify the facts, citations, decisions—and the underlying strategy. Is it ethical? Does it adhere to our Responsible AI Principles and policies? That's the bar."
+                We expect a human to verify the facts, citations, decisions—and the underlying strategy. Is it ethical? Does it adhere to our Responsible AI Principles and policies? That's the bar.
               </blockquote>
-              <a 
-                href="https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary font-bold underline hover:text-primary/80 transition-colors"
-              >
+              <span className="text-primary font-bold underline hover:text-[#FF1392] transition-colors">
                 Read Article
-              </a>
-            </div>
+              </span>
+            </a>
 
             {/* SmartSuite */}
-            <div className="border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-              <div className="mb-6">
-                <img src="/lovable-uploads/9badee60-0160-48b3-9d26-cd621229a5e0.png" alt="SmartSuite" className="h-8 object-contain" />
+            <a 
+              href="https://www.smartsuite.com/news/qualcomm-technologies-leads-edge-ai-sustainability-brent-summers"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
+            >
+              <div className="mb-4">
+                <span className="text-sm font-black text-foreground/60 tracking-wider">SMARTSUITE</span>
               </div>
               <h4 className="font-black mb-6 text-primary text-xl leading-tight">
                 Why the next wave of AI opportunities isn't in the cloud, it's on the edge
               </h4>
               <blockquote className="mb-6 border-l-4 border-primary pl-6 italic text-foreground/80 text-lg leading-relaxed">
-                "As someone committed to sustainability, I believe in the transformative potential of AI—but must also acknowledge the challenges it poses to a sustainable future."
+                As someone committed to sustainability, I believe in the transformative potential of AI—but must also acknowledge the challenges it poses to a sustainable future.
               </blockquote>
-              <a 
-                href="https://www.smartsuite.com/news/qualcomm-technologies-leads-edge-ai-sustainability-brent-summers"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary font-bold underline hover:text-primary/80 transition-colors"
-              >
+              <span className="text-primary font-bold underline hover:text-[#FF1392] transition-colors">
                 Read Article
-              </a>
-            </div>
+              </span>
+            </a>
 
             {/* CMSWire */}
-            <div className="border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-              <div className="mb-6">
-                <img src="/lovable-uploads/56f07c85-b80f-4b73-9223-223ad08c2f32.png" alt="CMSWire" className="h-8 object-contain" />
+            <a 
+              href="https://www.cmswire.com/customer-experience/customer-centric-companies-sweat-the-details/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
+            >
+              <div className="mb-4">
+                <span className="text-sm font-black text-foreground/60 tracking-wider">CMS WIRE</span>
               </div>
               <h4 className="font-black mb-6 text-primary text-xl leading-tight">
                 Customer-Centric Companies Sweat the Details
               </h4>
               <blockquote className="mb-6 border-l-4 border-primary pl-6 italic text-foreground/80 text-lg leading-relaxed">
-                "Customer's perceptions will change along the way as they become more familiar with your company's products and services. Every single touchpoint is a chance to delight or disappoint."
+                Customer's perceptions will change along the way as they become more familiar with your company's products and services. Every single touchpoint is a chance to delight or disappoint.
               </blockquote>
-              <a 
-                href="https://www.cmswire.com/customer-experience/customer-centric-companies-sweat-the-details/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary font-bold underline hover:text-primary/80 transition-colors"
-              >
+              <span className="text-primary font-bold underline hover:text-[#FF1392] transition-colors">
                 Read Article
-              </a>
-            </div>
+              </span>
+            </a>
 
             {/* UX Magazine */}
-            <div className="border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-              <div className="mb-6">
-                <img src="/lovable-uploads/6ccd615a-c5e1-4dc0-8106-b334a50c14ae.png" alt="UX Magazine" className="h-8 object-contain" />
+            <a 
+              href="https://uxmag.com/articles/revisiting-proto-personas-for-executive-alignment"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
+            >
+              <div className="mb-4">
+                <span className="text-sm font-black text-foreground/60 tracking-wider">UX MAGAZINE</span>
               </div>
               <h4 className="font-black mb-6 text-primary text-xl leading-tight">
                 Revisiting Proto-Personas for Executive Alignment
               </h4>
               <blockquote className="mb-6 border-l-4 border-primary pl-6 italic text-foreground/80 text-lg leading-relaxed">
-                "We use proto-personas as a way of gaining alignment among our project sponsors and striking the right balance of focus between organizational and user needs."
+                We use proto-personas as a way of gaining alignment among our project sponsors and striking the right balance of focus between organizational and user needs.
               </blockquote>
-              <a 
-                href="https://uxmag.com/articles/revisiting-proto-personas-for-executive-alignment"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary font-bold underline hover:text-primary/80 transition-colors"
-              >
+              <span className="text-primary font-bold underline hover:text-[#FF1392] transition-colors">
                 Read Article
-              </a>
-            </div>
+              </span>
+            </a>
           </div>
         </section>
 
