@@ -32,41 +32,38 @@ export default function SpeakingMediaPage() {
       <main id="main-content" className="container mx-auto px-4 py-12 lg:py-20">
         {/* Hero Section - Neo-Brutalist */}
         <header className="text-center mb-20">
-          <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-8 text-foreground transform hover:skew-x-1 transition-transform duration-300">
-            FROM STAGE<br />
-            TO STORY
+          <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-20 text-foreground transform hover:skew-x-1 transition-transform duration-300">
+            SPEAKING & MEDIA
           </h1>
-          <div className="max-w-4xl mx-auto bg-accent border-8 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-            <p className="text-2xl md:text-4xl font-bold text-accent-foreground leading-tight mb-4">
-              BRINGING AI-FIRST STRATEGY TO THE ENTERPRISE CONVERSATION
-            </p>
-            <p className="text-lg md:text-xl text-accent-foreground/80 font-semibold">
-              I deliver high-impact keynotes, engaging panels, and unique insights for global audiences.
-            </p>
-          </div>
         </header>
 
-        {/* Unique Perspective Section - Neo-Brutalist */}
+        {/* Speaking Topics Section - Neo-Brutalist */}
         <section className="mb-20">
-          <h2 className="text-4xl md:text-6xl font-black mb-12 text-center text-foreground transform hover:skew-y-1 transition-transform duration-300">
-            UNIQUE PERSPECTIVE
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <div className="bg-primary border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-              <h3 className="text-2xl font-black mb-4 text-primary-foreground">AI-FIRST ENTERPRISE TRANSFORMATION</h3>
-              <p className="text-primary-foreground font-bold text-lg">Advice for Fortune 500s scaling AI capabilities.</p>
-            </div>
-            <div className="bg-accent border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-              <h3 className="text-2xl font-black mb-4 text-accent-foreground">AN AGENTIC WORKPLACE</h3>
-              <p className="text-accent-foreground font-bold text-lg">What changes when AI becomes the default interface for work.</p>
-            </div>
-            <div className="bg-secondary border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-              <h3 className="text-2xl font-black mb-4 text-secondary-foreground">B2B IS ABM</h3>
-              <p className="text-secondary-foreground font-bold text-lg">Why all B2B marketers should apply ABM strategy.</p>
-            </div>
-            <div className="bg-destructive border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-              <h3 className="text-2xl font-black mb-4 text-destructive-foreground">THE UX FLYWHEEL</h3>
-              <p className="text-destructive-foreground font-bold text-lg">How UX research, strategy, and design applies to marketing.</p>
+          <div className="max-w-7xl mx-auto bg-background border-8 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))] p-12 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+            <h2 className="text-3xl md:text-5xl font-black mb-8 text-foreground leading-tight">
+              WHAT HAPPENS WHEN AI BECOMES THE DEFAULT INTERFACE FOR WORK?
+            </h2>
+            <p className="text-lg md:text-xl font-semibold text-foreground/80 mb-12 leading-relaxed">
+              AI changes more than workflows—it changes how people think, collaborate, and lead. I've navigated these shifts firsthand, and my keynotes equip audiences to balance ambition with empathy as they drive cultural transformation.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-primary border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+                <h3 className="text-2xl font-black mb-4 text-primary-foreground">AI-FIRST ENTERPRISE TRANSFORMATION</h3>
+                <p className="text-primary-foreground font-bold text-lg">How global companies turn hype into durable advantage.</p>
+              </div>
+              <div className="bg-accent border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+                <h3 className="text-2xl font-black mb-4 text-accent-foreground">AN AGENTIC WORKPLACE</h3>
+                <p className="text-accent-foreground font-bold text-lg">What changes when AI becomes the default interface for work.</p>
+              </div>
+              <div className="bg-secondary border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+                <h3 className="text-2xl font-black mb-4 text-secondary-foreground">B2B IS ABM</h3>
+                <p className="text-secondary-foreground font-bold text-lg">Why enterprise growth depends on strategy, not spray-and-pray.</p>
+              </div>
+              <div className="bg-destructive border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+                <h3 className="text-2xl font-black mb-4 text-destructive-foreground">THE UX FLYWHEEL</h3>
+                <p className="text-destructive-foreground font-bold text-lg">How UX research, strategy, and design unlock momentum in modern marketing.</p>
+              </div>
             </div>
           </div>
         </section>
