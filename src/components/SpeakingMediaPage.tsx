@@ -81,10 +81,10 @@ export default function SpeakingMediaPage() {
           <div className="max-w-6xl mx-auto">
             <div className="bg-background border-8 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))] p-10 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
               <h3 className="text-3xl md:text-4xl font-black mb-6 text-primary">
-                FIVE TIPS TO AVOID GENERATIVE AI BUYER'S REMORSE
+                HAPPIER HUMAN, BETTER BUSINESS: THE QUALCOMM TECHNOLOGIES AI BLUEPRINT
               </h3>
               <p className="text-foreground mb-8 leading-relaxed text-lg font-semibold">
-                This talk shares Qualcomm Technologies' AI adoption journey, offering practical strategies for integrating AI into your workflows without sacrificing control or quality, helping you avoid pitfalls and deliver value from day one.
+                What began as a pandemic project has become Brent Summers' new career trajectory. His interest in Generative AI sparked a revolution that now saves Qualcomm Technologies 2,400 hours every month across multiple departments. In this unfiltered session, Brent reveals the guiding principles that led to selecting WRITER. You'll also learn how he defines the high-value use cases and maps them to WRITER's features while keeping humans at the center.
               </p>
               <Dialog open={showVideoModal} onOpenChange={setShowVideoModal}>
                 <DialogTrigger asChild>
@@ -97,13 +97,13 @@ export default function SpeakingMediaPage() {
                 </DialogTrigger>
                 <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] p-0 border-8 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))]">
                   <DialogHeader className="p-6 bg-primary text-primary-foreground border-b-4 border-foreground">
-                    <DialogTitle className="text-2xl font-black">FIVE TIPS TO AVOID GENERATIVE AI BUYER'S REMORSE</DialogTitle>
+                    <DialogTitle className="text-2xl font-black">HAPPIER HUMAN, BETTER BUSINESS: THE QUALCOMM TECHNOLOGIES AI BLUEPRINT</DialogTitle>
                   </DialogHeader>
                   <div className="relative w-full aspect-video bg-background">
                     <iframe
                       width="100%"
                       height="100%"
-                      src="https://www.youtube.com/embed/d3A-gHkwiBE?si=q-K2uDwd9cHUJvBB"
+                      src="https://www.youtube.com/embed/ApLKfzjaN3Y"
                       title="YouTube video player"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
