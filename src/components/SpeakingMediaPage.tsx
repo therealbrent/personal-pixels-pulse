@@ -130,18 +130,18 @@ export default function SpeakingMediaPage() {
               href="https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers"
               target="_blank"
               rel="noopener noreferrer"
-              className="block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
+              className="group block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
             >
               <div className="mb-4">
                 <span className="text-sm font-black text-foreground/60 tracking-wider">CIO NEWS</span>
               </div>
-              <h4 className="font-black mb-6 text-primary text-xl leading-tight">
+              <h4 className="font-black mb-6 text-primary group-hover:text-[#FF1392] text-xl leading-tight transition-colors">
                 Why Qualcomm's Playbook For Scaling AI Starts With Intention -- And Ends With A Human
               </h4>
-              <blockquote className="mb-6 border-l-4 border-primary pl-6 italic text-foreground/80 text-lg leading-relaxed">
+              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-[#FF1392] pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
                 We expect a human to verify the facts, citations, decisions—and the underlying strategy. Is it ethical? Does it adhere to our Responsible AI Principles and policies? That's the bar.
               </blockquote>
-              <span className="text-primary font-bold underline hover:text-[#FF1392] transition-colors">
+              <span className="text-primary group-hover:text-[#FF1392] font-bold underline transition-colors">
                 Read Article
               </span>
             </a>
@@ -151,18 +151,18 @@ export default function SpeakingMediaPage() {
               href="https://www.smartsuite.com/news/qualcomm-technologies-leads-edge-ai-sustainability-brent-summers"
               target="_blank"
               rel="noopener noreferrer"
-              className="block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
+              className="group block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
             >
               <div className="mb-4">
                 <span className="text-sm font-black text-foreground/60 tracking-wider">SMARTSUITE</span>
               </div>
-              <h4 className="font-black mb-6 text-primary text-xl leading-tight">
+              <h4 className="font-black mb-6 text-primary group-hover:text-[#FF1392] text-xl leading-tight transition-colors">
                 Why the next wave of AI opportunities isn't in the cloud, it's on the edge
               </h4>
-              <blockquote className="mb-6 border-l-4 border-primary pl-6 italic text-foreground/80 text-lg leading-relaxed">
+              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-[#FF1392] pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
                 As someone committed to sustainability, I believe in the transformative potential of AI—but must also acknowledge the challenges it poses to a sustainable future.
               </blockquote>
-              <span className="text-primary font-bold underline hover:text-[#FF1392] transition-colors">
+              <span className="text-primary group-hover:text-[#FF1392] font-bold underline transition-colors">
                 Read Article
               </span>
             </a>
@@ -172,18 +172,18 @@ export default function SpeakingMediaPage() {
               href="https://www.cmswire.com/customer-experience/customer-centric-companies-sweat-the-details/"
               target="_blank"
               rel="noopener noreferrer"
-              className="block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
+              className="group block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
             >
               <div className="mb-4">
                 <span className="text-sm font-black text-foreground/60 tracking-wider">CMS WIRE</span>
               </div>
-              <h4 className="font-black mb-6 text-primary text-xl leading-tight">
+              <h4 className="font-black mb-6 text-primary group-hover:text-[#FF1392] text-xl leading-tight transition-colors">
                 Customer-Centric Companies Sweat the Details
               </h4>
-              <blockquote className="mb-6 border-l-4 border-primary pl-6 italic text-foreground/80 text-lg leading-relaxed">
+              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-[#FF1392] pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
                 Customer's perceptions will change along the way as they become more familiar with your company's products and services. Every single touchpoint is a chance to delight or disappoint.
               </blockquote>
-              <span className="text-primary font-bold underline hover:text-[#FF1392] transition-colors">
+              <span className="text-primary group-hover:text-[#FF1392] font-bold underline transition-colors">
                 Read Article
               </span>
             </a>
@@ -193,18 +193,18 @@ export default function SpeakingMediaPage() {
               href="https://uxmag.com/articles/revisiting-proto-personas-for-executive-alignment"
               target="_blank"
               rel="noopener noreferrer"
-              className="block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
+              className="group block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
             >
               <div className="mb-4">
                 <span className="text-sm font-black text-foreground/60 tracking-wider">UX MAGAZINE</span>
               </div>
-              <h4 className="font-black mb-6 text-primary text-xl leading-tight">
+              <h4 className="font-black mb-6 text-primary group-hover:text-[#FF1392] text-xl leading-tight transition-colors">
                 Revisiting Proto-Personas for Executive Alignment
               </h4>
-              <blockquote className="mb-6 border-l-4 border-primary pl-6 italic text-foreground/80 text-lg leading-relaxed">
+              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-[#FF1392] pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
                 We use proto-personas as a way of gaining alignment among our project sponsors and striking the right balance of focus between organizational and user needs.
               </blockquote>
-              <span className="text-primary font-bold underline hover:text-[#FF1392] transition-colors">
+              <span className="text-primary group-hover:text-[#FF1392] font-bold underline transition-colors">
                 Read Article
               </span>
             </a>
