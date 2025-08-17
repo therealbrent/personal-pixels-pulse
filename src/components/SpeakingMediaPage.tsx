@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Button } from './ui/button';
 import { ExternalLink, Download, Play } from 'lucide-react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import Header from './Header';
 import Footer from './Footer';
 
 export default function SpeakingMediaPage() {
-  const [showVideoModal, setShowVideoModal] = useState(false);
 
   useEffect(() => {
     document.title = 'Speaking & Media - Brent Summers';
@@ -86,34 +84,13 @@ export default function SpeakingMediaPage() {
               <p className="text-foreground mb-8 leading-relaxed text-lg font-semibold">
                 What began as a pandemic project has become Brent Summers' new career trajectory. His interest in Generative AI sparked a revolution that now saves Qualcomm Technologies 2,400 hours every month across multiple departments. In this unfiltered session, Brent reveals the guiding principles that led to selecting WRITER. You'll also learn how he defines the high-value use cases and maps them to WRITER's features while keeping humans at the center.
               </p>
-              <Dialog open={showVideoModal} onOpenChange={setShowVideoModal}>
-                <DialogTrigger asChild>
-                  <Button 
-                    className="bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-xl font-black px-8 py-4"
-                  >
-                    <Play className="h-6 w-6 mr-3" />
-                    WATCH NOW
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] p-0 border-8 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))]">
-                  <DialogHeader className="p-6 bg-primary text-primary-foreground border-b-4 border-foreground">
-                    <DialogTitle className="text-2xl font-black">HAPPIER HUMAN, BETTER BUSINESS: THE QUALCOMM TECHNOLOGIES AI BLUEPRINT</DialogTitle>
-                  </DialogHeader>
-                  <div className="relative w-full aspect-video bg-background">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/ApLKfzjaN3Y"
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full"
-                    ></iframe>
-                  </div>
-                </DialogContent>
-              </Dialog>
+              <Button 
+                onClick={() => window.open('https://youtu.be/ApLKfzjaN3Y', '_blank')}
+                className="bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-xl font-black px-8 py-4"
+              >
+                <ExternalLink className="h-6 w-6 mr-3" />
+                WATCH NOW
+              </Button>
             </div>
           </div>
         </section>
