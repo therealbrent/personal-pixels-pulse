@@ -68,10 +68,10 @@ export default function SpeakingMediaPage() {
           </div>
         </section>
 
-        {/* Featured Talks Section - Neo-Brutalist with Modal */}
+        {/* Featured Talk Section - Neo-Brutalist */}
         <section className="mb-20">
           <h2 className="text-4xl md:text-6xl font-black mb-12 text-center text-foreground transform hover:skew-y-1 transition-transform duration-300">
-            FEATURED TALKS
+            FEATURED TALK
           </h2>
           <div className="max-w-6xl mx-auto">
             <div className="bg-background border-8 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))] p-10 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
@@ -81,13 +81,19 @@ export default function SpeakingMediaPage() {
               <p className="text-foreground mb-8 leading-relaxed text-lg font-semibold">
                 What began as a pandemic project has become Brent Summers' new career trajectory. His interest in Generative AI sparked a revolution that now saves Qualcomm Technologies 2,400 hours every month across multiple departments. In this unfiltered session, Brent reveals the guiding principles that led to selecting WRITER. You'll also learn how he defines the high-value use cases and maps them to WRITER's features while keeping humans at the center.
               </p>
-              <Button 
-                onClick={() => window.open('https://youtu.be/ApLKfzjaN3Y', '_blank')}
-                className="bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-xl font-black px-8 py-4"
-              >
-                <ExternalLink className="h-6 w-6 mr-3" />
-                WATCH NOW
-              </Button>
+              <div className="relative w-full aspect-video border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))]">
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube-nocookie.com/embed/ApLKfzjaN3Y?si=E82AmmkgOke1avFt" 
+                  title="YouTube video player" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                ></iframe>
+              </div>
             </div>
           </div>
         </section>
