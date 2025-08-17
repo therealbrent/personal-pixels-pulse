@@ -53,7 +53,7 @@ export default function Footer() {
                   <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
                 </svg>
               </div>
-              <p className="text-sm opacity-80">Newsletter</p>
+              <p className="text-sm opacity-80">Newsletter about content strategy</p>
             </a>
 
             {/* 200 MAX */}
@@ -69,7 +69,7 @@ export default function Footer() {
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                 </svg>
               </div>
-              <p className="text-sm opacity-80">Platform</p>
+              <p className="text-sm opacity-80">Maximum clarity. Minimal fluff. Actionable insights in fewer than 200 words.</p>
             </a>
           </div>
 
