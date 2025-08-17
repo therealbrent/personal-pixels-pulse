@@ -32,46 +32,79 @@ export default function SpeakingMediaPage() {
       <Header />
 
       <main id="main-content" className="container mx-auto px-4 py-12 lg:py-20">
-        {/* Hero Section - Neo-Brutalist */}
-        <header className="text-center mb-20">
-          <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-8 text-foreground transform hover:skew-x-1 transition-transform duration-300">
-            FROM STAGE<br />
-            TO STORY
-          </h1>
-          <div className="max-w-4xl mx-auto bg-accent border-8 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-            <p className="text-2xl md:text-4xl font-bold text-accent-foreground leading-tight mb-4">
-              BRINGING AI-FIRST STRATEGY TO THE ENTERPRISE CONVERSATION
-            </p>
-            <p className="text-lg md:text-xl text-accent-foreground/80 font-semibold">
-              I deliver high-impact keynotes, engaging panels, and unique insights for global audiences.
-            </p>
+        {/* BROKEN GRID MANIFESTO - Neo-Brutalist */}
+        <header className="relative mb-20 overflow-hidden">
+          {/* Diagonal MANIFESTO stripe */}
+          <div className="absolute top-0 right-0 w-full h-32 bg-[#FF1392] transform rotate-12 origin-top-right translate-x-1/4 -translate-y-8 z-10">
+            <div className="flex items-center justify-center h-full">
+              <span className="text-white font-black text-2xl md:text-4xl tracking-widest transform -rotate-12">
+                MANIFESTO
+              </span>
+            </div>
           </div>
-        </header>
 
-        {/* Unique Perspective Section - Neo-Brutalist */}
-        <section className="mb-20">
-          <h2 className="text-4xl md:text-6xl font-black mb-12 text-center text-foreground transform hover:skew-y-1 transition-transform duration-300">
-            UNIQUE PERSPECTIVE
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <div className="bg-primary border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-              <h3 className="text-2xl font-black mb-4 text-primary-foreground">AI-FIRST ENTERPRISE TRANSFORMATION</h3>
-              <p className="text-primary-foreground font-bold text-lg">Advice for Fortune 500s scaling AI capabilities.</p>
+          {/* Broken Grid Layout */}
+          <div className="relative z-20 grid grid-cols-12 gap-4 max-w-7xl mx-auto">
+            {/* Main Title Block - Offset */}
+            <div className="col-span-12 md:col-span-8 md:col-start-2 mb-8">
+              <div className="bg-foreground border-8 border-foreground shadow-[16px_16px_0px_0px_#FF1392] p-8 transform hover:translate-x-[8px] hover:translate-y-[8px] hover:shadow-[8px_8px_0px_0px_#FF1392] transition-all duration-300">
+                <h1 className="text-4xl md:text-7xl font-black text-background tracking-tight leading-none">
+                  FROM STAGE<br />
+                  TO STORY
+                </h1>
+              </div>
             </div>
-            <div className="bg-accent border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-              <h3 className="text-2xl font-black mb-4 text-accent-foreground">AN AGENTIC WORKPLACE</h3>
-              <p className="text-accent-foreground font-bold text-lg">What changes when AI becomes the default interface for work.</p>
+
+            {/* Floating Geometric Shape 1 - Top Right */}
+            <div className="hidden md:block absolute top-20 right-8 w-24 h-24 bg-[#FFBA08] border-4 border-foreground transform rotate-45 hover:rotate-90 transition-transform duration-500 z-30">
+              <div className="flex items-center justify-center h-full transform -rotate-45 hover:rotate-0 transition-transform duration-500">
+                <span className="font-black text-xs">AI</span>
+              </div>
             </div>
-            <div className="bg-secondary border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-              <h3 className="text-2xl font-black mb-4 text-secondary-foreground">B2B IS ABM</h3>
-              <p className="text-secondary-foreground font-bold text-lg">Why all B2B marketers should apply ABM strategy.</p>
+
+            {/* Description Block - Asymmetrical */}
+            <div className="col-span-12 md:col-span-6 md:col-start-7">
+              <div className="bg-[#FF1392] border-6 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))] p-6 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+                <p className="text-white font-bold text-lg md:text-xl leading-tight">
+                  BRINGING AI-FIRST STRATEGY TO THE ENTERPRISE CONVERSATION
+                </p>
+              </div>
             </div>
-            <div className="bg-destructive border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-              <h3 className="text-2xl font-black mb-4 text-destructive-foreground">THE UX FLYWHEEL</h3>
-              <p className="text-destructive-foreground font-bold text-lg">How UX research, strategy, and design applies to marketing.</p>
+
+            {/* Floating Geometric Shape 2 - Left Side */}
+            <div className="hidden md:block absolute top-64 left-4 w-16 h-32 bg-background border-4 border-foreground transform -skew-x-12 hover:skew-x-0 transition-transform duration-300 z-30">
+              <div className="flex items-center justify-center h-full">
+                <span className="font-black text-xs transform skew-x-12">UX</span>
+              </div>
+            </div>
+
+            {/* Secondary Description - Offset */}
+            <div className="col-span-12 md:col-span-7 md:col-start-1 mt-8">
+              <div className="bg-[#FFBA08] border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-6 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+                <p className="text-foreground font-bold text-lg">
+                  I deliver high-impact keynotes, engaging panels, and unique insights for global audiences.
+                </p>
+              </div>
+            </div>
+
+            {/* Topic Floating Shapes */}
+            <div className="hidden lg:block absolute bottom-0 right-1/4 w-20 h-20 bg-accent border-4 border-foreground transform rotate-12 hover:-rotate-12 transition-transform duration-400 z-30">
+              <div className="flex items-center justify-center h-full transform -rotate-12">
+                <span className="font-black text-xs text-accent-foreground">ABM</span>
+              </div>
+            </div>
+
+            <div className="hidden lg:block absolute top-32 left-1/3 w-16 h-16 bg-secondary border-4 border-foreground rounded-full hover:scale-110 transition-transform duration-300 z-30">
+              <div className="flex items-center justify-center h-full">
+                <span className="font-black text-xs text-secondary-foreground">B2B</span>
+              </div>
             </div>
           </div>
-        </section>
+
+          {/* Decorative broken elements */}
+          <div className="absolute bottom-8 left-8 w-8 h-8 bg-[#FF1392] border-2 border-foreground transform rotate-45"></div>
+          <div className="absolute top-1/2 right-16 w-6 h-16 bg-[#FFBA08] border-2 border-foreground transform skew-y-12"></div>
+        </header>
 
         {/* Featured Talks Section - Neo-Brutalist with Modal */}
         <section className="mb-20">
