@@ -7,12 +7,12 @@ import Footer from './Footer';
 export default function SpeakingMediaPage() {
 
   useEffect(() => {
-    document.title = 'Speaking & Media - Brent Summers';
+    document.title = 'Speaking - Brent Summers';
     
     // SEO meta tags
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'AI-first enterprise keynotes, panels, and insights. Brent Summers delivers high-impact talks on AI transformation, ABM strategy, and UX for Fortune 500 audiences.');
+      metaDescription.setAttribute('content', 'Professional speaking press kit. Brent Summers delivers keynotes on AI transformation, marketing innovation, and UX strategy for global conferences and events.');
     }
   }, []);
 
@@ -31,63 +31,186 @@ export default function SpeakingMediaPage() {
 
       <main id="main-content" className="container mx-auto px-4 py-12 lg:py-20">
         {/* Hero Section - Neo-Brutalist */}
-        <header className="text-center mb-20">
-          <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-20 text-foreground transform hover:skew-x-1 transition-transform duration-300">
-            SPEAKING & MEDIA
+        <header className="text-center mb-12">
+          <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-8 text-foreground transform hover:skew-x-1 transition-transform duration-300">
+            SPEAKING
           </h1>
+          <p className="text-xl md:text-2xl font-bold text-foreground/90 max-w-4xl mx-auto leading-relaxed">
+            I don't give speeches because transformation isn't theory — it's experienced. I share stories, frameworks, and scars from two decades of leading change.
+          </p>
         </header>
 
-        {/* Speaking Topics Section - Neo-Brutalist */}
+        {/* Executive Impact Section */}
         <section className="mb-20">
-          <div className="max-w-7xl mx-auto bg-background border-8 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))] p-12 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-            <h2 className="text-3xl md:text-5xl font-black mb-8 text-foreground leading-tight">
-              WHAT HAPPENS WHEN AI BECOMES THE DEFAULT INTERFACE FOR WORK?
+          <div className="max-w-7xl mx-auto bg-primary border-8 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))] p-12 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+            <h2 className="text-3xl md:text-5xl font-black mb-4 text-primary-foreground leading-tight">
+              EXECUTIVE INSIGHTS & INDUSTRY IMPACT
             </h2>
-            <p className="text-lg md:text-xl font-semibold text-foreground/80 mb-12 leading-relaxed">
-              AI changes more than workflows—it changes how people think, collaborate, and lead. I've navigated these shifts firsthand, and my keynotes equip audiences to balance ambition with empathy as they drive cultural transformation.
+            <p className="text-xl md:text-2xl font-bold text-primary-foreground/90 leading-relaxed">
+              Global stages to local meetups. Wherever marketing, technology, and design collide.
             </p>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-primary border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-                <h3 className="text-2xl font-black mb-4 text-primary-foreground">AI-FIRST ENTERPRISE TRANSFORMATION</h3>
-                <p className="text-primary-foreground font-bold text-lg">How global companies turn hype into durable advantage.</p>
-              </div>
-              <div className="bg-accent border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-                <h3 className="text-2xl font-black mb-4 text-accent-foreground">AN AGENTIC WORKPLACE</h3>
-                <p className="text-accent-foreground font-bold text-lg">What changes when AI becomes the default interface for work.</p>
-              </div>
-              <div className="bg-secondary border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-                <h3 className="text-2xl font-black mb-4 text-secondary-foreground">B2B IS ABM</h3>
-                <p className="text-secondary-foreground font-bold text-lg">Why enterprise growth depends on strategy, not spray-and-pray.</p>
-              </div>
-              <div className="bg-destructive border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-                <h3 className="text-2xl font-black mb-4 text-destructive-foreground">THE UX FLYWHEEL</h3>
-                <p className="text-destructive-foreground font-bold text-lg">How UX research, strategy, and design unlock momentum in modern marketing.</p>
-              </div>
+          </div>
+        </section>
+
+        {/* Conferences Section */}
+        <section className="mb-16">
+          <h3 className="text-4xl md:text-6xl font-black mb-12 text-foreground transform hover:skew-y-1 transition-transform duration-300">
+            CONFERENCES
+          </h3>
+          <div className="space-y-6 max-w-7xl mx-auto">
+            {/* Conference Talk 1 */}
+            <div className="bg-background border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-2xl md:text-3xl font-black mb-4 text-primary">
+                Beyond buzzwords: Real AI, real marketing, real results (Webit, 2025)
+              </h4>
+              <Button 
+                onClick={() => window.open('https://www.youtube.com/watch?v=eEbuoK5DS30', '_blank')}
+                className="bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-black px-6 py-3"
+              >
+                <Play className="h-5 w-5 mr-2" />
+                WATCH
+              </Button>
+            </div>
+
+            {/* Conference Talk 2 */}
+            <div className="bg-background border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-2xl md:text-3xl font-black mb-4 text-primary">
+                Happier Humans, Better Business (AI Leaders Forum, 2025)
+              </h4>
+              <Button 
+                onClick={() => window.open('https://youtu.be/ApLKfzjaN3Y', '_blank')}
+                className="bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-black px-6 py-3"
+              >
+                <Play className="h-5 w-5 mr-2" />
+                WATCH
+              </Button>
+            </div>
+
+            {/* Conference Talk 3 */}
+            <div className="bg-background border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-2xl md:text-3xl font-black mb-4 text-primary">
+                Five Tips to Avoid Generative AI Buyer's Remorse (AI x Marketing Summit, 2025)
+              </h4>
+              <Button 
+                onClick={() => window.open('https://youtu.be/d3A-gHkwiBE?si=ecXBZYUpq_StpVs2&t=1', '_blank')}
+                className="bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-black px-6 py-3"
+              >
+                <Play className="h-5 w-5 mr-2" />
+                WATCH
+              </Button>
+            </div>
+
+            {/* Conference Talk 4 */}
+            <div className="bg-background border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-2xl md:text-3xl font-black mb-4 text-primary">
+                Use Science to Write Better Copy (Product-Led Growth Conference, 2020)
+              </h4>
+              <Button 
+                onClick={() => window.open('https://www.youtube.com/watch?v=GRdx9R2B7iQ&t=1s', '_blank')}
+                className="bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-black px-6 py-3"
+              >
+                <Play className="h-5 w-5 mr-2" />
+                WATCH
+              </Button>
+            </div>
+
+            {/* Conference Talk 5 */}
+            <div className="bg-background border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
+                The UX Flywheel (ConveyUX, 2020)
+              </h4>
+            </div>
+
+            {/* Conference Talk 6 */}
+            <div className="bg-background border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-2xl md:text-3xl font-black mb-4 text-primary">
+                The UX Flywheel (San Diego Digital Designers, 2020)
+              </h4>
+              <Button 
+                onClick={() => window.open('https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp', '_blank')}
+                className="bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-black px-6 py-3"
+              >
+                <Play className="h-5 w-5 mr-2" />
+                WATCH
+              </Button>
+            </div>
+
+            {/* Conference Talk 7 */}
+            <div className="bg-background border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
+                The UX Flywheel (MarcomCentral User Conference, 2019)
+              </h4>
             </div>
           </div>
         </section>
 
-        {/* Featured Talks Section - Neo-Brutalist with Modal */}
-        <section className="mb-20">
-          <h2 className="text-4xl md:text-6xl font-black mb-12 text-center text-foreground transform hover:skew-y-1 transition-transform duration-300">
-            FEATURED TALKS
-          </h2>
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-background border-8 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))] p-10 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[8px_8px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
-              <h3 className="text-3xl md:text-4xl font-black mb-6 text-primary">
-                HAPPIER HUMAN, BETTER BUSINESS: THE QUALCOMM TECHNOLOGIES AI BLUEPRINT
-              </h3>
-              <p className="text-foreground mb-8 leading-relaxed text-lg font-semibold">
-                What began as a pandemic project has become Brent Summers' new career trajectory. His interest in Generative AI sparked a revolution that now saves Qualcomm Technologies 2,400 hours every month across multiple departments. In this unfiltered session, Brent reveals the guiding principles that led to selecting WRITER. You'll also learn how he defines the high-value use cases and maps them to WRITER's features while keeping humans at the center.
-              </p>
+        {/* Podcasts Section */}
+        <section className="mb-16">
+          <h3 className="text-4xl md:text-6xl font-black mb-12 text-foreground transform hover:skew-y-1 transition-transform duration-300">
+            PODCASTS
+          </h3>
+          <div className="space-y-6 max-w-7xl mx-auto">
+            <div className="bg-secondary border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-2xl md:text-3xl font-black mb-4 text-secondary-foreground">
+                Balancing Quantitative and Qualitative Perspectives in UX Strategy (Convey UX, 2020)
+              </h4>
               <Button 
-                onClick={() => window.open('https://youtu.be/ApLKfzjaN3Y', '_blank')}
-                className="bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-xl font-black px-8 py-4"
+                onClick={() => window.open('https://youtu.be/s827NVsQXS4?si=8JP9q_-fhSDMs_8_', '_blank')}
+                className="bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-black px-6 py-3"
               >
-                <ExternalLink className="h-6 w-6 mr-3" />
-                WATCH NOW
+                <Play className="h-5 w-5 mr-2" />
+                LISTEN
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Panels Section */}
+        <section className="mb-20">
+          <h3 className="text-4xl md:text-6xl font-black mb-12 text-foreground transform hover:skew-y-1 transition-transform duration-300">
+            PANELS
+          </h3>
+          <div className="grid md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+            <div className="bg-destructive border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-xl md:text-2xl font-black mb-2 text-destructive-foreground">
+                UC Irvine presents Exploring Design & Ethics
+              </h4>
+              <p className="text-destructive-foreground font-bold">Moderator - Good Cause, 2022</p>
+            </div>
+
+            <div className="bg-primary border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-xl md:text-2xl font-black mb-2 text-primary-foreground">
+                General Motors presents Exploring Diversity + Design
+              </h4>
+              <p className="text-primary-foreground font-bold">Moderator - Good Cause, 2021</p>
+            </div>
+
+            <div className="bg-accent border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-xl md:text-2xl font-black mb-2 text-accent-foreground">
+                Exploring Data Privacy & Artificial Intelligence in UX
+              </h4>
+              <p className="text-accent-foreground font-bold">Moderator - SDXD, 2020</p>
+            </div>
+
+            <div className="bg-secondary border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-xl md:text-2xl font-black mb-2 text-secondary-foreground">
+                Interview Olympics
+              </h4>
+              <p className="text-secondary-foreground font-bold">SDXD, 2019</p>
+            </div>
+
+            <div className="bg-destructive border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-xl md:text-2xl font-black mb-2 text-destructive-foreground">
+                Strategic Interviews: The Hiring Manager's Perspective
+              </h4>
+              <p className="text-destructive-foreground font-bold">SDXD, 2019</p>
+            </div>
+
+            <div className="bg-primary border-6 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] p-8 transform hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200">
+              <h4 className="text-xl md:text-2xl font-black mb-2 text-primary-foreground">
+                How to Get Hired for a UX Design Role
+              </h4>
+              <p className="text-primary-foreground font-bold">Moderator - UCSD, 2015</p>
             </div>
           </div>
         </section>
