@@ -40,10 +40,11 @@ export default function SpeakingMediaPage() {
           </p>
         </header>
 
-        {/* Executive Impact Section */}
+        {/* Executive Impact Section - Unified Macro Element */}
         <section className="mb-16">
-          <div className="max-w-7xl mx-auto bg-primary border-8 border-foreground shadow-[12px_12px_0px_0px_hsl(var(--foreground))] p-8 md:p-12">
-            <h2 className="text-3xl md:text-5xl font-black mb-4 text-primary-foreground leading-tight">
+          {/* Header/Letterhead */}
+          <div className="max-w-7xl mx-auto bg-primary border-8 border-foreground shadow-[16px_16px_0px_0px_hsl(var(--foreground))] p-6 md:p-8">
+            <h2 className="text-2xl md:text-4xl font-black mb-3 text-primary-foreground leading-tight">
               EXECUTIVE INSIGHTS & INDUSTRY IMPACT
             </h2>
             <p className="text-lg md:text-xl font-bold text-primary-foreground/90 leading-relaxed">
@@ -51,179 +52,183 @@ export default function SpeakingMediaPage() {
             </p>
           </div>
 
-          {/* Conferences */}
-          <div className="mt-12">
-            <h3 className="text-3xl md:text-4xl font-black mb-8 text-foreground px-4">
-              CONFERENCES
-            </h3>
-            <div className="space-y-4 max-w-7xl mx-auto">
-              {/* Conference Talk 1 */}
-              <div className="bg-background border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-primary">
-                  Beyond buzzwords: Real AI, real marketing, real results
-                </h4>
-                <p className="text-sm font-bold text-foreground/60 mb-4">Webit • 2025</p>
-                <Button 
-                  onClick={() => window.open('https://www.youtube.com/watch?v=eEbuoK5DS30', '_blank')}
-                  size="sm"
-                  className="bg-accent text-accent-foreground border-3 border-foreground shadow-[3px_3px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-black"
-                >
-                  <Play className="h-4 w-4 mr-2" />
-                  WATCH
-                </Button>
-              </div>
+          {/* Unified Content Container */}
+          <div className="max-w-7xl mx-auto bg-background border-8 border-foreground shadow-[16px_16px_0px_0px_hsl(var(--foreground))] border-t-0 p-6 md:p-8">
+            
+            {/* Conferences */}
+            <div className="mb-8">
+              <h3 className="text-xl md:text-2xl font-black mb-4 text-foreground">
+                CONFERENCES
+              </h3>
+              <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3">
+                {/* Conference Talk 1 */}
+                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-primary line-clamp-2">
+                    Beyond buzzwords: Real AI, real marketing, real results
+                  </h4>
+                  <p className="text-xs font-bold text-foreground/60 mb-3">Webit • 2025</p>
+                  <Button 
+                    onClick={() => window.open('https://www.youtube.com/watch?v=eEbuoK5DS30', '_blank')}
+                    size="sm"
+                    className="h-8 px-3 text-xs bg-accent text-accent-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 font-black"
+                  >
+                    <Play className="h-3 w-3 mr-1" />
+                    WATCH
+                  </Button>
+                </div>
 
-              {/* Conference Talk 2 */}
-              <div className="bg-background border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-primary">
-                  Happier Humans, Better Business
-                </h4>
-                <p className="text-sm font-bold text-foreground/60 mb-4">AI Leaders Forum • 2025</p>
-                <Button 
-                  onClick={() => window.open('https://youtu.be/ApLKfzjaN3Y', '_blank')}
-                  size="sm"
-                  className="bg-accent text-accent-foreground border-3 border-foreground shadow-[3px_3px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-black"
-                >
-                  <Play className="h-4 w-4 mr-2" />
-                  WATCH
-                </Button>
-              </div>
+                {/* Conference Talk 2 */}
+                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-primary line-clamp-2">
+                    Happier Humans, Better Business
+                  </h4>
+                  <p className="text-xs font-bold text-foreground/60 mb-3">AI Leaders Forum • 2025</p>
+                  <Button 
+                    onClick={() => window.open('https://youtu.be/ApLKfzjaN3Y', '_blank')}
+                    size="sm"
+                    className="h-8 px-3 text-xs bg-accent text-accent-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 font-black"
+                  >
+                    <Play className="h-3 w-3 mr-1" />
+                    WATCH
+                  </Button>
+                </div>
 
-              {/* Conference Talk 3 */}
-              <div className="bg-background border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-primary">
-                  Five Tips to Avoid Generative AI Buyer's Remorse
-                </h4>
-                <p className="text-sm font-bold text-foreground/60 mb-4">AI x Marketing Summit • 2025</p>
-                <Button 
-                  onClick={() => window.open('https://youtu.be/d3A-gHkwiBE?si=ecXBZYUpq_StpVs2&t=1', '_blank')}
-                  size="sm"
-                  className="bg-accent text-accent-foreground border-3 border-foreground shadow-[3px_3px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-black"
-                >
-                  <Play className="h-4 w-4 mr-2" />
-                  WATCH
-                </Button>
-              </div>
+                {/* Conference Talk 3 */}
+                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-primary line-clamp-2">
+                    Five Tips to Avoid Generative AI Buyer's Remorse
+                  </h4>
+                  <p className="text-xs font-bold text-foreground/60 mb-3">AI x Marketing Summit • 2025</p>
+                  <Button 
+                    onClick={() => window.open('https://youtu.be/d3A-gHkwiBE?si=ecXBZYUpq_StpVs2&t=1', '_blank')}
+                    size="sm"
+                    className="h-8 px-3 text-xs bg-accent text-accent-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 font-black"
+                  >
+                    <Play className="h-3 w-3 mr-1" />
+                    WATCH
+                  </Button>
+                </div>
 
-              {/* Conference Talk 4 */}
-              <div className="bg-background border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-primary">
-                  Use Science to Write Better Copy
-                </h4>
-                <p className="text-sm font-bold text-foreground/60 mb-4">Product-Led Growth Conference • 2020</p>
-                <Button 
-                  onClick={() => window.open('https://www.youtube.com/watch?v=GRdx9R2B7iQ&t=1s', '_blank')}
-                  size="sm"
-                  className="bg-accent text-accent-foreground border-3 border-foreground shadow-[3px_3px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-black"
-                >
-                  <Play className="h-4 w-4 mr-2" />
-                  WATCH
-                </Button>
-              </div>
+                {/* Conference Talk 4 */}
+                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-primary line-clamp-2">
+                    Use Science to Write Better Copy
+                  </h4>
+                  <p className="text-xs font-bold text-foreground/60 mb-3">Product-Led Growth Conference • 2020</p>
+                  <Button 
+                    onClick={() => window.open('https://www.youtube.com/watch?v=GRdx9R2B7iQ&t=1s', '_blank')}
+                    size="sm"
+                    className="h-8 px-3 text-xs bg-accent text-accent-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 font-black"
+                  >
+                    <Play className="h-3 w-3 mr-1" />
+                    WATCH
+                  </Button>
+                </div>
 
-              {/* Conference Talk 5 */}
-              <div className="bg-background border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-foreground">
-                  The UX Flywheel
-                </h4>
-                <p className="text-sm font-bold text-foreground/60">ConveyUX • 2020</p>
-              </div>
+                {/* Conference Talk 5 */}
+                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-foreground line-clamp-2">
+                    The UX Flywheel
+                  </h4>
+                  <p className="text-xs font-bold text-foreground/60">ConveyUX • 2020</p>
+                </div>
 
-              {/* Conference Talk 6 */}
-              <div className="bg-background border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-primary">
-                  The UX Flywheel
-                </h4>
-                <p className="text-sm font-bold text-foreground/60 mb-4">San Diego Digital Designers • 2020</p>
-                <Button 
-                  onClick={() => window.open('https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp', '_blank')}
-                  size="sm"
-                  className="bg-accent text-accent-foreground border-3 border-foreground shadow-[3px_3px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-black"
-                >
-                  <Play className="h-4 w-4 mr-2" />
-                  WATCH
-                </Button>
-              </div>
+                {/* Conference Talk 6 */}
+                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-primary line-clamp-2">
+                    The UX Flywheel
+                  </h4>
+                  <p className="text-xs font-bold text-foreground/60 mb-3">San Diego Digital Designers • 2020</p>
+                  <Button 
+                    onClick={() => window.open('https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp', '_blank')}
+                    size="sm"
+                    className="h-8 px-3 text-xs bg-accent text-accent-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 font-black"
+                  >
+                    <Play className="h-3 w-3 mr-1" />
+                    WATCH
+                  </Button>
+                </div>
 
-              {/* Conference Talk 7 */}
-              <div className="bg-background border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-foreground">
-                  The UX Flywheel
-                </h4>
-                <p className="text-sm font-bold text-foreground/60">MarcomCentral User Conference • 2019</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Podcasts */}
-          <div className="mt-12">
-            <h3 className="text-3xl md:text-4xl font-black mb-8 text-foreground px-4">
-              PODCASTS
-            </h3>
-            <div className="space-y-4 max-w-7xl mx-auto">
-              <div className="bg-secondary border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-secondary-foreground">
-                  Balancing Quantitative and Qualitative Perspectives in UX Strategy
-                </h4>
-                <p className="text-sm font-bold text-secondary-foreground/60 mb-4">Convey UX • 2020</p>
-                <Button 
-                  onClick={() => window.open('https://youtu.be/s827NVsQXS4?si=8JP9q_-fhSDMs_8_', '_blank')}
-                  size="sm"
-                  className="bg-accent text-accent-foreground border-3 border-foreground shadow-[3px_3px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-black"
-                >
-                  <Play className="h-4 w-4 mr-2" />
-                  LISTEN
-                </Button>
+                {/* Conference Talk 7 */}
+                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-foreground line-clamp-2">
+                    The UX Flywheel
+                  </h4>
+                  <p className="text-xs font-bold text-foreground/60">MarcomCentral User Conference • 2019</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Panels */}
-          <div className="mt-12">
-            <h3 className="text-3xl md:text-4xl font-black mb-8 text-foreground px-4">
-              PANELS
-            </h3>
-            <div className="grid md:grid-cols-2 gap-4 max-w-7xl mx-auto">
-              <div className="bg-destructive border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-destructive-foreground">
-                  UC Irvine presents Exploring Design & Ethics
-                </h4>
-                <p className="text-sm font-bold text-destructive-foreground/60">Moderator • Good Cause • 2022</p>
+            {/* Podcasts */}
+            <div className="mb-8">
+              <h3 className="text-xl md:text-2xl font-black mb-4 text-foreground">
+                PODCASTS
+              </h3>
+              <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3">
+                <div className="bg-secondary border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-secondary-foreground line-clamp-2">
+                    Balancing Quantitative and Qualitative Perspectives in UX Strategy
+                  </h4>
+                  <p className="text-xs font-bold text-secondary-foreground/60 mb-3">Convey UX • 2020</p>
+                  <Button 
+                    onClick={() => window.open('https://youtu.be/s827NVsQXS4?si=8JP9q_-fhSDMs_8_', '_blank')}
+                    size="sm"
+                    className="h-8 px-3 text-xs bg-accent text-accent-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 font-black"
+                  >
+                    <Play className="h-3 w-3 mr-1" />
+                    LISTEN
+                  </Button>
+                </div>
               </div>
+            </div>
 
-              <div className="bg-primary border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-primary-foreground">
-                  General Motors presents Exploring Diversity + Design
-                </h4>
-                <p className="text-sm font-bold text-primary-foreground/60">Moderator • Good Cause • 2021</p>
-              </div>
+            {/* Panels */}
+            <div>
+              <h3 className="text-xl md:text-2xl font-black mb-4 text-foreground">
+                PANELS
+              </h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="bg-destructive border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-destructive-foreground line-clamp-2">
+                    UC Irvine presents Exploring Design & Ethics
+                  </h4>
+                  <p className="text-xs font-bold text-destructive-foreground/60">Moderator • Good Cause • 2022</p>
+                </div>
 
-              <div className="bg-accent border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-accent-foreground">
-                  Exploring Data Privacy & Artificial Intelligence in UX
-                </h4>
-                <p className="text-sm font-bold text-accent-foreground/60">Moderator • SDXD • 2020</p>
-              </div>
+                <div className="bg-primary border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-primary-foreground line-clamp-2">
+                    General Motors presents Exploring Diversity + Design
+                  </h4>
+                  <p className="text-xs font-bold text-primary-foreground/60">Moderator • Good Cause • 2021</p>
+                </div>
 
-              <div className="bg-secondary border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-secondary-foreground">
-                  Interview Olympics
-                </h4>
-                <p className="text-sm font-bold text-secondary-foreground/60">SDXD • 2019</p>
-              </div>
+                <div className="bg-accent border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-accent-foreground line-clamp-2">
+                    Exploring Data Privacy & Artificial Intelligence in UX
+                  </h4>
+                  <p className="text-xs font-bold text-accent-foreground/60">Moderator • SDXD • 2020</p>
+                </div>
 
-              <div className="bg-destructive border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-destructive-foreground">
-                  Strategic Interviews: The Hiring Manager's Perspective
-                </h4>
-                <p className="text-sm font-bold text-destructive-foreground/60">SDXD • 2019</p>
-              </div>
+                <div className="bg-secondary border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-secondary-foreground line-clamp-2">
+                    Interview Olympics
+                  </h4>
+                  <p className="text-xs font-bold text-secondary-foreground/60">SDXD • 2019</p>
+                </div>
 
-              <div className="bg-primary border-4 border-foreground shadow-[6px_6px_0px_0px_hsl(var(--foreground))] p-6">
-                <h4 className="text-lg md:text-xl font-black mb-2 text-primary-foreground">
-                  How to Get Hired for a UX Design Role
-                </h4>
-                <p className="text-sm font-bold text-primary-foreground/60">Moderator • UCSD • 2015</p>
+                <div className="bg-destructive border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-destructive-foreground line-clamp-2">
+                    Strategic Interviews: The Hiring Manager's Perspective
+                  </h4>
+                  <p className="text-xs font-bold text-destructive-foreground/60">SDXD • 2019</p>
+                </div>
+
+                <div className="bg-primary border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-primary-foreground line-clamp-2">
+                    How to Get Hired for a UX Design Role
+                  </h4>
+                  <p className="text-xs font-bold text-primary-foreground/60">Moderator • UCSD • 2015</p>
+                </div>
               </div>
             </div>
           </div>
