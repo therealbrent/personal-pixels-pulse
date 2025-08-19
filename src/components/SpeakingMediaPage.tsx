@@ -62,67 +62,59 @@ export default function SpeakingMediaPage() {
               </h3>
               <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3">
                 {/* Conference Talk 1 */}
-                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
-                  <h4 className="text-sm md:text-base font-black mb-1 text-primary line-clamp-2">
-                    Beyond buzzwords: Real AI, real marketing, real results
-                  </h4>
-                  <p className="text-xs font-bold text-foreground/60 mb-3">Webit • 2025</p>
-                  <Button 
-                    onClick={() => window.open('https://www.youtube.com/watch?v=eEbuoK5DS30', '_blank')}
-                    size="sm"
-                    className="h-8 px-3 text-xs bg-accent text-accent-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 font-black"
-                  >
-                    <Play className="h-3 w-3 mr-1" />
-                    WATCH
-                  </Button>
+                <div 
+                  onClick={() => window.open('https://www.youtube.com/watch?v=eEbuoK5DS30', '_blank')}
+                  className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
+                >
+                  <div className="pr-8">
+                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
+                      Beyond buzzwords: Real AI, real marketing, real results
+                    </h4>
+                    <p className="text-xs font-bold text-foreground/60">Webit • 2025</p>
+                  </div>
+                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 2 */}
-                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
-                  <h4 className="text-sm md:text-base font-black mb-1 text-primary line-clamp-2">
-                    Happier Humans, Better Business
-                  </h4>
-                  <p className="text-xs font-bold text-foreground/60 mb-3">AI Leaders Forum • 2025</p>
-                  <Button 
-                    onClick={() => window.open('https://youtu.be/ApLKfzjaN3Y', '_blank')}
-                    size="sm"
-                    className="h-8 px-3 text-xs bg-accent text-accent-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 font-black"
-                  >
-                    <Play className="h-3 w-3 mr-1" />
-                    WATCH
-                  </Button>
+                <div 
+                  onClick={() => window.open('https://youtu.be/ApLKfzjaN3Y', '_blank')}
+                  className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
+                >
+                  <div className="pr-8">
+                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
+                      Happier Humans, Better Business
+                    </h4>
+                    <p className="text-xs font-bold text-foreground/60">AI Leaders Forum • 2025</p>
+                  </div>
+                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 3 */}
-                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
-                  <h4 className="text-sm md:text-base font-black mb-1 text-primary line-clamp-2">
-                    Five Tips to Avoid Generative AI Buyer's Remorse
-                  </h4>
-                  <p className="text-xs font-bold text-foreground/60 mb-3">AI x Marketing Summit • 2025</p>
-                  <Button 
-                    onClick={() => window.open('https://youtu.be/d3A-gHkwiBE?si=ecXBZYUpq_StpVs2&t=1', '_blank')}
-                    size="sm"
-                    className="h-8 px-3 text-xs bg-accent text-accent-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 font-black"
-                  >
-                    <Play className="h-3 w-3 mr-1" />
-                    WATCH
-                  </Button>
+                <div 
+                  onClick={() => window.open('https://youtu.be/d3A-gHkwiBE?si=ecXBZYUpq_StpVs2&t=1', '_blank')}
+                  className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
+                >
+                  <div className="pr-8">
+                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
+                      Five Tips to Avoid Generative AI Buyer's Remorse
+                    </h4>
+                    <p className="text-xs font-bold text-foreground/60">AI x Marketing Summit • 2025</p>
+                  </div>
+                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 4 */}
-                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
-                  <h4 className="text-sm md:text-base font-black mb-1 text-primary line-clamp-2">
-                    Use Science to Write Better Copy
-                  </h4>
-                  <p className="text-xs font-bold text-foreground/60 mb-3">Product-Led Growth Conference • 2020</p>
-                  <Button 
-                    onClick={() => window.open('https://www.youtube.com/watch?v=GRdx9R2B7iQ&t=1s', '_blank')}
-                    size="sm"
-                    className="h-8 px-3 text-xs bg-accent text-accent-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 font-black"
-                  >
-                    <Play className="h-3 w-3 mr-1" />
-                    WATCH
-                  </Button>
+                <div 
+                  onClick={() => window.open('https://www.youtube.com/watch?v=GRdx9R2B7iQ&t=1s', '_blank')}
+                  className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
+                >
+                  <div className="pr-8">
+                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
+                      Use Science to Write Better Copy
+                    </h4>
+                    <p className="text-xs font-bold text-foreground/60">Product-Led Growth Conference • 2020</p>
+                  </div>
+                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 5 */}
@@ -134,19 +126,17 @@ export default function SpeakingMediaPage() {
                 </div>
 
                 {/* Conference Talk 6 */}
-                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
-                  <h4 className="text-sm md:text-base font-black mb-1 text-primary line-clamp-2">
-                    The UX Flywheel
-                  </h4>
-                  <p className="text-xs font-bold text-foreground/60 mb-3">San Diego Digital Designers • 2020</p>
-                  <Button 
-                    onClick={() => window.open('https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp', '_blank')}
-                    size="sm"
-                    className="h-8 px-3 text-xs bg-accent text-accent-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 font-black"
-                  >
-                    <Play className="h-3 w-3 mr-1" />
-                    WATCH
-                  </Button>
+                <div 
+                  onClick={() => window.open('https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp', '_blank')}
+                  className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
+                >
+                  <div className="pr-8">
+                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
+                      The UX Flywheel
+                    </h4>
+                    <p className="text-xs font-bold text-foreground/60">San Diego Digital Designers • 2020</p>
+                  </div>
+                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 7 */}
@@ -165,19 +155,17 @@ export default function SpeakingMediaPage() {
                 PODCASTS
               </h3>
               <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3">
-                <div className="bg-secondary border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
-                  <h4 className="text-sm md:text-base font-black mb-1 text-secondary-foreground line-clamp-2">
-                    Balancing Quantitative and Qualitative Perspectives in UX Strategy
-                  </h4>
-                  <p className="text-xs font-bold text-secondary-foreground/60 mb-3">Convey UX • 2020</p>
-                  <Button 
-                    onClick={() => window.open('https://youtu.be/s827NVsQXS4?si=8JP9q_-fhSDMs_8_', '_blank')}
-                    size="sm"
-                    className="h-8 px-3 text-xs bg-accent text-accent-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:shadow-[1px_1px_0px_0px_hsl(var(--foreground))] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 font-black"
-                  >
-                    <Play className="h-3 w-3 mr-1" />
-                    LISTEN
-                  </Button>
+                <div 
+                  onClick={() => window.open('https://youtu.be/s827NVsQXS4?si=8JP9q_-fhSDMs_8_', '_blank')}
+                  className="group bg-secondary border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
+                >
+                  <div className="pr-8">
+                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
+                      Balancing Quantitative and Qualitative Perspectives in UX Strategy
+                    </h4>
+                    <p className="text-xs font-bold text-secondary-foreground/60">Convey UX • 2020</p>
+                  </div>
+                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
                 </div>
               </div>
             </div>
