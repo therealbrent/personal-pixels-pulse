@@ -531,6 +531,26 @@ function HomePage() {
                   <p className="text-sm text-muted-foreground">Sr. Director of Marketing, Pivotal</p>
                 </div>
               </div>
+              
+              <div className="border-4 border-foreground bg-card p-6">
+                <blockquote className="text-lg italic text-muted-foreground mb-6">
+                  "Brent is hands down the best manager I've had. He takes the time to understand you as a person so he can advocate for your growth in a way that aligns with company goals. He shares his expertise while being open to new ways of doing things. He's detail and process-orientated but leaves room for creativity. He's an excellent mentor, collaborator, and leader. My confidence as a marketer has grown 10x since he stepped in to lead the team."
+                </blockquote>
+                <div className="text-right">
+                  <p className="font-bold text-foreground">Taylor Odgers</p>
+                  <p className="text-sm text-muted-foreground">Marketing Lead, Metalab</p>
+                </div>
+              </div>
+              
+              <div className="border-4 border-foreground bg-card p-6">
+                <blockquote className="text-lg italic text-muted-foreground mb-6">
+                  "I had the immense good fortune to report to Brent on the marketing team at Blink UX. Though we have both moved on to other organizations, I am lucky to continue to call on him for counsel and mentorship. Brent is strategic, ambitious, and smart. He brings a degree of rigor and grit to his work that I am constantly trying to emulate. In addition to the high quality of the work he produces directly, he is a champion of true collaboration and professional growth. When I reported to Brent, I felt empowered to do my most bold and creative work, confident that he had my back in ways big and small. Any team would be lucky to have him."
+                </blockquote>
+                <div className="text-right">
+                  <p className="font-bold text-foreground">Sara Keats</p>
+                  <p className="text-sm text-muted-foreground">Marketing Manager, Blink</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
