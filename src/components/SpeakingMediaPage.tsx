@@ -355,7 +355,6 @@ export default function SpeakingMediaPage() {
                   onClick={handleDownloadHeadshot}
                   className="w-full bg-primary text-primary-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-lg font-black py-3"
                 >
-                  <Download className="h-5 w-5 mr-2" />
                   DOWNLOAD HEADSHOT
                 </Button>
                 <p className="text-sm text-foreground/70 text-center mt-4 font-bold">
