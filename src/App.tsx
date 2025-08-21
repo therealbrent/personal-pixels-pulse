@@ -297,10 +297,21 @@ function HomePage() {
                     </div>
 
                     <div>
-                      <h4 className="text-xl font-bold mb-3 text-primary">The principles that guide my work</h4>
-                      <p className="mb-4">My leadership approach bridges the gap between visionary strategy and tactical execution. I believe transformative initiatives achieve the most success when they apply user empathy, data-driven decision making, and cross-functional collaboration.</p>
+                      <h4 className="text-xl font-bold mb-3 text-primary">My unique blend of leadership</h4>
+                      <p className="mb-4">My leadership approach bridges the gap between visionary strategy and tactical execution.</p>
+                      <ul className="space-y-2 list-disc list-inside text-base mb-4">
+                        <li>I start with empathy. Understanding users, customers, and teammates is fuel for innovation.</li>
+                        <li>I make transformation tangible. Big bets only matter when they land in the real world.</li>
+                        <li>I let data guide me. Gut instincts spark ideas, but evidence earns decisions (and investment).</li>
+                        <li>I break silos. Collaboration isn't optional; it's a force-multiplier.</li>
+                        <li>I play the long game, balancing today's wins with tomorrow's advantage.</li>
+                      </ul>
                       <p className="mb-4">I'm recognized as a thought leader at the intersection of AI, marketing, and user experience, with recent speaking engagements at Webit, AI x Marketing Summit, and AI Leaders Forum. My expertise has been featured in CIO News, CMS Wire, and SmartSuite.</p>
-                      <p>Beyond my professional work, I am an ambassador for the San Diego / Tijuana design community, contributing to initiatives that shaped our region's recognition as World Design Capital 2024. I'm also an active member of San Diego Experience Design Professionals, where I participate in meetups and mentorship.</p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-xl font-bold mb-3 text-primary">Beyond the day job</h4>
+                      <p>I am an ambassador for the San Diego / Tijuana design community, contributing to initiatives that shaped our region's recognition as World Design Capital 2024. I'm also an active member of San Diego Experience Design Professionals, where I participate in meetups and mentorship.</p>
                     </div>
                   </>
                 )}
