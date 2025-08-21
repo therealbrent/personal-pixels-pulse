@@ -254,7 +254,7 @@ function HomePage() {
               </div>
               <div className="space-y-6 text-lg">
                 <div>
-                  <p>Brent Summers is an AI-first marketing leader. At Qualcomm Technologies, Brent leads AI Platforms & GTM Innovation which is a hybrid function combining strategic vision, technical implementation, and behavior change. He has shipped more than 20 AI agents which are embedded, governed, and scaled across the global marketing team. For instance, WRITER has delivered and impressive 8.6x ROI with 85% of users active every week.</p>
+                  <p>I drive measurable business impact through AI adoption and innovative go-to-market strategies. Currently leading AI Platforms & GTM Innovation at Qualcomm Technologies, I've pioneered enterprise-wide generative AI adoption achieving 8.6x ROI and built ABM programs influencing billions in pipeline.</p>
                 </div>
 
                 <div>
