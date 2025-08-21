@@ -306,7 +306,6 @@ function HomePage() {
                         <li><strong>I break silos.</strong> Collaboration isn't optional; it's a force-multiplier.</li>
                         <li><strong>I play the long game, balancing today's wins with tomorrow's advantage.</strong></li>
                       </ul>
-                      <p className="mb-4">I'm recognized as a thought leader at the intersection of AI, marketing, and user experience, with recent speaking engagements at Webit, AI x Marketing Summit, and AI Leaders Forum. My expertise has been featured in CIO News, CMS Wire, and SmartSuite.</p>
                     </div>
 
                     <div>
