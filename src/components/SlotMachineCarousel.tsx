@@ -25,25 +25,41 @@ const SlotMachineCarousel = () => {
   const placeholders = [placeholder1, placeholder2, placeholder3];
 
   useEffect(() => {
-    // Load RSS content from your actual feeds
-    setTimeout(() => {
-      const rssItems = getRSSContent();
-      // Add placeholder images to items that don't have them
-      const itemsWithPlaceholders = rssItems.map((item, index) => ({
-        ...item,
-        image: item.image || placeholders[index % placeholders.length]
-      }));
-      
-      setAllItems(itemsWithPlaceholders);
-      // Initialize all reels with random items
-      const initialReels: [RSSItem, RSSItem, RSSItem] = [
-        itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)],
-        itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)],
-        itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)]
-      ];
-      setReels(initialReels);
-      setLoading(false);
-    }, 1000);
+    // Load RSS content with improved performance
+    const loadContent = async () => {
+      try {
+        const { loadRSSContent } = await import('../data/rssData');
+        const rssItems = await loadRSSContent();
+        
+        // Add placeholder images to items that don't have them
+        const itemsWithPlaceholders = rssItems.map((item, index) => ({
+          ...item,
+          image: item.image || placeholders[index % placeholders.length]
+        }));
+        
+        setAllItems(itemsWithPlaceholders);
+        // Initialize all reels with random items
+        const initialReels: [RSSItem, RSSItem, RSSItem] = [
+          itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)],
+          itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)],
+          itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)]
+        ];
+        setReels(initialReels);
+        setLoading(false);
+      } catch (error) {
+        console.error('Failed to load RSS content:', error);
+        // Fallback to legacy method
+        const rssItems = getRSSContent();
+        const itemsWithPlaceholders = rssItems.map((item, index) => ({
+          ...item,
+          image: item.image || placeholders[index % placeholders.length]
+        }));
+        setAllItems(itemsWithPlaceholders);
+        setLoading(false);
+      }
+    };
+    
+    setTimeout(loadContent, 1000);
   }, []);
 
   const getRandomItem = () => {
@@ -147,7 +163,14 @@ const SlotMachineCarousel = () => {
         {/* Read More Link */}
         <button 
           onClick={() => window.open(item.link, '_blank')}
-          className="w-full bg-primary text-primary-foreground font-semibold py-2 px-3 text-xs border-2 border-foreground hover:bg-primary/90 transition-colors"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              window.open(item.link, '_blank');
+            }
+          }}
+          className="w-full bg-primary text-primary-foreground font-semibold py-2 px-3 text-xs border-2 border-foreground hover:bg-primary/90 transition-colors focus:ring-2 focus:ring-focus-ring focus:ring-offset-2"
+          aria-label={`Read article: ${item.title} - Opens in new tab`}
         >
           Read Article →
         </button>
@@ -205,12 +228,20 @@ const SlotMachineCarousel = () => {
       <div className="text-center mt-6">
         <button
           onClick={handleSpin}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              handleSpin();
+            }
+          }}
           disabled={isSpinning.some(spinning => spinning)}
-          className={`font-bold py-4 px-8 border-4 border-foreground transform transition-all duration-200 ${
+          className={`font-bold py-4 px-8 border-4 border-foreground transform transition-all duration-200 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] ${
             isSpinning.some(spinning => spinning)
               ? 'bg-muted text-muted-foreground cursor-not-allowed scale-95' 
               : 'bg-accent text-accent-foreground hover:scale-105 hover:bg-accent/90'
           }`}
+          aria-label={isSpinning.some(spinning => spinning) ? 'Slot machine is spinning' : 'Spin slot machine to get random articles'}
+          aria-live="polite"
         >
           {isSpinning.some(spinning => spinning) ? '🎰 SPINNING...' : '🎰 SPIN FOR RANDOM ARTICLES'}
         </button>

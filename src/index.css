@@ -28,7 +28,7 @@ All colors MUST be HSL with AAA contrast ratios.
 
     /* Enhanced muted colors for better contrast */
     --muted: 0 0% 88%;
-    --muted-foreground: 0 0% 25%;
+    --muted-foreground: 0 0% 20%;
 
     /* Accessible accent with AAA contrast */
     --accent: 328 100% 54%;
@@ -182,6 +182,26 @@ All colors MUST be HSL with AAA contrast ratios.
     display: inline-flex;
     align-items: center;
     justify-content: center;
+  }
+
+  /* Keyboard navigation support */
+  [role="button"]:focus,
+  [tabindex]:focus {
+    outline: 3px solid hsl(var(--focus-ring));
+    outline-offset: 2px;
+  }
+
+  /* Screen reader live regions */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 }
 

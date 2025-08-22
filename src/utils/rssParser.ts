@@ -1,4 +1,7 @@
-interface RSSItem {
+// Legacy export for backwards compatibility
+export { loadRSSContent } from '../data/rssData';
+
+export interface RSSItem {
   title: string;
   description: string;
   link: string;
@@ -12,7 +15,7 @@ export const rssFeeds = {
   max200: 'https://rss.beehiiv.com/feeds/1oCnydndmV.xml'
 };
 
-// ALL real content from your RSS feeds - extracted from actual feeds
+// Deprecated: Use loadRSSContent from '../data/rssData' instead
 export const rssContent: RSSItem[] = [
   // From 200 MAX (Beehiiv) - ALL 13 ARTICLES
   {
@@ -180,6 +183,6 @@ export const rssContent: RSSItem[] = [
 ];
 
 export const getRSSContent = (): RSSItem[] => {
-  // Return ONLY the real RSS content - no mock data whatsoever
+  // Legacy function - consider using loadRSSContent for better performance
   return rssContent;
 };
