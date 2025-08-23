@@ -396,7 +396,7 @@ function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">CASE STUDIES</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">These are some of the successful projects that I've helped deliver. This list is not exhaustive.</p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Software delivery (especially web-based applications) is one of my core competencies. These are a few successful projects and my client collaborators. Click in for more details about my contributions.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
