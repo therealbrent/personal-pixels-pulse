@@ -519,7 +519,10 @@ function HomePage() {
           
           {/* Testimonials */}
           <div className="mt-20">
-            <h3 className="text-3xl font-bold text-center mb-12 text-foreground">TESTIMONIALS</h3>
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold text-foreground mb-4">KIND WORDS FROM GREAT HUMANS</h3>
+              <p className="text-xl text-muted-foreground">"Let strangers tell your story. It sounds better that way." — <em>ChatGPT</em></p>
+            </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="border-4 border-foreground bg-card p-6">
                 <blockquote className="text-lg italic text-muted-foreground mb-6">
