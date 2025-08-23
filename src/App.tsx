@@ -58,7 +58,7 @@ function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <button 
               onClick={() => scrollToSection('work')} 
-              className="bg-primary text-primary-foreground text-lg font-bold px-8 py-4 transform hover:scale-105 transition-transform focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
+              className="border-4 border-primary bg-transparent text-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-150 font-bold text-lg px-8 py-4 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
               aria-label="Navigate to my work section"
             >
               Explore My Work
@@ -101,7 +101,7 @@ function HomePage() {
               </p>
               <button 
                 onClick={() => scrollToSection('about')} 
-                className="w-full bg-primary text-primary-foreground font-semibold py-2 px-4 hover:opacity-90 transition-opacity focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
+                className="w-full border-4 border-secondary bg-transparent text-secondary hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-150 font-bold py-2 px-4 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
                 aria-label="Navigate to background section"
               >
                 View Background →
@@ -120,7 +120,7 @@ function HomePage() {
               </p>
               <button 
                 onClick={() => scrollToSection('case-studies')} 
-                className="w-full border-2 border-foreground bg-transparent text-foreground font-semibold py-2 px-4 hover:bg-accent hover:text-accent-foreground transition-colors focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
+                className="w-full border-4 border-primary bg-transparent text-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-150 font-bold py-2 px-4 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
                 aria-label="Navigate to case studies section"
               >
                 See Case Studies →
@@ -139,7 +139,7 @@ function HomePage() {
               </p>
               <button 
                 onClick={() => scrollToSection('writing')} 
-                className="w-full bg-secondary text-secondary-foreground font-semibold py-2 px-4 hover:opacity-90 transition-opacity focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
+                className="w-full border-4 border-secondary bg-transparent text-secondary hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-150 font-bold py-2 px-4 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
                 aria-label="Navigate to writing section"
               >
                 Read Articles →
@@ -165,10 +165,13 @@ function HomePage() {
                   href="https://writer.com/blog/qualcomm-customer-story/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-primary text-primary-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center"
+                  className="border-4 border-primary bg-transparent text-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-150 font-bold text-sm px-4 py-2 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center gap-2"
                   aria-label="Read WRITER case study - Opens in new tab"
                 >
-                  Read Case Study →
+                  Read Case Study 
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/>
+                  </svg>
                 </a>
               </article>
               
@@ -187,10 +190,13 @@ function HomePage() {
                   href="https://www.youtube.com/watch?v=UYApYNEnaMM"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-accent text-accent-foreground text-sm font-semibold px-4 py-2 hover:opacity-90 transition-opacity focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center"
+                  className="border-4 border-secondary bg-transparent text-secondary hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-150 font-bold text-sm px-4 py-2 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center gap-2"
                   aria-label="Watch UX Flywheel presentation on YouTube - Opens in new tab"
                 >
-                  Watch Presentation →
+                  Watch Presentation 
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/>
+                  </svg>
                 </a>
               </article>
             </div>

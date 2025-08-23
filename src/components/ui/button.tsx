@@ -24,6 +24,9 @@ const buttonVariants = cva(
         "brutalist-secondary": "bg-secondary text-secondary-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-bold",
         "brutalist-accent": "bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 font-bold",
         "brutalist-transform": "bg-primary text-primary-foreground font-bold transform hover:scale-105 transition-transform focus:ring-4 focus:ring-focus-ring focus:ring-offset-4",
+        // New stroke variants with approved color combinations
+        "stroke-yellow-pink": "border-4 border-primary bg-transparent text-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-150 font-bold",
+        "stroke-onyx-crimson": "border-4 border-secondary bg-transparent text-secondary hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-150 font-bold",
       },
       size: {
         default: "h-10 px-4 py-2",
