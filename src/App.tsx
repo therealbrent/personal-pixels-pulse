@@ -341,7 +341,7 @@ function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">THOUGHT LEADERSHIP</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Sharing what I've learned with anyone who'll listen</p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">I believe that thought leadership is an act of generosity. Here is a collection of frameworks, playbooks, and other pieces of wisdom that I've shared thanks to the awesome power of the Internet.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
