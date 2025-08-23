@@ -82,10 +82,9 @@ function HomePage() {
       <section id="work" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">WHAT I DO</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">ABOUT THIS SITE</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              I am responsible for AI Platforms & GTM Innovation at Qualcomm Technologies. 
-              Outside of work, I am a devoted member of the design community and advocate for the Arts.
+              I'm learning to vibe code and this is one of my <em>vibes</em>. It's a personal portfolio where I'm aiming for a Neo-Brutalist aesthetic, excellent performance, and usability. It's built entirely on Lovable as of August 2025.
             </p>
           </div>
 
