@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import LLMSTextPage from './components/LLMSTextPage';
 import SpeakingMediaPage from './components/SpeakingMediaPage';
+import CaseStudyPhilosophyPage from './components/CaseStudyPhilosophyPage';
 import AccessibleSlotMachine from './components/AccessibleSlotMachine';
 import AccessibleCaseStudyCard from './components/AccessibleCaseStudyCard';
 
@@ -588,6 +589,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/llms.txt" element={<LLMSTextPage />} />
           <Route path="/speaking-media" element={<SpeakingMediaPage />} />
+          <Route path="/case-study-philosophy" element={<CaseStudyPhilosophyPage />} />
         </Routes>
     </Router>
   );

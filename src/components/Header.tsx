@@ -24,16 +24,25 @@ export default function Header() {
             BRENT SUMMERS
           </Link>
 
-          {/* Right: LLMs.txt Link */}
-          <a 
-            href="/llms.txt" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-lg md:text-xl font-bold text-foreground border-4 border-foreground px-6 py-3 hover:bg-primary hover:text-primary-foreground transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] flex items-center"
-            aria-label="View LLMs.txt file - Opens in new tab"
-          >
-            LLMs.txt
-          </a>
+          {/* Right: Navigation Links */}
+          <div className="flex items-center gap-4">
+            <Link 
+              to="/case-study-philosophy"
+              className="text-lg md:text-xl font-bold text-foreground border-4 border-foreground px-6 py-3 hover:bg-accent hover:text-accent-foreground transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] flex items-center"
+              aria-label="View case study philosophy page"
+            >
+              CASE STUDIES
+            </Link>
+            <a 
+              href="/llms.txt" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-lg md:text-xl font-bold text-foreground border-4 border-foreground px-6 py-3 hover:bg-primary hover:text-primary-foreground transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] flex items-center"
+              aria-label="View LLMs.txt file - Opens in new tab"
+            >
+              LLMs.txt
+            </a>
+          </div>
         </div>
       </nav>
     </header>
