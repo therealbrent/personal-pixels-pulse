@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import Header from './Header';
+import Footer from './Footer';
 
 // Import images directly from lovable-uploads
 const adventureImage = '/lovable-uploads/aedf8717-6d9f-440a-8bce-7ded3c64cbca.png';
@@ -14,6 +16,7 @@ const blinkTilesImage = '/lovable-uploads/67c141a7-043c-48a7-bd50-4a7ba6ff4ad5.p
 export default function DesignCaseStudiesPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Header />
       {/* Hero Section */}
       <header className="py-16 bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10">
         <div className="container mx-auto px-4">
@@ -23,12 +26,6 @@ export default function DesignCaseStudiesPage() {
               <span className="text-primary">Three archives.</span><br />
               <span className="text-destructive">Three angles.</span>
             </h1>
-            
-            <div className="bg-accent p-8 border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300 mb-8">
-              <p className="text-xl md:text-2xl font-bold text-accent-foreground">
-                Case studies are strategic assets that exist to make the value of design legible to people who weren't in the room.
-              </p>
-            </div>
           </div>
         </div>
       </header>
@@ -41,7 +38,7 @@ export default function DesignCaseStudiesPage() {
           <section className="mb-32">
             <div className="bg-card border-4 border-foreground p-8 mb-8">
               <div className="flex items-center mb-8">
-                <div className="bg-accent text-accent-foreground px-6 py-3 border-2 border-foreground font-bold text-xl mr-6">
+                <div className="bg-secondary text-secondary-foreground px-6 py-3 border-2 border-foreground font-bold text-xl mr-6">
                   01
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground">THE STORYTELLER</h2>
@@ -269,16 +266,9 @@ export default function DesignCaseStudiesPage() {
           </section>
 
           {/* Back to Home */}
-          <div className="text-center">
-            <Link 
-              to="/"
-              className="border-4 border-secondary bg-transparent text-secondary hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-150 font-bold text-lg px-8 py-4 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center gap-2"
-            >
-              ← Back to Home
-            </Link>
-          </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
