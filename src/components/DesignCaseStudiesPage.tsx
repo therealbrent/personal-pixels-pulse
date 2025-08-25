@@ -19,17 +19,14 @@ export default function DesignCaseStudiesPage() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-5xl mx-auto">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-foreground tracking-tight leading-tight">
-              THREE AGENCIES,<br />
-              <span className="text-primary">THREE DESIGN</span><br />
-              <span className="text-destructive">PHILOSOPHIES</span>
+              Three agencies.<br />
+              <span className="text-primary">Three archives.</span><br />
+              <span className="text-destructive">Three angles.</span>
             </h1>
             
             <div className="bg-accent p-8 border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300 mb-8">
-              <p className="text-xl md:text-2xl font-bold text-accent-foreground mb-2">
-                A decade of proving that case studies are strategic assets
-              </p>
-              <p className="text-lg md:text-xl text-accent-foreground/80">
-                Different approaches for different contexts
+              <p className="text-xl md:text-2xl font-bold text-accent-foreground">
+                Case studies are strategic assets that exist to make the value of design legible to people who weren't in the room.
               </p>
             </div>
           </div>
