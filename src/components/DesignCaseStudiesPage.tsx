@@ -234,12 +234,9 @@ export default function DesignCaseStudiesPage() {
                 </p>
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="bg-muted/50 p-6 border-2 border-foreground text-lg">
-                  <p className="mb-6">
-                    Metalab (nee MetaLab) is a product design studio headquartered in Victoria, Canada with a global footprint. You might not have known it at the time, but there's a good chance you've used a product they designed.
-                  </p>
-                  
+              <div className="bg-muted/50 p-6 border-2 border-foreground text-lg mb-8">
+                <p className="mb-6">
+                  Metalab (nee MetaLab) is a product design studio headquartered in Victoria, Canada with a global footprint. You might not have known it at the time, but there's a good chance you've used a product they designed.{' '}
                   <a 
                     href="https://pitch.com/presentations/MetaLab---Product-design-case-studies--33PDEE3nSfwS5CQkiW2xdrQy?slide=7f0a08d9-0324-48b0-bd2a-cb6071f183ed"
                     target="_blank"
@@ -249,8 +246,10 @@ export default function DesignCaseStudiesPage() {
                     Check out Metalab on Pitch
                     <ExternalLink className="w-5 h-5" />
                   </a>
-                </div>
+                </p>
+              </div>
 
+              <div className="flex justify-center">
                 <div className="border-4 border-foreground bg-background transform hover:scale-[1.02] transition-transform duration-300">
                   <a 
                     href="https://pitch.com/presentations/MetaLab---Product-design-case-studies--33PDEE3nSfwS5CQkiW2xdrQy?slide=7f0a08d9-0324-48b0-bd2a-cb6071f183ed"
