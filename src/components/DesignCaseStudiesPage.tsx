@@ -44,12 +44,18 @@ export default function DesignCaseStudiesPage() {
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground">THE STORYTELLER</h2>
               </div>
               
-              <div className="bg-primary p-6 border-2 border-foreground mb-8">
-                <p className="text-primary-foreground font-bold text-xl">
+              <div className="bg-[#262626] text-white p-6 border-2 border-foreground mb-8">
+                <p className="font-bold text-xl">
                   Digital Telepathy (Acquired by ServiceNow, 2017)
                 </p>
-                <p className="text-primary-foreground/90 text-lg mt-2">
+                <p className="text-white/90 text-lg mt-2">
                   Long-form, flagship case studies from projects I led circa 2014
+                </p>
+              </div>
+
+              <div className="bg-muted p-6 border-2 border-foreground mb-8">
+                <p className="text-lg">
+                  Digital Telepathy was a San Diego-based UX design agency founded in 2001 that specialized in creating meaningful customer experiences for mission-driven startups and established brands. For nearly 20 years, the company helped clients like New Relic, The Lean Startup, and Patagonia meet real business objectives by crafting meaningful experiences for their customers.
                 </p>
               </div>
 
