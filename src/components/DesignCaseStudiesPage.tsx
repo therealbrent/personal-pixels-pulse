@@ -160,9 +160,9 @@ export default function DesignCaseStudiesPage() {
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground">THE SYSTEMATIZER</h2>
               </div>
               
-              <div className="bg-destructive p-6 border-2 border-foreground mb-8">
-                <p className="text-destructive-foreground font-bold text-xl">Blink UX</p>
-                <p className="text-destructive-foreground/90 text-lg mt-2">
+              <div className="bg-[#FFBA08] text-[#262626] p-6 border-2 border-foreground mb-8">
+                <p className="font-bold text-xl">Blink UX</p>
+                <p className="text-[#262626]/90 text-lg mt-2">
                   Catalog breadth + deep-dive depth strategy
                 </p>
               </div>
@@ -170,20 +170,17 @@ export default function DesignCaseStudiesPage() {
               <div className="space-y-8">
                 <div className="bg-muted/50 p-6 border-2 border-foreground text-lg">
                   <p className="mb-4">
-                    Blink UX is a research and product design firm established in 2000. Their client roster is seriously impressive and equally expansive. Project Mango was a rebrand and website design project launched in 2019, following a series of strategic acquisitions that included Tectonic and Redshift.
-                  </p>
-                  <p>
-                    The site has evolved, and they've added new projects, but the content strategy and layout of its{' '}
+                    Blink UX is a research and product design firm established in 2000. Their client roster is seriously impressive and equally expansive. Following a series of strategic acquisitions, we rebranded the company and launched a new website. Although the site has evolved, the information architecture, user experience, and content strategy for its{' '}
                     <a 
                       href="https://blinkux.com/work"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:text-primary/80 underline font-semibold inline-flex items-center gap-1"
                     >
-                      Work section
+                      Work
                       <ExternalLink className="w-4 h-4" />
                     </a>{' '}
-                    remains mostly unchanged.
+                    section remains mostly unchanged.
                   </p>
                 </div>
 
