@@ -224,25 +224,26 @@ export default function DesignCaseStudiesPage() {
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground">THE SHOWMAN</h2>
               </div>
               
-              <div className="bg-accent p-6 border-2 border-foreground mb-8">
-                <p className="text-accent-foreground font-bold text-xl">Metalab</p>
-                <p className="text-accent-foreground/90 text-lg mt-2">
+              <div className="bg-[#BD2928] text-white p-6 border-2 border-foreground mb-8">
+                <p className="font-bold text-xl">Metalab</p>
+                <p className="text-white/90 text-lg mt-2">
                   Visual presentation format matches brand personality
                 </p>
               </div>
 
               <div className="bg-muted/50 p-6 border-2 border-foreground text-lg mb-8">
-                <p className="mb-6">
-                  Metalab (nee MetaLab) is a product design studio headquartered in Victoria, Canada with a global footprint. You might not have known it at the time, but there's a good chance you've used a product they designed.{' '}
+                <p>
+                  Metalab (née MetaLab) is a product design studio headquartered in Victoria, Canada with a global footprint. You might not have known it at the time, but there's a good chance you've used a product they designed — like Slack, Loom. Instacart, Uber, and countless more.{' '}
                   <a 
-                    href="https://pitch.com/presentations/MetaLab---Product-design-case-studies--33PDEE3nSfwS5CQkiW2xdrQy?slide=7f0a08d9-0324-48b0-bd2a-cb6071f183ed"
+                    href="https://pitch.com/presentations/MetaLab---Product-design-case-studies--33PDEE3nSfwS5CQkiW2xdrQy?slide=2ffcc700-4489-4cf5-9930-45d117a3dd8d"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border-4 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-150 font-bold text-lg px-8 py-4 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center gap-2"
+                    className="text-primary hover:text-primary/80 underline font-semibold inline-flex items-center gap-1"
                   >
                     Check out Metalab on Pitch
-                    <ExternalLink className="w-5 h-5" />
+                    <ExternalLink className="w-4 h-4" />
                   </a>
+                  .
                 </p>
               </div>
 
