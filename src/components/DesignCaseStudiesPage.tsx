@@ -15,8 +15,39 @@ const blinkTilesImage = '/lovable-uploads/67c141a7-043c-48a7-bd50-4a7ba6ff4ad5.p
 
 export default function DesignCaseStudiesPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header />
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      {/* Fragmented Grid Background */}
+      <div className="fixed inset-0 opacity-[0.03] pointer-events-none z-0" aria-hidden="true">
+        {/* Main Grid Pattern */}
+        <div className="absolute inset-0 grid grid-cols-12 grid-rows-8 gap-px">
+          {Array.from({ length: 96 }).map((_, i) => (
+            <div 
+              key={i}
+              className={`
+                border border-foreground/20
+                ${i % 7 === 0 ? 'bg-[#FF1392]/30' : ''}
+                ${i % 11 === 0 ? 'bg-[#FFBA08]/30' : ''}
+                ${i % 13 === 0 ? 'bg-[#BD2928]/30' : ''}
+                ${i % 17 === 0 ? 'bg-[#262626]/30' : ''}
+                ${Math.random() > 0.8 ? 'transform rotate-45' : ''}
+                ${Math.random() > 0.9 ? 'scale-75' : ''}
+              `}
+            />
+          ))}
+        </div>
+        
+        {/* Diagonal Elements */}
+        <div className="absolute top-20 left-10 w-32 h-px bg-[#FF1392]/40 transform rotate-45"></div>
+        <div className="absolute top-40 right-20 w-24 h-px bg-[#FFBA08]/40 transform -rotate-45"></div>
+        <div className="absolute bottom-32 left-1/4 w-40 h-px bg-[#BD2928]/40 transform rotate-12"></div>
+        
+        {/* Fragmented Corner Elements */}
+        <div className="absolute top-0 right-0 w-20 h-20 border-l-2 border-b-2 border-[#262626]/30"></div>
+        <div className="absolute bottom-0 left-0 w-16 h-16 border-r-2 border-t-2 border-[#FF1392]/30"></div>
+      </div>
+
+      <div className="relative z-10">
+        <Header />
       {/* Hero Section */}
       <header className="py-16 bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10">
         <div className="container mx-auto px-4">
@@ -273,6 +304,7 @@ export default function DesignCaseStudiesPage() {
         </div>
       </main>
       <Footer />
+      </div>
     </div>
   );
 }
