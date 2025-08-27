@@ -92,21 +92,36 @@ export default function DesignCaseStudiesPage() {
 
               <div className="grid lg:grid-cols-2 gap-12">
                 {/* Adventure.com */}
-                <article className="border-4 border-foreground bg-background transform hover:scale-[1.02] transition-transform duration-300">
+                <article className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--primary))] transition-all duration-300">
                   <a 
                     href="https://drive.google.com/file/d/1DCmsAQEdF6aERUsTvE7ewHaqBVJYUdbe/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block group"
+                    className="block relative"
                   >
                     <div className="relative overflow-hidden">
                       <img 
                         src={adventureImage} 
                         alt="Adventure.com case study cover"
-                        className="w-full h-auto object-contain group-hover:opacity-90 transition-opacity"
+                        className="w-full h-auto object-contain group-hover:brightness-110 group-hover:contrast-110 transition-all duration-300 group-hover:transform group-hover:scale-[1.02]"
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                        <ExternalLink className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                      
+                      {/* Geometric Overlay Elements */}
+                      <div className="absolute top-4 right-4 w-8 h-8 bg-[#FF1392] opacity-0 group-hover:opacity-80 transition-all duration-300 transform rotate-45 group-hover:rotate-12" aria-hidden="true"></div>
+                      <div className="absolute bottom-6 left-6 w-6 h-6 border-2 border-[#FFBA08] opacity-0 group-hover:opacity-90 transition-all duration-500 transform group-hover:rotate-45" aria-hidden="true"></div>
+                      
+                      {/* Context Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-4 left-4 right-4 text-white">
+                          <div className="bg-[#FF1392] px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
+                            TRAVEL • STARTUP
+                          </div>
+                          <p className="text-sm leading-tight">Interactive prototype capturing the spirit of exploration</p>
+                        </div>
+                      </div>
+                      
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <ExternalLink className="w-8 h-8 text-white drop-shadow-lg" />
                       </div>
                     </div>
                     <div className="p-6">
@@ -115,7 +130,9 @@ export default function DesignCaseStudiesPage() {
                       
                       <div className="space-y-3 mb-6">
                         <div className="flex items-start gap-3">
-                          <span className="text-destructive text-2xl mt-1">🏆</span>
+                          <div className="bg-[#FF1392] text-white px-2 py-1 text-xs font-bold transform -skew-x-12 border-2 border-foreground">
+                            WIN
+                          </div>
                           <div>
                             <span className="font-semibold">Winner</span>{' '}
                             <span className="text-primary underline inline-flex items-center gap-1">
@@ -125,7 +142,9 @@ export default function DesignCaseStudiesPage() {
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
-                          <span className="text-destructive text-2xl mt-1">🏆</span>
+                          <div className="bg-[#FFBA08] text-[#262626] px-2 py-1 text-xs font-bold transform -skew-x-12 border-2 border-foreground">
+                            WIN
+                          </div>
                           <div>
                             <span className="font-semibold">Winner</span>{' '}
                             <span className="text-primary underline inline-flex items-center gap-1">
@@ -140,21 +159,36 @@ export default function DesignCaseStudiesPage() {
                 </article>
 
                 {/* Pivotal */}
-                <article className="border-4 border-foreground bg-background transform hover:scale-[1.02] transition-transform duration-300">
+                <article className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--destructive))] transition-all duration-300">
                   <a 
                     href="https://drive.google.com/file/d/1Vmkol5Fw5PyBCS_uX3ABdB2DkgHCWx63/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block group"
+                    className="block relative"
                   >
                     <div className="relative overflow-hidden">
                       <img 
                         src={pivotalImage} 
                         alt="Pivotal case study cover"
-                        className="w-full h-auto object-contain group-hover:opacity-90 transition-opacity"
+                        className="w-full h-auto object-contain group-hover:brightness-110 group-hover:contrast-110 transition-all duration-300 group-hover:transform group-hover:scale-[1.02]"
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                        <ExternalLink className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                      
+                      {/* Geometric Overlay Elements */}
+                      <div className="absolute top-6 left-4 w-6 h-6 bg-[#BD2928] opacity-0 group-hover:opacity-80 transition-all duration-400 transform rotate-12 group-hover:rotate-90" aria-hidden="true"></div>
+                      <div className="absolute bottom-4 right-4 w-8 h-8 border-2 border-[#262626] opacity-0 group-hover:opacity-90 transition-all duration-300 transform group-hover:rotate-45" aria-hidden="true"></div>
+                      
+                      {/* Context Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-4 left-4 right-4 text-white">
+                          <div className="bg-[#BD2928] px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
+                            ENTERPRISE • PLATFORM
+                          </div>
+                          <p className="text-sm leading-tight">Strategic brand evolution for enterprise transformation</p>
+                        </div>
+                      </div>
+                      
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <ExternalLink className="w-8 h-8 text-white drop-shadow-lg" />
                       </div>
                     </div>
                     <div className="p-6">
@@ -216,20 +250,50 @@ export default function DesignCaseStudiesPage() {
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-8">
-                  <div className="border-4 border-foreground bg-background">
-                    <img 
-                      src={blinkTilesImage} 
-                      alt="Blink UX case study tiles layout"
-                      className="w-full h-auto object-contain"
-                    />
+                  <div className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--accent))] transition-all duration-300">
+                    <div className="relative overflow-hidden">
+                      <img 
+                        src={blinkTilesImage} 
+                        alt="Blink UX case study tiles layout"
+                        className="w-full h-auto object-contain group-hover:brightness-110 transition-all duration-300 group-hover:scale-[1.01]"
+                      />
+                      
+                      {/* Geometric Elements */}
+                      <div className="absolute top-4 right-4 w-6 h-6 border-2 border-[#FFBA08] opacity-0 group-hover:opacity-70 transition-all duration-300 transform group-hover:rotate-12" aria-hidden="true"></div>
+                      <div className="absolute bottom-4 left-4 w-4 h-4 bg-[#262626] opacity-0 group-hover:opacity-60 transition-all duration-400 transform rotate-45" aria-hidden="true"></div>
+                      
+                      {/* Context Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-3 left-3 right-3 text-white">
+                          <div className="bg-[#FFBA08] text-[#262626] px-2 py-1 text-xs font-bold inline-block transform -skew-x-12">
+                            TILES LAYOUT
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   
-                  <div className="border-4 border-foreground bg-background">
-                    <img 
-                      src={blinkCatalogImage} 
-                      alt="Blink UX catalog layout"
-                      className="w-full h-auto object-contain"
-                    />
+                  <div className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--accent))] transition-all duration-300">
+                    <div className="relative overflow-hidden">
+                      <img 
+                        src={blinkCatalogImage} 
+                        alt="Blink UX catalog layout"
+                        className="w-full h-auto object-contain group-hover:brightness-110 transition-all duration-300 group-hover:scale-[1.01]"
+                      />
+                      
+                      {/* Geometric Elements */}
+                      <div className="absolute top-6 left-4 w-4 h-4 bg-[#FFBA08] opacity-0 group-hover:opacity-70 transition-all duration-300 transform group-hover:rotate-90" aria-hidden="true"></div>
+                      <div className="absolute bottom-6 right-4 w-6 h-6 border-2 border-[#262626] opacity-0 group-hover:opacity-60 transition-all duration-400 transform group-hover:-rotate-45" aria-hidden="true"></div>
+                      
+                      {/* Context Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-3 left-3 right-3 text-white">
+                          <div className="bg-[#FFBA08] text-[#262626] px-2 py-1 text-xs font-bold inline-block transform -skew-x-12">
+                            CATALOG VIEW
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -279,20 +343,37 @@ export default function DesignCaseStudiesPage() {
               </div>
 
               <div className="flex justify-center">
-                <div className="border-4 border-foreground bg-background transform hover:scale-[1.02] transition-transform duration-300">
+                <div className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--destructive))] transition-all duration-300">
                   <a 
                     href="https://pitch.com/presentations/MetaLab---Product-design-case-studies--33PDEE3nSfwS5CQkiW2xdrQy?slide=7f0a08d9-0324-48b0-bd2a-cb6071f183ed"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block relative group"
+                    className="block relative"
                   >
-                    <img 
-                      src={metalabImage} 
-                      alt="Metalab case study presentation intro"
-                      className="w-full h-auto transition-opacity group-hover:opacity-90"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                      <ExternalLink className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="relative overflow-hidden">
+                      <img 
+                        src={metalabImage} 
+                        alt="Metalab case study presentation intro"
+                        className="w-full h-auto transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
+                      />
+                      
+                      {/* Geometric Overlay Elements */}
+                      <div className="absolute top-6 right-6 w-8 h-8 border-2 border-[#BD2928] opacity-0 group-hover:opacity-80 transition-all duration-300 transform rotate-45 group-hover:-rotate-12" aria-hidden="true"></div>
+                      <div className="absolute bottom-8 left-8 w-6 h-6 bg-[#FF1392] opacity-0 group-hover:opacity-70 transition-all duration-400 transform group-hover:rotate-90" aria-hidden="true"></div>
+                      
+                      {/* Context Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-6 left-6 right-6 text-white">
+                          <div className="bg-[#BD2928] px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
+                            PRODUCT • DESIGN
+                          </div>
+                          <p className="text-sm leading-tight">Interactive presentation showcasing product design mastery</p>
+                        </div>
+                      </div>
+                      
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <ExternalLink className="w-8 h-8 text-white drop-shadow-lg" />
+                      </div>
                     </div>
                   </a>
                 </div>
