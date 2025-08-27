@@ -16,49 +16,100 @@ const blinkTilesImage = '/lovable-uploads/67c141a7-043c-48a7-bd50-4a7ba6ff4ad5.p
 export default function DesignCaseStudiesPage() {
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
-      {/* Fragmented Grid Background */}
-      <div className="fixed inset-0 opacity-[0.03] pointer-events-none z-0" aria-hidden="true">
-        {/* Main Grid Pattern */}
-        <div className="absolute inset-0 grid grid-cols-12 grid-rows-8 gap-px">
-          {Array.from({ length: 96 }).map((_, i) => (
+      {/* Enhanced Fragmented Grid Background */}
+      <div className="fixed inset-0 opacity-[0.04] pointer-events-none z-0" aria-hidden="true">
+        {/* Main Grid Pattern with better distribution */}
+        <div className="absolute inset-0 grid grid-cols-16 grid-rows-12 gap-px">
+          {Array.from({ length: 192 }).map((_, i) => (
             <div 
               key={i}
               className={`
-                border border-foreground/20
-                ${i % 7 === 0 ? 'bg-[#FF1392]/30' : ''}
-                ${i % 11 === 0 ? 'bg-[#FFBA08]/30' : ''}
-                ${i % 13 === 0 ? 'bg-[#BD2928]/30' : ''}
-                ${i % 17 === 0 ? 'bg-[#262626]/30' : ''}
-                ${Math.random() > 0.8 ? 'transform rotate-45' : ''}
-                ${Math.random() > 0.9 ? 'scale-75' : ''}
+                border border-foreground/30
+                ${i % 7 === 0 ? 'bg-[#FF1392]/40' : ''}
+                ${i % 11 === 0 ? 'bg-[#FFBA08]/40' : ''}
+                ${i % 13 === 0 ? 'bg-[#BD2928]/40' : ''}
+                ${i % 17 === 0 ? 'bg-[#262626]/40' : ''}
+                ${i % 19 === 0 ? 'transform rotate-45 scale-75' : ''}
+                ${i % 23 === 0 ? 'transform -rotate-12 scale-90' : ''}
+                ${i % 29 === 0 ? 'transform skew-x-12' : ''}
               `}
             />
           ))}
         </div>
         
-        {/* Diagonal Elements */}
-        <div className="absolute top-20 left-10 w-32 h-px bg-[#FF1392]/40 transform rotate-45"></div>
-        <div className="absolute top-40 right-20 w-24 h-px bg-[#FFBA08]/40 transform -rotate-45"></div>
-        <div className="absolute bottom-32 left-1/4 w-40 h-px bg-[#BD2928]/40 transform rotate-12"></div>
+        {/* Enhanced Diagonal Elements */}
+        <div className="absolute top-20 left-10 w-40 h-px bg-[#FF1392]/50 transform rotate-45"></div>
+        <div className="absolute top-40 right-20 w-32 h-px bg-[#FFBA08]/50 transform -rotate-45"></div>
+        <div className="absolute bottom-32 left-1/4 w-48 h-px bg-[#BD2928]/50 transform rotate-12"></div>
+        <div className="absolute top-1/2 right-1/3 w-24 h-px bg-[#262626]/50 transform -rotate-30"></div>
         
         {/* Fragmented Corner Elements */}
-        <div className="absolute top-0 right-0 w-20 h-20 border-l-2 border-b-2 border-[#262626]/30"></div>
-        <div className="absolute bottom-0 left-0 w-16 h-16 border-r-2 border-t-2 border-[#FF1392]/30"></div>
+        <div className="absolute top-0 right-0 w-24 h-24 border-l-4 border-b-4 border-[#262626]/40"></div>
+        <div className="absolute bottom-0 left-0 w-20 h-20 border-r-4 border-t-4 border-[#FF1392]/40"></div>
+        <div className="absolute top-1/3 left-0 w-16 h-32 border-r-2 border-[#FFBA08]/30"></div>
+        <div className="absolute bottom-1/4 right-0 w-12 h-24 border-l-2 border-[#BD2928]/30"></div>
+        
+        {/* Scattered geometric elements */}
+        <div className="absolute top-1/4 left-1/5 w-8 h-8 bg-[#FF1392]/20 transform rotate-45"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-6 h-6 border-2 border-[#FFBA08]/30 transform -rotate-12"></div>
+        <div className="absolute top-2/3 left-1/3 w-4 h-12 bg-[#BD2928]/25 transform skew-x-12"></div>
       </div>
 
       <div className="relative z-10">
         <Header />
-      {/* Hero Section */}
-      <header className="py-16 bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-5xl mx-auto">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-foreground tracking-tight leading-tight">
-              Three agencies.<br />
-              <span className="text-primary">Three archives.</span><br />
-              <span className="text-destructive">Three angles.</span>
-            </h1>
+        
+      {/* Enhanced Hero Section */}
+      <header className="relative py-20 md:py-32 overflow-hidden">
+        {/* Hero Background with geometric patterns */}
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/30 via-primary/20 to-destructive/15"></div>
+        
+        {/* Large geometric background elements */}
+        <div className="absolute top-10 left-10 w-32 h-32 border-8 border-[#FF1392]/20 transform rotate-45" aria-hidden="true"></div>
+        <div className="absolute bottom-10 right-10 w-24 h-24 bg-[#FFBA08]/15 transform -rotate-12" aria-hidden="true"></div>
+        <div className="absolute top-1/2 right-1/4 w-16 h-40 bg-[#BD2928]/10 transform skew-x-12" aria-hidden="true"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-20 h-20 border-4 border-[#262626]/25 transform rotate-12" aria-hidden="true"></div>
+        
+        {/* Diagonal accent lines */}
+        <div className="absolute top-0 left-1/3 w-px h-full bg-gradient-to-b from-transparent via-[#FF1392]/30 to-transparent transform skew-x-12" aria-hidden="true"></div>
+        <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#FFBA08]/25 to-transparent transform -skew-x-6" aria-hidden="true"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-6xl mx-auto">
+            {/* Enhanced Typography with better visual hierarchy */}
+            <div className="relative">
+              {/* Background text treatment */}
+              <div className="absolute inset-0 text-6xl md:text-8xl lg:text-9xl font-black text-[#262626]/5 select-none pointer-events-none transform translate-y-4" aria-hidden="true">
+                DESIGN
+              </div>
+              
+              <h1 className="relative text-4xl md:text-6xl lg:text-8xl font-black mb-12 text-foreground tracking-tight leading-[0.9]">
+                <span className="block relative">
+                  Three agencies.
+                  <div className="absolute -right-4 top-2 w-8 h-8 bg-[#FF1392] transform rotate-45 opacity-60" aria-hidden="true"></div>
+                </span>
+                
+                <span className="block text-primary relative my-4">
+                  <span className="relative z-10">Three archives.</span>
+                  <div className="absolute inset-0 bg-[#FFBA08]/20 transform skew-x-12 -z-10"></div>
+                  <div className="absolute -left-6 top-1/2 w-6 h-6 border-4 border-[#FFBA08] transform -rotate-45" aria-hidden="true"></div>
+                </span>
+                
+                <span className="block text-destructive relative">
+                  <span className="relative z-10">Three angles.</span>
+                  <div className="absolute inset-0 bg-[#BD2928]/10 transform -skew-x-6 -z-10"></div>
+                  <div className="absolute -right-8 -bottom-2 w-4 h-16 bg-[#BD2928]/40 transform skew-y-12" aria-hidden="true"></div>
+                </span>
+              </h1>
+              
+              {/* Geometric accent elements around the title */}
+              <div className="absolute -top-8 left-1/4 w-12 h-2 bg-[#FF1392] transform -skew-x-45" aria-hidden="true"></div>
+              <div className="absolute -bottom-6 right-1/3 w-8 h-8 border-2 border-[#FFBA08] transform rotate-45" aria-hidden="true"></div>
+            </div>
           </div>
         </div>
+        
+        {/* Bottom edge treatment */}
+        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-r from-[#FF1392]/20 via-[#FFBA08]/15 to-[#BD2928]/20 transform skew-y-1" aria-hidden="true"></div>
       </header>
 
       {/* Main Content */}
