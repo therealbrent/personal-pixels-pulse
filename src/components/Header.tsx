@@ -26,13 +26,6 @@ export default function Header() {
 
           {/* Right: Navigation Links */}
           <div className="flex items-center gap-4">
-            <Link 
-              to="/design-case-studies"
-              className="text-lg md:text-xl font-bold text-foreground border-4 border-foreground px-6 py-3 hover:bg-accent hover:text-accent-foreground transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] flex items-center"
-              aria-label="View design case studies page"
-            >
-              CASE STUDIES
-            </Link>
             <a 
               href="/llms.txt" 
               target="_blank" 
