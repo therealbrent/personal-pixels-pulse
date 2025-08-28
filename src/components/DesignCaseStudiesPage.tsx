@@ -116,10 +116,10 @@ export default function DesignCaseStudiesPage() {
       <div className="relative z-10">
         <Header />
       {/* Hero Section */}
-      <header className="py-16 relative">
+      <header className="py-24 relative">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-5xl mx-auto perspective-1000">
-            <div className="transform-style-3d">
+            <div className="transform-style-3d mb-12">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight space-y-4">
                 <div className="block transform rotate-x-12 translate-z-20 animate-fade-in text-foreground hover:translate-z-40 transition-all duration-700">
                   Three agencies.
@@ -132,6 +132,9 @@ export default function DesignCaseStudiesPage() {
                 </div>
               </h1>
             </div>
+            <p className="text-xl md:text-2xl text-muted-foreground font-medium animate-fade-in" style={{animationDelay: '0.6s'}}>
+              Communicating the value of design is a unique challenge.
+            </p>
           </div>
         </div>
       </header>
