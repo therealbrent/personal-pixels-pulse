@@ -133,7 +133,7 @@ export default function DesignCaseStudiesPage() {
         <div className="container mx-auto px-4 max-w-7xl">
           
           {/* The Storyteller - Digital Telepathy */}
-          <section className="mb-32">
+          <section className="mb-16">
             <div className="bg-card border-4 border-foreground p-8 mb-8">
               <div className="flex items-center mb-8">
                 <div className="bg-secondary text-secondary-foreground px-6 py-3 border-2 border-foreground font-bold text-xl mr-6">
@@ -273,17 +273,9 @@ export default function DesignCaseStudiesPage() {
             </div>
           </section>
 
-          {/* Brutalist Separator */}
-          <div className="relative overflow-hidden mb-32" role="presentation" aria-hidden="true">
-            <div className="h-20 bg-gradient-to-br from-destructive via-accent to-primary relative">
-              <div className="absolute top-2 left-8 w-8 h-8 bg-secondary border-2 border-foreground transform rotate-45"></div>
-              <div className="absolute -bottom-2 right-16 w-12 h-4 bg-accent border-2 border-foreground transform skew-x-45"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-primary border-2 border-foreground"></div>
-            </div>
-          </div>
 
           {/* The Systematizer - Blink UX */}
-          <section className="mb-32">
+          <section className="mb-16">
             <div className="bg-card border-4 border-foreground p-8 mb-8">
               <div className="flex items-center mb-8">
                 <div className="bg-primary text-primary-foreground px-6 py-3 border-2 border-foreground font-bold text-xl mr-6">
@@ -367,17 +359,9 @@ export default function DesignCaseStudiesPage() {
             </div>
           </section>
 
-          {/* Brutalist Separator */}
-          <div className="relative overflow-hidden mb-32" role="presentation" aria-hidden="true">
-            <div className="h-20 bg-gradient-to-br from-primary via-secondary to-destructive relative">
-              <div className="absolute -top-2 right-8 w-10 h-10 bg-accent border-2 border-foreground transform -rotate-45"></div>
-              <div className="absolute bottom-1 left-20 w-6 h-12 bg-primary border-2 border-foreground transform skew-y-12"></div>
-              <div className="absolute top-2 right-1/3 w-4 h-4 bg-destructive border-2 border-foreground transform rotate-12"></div>
-            </div>
-          </div>
 
           {/* The Showman - Metalab */}
-          <section className="mb-32">
+          <section className="mb-16">
             <div className="bg-card border-4 border-foreground p-8 mb-8">
               <div className="flex items-center mb-8">
                 <div className="bg-destructive text-destructive-foreground px-6 py-3 border-2 border-foreground font-bold text-xl mr-6">
