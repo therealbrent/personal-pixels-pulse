@@ -16,34 +16,101 @@ const blinkTilesImage = '/lovable-uploads/67c141a7-043c-48a7-bd50-4a7ba6ff4ad5.p
 export default function DesignCaseStudiesPage() {
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
-      {/* Fragmented Grid Background */}
-      <div className="fixed inset-0 opacity-[0.03] pointer-events-none z-0" aria-hidden="true">
-        {/* Main Grid Pattern */}
-        <div className="absolute inset-0 grid grid-cols-12 grid-rows-8 gap-px">
-          {Array.from({ length: 96 }).map((_, i) => (
+      {/* Enhanced Fragmented Grid Background */}
+      <div className="fixed inset-0 opacity-[0.08] pointer-events-none z-0" aria-hidden="true">
+        {/* Main Layered Grid Pattern */}
+        <div className="absolute inset-0 grid grid-cols-16 grid-rows-12 gap-px">
+          {Array.from({ length: 192 }).map((_, i) => {
+            const isHotPink = i % 7 === 0;
+            const isMustard = i % 11 === 0;
+            const isCrimson = i % 13 === 0;
+            const isOnyx = i % 17 === 0;
+            const isCluster = i % 23 === 0;
+            const isAccent = i % 19 === 0;
+            
+            return (
+              <div 
+                key={i}
+                className={`
+                  border border-foreground/30 transition-all duration-1000
+                  ${isHotPink ? 'bg-[#FF1392]/60 border-[#FF1392]/80' : ''}
+                  ${isMustard ? 'bg-[#FFBA08]/70 border-[#FFBA08]/90' : ''}
+                  ${isCrimson ? 'bg-[#BD2928]/65 border-[#BD2928]/85' : ''}
+                  ${isOnyx ? 'bg-[#262626]/80 border-[#262626]/90' : ''}
+                  ${isCluster ? 'bg-gradient-to-br from-[#FF1392]/40 to-[#BD2928]/40' : ''}
+                  ${isAccent ? 'bg-gradient-to-tl from-[#FFBA08]/50 to-[#262626]/30' : ''}
+                  ${i % 5 === 0 ? 'transform rotate-12 scale-110' : ''}
+                  ${i % 8 === 0 ? 'transform -rotate-45 scale-90' : ''}
+                  ${i % 12 === 0 ? 'transform skew-x-12' : ''}
+                  ${i % 15 === 0 ? 'transform rotate-90 scale-75' : ''}
+                  ${Math.random() > 0.85 ? 'animate-pulse' : ''}
+                `}
+                style={{
+                  animationDelay: `${i * 0.05}s`,
+                  transformOrigin: 'center center'
+                }}
+              />
+            );
+          })}
+        </div>
+        
+        {/* Secondary Overlay Grid */}
+        <div className="absolute inset-0 grid grid-cols-8 grid-rows-6 gap-2 opacity-40">
+          {Array.from({ length: 48 }).map((_, i) => (
             <div 
-              key={i}
+              key={`overlay-${i}`}
               className={`
-                border border-foreground/20
-                ${i % 7 === 0 ? 'bg-[#FF1392]/30' : ''}
-                ${i % 11 === 0 ? 'bg-[#FFBA08]/30' : ''}
-                ${i % 13 === 0 ? 'bg-[#BD2928]/30' : ''}
-                ${i % 17 === 0 ? 'bg-[#262626]/30' : ''}
-                ${Math.random() > 0.8 ? 'transform rotate-45' : ''}
-                ${Math.random() > 0.9 ? 'scale-75' : ''}
+                ${i % 3 === 0 ? 'border-l-4 border-[#FF1392]/70' : ''}
+                ${i % 5 === 0 ? 'border-r-4 border-[#FFBA08]/80' : ''}
+                ${i % 7 === 0 ? 'border-t-4 border-[#BD2928]/75' : ''}
+                ${i % 9 === 0 ? 'border-b-4 border-[#262626]/60' : ''}
+                ${i % 11 === 0 ? 'bg-gradient-to-br from-[#FF1392]/20 via-transparent to-[#BD2928]/20' : ''}
               `}
             />
           ))}
         </div>
         
-        {/* Diagonal Elements */}
-        <div className="absolute top-20 left-10 w-32 h-px bg-[#FF1392]/40 transform rotate-45"></div>
-        <div className="absolute top-40 right-20 w-24 h-px bg-[#FFBA08]/40 transform -rotate-45"></div>
-        <div className="absolute bottom-32 left-1/4 w-40 h-px bg-[#BD2928]/40 transform rotate-12"></div>
+        {/* Complex Diagonal Patterns */}
+        <div className="absolute inset-0">
+          {/* Primary Diagonal Lines */}
+          <div className="absolute top-16 left-8 w-48 h-0.5 bg-gradient-to-r from-[#FF1392]/80 to-[#BD2928]/60 transform rotate-45 shadow-lg"></div>
+          <div className="absolute top-32 right-16 w-64 h-0.5 bg-gradient-to-l from-[#FFBA08]/90 to-[#262626]/70 transform -rotate-30 shadow-lg"></div>
+          <div className="absolute bottom-40 left-1/4 w-56 h-0.5 bg-gradient-to-r from-[#BD2928]/85 to-[#FF1392]/65 transform rotate-15 shadow-lg"></div>
+          <div className="absolute top-1/2 right-1/3 w-40 h-0.5 bg-gradient-to-l from-[#262626]/80 to-[#FFBA08]/60 transform -rotate-60 shadow-lg"></div>
+          
+          {/* Secondary Diagonal Network */}
+          <div className="absolute top-24 left-1/3 w-32 h-px bg-[#FF1392]/60 transform rotate-75"></div>
+          <div className="absolute bottom-28 right-1/4 w-28 h-px bg-[#FFBA08]/70 transform -rotate-15"></div>
+          <div className="absolute top-3/4 left-16 w-36 h-px bg-[#BD2928]/65 transform rotate-105"></div>
+          <div className="absolute bottom-16 right-12 w-44 h-px bg-[#262626]/75 transform -rotate-75"></div>
+        </div>
         
-        {/* Fragmented Corner Elements */}
-        <div className="absolute top-0 right-0 w-20 h-20 border-l-2 border-b-2 border-[#262626]/30"></div>
-        <div className="absolute bottom-0 left-0 w-16 h-16 border-r-2 border-t-2 border-[#FF1392]/30"></div>
+        {/* Geometric Anchor Points */}
+        <div className="absolute inset-0">
+          {/* Top corners */}
+          <div className="absolute top-0 right-0 w-24 h-24 border-l-4 border-b-4 border-[#262626]/60 bg-gradient-to-bl from-[#FF1392]/20 to-transparent"></div>
+          <div className="absolute top-8 left-8 w-16 h-16 border-r-4 border-b-4 border-[#FFBA08]/70 bg-[#FFBA08]/10 transform rotate-45"></div>
+          
+          {/* Bottom corners */}
+          <div className="absolute bottom-0 left-0 w-20 h-20 border-r-4 border-t-4 border-[#FF1392]/80 bg-gradient-to-tr from-[#BD2928]/25 to-transparent"></div>
+          <div className="absolute bottom-12 right-12 w-28 h-28 border-l-4 border-t-4 border-[#BD2928]/70 bg-[#262626]/15 transform -rotate-12"></div>
+          
+          {/* Center focal points */}
+          <div className="absolute top-1/3 left-1/2 w-12 h-12 bg-[#FF1392]/40 border-2 border-[#262626]/80 transform rotate-45 shadow-lg"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-8 h-8 bg-[#FFBA08]/60 border-2 border-[#BD2928]/70 transform -rotate-30"></div>
+          
+          {/* Scattered accent shapes */}
+          <div className="absolute top-1/4 right-1/4 w-6 h-20 bg-gradient-to-b from-[#BD2928]/50 to-transparent transform rotate-25"></div>
+          <div className="absolute bottom-1/4 left-1/5 w-20 h-6 bg-gradient-to-r from-[#262626]/60 to-transparent transform -rotate-35"></div>
+        </div>
+        
+        {/* High-contrast overlays */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#FF1392]/30 via-[#FFBA08]/40 to-[#BD2928]/35"></div>
+          <div className="absolute bottom-0 right-0 w-full h-2 bg-gradient-to-l from-[#262626]/50 via-[#BD2928]/40 to-[#FF1392]/30"></div>
+          <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#FFBA08]/40 via-[#262626]/30 to-[#BD2928]/35"></div>
+          <div className="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-[#BD2928]/45 via-[#FF1392]/35 to-[#FFBA08]/40"></div>
+        </div>
       </div>
 
       <div className="relative z-10">
