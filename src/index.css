@@ -267,9 +267,9 @@ All colors MUST be HSL with AAA contrast ratios.
     }
   }
 
-  /* 3D Transform utilities for isometric text effects */
+  /* 3D Transform utilities for dramatic isometric text effects */
   .perspective-1000 {
-    perspective: 1000px;
+    perspective: 800px;
   }
 
   .transform-style-3d {
@@ -277,23 +277,23 @@ All colors MUST be HSL with AAA contrast ratios.
   }
 
   .rotate-x-12 {
-    transform: rotateX(12deg);
+    transform: rotateX(35deg);
   }
 
   .rotate-x-6 {
-    transform: rotateX(6deg);
+    transform: rotateX(20deg);
   }
 
   .rotate-x-3 {
-    transform: rotateX(3deg);
+    transform: rotateX(10deg);
   }
 
   .rotate-y-3 {
-    transform: rotateY(3deg);
+    transform: rotateY(15deg);
   }
 
   .rotate-y-minus-2 {
-    transform: rotateY(-2deg);
+    transform: rotateY(-10deg);
   }
 
   .translate-z-0 {
@@ -301,44 +301,44 @@ All colors MUST be HSL with AAA contrast ratios.
   }
 
   .translate-z-10 {
-    transform: translateZ(10px);
+    transform: translateZ(60px);
   }
 
   .translate-z-20 {
-    transform: translateZ(20px);
+    transform: translateZ(120px);
   }
 
   .translate-z-30 {
-    transform: translateZ(30px);
+    transform: translateZ(180px);
   }
 
   .translate-z-40 {
-    transform: translateZ(40px);
+    transform: translateZ(240px);
   }
 
-  /* Combined 3D transforms for isometric planes */
+  /* Combined 3D transforms for dramatic isometric planes */
   .rotate-x-12.translate-z-20 {
-    transform: rotateX(12deg) translateZ(20px);
+    transform: rotateX(35deg) rotateY(-8deg) translateZ(120px);
   }
 
   .rotate-x-6.rotate-y-3.translate-z-10 {
-    transform: rotateX(6deg) rotateY(3deg) translateZ(10px);
+    transform: rotateX(20deg) rotateY(15deg) translateZ(60px);
   }
 
   .rotate-x-3.rotate-y-minus-2.translate-z-0 {
-    transform: rotateX(3deg) rotateY(-2deg) translateZ(0px);
+    transform: rotateX(10deg) rotateY(-10deg) translateZ(0px);
   }
 
   /* Hover states for enhanced 3D effect */
   .rotate-x-12.translate-z-20:hover {
-    transform: rotateX(12deg) translateZ(40px);
+    transform: rotateX(45deg) rotateY(-12deg) translateZ(200px) scale(1.05);
   }
 
   .rotate-x-6.rotate-y-3.translate-z-10:hover {
-    transform: rotateX(6deg) rotateY(3deg) translateZ(30px);
+    transform: rotateX(30deg) rotateY(20deg) translateZ(140px) scale(1.05);
   }
 
   .rotate-x-3.rotate-y-minus-2.translate-z-0:hover {
-    transform: rotateX(3deg) rotateY(-2deg) translateZ(20px);
+    transform: rotateX(20deg) rotateY(-15deg) translateZ(80px) scale(1.05);
   }
 }
