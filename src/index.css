@@ -266,4 +266,79 @@ All colors MUST be HSL with AAA contrast ratios.
       border-width: 2px !important;
     }
   }
+
+  /* 3D Transform utilities for isometric text effects */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .rotate-x-12 {
+    transform: rotateX(12deg);
+  }
+
+  .rotate-x-6 {
+    transform: rotateX(6deg);
+  }
+
+  .rotate-x-3 {
+    transform: rotateX(3deg);
+  }
+
+  .rotate-y-3 {
+    transform: rotateY(3deg);
+  }
+
+  .rotate-y-minus-2 {
+    transform: rotateY(-2deg);
+  }
+
+  .translate-z-0 {
+    transform: translateZ(0px);
+  }
+
+  .translate-z-10 {
+    transform: translateZ(10px);
+  }
+
+  .translate-z-20 {
+    transform: translateZ(20px);
+  }
+
+  .translate-z-30 {
+    transform: translateZ(30px);
+  }
+
+  .translate-z-40 {
+    transform: translateZ(40px);
+  }
+
+  /* Combined 3D transforms for isometric planes */
+  .rotate-x-12.translate-z-20 {
+    transform: rotateX(12deg) translateZ(20px);
+  }
+
+  .rotate-x-6.rotate-y-3.translate-z-10 {
+    transform: rotateX(6deg) rotateY(3deg) translateZ(10px);
+  }
+
+  .rotate-x-3.rotate-y-minus-2.translate-z-0 {
+    transform: rotateX(3deg) rotateY(-2deg) translateZ(0px);
+  }
+
+  /* Hover states for enhanced 3D effect */
+  .rotate-x-12.translate-z-20:hover {
+    transform: rotateX(12deg) translateZ(40px);
+  }
+
+  .rotate-x-6.rotate-y-3.translate-z-10:hover {
+    transform: rotateX(6deg) rotateY(3deg) translateZ(30px);
+  }
+
+  .rotate-x-3.rotate-y-minus-2.translate-z-0:hover {
+    transform: rotateX(3deg) rotateY(-2deg) translateZ(20px);
+  }
 }

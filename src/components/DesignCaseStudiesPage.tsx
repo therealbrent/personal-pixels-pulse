@@ -116,14 +116,22 @@ export default function DesignCaseStudiesPage() {
       <div className="relative z-10">
         <Header />
       {/* Hero Section */}
-      <header className="py-16 bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10">
+      <header className="py-16 relative">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-5xl mx-auto">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-foreground tracking-tight leading-tight">
-              Three agencies.<br />
-              <span className="text-primary">Three archives.</span><br />
-              <span className="text-destructive">Three angles.</span>
-            </h1>
+          <div className="text-center max-w-5xl mx-auto perspective-1000">
+            <div className="transform-style-3d">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight space-y-4">
+                <div className="block transform rotate-x-12 translate-z-20 animate-fade-in text-foreground hover:translate-z-40 transition-all duration-700">
+                  Three agencies.
+                </div>
+                <div className="block transform rotate-x-6 rotate-y-3 translate-z-10 animate-fade-in text-primary hover:translate-z-30 transition-all duration-700" style={{animationDelay: '0.2s'}}>
+                  <span className="text-primary">Three archives.</span>
+                </div>
+                <div className="block transform rotate-x-3 rotate-y-minus-2 translate-z-0 animate-fade-in text-destructive hover:translate-z-20 transition-all duration-700" style={{animationDelay: '0.4s'}}>
+                  <span className="text-destructive">Three angles.</span>
+                </div>
+              </h1>
+            </div>
           </div>
         </div>
       </header>
