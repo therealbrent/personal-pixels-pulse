@@ -16,8 +16,8 @@ const blinkTilesImage = '/lovable-uploads/67c141a7-043c-48a7-bd50-4a7ba6ff4ad5.p
 export default function DesignCaseStudiesPage() {
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
-      {/* Enhanced Fragmented Grid Background */}
-      <div className="fixed inset-0 opacity-[0.08] pointer-events-none z-0" aria-hidden="true">
+      {/* Enhanced Fragmented Grid Background - Simplified for mobile */}
+      <div className="fixed inset-0 opacity-[0.08] pointer-events-none z-0 hidden md:block" aria-hidden="true">
         {/* Main Layered Grid Pattern */}
         <div className="absolute inset-0 grid grid-cols-16 grid-rows-12 gap-px">
           {Array.from({ length: 192 }).map((_, i) => {
@@ -113,26 +113,33 @@ export default function DesignCaseStudiesPage() {
         </div>
       </div>
 
+      {/* Mobile-friendly simplified background */}
+      <div className="fixed inset-0 opacity-[0.04] pointer-events-none z-0 block md:hidden" aria-hidden="true">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FF1392]/20 via-[#FFBA08]/15 to-[#BD2928]/20"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FF1392]/60 to-[#BD2928]/60"></div>
+        <div className="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-l from-[#262626]/60 to-[#FFBA08]/60"></div>
+      </div>
+
       <div className="relative z-10">
         <Header />
       {/* Hero Section */}
-      <header className="py-24 relative">
+      <header className="py-16 md:py-24 relative">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-5xl mx-auto perspective-1000">
-            <div className="transform-style-3d mb-12">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight space-y-4">
-                <div className="block transform rotate-x-12 translate-z-20 animate-fade-in text-foreground hover:translate-z-40 transition-all duration-700">
+            <div className="transform-style-3d mb-8 md:mb-12">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight space-y-2 md:space-y-4">
+                <div className="block transform md:rotate-x-12 md:translate-z-20 animate-fade-in text-foreground hover:md:translate-z-40 transition-all duration-700">
                   Three agencies.
                 </div>
-                <div className="block transform rotate-x-6 rotate-y-3 translate-z-10 animate-fade-in text-primary hover:translate-z-30 transition-all duration-700" style={{animationDelay: '0.2s'}}>
+                <div className="block transform md:rotate-x-6 md:rotate-y-3 md:translate-z-10 animate-fade-in text-primary hover:md:translate-z-30 transition-all duration-700" style={{animationDelay: '0.2s'}}>
                   <span className="text-primary">Three archives.</span>
                 </div>
-                <div className="block transform rotate-x-3 rotate-y-minus-2 translate-z-0 animate-fade-in text-destructive hover:translate-z-20 transition-all duration-700" style={{animationDelay: '0.4s'}}>
+                <div className="block transform md:rotate-x-3 md:rotate-y-minus-2 md:translate-z-0 animate-fade-in text-destructive hover:md:translate-z-20 transition-all duration-700" style={{animationDelay: '0.4s'}}>
                   <span className="text-destructive">Three angles.</span>
                 </div>
               </h1>
             </div>
-            <p className="text-xl md:text-2xl text-muted-foreground font-medium animate-fade-in" style={{animationDelay: '0.6s'}}>
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground font-medium animate-fade-in" style={{animationDelay: '0.6s'}}>
               Communicating the value of design is a unique challenge.
             </p>
           </div>
@@ -140,35 +147,35 @@ export default function DesignCaseStudiesPage() {
       </header>
 
       {/* Main Content */}
-      <main id="main-content" className="py-20">
+      <main id="main-content" className="py-12 md:py-20">
         <div className="container mx-auto px-4 max-w-7xl">
           
           {/* The Storyteller - Digital Telepathy */}
-          <section className="mb-16">
-            <div className="bg-card border-4 border-foreground p-8 mb-8">
-              <div className="flex items-center mb-8">
-                <div className="bg-secondary text-secondary-foreground px-6 py-3 border-2 border-foreground font-bold text-xl mr-6">
+          <section className="mb-12 md:mb-16">
+            <div className="bg-card border-4 border-foreground p-4 md:p-8 mb-6 md:mb-8">
+              <div className="flex flex-col sm:flex-row sm:items-center mb-6 md:mb-8 gap-3 md:gap-0">
+                <div className="bg-secondary text-secondary-foreground px-4 py-2 md:px-6 md:py-3 border-2 border-foreground font-bold text-lg md:text-xl sm:mr-6 self-start">
                   01
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-foreground">THE STORYTELLER</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">THE STORYTELLER</h2>
               </div>
               
-              <div className="bg-[#262626] text-white p-6 border-2 border-foreground mb-8">
-                <p className="font-bold text-xl">
+              <div className="bg-[#262626] text-white p-4 md:p-6 border-2 border-foreground mb-6 md:mb-8">
+                <p className="font-bold text-lg md:text-xl">
                   Digital Telepathy (Acquired by ServiceNow, 2017)
                 </p>
-                <p className="text-white/90 text-lg mt-2">
+                <p className="text-white/90 text-base md:text-lg mt-2">
                   Long-form, flagship case studies from projects I led circa 2014
                 </p>
               </div>
 
-              <div className="bg-muted p-6 border-2 border-foreground mb-8">
-                <p className="text-lg">
+              <div className="bg-muted p-4 md:p-6 border-2 border-foreground mb-6 md:mb-8">
+                <p className="text-base md:text-lg">
                   Digital Telepathy was a San Diego-based UX design agency founded in 2001 that specialized in creating meaningful customer experiences for mission-driven startups and established brands. For nearly 20 years, the company helped clients like New Relic, The Lean Startup, and Patagonia meet real business objectives by crafting meaningful experiences for their customers.
                 </p>
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-12">
+              <div className="grid lg:grid-cols-2 gap-6 md:gap-12">
                 {/* Adventure.com */}
                 <article className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--primary))] transition-all duration-300">
                   <a 
@@ -286,24 +293,24 @@ export default function DesignCaseStudiesPage() {
 
 
           {/* The Systematizer - Blink UX */}
-          <section className="mb-16">
-            <div className="bg-card border-4 border-foreground p-8 mb-8">
-              <div className="flex items-center mb-8">
-                <div className="bg-primary text-primary-foreground px-6 py-3 border-2 border-foreground font-bold text-xl mr-6">
+          <section className="mb-12 md:mb-16">
+            <div className="bg-card border-4 border-foreground p-4 md:p-8 mb-6 md:mb-8">
+              <div className="flex flex-col sm:flex-row sm:items-center mb-6 md:mb-8 gap-3 md:gap-0">
+                <div className="bg-primary text-primary-foreground px-4 py-2 md:px-6 md:py-3 border-2 border-foreground font-bold text-lg md:text-xl sm:mr-6 self-start">
                   02
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-foreground">THE SYSTEMATIZER</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">THE SYSTEMATIZER</h2>
               </div>
               
-              <div className="bg-[#FFBA08] text-[#262626] p-6 border-2 border-foreground mb-8">
-                <p className="font-bold text-xl">Blink UX</p>
-                <p className="text-[#262626]/90 text-lg mt-2">
+              <div className="bg-[#FFBA08] text-[#262626] p-4 md:p-6 border-2 border-foreground mb-6 md:mb-8">
+                <p className="font-bold text-lg md:text-xl">Blink UX</p>
+                <p className="text-[#262626]/90 text-base md:text-lg mt-2">
                   Catalog breadth + deep-dive depth strategy
                 </p>
               </div>
 
-              <div className="space-y-8">
-                <div className="bg-muted/50 p-6 border-2 border-foreground text-lg">
+              <div className="space-y-6 md:space-y-8">
+                <div className="bg-muted/50 p-4 md:p-6 border-2 border-foreground text-base md:text-lg">
                   <p className="mb-4">
                     Blink UX is a research and product design firm established in 2000. Their client roster is seriously impressive and equally expansive. Following a series of strategic acquisitions, we rebranded the company and launched a new website. Although the site has evolved, the information architecture, user experience, and content strategy for its{' '}
                     <a 
@@ -319,7 +326,7 @@ export default function DesignCaseStudiesPage() {
                   </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8">
+                <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
                   <div className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--accent))] transition-all duration-300">
                     <div className="relative overflow-hidden">
                       <img 
@@ -372,23 +379,23 @@ export default function DesignCaseStudiesPage() {
 
 
           {/* The Showman - Metalab */}
-          <section className="mb-16">
-            <div className="bg-card border-4 border-foreground p-8 mb-8">
-              <div className="flex items-center mb-8">
-                <div className="bg-destructive text-destructive-foreground px-6 py-3 border-2 border-foreground font-bold text-xl mr-6">
+          <section className="mb-12 md:mb-16">
+            <div className="bg-card border-4 border-foreground p-4 md:p-8 mb-6 md:mb-8">
+              <div className="flex flex-col sm:flex-row sm:items-center mb-6 md:mb-8 gap-3 md:gap-0">
+                <div className="bg-destructive text-destructive-foreground px-4 py-2 md:px-6 md:py-3 border-2 border-foreground font-bold text-lg md:text-xl sm:mr-6 self-start">
                   03
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-foreground">THE SHOWMAN</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">THE SHOWMAN</h2>
               </div>
               
-              <div className="bg-[#BD2928] text-white p-6 border-2 border-foreground mb-8">
-                <p className="font-bold text-xl">Metalab</p>
-                <p className="text-white/90 text-lg mt-2">
+              <div className="bg-[#BD2928] text-white p-4 md:p-6 border-2 border-foreground mb-6 md:mb-8">
+                <p className="font-bold text-lg md:text-xl">Metalab</p>
+                <p className="text-white/90 text-base md:text-lg mt-2">
                   Visual presentation format matches brand personality
                 </p>
               </div>
 
-              <div className="bg-muted/50 p-6 border-2 border-foreground text-lg mb-8">
+              <div className="bg-muted/50 p-4 md:p-6 border-2 border-foreground text-base md:text-lg mb-6 md:mb-8">
                 <p>
                   Metalab (née MetaLab) is a product design studio headquartered in Victoria, Canada with a global footprint. You might not have known it at the time, but there's a good chance you've used a product they designed — like Slack, Loom. Instacart, Uber, and countless more.{' '}
                   <a 
