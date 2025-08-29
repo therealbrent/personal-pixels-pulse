@@ -59,9 +59,17 @@ export default function SpeakingMediaPage() {
             {/* Conferences */}
             <div className="mb-8">
               <h3 className="text-xl md:text-2xl font-black mb-4 text-foreground">
-                CONFERENCES
+                PRESENTATIONS
               </h3>
               <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3">
+                {/* New Presentation - ANA 2025 */}
+                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-foreground line-clamp-2">
+                    Next-Generation Marketing: How AI is Used at Qualcomm Technologies
+                  </h4>
+                  <p className="text-xs font-bold text-foreground/60">ANA • 2025</p>
+                </div>
+
                 {/* Conference Talk 1 */}
                 <div 
                   onClick={() => window.open('https://www.youtube.com/watch?v=eEbuoK5DS30', '_blank')}
@@ -76,16 +84,16 @@ export default function SpeakingMediaPage() {
                   <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
                 </div>
 
-                {/* Conference Talk 2 */}
+                {/* Conference Talk 2 - Updated with multiple conferences */}
                 <div 
                   onClick={() => window.open('https://youtu.be/ApLKfzjaN3Y', '_blank')}
                   className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
                 >
                   <div className="pr-8">
                     <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
-                      Happier Humans, Better Business
+                      Happier Humans, Better Results
                     </h4>
-                    <p className="text-xs font-bold text-foreground/60">AI Leaders Forum • 2025</p>
+                    <p className="text-xs font-bold text-foreground/60">AI Leaders Forum • 2025<br />San Diego Design Week • 2025</p>
                   </div>
                   <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
                 </div>
@@ -118,15 +126,7 @@ export default function SpeakingMediaPage() {
                   <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
                 </div>
 
-                {/* Conference Talk 5 */}
-                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
-                  <h4 className="text-sm md:text-base font-black mb-1 text-foreground line-clamp-2">
-                    The UX Flywheel
-                  </h4>
-                  <p className="text-xs font-bold text-foreground/60">ConveyUX • 2020</p>
-                </div>
-
-                {/* Conference Talk 6 */}
+                {/* Consolidated UX Flywheel Talk */}
                 <div 
                   onClick={() => window.open('https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp', '_blank')}
                   className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
@@ -135,17 +135,9 @@ export default function SpeakingMediaPage() {
                     <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
                       The UX Flywheel
                     </h4>
-                    <p className="text-xs font-bold text-foreground/60">San Diego Digital Designers • 2020</p>
+                    <p className="text-xs font-bold text-foreground/60">Convey UX • 2020<br />San Diego Digital Designers • 2020<br />MarcomCentral User Conference • 2020</p>
                   </div>
                   <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
-                </div>
-
-                {/* Conference Talk 7 */}
-                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
-                  <h4 className="text-sm md:text-base font-black mb-1 text-foreground line-clamp-2">
-                    The UX Flywheel
-                  </h4>
-                  <p className="text-xs font-bold text-foreground/60">MarcomCentral User Conference • 2019</p>
                 </div>
               </div>
             </div>
