@@ -205,20 +205,26 @@ All colors MUST be HSL with AAA contrast ratios.
   }
 }
 
+// Performance-optimized CSS with reduced animation complexity
 @layer utilities {
   .container {
     @apply max-w-7xl mx-auto;
   }
   
-  /* Accessibility-focused animations */
+  /* Accessibility-focused animations with prefers-reduced-motion support */
   .animate-bounce {
     animation: bounce 1s infinite;
   }
   
-  /* Reduced motion preferences */
+  /* Reduced motion preferences - Critical for performance */
   @media (prefers-reduced-motion: reduce) {
-    .animate-bounce {
-      animation: none;
+    .animate-bounce,
+    .animate-pulse,
+    .transition-all,
+    .transition-colors,
+    .transition-transform {
+      animation: none !important;
+      transition: none !important;
     }
     
     * {
@@ -267,78 +273,83 @@ All colors MUST be HSL with AAA contrast ratios.
     }
   }
 
-  /* 3D Transform utilities for dramatic isometric text effects */
-  .perspective-1000 {
-    perspective: 800px;
+  /* Optimized 3D Transform utilities - Only for desktop, simplified for mobile performance */
+  @media (min-width: 1024px) {
+    .perspective-1000 {
+      perspective: 800px;
+    }
+
+    .transform-style-3d {
+      transform-style: preserve-3d;
+    }
+
+    .rotate-x-12 {
+      transform: rotateX(35deg);
+    }
+
+    .rotate-x-6 {
+      transform: rotateX(20deg);
+    }
+
+    .rotate-x-3 {
+      transform: rotateX(10deg);
+    }
+
+    .rotate-y-3 {
+      transform: rotateY(15deg);
+    }
+
+    .rotate-y-minus-2 {
+      transform: rotateY(-10deg);
+    }
+
+    .translate-z-10 {
+      transform: translateZ(60px);
+    }
+
+    .translate-z-20 {
+      transform: translateZ(120px);
+    }
+
+    /* Combined 3D transforms for desktop only */
+    .rotate-x-12.translate-z-20 {
+      transform: rotateX(35deg) rotateY(-8deg) translateZ(120px);
+    }
+
+    .rotate-x-6.rotate-y-3.translate-z-10 {
+      transform: rotateX(20deg) rotateY(15deg) translateZ(60px);
+    }
+
+    .rotate-x-3.rotate-y-minus-2 {
+      transform: rotateX(10deg) rotateY(-10deg);
+    }
+
+    /* Hover states only on desktop */
+    .rotate-x-12.translate-z-20:hover {
+      transform: rotateX(45deg) rotateY(-12deg) translateZ(200px) scale(1.05);
+    }
+
+    .rotate-x-6.rotate-y-3.translate-z-10:hover {
+      transform: rotateX(30deg) rotateY(20deg) translateZ(140px) scale(1.05);
+    }
+
+    .rotate-x-3.rotate-y-minus-2:hover {
+      transform: rotateX(20deg) rotateY(-15deg) translateZ(80px) scale(1.05);
+    }
   }
 
-  .transform-style-3d {
-    transform-style: preserve-3d;
-  }
-
-  .rotate-x-12 {
-    transform: rotateX(35deg);
-  }
-
-  .rotate-x-6 {
-    transform: rotateX(20deg);
-  }
-
-  .rotate-x-3 {
-    transform: rotateX(10deg);
-  }
-
-  .rotate-y-3 {
-    transform: rotateY(15deg);
-  }
-
-  .rotate-y-minus-2 {
-    transform: rotateY(-10deg);
-  }
-
-  .translate-z-0 {
-    transform: translateZ(0px);
-  }
-
-  .translate-z-10 {
-    transform: translateZ(60px);
-  }
-
-  .translate-z-20 {
-    transform: translateZ(120px);
-  }
-
-  .translate-z-30 {
-    transform: translateZ(180px);
-  }
-
-  .translate-z-40 {
-    transform: translateZ(240px);
-  }
-
-  /* Combined 3D transforms for dramatic isometric planes */
-  .rotate-x-12.translate-z-20 {
-    transform: rotateX(35deg) rotateY(-8deg) translateZ(120px);
-  }
-
-  .rotate-x-6.rotate-y-3.translate-z-10 {
-    transform: rotateX(20deg) rotateY(15deg) translateZ(60px);
-  }
-
-  .rotate-x-3.rotate-y-minus-2.translate-z-0 {
-    transform: rotateX(10deg) rotateY(-10deg) translateZ(0px);
-  }
-
-  /* Hover states for enhanced 3D effect */
-  .rotate-x-12.translate-z-20:hover {
-    transform: rotateX(45deg) rotateY(-12deg) translateZ(200px) scale(1.05);
-  }
-
-  .rotate-x-6.rotate-y-3.translate-z-10:hover {
-    transform: rotateX(30deg) rotateY(20deg) translateZ(140px) scale(1.05);
-  }
-
-  .rotate-x-3.rotate-y-minus-2.translate-z-0:hover {
-    transform: rotateX(20deg) rotateY(-15deg) translateZ(80px) scale(1.05);
+  /* Mobile optimization - no 3D transforms to save battery */
+  @media (max-width: 1023px) {
+    .rotate-x-12,
+    .rotate-x-6,
+    .rotate-x-3,
+    .rotate-y-3,
+    .rotate-y-minus-2,
+    .translate-z-10,
+    .translate-z-20,
+    .translate-z-30,
+    .translate-z-40 {
+      transform: none !important;
+    }
   }
 }

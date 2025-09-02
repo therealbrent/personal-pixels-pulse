@@ -30,25 +30,37 @@ const AccessibleSlotMachine = () => {
   const visibleReelCount = isDesktop ? 3 : 1;
 
   useEffect(() => {
-    // Load RSS content from your actual feeds
-    setTimeout(() => {
-      const rssItems = getRSSContent();
-      // Add placeholder images to items that don't have them
-      const itemsWithPlaceholders = rssItems.map((item, index) => ({
-        ...item,
-        image: item.image || placeholders[index % placeholders.length]
-      }));
-      
-      setAllItems(itemsWithPlaceholders);
-      // Initialize all reels with random items
-      const initialReels: [RSSItem, RSSItem, RSSItem] = [
-        itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)],
-        itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)],
-        itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)]
-      ];
-      setReels(initialReels);
-      setLoading(false);
-    }, 1000);
+    const loadContent = async () => {
+      try {
+        const rssItems = await getRSSContent(); // Now properly awaiting the async function
+        // Add placeholder images to items that don't have them
+        const itemsWithPlaceholders = rssItems.map((item, index) => ({
+          ...item,
+          image: item.image || placeholders[index % placeholders.length]
+        }));
+        
+        setAllItems(itemsWithPlaceholders);
+        // Initialize all reels with random items
+        const initialReels: [RSSItem, RSSItem, RSSItem] = [
+          itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)],
+          itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)],
+          itemsWithPlaceholders[Math.floor(Math.random() * itemsWithPlaceholders.length)]
+        ];
+        setReels(initialReels);
+        setLoading(false);
+      } catch (error) {
+        console.error('Failed to load RSS content:', error);
+        // Simple fallback with placeholder data
+        const fallbackItems = [
+          { title: 'Loading...', description: 'Content will load soon', link: '#', source: '200 MAX' as const },
+        ];
+        setAllItems(fallbackItems);
+        setReels([fallbackItems[0], fallbackItems[0], fallbackItems[0]]);
+        setLoading(false);
+      }
+    };
+    
+    setTimeout(loadContent, 1000);
   }, []);
 
   const getRandomItem = () => {

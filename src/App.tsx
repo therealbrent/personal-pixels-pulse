@@ -1,12 +1,16 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import LLMSTextPage from './components/LLMSTextPage';
-import SpeakingMediaPage from './components/SpeakingMediaPage';
-import DesignCaseStudiesPage from './components/DesignCaseStudiesPage';
-import AccessibleSlotMachine from './components/AccessibleSlotMachine';
-import AccessibleCaseStudyCard from './components/AccessibleCaseStudyCard';
+import { 
+  LazyLLMSTextPage, 
+  LazySpeakingMediaPage, 
+  LazyDesignCaseStudiesPage,
+  LazySlotMachine,
+  LazyCaseStudyCard,
+  ComponentLoader 
+} from './components/DynamicComponents';
+import { LazyImage } from './components/LazyImage';
 
 interface CaseStudyCardProps {
   title: string;
@@ -376,7 +380,10 @@ function HomePage() {
           
           {/* Slot Machine Carousel */}
           <div className="mt-16 max-w-4xl mx-auto">
-            <AccessibleSlotMachine />
+            {/* Performance-optimized slot machine with code splitting */}
+            <Suspense fallback={<ComponentLoader className="h-[400px]" />}>
+              <LazySlotMachine />
+            </Suspense>
           </div>
         </div>
       </section>
@@ -406,122 +413,135 @@ function HomePage() {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">These are a few successful technology projects and my client collaborators. Click in for more details about my contributions. If you're more interested in some eye candy then check out these <a href="/design-case-studies" className="text-primary hover:text-accent underline">design case studies</a>.</p>
           </div>
 
+          {/* Performance-optimized case study cards with lazy loading */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <AccessibleCaseStudyCard
-              title="SUMO LOGIC"
-              tag="Craft CMS"
-              client="Suku Krishnaraj, Chief Marketing Officer"
-              description="During a stint as Engineering Director at Blink, I led the pitch that won this website redesign project. The brand work was done by Tolleson."
-              details="This project included foundational user research and a few rounds of evaluative testing as we determined the best messaging and information architecture for three very technical types of users: Security Officers, DevOps Managers, and Cloud Architects. While my primary role was technical lead, I also advised the project team (mostly product designers) on web design best practices. Near the end of the project, Sumo Logic requested a change — localization into Japanese."
-              contributions={[
-                "Project estimation",
-                "Product requirements", 
-                "Platform recommendations",
-                "Implementation management",
-                "QA testing",
-                "Web strategy"
-              ]}
-              logoSrc="/lovable-uploads/d1bb2915-782f-4b5a-b60b-08b9094dcdc1.png"
-              logoAlt="Sumo Logic logo"
-              cardIndex={0}
-            />
+            <Suspense fallback={<ComponentLoader className="h-[300px]" />}>
+              <LazyCaseStudyCard
+                title="SUMO LOGIC"
+                tag="Craft CMS"
+                client="Suku Krishnaraj, Chief Marketing Officer"
+                description="During a stint as Engineering Director at Blink, I led the pitch that won this website redesign project. The brand work was done by Tolleson."
+                details="This project included foundational user research and a few rounds of evaluative testing as we determined the best messaging and information architecture for three very technical types of users: Security Officers, DevOps Managers, and Cloud Architects. While my primary role was technical lead, I also advised the project team (mostly product designers) on web design best practices. Near the end of the project, Sumo Logic requested a change — localization into Japanese."
+                contributions={[
+                  "Project estimation",
+                  "Product requirements", 
+                  "Platform recommendations",
+                  "Implementation management",
+                  "QA testing",
+                  "Web strategy"
+                ]}
+                logoSrc="/lovable-uploads/d1bb2915-782f-4b5a-b60b-08b9094dcdc1.png"
+                logoAlt="Sumo Logic logo"
+                cardIndex={0}
+              />
+            </Suspense>
             
-            <AccessibleCaseStudyCard
-              title="ELASTIC"
-              tag="WordPress"
-              client="Elyse Phillips, VP Marketing"
-              description="I led project that established the Elasticsearch brand and launched the commercial product."
-              details="In collaboration with the founding team, Digital Telepathy designed two websites. elasticsearch.com was launched to support the new commercial product and elasticsearch.org was updated to reflect the growing capabilities of the open-source project. Another agency (UpTrending) handled the heavy-lifting of the build, but I managed content entry and quality assurance testing. As an early-stage startup, Elasticsearch moved quickly to add new features. The company made strategic acquisitions including Logstash, Kibana, and Beats. They integrated these products and introduced the ELK stack. Then added Marvel, an observability platform."
-              contributions={[
-                "Brand establishment for Elasticsearch",
-                "Commercial product launch strategy",
-                "Website design collaboration (elasticsearch.com)",
-                "Website update management (elasticsearch.org)",
-                "Content entry management",
-                "Quality assurance testing",
-                "Product integration strategy for acquisitions"
-              ]}
-              logoSrc="/lovable-uploads/26b28675-053b-424c-ad22-a082f58d3937.png"
-              logoAlt="Elastic logo"
-              cardIndex={1}
-            />
+            <Suspense fallback={<ComponentLoader className="h-[300px]" />}>
+              <LazyCaseStudyCard
+                title="ELASTIC"
+                tag="WordPress"
+                client="Elyse Phillips, VP Marketing"
+                description="I led project that established the Elasticsearch brand and launched the commercial product."
+                details="In collaboration with the founding team, Digital Telepathy designed two websites. elasticsearch.com was launched to support the new commercial product and elasticsearch.org was updated to reflect the growing capabilities of the open-source project. Another agency (UpTrending) handled the heavy-lifting of the build, but I managed content entry and quality assurance testing. As an early-stage startup, Elasticsearch moved quickly to add new features. The company made strategic acquisitions including Logstash, Kibana, and Beats. They integrated these products and introduced the ELK stack. Then added Marvel, an observability platform."
+                contributions={[
+                  "Brand establishment for Elasticsearch",
+                  "Commercial product launch strategy",
+                  "Website design collaboration (elasticsearch.com)",
+                  "Website update management (elasticsearch.org)",
+                  "Content entry management",
+                  "Quality assurance testing",
+                  "Product integration strategy for acquisitions"
+                ]}
+                logoSrc="/lovable-uploads/26b28675-053b-424c-ad22-a082f58d3937.png"
+                logoAlt="Elastic logo"
+                cardIndex={1}
+              />
+            </Suspense>
             
-            <AccessibleCaseStudyCard
-              title="AMAZON"
-              tag="LEGO (Proprietary)"
-              client="Andrew Meyers, Sr. Product Manager"
-              description="I was part of a small team that overhauled sell.amazon.com to streamline several ingress points to becoming a seller on Amazon."
-              details="This project was informed by foundational user research and iterative evaluative testing during the design. The site is built on a proprietary drag-and-drop CMS called 'LEGO.' While I cannot disclose the specific metrics, I am happy to report that the conversion rate we achieved was triple the benchmark."
-              contributions={[
-                "Competitive analysis",
-                "Content strategy & copywriting",
-                "Product requirements",
-                "Backlog management",
-                "Scrum master",
-                "Content entry via CMS",
-                "Quality assurance testing"
-              ]}
-              logoSrc="/lovable-uploads/fcdc8d21-8816-48fb-ac54-3140bf151296.png"
-              logoAlt="Amazon logo"
-              cardIndex={2}
-            />
+            <Suspense fallback={<ComponentLoader className="h-[300px]" />}>
+              <LazyCaseStudyCard
+                title="AMAZON"
+                tag="LEGO (Proprietary)"
+                client="Andrew Meyers, Sr. Product Manager"
+                description="I was part of a small team that overhauled sell.amazon.com to streamline several ingress points to becoming a seller on Amazon."
+                details="This project was informed by foundational user research and iterative evaluative testing during the design. The site is built on a proprietary drag-and-drop CMS called 'LEGO.' While I cannot disclose the specific metrics, I am happy to report that the conversion rate we achieved was triple the benchmark."
+                contributions={[
+                  "Competitive analysis",
+                  "Content strategy & copywriting",
+                  "Product requirements",
+                  "Backlog management",
+                  "Scrum master",
+                  "Content entry via CMS",
+                  "Quality assurance testing"
+                ]}
+                logoSrc="/lovable-uploads/fcdc8d21-8816-48fb-ac54-3140bf151296.png"
+                logoAlt="Amazon logo"
+                cardIndex={2}
+              />
+            </Suspense>
             
-            <AccessibleCaseStudyCard
-              title="PIVOTAL"
-              tag="Proprietary"
-              client="Michelle Kerr, VP of Marketing"
-              description="I led this project which expanded on the core brand assets (logos, color, and type) to create a comprehensive visual design system."
-              details="Pivotal was born from a grab bag of EMC and VMware acquisitions including Cetas, Cloud Foundry, GemFire, GreenPlum, SpringSource, and Pivotal Labs. The company was spun out of EMC/VMware with a $105 million investment from GE. The project included a corporate website, a huge collection of icons and illustrations, plus guidelines for creating custom marketecture diagrams that are essential to technical sales."
-              contributions={[
-                "Visual design system expansion",
-                "Corporate website design",
-                "Icon and illustration collection",
-                "Marketecture diagram guidelines",
-                "Brand asset coordination",
-                "Technical sales enablement materials"
-              ]}
-              logoSrc="/lovable-uploads/f09455ec-ba6d-44e8-bf98-5b6023cd43fd.png"
-              logoAlt="Pivotal logo"
-              cardIndex={3}
-            />
+            <Suspense fallback={<ComponentLoader className="h-[300px]" />}>
+              <LazyCaseStudyCard
+                title="PIVOTAL"
+                tag="Proprietary"
+                client="Michelle Kerr, VP of Marketing"
+                description="I led this project which expanded on the core brand assets (logos, color, and type) to create a comprehensive visual design system."
+                details="Pivotal was born from a grab bag of EMC and VMware acquisitions including Cetas, Cloud Foundry, GemFire, GreenPlum, SpringSource, and Pivotal Labs. The company was spun out of EMC/VMware with a $105 million investment from GE. The project included a corporate website, a huge collection of icons and illustrations, plus guidelines for creating custom marketecture diagrams that are essential to technical sales."
+                contributions={[
+                  "Visual design system expansion",
+                  "Corporate website design",
+                  "Icon and illustration collection",
+                  "Marketecture diagram guidelines",
+                  "Brand asset coordination",
+                  "Technical sales enablement materials"
+                ]}
+                logoSrc="/lovable-uploads/f09455ec-ba6d-44e8-bf98-5b6023cd43fd.png"
+                logoAlt="Pivotal logo"
+                cardIndex={3}
+              />
+            </Suspense>
             
-            <AccessibleCaseStudyCard
-              title="HP"
-              tag="iOS & Android"
-              client="Shawn Piper, Senior Experience Design Manager"
-              description="This project overhauled the mobile app that controls modern HP printers and conceived how HP's new subscription business model would be communicated."
-              details="A six-person team at Blink worked with more than 20 stakeholders at HP to research and design an app experience to serve three primary personas: Individual at home/work, Small business owners, and IT administrators. As a follow-up to the app redesign, Blink conceived how HP's new subscription business model would be communicated on its storefront website."
-              contributions={[
-                "Value proposition clarity",
-                "Setup instructions design",
-                "Product commands interface",
-                "Content strategy for subscription model",
-                "Copywriting for concept website",
-                "eCommerce store consolidation strategy"
-              ]}
-              logoSrc="/lovable-uploads/5c60a0c9-273d-43a9-a4e6-226e8538a08c.png"
-              logoAlt="HP logo"
-              cardIndex={4}
-            />
+            <Suspense fallback={<ComponentLoader className="h-[300px]" />}>
+              <LazyCaseStudyCard
+                title="HP"
+                tag="iOS & Android"
+                client="Shawn Piper, Senior Experience Design Manager"
+                description="This project overhauled the mobile app that controls modern HP printers and conceived how HP's new subscription business model would be communicated."
+                details="A six-person team at Blink worked with more than 20 stakeholders at HP to research and design an app experience to serve three primary personas: Individual at home/work, Small business owners, and IT administrators. As a follow-up to the app redesign, Blink conceived how HP's new subscription business model would be communicated on its storefront website."
+                contributions={[
+                  "Value proposition clarity",
+                  "Setup instructions design",
+                  "Product commands interface",
+                  "Content strategy for subscription model",
+                  "Copywriting for concept website",
+                  "eCommerce store consolidation strategy"
+                ]}
+                logoSrc="/lovable-uploads/5c60a0c9-273d-43a9-a4e6-226e8538a08c.png"
+                logoAlt="HP logo"
+                cardIndex={4}
+              />
+            </Suspense>
             
-            <AccessibleCaseStudyCard
-              title="NEW RELIC"
-              tag="Prismic"
-              client="Raf Alenda, Vice President - Online & Brand Marketing"
-              description="New Relic was a long-standing client of Digital Telepathy. I got involved with the account around the time when New Relic announced their Series B funding."
-              details="I helped with several key initiatives during their growth phase, focusing on product launches, content strategy pivots, and campaign optimization."
-              contributions={[
-                "Product launch: Synthetics",
-                "Pivot to enterprise content strategy - Solutions by Industry",
-                "Pivot to enterprise content strategy - Solutions by Use Case",
-                "Landing page optimization for 'Data Nerd' campaign",
-                "Nurture program built on in-product events (using Intercom)",
-                "FutureStack 2014, 2015"
-              ]}
-              logoSrc="/lovable-uploads/6cbd7f55-af1e-4682-aaf1-58ae638c0c99.png"
-              logoAlt="New Relic logo"
-              cardIndex={5}
-            />
+            <Suspense fallback={<ComponentLoader className="h-[300px]" />}>
+              <LazyCaseStudyCard
+                title="NEW RELIC"
+                tag="Prismic"
+                client="Raf Alenda, Vice President - Online & Brand Marketing"
+                description="New Relic was a long-standing client of Digital Telepathy. I got involved with several key initiatives during their growth phase, focusing on product launches, content strategy pivots, and campaign optimization."
+                details="I helped with several key initiatives during their growth phase, focusing on product launches, content strategy pivots, and campaign optimization."
+                contributions={[
+                  "Product launch: Synthetics",
+                  "Pivot to enterprise content strategy - Solutions by Industry",
+                  "Pivot to enterprise content strategy - Solutions by Use Case",
+                  "Landing page optimization for 'Data Nerd' campaign",
+                  "Nurture program built on in-product events (using Intercom)",
+                  "FutureStack 2014, 2015"
+                ]}
+                logoSrc="/lovable-uploads/6cbd7f55-af1e-4682-aaf1-58ae638c0c99.png"
+                logoAlt="New Relic logo"
+                cardIndex={5}
+              />
+            </Suspense>
           </div>
           
           {/* Testimonials */}
@@ -585,13 +605,21 @@ function HomePage() {
 export default function App() {
   return (
     <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/llms.txt" element={<LLMSTextPage />} />
-          <Route path="/speaking" element={<SpeakingMediaPage />} />
-          <Route path="/speaking-media" element={<Navigate to="/speaking" replace />} />
-          <Route path="/design-case-studies" element={<DesignCaseStudiesPage />} />
-        </Routes>
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main id="main-content">
+          <Suspense fallback={<ComponentLoader className="min-h-screen" />}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/llms.txt" element={<LazyLLMSTextPage />} />
+              <Route path="/speaking" element={<LazySpeakingMediaPage />} />
+              <Route path="/speaking-media" element={<Navigate to="/speaking" replace />} />
+              <Route path="/design-case-studies" element={<LazyDesignCaseStudiesPage />} />
+            </Routes>
+          </Suspense>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }

@@ -1,5 +1,33 @@
 import { useEffect, useMemo, useState } from "react";
-import { format, formatDistanceToNowStrict, parseISO } from "date-fns";
+
+// Replaced date-fns with native browser APIs (-15KB bundle reduction)
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  const absolute = date.toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+  
+  const now = Date.now();
+  const diffMs = now - date.getTime();
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+  const diffMinutes = Math.floor(diffMs / (1000 * 60));
+  
+  let relative: string;
+  if (diffDays > 0) {
+    relative = `${diffDays} day${diffDays !== 1 ? 's' : ''} ago`;
+  } else if (diffHours > 0) {
+    relative = `${diffHours} hour${diffHours !== 1 ? 's' : ''} ago`;
+  } else if (diffMinutes > 0) {
+    relative = `${diffMinutes} minute${diffMinutes !== 1 ? 's' : ''} ago`;
+  } else {
+    relative = 'just now';
+  }
+  
+  return { absolute, relative, iso: dateString };
+};
 
 export interface BuildInfoMeta {
   node?: string | null;
@@ -45,10 +73,7 @@ export default function LastUpdated() {
 
   const content = useMemo(() => {
     if (!info?.timestamp) return null;
-    const date = parseISO(info.timestamp);
-    const absolute = format(date, "MMMM d, yyyy");
-    const relative = formatDistanceToNowStrict(date, { addSuffix: true });
-    return { absolute, relative, iso: info.timestamp } as const;
+    return formatDate(info.timestamp);
   }, [info?.timestamp]);
 
   if (!content) {

@@ -28,8 +28,7 @@ const SlotMachineCarousel = () => {
     // Load RSS content with improved performance
     const loadContent = async () => {
       try {
-        const { loadRSSContent } = await import('../data/rssData');
-        const rssItems = await loadRSSContent();
+        const rssItems = await getRSSContent(); // Fixed: properly await async function
         
         // Add placeholder images to items that don't have them
         const itemsWithPlaceholders = rssItems.map((item, index) => ({
@@ -48,13 +47,12 @@ const SlotMachineCarousel = () => {
         setLoading(false);
       } catch (error) {
         console.error('Failed to load RSS content:', error);
-        // Fallback to legacy method
-        const rssItems = getRSSContent();
-        const itemsWithPlaceholders = rssItems.map((item, index) => ({
-          ...item,
-          image: item.image || placeholders[index % placeholders.length]
-        }));
-        setAllItems(itemsWithPlaceholders);
+        // Simple fallback with placeholder data
+        const fallbackItems = [
+          { title: 'Loading...', description: 'Content will load soon', link: '#', source: '200 MAX' as const },
+        ];
+        setAllItems(fallbackItems);
+        setReels([fallbackItems[0], fallbackItems[0], fallbackItems[0]]);
         setLoading(false);
       }
     };
