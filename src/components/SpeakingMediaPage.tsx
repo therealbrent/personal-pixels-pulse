@@ -28,14 +28,6 @@ export default function SpeakingMediaPage() {
           <p className="text-xl md:text-2xl font-bold text-foreground/90 max-w-4xl mx-auto leading-relaxed">
             I don't give speeches because transformation isn't a PowerPoint deck you can download. It's messy. It's personal. It's experienced. I share stories, frameworks and lessons learned from two decades of leading change.
           </p>
-          <div className="mt-8">
-            <a 
-              href="#biography"
-              className="inline-flex items-center bg-primary text-primary-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-lg font-black px-6 py-3"
-            >
-              Grab my bio & headshot
-            </a>
-          </div>
         </header>
 
         {/* Biography and Headshot */}
