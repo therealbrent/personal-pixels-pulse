@@ -41,6 +41,9 @@ export default function SpeakingMediaPage() {
           </div>
         </header>
 
+        {/* Biography & Headshot - Near top of page */}
+        <BiographyHeadshot />
+
         {/* Executive Impact Section - Unified Macro Element */}
         <section className="mb-16">
           {/* Header/Letterhead */}
@@ -308,7 +311,6 @@ export default function SpeakingMediaPage() {
           </div>
         </section>
 
-        <BiographyHeadshot />
       </main>
 
       <Footer />
