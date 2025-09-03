@@ -205,7 +205,7 @@ All colors MUST be HSL with AAA contrast ratios.
   }
 }
 
-// Performance-optimized CSS with reduced animation complexity
+/* Performance-optimized CSS with reduced animation complexity */
 @layer utilities {
   .container {
     @apply max-w-7xl mx-auto;
