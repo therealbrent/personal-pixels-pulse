@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
 import { Button } from './ui/button';
 import { ExternalLink, Download, Play } from 'lucide-react';
-import Header from './Header';
-import Footer from './Footer';
 import BiographyHeadshot from './BiographyHeadshot';
 
 export default function SpeakingMediaPage() {
@@ -20,7 +18,6 @@ export default function SpeakingMediaPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Header />
 
       <main id="main-content" className="container mx-auto px-4 py-12 lg:py-20">
         {/* Hero Section - Neo-Brutalist */}
@@ -310,8 +307,6 @@ export default function SpeakingMediaPage() {
 
         <BiographyHeadshot />
       </main>
-
-      <Footer />
     </div>
   );
 }
