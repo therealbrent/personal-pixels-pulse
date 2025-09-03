@@ -34,8 +34,6 @@ function HomePage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Header />
-
       {/* Hero Section */}
       <header id="home" className="h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10 px-4">
         <div className="text-center max-w-4xl mx-auto">
