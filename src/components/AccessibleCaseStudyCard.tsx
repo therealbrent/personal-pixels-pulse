@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import ConfettiEffect from './ConfettiEffect';
-import { LazyImage } from './LazyImage';
 
 interface CaseStudyCardProps {
   title: string;
@@ -50,12 +49,11 @@ function AccessibleCaseStudyCard({
           }}
         >
           <div className="flex flex-col items-center space-y-4">
-            <LazyImage 
+            <img 
               src={logoSrc} 
               alt={logoAlt} 
-              width={120}
-              height={60}
               className="h-16 object-contain"
+              loading="lazy"
             />
             <span 
               className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground"
@@ -80,12 +78,11 @@ function AccessibleCaseStudyCard({
       >
         <DialogHeader>
           <DialogTitle className="flex flex-col items-center space-y-3">
-            <LazyImage 
+            <img 
               src={logoSrc} 
               alt={logoAlt} 
-              width={96}
-              height={48}
               className="h-12 md:h-24 object-contain"
+              loading="lazy"
             />
             <span 
               className="bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold border-2 border-foreground"
