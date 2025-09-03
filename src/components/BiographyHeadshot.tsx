@@ -12,12 +12,12 @@ export default function BiographyHeadshot() {
 
   return (
     <section id="biography" className="mb-20">
-      <h2 className="text-4xl md:text-6xl font-black mb-12 text-center text-foreground transform hover:skew-y-1 transition-transform duration-300">
-        BIOGRAPHY & HEADSHOT
-      </h2>
-      
       {/* Single bounding box with deep dropshadow */}
       <div className="max-w-7xl mx-auto bg-background border-8 border-foreground shadow-[16px_16px_0px_0px_hsl(var(--foreground))] p-8 md:p-12">
+        <h2 className="text-4xl md:text-6xl font-black mb-8 text-center text-foreground transform hover:skew-y-1 transition-transform duration-300">
+          BIOGRAPHY & HEADSHOT
+        </h2>
+        
         <div className="flex flex-col md:flex-row gap-8">
           {/* Text content - left aligned */}
           <div className="flex-1 text-left">
@@ -35,10 +35,10 @@ export default function BiographyHeadshot() {
               alt="Professional headshot of Brent Summers" 
               className="w-full h-auto border-4 border-foreground"
             />
-            {/* Download button appears on hover */}
+            {/* Download button appears on hover - more vibrant */}
             <Button 
               onClick={handleDownloadHeadshot}
-              className="absolute inset-x-4 bottom-4 bg-primary text-primary-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-sm font-black py-2 opacity-0 group-hover:opacity-100"
+              className="absolute inset-x-4 bottom-4 bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-sm font-black py-2 opacity-0 group-hover:opacity-100"
             >
               DOWNLOAD HEADSHOT
             </Button>
