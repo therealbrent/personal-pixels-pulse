@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getRSSContent } from '../utils/rssParser';
 import { useIsMobile } from '../hooks/use-mobile';
+import { LazyImage } from './LazyImage';
 import placeholder1 from '../assets/placeholder-1.jpg';
 import placeholder2 from '../assets/placeholder-2.jpg';
 import placeholder3 from '../assets/placeholder-3.jpg';
@@ -138,13 +139,13 @@ const SlotMachineCarousel = () => {
 
         {/* Featured Image - 16:9 aspect ratio */}
         <div className="mb-3 border-2 border-foreground overflow-hidden aspect-video">
-          <img 
+          <LazyImage 
             src={item.image || placeholder1} 
             alt="" 
+            width={400}
+            height={225}
             className="w-full h-full object-cover"
-            onError={(e) => {
-              e.currentTarget.src = placeholder1;
-            }}
+            fallback={placeholder1}
           />
         </div>
 
