@@ -29,20 +29,20 @@ export default function BiographyHeadshot() {
             </div>
           </div>
           
-          {/* Image - right inset, with hover download button */}
-          <div className="flex-shrink-0 w-full md:w-80 relative group">
+          {/* Image - right inset, with download button */}
+          <div className="flex-shrink-0 w-full md:w-40 relative group">
             <LazyImage 
               src="/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png" 
               alt="Professional headshot of Brent Summers" 
               className="w-full h-auto border-4 border-foreground"
-              width={320}
-              height={400}
+              width={160}
+              height={200}
               priority
             />
-            {/* Download button appears on hover - more vibrant */}
+            {/* Download button - always visible */}
             <Button 
               onClick={handleDownloadHeadshot}
-              className="absolute inset-x-4 bottom-4 bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-sm font-black py-2 opacity-0 group-hover:opacity-100"
+              className="absolute inset-x-4 bottom-4 bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-sm font-black py-2"
             >
               DOWNLOAD HEADSHOT
             </Button>
