@@ -21,8 +21,8 @@ export const preloadComponents = {
 
 // Loading fallback component
 export const ComponentLoader = ({ className = "" }: { className?: string }) => (
-  <div className={`animate-pulse bg-muted rounded ${className}`} aria-label="Loading component">
-    <div className="h-8 bg-muted-foreground/20 rounded mb-4"></div>
-    <div className="h-32 bg-muted-foreground/10 rounded"></div>
+  <div className={`animate-pulse bg-muted rounded min-h-[calc(100vh-200px)] flex flex-col justify-center items-center p-8 ${className}`} aria-label="Loading component">
+    <div className="h-8 bg-muted-foreground/20 rounded mb-4 w-48"></div>
+    <div className="h-32 bg-muted-foreground/10 rounded w-full max-w-md"></div>
   </div>
 );
