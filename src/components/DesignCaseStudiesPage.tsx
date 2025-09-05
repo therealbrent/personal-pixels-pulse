@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
-import Header from './Header';
-import Footer from './Footer';
+import { LazyImage } from './LazyImage';
 
 // Import images directly from lovable-uploads
 const adventureImage = '/lovable-uploads/aedf8717-6d9f-440a-8bce-7ded3c64cbca.png';
@@ -121,7 +120,6 @@ export default function DesignCaseStudiesPage() {
       </div>
 
       <div className="relative z-10">
-        <Header />
       {/* Hero Section */}
       <header className="py-16 md:py-24 relative">
         <div className="container mx-auto px-4">
@@ -185,10 +183,13 @@ export default function DesignCaseStudiesPage() {
                     className="block relative"
                   >
                     <div className="relative overflow-hidden">
-                      <img 
+                      <LazyImage 
                         src={adventureImage} 
                         alt="Adventure.com case study cover"
                         className="w-full h-auto object-contain group-hover:brightness-110 group-hover:contrast-110 transition-all duration-300 group-hover:transform group-hover:scale-[1.02]"
+                        width={600}
+                        height={400}
+                        priority
                       />
                       
                       {/* Geometric Overlay Elements */}
@@ -252,10 +253,13 @@ export default function DesignCaseStudiesPage() {
                     className="block relative"
                   >
                     <div className="relative overflow-hidden">
-                      <img 
+                      <LazyImage 
                         src={pivotalImage} 
                         alt="Pivotal case study cover"
                         className="w-full h-auto object-contain group-hover:brightness-110 group-hover:contrast-110 transition-all duration-300 group-hover:transform group-hover:scale-[1.02]"
+                        width={600}
+                        height={400}
+                        priority
                       />
                       
                       {/* Geometric Overlay Elements */}
@@ -329,10 +333,12 @@ export default function DesignCaseStudiesPage() {
                 <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
                   <div className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--accent))] transition-all duration-300">
                     <div className="relative overflow-hidden">
-                      <img 
+                      <LazyImage 
                         src={blinkTilesImage} 
                         alt="Blink UX case study tiles layout"
                         className="w-full h-auto object-contain group-hover:brightness-110 transition-all duration-300 group-hover:scale-[1.01]"
+                        width={600}
+                        height={400}
                       />
                       
                       {/* Geometric Elements */}
@@ -352,10 +358,12 @@ export default function DesignCaseStudiesPage() {
                   
                   <div className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--accent))] transition-all duration-300">
                     <div className="relative overflow-hidden">
-                      <img 
+                      <LazyImage 
                         src={blinkCatalogImage} 
                         alt="Blink UX catalog layout"
                         className="w-full h-auto object-contain group-hover:brightness-110 transition-all duration-300 group-hover:scale-[1.01]"
+                        width={600}
+                        height={400}
                       />
                       
                       {/* Geometric Elements */}
@@ -420,10 +428,12 @@ export default function DesignCaseStudiesPage() {
                     className="block relative"
                   >
                     <div className="relative overflow-hidden">
-                      <img 
+                      <LazyImage 
                         src={metalabImage} 
                         alt="Metalab case study presentation intro"
                         className="w-full h-auto transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
+                        width={600}
+                        height={400}
                       />
                       
                       {/* Geometric Overlay Elements */}
@@ -453,7 +463,6 @@ export default function DesignCaseStudiesPage() {
           {/* Back to Home */}
         </div>
       </main>
-      <Footer />
       </div>
     </div>
   );
