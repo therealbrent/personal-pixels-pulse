@@ -186,9 +186,9 @@ export default function DesignCaseStudiesPage() {
                       <LazyImage 
                         src={adventureImage} 
                         alt="Adventure.com case study cover"
-                        className="w-full h-auto object-contain group-hover:brightness-110 group-hover:contrast-110 transition-all duration-300 group-hover:transform group-hover:scale-[1.02]"
+                        className="w-full h-auto object-cover group-hover:brightness-110 group-hover:contrast-110 transition-all duration-300 group-hover:transform group-hover:scale-[1.02]"
                         width={600}
-                        height={400}
+                        height={800}
                         priority
                       />
                       
@@ -256,9 +256,9 @@ export default function DesignCaseStudiesPage() {
                       <LazyImage 
                         src={pivotalImage} 
                         alt="Pivotal case study cover"
-                        className="w-full h-auto object-contain group-hover:brightness-110 group-hover:contrast-110 transition-all duration-300 group-hover:transform group-hover:scale-[1.02]"
+                        className="w-full h-auto object-cover group-hover:brightness-110 group-hover:contrast-110 transition-all duration-300 group-hover:transform group-hover:scale-[1.02]"
                         width={600}
-                        height={400}
+                        height={800}
                         priority
                       />
                       
@@ -333,12 +333,10 @@ export default function DesignCaseStudiesPage() {
                 <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
                   <div className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--accent))] transition-all duration-300">
                     <div className="relative overflow-hidden">
-                      <LazyImage 
+                      <img 
                         src={blinkTilesImage} 
                         alt="Blink UX case study tiles layout"
-                        className="w-full h-auto object-contain group-hover:brightness-110 transition-all duration-300 group-hover:scale-[1.01]"
-                        width={600}
-                        height={400}
+                        className="w-full h-auto object-cover group-hover:brightness-110 transition-all duration-300 group-hover:scale-[1.01]"
                       />
                       
                       {/* Geometric Elements */}
@@ -358,12 +356,10 @@ export default function DesignCaseStudiesPage() {
                   
                   <div className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--accent))] transition-all duration-300">
                     <div className="relative overflow-hidden">
-                      <LazyImage 
+                      <img 
                         src={blinkCatalogImage} 
                         alt="Blink UX catalog layout"
-                        className="w-full h-auto object-contain group-hover:brightness-110 transition-all duration-300 group-hover:scale-[1.01]"
-                        width={600}
-                        height={400}
+                        className="w-full h-auto object-cover group-hover:brightness-110 transition-all duration-300 group-hover:scale-[1.01]"
                       />
                       
                       {/* Geometric Elements */}
@@ -428,12 +424,10 @@ export default function DesignCaseStudiesPage() {
                     className="block relative"
                   >
                     <div className="relative overflow-hidden">
-                      <LazyImage 
+                      <img 
                         src={metalabImage} 
                         alt="Metalab case study presentation intro"
-                        className="w-full h-auto transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
-                        width={600}
-                        height={400}
+                        className="w-full h-auto object-cover transition-all duration-300 group-hover:brightness-110 group-hover:scale-[1.02]"
                       />
                       
                       {/* Geometric Overlay Elements */}
