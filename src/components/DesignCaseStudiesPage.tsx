@@ -183,13 +183,10 @@ export default function DesignCaseStudiesPage() {
                     className="block relative"
                   >
                     <div className="relative overflow-hidden">
-                      <LazyImage 
+                      <img 
                         src={adventureImage} 
                         alt="Adventure.com case study cover"
                         className="w-full h-auto object-cover group-hover:brightness-110 group-hover:contrast-110 transition-all duration-300 group-hover:transform group-hover:scale-[1.02]"
-                        width={600}
-                        height={800}
-                        priority
                       />
                       
                       {/* Geometric Overlay Elements */}
@@ -253,13 +250,10 @@ export default function DesignCaseStudiesPage() {
                     className="block relative"
                   >
                     <div className="relative overflow-hidden">
-                      <LazyImage 
+                      <img 
                         src={pivotalImage} 
                         alt="Pivotal case study cover"
                         className="w-full h-auto object-cover group-hover:brightness-110 group-hover:contrast-110 transition-all duration-300 group-hover:transform group-hover:scale-[1.02]"
-                        width={600}
-                        height={800}
-                        priority
                       />
                       
                       {/* Geometric Overlay Elements */}
