@@ -19,7 +19,7 @@ export default function BiographyHeadshot() {
           BIOGRAPHY & HEADSHOT
         </h2>
         
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
           {/* Text content - left aligned */}
           <div className="flex-1 text-left">
             <div className="space-y-6 text-foreground text-lg font-semibold leading-relaxed">
@@ -29,23 +29,25 @@ export default function BiographyHeadshot() {
             </div>
           </div>
           
-          {/* Image - right inset, with download button */}
-          <div className="flex-shrink-0 w-full md:w-40 relative group">
-            <LazyImage 
-              src="/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png" 
-              alt="Professional headshot of Brent Summers" 
-              className="w-full h-auto border-4 border-foreground"
-              width={160}
-              height={200}
-              priority
-            />
-            {/* Download button - always visible */}
-            <Button 
-              onClick={handleDownloadHeadshot}
-              className="absolute inset-x-4 bottom-4 bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-sm font-black py-2"
-            >
-              DOWNLOAD HEADSHOT
-            </Button>
+          {/* Image and button container */}
+          <div className="flex-shrink-0 w-full sm:w-64 lg:w-48 mx-auto lg:mx-0">
+            <div className="space-y-4">
+              <LazyImage 
+                src="/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png" 
+                alt="Professional headshot of Brent Summers" 
+                className="w-full h-auto border-4 border-foreground"
+                width={160}
+                height={200}
+                priority
+              />
+              {/* Download button below image */}
+              <Button 
+                onClick={handleDownloadHeadshot}
+                className="w-full bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-sm font-black py-3 min-h-[44px]"
+              >
+                DOWNLOAD HEADSHOT
+              </Button>
+            </div>
           </div>
         </div>
       </div>
