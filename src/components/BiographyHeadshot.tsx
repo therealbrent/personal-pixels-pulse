@@ -1,4 +1,5 @@
 import { Button } from './ui/button';
+import { LazyImage } from './LazyImage';
 
 export default function BiographyHeadshot() {
   const handleDownloadHeadshot = () => {
@@ -30,10 +31,13 @@ export default function BiographyHeadshot() {
           
           {/* Image - right inset, with hover download button */}
           <div className="flex-shrink-0 w-full md:w-80 relative group">
-            <img 
+            <LazyImage 
               src="/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png" 
               alt="Professional headshot of Brent Summers" 
               className="w-full h-auto border-4 border-foreground"
+              width={320}
+              height={400}
+              priority
             />
             {/* Download button appears on hover - more vibrant */}
             <Button 
