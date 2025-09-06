@@ -13,7 +13,7 @@ export default function Header() {
       </a>
 
       <nav className="w-full" role="navigation" aria-label="Main navigation">
-        <div className="flex items-center justify-between h-20 px-4">
+        <div className="flex items-center justify-between h-20 pl-0 pr-4">
           {/* Left: BRENT SUMMERS - Home Link */}
           <Link 
             to="/" 
