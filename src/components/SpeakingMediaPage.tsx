@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Button } from './ui/button';
-import { ExternalLink, Download, Play } from 'lucide-react';
+import { Icon } from './ui/icon';
 import BiographyHeadshot from './BiographyHeadshot';
 
 export default function SpeakingMediaPage() {
@@ -73,7 +73,7 @@ export default function SpeakingMediaPage() {
                     </h4>
                     <p className="text-xs font-bold text-foreground/60">Webit • 2025</p>
                   </div>
-                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-accent group-hover:fill-accent transition-all duration-200" />
+                  <Icon name="play" size={16} className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 2 - Updated with multiple conferences */}
@@ -87,7 +87,7 @@ export default function SpeakingMediaPage() {
                     </h4>
                     <p className="text-xs font-bold text-foreground/60">AI Leaders Forum • 2025<br />San Diego Design Week • 2025</p>
                   </div>
-                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-accent group-hover:fill-accent transition-all duration-200" />
+                  <Icon name="play" size={16} className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 3 */}
@@ -101,7 +101,7 @@ export default function SpeakingMediaPage() {
                     </h4>
                     <p className="text-xs font-bold text-foreground/60">AI x Marketing Summit • 2025</p>
                   </div>
-                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-accent group-hover:fill-accent transition-all duration-200" />
+                  <Icon name="play" size={16} className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 4 */}
@@ -115,7 +115,7 @@ export default function SpeakingMediaPage() {
                     </h4>
                     <p className="text-xs font-bold text-foreground/60">Product-Led Growth Conference • 2020</p>
                   </div>
-                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-accent group-hover:fill-accent transition-all duration-200" />
+                  <Icon name="play" size={16} className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" />
                 </div>
 
                 {/* Consolidated UX Flywheel Talk */}
@@ -129,7 +129,7 @@ export default function SpeakingMediaPage() {
                     </h4>
                     <p className="text-xs font-bold text-foreground/60">Convey UX • 2020<br />San Diego Digital Designers • 2020<br />MarcomCentral User Conference • 2020</p>
                   </div>
-                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-accent group-hover:fill-accent transition-all duration-200" />
+                  <Icon name="play" size={16} className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" />
                 </div>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function SpeakingMediaPage() {
                     </h4>
                     <p className="text-xs font-bold text-secondary-foreground/60">Convey UX • 2020</p>
                   </div>
-                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-accent group-hover:fill-accent transition-all duration-200" />
+                  <Icon name="play" size={16} className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" />
                 </div>
               </div>
             </div>

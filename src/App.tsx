@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useState } from 'react';
+import { Icon } from './components/ui/icon';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { 
@@ -74,9 +75,7 @@ function HomePage() {
           className="absolute bottom-8 animate-bounce focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] min-w-[44px]"
           aria-label="Scroll down to view my work"
         >
-          <svg className="w-8 h-8 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M16.293 9.293L12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z" />
-          </svg>
+          <Icon name="arrow-down" size={32} className="text-muted-foreground" />
         </button>
       </header>
 
@@ -94,9 +93,7 @@ function HomePage() {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <article className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
               <div className="text-accent mb-4" aria-hidden="true">
-                <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14 6V4h-4v2h4zM4 8v11h16V8H4zm16-2c1.11 0 2 .89 2 2v11c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2l.01-11c0-1.11.88-2 1.99-2h4V4c0-1.11.89-2 2-2h4c1.11 0 2 .89 2 2v2h4z" />
-                </svg>
+                <Icon name="briefcase" size={48} />
               </div>
               <h3 className="text-2xl font-bold mb-4">Experience</h3>
               <p className="text-muted-foreground mb-4">
@@ -113,9 +110,7 @@ function HomePage() {
 
             <article className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
               <div className="text-accent mb-4" aria-hidden="true">
-                <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
-                </svg>
+                <Icon name="chart" size={48} />
               </div>
               <h3 className="text-2xl font-bold mb-4">Case Studies</h3>
               <p className="text-muted-foreground mb-4">
@@ -132,9 +127,7 @@ function HomePage() {
 
             <article className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
               <div className="text-accent mb-4" aria-hidden="true">
-                <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
-                </svg>
+                <Icon name="edit" size={48} />
               </div>
               <h3 className="text-2xl font-bold mb-4">Writing</h3>
               <p className="text-muted-foreground mb-4">
@@ -172,9 +165,7 @@ function HomePage() {
                   aria-label="Read WRITER case study - Opens in new tab"
                 >
                   Read Case Study 
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/>
-                  </svg>
+                  <Icon name="external-link" size={16} />
                 </a>
               </article>
               
@@ -197,9 +188,7 @@ function HomePage() {
                   aria-label="Watch UX Flywheel presentation on YouTube - Opens in new tab"
                 >
                   Watch Presentation 
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/>
-                  </svg>
+                  <Icon name="external-link" size={16} />
                 </a>
               </article>
             </div>
@@ -239,9 +228,7 @@ function HomePage() {
           <div className="max-w-4xl mx-auto">
             <div className="border-4 border-foreground bg-card p-8 mb-12">
               <div className="flex items-center mb-6">
-                <svg className="w-8 h-8 text-accent mr-3" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+                <Icon name="lightning" size={32} className="text-accent mr-3" />
                 <h3 className="text-2xl font-bold">Core Skills</h3>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -255,9 +242,7 @@ function HomePage() {
 
             <div className="border-4 border-foreground bg-card p-8">
               <div className="flex items-center mb-6">
-                <svg className="w-8 h-8 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <Icon name="check" size={32} className="text-primary mr-3" />
                 <h3 className="text-2xl font-bold">My Story</h3>
               </div>
               <div className="space-y-6 text-lg">

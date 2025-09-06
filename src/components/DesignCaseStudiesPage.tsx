@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import { Icon } from './ui/icon';
 import { LazyImage } from './LazyImage';
 
 // Import images directly from lovable-uploads
@@ -204,7 +204,7 @@ export default function DesignCaseStudiesPage() {
                       </div>
                       
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <ExternalLink className="w-8 h-8 text-white drop-shadow-lg" />
+                        <Icon name="external-link" size={32} className="text-white drop-shadow-lg" />
                       </div>
                     </div>
                     <div className="p-6">
@@ -220,7 +220,7 @@ export default function DesignCaseStudiesPage() {
                             <span className="font-semibold">Winner</span>{' '}
                             <span className="text-primary underline inline-flex items-center gap-1">
                               Comm Arts Webpick of the Week
-                              <ExternalLink className="w-4 h-4" />
+                              <Icon name="external-link" size={16} />
                             </span>
                           </div>
                         </div>
@@ -232,7 +232,7 @@ export default function DesignCaseStudiesPage() {
                             <span className="font-semibold">Winner</span>{' '}
                             <span className="text-primary underline inline-flex items-center gap-1">
                               Awwwards Site of the Day
-                              <ExternalLink className="w-4 h-4" />
+                              <Icon name="external-link" size={16} />
                             </span>
                           </div>
                         </div>
@@ -271,7 +271,7 @@ export default function DesignCaseStudiesPage() {
                       </div>
                       
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <ExternalLink className="w-8 h-8 text-white drop-shadow-lg" />
+                        <Icon name="external-link" size={32} className="text-white drop-shadow-lg" />
                       </div>
                     </div>
                     <div className="p-6">
@@ -318,7 +318,7 @@ export default function DesignCaseStudiesPage() {
                       className="text-primary hover:text-primary/80 underline font-semibold inline-flex items-center gap-1"
                     >
                       Work
-                      <ExternalLink className="w-4 h-4" />
+                      <Icon name="external-link" size={16} />
                     </a>{' '}
                     section remains mostly unchanged.
                   </p>
@@ -403,7 +403,7 @@ export default function DesignCaseStudiesPage() {
                     className="text-primary hover:text-primary/80 underline font-semibold inline-flex items-center gap-1"
                   >
                     Check out Metalab on Pitch
-                    <ExternalLink className="w-4 h-4" />
+                    <Icon name="external-link" size={16} />
                   </a>
                   .
                 </p>
@@ -439,7 +439,7 @@ export default function DesignCaseStudiesPage() {
                       </div>
                       
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <ExternalLink className="w-8 h-8 text-white drop-shadow-lg" />
+                        <Icon name="external-link" size={32} className="text-white drop-shadow-lg" />
                       </div>
                     </div>
                   </a>
