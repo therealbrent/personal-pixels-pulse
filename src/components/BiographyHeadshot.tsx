@@ -19,9 +19,9 @@ export default function BiographyHeadshot() {
           BIOGRAPHY & HEADSHOT
         </h2>
         
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-          {/* Text content - left aligned */}
-          <div className="flex-1 text-left">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+          {/* Text content - optimized typography and spacing */}
+          <div className="flex-1 text-left lg:pr-8">
             <div className="space-y-6 text-foreground text-lg font-semibold leading-relaxed">
               <p>
                 Brent Summers is an AI-first marketing leader. At Qualcomm Technologies, Brent leads AI Platforms & GTM Innovation which is a hybrid function combining strategic vision, technical implementation, and behavior change. He has deployed more than 20 AI agents which are embedded, governed, and scaled across the global marketing team. For instance, WRITER has delivered an impressive 8.6x ROI with 85% of users active every week.
@@ -29,21 +29,25 @@ export default function BiographyHeadshot() {
             </div>
           </div>
           
-          {/* Image and button container */}
-          <div className="flex-shrink-0 w-full sm:w-64 lg:w-48 mx-auto lg:mx-0">
-            <div className="space-y-4">
-              <LazyImage 
-                src="/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png" 
-                alt="Professional headshot of Brent Summers" 
-                className="w-full h-auto border-4 border-foreground"
-                width={160}
-                height={200}
-                priority
-              />
-              {/* Download button below image */}
+          {/* Professional headshot with proportional download button */}
+          <div className="flex-shrink-0 w-full sm:w-56 lg:w-44 mx-auto lg:mx-0">
+            <div className="relative">
+              {/* Image container with precise aspect ratio */}
+              <div className="bg-background border-4 border-foreground overflow-hidden">
+                <LazyImage 
+                  src="/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png" 
+                  alt="Professional headshot of Brent Summers" 
+                  className="w-full h-auto block"
+                  width={160}
+                  height={200}
+                  priority
+                />
+              </div>
+              
+              {/* Compact download button - positioned directly below with no gap */}
               <Button 
                 onClick={handleDownloadHeadshot}
-                className="w-full bg-accent text-accent-foreground border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-sm font-black py-3 min-h-[44px]"
+                className="w-full bg-accent text-accent-foreground border-4 border-t-0 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-xs font-black py-2 px-3"
               >
                 DOWNLOAD HEADSHOT
               </Button>
