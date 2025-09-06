@@ -8,44 +8,44 @@ All colors MUST be HSL with AAA contrast ratios.
 
 @layer base {
   :root {
-    /* High-contrast color scheme for AAA compliance */
-    --background: 0 0% 98%;
-    --foreground: 0 0% 5%;
+    /* Neo-brutalist color system - Exact hex matches */
+    --background: 40 33% 97%; /* Off-White #FAF9F7 */
+    --foreground: 0 0% 15%; /* Onyx #262626 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
+    --card: 40 33% 97%;
+    --card-foreground: 0 0% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 5%;
+    --popover: 40 33% 97%;
+    --popover-foreground: 0 0% 15%;
 
-    /* Enhanced primary with AAA contrast */
+    /* Primary: Mustard #FFBA08 - Base fills, section backgrounds */
     --primary: 43 100% 52%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 0 0% 15%; /* Onyx text on Mustard */
 
-    /* High-contrast secondary */
+    /* Secondary: Onyx #262626 - Primary typography, outlines, grids */
     --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 40 33% 97%; /* Off-white text on Onyx */
 
-    /* Enhanced muted colors for better contrast */
-    --muted: 0 0% 88%;
+    /* Enhanced muted colors */
+    --muted: 43 45% 88%; /* Muted Mustard #E0A800 for background floods */
     --muted-foreground: 0 0% 20%;
 
-    /* Accessible accent with AAA contrast */
-    --accent: 328 100% 54%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent: Hot Pink #FF1392 - High-impact highlights, CTAs */
+    --accent: 328 87% 54%;
+    --accent-foreground: 40 33% 97%; /* Off-white text on Hot Pink */
 
-    /* High-contrast destructive */
-    --destructive: 0 65% 45%;
-    --destructive-foreground: 0 0% 100%;
+    /* Destructive: Oxblood #7A1E1C - Seriousness, weight, strong accents */
+    --destructive: 2 66% 29%;
+    --destructive-foreground: 40 33% 97%; /* Off-white text on Oxblood */
 
     /* Enhanced borders and inputs */
-    --border: 0 0% 15%;
-    --input: 0 0% 100%;
-    --ring: 43 100% 52%;
+    --border: 0 0% 15%; /* Onyx for thick borders and rigid layouts */
+    --input: 40 33% 97%;
+    --ring: 43 100% 52%; /* Mustard ring */
 
-    /* Focus states for accessibility */
-    --focus-ring: 220 100% 50%;
-    --focus-offset: 0 0% 100%;
+    /* Focus states - Cobalt Blue #2962FF for cold tension */
+    --focus-ring: 220 100% 59%;
+    --focus-offset: 40 33% 97%;
 
     --radius: 0.5rem;
 
@@ -60,43 +60,43 @@ All colors MUST be HSL with AAA contrast ratios.
   }
 
   .dark {
-    /* Dark mode with AAA contrast ratios */
+    /* Neo-brutalist dark mode */
     --background: 0 0% 8%;
-    --foreground: 0 0% 98%;
+    --foreground: 40 33% 97%;
 
     --card: 0 0% 12%;
-    --card-foreground: 0 0% 98%;
+    --card-foreground: 40 33% 97%;
 
     --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover-foreground: 40 33% 97%;
 
-    /* Enhanced primary for dark mode */
+    /* Primary: Mustard adjusted for dark mode */
     --primary: 43 84% 60%;
     --primary-foreground: 0 0% 8%;
 
-    /* High-contrast secondary for dark mode */
-    --secondary: 0 0% 85%;
+    /* Secondary: Light for dark mode */
+    --secondary: 40 33% 85%;
     --secondary-foreground: 0 0% 8%;
 
     /* Enhanced muted colors for dark mode */
     --muted: 0 0% 18%;
     --muted-foreground: 0 0% 75%;
 
-    /* Accessible accent for dark mode */
-    --accent: 328 100% 60%;
+    /* Accent: Hot Pink adjusted for dark mode */
+    --accent: 328 87% 60%;
     --accent-foreground: 0 0% 8%;
 
-    /* High-contrast destructive for dark mode */
-    --destructive: 0 65% 55%;
-    --destructive-foreground: 0 0% 8%;
+    /* Destructive: Oxblood adjusted for dark mode */
+    --destructive: 2 66% 45%;
+    --destructive-foreground: 40 33% 97%;
 
     /* Enhanced borders and inputs for dark mode */
     --border: 0 0% 25%;
     --input: 0 0% 15%;
     --ring: 43 84% 60%;
 
-    /* Focus states for dark mode */
-    --focus-ring: 220 100% 60%;
+    /* Focus states - Cobalt Blue for dark mode */
+    --focus-ring: 220 100% 65%;
     --focus-offset: 0 0% 8%;
     --sidebar-background: 0 0% 5%;
     --sidebar-foreground: 0 0% 95%;

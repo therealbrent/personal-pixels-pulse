@@ -32,12 +32,12 @@ export default function DesignCaseStudiesPage() {
                 key={i}
                 className={`
                   border border-foreground/30 transition-all duration-1000
-                  ${isHotPink ? 'bg-[#FF1392]/60 border-[#FF1392]/80' : ''}
-                  ${isMustard ? 'bg-[#FFBA08]/70 border-[#FFBA08]/90' : ''}
-                  ${isCrimson ? 'bg-[#BD2928]/65 border-[#BD2928]/85' : ''}
-                  ${isOnyx ? 'bg-[#262626]/80 border-[#262626]/90' : ''}
-                  ${isCluster ? 'bg-gradient-to-br from-[#FF1392]/40 to-[#BD2928]/40' : ''}
-                  ${isAccent ? 'bg-gradient-to-tl from-[#FFBA08]/50 to-[#262626]/30' : ''}
+                  ${isHotPink ? 'bg-accent/60 border-accent/80' : ''}
+                  ${isMustard ? 'bg-primary/70 border-primary/90' : ''}
+                  ${isCrimson ? 'bg-destructive/65 border-destructive/85' : ''}
+                  ${isOnyx ? 'bg-secondary/80 border-secondary/90' : ''}
+                  ${isCluster ? 'bg-gradient-to-br from-accent/40 to-destructive/40' : ''}
+                  ${isAccent ? 'bg-gradient-to-tl from-primary/50 to-secondary/30' : ''}
                   ${i % 5 === 0 ? 'transform rotate-12 scale-110' : ''}
                   ${i % 8 === 0 ? 'transform -rotate-45 scale-90' : ''}
                   ${i % 12 === 0 ? 'transform skew-x-12' : ''}
@@ -59,11 +59,11 @@ export default function DesignCaseStudiesPage() {
             <div 
               key={`overlay-${i}`}
               className={`
-                ${i % 3 === 0 ? 'border-l-4 border-[#FF1392]/70' : ''}
-                ${i % 5 === 0 ? 'border-r-4 border-[#FFBA08]/80' : ''}
-                ${i % 7 === 0 ? 'border-t-4 border-[#BD2928]/75' : ''}
-                ${i % 9 === 0 ? 'border-b-4 border-[#262626]/60' : ''}
-                ${i % 11 === 0 ? 'bg-gradient-to-br from-[#FF1392]/20 via-transparent to-[#BD2928]/20' : ''}
+                ${i % 3 === 0 ? 'border-l-4 border-accent/70' : ''}
+                ${i % 5 === 0 ? 'border-r-4 border-primary/80' : ''}
+                ${i % 7 === 0 ? 'border-t-4 border-destructive/75' : ''}
+                ${i % 9 === 0 ? 'border-b-4 border-secondary/60' : ''}
+                ${i % 11 === 0 ? 'bg-gradient-to-br from-accent/20 via-transparent to-destructive/20' : ''}
               `}
             />
           ))}
@@ -72,51 +72,51 @@ export default function DesignCaseStudiesPage() {
         {/* Complex Diagonal Patterns */}
         <div className="absolute inset-0">
           {/* Primary Diagonal Lines */}
-          <div className="absolute top-16 left-8 w-48 h-0.5 bg-gradient-to-r from-[#FF1392]/80 to-[#BD2928]/60 transform rotate-45 shadow-lg"></div>
-          <div className="absolute top-32 right-16 w-64 h-0.5 bg-gradient-to-l from-[#FFBA08]/90 to-[#262626]/70 transform -rotate-30 shadow-lg"></div>
-          <div className="absolute bottom-40 left-1/4 w-56 h-0.5 bg-gradient-to-r from-[#BD2928]/85 to-[#FF1392]/65 transform rotate-15 shadow-lg"></div>
-          <div className="absolute top-1/2 right-1/3 w-40 h-0.5 bg-gradient-to-l from-[#262626]/80 to-[#FFBA08]/60 transform -rotate-60 shadow-lg"></div>
+          <div className="absolute top-16 left-8 w-48 h-0.5 bg-gradient-to-r from-accent/80 to-destructive/60 transform rotate-45 shadow-lg"></div>
+          <div className="absolute top-32 right-16 w-64 h-0.5 bg-gradient-to-l from-primary/90 to-secondary/70 transform -rotate-30 shadow-lg"></div>
+          <div className="absolute bottom-40 left-1/4 w-56 h-0.5 bg-gradient-to-r from-destructive/85 to-accent/65 transform rotate-15 shadow-lg"></div>
+          <div className="absolute top-1/2 right-1/3 w-40 h-0.5 bg-gradient-to-l from-secondary/80 to-primary/60 transform -rotate-60 shadow-lg"></div>
           
           {/* Secondary Diagonal Network */}
-          <div className="absolute top-24 left-1/3 w-32 h-px bg-[#FF1392]/60 transform rotate-75"></div>
-          <div className="absolute bottom-28 right-1/4 w-28 h-px bg-[#FFBA08]/70 transform -rotate-15"></div>
-          <div className="absolute top-3/4 left-16 w-36 h-px bg-[#BD2928]/65 transform rotate-105"></div>
-          <div className="absolute bottom-16 right-12 w-44 h-px bg-[#262626]/75 transform -rotate-75"></div>
+          <div className="absolute top-24 left-1/3 w-32 h-px bg-accent/60 transform rotate-75"></div>
+          <div className="absolute bottom-28 right-1/4 w-28 h-px bg-primary/70 transform -rotate-15"></div>
+          <div className="absolute top-3/4 left-16 w-36 h-px bg-destructive/65 transform rotate-105"></div>
+          <div className="absolute bottom-16 right-12 w-44 h-px bg-secondary/75 transform -rotate-75"></div>
         </div>
         
         {/* Geometric Anchor Points */}
         <div className="absolute inset-0">
           {/* Top corners */}
-          <div className="absolute top-0 right-0 w-24 h-24 border-l-4 border-b-4 border-[#262626]/60 bg-gradient-to-bl from-[#FF1392]/20 to-transparent"></div>
-          <div className="absolute top-8 left-8 w-16 h-16 border-r-4 border-b-4 border-[#FFBA08]/70 bg-[#FFBA08]/10 transform rotate-45"></div>
+          <div className="absolute top-0 right-0 w-24 h-24 border-l-4 border-b-4 border-secondary/60 bg-gradient-to-bl from-accent/20 to-transparent"></div>
+          <div className="absolute top-8 left-8 w-16 h-16 border-r-4 border-b-4 border-primary/70 bg-primary/10 transform rotate-45"></div>
           
           {/* Bottom corners */}
-          <div className="absolute bottom-0 left-0 w-20 h-20 border-r-4 border-t-4 border-[#FF1392]/80 bg-gradient-to-tr from-[#BD2928]/25 to-transparent"></div>
-          <div className="absolute bottom-12 right-12 w-28 h-28 border-l-4 border-t-4 border-[#BD2928]/70 bg-[#262626]/15 transform -rotate-12"></div>
+          <div className="absolute bottom-0 left-0 w-20 h-20 border-r-4 border-t-4 border-accent/80 bg-gradient-to-tr from-destructive/25 to-transparent"></div>
+          <div className="absolute bottom-12 right-12 w-28 h-28 border-l-4 border-t-4 border-destructive/70 bg-secondary/15 transform -rotate-12"></div>
           
           {/* Center focal points */}
-          <div className="absolute top-1/3 left-1/2 w-12 h-12 bg-[#FF1392]/40 border-2 border-[#262626]/80 transform rotate-45 shadow-lg"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-8 h-8 bg-[#FFBA08]/60 border-2 border-[#BD2928]/70 transform -rotate-30"></div>
+          <div className="absolute top-1/3 left-1/2 w-12 h-12 bg-accent/40 border-2 border-secondary/80 transform rotate-45 shadow-lg"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-8 h-8 bg-primary/60 border-2 border-destructive/70 transform -rotate-30"></div>
           
           {/* Scattered accent shapes */}
-          <div className="absolute top-1/4 right-1/4 w-6 h-20 bg-gradient-to-b from-[#BD2928]/50 to-transparent transform rotate-25"></div>
-          <div className="absolute bottom-1/4 left-1/5 w-20 h-6 bg-gradient-to-r from-[#262626]/60 to-transparent transform -rotate-35"></div>
+          <div className="absolute top-1/4 right-1/4 w-6 h-20 bg-gradient-to-b from-destructive/50 to-transparent transform rotate-25"></div>
+          <div className="absolute bottom-1/4 left-1/5 w-20 h-6 bg-gradient-to-r from-secondary/60 to-transparent transform -rotate-35"></div>
         </div>
         
         {/* High-contrast overlays */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#FF1392]/30 via-[#FFBA08]/40 to-[#BD2928]/35"></div>
-          <div className="absolute bottom-0 right-0 w-full h-2 bg-gradient-to-l from-[#262626]/50 via-[#BD2928]/40 to-[#FF1392]/30"></div>
-          <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#FFBA08]/40 via-[#262626]/30 to-[#BD2928]/35"></div>
-          <div className="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-[#BD2928]/45 via-[#FF1392]/35 to-[#FFBA08]/40"></div>
+          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-accent/30 via-primary/40 to-destructive/35"></div>
+          <div className="absolute bottom-0 right-0 w-full h-2 bg-gradient-to-l from-secondary/50 via-destructive/40 to-accent/30"></div>
+          <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-primary/40 via-secondary/30 to-destructive/35"></div>
+          <div className="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-destructive/45 via-accent/35 to-primary/40"></div>
         </div>
       </div>
 
       {/* Mobile-friendly simplified background */}
       <div className="fixed inset-0 opacity-[0.04] pointer-events-none z-0 block md:hidden" aria-hidden="true">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FF1392]/20 via-[#FFBA08]/15 to-[#BD2928]/20"></div>
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FF1392]/60 to-[#BD2928]/60"></div>
-        <div className="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-l from-[#262626]/60 to-[#FFBA08]/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/20"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent/60 to-destructive/60"></div>
+        <div className="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-l from-secondary/60 to-primary/60"></div>
       </div>
 
       <div className="relative z-10">
@@ -158,7 +158,7 @@ export default function DesignCaseStudiesPage() {
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">THE STORYTELLER</h2>
               </div>
               
-              <div className="bg-[#262626] text-white p-4 md:p-6 border-2 border-foreground mb-6 md:mb-8">
+              <div className="bg-secondary text-secondary-foreground p-4 md:p-6 border-2 border-foreground mb-6 md:mb-8">
                 <p className="font-bold text-lg md:text-xl">
                   Digital Telepathy (Acquired by ServiceNow, 2017)
                 </p>
@@ -190,13 +190,13 @@ export default function DesignCaseStudiesPage() {
                       />
                       
                       {/* Geometric Overlay Elements */}
-                      <div className="absolute top-4 right-4 w-8 h-8 bg-[#FF1392] opacity-0 group-hover:opacity-80 transition-all duration-300 transform rotate-45 group-hover:rotate-12" aria-hidden="true"></div>
-                      <div className="absolute bottom-6 left-6 w-6 h-6 border-2 border-[#FFBA08] opacity-0 group-hover:opacity-90 transition-all duration-500 transform group-hover:rotate-45" aria-hidden="true"></div>
+                      <div className="absolute top-4 right-4 w-8 h-8 bg-accent opacity-0 group-hover:opacity-80 transition-all duration-300 transform rotate-45 group-hover:rotate-12" aria-hidden="true"></div>
+                      <div className="absolute bottom-6 left-6 w-6 h-6 border-2 border-primary opacity-0 group-hover:opacity-90 transition-all duration-500 transform group-hover:rotate-45" aria-hidden="true"></div>
                       
                       {/* Context Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
                         <div className="absolute bottom-4 left-4 right-4 text-white">
-                          <div className="bg-[#FF1392] px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
+                          <div className="bg-accent px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
                             TRAVEL • STARTUP
                           </div>
                           <p className="text-sm leading-tight">Interactive prototype capturing the spirit of exploration</p>
@@ -213,7 +213,7 @@ export default function DesignCaseStudiesPage() {
                       
                       <div className="space-y-3 mb-6">
                         <div className="flex items-start gap-3">
-                          <div className="bg-[#FF1392] text-white px-2 py-1 text-xs font-bold transform -skew-x-12 border-2 border-foreground">
+                          <div className="bg-accent text-accent-foreground px-2 py-1 text-xs font-bold transform -skew-x-12 border-2 border-foreground">
                             WIN
                           </div>
                           <div>
@@ -225,7 +225,7 @@ export default function DesignCaseStudiesPage() {
                           </div>
                         </div>
                         <div className="flex items-start gap-3">
-                          <div className="bg-[#FFBA08] text-[#262626] px-2 py-1 text-xs font-bold transform -skew-x-12 border-2 border-foreground">
+                          <div className="bg-primary text-primary-foreground px-2 py-1 text-xs font-bold transform -skew-x-12 border-2 border-foreground">
                             WIN
                           </div>
                           <div>
@@ -257,13 +257,13 @@ export default function DesignCaseStudiesPage() {
                       />
                       
                       {/* Geometric Overlay Elements */}
-                      <div className="absolute top-6 left-4 w-6 h-6 bg-[#BD2928] opacity-0 group-hover:opacity-80 transition-all duration-400 transform rotate-12 group-hover:rotate-90" aria-hidden="true"></div>
-                      <div className="absolute bottom-4 right-4 w-8 h-8 border-2 border-[#262626] opacity-0 group-hover:opacity-90 transition-all duration-300 transform group-hover:rotate-45" aria-hidden="true"></div>
+                      <div className="absolute top-6 left-4 w-6 h-6 bg-destructive opacity-0 group-hover:opacity-80 transition-all duration-400 transform rotate-12 group-hover:rotate-90" aria-hidden="true"></div>
+                      <div className="absolute bottom-4 right-4 w-8 h-8 border-2 border-secondary opacity-0 group-hover:opacity-90 transition-all duration-300 transform group-hover:rotate-45" aria-hidden="true"></div>
                       
                       {/* Context Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
                         <div className="absolute bottom-4 left-4 right-4 text-white">
-                          <div className="bg-[#BD2928] px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
+                          <div className="bg-destructive px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
                             ENTERPRISE • PLATFORM
                           </div>
                           <p className="text-sm leading-tight">Strategic brand evolution for enterprise transformation</p>
@@ -300,9 +300,9 @@ export default function DesignCaseStudiesPage() {
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">THE SYSTEMATIZER</h2>
               </div>
               
-              <div className="bg-[#FFBA08] text-[#262626] p-4 md:p-6 border-2 border-foreground mb-6 md:mb-8">
+              <div className="bg-primary text-primary-foreground p-4 md:p-6 border-2 border-foreground mb-6 md:mb-8">
                 <p className="font-bold text-lg md:text-xl">Blink UX</p>
-                <p className="text-[#262626]/90 text-base md:text-lg mt-2">
+                <p className="text-primary-foreground/90 text-base md:text-lg mt-2">
                   Catalog breadth + deep-dive depth strategy
                 </p>
               </div>
@@ -334,13 +334,13 @@ export default function DesignCaseStudiesPage() {
                       />
                       
                       {/* Geometric Elements */}
-                      <div className="absolute top-4 right-4 w-6 h-6 border-2 border-[#FFBA08] opacity-0 group-hover:opacity-70 transition-all duration-300 transform group-hover:rotate-12" aria-hidden="true"></div>
-                      <div className="absolute bottom-4 left-4 w-4 h-4 bg-[#262626] opacity-0 group-hover:opacity-60 transition-all duration-400 transform rotate-45" aria-hidden="true"></div>
+                      <div className="absolute top-4 right-4 w-6 h-6 border-2 border-primary opacity-0 group-hover:opacity-70 transition-all duration-300 transform group-hover:rotate-12" aria-hidden="true"></div>
+                      <div className="absolute bottom-4 left-4 w-4 h-4 bg-secondary opacity-0 group-hover:opacity-60 transition-all duration-400 transform rotate-45" aria-hidden="true"></div>
                       
                       {/* Context Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="absolute bottom-3 left-3 right-3 text-white">
-                          <div className="bg-[#FFBA08] text-[#262626] px-2 py-1 text-xs font-bold inline-block transform -skew-x-12">
+                          <div className="bg-primary text-primary-foreground px-2 py-1 text-xs font-bold inline-block transform -skew-x-12">
                             TILES LAYOUT
                           </div>
                         </div>
@@ -357,13 +357,13 @@ export default function DesignCaseStudiesPage() {
                       />
                       
                       {/* Geometric Elements */}
-                      <div className="absolute top-6 left-4 w-4 h-4 bg-[#FFBA08] opacity-0 group-hover:opacity-70 transition-all duration-300 transform group-hover:rotate-90" aria-hidden="true"></div>
-                      <div className="absolute bottom-6 right-4 w-6 h-6 border-2 border-[#262626] opacity-0 group-hover:opacity-60 transition-all duration-400 transform group-hover:-rotate-45" aria-hidden="true"></div>
+                      <div className="absolute top-6 left-4 w-4 h-4 bg-primary opacity-0 group-hover:opacity-70 transition-all duration-300 transform group-hover:rotate-90" aria-hidden="true"></div>
+                      <div className="absolute bottom-6 right-4 w-6 h-6 border-2 border-secondary opacity-0 group-hover:opacity-60 transition-all duration-400 transform group-hover:-rotate-45" aria-hidden="true"></div>
                       
                       {/* Context Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="absolute bottom-3 left-3 right-3 text-white">
-                          <div className="bg-[#FFBA08] text-[#262626] px-2 py-1 text-xs font-bold inline-block transform -skew-x-12">
+                          <div className="bg-primary text-primary-foreground px-2 py-1 text-xs font-bold inline-block transform -skew-x-12">
                             CATALOG VIEW
                           </div>
                         </div>
@@ -386,7 +386,7 @@ export default function DesignCaseStudiesPage() {
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">THE SHOWMAN</h2>
               </div>
               
-              <div className="bg-[#BD2928] text-white p-4 md:p-6 border-2 border-foreground mb-6 md:mb-8">
+              <div className="bg-destructive text-destructive-foreground p-4 md:p-6 border-2 border-foreground mb-6 md:mb-8">
                 <p className="font-bold text-lg md:text-xl">Metalab</p>
                 <p className="text-white/90 text-base md:text-lg mt-2">
                   Visual presentation format matches brand personality
@@ -425,13 +425,13 @@ export default function DesignCaseStudiesPage() {
                       />
                       
                       {/* Geometric Overlay Elements */}
-                      <div className="absolute top-6 right-6 w-8 h-8 border-2 border-[#BD2928] opacity-0 group-hover:opacity-80 transition-all duration-300 transform rotate-45 group-hover:-rotate-12" aria-hidden="true"></div>
-                      <div className="absolute bottom-8 left-8 w-6 h-6 bg-[#FF1392] opacity-0 group-hover:opacity-70 transition-all duration-400 transform group-hover:rotate-90" aria-hidden="true"></div>
+                      <div className="absolute top-6 right-6 w-8 h-8 border-2 border-destructive opacity-0 group-hover:opacity-80 transition-all duration-300 transform rotate-45 group-hover:-rotate-12" aria-hidden="true"></div>
+                      <div className="absolute bottom-8 left-8 w-6 h-6 bg-accent opacity-0 group-hover:opacity-70 transition-all duration-400 transform group-hover:rotate-90" aria-hidden="true"></div>
                       
                       {/* Context Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
                         <div className="absolute bottom-6 left-6 right-6 text-white">
-                          <div className="bg-[#BD2928] px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
+                          <div className="bg-destructive px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
                             PRODUCT • DESIGN
                           </div>
                           <p className="text-sm leading-tight">Interactive presentation showcasing product design mastery</p>

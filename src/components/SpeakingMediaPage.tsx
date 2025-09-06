@@ -68,12 +68,12 @@ export default function SpeakingMediaPage() {
                   className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
                 >
                   <div className="pr-8">
-                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
+                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
                       Beyond buzzwords: Real AI, real marketing, real results
                     </h4>
                     <p className="text-xs font-bold text-foreground/60">Webit • 2025</p>
                   </div>
-                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
+                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-accent group-hover:fill-accent transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 2 - Updated with multiple conferences */}
@@ -82,12 +82,12 @@ export default function SpeakingMediaPage() {
                   className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
                 >
                   <div className="pr-8">
-                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
+                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
                       Happier Humans, Better Results
                     </h4>
                     <p className="text-xs font-bold text-foreground/60">AI Leaders Forum • 2025<br />San Diego Design Week • 2025</p>
                   </div>
-                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
+                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-accent group-hover:fill-accent transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 3 */}
@@ -96,12 +96,12 @@ export default function SpeakingMediaPage() {
                   className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
                 >
                   <div className="pr-8">
-                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
+                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
                       Five Tips to Avoid Generative AI Buyer's Remorse
                     </h4>
                     <p className="text-xs font-bold text-foreground/60">AI x Marketing Summit • 2025</p>
                   </div>
-                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
+                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-accent group-hover:fill-accent transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 4 */}
@@ -110,12 +110,12 @@ export default function SpeakingMediaPage() {
                   className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
                 >
                   <div className="pr-8">
-                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
+                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
                       Use Science to Write Better Copy
                     </h4>
                     <p className="text-xs font-bold text-foreground/60">Product-Led Growth Conference • 2020</p>
                   </div>
-                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
+                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-accent group-hover:fill-accent transition-all duration-200" />
                 </div>
 
                 {/* Consolidated UX Flywheel Talk */}
@@ -124,12 +124,12 @@ export default function SpeakingMediaPage() {
                   className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
                 >
                   <div className="pr-8">
-                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
+                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
                       The UX Flywheel
                     </h4>
                     <p className="text-xs font-bold text-foreground/60">Convey UX • 2020<br />San Diego Digital Designers • 2020<br />MarcomCentral User Conference • 2020</p>
                   </div>
-                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
+                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-accent group-hover:fill-accent transition-all duration-200" />
                 </div>
               </div>
             </div>
@@ -145,12 +145,12 @@ export default function SpeakingMediaPage() {
                   className="group bg-secondary border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
                 >
                   <div className="pr-8">
-                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-[#FF1392] line-clamp-2 transition-colors">
+                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
                       Balancing Quantitative and Qualitative Perspectives in UX Strategy
                     </h4>
                     <p className="text-xs font-bold text-secondary-foreground/60">Convey UX • 2020</p>
                   </div>
-                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-[#FF1392] group-hover:fill-[#FF1392] transition-all duration-200" />
+                  <Play className="h-4 w-4 absolute bottom-4 right-4 text-primary group-hover:text-accent group-hover:fill-accent transition-all duration-200" />
                 </div>
               </div>
             </div>
@@ -224,13 +224,13 @@ export default function SpeakingMediaPage() {
               <div className="mb-4">
                 <span className="text-sm font-black text-foreground/60 tracking-wider">CIO NEWS</span>
               </div>
-              <h4 className="font-black mb-6 text-primary group-hover:text-[#FF1392] text-xl leading-tight transition-colors">
+              <h4 className="font-black mb-6 text-primary group-hover:text-accent text-xl leading-tight transition-colors">
                 Why Qualcomm's Playbook For Scaling AI Starts With Intention -- And Ends With A Human
               </h4>
-              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-[#FF1392] pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
+              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-accent pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
                 We expect a human to verify the facts, citations, decisions—and the underlying strategy. Is it ethical? Does it adhere to our Responsible AI Principles and policies? That's the bar.
               </blockquote>
-              <span className="text-primary group-hover:text-[#FF1392] font-bold underline transition-colors">
+              <span className="text-primary group-hover:text-accent font-bold underline transition-colors">
                 Read Article
               </span>
             </a>
@@ -245,13 +245,13 @@ export default function SpeakingMediaPage() {
               <div className="mb-4">
                 <span className="text-sm font-black text-foreground/60 tracking-wider">SMARTSUITE</span>
               </div>
-              <h4 className="font-black mb-6 text-primary group-hover:text-[#FF1392] text-xl leading-tight transition-colors">
+              <h4 className="font-black mb-6 text-primary group-hover:text-accent text-xl leading-tight transition-colors">
                 Why the next wave of AI opportunities isn't in the cloud, it's on the edge
               </h4>
-              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-[#FF1392] pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
+              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-accent pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
                 As someone committed to sustainability, I believe in the transformative potential of AI—but must also acknowledge the challenges it poses to a sustainable future.
               </blockquote>
-              <span className="text-primary group-hover:text-[#FF1392] font-bold underline transition-colors">
+              <span className="text-primary group-hover:text-accent font-bold underline transition-colors">
                 Read Article
               </span>
             </a>
@@ -266,13 +266,13 @@ export default function SpeakingMediaPage() {
               <div className="mb-4">
                 <span className="text-sm font-black text-foreground/60 tracking-wider">CMS WIRE</span>
               </div>
-              <h4 className="font-black mb-6 text-primary group-hover:text-[#FF1392] text-xl leading-tight transition-colors">
+              <h4 className="font-black mb-6 text-primary group-hover:text-accent text-xl leading-tight transition-colors">
                 Customer-Centric Companies Sweat the Details
               </h4>
-              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-[#FF1392] pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
+              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-accent pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
                 Customer's perceptions will change along the way as they become more familiar with your company's products and services. Every single touchpoint is a chance to delight or disappoint.
               </blockquote>
-              <span className="text-primary group-hover:text-[#FF1392] font-bold underline transition-colors">
+              <span className="text-primary group-hover:text-accent font-bold underline transition-colors">
                 Read Article
               </span>
             </a>
@@ -287,13 +287,13 @@ export default function SpeakingMediaPage() {
               <div className="mb-4">
                 <span className="text-sm font-black text-foreground/60 tracking-wider">UX MAGAZINE</span>
               </div>
-              <h4 className="font-black mb-6 text-primary group-hover:text-[#FF1392] text-xl leading-tight transition-colors">
+              <h4 className="font-black mb-6 text-primary group-hover:text-accent text-xl leading-tight transition-colors">
                 Revisiting Proto-Personas for Executive Alignment
               </h4>
-              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-[#FF1392] pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
+              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-accent pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
                 We use proto-personas as a way of gaining alignment among our project sponsors and striking the right balance of focus between organizational and user needs.
               </blockquote>
-              <span className="text-primary group-hover:text-[#FF1392] font-bold underline transition-colors">
+              <span className="text-primary group-hover:text-accent font-bold underline transition-colors">
                 Read Article
               </span>
             </a>
