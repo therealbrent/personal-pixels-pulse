@@ -573,8 +573,8 @@ function HomePage() {
 export default function App() {
   return (
     <Router>
+      <Header />
       <div className="min-h-screen bg-background">
-        <Header />
         <main id="main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
