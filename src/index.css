@@ -134,10 +134,10 @@ All colors MUST be HSL with AAA contrast ratios.
   /* Skip to content link for screen readers */
   .skip-to-content {
     position: absolute;
-    top: -40px;
+    top: -100px;
     left: 6px;
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
     padding: 8px;
     text-decoration: none;
     border-radius: 4px;

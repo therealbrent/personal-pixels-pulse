@@ -12,8 +12,8 @@ export default function Header() {
         Skip to main content
       </a>
 
-      <nav className="container mx-auto px-4" role="navigation" aria-label="Main navigation">
-        <div className="flex items-center justify-between h-20">
+      <nav className="w-full" role="navigation" aria-label="Main navigation">
+        <div className="flex items-center justify-between h-20 px-4">
           {/* Left: BRENT SUMMERS - Home Link */}
           <Link 
             to="/" 
