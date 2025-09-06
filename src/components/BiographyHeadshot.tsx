@@ -20,7 +20,7 @@ export default function BiographyHeadshot() {
         </h2>
         
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
-          {/* Text content - optimized typography and spacing */}
+          {/* Text content */}
           <div className="flex-1 text-left lg:pr-8">
             <div className="space-y-6 text-foreground text-lg font-semibold leading-relaxed">
               <p>
@@ -29,11 +29,12 @@ export default function BiographyHeadshot() {
             </div>
           </div>
           
-          {/* Professional headshot with proportional download button */}
+          {/* Seamless headshot + button unit */}
           <div className="flex-shrink-0 w-full sm:w-56 lg:w-44 mx-auto lg:mx-0">
-            <div className="relative">
-              {/* Image container with precise aspect ratio */}
-              <div className="bg-background border-4 border-foreground overflow-hidden">
+            {/* Single container with unified border - no gaps possible */}
+            <div className="border-4 border-foreground bg-background shadow-[4px_4px_0px_0px_hsl(var(--foreground))]">
+              {/* Image - no individual border, part of unified container */}
+              <div className="block">
                 <LazyImage 
                   src="/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png" 
                   alt="Professional headshot of Brent Summers" 
@@ -44,10 +45,10 @@ export default function BiographyHeadshot() {
                 />
               </div>
               
-              {/* Compact download button - positioned directly below with no gap */}
+              {/* Button seamlessly attached - part of same container */}
               <Button 
                 onClick={handleDownloadHeadshot}
-                className="w-full bg-accent text-accent-foreground border-4 border-t-0 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-xs font-black py-2 px-3"
+                className="w-full bg-accent text-accent-foreground border-0 rounded-none hover:bg-accent/90 transition-colors duration-150 text-xs font-black py-2 px-3"
               >
                 DOWNLOAD HEADSHOT
               </Button>
