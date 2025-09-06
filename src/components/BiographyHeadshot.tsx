@@ -29,26 +29,26 @@ export default function BiographyHeadshot() {
             </div>
           </div>
           
-          {/* Seamless headshot + button unit */}
+          {/* Zero-gap headshot + button unit */}
           <div className="flex-shrink-0 w-full sm:w-56 lg:w-44 mx-auto lg:mx-0">
-            {/* Single container with unified border - no gaps possible */}
-            <div className="border-4 border-foreground bg-background shadow-[4px_4px_0px_0px_hsl(var(--foreground))]">
-              {/* Image - no individual border, part of unified container */}
-              <div className="block">
-                <LazyImage 
-                  src="/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png" 
-                  alt="Professional headshot of Brent Summers" 
-                  className="w-full h-auto block"
-                  width={160}
-                  height={200}
-                  priority
-                />
-              </div>
+            {/* Bulletproof container - zero gaps possible */}
+            <div className="border-4 border-foreground bg-background shadow-[4px_4px_0px_0px_hsl(var(--foreground))] overflow-hidden">
+              {/* Image with forced exact fit - no gaps */}
+              <img 
+                src="/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png" 
+                alt="Professional headshot of Brent Summers" 
+                className="w-full h-auto block m-0 p-0 border-0"
+                style={{ display: 'block', margin: 0, padding: 0, border: 'none', verticalAlign: 'top' }}
+                width={160}
+                height={200}
+                loading="eager"
+              />
               
-              {/* Button seamlessly attached - part of same container */}
+              {/* Button directly attached - zero gap */}
               <Button 
                 onClick={handleDownloadHeadshot}
-                className="w-full bg-accent text-accent-foreground border-0 rounded-none hover:bg-accent/90 transition-colors duration-150 text-xs font-black py-2 px-3"
+                className="w-full bg-accent text-accent-foreground border-0 rounded-none hover:bg-accent/90 transition-colors duration-150 text-xs font-black py-2 px-3 m-0"
+                style={{ margin: 0, borderRadius: 0 }}
               >
                 DOWNLOAD HEADSHOT
               </Button>
