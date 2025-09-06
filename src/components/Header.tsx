@@ -12,9 +12,10 @@ export default function Header() {
         Skip to main content
       </a>
 
-      <div className="w-full shadow-neo-md bg-background">
-        <nav className="w-full" role="navigation" aria-label="Main navigation">
-          <div className="flex items-center justify-between h-20 px-4">
+      {/* Full-width shadow container - spans viewport edge to edge */}
+      <div className="w-screen shadow-neo-md bg-background" style={{ marginLeft: 'calc(-50vw + 50%)' }}>
+        <nav className="w-full max-w-none" role="navigation" aria-label="Main navigation">
+          <div className="flex items-center justify-between h-20 px-4 max-w-7xl mx-auto">
             {/* Left: BRENT SUMMERS - Home Link */}
             <Link 
               to="/" 

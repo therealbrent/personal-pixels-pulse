@@ -123,6 +123,14 @@ All colors MUST be HSL with AAA contrast ratios.
     @apply bg-background text-foreground;
     font-family: 'Space Grotesk', sans-serif;
     line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Reset header default margins/padding to prevent gaps */
+  header {
+    margin: 0;
+    padding: 0;
   }
 
   /* Enhanced focus styles for accessibility */
