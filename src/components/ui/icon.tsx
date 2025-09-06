@@ -2,7 +2,7 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
-  name: 'briefcase' | 'chart' | 'edit' | 'lightning' | 'check' | 'arrow-down' | 'external-link' | 'download' | 'play' | 'linkedin' | 'twitter' | 'github' | 'plus' | 'star' | 'chevron-left' | 'chevron-right'
+  name: 'briefcase' | 'chart' | 'edit' | 'lightning' | 'check' | 'arrow-down' | 'external-link' | 'download' | 'play' | 'linkedin' | 'twitter' | 'github' | 'plus' | 'star' | 'chevron-left' | 'chevron-right' | 'circle' | 'more-horizontal'
   size?: number | string
 }
 
@@ -23,7 +23,9 @@ const iconPaths = {
   plus: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z",
   star: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
   'chevron-left': "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z",
-  'chevron-right': "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+  'chevron-right': "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z",
+  circle: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z",
+  'more-horizontal': "M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
 }
 
 export const Icon = React.forwardRef<SVGSVGElement, IconProps>(
