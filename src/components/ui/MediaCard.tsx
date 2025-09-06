@@ -20,10 +20,10 @@ interface MediaCardProps {
 }
 
 const variantStyles = {
-  default: 'hover:shadow-[8px_8px_0px_0px_hsl(var(--foreground))]',
-  primary: 'hover:shadow-[8px_8px_0px_0px_hsl(var(--primary))]',
-  destructive: 'hover:shadow-[8px_8px_0px_0px_hsl(var(--destructive))]',
-  accent: 'hover:shadow-[8px_8px_0px_0px_hsl(var(--accent))]'
+  default: 'hover:shadow-neo-md',
+  primary: 'hover:shadow-neo-primary',
+  destructive: 'hover:shadow-neo-destructive',
+  accent: 'hover:shadow-neo-accent'
 };
 
 export const MediaCard: React.FC<MediaCardProps> = ({
@@ -79,8 +79,8 @@ export const MediaCard: React.FC<MediaCardProps> = ({
           
           {/* Icon Overlays */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            {showPlayIcon && <Icon name="play" size={32} className="text-white drop-shadow-lg" />}
-            {showExternalIcon && <Icon name="external-link" size={32} className="text-white drop-shadow-lg" />}
+            {showPlayIcon && <Icon name="play" size={32} className="text-white drop-shadow-neo-lg" />}
+            {showExternalIcon && <Icon name="external-link" size={32} className="text-white drop-shadow-neo-lg" />}
           </div>
 
           {/* Corner Play Icon for Media */}

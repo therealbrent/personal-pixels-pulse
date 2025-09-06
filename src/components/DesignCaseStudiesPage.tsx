@@ -177,7 +177,7 @@ export default function DesignCaseStudiesPage() {
 
               <div className="grid lg:grid-cols-2 gap-6 md:gap-12">
                 {/* Adventure.com */}
-                <article className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--primary))] transition-all duration-300">
+                <article className="border-4 border-foreground bg-background group hover:shadow-neo-primary transition-all duration-300">
                   <a 
                     href="https://drive.google.com/file/d/1DCmsAQEdF6aERUsTvE7ewHaqBVJYUdbe/view?usp=sharing"
                     target="_blank"
@@ -206,7 +206,7 @@ export default function DesignCaseStudiesPage() {
                       </div>
                       
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <Icon name="external-link" size={32} className="text-white drop-shadow-lg" />
+                        <Icon name="external-link" size={32} className="text-white drop-shadow-neo-lg" />
                       </div>
                     </div>
                     <div className="p-6">
@@ -244,7 +244,7 @@ export default function DesignCaseStudiesPage() {
                 </article>
 
                 {/* Pivotal */}
-                <article className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--destructive))] transition-all duration-300">
+                <article className="border-4 border-foreground bg-background group hover:shadow-neo-destructive transition-all duration-300">
                   <a 
                     href="https://drive.google.com/file/d/1Vmkol5Fw5PyBCS_uX3ABdB2DkgHCWx63/view?usp=sharing"
                     target="_blank"
@@ -273,7 +273,7 @@ export default function DesignCaseStudiesPage() {
                       </div>
                       
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <Icon name="external-link" size={32} className="text-white drop-shadow-lg" />
+                        <Icon name="external-link" size={32} className="text-white drop-shadow-neo-lg" />
                       </div>
                     </div>
                     <div className="p-6">
@@ -324,7 +324,7 @@ export default function DesignCaseStudiesPage() {
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
-                  <div className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--accent))] transition-all duration-300">
+                  <div className="border-4 border-foreground bg-background group hover:shadow-neo-accent transition-all duration-300">
                     <div className="relative overflow-hidden">
                       <img 
                         src={blinkTilesImage} 
@@ -347,7 +347,7 @@ export default function DesignCaseStudiesPage() {
                     </div>
                   </div>
                   
-                  <div className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--accent))] transition-all duration-300">
+                  <div className="border-4 border-foreground bg-background group hover:shadow-neo-accent transition-all duration-300">
                     <div className="relative overflow-hidden">
                       <img 
                         src={blinkCatalogImage} 
@@ -406,7 +406,7 @@ export default function DesignCaseStudiesPage() {
               </div>
 
               <div className="flex justify-center">
-                <div className="border-4 border-foreground bg-background group hover:shadow-[8px_8px_0px_0px_hsl(var(--destructive))] transition-all duration-300">
+                <div className="border-4 border-foreground bg-background group hover:shadow-neo-destructive transition-all duration-300">
                   <a 
                     href="https://pitch.com/presentations/MetaLab---Product-design-case-studies--33PDEE3nSfwS5CQkiW2xdrQy?slide=7f0a08d9-0324-48b0-bd2a-cb6071f183ed"
                     target="_blank"
@@ -435,7 +435,7 @@ export default function DesignCaseStudiesPage() {
                       </div>
                       
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <Icon name="external-link" size={32} className="text-white drop-shadow-lg" />
+                        <Icon name="external-link" size={32} className="text-white drop-shadow-neo-lg" />
                       </div>
                     </div>
                   </a>

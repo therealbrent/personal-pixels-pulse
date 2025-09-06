@@ -9,8 +9,8 @@ const cardVariants = cva(
     variants: {
       variant: {
         default: "rounded-lg border shadow-sm",
-        brutalist: "border-4 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] bg-background",
-        "brutalist-hover": "border-4 border-foreground shadow-[8px_8px_0px_0px_hsl(var(--foreground))] bg-background hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200 cursor-pointer",
+        brutalist: "border-4 border-foreground shadow-neo-md bg-background",
+        "brutalist-hover": "border-4 border-foreground shadow-neo-md bg-background hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-neo-sm transition-all duration-200 cursor-pointer",
         "brutalist-transform": "border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-background",
         "brutalist-rotate": "border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300 bg-background",
       },

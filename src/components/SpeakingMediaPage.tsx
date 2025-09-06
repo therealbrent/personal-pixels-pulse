@@ -38,7 +38,7 @@ export default function SpeakingMediaPage() {
         {/* Executive Impact Section - Unified Macro Element */}
         <section className="mb-16">
           {/* Header/Letterhead */}
-          <div className="max-w-7xl mx-auto bg-primary border-8 border-foreground shadow-[16px_16px_0px_0px_hsl(var(--foreground))] p-6 md:p-8">
+          <div className="max-w-7xl mx-auto bg-primary border-8 border-foreground shadow-neo-xl p-6 md:p-8">
             <h2 className="text-2xl md:text-4xl font-black mb-3 text-primary-foreground leading-tight">
               EXECUTIVE INSIGHTS & INDUSTRY IMPACT
             </h2>
@@ -48,7 +48,7 @@ export default function SpeakingMediaPage() {
           </div>
 
           {/* Unified Content Container */}
-          <div className="max-w-7xl mx-auto bg-background border-8 border-foreground shadow-[16px_16px_0px_0px_hsl(var(--foreground))] border-t-0 p-6 md:p-8">
+          <div className="max-w-7xl mx-auto bg-background border-8 border-foreground shadow-neo-xl border-t-0 p-6 md:p-8">
             
             {/* Conferences */}
             <div className="mb-8">
@@ -57,7 +57,7 @@ export default function SpeakingMediaPage() {
               </h3>
               <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3">
                 {/* New Presentation - ANA 2025 */}
-                <div className="bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                <div className="bg-background border-2 border-foreground shadow-neo-sm p-4">
                   <h4 className="text-sm md:text-base font-black mb-1 text-foreground line-clamp-2">
                     Next-Generation Marketing: How AI is Used at Qualcomm Technologies
                   </h4>
@@ -67,7 +67,7 @@ export default function SpeakingMediaPage() {
                 {/* Conference Talk 1 */}
                 <div 
                   onClick={() => window.open('https://www.youtube.com/watch?v=eEbuoK5DS30', '_blank')}
-                  className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
+                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs relative"
                 >
                   <div className="pr-8">
                     <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
@@ -81,7 +81,7 @@ export default function SpeakingMediaPage() {
                 {/* Conference Talk 2 - Updated with multiple conferences */}
                 <div 
                   onClick={() => window.open('https://youtu.be/ApLKfzjaN3Y', '_blank')}
-                  className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
+                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs relative"
                 >
                   <div className="pr-8">
                     <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
@@ -95,7 +95,7 @@ export default function SpeakingMediaPage() {
                 {/* Conference Talk 3 */}
                 <div 
                   onClick={() => window.open('https://youtu.be/d3A-gHkwiBE?si=ecXBZYUpq_StpVs2&t=1', '_blank')}
-                  className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
+                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs relative"
                 >
                   <div className="pr-8">
                     <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
@@ -109,7 +109,7 @@ export default function SpeakingMediaPage() {
                 {/* Conference Talk 4 */}
                 <div 
                   onClick={() => window.open('https://www.youtube.com/watch?v=GRdx9R2B7iQ&t=1s', '_blank')}
-                  className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
+                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs relative"
                 >
                   <div className="pr-8">
                     <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
@@ -123,7 +123,7 @@ export default function SpeakingMediaPage() {
                 {/* Consolidated UX Flywheel Talk */}
                 <div 
                   onClick={() => window.open('https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp', '_blank')}
-                  className="group bg-background border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
+                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs relative"
                 >
                   <div className="pr-8">
                     <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
@@ -144,7 +144,7 @@ export default function SpeakingMediaPage() {
               <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3">
                 <div 
                   onClick={() => window.open('https://youtu.be/s827NVsQXS4?si=8JP9q_-fhSDMs_8_', '_blank')}
-                  className="group bg-secondary border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_hsl(var(--foreground))] relative"
+                  className="group bg-secondary border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs relative"
                 >
                   <div className="pr-8">
                     <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
@@ -163,42 +163,42 @@ export default function SpeakingMediaPage() {
                 PANELS
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-                <div className="bg-destructive border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                <div className="bg-destructive border-2 border-foreground shadow-neo-sm p-4">
                   <h4 className="text-sm md:text-base font-black mb-1 text-destructive-foreground line-clamp-2">
                     UC Irvine presents Exploring Design & Ethics
                   </h4>
                   <p className="text-xs font-bold text-destructive-foreground/60">Moderator • Good Cause • 2022</p>
                 </div>
 
-                <div className="bg-primary border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                <div className="bg-primary border-2 border-foreground shadow-neo-sm p-4">
                   <h4 className="text-sm md:text-base font-black mb-1 text-primary-foreground line-clamp-2">
                     General Motors presents Exploring Diversity + Design
                   </h4>
                   <p className="text-xs font-bold text-primary-foreground/60">Moderator • Good Cause • 2021</p>
                 </div>
 
-                <div className="bg-accent border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                <div className="bg-accent border-2 border-foreground shadow-neo-sm p-4">
                   <h4 className="text-sm md:text-base font-black mb-1 text-accent-foreground line-clamp-2">
                     Exploring Data Privacy & Artificial Intelligence in UX
                   </h4>
                   <p className="text-xs font-bold text-accent-foreground/60">Moderator • SDXD • 2020</p>
                 </div>
 
-                <div className="bg-secondary border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                <div className="bg-secondary border-2 border-foreground shadow-neo-sm p-4">
                   <h4 className="text-sm md:text-base font-black mb-1 text-secondary-foreground line-clamp-2">
                     Interview Olympics
                   </h4>
                   <p className="text-xs font-bold text-secondary-foreground/60">SDXD • 2019</p>
                 </div>
 
-                <div className="bg-destructive border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                <div className="bg-destructive border-2 border-foreground shadow-neo-sm p-4">
                   <h4 className="text-sm md:text-base font-black mb-1 text-destructive-foreground line-clamp-2">
                     Strategic Interviews: The Hiring Manager's Perspective
                   </h4>
                   <p className="text-xs font-bold text-destructive-foreground/60">SDXD • 2019</p>
                 </div>
 
-                <div className="bg-primary border-2 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] p-4">
+                <div className="bg-primary border-2 border-foreground shadow-neo-sm p-4">
                   <h4 className="text-sm md:text-base font-black mb-1 text-primary-foreground line-clamp-2">
                     How to Get Hired for a UX Design Role
                   </h4>
@@ -221,7 +221,7 @@ export default function SpeakingMediaPage() {
               href="https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
+              className="group block border-6 border-foreground bg-background p-8 shadow-neo-md hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-neo-sm transition-all duration-200"
             >
               <div className="mb-4">
                 <span className="text-sm font-black text-foreground/60 tracking-wider">CIO NEWS</span>
@@ -242,7 +242,7 @@ export default function SpeakingMediaPage() {
               href="https://www.smartsuite.com/news/qualcomm-technologies-leads-edge-ai-sustainability-brent-summers"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
+              className="group block border-6 border-foreground bg-background p-8 shadow-neo-md hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-neo-sm transition-all duration-200"
             >
               <div className="mb-4">
                 <span className="text-sm font-black text-foreground/60 tracking-wider">SMARTSUITE</span>
@@ -263,7 +263,7 @@ export default function SpeakingMediaPage() {
               href="https://www.cmswire.com/customer-experience/customer-centric-companies-sweat-the-details/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
+              className="group block border-6 border-foreground bg-background p-8 shadow-neo-md hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-neo-sm transition-all duration-200"
             >
               <div className="mb-4">
                 <span className="text-sm font-black text-foreground/60 tracking-wider">CMS WIRE</span>
@@ -284,7 +284,7 @@ export default function SpeakingMediaPage() {
               href="https://uxmag.com/articles/revisiting-proto-personas-for-executive-alignment"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block border-6 border-foreground bg-background p-8 shadow-[8px_8px_0px_0px_hsl(var(--foreground))] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] transition-all duration-200"
+              className="group block border-6 border-foreground bg-background p-8 shadow-neo-md hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-neo-sm transition-all duration-200"
             >
               <div className="mb-4">
                 <span className="text-sm font-black text-foreground/60 tracking-wider">UX MAGAZINE</span>

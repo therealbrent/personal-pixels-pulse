@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-background shadow-[0_6px_0_0_hsl(var(--foreground))]" role="banner" aria-label="Site header">
+    <header className="sticky top-0 z-50 bg-background shadow-neo-md" role="banner" aria-label="Site header">
       {/* Skip to content link for accessibility */}
       <a 
         href="#main-content" 

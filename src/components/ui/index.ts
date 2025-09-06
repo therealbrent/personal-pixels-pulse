@@ -5,3 +5,4 @@ export { BrutalistButton } from './BrutalistButton';
 export { Icon } from './icon';
 export { Button } from './button';
 export { hoverEffects } from './HoverEffects';
+export { shadowClasses, getShadowClass, shadowPresets } from './ShadowUtils';

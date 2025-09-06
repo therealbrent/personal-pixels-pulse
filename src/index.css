@@ -273,6 +273,72 @@ All colors MUST be HSL with AAA contrast ratios.
     }
   }
 
+  /* Neo-brutalist Shadow System */
+  .shadow-neo-xs {
+    box-shadow: 2px 2px 0px 0px hsl(var(--foreground));
+  }
+  
+  .shadow-neo-sm {
+    box-shadow: 4px 4px 0px 0px hsl(var(--foreground));
+  }
+  
+  .shadow-neo-md {
+    box-shadow: 8px 8px 0px 0px hsl(var(--foreground));
+  }
+  
+  .shadow-neo-lg {
+    box-shadow: 12px 12px 0px 0px hsl(var(--foreground));
+  }
+  
+  .shadow-neo-xl {
+    box-shadow: 16px 16px 0px 0px hsl(var(--foreground));
+  }
+
+  /* Colored Shadow Variants */
+  .shadow-neo-primary {
+    box-shadow: 8px 8px 0px 0px hsl(var(--primary));
+  }
+  
+  .shadow-neo-accent {
+    box-shadow: 8px 8px 0px 0px hsl(var(--accent));
+  }
+  
+  .shadow-neo-destructive {
+    box-shadow: 8px 8px 0px 0px hsl(var(--destructive));
+  }
+  
+  .shadow-neo-secondary {
+    box-shadow: 8px 8px 0px 0px hsl(var(--secondary));
+  }
+
+  /* Interactive Shadow States */
+  .shadow-neo-hover-xs:hover {
+    box-shadow: 2px 2px 0px 0px hsl(var(--foreground));
+  }
+  
+  .shadow-neo-hover-sm:hover {
+    box-shadow: 4px 4px 0px 0px hsl(var(--foreground));
+  }
+  
+  .shadow-neo-hover-md:hover {
+    box-shadow: 8px 8px 0px 0px hsl(var(--foreground));
+  }
+
+  /* Button Press Effect */
+  .shadow-neo-pressed {
+    box-shadow: 2px 2px 0px 0px hsl(var(--foreground));
+    transform: translate(2px, 2px);
+  }
+
+  /* Drop Shadows for Overlays */
+  .drop-shadow-neo {
+    filter: drop-shadow(4px 4px 0px hsl(var(--foreground) / 0.3));
+  }
+  
+  .drop-shadow-neo-lg {
+    filter: drop-shadow(8px 8px 0px hsl(var(--foreground) / 0.4));
+  }
+
   /* Optimized 3D Transform utilities - Only for desktop, simplified for mobile performance */
   @media (min-width: 1024px) {
     .perspective-1000 {
