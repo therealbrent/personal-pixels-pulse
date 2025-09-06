@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Icon } from './components/ui/icon';
+import { BrutalistButton } from './components/ui/BrutalistButton';
+import { ExternalLink } from './components/ui/ExternalLink';
+import { MediaCard } from './components/ui/MediaCard';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { 
@@ -60,13 +63,14 @@ function HomePage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button 
-              onClick={() => scrollToSection('work')} 
-              className="border-4 border-primary bg-transparent text-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-150 font-bold text-lg px-8 py-4 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
+            <BrutalistButton
+              variant="primary"
+              size="lg"
+              onClick={() => scrollToSection('work')}
               aria-label="Navigate to my work section"
             >
               Explore My Work
-            </button>
+            </BrutalistButton>
           </div>
         </div>
 
@@ -99,13 +103,14 @@ function HomePage() {
               <p className="text-muted-foreground mb-4">
                 Two decades of experience at the intersection of marketing, technology, and UX.
               </p>
-              <button 
-                onClick={() => scrollToSection('about')} 
-                className="w-full border-4 border-secondary bg-transparent text-secondary hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-150 font-bold py-2 px-4 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
+              <BrutalistButton
+                variant="secondary"
+                className="w-full"
+                onClick={() => scrollToSection('about')}
                 aria-label="Navigate to background section"
               >
                 View Background →
-              </button>
+              </BrutalistButton>
             </article>
 
             <article className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
@@ -116,13 +121,14 @@ function HomePage() {
               <p className="text-muted-foreground mb-4">
                 Real projects and technology implementations for recognizable brands.
               </p>
-              <button 
-                onClick={() => scrollToSection('case-studies')} 
-                className="w-full border-4 border-primary bg-transparent text-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-150 font-bold py-2 px-4 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
+              <BrutalistButton
+                variant="primary"
+                className="w-full"
+                onClick={() => scrollToSection('case-studies')}
                 aria-label="Navigate to case studies section"
               >
                 See Case Studies →
-              </button>
+              </BrutalistButton>
             </article>
 
             <article className="border-4 border-foreground transform hover:scale-105 transition-transform duration-300 bg-card p-6">
@@ -133,13 +139,14 @@ function HomePage() {
               <p className="text-muted-foreground mb-4">
                 Insights and musings on artificial intelligence, marketing & content strategy, and user experience.
               </p>
-              <button 
-                onClick={() => scrollToSection('writing')} 
-                className="w-full border-4 border-secondary bg-transparent text-secondary hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-150 font-bold py-2 px-4 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px]"
+              <BrutalistButton
+                variant="secondary"
+                className="w-full"
+                onClick={() => scrollToSection('writing')}
                 aria-label="Navigate to writing section"
               >
                 Read Articles →
-              </button>
+              </BrutalistButton>
             </article>
           </div>
 
@@ -157,16 +164,13 @@ function HomePage() {
                 <p className="text-muted-foreground mb-4">
                   Led the platform discovery, roll out, and scale up of WRITER at Qualcomm Technologies.
                 </p>
-                <a 
+                <ExternalLink
                   href="https://writer.com/blog/qualcomm-customer-story/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border-4 border-primary bg-transparent text-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-150 font-bold text-sm px-4 py-2 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center gap-2"
-                  aria-label="Read WRITER case study - Opens in new tab"
+                  variant="primary"
+                  className="border-4 border-primary bg-transparent hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-150 font-bold text-sm px-4 py-2 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center gap-2 no-underline"
                 >
-                  Read Case Study 
-                  <Icon name="external-link" size={16} />
-                </a>
+                  Read Case Study
+                </ExternalLink>
               </article>
               
               <article className="bg-accent/10 p-6 border-4 border-foreground transform -rotate-1 hover:rotate-0 transition-transform duration-300">
@@ -180,16 +184,13 @@ function HomePage() {
                 <p className="text-muted-foreground mb-4">
                   This is a user-centered alternative to the marketing funnel that I developed for Blink UX.
                 </p>
-                <a 
+                <ExternalLink
                   href="https://www.youtube.com/watch?v=UYApYNEnaMM"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border-4 border-secondary bg-transparent text-secondary hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-150 font-bold text-sm px-4 py-2 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center gap-2"
-                  aria-label="Watch UX Flywheel presentation on YouTube - Opens in new tab"
+                  variant="secondary"
+                  className="border-4 border-secondary bg-transparent hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-150 font-bold text-sm px-4 py-2 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center gap-2 no-underline"
                 >
-                  Watch Presentation 
-                  <Icon name="external-link" size={16} />
-                </a>
+                  Watch Presentation
+                </ExternalLink>
               </article>
             </div>
           </div>
@@ -273,7 +274,7 @@ function HomePage() {
                       <p className="mb-4">Next, I moved agency-side where I learned to pitch big ideas, lead large quality-obsessed teams, and expand into new markets.</p>
                       <ul className="space-y-3 list-disc list-inside text-base">
                         <li><strong>At Digitaria,</strong> I was the Executive Producer on the Qualcomm account where I had 5 direct reports plus a dynamic project team that sometimes scaled to 40 contributing resources. My team delivered several high-stakes projects that made Qualcomm an early adopter of cloud-computing and responsive design.</li>
-                        <li><strong>At Digital Telepathy,</strong> I pivoted away from providing client services to marketing leadership. Our GTM strategy included the incubation — and eventual sale — of digital products (Slide Deck, Hello Bar, and Filament), and inbound marketing driven primarily by our blog which was recognized by <a href="https://designers.hubspot.com/blog/11-of-the-most-influential-ux-blogs-you-need-to-follow" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent underline inline">HubSpot</a> for its influence on the industry.</li>
+                        <li><strong>At Digital Telepathy,</strong> I pivoted away from providing client services to marketing leadership. Our GTM strategy included the incubation — and eventual sale — of digital products (Slide Deck, Hello Bar, and Filament), and inbound marketing driven primarily by our blog which was recognized by <ExternalLink href="https://designers.hubspot.com/blog/11-of-the-most-influential-ux-blogs-you-need-to-follow" variant="primary" className="inline">HubSpot</ExternalLink> for its influence on the industry.</li>
                         <li><strong>At Blink,</strong> I opened and scaled a studio in San Diego — winning our first few clients and growing the team from 3 employees to 12. After stabilizing the new office, I overhauled our Engineering practice to reach profitability and led a rebrand project following the acquisition of Tectonic. Our account-based GTM strategy leveraged our beautiful studio to build relationships with local leaders from HP, Qualcomm, ServiceNow, and more by hosting meetups, workshops, and the occasional party.</li>
                         <li><strong>At Metalab,</strong> I led the in-house team of three responsible for marketing strategy and sales enablement. In collaboration with freelancers another agency, we designed and executed a content strategy that delivered 3 marquee case studies and 20+ sales enablement decks — ultimately leading to $3.8M in influenced revenue, a 5.5x ROI.</li>
                       </ul>

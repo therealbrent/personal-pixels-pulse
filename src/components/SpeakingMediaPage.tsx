@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
-import { Button } from './ui/button';
+import { BrutalistButton } from './ui/BrutalistButton';
+import { ExternalLink } from './ui/ExternalLink';
+import { MediaCard } from './ui/MediaCard';
 import { Icon } from './ui/icon';
 import BiographyHeadshot from './BiographyHeadshot';
 

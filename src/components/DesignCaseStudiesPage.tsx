@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Icon } from './ui/icon';
+import { ExternalLink } from './ui/ExternalLink';
+import { MediaCard } from './ui/MediaCard';
 import { LazyImage } from './LazyImage';
 
 // Import images directly from lovable-uploads
@@ -311,16 +313,13 @@ export default function DesignCaseStudiesPage() {
                 <div className="bg-muted/50 p-4 md:p-6 border-2 border-foreground text-base md:text-lg">
                   <p className="mb-4">
                     Blink UX is a research and product design firm established in 2000. Their client roster is seriously impressive and equally expansive. Following a series of strategic acquisitions, we rebranded the company and launched a new website. Although the site has evolved, the information architecture, user experience, and content strategy for its{' '}
-                    <a 
+                    <ExternalLink
                       href="https://blinkux.com/work"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-primary/80 underline font-semibold inline-flex items-center gap-1"
+                      variant="primary"
                     >
                       Work
-                      <Icon name="external-link" size={16} />
-                    </a>{' '}
-                    section remains mostly unchanged.
+                    </ExternalLink>
+                    {' '}section remains mostly unchanged.
                   </p>
                 </div>
 
@@ -396,15 +395,12 @@ export default function DesignCaseStudiesPage() {
               <div className="bg-muted/50 p-4 md:p-6 border-2 border-foreground text-base md:text-lg mb-6 md:mb-8">
                 <p>
                   Metalab (née MetaLab) is a product design studio headquartered in Victoria, Canada with a global footprint. You might not have known it at the time, but there's a good chance you've used a product they designed — like Slack, Loom. Instacart, Uber, and countless more.{' '}
-                  <a 
+                  <ExternalLink
                     href="https://pitch.com/presentations/MetaLab---Product-design-case-studies--33PDEE3nSfwS5CQkiW2xdrQy?slide=2ffcc700-4489-4cf5-9930-45d117a3dd8d"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80 underline font-semibold inline-flex items-center gap-1"
+                    variant="primary"
                   >
                     Check out Metalab on Pitch
-                    <Icon name="external-link" size={16} />
-                  </a>
+                  </ExternalLink>
                   .
                 </p>
               </div>

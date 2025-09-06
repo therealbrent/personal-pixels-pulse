@@ -1,5 +1,6 @@
 import LastUpdated from './LastUpdated';
 import { Icon } from './ui/icon';
+import { ExternalLink } from './ui/ExternalLink';
 
 export default function Footer() {
   return (
@@ -36,32 +37,32 @@ export default function Footer() {
             </a>
 
             {/* Full Stack Content */}
-            <a 
-              href="https://contentstrategy.substack.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-primary hover:text-primary-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="font-bold text-xl">FULL STACK CONTENT</h4>
-                <Icon name="plus" size={20} className="transform group-hover:rotate-12 transition-transform" />
-              </div>
-              <p className="text-sm opacity-80">Newsletter about content strategy</p>
-            </a>
+              <ExternalLink
+                href="https://contentstrategy.substack.com/"
+                variant="primary"
+                className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-primary hover:text-primary-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group no-underline"
+                showIcon={false}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-bold text-xl">FULL STACK CONTENT</h4>
+                  <Icon name="plus" size={20} className="transform group-hover:rotate-12 transition-transform" />
+                </div>
+                <p className="text-sm opacity-80">Newsletter about content strategy</p>
+              </ExternalLink>
 
             {/* 200 MAX */}
-            <a 
-              href="https://in200max.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-destructive hover:text-destructive-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group"
+            <ExternalLink
+              href="https://in200max.com/"
+              variant="destructive"
+              className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-destructive hover:text-destructive-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group no-underline"
+              showIcon={false}
             >
               <div className="flex items-center justify-between mb-2">
                 <h4 className="font-bold text-xl">200 MAX</h4>
                 <Icon name="star" size={20} className="transform group-hover:rotate-45 transition-transform" />
               </div>
               <p className="text-sm opacity-80">Maximum clarity. Minimal fluff. Actionable insights in fewer than 200 words.</p>
-            </a>
+            </ExternalLink>
           </div>
 
           {/* Decorative elements */}
