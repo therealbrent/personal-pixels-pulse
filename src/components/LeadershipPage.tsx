@@ -167,10 +167,9 @@ const StructuralBeam: React.FC<StructuralBeamProps> = ({
       {/* Vertical structural beam */}
       <div 
         className={cn(
-          "mx-auto transition-all duration-300 ease-out border-4 border-foreground relative overflow-hidden group-hover:scale-105 group-hover:shadow-2xl",
+          "mx-auto transition-all duration-500 ease-out border-4 border-foreground relative overflow-hidden group-hover:scale-105 group-hover:shadow-2xl",
           beamHeight,
-          beamWidth,
-          isActive && "animate-pulse"
+          beamWidth
         )}
         style={{
           backgroundColor: isActive ? bgColor : 'transparent',
@@ -190,12 +189,14 @@ const StructuralBeam: React.FC<StructuralBeamProps> = ({
             {String(index + 1).padStart(2, '0')}
           </div>
           
+          {/* Always visible headline */}
           <h3 className="text-base font-black leading-tight text-white transform -rotate-90 whitespace-nowrap uppercase tracking-tight">
             {condensed}
           </h3>
           
+          {/* Supporting copy revealed on interaction */}
           {isExpanded && (
-            <div className="absolute bottom-2 left-2 right-2 text-xs text-white font-bold opacity-90 leading-tight">
+            <div className="absolute bottom-2 left-2 right-2 text-xs text-white font-bold opacity-90 leading-tight transform rotate-90 origin-center">
               {fullText}
             </div>
           )}
@@ -350,9 +351,9 @@ const BridgeConstructionSection: React.FC = () => {
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-8xl font-black mb-8 text-background tracking-tight drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
-              MAKING AMBITION
+              WHERE VISION
               <br />
-              LOAD-BEARING
+              CARRIES WEIGHT
             </h2>
             
             {/* Bridge span visualization */}
@@ -372,18 +373,24 @@ const BridgeConstructionSection: React.FC = () => {
                 <div className="absolute left-0 top-0 w-8 h-8 bg-background border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))]" />
                 <div className="absolute right-0 top-0 w-8 h-8 bg-background border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))]" />
                 
-                {/* Bridge deck that builds left-to-right */}
+                {/* Progressive gradient bridge deck */}
                 <div 
-                  className="h-full bg-background border-4 border-foreground shadow-[0_8px_0px_hsl(var(--foreground))] transition-all duration-1000 ease-out origin-left"
+                  className="h-full border-4 border-foreground shadow-[0_8px_0px_hsl(var(--foreground))] transition-all duration-1000 ease-out origin-left"
                   style={{
                     width: `${Math.min(100, (activeBeam + 1) * 20)}%`,
-                    transformOrigin: 'left center'
+                    transformOrigin: 'left center',
+                    background: `linear-gradient(90deg, 
+                      hsl(45, 100%, 51%) 0%, 
+                      hsl(323, 100%, 54%) ${activeBeam >= 1 ? '25%' : '100%'}, 
+                      hsl(0, 0%, 15%) ${activeBeam >= 2 ? '50%' : '100%'}, 
+                      hsl(1, 62%, 30%) ${activeBeam >= 3 ? '75%' : '100%'}, 
+                      hsl(218, 100%, 58%) ${activeBeam >= 4 ? '100%' : '100%'})`
                   }}
                 />
                 
-                {/* Completion glow effect */}
+                {/* Completion stabilizing effect */}
                 {activeBeam >= principlesData.length - 1 && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/30 to-transparent animate-pulse" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse" />
                 )}
               </div>
             </div>
