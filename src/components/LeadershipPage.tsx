@@ -2,42 +2,52 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
-// Leadership principles data with strong color identities
+// Leadership principles data with left-to-right progression
 const principlesData = [
   {
     title: "Empathy fuels innovation",
     condensed: "EMPATHY FUELS INNOVATION",
+    fullText: "Understanding users, customers, and teammates isn't soft—it's the spark for progress.",
     color: "mustard",
     bgColor: "hsl(45, 100%, 51%)", // #FFBA08
-    shadowColor: "hsl(45, 100%, 41%)"
+    shadowColor: "hsl(45, 100%, 41%)",
+    position: "left"
   },
   {
     title: "Transformation must land", 
     condensed: "TRANSFORMATION MUST LAND",
+    fullText: "Ideas matter when they shift reality. I make big bets tangible.",
     color: "hotpink",
     bgColor: "hsl(323, 100%, 54%)", // #FF1392
-    shadowColor: "hsl(323, 100%, 44%)"
+    shadowColor: "hsl(323, 100%, 44%)",
+    position: "left-center"
   },
   {
     title: "Data earns decisions",
-    condensed: "DATA EARNS DECISIONS", 
+    condensed: "DATA EARNS DECISIONS",
+    fullText: "Gut sparks ideas. Evidence unlocks investment and trust.",
     color: "onyx",
     bgColor: "hsl(0, 0%, 15%)", // #262626
-    shadowColor: "hsl(0, 0%, 5%)"
+    shadowColor: "hsl(0, 0%, 5%)",
+    position: "center"
   },
   {
     title: "Collaboration multiplies force",
     condensed: "COLLABORATION MULTIPLIES FORCE",
+    fullText: "Silos kill momentum. I break them down.",
     color: "oxblood", 
     bgColor: "hsl(1, 62%, 30%)", // #7A1E1C
-    shadowColor: "hsl(1, 62%, 20%)"
+    shadowColor: "hsl(1, 62%, 20%)",
+    position: "right-center"
   },
   {
     title: "Play the long game",
     condensed: "PLAY THE LONG GAME",
+    fullText: "Today's wins should compound into tomorrow's advantage.",
     color: "cobalt",
     bgColor: "hsl(218, 100%, 58%)", // #2962FF  
-    shadowColor: "hsl(218, 100%, 48%)"
+    shadowColor: "hsl(218, 100%, 48%)",
+    position: "right"
   }
 ];
 
@@ -104,6 +114,7 @@ const HeroSection: React.FC = () => (
 interface StructuralBeamProps {
   title: string;
   condensed: string;
+  fullText: string;
   index: number;
   isActive: boolean;
   isExpanded: boolean;
@@ -111,18 +122,21 @@ interface StructuralBeamProps {
   color: string;
   bgColor: string;
   shadowColor: string;
+  position: string;
 }
 
 const StructuralBeam: React.FC<StructuralBeamProps> = ({ 
   title, 
   condensed, 
+  fullText,
   index, 
   isActive, 
   isExpanded, 
   onToggle,
   color,
   bgColor,
-  shadowColor
+  shadowColor,
+  position
 }) => {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -181,8 +195,8 @@ const StructuralBeam: React.FC<StructuralBeamProps> = ({
           </h3>
           
           {isExpanded && (
-            <div className="absolute bottom-2 left-2 right-2 text-xs text-white font-bold opacity-90">
-              {title}
+            <div className="absolute bottom-2 left-2 right-2 text-xs text-white font-bold opacity-90 leading-tight">
+              {fullText}
             </div>
           )}
         </div>
@@ -267,6 +281,7 @@ const BridgeConstructionSection: React.FC = () => {
                 key={index}
                 title={principle.title}
                 condensed={principle.condensed}
+                fullText={principle.fullText}
                 index={index}
                 isActive={true}
                 isExpanded={expandedBeam === index}
@@ -274,6 +289,7 @@ const BridgeConstructionSection: React.FC = () => {
                 color={principle.color}
                 bgColor={principle.bgColor}
                 shadowColor={principle.shadowColor}
+                position={principle.position}
               />
             ))}
           </div>
@@ -350,17 +366,25 @@ const BridgeConstructionSection: React.FC = () => {
                 </div>
               </div>
               
-              {/* Progressive bridge span */}
+              {/* Left-to-right progressive bridge span */}
               <div className="relative w-full h-3 mb-8">
-                {/* Bridge span that builds with each pillar */}
+                {/* Foundation anchors */}
+                <div className="absolute left-0 top-0 w-8 h-8 bg-background border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))]" />
+                <div className="absolute right-0 top-0 w-8 h-8 bg-background border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))]" />
+                
+                {/* Bridge deck that builds left-to-right */}
                 <div 
-                  className="h-full bg-gradient-to-r from-transparent via-background to-transparent border-4 border-foreground shadow-[0_8px_0px_hsl(var(--foreground))] transition-all duration-1000 ease-out"
+                  className="h-full bg-background border-4 border-foreground shadow-[0_8px_0px_hsl(var(--foreground))] transition-all duration-1000 ease-out origin-left"
                   style={{
                     width: `${Math.min(100, (activeBeam + 1) * 20)}%`,
-                    marginLeft: 'auto',
-                    marginRight: 'auto'
+                    transformOrigin: 'left center'
                   }}
                 />
+                
+                {/* Completion glow effect */}
+                {activeBeam >= principlesData.length - 1 && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/30 to-transparent animate-pulse" />
+                )}
               </div>
             </div>
           </div>
@@ -372,6 +396,7 @@ const BridgeConstructionSection: React.FC = () => {
                 key={index}
                 title={principle.title}
                 condensed={principle.condensed}
+                fullText={principle.fullText}
                 index={index}
                 isActive={index <= activeBeam}
                 isExpanded={expandedBeam === index}
@@ -379,6 +404,7 @@ const BridgeConstructionSection: React.FC = () => {
                 color={principle.color}
                 bgColor={principle.bgColor}
                 shadowColor={principle.shadowColor}
+                position={principle.position}
               />
             ))}
           </div>
