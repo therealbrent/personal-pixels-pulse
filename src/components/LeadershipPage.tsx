@@ -2,37 +2,42 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
-// Leadership principles data with color assignments
+// Leadership principles data with strong color identities
 const principlesData = [
   {
     title: "Empathy fuels innovation",
-    summary: "Understanding users, customers, and teammates isn't soft—it's the spark for progress.",
-    color: "accent", // hot pink
-    bgClass: "bg-accent/20"
+    condensed: "EMPATHY FUELS INNOVATION",
+    color: "mustard",
+    bgColor: "hsl(45, 100%, 51%)", // #FFBA08
+    shadowColor: "hsl(45, 100%, 41%)"
   },
   {
-    title: "Transformation must land",
-    summary: "Ideas matter when they shift reality. I make big bets tangible.",
-    color: "primary", // mustard
-    bgClass: "bg-primary/20"
+    title: "Transformation must land", 
+    condensed: "TRANSFORMATION MUST LAND",
+    color: "hotpink",
+    bgColor: "hsl(323, 100%, 54%)", // #FF1392
+    shadowColor: "hsl(323, 100%, 44%)"
   },
   {
     title: "Data earns decisions",
-    summary: "Gut sparks ideas. Evidence unlocks investment and trust.",
-    color: "destructive", // crimson
-    bgClass: "bg-destructive/20"
+    condensed: "DATA EARNS DECISIONS", 
+    color: "onyx",
+    bgColor: "hsl(0, 0%, 15%)", // #262626
+    shadowColor: "hsl(0, 0%, 5%)"
   },
   {
-    title: "Collaboration is a force multiplier",
-    summary: "Silos kill momentum. I break them down.",
-    color: "split", // dual color
-    bgClass: "bg-gradient-to-r from-accent/20 to-primary/20"
+    title: "Collaboration multiplies force",
+    condensed: "COLLABORATION MULTIPLIES FORCE",
+    color: "oxblood", 
+    bgColor: "hsl(1, 62%, 30%)", // #7A1E1C
+    shadowColor: "hsl(1, 62%, 20%)"
   },
   {
     title: "Play the long game",
-    summary: "Today's wins should compound into tomorrow's advantage.",
-    color: "timeless", // gradient shift
-    bgClass: "bg-gradient-to-r from-foreground/10 to-background"
+    condensed: "PLAY THE LONG GAME",
+    color: "cobalt",
+    bgColor: "hsl(218, 100%, 58%)", // #2962FF  
+    shadowColor: "hsl(218, 100%, 48%)"
   }
 ];
 
@@ -98,24 +103,26 @@ const HeroSection: React.FC = () => (
 // Structural beam component that contains text
 interface StructuralBeamProps {
   title: string;
-  summary: string;
+  condensed: string;
   index: number;
   isActive: boolean;
   isExpanded: boolean;
   onToggle: () => void;
   color: string;
-  bgClass: string;
+  bgColor: string;
+  shadowColor: string;
 }
 
 const StructuralBeam: React.FC<StructuralBeamProps> = ({ 
   title, 
-  summary, 
+  condensed, 
   index, 
   isActive, 
   isExpanded, 
   onToggle,
   color,
-  bgClass
+  bgColor,
+  shadowColor
 }) => {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -146,42 +153,50 @@ const StructuralBeam: React.FC<StructuralBeamProps> = ({
       {/* Vertical structural beam */}
       <div 
         className={cn(
-          "mx-auto transition-all duration-500 ease-out border-4 border-foreground relative overflow-hidden",
+          "mx-auto transition-all duration-300 ease-out border-4 border-foreground relative overflow-hidden group-hover:scale-105 group-hover:shadow-2xl",
           beamHeight,
           beamWidth,
-          isActive && "shadow-[8px_8px_0px_hsl(var(--foreground))]",
-          color === "accent" && "bg-accent",
-          color === "primary" && "bg-primary", 
-          color === "destructive" && "bg-destructive",
-          color === "split" && "bg-gradient-to-b from-accent to-primary",
-          color === "timeless" && "bg-gradient-to-b from-foreground to-muted"
+          isActive && "animate-pulse"
         )}
         style={{
-          transitionDelay: isActive ? `${index * 150}ms` : '0ms'
+          backgroundColor: isActive ? bgColor : 'transparent',
+          boxShadow: isActive ? `12px 12px 0px ${shadowColor}` : 'none',
+          transitionDelay: isActive ? `${index * 200}ms` : '0ms'
         }}
       >
-        {/* Text content inside the beam */}
+        {/* Text content embedded inside the beam */}
         <div 
           id={`beam-content-${index}`}
           className={cn(
-            "absolute inset-4 flex flex-col justify-center text-center transition-all duration-300",
-            isActive ? "opacity-100 delay-500" : "opacity-0"
+            "absolute inset-2 flex flex-col justify-center items-center text-center transition-all duration-500",
+            isActive ? "opacity-100 delay-700" : "opacity-0"
           )}
         >
-          <div className="text-xs font-black mb-2 text-foreground tracking-wider">
+          <div className="text-sm font-black mb-4 text-white tracking-widest">
             {String(index + 1).padStart(2, '0')}
           </div>
           
-          <h3 className="text-lg font-black mb-2 leading-tight text-foreground transform -rotate-90 whitespace-nowrap">
-            {title.toUpperCase()}
+          <h3 className="text-base font-black leading-tight text-white transform -rotate-90 whitespace-nowrap uppercase tracking-tight">
+            {condensed}
           </h3>
           
           {isExpanded && (
-            <div className="text-xs text-foreground font-bold transform -rotate-90 whitespace-nowrap mt-4">
-              {summary}
+            <div className="absolute bottom-2 left-2 right-2 text-xs text-white font-bold opacity-90">
+              {title}
             </div>
           )}
         </div>
+        
+        {/* Glow effect on hover */}
+        <div 
+          className={cn(
+            "absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none",
+            isActive && "animate-pulse"
+          )}
+          style={{
+            background: `radial-gradient(circle, ${bgColor}80 0%, transparent 70%)`
+          }}
+        />
       </div>
     </div>
   );
@@ -251,13 +266,14 @@ const BridgeConstructionSection: React.FC = () => {
               <StructuralBeam
                 key={index}
                 title={principle.title}
-                summary={principle.summary}
+                condensed={principle.condensed}
                 index={index}
                 isActive={true}
                 isExpanded={expandedBeam === index}
                 onToggle={() => toggleBeam(index)}
                 color={principle.color}
-                bgClass={principle.bgClass}
+                bgColor={principle.bgColor}
+                shadowColor={principle.shadowColor}
               />
             ))}
           </div>
@@ -318,7 +334,9 @@ const BridgeConstructionSection: React.FC = () => {
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-8xl font-black mb-8 text-background tracking-tight drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
-              BRIDGE CONSTRUCTION
+              MAKING AMBITION
+              <br />
+              LOAD-BEARING
             </h2>
             
             {/* Bridge span visualization */}
@@ -332,8 +350,18 @@ const BridgeConstructionSection: React.FC = () => {
                 </div>
               </div>
               
-              {/* Horizontal bridge span */}
-              <div className="w-full h-3 bg-background border-4 border-foreground shadow-[0_8px_0px_hsl(var(--foreground))] mb-8" />
+              {/* Progressive bridge span */}
+              <div className="relative w-full h-3 mb-8">
+                {/* Bridge span that builds with each pillar */}
+                <div 
+                  className="h-full bg-gradient-to-r from-transparent via-background to-transparent border-4 border-foreground shadow-[0_8px_0px_hsl(var(--foreground))] transition-all duration-1000 ease-out"
+                  style={{
+                    width: `${Math.min(100, (activeBeam + 1) * 20)}%`,
+                    marginLeft: 'auto',
+                    marginRight: 'auto'
+                  }}
+                />
+              </div>
             </div>
           </div>
           
@@ -343,13 +371,14 @@ const BridgeConstructionSection: React.FC = () => {
               <StructuralBeam
                 key={index}
                 title={principle.title}
-                summary={principle.summary}
+                condensed={principle.condensed}
                 index={index}
                 isActive={index <= activeBeam}
                 isExpanded={expandedBeam === index}
                 onToggle={() => toggleBeam(index)}
                 color={principle.color}
-                bgClass={principle.bgClass}
+                bgColor={principle.bgColor}
+                shadowColor={principle.shadowColor}
               />
             ))}
           </div>
@@ -362,7 +391,7 @@ const BridgeConstructionSection: React.FC = () => {
                   {principlesData[activeBeam].title.toUpperCase()}
                 </h3>
                 <p className="text-lg md:text-xl font-bold text-foreground">
-                  {principlesData[activeBeam].summary}
+                  {principlesData[activeBeam].title}
                 </p>
               </div>
             </div>
