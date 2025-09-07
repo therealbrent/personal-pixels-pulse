@@ -2,27 +2,37 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
-// Leadership principles data
+// Leadership principles data with color assignments
 const principlesData = [
   {
     title: "Empathy fuels innovation",
-    summary: "Understanding users, customers, and teammates isn't soft—it's the spark for progress."
+    summary: "Understanding users, customers, and teammates isn't soft—it's the spark for progress.",
+    color: "accent", // hot pink
+    bgClass: "bg-accent/20"
   },
   {
     title: "Transformation must land",
-    summary: "Ideas matter when they shift reality. I make big bets tangible."
+    summary: "Ideas matter when they shift reality. I make big bets tangible.",
+    color: "primary", // mustard
+    bgClass: "bg-primary/20"
   },
   {
     title: "Data earns decisions",
-    summary: "Gut sparks ideas. Evidence unlocks investment and trust."
+    summary: "Gut sparks ideas. Evidence unlocks investment and trust.",
+    color: "destructive", // crimson
+    bgClass: "bg-destructive/20"
   },
   {
     title: "Collaboration is a force multiplier",
-    summary: "Silos kill momentum. I break them down."
+    summary: "Silos kill momentum. I break them down.",
+    color: "split", // dual color
+    bgClass: "bg-gradient-to-r from-accent/20 to-primary/20"
   },
   {
     title: "Play the long game",
-    summary: "Today's wins should compound into tomorrow's advantage."
+    summary: "Today's wins should compound into tomorrow's advantage.",
+    color: "timeless", // gradient shift
+    bgClass: "bg-gradient-to-r from-foreground/10 to-background"
   }
 ];
 
@@ -30,90 +40,82 @@ const principlesData = [
 const SkipToContent: React.FC = () => (
   <a 
     href="#main-content" 
-    className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-primary text-primary-foreground px-4 py-2 z-50 border-2 border-foreground"
+    className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-primary text-primary-foreground px-4 py-2 z-50 border-4 border-foreground"
   >
     Skip to main content
   </a>
 );
 
-// Bridge motif SVG component
-const BridgeMotif: React.FC = () => (
-  <svg 
-    className="w-32 h-16 mx-auto mb-8" 
-    viewBox="0 0 128 64" 
-    fill="none" 
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    {/* Bridge deck */}
-    <rect x="0" y="48" width="128" height="8" fill="currentColor" className="text-primary" />
-    
-    {/* Support beams */}
-    <rect x="20" y="32" width="4" height="16" fill="currentColor" className="text-foreground" />
-    <rect x="36" y="24" width="4" height="24" fill="currentColor" className="text-foreground" />
-    <rect x="52" y="16" width="4" height="32" fill="currentColor" className="text-foreground" />
-    <rect x="68" y="24" width="4" height="24" fill="currentColor" className="text-foreground" />
-    <rect x="84" y="32" width="4" height="16" fill="currentColor" className="text-foreground" />
-    
-    {/* Anchor points */}
-    <rect x="0" y="40" width="12" height="16" fill="currentColor" className="text-destructive" />
-    <rect x="116" y="40" width="12" height="16" fill="currentColor" className="text-destructive" />
-  </svg>
-);
-
-// Hero section component
+// Hero section component with aggressive Neo-brutalist design
 const HeroSection: React.FC = () => (
-  <section className="min-h-screen flex flex-col justify-center items-center px-4 bg-background">
-    <div className="text-center max-w-5xl mx-auto">
-      <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground leading-tight">
-        I lead at the intersection of{' '}
-        <span className="text-primary">vision</span> and{' '}
-        <span className="text-destructive">execution</span>.
+  <section className="min-h-screen flex flex-col justify-center items-center px-4 bg-foreground relative overflow-hidden">
+    {/* Grid background pattern */}
+    <div 
+      className="absolute inset-0 opacity-10"
+      style={{
+        backgroundImage: `
+          linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
+          linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)
+        `,
+        backgroundSize: '40px 40px'
+      }}
+    />
+    
+    <div className="text-center max-w-6xl mx-auto relative z-10">
+      <h1 className="text-5xl md:text-8xl lg:text-9xl font-black mb-8 leading-[0.85] tracking-tight">
+        <span className="block text-accent drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
+          I LEAD AT THE
+        </span>
+        <span className="block text-primary drop-shadow-[4px_4px_0px_hsl(var(--foreground))] mt-4">
+          INTERSECTION
+        </span>
+        <span className="block text-background drop-shadow-[4px_4px_0px_hsl(var(--accent))] mt-4">
+          OF VISION &
+        </span>
+        <span className="block text-background drop-shadow-[4px_4px_0px_hsl(var(--destructive))] mt-4">
+          EXECUTION
+        </span>
       </h1>
       
-      <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+      {/* Thin mustard line */}
+      <div className="w-full h-1 bg-primary my-12 shadow-[0_4px_0px_hsl(var(--foreground))]" />
+      
+      <p className="text-xl md:text-3xl text-background font-bold mb-16 uppercase tracking-wide">
         Spotting trends and building bridges that unlock capability
       </p>
       
-      <BridgeMotif />
-      
       <Link 
-        to="#bridge-model"
-        className="inline-flex bg-primary text-primary-foreground px-8 py-4 text-lg font-bold border-4 border-foreground hover:bg-primary/80 transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px]"
-        aria-label="Learn about my leadership approach"
+        to="#bridge-construction"
+        className="inline-flex bg-accent text-accent-foreground px-12 py-6 text-xl font-black border-4 border-foreground hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-150 shadow-[8px_8px_0px_hsl(var(--foreground))] uppercase tracking-wide"
+        aria-label="Watch the bridge construction"
       >
-        Explore My Approach
+        BUILD THE BRIDGE
       </Link>
     </div>
   </section>
 );
 
-// Progress indicator component
-const ProgressIndicator: React.FC<{ current: number; total: number }> = ({ current, total }) => (
-  <div className="fixed top-4 right-4 z-40 bg-background border-2 border-foreground px-3 py-2">
-    <span className="text-sm font-bold text-foreground" aria-live="polite">
-      {current} / {total}
-    </span>
-  </div>
-);
-
-// Principle card component
-interface PrincipleCardProps {
+// Structural beam component that contains text
+interface StructuralBeamProps {
   title: string;
   summary: string;
   index: number;
   isActive: boolean;
   isExpanded: boolean;
   onToggle: () => void;
+  color: string;
+  bgClass: string;
 }
 
-const PrincipleCard: React.FC<PrincipleCardProps> = ({ 
+const StructuralBeam: React.FC<StructuralBeamProps> = ({ 
   title, 
   summary, 
   index, 
   isActive, 
   isExpanded, 
-  onToggle 
+  onToggle,
+  color,
+  bgClass
 }) => {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -125,55 +127,72 @@ const PrincipleCard: React.FC<PrincipleCardProps> = ({
     }
   };
 
+  const beamHeight = isActive ? 'h-96' : 'h-0';
+  const beamWidth = isExpanded ? 'w-32' : 'w-20';
+  
   return (
     <div 
       className={cn(
-        "bg-background border-4 border-foreground p-6 transition-all duration-200 cursor-pointer",
-        "focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-4",
-        isActive && "shadow-neo-md",
-        isExpanded && "bg-primary text-primary-foreground border-primary"
+        "relative transition-all duration-300 ease-out cursor-pointer group",
+        "focus-within:outline-4 focus-within:outline-accent focus-within:outline-offset-4"
       )}
       onClick={onToggle}
       onKeyDown={handleKeyDown}
       tabIndex={0}
       role="button"
       aria-expanded={isExpanded}
-      aria-controls={`principle-detail-${index}`}
+      aria-controls={`beam-content-${index}`}
     >
-      <div className="flex items-center justify-between mb-4">
-        <span className="text-2xl font-bold text-accent">
-          {String(index + 1).padStart(2, '0')}
-        </span>
-        <div className={cn(
-          "w-4 h-4 border-2 transition-transform duration-200",
-          isExpanded ? "rotate-45 border-primary-foreground" : "border-foreground"
-        )} />
-      </div>
-      
-      <h3 className="text-xl md:text-2xl font-bold mb-3">
-        {title}
-      </h3>
-      
+      {/* Vertical structural beam */}
       <div 
-        id={`principle-detail-${index}`}
         className={cn(
-          "overflow-hidden transition-all duration-200",
-          isExpanded ? "max-h-32 opacity-100" : "max-h-0 opacity-0"
+          "mx-auto transition-all duration-500 ease-out border-4 border-foreground relative overflow-hidden",
+          beamHeight,
+          beamWidth,
+          isActive && "shadow-[8px_8px_0px_hsl(var(--foreground))]",
+          color === "accent" && "bg-accent",
+          color === "primary" && "bg-primary", 
+          color === "destructive" && "bg-destructive",
+          color === "split" && "bg-gradient-to-b from-accent to-primary",
+          color === "timeless" && "bg-gradient-to-b from-foreground to-muted"
         )}
+        style={{
+          transitionDelay: isActive ? `${index * 150}ms` : '0ms'
+        }}
       >
-        <p className="text-base md:text-lg">
-          {summary}
-        </p>
+        {/* Text content inside the beam */}
+        <div 
+          id={`beam-content-${index}`}
+          className={cn(
+            "absolute inset-4 flex flex-col justify-center text-center transition-all duration-300",
+            isActive ? "opacity-100 delay-500" : "opacity-0"
+          )}
+        >
+          <div className="text-xs font-black mb-2 text-foreground tracking-wider">
+            {String(index + 1).padStart(2, '0')}
+          </div>
+          
+          <h3 className="text-lg font-black mb-2 leading-tight text-foreground transform -rotate-90 whitespace-nowrap">
+            {title.toUpperCase()}
+          </h3>
+          
+          {isExpanded && (
+            <div className="text-xs text-foreground font-bold transform -rotate-90 whitespace-nowrap mt-4">
+              {summary}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
-// Bridge model section component
-const BridgeModelSection: React.FC = () => {
-  const [activeCard, setActiveCard] = useState(0);
-  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+// Bridge construction section component
+const BridgeConstructionSection: React.FC = () => {
+  const [activeBeam, setActiveBeam] = useState(0);
+  const [expandedBeam, setExpandedBeam] = useState<number | null>(null);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [backgroundMode, setBackgroundMode] = useState('default');
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -188,51 +207,57 @@ const BridgeModelSection: React.FC = () => {
     if (prefersReducedMotion) return;
 
     const handleScroll = () => {
-      const section = document.getElementById('bridge-model');
+      const section = document.getElementById('bridge-construction');
       if (!section) return;
 
       const rect = section.getBoundingClientRect();
       const sectionHeight = rect.height;
       const scrollProgress = Math.max(0, Math.min(1, -rect.top / (sectionHeight - window.innerHeight)));
-      const newActiveCard = Math.floor(scrollProgress * principlesData.length);
+      const newActiveBeam = Math.floor(scrollProgress * principlesData.length);
       
-      setActiveCard(Math.min(newActiveCard, principlesData.length - 1));
+      setActiveBeam(Math.min(newActiveBeam, principlesData.length - 1));
+      
+      // Set background color mode based on active beam
+      const currentPrinciple = principlesData[newActiveBeam] || principlesData[0];
+      setBackgroundMode(currentPrinciple.color);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prefersReducedMotion]);
 
-  const toggleCard = (index: number) => {
-    setExpandedCard(expandedCard === index ? null : index);
+  const toggleBeam = (index: number) => {
+    setExpandedBeam(expandedBeam === index ? null : index);
   };
 
   if (prefersReducedMotion) {
     // Static grid for reduced motion preference
     return (
-      <section id="bridge-model" className="py-16 bg-muted/20">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section id="bridge-construction" className="py-16 bg-foreground">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8 text-foreground">
-              The Bridge Model
+            <h2 className="text-4xl md:text-7xl font-black mb-8 text-background tracking-tight">
+              STRUCTURAL PRINCIPLES
             </h2>
-            <div className="flex justify-between items-center mb-8">
-              <div className="text-2xl font-bold text-primary">Vision</div>
-              <div className="flex-1 h-2 bg-foreground mx-8"></div>
-              <div className="text-2xl font-bold text-destructive">Execution</div>
+            <div className="flex justify-between items-center mb-8 max-w-4xl mx-auto">
+              <div className="text-3xl font-black text-primary">VISION</div>
+              <div className="flex-1 h-2 bg-background mx-8 shadow-[0_4px_0px_hsl(var(--primary))]"></div>
+              <div className="text-3xl font-black text-destructive">EXECUTION</div>
             </div>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="flex justify-center items-end gap-8 mb-16">
             {principlesData.map((principle, index) => (
-              <PrincipleCard
+              <StructuralBeam
                 key={index}
                 title={principle.title}
                 summary={principle.summary}
                 index={index}
                 isActive={true}
-                isExpanded={expandedCard === index}
-                onToggle={() => toggleCard(index)}
+                isExpanded={expandedBeam === index}
+                onToggle={() => toggleBeam(index)}
+                color={principle.color}
+                bgClass={principle.bgClass}
               />
             ))}
           </div>
@@ -241,109 +266,187 @@ const BridgeModelSection: React.FC = () => {
     );
   }
 
+  // Dynamic background based on active beam
+  const getBackgroundClass = () => {
+    switch (backgroundMode) {
+      case 'accent':
+        return 'bg-accent/30';
+      case 'primary':
+        return 'bg-primary/30';
+      case 'destructive':
+        return 'bg-destructive/30';
+      case 'split':
+        return 'bg-gradient-to-r from-accent/20 to-primary/20';
+      case 'timeless':
+        return 'bg-gradient-to-b from-foreground to-muted';
+      default:
+        return 'bg-foreground';
+    }
+  };
+
   return (
-    <section id="bridge-model" className="min-h-[500vh] relative">
-      <ProgressIndicator current={activeCard + 1} total={principlesData.length} />
+    <section 
+      id="bridge-construction" 
+      className={cn(
+        "min-h-[600vh] relative transition-all duration-700",
+        getBackgroundClass()
+      )}
+    >
+      {/* Progress indicator */}
+      <div className="fixed top-4 right-4 z-40 bg-foreground border-4 border-background px-4 py-3">
+        <span className="text-lg font-black text-background" aria-live="polite">
+          {activeBeam + 1} / {principlesData.length}
+        </span>
+      </div>
       
-      <div className="sticky top-0 min-h-screen flex flex-col justify-center">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <div className="sticky top-0 min-h-screen flex flex-col justify-center relative overflow-hidden">
+        {/* Enhanced grid pattern that "snaps" */}
+        <div 
+          className={cn(
+            "absolute inset-0 transition-all duration-300",
+            activeBeam > 0 ? "opacity-20" : "opacity-10"
+          )}
+          style={{
+            backgroundImage: `
+              linear-gradient(hsl(var(--background)) 2px, transparent 2px),
+              linear-gradient(90deg, hsl(var(--background)) 2px, transparent 2px)
+            `,
+            backgroundSize: activeBeam > 0 ? '60px 60px' : '40px 40px'
+          }}
+        />
+        
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8 text-foreground">
-              The Bridge Model
+            <h2 className="text-4xl md:text-8xl font-black mb-8 text-background tracking-tight drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
+              BRIDGE CONSTRUCTION
             </h2>
             
-            {/* Bridge visualization */}
-            <div className="relative mb-16">
-              <div className="flex justify-between items-center mb-8">
-                <div className="text-2xl font-bold text-primary">Vision</div>
-                <div className="text-2xl font-bold text-destructive">Execution</div>
+            {/* Bridge span visualization */}
+            <div className="relative mb-16 max-w-4xl mx-auto">
+              <div className="flex justify-between items-center mb-12">
+                <div className="text-3xl font-black text-background drop-shadow-[2px_2px_0px_hsl(var(--foreground))]">
+                  VISION
+                </div>
+                <div className="text-3xl font-black text-background drop-shadow-[2px_2px_0px_hsl(var(--foreground))]">
+                  EXECUTION
+                </div>
               </div>
               
-              <div className="relative h-24">
-                {/* Bridge deck */}
-                <div className="absolute top-1/2 left-0 right-0 h-2 bg-foreground transform -translate-y-1/2"></div>
-                
-                {/* Support beams that animate in */}
-                {principlesData.map((_, index) => (
-                  <div 
-                    key={index}
-                    className={cn(
-                      "absolute w-1 bg-foreground transition-all duration-300",
-                      "transform -translate-y-1/2 top-1/2",
-                      index <= activeCard ? "h-16 opacity-100" : "h-0 opacity-50"
-                    )}
-                    style={{ 
-                      left: `${20 + (index * 15)}%`,
-                      transitionDelay: `${index * 100}ms`
-                    }}
-                  />
-                ))}
-              </div>
+              {/* Horizontal bridge span */}
+              <div className="w-full h-3 bg-background border-4 border-foreground shadow-[0_8px_0px_hsl(var(--foreground))] mb-8" />
             </div>
           </div>
           
-          <div className="max-w-2xl mx-auto">
-            <PrincipleCard
-              title={principlesData[activeCard].title}
-              summary={principlesData[activeCard].summary}
-              index={activeCard}
-              isActive={true}
-              isExpanded={expandedCard === activeCard}
-              onToggle={() => toggleCard(activeCard)}
-            />
+          {/* Structural beams container */}
+          <div className="flex justify-center items-end gap-4 md:gap-8 min-h-[400px]">
+            {principlesData.map((principle, index) => (
+              <StructuralBeam
+                key={index}
+                title={principle.title}
+                summary={principle.summary}
+                index={index}
+                isActive={index <= activeBeam}
+                isExpanded={expandedBeam === index}
+                onToggle={() => toggleBeam(index)}
+                color={principle.color}
+                bgClass={principle.bgClass}
+              />
+            ))}
           </div>
+          
+          {/* Active principle display */}
+          {activeBeam < principlesData.length && (
+            <div className="text-center mt-16">
+              <div className="bg-background border-4 border-foreground p-8 shadow-[8px_8px_0px_hsl(var(--foreground))] max-w-2xl mx-auto">
+                <h3 className="text-2xl md:text-4xl font-black mb-4 text-foreground tracking-tight">
+                  {principlesData[activeBeam].title.toUpperCase()}
+                </h3>
+                <p className="text-lg md:text-xl font-bold text-foreground">
+                  {principlesData[activeBeam].summary}
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
   );
 };
 
-// Credibility section component
-const CredibilitySection: React.FC = () => (
-  <section className="py-16 bg-background">
-    <div className="container mx-auto px-4 text-center max-w-4xl">
-      <p className="text-xl md:text-2xl font-bold text-foreground mb-8">
-        This isn't theory—it's how I've led transformations at Qualcomm and beyond.
+// Manifesto/Outro section component
+const ManifestoSection: React.FC = () => (
+  <section className="min-h-screen flex flex-col justify-center items-center px-4 bg-foreground relative">
+    <div className="text-center max-w-4xl mx-auto relative z-10">
+      <h2 className="text-4xl md:text-8xl font-black mb-12 text-background tracking-tight leading-[0.9]">
+        THESE ARE MY
+        <br />
+        <span className="text-accent drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
+          LEADERSHIP
+        </span>
+        <br />
+        <span className="text-primary drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
+          PRINCIPLES
+        </span>
+      </h2>
+      
+      <div className="w-full h-2 bg-background my-12 shadow-[0_4px_0px_hsl(var(--accent))]" />
+      
+      <p className="text-xl md:text-3xl font-black text-background mb-16 tracking-wide">
+        THIS ISN'T A PHILOSOPHY DECK—IT'S MY OPERATING SYSTEM.
       </p>
       
-      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
         <Link 
           to="/design-case-studies"
-          className="bg-primary text-primary-foreground px-8 py-4 text-lg font-bold border-4 border-foreground hover:bg-primary/80 transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] inline-flex items-center"
+          className="bg-primary text-primary-foreground px-12 py-6 text-xl font-black border-4 border-background hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-150 shadow-[8px_8px_0px_hsl(var(--background))] uppercase tracking-wide"
         >
-          Case Studies
+          CASE STUDIES
         </Link>
         
         <Link 
           to="/speaking-media"
-          className="bg-background text-foreground px-8 py-4 text-lg font-bold border-4 border-foreground hover:bg-muted transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] inline-flex items-center"
+          className="bg-accent text-accent-foreground px-12 py-6 text-xl font-black border-4 border-background hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-150 shadow-[8px_8px_0px_hsl(var(--background))] uppercase tracking-wide"
         >
-          Speaking & Media
+          SPEAKING
         </Link>
       </div>
-      
-      <p className="text-lg text-muted-foreground mt-8 italic">
-        "This isn't a philosophy deck—it's my operating system."
-      </p>
     </div>
   </section>
 );
 
 // Contact section component
 const ContactSection: React.FC = () => (
-  <section className="py-16 bg-muted/20">
-    <div className="container mx-auto px-4 text-center max-w-3xl">
-      <h2 className="text-3xl md:text-5xl font-bold mb-8 text-foreground">
-        Have a hard problem worth crossing?
+  <section className="py-24 bg-background relative overflow-hidden">
+    {/* Grid background */}
+    <div 
+      className="absolute inset-0 opacity-5"
+      style={{
+        backgroundImage: `
+          linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
+          linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)
+        `,
+        backgroundSize: '20px 20px'
+      }}
+    />
+    
+    <div className="container mx-auto px-4 text-center max-w-4xl relative z-10">
+      <h2 className="text-4xl md:text-7xl font-black mb-12 text-foreground tracking-tight leading-tight">
+        HAVE A HARD
+        <br />
+        <span className="text-destructive drop-shadow-[2px_2px_0px_hsl(var(--foreground))]">
+          PROBLEM
+        </span>
+        <br />
+        WORTH CROSSING?
       </h2>
       
       <a 
         href="https://www.linkedin.com/in/brentjsummers"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-destructive text-destructive-foreground px-8 py-4 text-xl font-bold border-4 border-foreground hover:bg-destructive/80 transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] inline-flex items-center"
+        className="bg-destructive text-destructive-foreground px-16 py-8 text-2xl font-black border-4 border-foreground hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-150 shadow-[12px_12px_0px_hsl(var(--foreground))] uppercase tracking-wide inline-flex items-center"
       >
-        Let's connect
+        LET'S CONNECT
       </a>
     </div>
   </section>
@@ -352,13 +455,13 @@ const ContactSection: React.FC = () => (
 // Main Leadership page component
 const LeadershipPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen">
       <SkipToContent />
       
       <main id="main-content">
         <HeroSection />
-        <BridgeModelSection />
-        <CredibilitySection />
+        <BridgeConstructionSection />
+        <ManifestoSection />
         <ContactSection />
       </main>
     </div>
