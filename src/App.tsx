@@ -13,6 +13,7 @@ import {
   SlotMachine,
   CaseStudyCard
 } from './components/DynamicComponents';
+import LeadershipPage from './components/LeadershipPage';
 import { LazyImage } from './components/LazyImage';
 
 interface CaseStudyCardProps {
@@ -582,6 +583,7 @@ export default function App() {
             <Route path="/speaking" element={<SpeakingMediaPage />} />
             <Route path="/speaking-media" element={<Navigate to="/speaking" replace />} />
             <Route path="/design-case-studies" element={<DesignCaseStudiesPage />} />
+            <Route path="/leadership" element={<LeadershipPage />} />
           </Routes>
         </main>
         <Footer />
