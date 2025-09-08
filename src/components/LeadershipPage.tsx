@@ -9,8 +9,8 @@ const principlesData = [
     condensed: "EMPATHY FUELS INNOVATION",
     fullText: "Understanding users, customers, and teammates isn't soft—it's the spark for progress.",
     color: "mustard",
-    bgColor: "hsl(45, 100%, 51%)", // #FFBA08
-    shadowColor: "hsl(45, 100%, 41%)",
+    bgColor: "hsl(43, 100%, 52%)", // Primary Mustard from design system
+    shadowColor: "hsl(43, 100%, 42%)",
     position: "left"
   },
   {
@@ -18,8 +18,8 @@ const principlesData = [
     condensed: "TRANSFORMATION MUST LAND",
     fullText: "Ideas matter when they shift reality. I make big bets tangible.",
     color: "hotpink",
-    bgColor: "hsl(323, 100%, 54%)", // #FF1392
-    shadowColor: "hsl(323, 100%, 44%)",
+    bgColor: "hsl(328, 87%, 54%)", // Accent Hot Pink from design system
+    shadowColor: "hsl(328, 87%, 44%)",
     position: "left-center"
   },
   {
@@ -27,7 +27,7 @@ const principlesData = [
     condensed: "DATA EARNS DECISIONS",
     fullText: "Gut sparks ideas. Evidence unlocks investment and trust.",
     color: "onyx",
-    bgColor: "hsl(0, 0%, 15%)", // #262626
+    bgColor: "hsl(0, 0%, 15%)", // Secondary Onyx from design system
     shadowColor: "hsl(0, 0%, 5%)",
     position: "center"
   },
@@ -36,8 +36,8 @@ const principlesData = [
     condensed: "COLLABORATION MULTIPLIES FORCE",
     fullText: "Silos kill momentum. I break them down.",
     color: "oxblood", 
-    bgColor: "hsl(1, 62%, 30%)", // #7A1E1C
-    shadowColor: "hsl(1, 62%, 20%)",
+    bgColor: "hsl(2, 66%, 29%)", // Destructive Oxblood from design system
+    shadowColor: "hsl(2, 66%, 19%)",
     position: "right-center"
   },
   {
@@ -45,8 +45,8 @@ const principlesData = [
     condensed: "PLAY THE LONG GAME",
     fullText: "Today's wins should compound into tomorrow's advantage.",
     color: "cobalt",
-    bgColor: "hsl(218, 100%, 58%)", // #2962FF  
-    shadowColor: "hsl(218, 100%, 48%)",
+    bgColor: "hsl(220, 100%, 59%)", // Focus Cobalt from design system  
+    shadowColor: "hsl(220, 100%, 49%)",
     position: "right"
   }
 ];
@@ -82,9 +82,9 @@ const HeroSection: React.FC = () => (
           LEADERSHIP THAT SPANS
         </span>
         <span className="block mt-4 drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
-          <span style={{ color: 'hsl(45, 100%, 51%)' }}>VISION</span>
+          <span style={{ color: 'hsl(43, 100%, 52%)' }}>VISION</span>
           <span className="text-background"> & </span>
-          <span style={{ color: 'hsl(218, 100%, 58%)' }}>EXECUTION</span>
+          <span style={{ color: 'hsl(220, 100%, 59%)' }}>EXECUTION</span>
         </span>
       </h1>
       
@@ -352,10 +352,10 @@ const BridgeConstructionSection: React.FC = () => {
             {/* Bridge span visualization */}
             <div className="relative mb-16 max-w-4xl mx-auto">
               <div className="flex justify-between items-center mb-12">
-                <div className="text-3xl font-black text-primary drop-shadow-[2px_2px_0px_hsl(var(--foreground))]">
+                <div className="text-3xl font-black drop-shadow-[2px_2px_0px_hsl(var(--foreground))]" style={{ color: 'hsl(43, 100%, 52%)' }}>
                   VISION
                 </div>
-                <div className="text-3xl font-black" style={{ color: 'hsl(218, 100%, 58%)', textShadow: '2px 2px 0px hsl(var(--foreground))' }}>
+                <div className="text-3xl font-black drop-shadow-[2px_2px_0px_hsl(var(--foreground))]" style={{ color: 'hsl(220, 100%, 59%)' }}>
                   EXECUTION
                 </div>
               </div>
@@ -365,11 +365,11 @@ const BridgeConstructionSection: React.FC = () => {
                 {/* Foundation anchors - solid colors, no gradient */}
                 <div 
                   className="absolute left-0 top-0 w-8 h-8 border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))]"
-                  style={{ backgroundColor: 'hsl(45, 100%, 51%)' }}
+                  style={{ backgroundColor: 'hsl(43, 100%, 52%)' }}
                 />
                 <div 
                   className="absolute right-0 top-0 w-8 h-8 border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))]"
-                  style={{ backgroundColor: 'hsl(218, 100%, 58%)' }}
+                  style={{ backgroundColor: 'hsl(220, 100%, 59%)' }}
                 />
                 
                 {/* Progressive gradient bridge deck - starts from zero, more yellow/blue */}
@@ -380,13 +380,13 @@ const BridgeConstructionSection: React.FC = () => {
                       width: `${Math.min(100, (activeBeam + 1) * 20)}%`,
                       transformOrigin: 'left center',
                       background: `linear-gradient(90deg, 
-                        hsl(45, 100%, 51%) 0%, 
-                        hsl(45, 100%, 55%) ${activeBeam >= 1 ? '15%' : '100%'}, 
-                        hsl(323, 100%, 54%) ${activeBeam >= 1 ? '35%' : '100%'}, 
+                        hsl(43, 100%, 52%) 0%, 
+                        hsl(43, 100%, 56%) ${activeBeam >= 1 ? '15%' : '100%'}, 
+                        hsl(328, 87%, 54%) ${activeBeam >= 1 ? '35%' : '100%'}, 
                         hsl(0, 0%, 15%) ${activeBeam >= 2 ? '50%' : '100%'}, 
-                        hsl(1, 62%, 30%) ${activeBeam >= 3 ? '65%' : '100%'}, 
-                        hsl(218, 100%, 55%) ${activeBeam >= 4 ? '85%' : '100%'}, 
-                        hsl(218, 100%, 58%) ${activeBeam >= 4 ? '100%' : '100%'})`
+                        hsl(2, 66%, 29%) ${activeBeam >= 3 ? '65%' : '100%'}, 
+                        hsl(220, 100%, 56%) ${activeBeam >= 4 ? '85%' : '100%'}, 
+                        hsl(220, 100%, 59%) ${activeBeam >= 4 ? '100%' : '100%'})`
                     }}
                   />
                 )}
