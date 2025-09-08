@@ -63,7 +63,7 @@ const SkipToContent: React.FC = () => (
 
 // Hero section component with aggressive Neo-brutalist design
 const HeroSection: React.FC = () => (
-  <section className="min-h-screen flex flex-col justify-center items-center px-4 bg-foreground relative overflow-hidden">
+  <section className="min-h-[80vh] flex flex-col justify-center items-center px-4 bg-foreground relative overflow-hidden">
     {/* Grid background pattern */}
     <div 
       className="absolute inset-0 opacity-10"
@@ -89,14 +89,6 @@ const HeroSection: React.FC = () => (
       <p className="text-xl md:text-3xl text-background font-bold mb-16 uppercase tracking-wide">
         Spotting trends and building bridges that unlock capability
       </p>
-      
-      <Link 
-        to="#bridge-construction"
-        className="inline-flex bg-accent text-accent-foreground px-12 py-6 text-xl font-black border-4 border-foreground hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-150 shadow-[8px_8px_0px_hsl(var(--foreground))] uppercase tracking-wide"
-        aria-label="Watch the bridge construction"
-      >
-        BUILD THE BRIDGE
-      </Link>
     </div>
   </section>
 );
