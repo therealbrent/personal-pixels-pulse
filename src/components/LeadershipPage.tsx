@@ -374,7 +374,7 @@ const BridgeConstructionSection: React.FC = () => {
               
               {/* Left-to-right progressive bridge span */}
               <div className="relative w-full h-3 mb-8">
-                {/* Foundation anchors - colored to match Vision/Execution */}
+                {/* Foundation anchors - solid colors, no gradient */}
                 <div 
                   className="absolute left-0 top-0 w-8 h-8 border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))]"
                   style={{ backgroundColor: 'hsl(45, 100%, 51%)' }}
@@ -384,7 +384,7 @@ const BridgeConstructionSection: React.FC = () => {
                   style={{ backgroundColor: 'hsl(218, 100%, 58%)' }}
                 />
                 
-                {/* Progressive gradient bridge deck - starts from zero */}
+                {/* Progressive gradient bridge deck - starts from zero, more yellow/blue */}
                 {activeBeam >= 0 && (
                   <div 
                     className="h-full border-4 border-foreground shadow-[0_8px_0px_hsl(var(--foreground))] transition-all duration-1000 ease-out origin-left"
@@ -393,9 +393,11 @@ const BridgeConstructionSection: React.FC = () => {
                       transformOrigin: 'left center',
                       background: `linear-gradient(90deg, 
                         hsl(45, 100%, 51%) 0%, 
-                        hsl(323, 100%, 54%) ${activeBeam >= 1 ? '25%' : '100%'}, 
+                        hsl(45, 100%, 55%) ${activeBeam >= 1 ? '15%' : '100%'}, 
+                        hsl(323, 100%, 54%) ${activeBeam >= 1 ? '35%' : '100%'}, 
                         hsl(0, 0%, 15%) ${activeBeam >= 2 ? '50%' : '100%'}, 
-                        hsl(1, 62%, 30%) ${activeBeam >= 3 ? '75%' : '100%'}, 
+                        hsl(1, 62%, 30%) ${activeBeam >= 3 ? '65%' : '100%'}, 
+                        hsl(218, 100%, 55%) ${activeBeam >= 4 ? '85%' : '100%'}, 
                         hsl(218, 100%, 58%) ${activeBeam >= 4 ? '100%' : '100%'})`
                     }}
                   />
@@ -434,44 +436,42 @@ const BridgeConstructionSection: React.FC = () => {
             ))}
           </div>
           
-          {/* Interactive foundation block - appears after bridge completion */}
-          {activeBeam >= principlesData.length - 1 && (
-            <div className="flex justify-center mt-8">
+          {/* Active principle display - now interactive foundation */}
+          {activeBeam >= 0 && activeBeam < principlesData.length && (
+            <div className="text-center mt-16">
               <div 
-                className="w-full max-w-4xl h-24 border-4 border-foreground shadow-[8px_8px_0px_hsl(var(--foreground))] transition-all duration-500 flex items-center justify-center"
+                className="border-4 border-foreground p-8 shadow-[8px_8px_0px_hsl(var(--foreground))] max-w-2xl mx-auto transition-all duration-500"
                 style={{
-                  backgroundColor: expandedBeam !== null 
+                  backgroundColor: activeBeam >= principlesData.length - 1 && expandedBeam !== null 
                     ? principlesData[expandedBeam].bgColor 
                     : 'hsl(0, 0%, 50%)'
                 }}
               >
-                <div className="text-center">
-                  <h4 className="text-2xl font-black text-white mb-2 uppercase tracking-wide">
-                    {expandedBeam !== null 
-                      ? `FOUNDATION: ${principlesData[expandedBeam].condensed}`
-                      : 'FOUNDATION: CLICK A PILLAR TO EXPLORE'
-                    }
-                  </h4>
-                  {expandedBeam !== null && (
-                    <p className="text-sm font-bold text-white opacity-90">
+                {activeBeam >= principlesData.length - 1 && expandedBeam !== null ? (
+                  <div>
+                    <h3 className="text-2xl md:text-4xl font-black mb-4 text-white tracking-tight">
+                      FOUNDATION: {principlesData[expandedBeam].condensed}
+                    </h3>
+                    <p className="text-lg md:text-xl font-bold text-white">
                       {principlesData[expandedBeam].fullText}
                     </p>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
-          
-          {/* Active principle display */}
-          {activeBeam >= 0 && activeBeam < principlesData.length && (
-            <div className="text-center mt-16">
-              <div className="bg-background border-4 border-foreground p-8 shadow-[8px_8px_0px_hsl(var(--foreground))] max-w-2xl mx-auto">
-                <h3 className="text-2xl md:text-4xl font-black mb-4 text-foreground tracking-tight">
-                  {principlesData[activeBeam].title.toUpperCase()}
-                </h3>
-                <p className="text-lg md:text-xl font-bold text-foreground">
-                  {principlesData[activeBeam].fullText}
-                </p>
+                  </div>
+                ) : activeBeam >= principlesData.length - 1 ? (
+                  <div>
+                    <h3 className="text-2xl md:text-4xl font-black mb-4 text-white tracking-tight">
+                      FOUNDATION: CLICK A PILLAR TO EXPLORE
+                    </h3>
+                  </div>
+                ) : (
+                  <div>
+                    <h3 className="text-2xl md:text-4xl font-black mb-4 text-foreground tracking-tight">
+                      {principlesData[activeBeam].title.toUpperCase()}
+                    </h3>
+                    <p className="text-lg md:text-xl font-bold text-foreground">
+                      {principlesData[activeBeam].fullText}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           )}
