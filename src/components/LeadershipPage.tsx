@@ -185,22 +185,20 @@ const StructuralBeam: React.FC<StructuralBeamProps> = ({
             isActive ? "opacity-100 delay-700" : "opacity-0"
           )}
         >
-          <div className="text-sm font-black mb-4 text-white tracking-widest">
-            {String(index + 1).padStart(2, '0')}
-          </div>
-          
-          {/* Always visible headline */}
+          {/* Always visible headline - no obstructing number */}
           <h3 className="text-base font-black leading-tight text-white transform -rotate-90 whitespace-nowrap uppercase tracking-tight">
             {condensed}
           </h3>
-          
-          {/* Supporting copy revealed on interaction */}
-          {isExpanded && (
-            <div className="absolute bottom-2 left-2 right-2 text-xs text-white font-bold opacity-90 leading-tight transform rotate-90 origin-center">
-              {fullText}
-            </div>
-          )}
         </div>
+        
+        {/* Expanded detail text - appears as overlay card */}
+        {isExpanded && (
+          <div className="absolute -top-4 left-full ml-4 bg-background border-4 border-foreground p-4 shadow-[8px_8px_0px_hsl(var(--foreground))] z-50 w-64">
+            <p className="text-sm font-bold text-foreground leading-tight">
+              {fullText}
+            </p>
+          </div>
+        )}
         
         {/* Glow effect on hover */}
         <div 
@@ -219,7 +217,7 @@ const StructuralBeam: React.FC<StructuralBeamProps> = ({
 
 // Bridge construction section component
 const BridgeConstructionSection: React.FC = () => {
-  const [activeBeam, setActiveBeam] = useState(0);
+  const [activeBeam, setActiveBeam] = useState(-1); // Start with no beams active
   const [expandedBeam, setExpandedBeam] = useState<number | null>(null);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [backgroundMode, setBackgroundMode] = useState('default');
@@ -242,13 +240,20 @@ const BridgeConstructionSection: React.FC = () => {
 
       const rect = section.getBoundingClientRect();
       const sectionHeight = rect.height;
-      const scrollProgress = Math.max(0, Math.min(1, -rect.top / (sectionHeight - window.innerHeight)));
-      const newActiveBeam = Math.floor(scrollProgress * principlesData.length);
+      const viewportHeight = window.innerHeight;
       
-      setActiveBeam(Math.min(newActiveBeam, principlesData.length - 1));
+      // Start animation when section is 50% visible, ensure first pillar animates in
+      const scrollProgress = Math.max(0, Math.min(1, 
+        (-rect.top + viewportHeight * 0.5) / (sectionHeight - viewportHeight)
+      ));
+      
+      // Map progress to beam index, starting from -1 so first beam animates in
+      const newActiveBeam = Math.floor(scrollProgress * (principlesData.length + 1)) - 1;
+      
+      setActiveBeam(Math.max(-1, Math.min(newActiveBeam, principlesData.length - 1)));
       
       // Set background color mode based on active beam
-      const currentPrinciple = principlesData[newActiveBeam] || principlesData[0];
+      const currentPrinciple = principlesData[Math.max(0, newActiveBeam)] || principlesData[0];
       setBackgroundMode(currentPrinciple.color);
     };
 
@@ -359,10 +364,10 @@ const BridgeConstructionSection: React.FC = () => {
             {/* Bridge span visualization */}
             <div className="relative mb-16 max-w-4xl mx-auto">
               <div className="flex justify-between items-center mb-12">
-                <div className="text-3xl font-black text-background drop-shadow-[2px_2px_0px_hsl(var(--foreground))]">
+                <div className="text-3xl font-black text-primary drop-shadow-[2px_2px_0px_hsl(var(--foreground))]">
                   VISION
                 </div>
-                <div className="text-3xl font-black text-background drop-shadow-[2px_2px_0px_hsl(var(--foreground))]">
+                <div className="text-3xl font-black" style={{ color: 'hsl(218, 100%, 58%)', textShadow: '2px 2px 0px hsl(var(--foreground))' }}>
                   EXECUTION
                 </div>
               </div>
@@ -377,7 +382,7 @@ const BridgeConstructionSection: React.FC = () => {
                 <div 
                   className="h-full border-4 border-foreground shadow-[0_8px_0px_hsl(var(--foreground))] transition-all duration-1000 ease-out origin-left"
                   style={{
-                    width: `${Math.min(100, (activeBeam + 1) * 20)}%`,
+                    width: `${Math.max(0, Math.min(100, (activeBeam + 2) * 20))}%`,
                     transformOrigin: 'left center',
                     background: `linear-gradient(90deg, 
                       hsl(45, 100%, 51%) 0%, 
@@ -417,14 +422,14 @@ const BridgeConstructionSection: React.FC = () => {
           </div>
           
           {/* Active principle display */}
-          {activeBeam < principlesData.length && (
+          {activeBeam >= 0 && activeBeam < principlesData.length && (
             <div className="text-center mt-16">
               <div className="bg-background border-4 border-foreground p-8 shadow-[8px_8px_0px_hsl(var(--foreground))] max-w-2xl mx-auto">
                 <h3 className="text-2xl md:text-4xl font-black mb-4 text-foreground tracking-tight">
                   {principlesData[activeBeam].title.toUpperCase()}
                 </h3>
                 <p className="text-lg md:text-xl font-bold text-foreground">
-                  {principlesData[activeBeam].title}
+                  {principlesData[activeBeam].fullText}
                 </p>
               </div>
             </div>
