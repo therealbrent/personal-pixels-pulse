@@ -432,7 +432,7 @@ const BridgeConstructionSection: React.FC = () => {
                 style={{
                   backgroundColor: activeBeam >= principlesData.length - 1 && expandedBeam !== null 
                     ? principlesData[expandedBeam].bgColor 
-                    : 'hsl(0, 0%, 50%)'
+                    : activeBeam >= 0 ? principlesData[activeBeam].bgColor : 'hsl(0, 0%, 50%)'
                 }}
               >
                 {activeBeam >= principlesData.length - 1 && expandedBeam !== null ? (
