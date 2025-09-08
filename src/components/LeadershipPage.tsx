@@ -344,9 +344,9 @@ const BridgeConstructionSection: React.FC = () => {
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-8xl font-black mb-8 text-background tracking-tight drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
-              WHERE VISION
+              PRINCIPLES THAT
               <br />
-              CARRIES WEIGHT
+              CARRY WEIGHT
             </h2>
             
             {/* Bridge span visualization */}
