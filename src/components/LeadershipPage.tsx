@@ -78,8 +78,13 @@ const HeroSection: React.FC = () => (
     
     <div className="text-center max-w-6xl mx-auto relative z-10">
       <h1 className="text-5xl md:text-8xl lg:text-9xl font-black mb-8 leading-[0.85] tracking-tight">
-        <span className="block text-accent drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
-          LEADERSHIP THE SPANS VISION & EXECUTION
+        <span className="block text-background drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
+          LEADERSHIP THAT SPANS
+        </span>
+        <span className="block mt-4 drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
+          <span style={{ color: 'hsl(45, 100%, 51%)' }}>VISION</span>
+          <span className="text-background"> & </span>
+          <span style={{ color: 'hsl(218, 100%, 58%)' }}>EXECUTION</span>
         </span>
       </h1>
       
