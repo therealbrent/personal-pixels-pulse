@@ -374,24 +374,32 @@ const BridgeConstructionSection: React.FC = () => {
               
               {/* Left-to-right progressive bridge span */}
               <div className="relative w-full h-3 mb-8">
-                {/* Foundation anchors */}
-                <div className="absolute left-0 top-0 w-8 h-8 bg-background border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))]" />
-                <div className="absolute right-0 top-0 w-8 h-8 bg-background border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))]" />
-                
-                {/* Progressive gradient bridge deck */}
+                {/* Foundation anchors - colored to match Vision/Execution */}
                 <div 
-                  className="h-full border-4 border-foreground shadow-[0_8px_0px_hsl(var(--foreground))] transition-all duration-1000 ease-out origin-left"
-                  style={{
-                    width: `${Math.max(0, Math.min(100, (activeBeam + 2) * 20))}%`,
-                    transformOrigin: 'left center',
-                    background: `linear-gradient(90deg, 
-                      hsl(45, 100%, 51%) 0%, 
-                      hsl(323, 100%, 54%) ${activeBeam >= 1 ? '25%' : '100%'}, 
-                      hsl(0, 0%, 15%) ${activeBeam >= 2 ? '50%' : '100%'}, 
-                      hsl(1, 62%, 30%) ${activeBeam >= 3 ? '75%' : '100%'}, 
-                      hsl(218, 100%, 58%) ${activeBeam >= 4 ? '100%' : '100%'})`
-                  }}
+                  className="absolute left-0 top-0 w-8 h-8 border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))]"
+                  style={{ backgroundColor: 'hsl(45, 100%, 51%)' }}
                 />
+                <div 
+                  className="absolute right-0 top-0 w-8 h-8 border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))]"
+                  style={{ backgroundColor: 'hsl(218, 100%, 58%)' }}
+                />
+                
+                {/* Progressive gradient bridge deck - starts from zero */}
+                {activeBeam >= 0 && (
+                  <div 
+                    className="h-full border-4 border-foreground shadow-[0_8px_0px_hsl(var(--foreground))] transition-all duration-1000 ease-out origin-left"
+                    style={{
+                      width: `${Math.min(100, (activeBeam + 1) * 20)}%`,
+                      transformOrigin: 'left center',
+                      background: `linear-gradient(90deg, 
+                        hsl(45, 100%, 51%) 0%, 
+                        hsl(323, 100%, 54%) ${activeBeam >= 1 ? '25%' : '100%'}, 
+                        hsl(0, 0%, 15%) ${activeBeam >= 2 ? '50%' : '100%'}, 
+                        hsl(1, 62%, 30%) ${activeBeam >= 3 ? '75%' : '100%'}, 
+                        hsl(218, 100%, 58%) ${activeBeam >= 4 ? '100%' : '100%'})`
+                    }}
+                  />
+                )}
                 
                 {/* Completion stabilizing effect */}
                 {activeBeam >= principlesData.length - 1 && (
@@ -412,7 +420,12 @@ const BridgeConstructionSection: React.FC = () => {
                 index={index}
                 isActive={index <= activeBeam}
                 isExpanded={expandedBeam === index}
-                onToggle={() => toggleBeam(index)}
+                onToggle={() => {
+                  // Only allow interaction after bridge is complete
+                  if (activeBeam >= principlesData.length - 1) {
+                    toggleBeam(index);
+                  }
+                }}
                 color={principle.color}
                 bgColor={principle.bgColor}
                 shadowColor={principle.shadowColor}
@@ -420,6 +433,34 @@ const BridgeConstructionSection: React.FC = () => {
               />
             ))}
           </div>
+          
+          {/* Interactive foundation block - appears after bridge completion */}
+          {activeBeam >= principlesData.length - 1 && (
+            <div className="flex justify-center mt-8">
+              <div 
+                className="w-full max-w-4xl h-24 border-4 border-foreground shadow-[8px_8px_0px_hsl(var(--foreground))] transition-all duration-500 flex items-center justify-center"
+                style={{
+                  backgroundColor: expandedBeam !== null 
+                    ? principlesData[expandedBeam].bgColor 
+                    : 'hsl(0, 0%, 50%)'
+                }}
+              >
+                <div className="text-center">
+                  <h4 className="text-2xl font-black text-white mb-2 uppercase tracking-wide">
+                    {expandedBeam !== null 
+                      ? `FOUNDATION: ${principlesData[expandedBeam].condensed}`
+                      : 'FOUNDATION: CLICK A PILLAR TO EXPLORE'
+                    }
+                  </h4>
+                  {expandedBeam !== null && (
+                    <p className="text-sm font-bold text-white opacity-90">
+                      {principlesData[expandedBeam].fullText}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
           
           {/* Active principle display */}
           {activeBeam >= 0 && activeBeam < principlesData.length && (
