@@ -79,16 +79,7 @@ const HeroSection: React.FC = () => (
     <div className="text-center max-w-6xl mx-auto relative z-10">
       <h1 className="text-5xl md:text-8xl lg:text-9xl font-black mb-8 leading-[0.85] tracking-tight">
         <span className="block text-accent drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
-          I LEAD AT THE
-        </span>
-        <span className="block text-primary drop-shadow-[4px_4px_0px_hsl(var(--foreground))] mt-4">
-          INTERSECTION
-        </span>
-        <span className="block text-background drop-shadow-[4px_4px_0px_hsl(var(--accent))] mt-4">
-          OF VISION &
-        </span>
-        <span className="block text-background drop-shadow-[4px_4px_0px_hsl(var(--destructive))] mt-4">
-          EXECUTION
+          LEADERSHIP THE SPANS VISION & EXECUTION
         </span>
       </h1>
       
