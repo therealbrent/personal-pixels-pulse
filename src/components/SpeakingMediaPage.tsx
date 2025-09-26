@@ -85,7 +85,7 @@ export default function SpeakingMediaPage() {
                 >
                   <div className="pr-8">
                     <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
-                      Happier Humans, Better Results
+                      Happier Humans, Better Business
                     </h4>
                     <p className="text-xs font-bold text-foreground/60">AI Leaders Forum • 2025<br />San Diego Design Week • 2025</p>
                   </div>
