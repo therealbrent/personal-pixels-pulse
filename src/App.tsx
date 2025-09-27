@@ -299,7 +299,7 @@ function HomePage() {
                         <li><strong>I make transformation tangible.</strong> Big bets only matter when they land in the real world.</li>
                         <li><strong>I let data guide me.</strong> Gut instincts spark ideas, but evidence earns decisions (and investment).</li>
                         <li><strong>I break silos.</strong> Collaboration isn't optional; it's a force-multiplier.</li>
-                        <li><strong>I play the long game, balancing today's wins with tomorrow's advantage.</strong></li>
+                        <li><strong>I play the long game.</strong> Balancing today's wins with tomorrow's advantage.</li>
                       </ul>
                     </div>
 
