@@ -163,56 +163,56 @@ export default function SpeakingMediaPage() {
                 PANELS
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-                <div className="bg-accent border-2 border-foreground shadow-neo-sm p-4">
+                <div className="bg-accent border-2 border-foreground shadow-neo-sm p-4 min-h-[100px] flex flex-col justify-between">
                   <h4 className="text-sm md:text-base font-black mb-1 text-accent-foreground line-clamp-2">
                     The Power of Brand
                   </h4>
                   <p className="text-xs font-bold text-accent-foreground/60">Moderator • San Diego Design Week • 2025</p>
                 </div>
 
-                <div className="bg-secondary border-2 border-foreground shadow-neo-sm p-4">
+                <div className="bg-secondary border-2 border-foreground shadow-neo-sm p-4 min-h-[100px] flex flex-col justify-between">
                   <h4 className="text-sm md:text-base font-black mb-1 text-secondary-foreground line-clamp-2">
                     How AI is Shaping Creative Futures
                   </h4>
                   <p className="text-xs font-bold text-secondary-foreground/60">AI Create • 2025</p>
                 </div>
 
-                <div className="bg-destructive border-2 border-foreground shadow-neo-sm p-4">
+                <div className="bg-destructive border-2 border-foreground shadow-neo-sm p-4 min-h-[100px] flex flex-col justify-between">
                   <h4 className="text-sm md:text-base font-black mb-1 text-destructive-foreground line-clamp-2">
                     UC Irvine presents Exploring Design & Ethics
                   </h4>
                   <p className="text-xs font-bold text-destructive-foreground/60">Moderator • Good Cause • 2022</p>
                 </div>
 
-                <div className="bg-primary border-2 border-foreground shadow-neo-sm p-4">
+                <div className="bg-primary border-2 border-foreground shadow-neo-sm p-4 min-h-[100px] flex flex-col justify-between">
                   <h4 className="text-sm md:text-base font-black mb-1 text-primary-foreground line-clamp-2">
                     General Motors presents Exploring Diversity + Design
                   </h4>
                   <p className="text-xs font-bold text-primary-foreground/60">Moderator • Good Cause • 2021</p>
                 </div>
 
-                <div className="bg-accent border-2 border-foreground shadow-neo-sm p-4">
+                <div className="bg-accent border-2 border-foreground shadow-neo-sm p-4 min-h-[100px] flex flex-col justify-between">
                   <h4 className="text-sm md:text-base font-black mb-1 text-accent-foreground line-clamp-2">
                     Exploring Data Privacy & Artificial Intelligence in UX
                   </h4>
                   <p className="text-xs font-bold text-accent-foreground/60">Moderator • SDXD • 2020</p>
                 </div>
 
-                <div className="bg-secondary border-2 border-foreground shadow-neo-sm p-4">
+                <div className="bg-secondary border-2 border-foreground shadow-neo-sm p-4 min-h-[100px] flex flex-col justify-between">
                   <h4 className="text-sm md:text-base font-black mb-1 text-secondary-foreground line-clamp-2">
                     Interview Olympics
                   </h4>
                   <p className="text-xs font-bold text-secondary-foreground/60">SDXD • 2019</p>
                 </div>
 
-                <div className="bg-destructive border-2 border-foreground shadow-neo-sm p-4">
+                <div className="bg-destructive border-2 border-foreground shadow-neo-sm p-4 min-h-[100px] flex flex-col justify-between">
                   <h4 className="text-sm md:text-base font-black mb-1 text-destructive-foreground line-clamp-2">
                     Strategic Interviews: The Hiring Manager's Perspective
                   </h4>
                   <p className="text-xs font-bold text-destructive-foreground/60">SDXD • 2019</p>
                 </div>
 
-                <div className="bg-primary border-2 border-foreground shadow-neo-sm p-4">
+                <div className="bg-primary border-2 border-foreground shadow-neo-sm p-4 min-h-[100px] flex flex-col justify-between">
                   <h4 className="text-sm md:text-base font-black mb-1 text-primary-foreground line-clamp-2">
                     How to Get Hired for a UX Design Role
                   </h4>
