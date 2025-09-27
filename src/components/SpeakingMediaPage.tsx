@@ -28,7 +28,7 @@ export default function SpeakingMediaPage() {
             SPEAKING
           </h1>
           <p className="text-xl md:text-2xl font-bold text-foreground/90 max-w-4xl mx-auto leading-relaxed">
-            I don't give speeches because transformation isn't a PowerPoint deck you can download. It's messy. It's personal. It's experienced. I share stories, frameworks and lessons learned from two decades of leading change.
+            I share stories, strategic frameworks and lessons learned from two decades of leading change.
           </p>
         </header>
 
