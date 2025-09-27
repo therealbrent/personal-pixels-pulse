@@ -163,6 +163,20 @@ export default function SpeakingMediaPage() {
                 PANELS
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="bg-accent border-2 border-foreground shadow-neo-sm p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-accent-foreground line-clamp-2">
+                    The Power of Brand
+                  </h4>
+                  <p className="text-xs font-bold text-accent-foreground/60">Moderator • San Diego Design Week • 2025</p>
+                </div>
+
+                <div className="bg-secondary border-2 border-foreground shadow-neo-sm p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-secondary-foreground line-clamp-2">
+                    How AI is Shaping Creative Futures
+                  </h4>
+                  <p className="text-xs font-bold text-secondary-foreground/60">AI Create • 2025</p>
+                </div>
+
                 <div className="bg-destructive border-2 border-foreground shadow-neo-sm p-4">
                   <h4 className="text-sm md:text-base font-black mb-1 text-destructive-foreground line-clamp-2">
                     UC Irvine presents Exploring Design & Ethics
