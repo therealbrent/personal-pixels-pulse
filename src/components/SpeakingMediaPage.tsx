@@ -67,71 +67,71 @@ export default function SpeakingMediaPage() {
                 {/* Conference Talk 1 */}
                 <div 
                   onClick={() => window.open('https://www.youtube.com/watch?v=eEbuoK5DS30', '_blank')}
-                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs relative"
+                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs"
                 >
-                  <div className="pr-8">
-                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
-                      Beyond buzzwords: Real AI, real marketing, real results
-                    </h4>
+                  <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
+                    Beyond buzzwords: Real AI, real marketing, real results
+                  </h4>
+                  <div className="flex items-center justify-between">
                     <p className="text-xs font-bold text-foreground/60">Webit • 2025</p>
+                    <Icon name="play" size={16} className="text-primary group-hover:text-accent transition-all duration-200 flex-shrink-0" />
                   </div>
-                  <Icon name="play" size={16} className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 2 - Updated with multiple conferences */}
                 <div 
                   onClick={() => window.open('https://youtu.be/ApLKfzjaN3Y', '_blank')}
-                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs relative"
+                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs"
                 >
-                  <div className="pr-8">
-                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
-                      Happier Humans, Better Business
-                    </h4>
+                  <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
+                    Happier Humans, Better Business
+                  </h4>
+                  <div className="flex items-center justify-between">
                     <p className="text-xs font-bold text-foreground/60">AI Leaders Forum • 2025<br />San Diego Design Week • 2025</p>
+                    <Icon name="play" size={16} className="text-primary group-hover:text-accent transition-all duration-200 flex-shrink-0" />
                   </div>
-                  <Icon name="play" size={16} className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 3 */}
                 <div 
                   onClick={() => window.open('https://youtu.be/d3A-gHkwiBE?si=ecXBZYUpq_StpVs2&t=1', '_blank')}
-                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs relative"
+                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs"
                 >
-                  <div className="pr-8">
-                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
-                      Five Tips to Avoid Generative AI Buyer's Remorse
-                    </h4>
+                  <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
+                    Five Tips to Avoid Generative AI Buyer's Remorse
+                  </h4>
+                  <div className="flex items-center justify-between">
                     <p className="text-xs font-bold text-foreground/60">AI x Marketing Summit • 2025</p>
+                    <Icon name="play" size={16} className="text-primary group-hover:text-accent transition-all duration-200 flex-shrink-0" />
                   </div>
-                  <Icon name="play" size={16} className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" />
                 </div>
 
                 {/* Conference Talk 4 */}
                 <div 
                   onClick={() => window.open('https://www.youtube.com/watch?v=GRdx9R2B7iQ&t=1s', '_blank')}
-                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs relative"
+                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs"
                 >
-                  <div className="pr-8">
-                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
-                      Use Science to Write Better Copy
-                    </h4>
+                  <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
+                    Use Science to Write Better Copy
+                  </h4>
+                  <div className="flex items-center justify-between">
                     <p className="text-xs font-bold text-foreground/60">Product-Led Growth Conference • 2020</p>
+                    <Icon name="play" size={16} className="text-primary group-hover:text-accent transition-all duration-200 flex-shrink-0" />
                   </div>
-                  <Icon name="play" size={16} className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" />
                 </div>
 
                 {/* Consolidated UX Flywheel Talk */}
                 <div 
                   onClick={() => window.open('https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp', '_blank')}
-                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs relative"
+                  className="group bg-background border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs"
                 >
-                  <div className="pr-8">
-                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
-                      The UX Flywheel
-                    </h4>
+                  <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
+                    The UX Flywheel
+                  </h4>
+                  <div className="flex items-center justify-between">
                     <p className="text-xs font-bold text-foreground/60">Convey UX • 2020<br />San Diego Digital Designers • 2020<br />MarcomCentral User Conference • 2020</p>
+                    <Icon name="play" size={16} className="text-primary group-hover:text-accent transition-all duration-200 flex-shrink-0" />
                   </div>
-                  <Icon name="play" size={16} className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" />
                 </div>
               </div>
             </div>
@@ -144,15 +144,15 @@ export default function SpeakingMediaPage() {
               <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-3">
                 <div 
                   onClick={() => window.open('https://youtu.be/s827NVsQXS4?si=8JP9q_-fhSDMs_8_', '_blank')}
-                  className="group bg-secondary border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs relative"
+                  className="group bg-secondary border-2 border-foreground shadow-neo-sm p-4 cursor-pointer transition-all duration-200 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs"
                 >
-                  <div className="pr-8">
-                    <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
-                      Balancing Quantitative and Qualitative Perspectives in UX Strategy
-                    </h4>
+                  <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
+                    Balancing Quantitative and Qualitative Perspectives in UX Strategy
+                  </h4>
+                  <div className="flex items-center justify-between">
                     <p className="text-xs font-bold text-secondary-foreground/60">Convey UX • 2020</p>
+                    <Icon name="play" size={16} className="text-primary group-hover:text-accent transition-all duration-200 flex-shrink-0" />
                   </div>
-                  <Icon name="play" size={16} className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" />
                 </div>
               </div>
             </div>
