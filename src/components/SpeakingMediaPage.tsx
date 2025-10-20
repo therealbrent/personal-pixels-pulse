@@ -218,6 +218,13 @@ export default function SpeakingMediaPage() {
                   </h4>
                   <p className="text-xs font-bold text-primary-foreground/60">Moderator • UCSD • 2015</p>
                 </div>
+
+                <div className="bg-accent border-2 border-foreground shadow-neo-sm p-4 min-h-[100px] flex flex-col justify-between">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-accent-foreground line-clamp-2">
+                    Tangy Twists and Pipeline Wins: Expert Insights with a Sour Kick
+                  </h4>
+                  <p className="text-xs font-bold text-accent-foreground/60">6sense Breakthrough • 2025</p>
+                </div>
               </div>
             </div>
           </div>
