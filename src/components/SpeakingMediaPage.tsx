@@ -300,6 +300,27 @@ export default function SpeakingMediaPage() {
               </span>
             </a>
 
+            {/* AI DATA PRESS */}
+            <a 
+              href="https://www.aidatapress.com/news/cloud-on-device-ai-edge-brent-summers-qualcomm-technologies"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block border-6 border-foreground bg-background p-8 shadow-neo-md hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-neo-sm transition-all duration-200"
+            >
+              <div className="mb-4">
+                <span className="text-sm font-black text-foreground/60 tracking-wider">AI DATA PRESS</span>
+              </div>
+              <h4 className="font-black mb-6 text-primary group-hover:text-accent text-xl leading-tight transition-colors">
+                From Cloud to Device, Qualcomm Exec Explains Why AI Business Models Are Coming Down to Earth
+              </h4>
+              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-accent pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
+                Whenever latency matters, the edge is usually the better choice. If the data is sensitive or you don't want it traveling through the cloud, the edge is the right place for it. That is where you can ensure not just security but true privacy.
+              </blockquote>
+              <span className="text-primary group-hover:text-accent font-bold underline transition-colors">
+                Read Article
+              </span>
+            </a>
+
             {/* UX Magazine */}
             <a 
               href="https://uxmag.com/articles/revisiting-proto-personas-for-executive-alignment"
