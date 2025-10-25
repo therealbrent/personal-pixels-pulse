@@ -341,6 +341,27 @@ export default function SpeakingMediaPage() {
                 Read Article
               </span>
             </a>
+
+            {/* UserTesting */}
+            <a 
+              href="https://www.usertesting.com/blog/ux-investment-infographic"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block border-6 border-foreground bg-background p-8 shadow-neo-md hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-neo-sm transition-all duration-200"
+            >
+              <div className="mb-4">
+                <span className="text-sm font-black text-foreground/60 tracking-wider">USERTESTING</span>
+              </div>
+              <h4 className="font-black mb-6 text-primary group-hover:text-accent text-xl leading-tight transition-colors">
+                Is User Experience worth the investment?
+              </h4>
+              <blockquote className="mb-6 border-l-4 border-primary group-hover:border-accent pl-6 italic text-foreground/80 text-lg leading-relaxed transition-colors">
+                Today, more than ever, customers are demanding delightful experiences that are easy to use and anticipate their needs.
+              </blockquote>
+              <span className="text-primary group-hover:text-accent font-bold underline transition-colors">
+                Read Article
+              </span>
+            </a>
           </div>
         </section>
       </main>
