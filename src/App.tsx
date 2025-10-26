@@ -15,6 +15,7 @@ import {
 } from './components/DynamicComponents';
 import LeadershipPage from './components/LeadershipPage';
 import { LazyImage } from './components/LazyImage';
+import SEO from './components/SEO';
 
 interface CaseStudyCardProps {
   title: string;
@@ -38,6 +39,14 @@ function HomePage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO 
+        title="Brent Summers, AI-Powered Marketing Leader & Strategist"
+        description="Transformational leader combining strategic vision, technical implementation, and behavior change."
+        ogTitle="Meet Brent Summers: AI-Powered Marketing Leader, Leveraging Ge"
+        ogDescription="I'm here to transform how enterprise marketing teams plan campaigns, organize teams, create content, and grow skills."
+        ogImage="/og-images/home.png"
+        canonicalUrl="/"
+      />
 
       {/* Hero Section */}
       <header id="home" className="h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10 px-4">

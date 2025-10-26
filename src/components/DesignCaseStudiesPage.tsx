@@ -4,6 +4,7 @@ import { Icon } from './ui/icon';
 import { ExternalLink } from './ui/ExternalLink';
 import { MediaCard } from './ui/MediaCard';
 import { LazyImage } from './LazyImage';
+import SEO from './SEO';
 
 // Import images directly from lovable-uploads
 const adventureImage = '/lovable-uploads/aedf8717-6d9f-440a-8bce-7ded3c64cbca.png';
@@ -17,6 +18,15 @@ const blinkTilesImage = '/lovable-uploads/67c141a7-043c-48a7-bd50-4a7ba6ff4ad5.p
 export default function DesignCaseStudiesPage() {
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <SEO 
+        title="Design Case Studies | Marketing + UX Strategy by Brent Summers"
+        description="Communicating the value of design is a unique challenge. Here's how I did it — thrice!"
+        ogTitle="Three Agencies. Three Archives. Three Angles."
+        ogDescription="Curious about communicating the value of design? Get inspired by these case studies."
+        ogImage="/og-images/design-case-studies.png"
+        canonicalUrl="/design-case-studies"
+      />
+      
       {/* Enhanced Fragmented Grid Background - Simplified for mobile */}
       <div className="fixed inset-0 opacity-[0.08] pointer-events-none z-0 hidden md:block" aria-hidden="true">
         {/* Main Layered Grid Pattern */}

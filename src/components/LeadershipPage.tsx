@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import SEO from './SEO';
 
 // Leadership principles data with left-to-right progression
 const principlesData = [
@@ -552,6 +553,15 @@ const ContactSection: React.FC = () => (
 const LeadershipPage: React.FC = () => {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Leadership Principles | Brent Summers"
+        description="Explore leadership principles for bridging vision and execution through empathy, data, and long-term transformation."
+        ogTitle="Leadership That Spans Vision + Execution"
+        ogDescription="Spotting trends and building bridges that unlock capability"
+        ogImage="/og-images/leadership.png"
+        canonicalUrl="/leadership"
+      />
+      
       <SkipToContent />
       
       <main id="main-content">

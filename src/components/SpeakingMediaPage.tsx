@@ -4,22 +4,19 @@ import { ExternalLink } from './ui/ExternalLink';
 import { MediaCard } from './ui/MediaCard';
 import { Icon } from './ui/icon';
 import BiographyHeadshot from './BiographyHeadshot';
+import SEO from './SEO';
 
 export default function SpeakingMediaPage() {
-
-  useEffect(() => {
-    document.title = 'Speaking - Brent Summers';
-    
-    // SEO meta tags
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional speaking press kit. Brent Summers delivers keynotes on AI transformation, marketing innovation, and UX strategy for global conferences and events.');
-    }
-  }, []);
-
-
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO 
+        title="Brent Summers, Keynote Speaker | Bio + Headshot + Media Archive"
+        description="Explore presentations, podcasts, panels, and interviews with Brent Summers"
+        ogTitle="Book Brent for Your Next Event"
+        ogDescription="I share stories, strategic frameworks, and lessons from two decades of leading change."
+        ogImage="/og-images/speaking.png"
+        canonicalUrl="/speaking"
+      />
 
       <main id="main-content" className="container mx-auto px-4 py-12 lg:py-20">
         {/* Hero Section - Neo-Brutalist */}
