@@ -40,6 +40,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Generate static pages for SEO
+        run: node scripts/generate-static-pages.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
