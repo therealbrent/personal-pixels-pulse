@@ -67,6 +67,9 @@ Object.entries(pages).forEach(([route, meta]) => {
   
   // Remove the dynamic SEO comment marker
   html = html.replace(/<!--\s*Open Graph and Twitter tags[^>]*-->/gi, '');
+  
+  // CRITICAL: Remove the SPA redirect script from static pages (crawlers don't execute it anyway)
+  html = html.replace(/<script type="text\/javascript">[\s\S]*?Single Page Apps for GitHub Pages[\s\S]*?<\/script>/gi, '');
 
   // Build fresh OG tags specific to this page
   const ogTags = `
