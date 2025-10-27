@@ -14,7 +14,7 @@ export function CommandFAB({ onOpenCommandPalette }: CommandFABProps) {
     // Detect OS
     setIsMac(navigator.platform.toUpperCase().indexOf('MAC') >= 0);
 
-    // Radiate animation: show for 3s, then hide for 10s, repeat
+    // Radiate animation: synchronized with header pulse (13s cycle)
     const radiateInterval = setInterval(() => {
       setShouldRadiate(true);
       setTimeout(() => setShouldRadiate(false), 3000);
@@ -34,7 +34,7 @@ export function CommandFAB({ onOpenCommandPalette }: CommandFABProps) {
         // Mobile sizing - slightly smaller but still prominent
         "w-14 py-5 px-2",
         "bg-accent text-accent-foreground",
-        "border-4 border-foreground",
+        "border-[6px] border-foreground",
         "shadow-neo-md hover:shadow-neo-lg",
         "transition-all duration-300",
         "hover:w-20 hover:py-8",
@@ -62,9 +62,13 @@ export function CommandFAB({ onOpenCommandPalette }: CommandFABProps) {
         MENU
       </span>
 
-      {/* Geometric accent */}
+      {/* Geometric accents - matching header style */}
       <div 
-        className="absolute top-2 left-2 w-3 h-3 bg-primary rotate-45 opacity-60"
+        className="absolute top-2 left-2 w-3 h-3 bg-primary border-2 border-foreground rotate-45 opacity-70"
+        aria-hidden="true"
+      />
+      <div 
+        className="absolute bottom-3 right-2 w-2 h-2 border-2 border-primary-foreground -rotate-12 opacity-50"
         aria-hidden="true"
       />
     </button>
