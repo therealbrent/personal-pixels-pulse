@@ -98,12 +98,12 @@ function AccessibleCaseStudyCard({
           id={`case-study-${cardIndex}-description`}
         >
           <section>
-            <h4 className="font-semibold text-primary mb-2">Client</h4>
+            <h4 className="font-semibold text-primary-text mb-2">Client</h4>
             <p className="text-muted-foreground">{client}</p>
           </section>
           
           <section>
-            <h4 className="font-semibold text-primary mb-2">Project Description</h4>
+            <h4 className="font-semibold text-primary-text mb-2">Project Description</h4>
             <div className="space-y-3">
               <p className="text-muted-foreground">{description}</p>
               <p className="text-muted-foreground">{details}</p>
@@ -111,7 +111,7 @@ function AccessibleCaseStudyCard({
           </section>
           
           <section>
-            <h4 className="font-semibold text-primary mb-2">My Contributions</h4>
+            <h4 className="font-semibold text-primary-text mb-2">My Contributions</h4>
             <ul className="list-disc list-inside space-y-1 text-muted-foreground">
               {contributions.map((contribution, index) => (
                 <li key={index}>{contribution}</li>

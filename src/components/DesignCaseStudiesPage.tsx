@@ -141,8 +141,8 @@ export default function DesignCaseStudiesPage() {
                 <div className="block transform md:rotate-x-12 md:translate-z-20 animate-fade-in text-foreground hover:md:translate-z-40 transition-all duration-700">
                   Three agencies.
                 </div>
-                <div className="block transform md:rotate-x-6 md:rotate-y-3 md:translate-z-10 animate-fade-in text-primary hover:md:translate-z-30 transition-all duration-700" style={{animationDelay: '0.2s'}}>
-                  <span className="text-primary">Three archives.</span>
+                <div className="block transform md:rotate-x-6 md:rotate-y-3 md:translate-z-10 animate-fade-in text-primary-text hover:md:translate-z-30 transition-all duration-700" style={{animationDelay: '0.2s'}}>
+                  <span className="text-primary-text">Three archives.</span>
                 </div>
                 <div className="block transform md:rotate-x-3 md:rotate-y-minus-2 md:translate-z-0 animate-fade-in text-destructive hover:md:translate-z-20 transition-all duration-700" style={{animationDelay: '0.4s'}}>
                   <span className="text-destructive">Three angles.</span>
@@ -220,7 +220,7 @@ export default function DesignCaseStudiesPage() {
                       </div>
                     </div>
                     <div className="p-6">
-                      <h3 className="text-2xl font-bold mb-4 text-primary group-hover:text-primary/80 transition-colors">Adventure.com</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-primary-text group-hover:text-primary-text/80 transition-colors">Adventure.com</h3>
                       <p className="text-lg mb-6">A travel startup that captured the spirit of exploration.</p>
                       
                       <div className="space-y-3 mb-6">
@@ -230,7 +230,7 @@ export default function DesignCaseStudiesPage() {
                           </div>
                           <div>
                             <span className="font-semibold">Winner</span>{' '}
-                            <span className="text-primary underline inline-flex items-center gap-1">
+                            <span className="text-primary-text underline inline-flex items-center gap-1">
                               Comm Arts Webpick of the Week
                               <Icon name="external-link" size={16} />
                             </span>
@@ -242,7 +242,7 @@ export default function DesignCaseStudiesPage() {
                           </div>
                           <div>
                             <span className="font-semibold">Winner</span>{' '}
-                            <span className="text-primary underline inline-flex items-center gap-1">
+                            <span className="text-primary-text underline inline-flex items-center gap-1">
                               Awwwards Site of the Day
                               <Icon name="external-link" size={16} />
                             </span>
@@ -287,7 +287,7 @@ export default function DesignCaseStudiesPage() {
                       </div>
                     </div>
                     <div className="p-6">
-                      <h3 className="text-2xl font-bold mb-4 text-primary group-hover:text-primary/80 transition-colors">Pivotal</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-primary-text group-hover:text-primary-text/80 transition-colors">Pivotal</h3>
                       <p className="text-lg mb-4">
                         The company that emerged when EMV, VMware, GE, and Pivotal Labs all joined forces.
                       </p>

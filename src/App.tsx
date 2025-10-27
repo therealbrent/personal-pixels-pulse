@@ -60,7 +60,7 @@ function HomePage() {
               <div className="absolute bottom-0 left-0 w-full h-8 bg-accent/70 -z-10 transform -skew-x-6" aria-hidden="true"></div>
             </span>
             {" "}MARKETING
-            <span className="block text-primary">LEADER</span>
+            <span className="block text-primary-text">LEADER</span>
           </h1>
           
           <div className="bg-secondary p-6 border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300 mb-8">
@@ -262,7 +262,7 @@ function HomePage() {
                 </div>
 
                 <div>
-                  <h4 className="text-xl font-bold mb-3 text-primary">How a fan-first mindset shaped my career</h4>
+                  <h4 className="text-xl font-bold mb-3 text-primary-text">How a fan-first mindset shaped my career</h4>
                   <p>My career shifted into high gear when I joined NASCAR in 2004. I started as a call center agent and was quickly promoted to trainer. Within two years, I moved into the IT organization as a Business Analyst where I defined the requirements for projects that improved the fan experience. Two of my significant projects include the implementation of print-at-home ticketing (2007) and new websites for 13 race tracks (2010). These early experiences sparked my passion for user experience, technology, and marketing — shaping my career ever since.</p>
                 </div>
 
@@ -280,7 +280,7 @@ function HomePage() {
                 {showFullStory && (
                   <>
                     <div>
-                      <h4 className="text-xl font-bold mb-3 text-primary">The proving ground that sharpened my leadership</h4>
+                      <h4 className="text-xl font-bold mb-3 text-primary-text">The proving ground that sharpened my leadership</h4>
                       <p className="mb-4">Next, I moved agency-side where I learned to pitch big ideas, lead large quality-obsessed teams, and expand into new markets.</p>
                       <ul className="space-y-3 list-disc list-inside text-base">
                         <li><strong>At Digitaria,</strong> I was the Executive Producer on the Qualcomm account where I had 5 direct reports plus a dynamic project team that sometimes scaled to 40 contributing resources. My team delivered several high-stakes projects that made Qualcomm an early adopter of cloud-computing and responsive design.</li>
@@ -291,7 +291,7 @@ function HomePage() {
                     </div>
 
                     <div>
-                      <h4 className="text-xl font-bold mb-3 text-primary">The opportunity to drive outsized impact in an enterprise</h4>
+                      <h4 className="text-xl font-bold mb-3 text-primary-text">The opportunity to drive outsized impact in an enterprise</h4>
                       <p className="mb-4">I joined Qualcomm Technologies to build an ABM program. In pursuit of that goal, I became an early champion for Generative AI. Now, I am the Global Lead for AI Platforms & GTM Innovation. Some of my key achievements include:</p>
                       <ul className="space-y-2 list-disc list-inside text-base">
                         <li>Established and scaled an award-winning ABM program that influences billions in annual pipeline across several business units.</li>
@@ -301,7 +301,7 @@ function HomePage() {
                     </div>
 
                     <div>
-                      <h4 className="text-xl font-bold mb-3 text-primary">My unique blend of leadership</h4>
+                      <h4 className="text-xl font-bold mb-3 text-primary-text">My unique blend of leadership</h4>
                       <p className="mb-4">My leadership approach bridges the gap between visionary strategy and tactical execution.</p>
                       <ul className="space-y-2 list-disc list-inside text-base mb-4">
                         <li><strong>I start with empathy.</strong> Understanding users, customers, and teammates is fuel for innovation.</li>
@@ -313,7 +313,7 @@ function HomePage() {
                     </div>
 
                     <div>
-                      <h4 className="text-xl font-bold mb-3 text-primary">Beyond the day job</h4>
+                      <h4 className="text-xl font-bold mb-3 text-primary-text">Beyond the day job</h4>
                       <p>I am an ambassador for the San Diego / Tijuana design community, contributing to initiatives that shaped our region's recognition as World Design Capital 2024. I'm also an active member of San Diego Experience Design Professionals, where I participate in meetups and mentorship.</p>
                     </div>
                   </>
@@ -354,21 +354,21 @@ function HomePage() {
               <span className="inline-flex bg-primary text-primary-foreground px-3 py-1 text-sm font-semibold mb-4">AI Strategy</span>
               <h3 className="text-xl font-bold mb-3">Why Qualcomm's Playbook For AI Starts With Intention—And Ends With A Human</h3>
               <p className="text-muted-foreground mb-4">From brand voice guardrails to security-first agent design, my approach offers a blueprint for automating AI tasks with intention in marketing organizations.</p>
-              <span className="text-primary font-semibold">Read more →</span>
+              <span className="text-primary-text font-semibold">Read more →</span>
             </article>
 
             <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onClick={() => window.open('https://contentstrategy.substack.com/p/my-favorite-content-strategy-frameworks', '_blank')}>
               <span className="inline-flex bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold mb-4">Content Strategy</span>
               <h3 className="text-xl font-bold mb-3">My Favorite Content Strategy Frameworks for Website Projects</h3>
               <p className="text-muted-foreground mb-4">Clarify goals, make editorial decisions, and set priorities with these simple frameworks.</p>
-              <span className="text-primary font-semibold">Read more →</span>
+              <span className="text-primary-text font-semibold">Read more →</span>
             </article>
 
             <article className="border-4 border-foreground bg-card p-6 transform hover:scale-105 transition-transform duration-300 cursor-pointer" onClick={() => window.open('https://blinkux.com/ideas/evidence-driven-design-supports-innovation', '_blank')}>
               <span className="inline-flex bg-secondary text-secondary-foreground px-3 py-1 text-sm font-semibold mb-4">Innovation</span>
               <h3 className="text-xl font-bold mb-3">How Evidence-driven Design Supports Innovation</h3>
               <p className="text-muted-foreground mb-4">I led marketing at Blink UX for three years. This is a story that explains the design philosophy used to create product for NASA, Amazon, Microsoft , and other notable clients.</p>
-              <span className="text-primary font-semibold">Read more →</span>
+              <span className="text-primary-text font-semibold">Read more →</span>
             </article>
           </div>
           
@@ -402,7 +402,7 @@ function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">CASE STUDIES</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">These are a few successful technology projects and my client collaborators. Click in for more details about my contributions. If you're more interested in some eye candy then check out these <a href="/design-case-studies" className="text-primary hover:text-accent underline">design case studies</a>.</p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">These are a few successful technology projects and my client collaborators. Click in for more details about my contributions. If you're more interested in some eye candy then check out these <a href="/design-case-studies" className="text-primary-text hover:text-accent underline">design case studies</a>.</p>
           </div>
 
           {/* Performance-optimized case study cards */}

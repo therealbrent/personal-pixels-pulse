@@ -17,7 +17,7 @@ export default function Header() {
           {/* Left: BRENT SUMMERS - Home Link */}
           <Link 
             to="/" 
-            className="text-2xl md:text-3xl font-black text-primary hover:text-primary/80 transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] flex items-center"
+            className="text-2xl md:text-3xl font-black text-primary-text hover:text-primary-text/80 transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] flex items-center"
             role="banner"
             aria-label="Navigate to home page"
           >

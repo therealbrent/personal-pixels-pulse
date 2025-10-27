@@ -21,6 +21,9 @@ All colors MUST be HSL with AAA contrast ratios.
     /* Primary: Mustard #FFBA08 - Base fills, section backgrounds */
     --primary: 43 100% 52%;
     --primary-foreground: 0 0% 15%; /* Onyx text on Mustard */
+    
+    /* Primary text variant: Darker Mustard #C28600 for WCAG AA on light backgrounds */
+    --primary-text: 43 100% 38%;
 
     /* Secondary: Onyx #262626 - Primary typography, outlines, grids */
     --secondary: 0 0% 15%;
@@ -31,8 +34,8 @@ All colors MUST be HSL with AAA contrast ratios.
     --muted-foreground: 0 0% 20%;
 
     /* Accent: Hot Pink #FF1392 - High-impact highlights, CTAs */
-    --accent: 328 87% 54%;
-    --accent-foreground: 40 33% 97%; /* Off-white text on Hot Pink */
+    --accent: 328 100% 42%; /* Darkened to #D6006C for WCAG AA with white text */
+    --accent-foreground: 0 0% 100%; /* Pure white text on Hot Pink */
 
     /* Destructive: Oxblood #7A1E1C - Seriousness, weight, strong accents */
     --destructive: 2 66% 29%;
@@ -73,6 +76,9 @@ All colors MUST be HSL with AAA contrast ratios.
     /* Primary: Mustard adjusted for dark mode */
     --primary: 43 84% 60%;
     --primary-foreground: 0 0% 8%;
+    
+    /* Primary text variant for dark mode */
+    --primary-text: 43 100% 65%;
 
     /* Secondary: Light for dark mode */
     --secondary: 40 33% 85%;
@@ -83,8 +89,8 @@ All colors MUST be HSL with AAA contrast ratios.
     --muted-foreground: 0 0% 75%;
 
     /* Accent: Hot Pink adjusted for dark mode */
-    --accent: 328 87% 60%;
-    --accent-foreground: 0 0% 8%;
+    --accent: 328 100% 48%;
+    --accent-foreground: 0 0% 100%;
 
     /* Destructive: Oxblood adjusted for dark mode */
     --destructive: 2 66% 45%;
