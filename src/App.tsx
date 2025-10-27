@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Icon } from './components/ui/icon';
 import { BrutalistButton } from './components/ui/BrutalistButton';
@@ -583,9 +583,21 @@ function HomePage() {
   );
 }
 
+// Scroll restoration component
+function ScrollToTop() {
+  const location = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  
+  return null;
+}
+
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <SidebarProvider defaultOpen={true}>
         <div className="min-h-screen flex w-full bg-background">
           {/* Desktop Sidebar - hidden on mobile */}

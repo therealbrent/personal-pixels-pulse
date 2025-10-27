@@ -12,6 +12,7 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar';
 import { cn } from '@/lib/utils';
+import { useNavigationSound } from '@/hooks/useNavigationSound';
 
 const navigationItems = [
   { 
@@ -39,11 +40,12 @@ const navigationItems = [
     external: false 
   },
   { 
-    title: 'Designer in Residence', 
-    url: '/designer-in-residence', 
+    title: 'Designer in Residence (Coming Soon)', 
+    url: '#', 
     icon: Users,
     external: false,
-    comingSoon: true 
+    comingSoon: true,
+    disabled: true
   },
   { 
     title: 'Schedule a Call', 
@@ -57,52 +59,82 @@ export function StudioSidebar() {
   const { open } = useSidebar();
   const location = useLocation();
   const currentPath = location.pathname;
+  const { playSound } = useNavigationSound();
 
   const isActive = (path: string) => {
-    if (path === '/') return currentPath === '/';
+    if (path === '/' || path === '#') return currentPath === '/';
     return currentPath.startsWith(path);
   };
 
   return (
     <Sidebar
       className={cn(
-        "transition-all duration-300 border-r-4 border-foreground bg-gradient-to-b from-background via-background to-primary/5",
+        "transition-all duration-300 border-r-4 border-foreground",
+        "bg-gradient-to-b from-primary/5 via-background to-accent/5",
+        "relative",
         open ? "w-64" : "w-20"
       )}
       collapsible="icon"
     >
-      <SidebarContent className="pt-20">
+      {/* Ambient animated gradient overlay */}
+      <div 
+        className="absolute inset-0 opacity-30 pointer-events-none animate-pulse"
+        style={{
+          background: 'radial-gradient(circle at 50% 0%, hsl(var(--accent) / 0.1), transparent 70%), radial-gradient(circle at 50% 100%, hsl(var(--primary) / 0.1), transparent 70%)',
+          animationDuration: '4s'
+        }}
+        aria-hidden="true"
+      />
+      
+      <SidebarContent className="pt-20 relative z-10">
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu className="space-y-2 px-2">
               {navigationItems.map((item) => {
                 const Icon = item.icon;
                 const active = isActive(item.url);
+                const isDisabled = item.disabled || false;
                 
                 return (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton
-                      asChild
+                      asChild={!isDisabled}
                       className={cn(
                         "relative group h-14 transition-all duration-200",
-                        "hover:bg-primary/10 hover:scale-105 hover:rotate-1",
-                        active && "bg-primary/20 border-l-4 border-accent shadow-neo-xs",
+                        !isDisabled && "hover:bg-primary/20 hover:scale-105 hover:rotate-1",
+                        active && "bg-primary/30 border-l-4 border-accent shadow-neo-xs",
                         !active && "border-l-4 border-transparent",
+                        isDisabled && "opacity-60 cursor-not-allowed bg-muted/20",
                         "focus:ring-4 focus:ring-focus-ring focus:ring-offset-2"
                       )}
                       tooltip={open ? undefined : item.title}
+                      disabled={isDisabled}
                     >
-                      {item.external ? (
+                      {isDisabled ? (
+                        <div className="flex items-center gap-3 w-full px-3">
+                          <Icon 
+                            className="text-muted-foreground flex-shrink-0" 
+                            size={24} 
+                            strokeWidth={2.5}
+                          />
+                          {open && (
+                            <span className="font-bold text-sm text-muted-foreground truncate">
+                              {item.title}
+                            </span>
+                          )}
+                        </div>
+                      ) : item.external ? (
                         <a 
                           href={item.url} 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="flex items-center gap-3 w-full px-3"
                           aria-label={`${item.title} - Opens in new tab`}
+                          onClick={playSound}
                         >
                           <Icon 
                             className={cn(
-                              "transition-all duration-200",
+                              "transition-all duration-200 flex-shrink-0",
                               active ? "text-accent" : "text-foreground",
                               "group-hover:rotate-3 group-hover:scale-110"
                             )} 
@@ -111,16 +143,10 @@ export function StudioSidebar() {
                           />
                           {open && (
                             <span className={cn(
-                              "font-bold text-sm",
+                              "font-bold text-sm truncate",
                               active ? "text-accent" : "text-foreground"
                             )}>
                               {item.title}
-                            </span>
-                          )}
-                          {item.comingSoon && open && (
-                            <span className="ml-auto flex h-2 w-2">
-                              <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-accent opacity-75"></span>
-                              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
                             </span>
                           )}
                         </a>
@@ -130,10 +156,11 @@ export function StudioSidebar() {
                           end={item.url === '/'}
                           className="flex items-center gap-3 w-full px-3"
                           aria-label={item.title}
+                          onClick={playSound}
                         >
                           <Icon 
                             className={cn(
-                              "transition-all duration-200",
+                              "transition-all duration-200 flex-shrink-0",
                               active ? "text-accent" : "text-foreground",
                               "group-hover:rotate-3 group-hover:scale-110"
                             )} 
@@ -142,16 +169,10 @@ export function StudioSidebar() {
                           />
                           {open && (
                             <span className={cn(
-                              "font-bold text-sm",
+                              "font-bold text-sm truncate",
                               active ? "text-accent" : "text-foreground"
                             )}>
                               {item.title}
-                            </span>
-                          )}
-                          {item.comingSoon && open && (
-                            <span className="ml-auto flex h-2 w-2">
-                              <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-accent opacity-75"></span>
-                              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
                             </span>
                           )}
                         </NavLink>
@@ -173,12 +194,10 @@ export function MobileBottomNav() {
   const location = useLocation();
   const currentPath = location.pathname;
   const [showMore, setShowMore] = useState(false);
-
-  const primaryItems = navigationItems.slice(0, 4);
-  const secondaryItems = navigationItems.slice(4);
+  const { playSound } = useNavigationSound();
 
   const isActive = (path: string) => {
-    if (path === '/') return currentPath === '/';
+    if (path === '/' || path === '#') return currentPath === '/';
     return currentPath.startsWith(path);
   };
 
@@ -186,14 +205,70 @@ export function MobileBottomNav() {
     <>
       {/* Mobile Bottom Nav - Only visible on mobile */}
       <nav 
-        className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background border-t-4 border-foreground shadow-neo-lg"
+        className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-t from-primary/10 to-background border-t-4 border-foreground shadow-neo-lg"
         role="navigation"
         aria-label="Mobile navigation"
       >
-        <div className="flex items-center justify-around h-16 px-2">
-          {primaryItems.map((item) => {
+        {/* Ambient gradient */}
+        <div 
+          className="absolute inset-0 opacity-20 pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle at 0% 100%, hsl(var(--accent) / 0.15), transparent 50%), radial-gradient(circle at 100% 100%, hsl(var(--primary) / 0.15), transparent 50%)'
+          }}
+          aria-hidden="true"
+        />
+        
+        <div className="flex items-center justify-around h-16 px-1 relative z-10">
+          {navigationItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(item.url);
+            const isDisabled = item.disabled || false;
+            const isExternal = item.external || false;
+            
+            if (isDisabled) {
+              return (
+                <button
+                  key={item.title}
+                  disabled
+                  className={cn(
+                    "flex flex-col items-center justify-center gap-1 p-2 rounded-lg transition-all duration-200 min-w-[64px] flex-1 max-w-[80px]",
+                    "opacity-50 cursor-not-allowed",
+                    "focus:ring-2 focus:ring-focus-ring focus:ring-offset-2"
+                  )}
+                  aria-label={item.title}
+                  title={item.title}
+                >
+                  <Icon size={20} strokeWidth={2.5} className="flex-shrink-0" />
+                  <span className="text-[10px] font-bold truncate w-full text-center leading-tight">
+                    Coming Soon
+                  </span>
+                </button>
+              );
+            }
+            
+            if (isExternal) {
+              return (
+                <a
+                  key={item.title}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    "flex flex-col items-center justify-center gap-1 p-2 rounded-lg transition-all duration-200 min-w-[64px] flex-1 max-w-[80px]",
+                    active ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-primary/20 active:bg-primary/30",
+                    "focus:ring-2 focus:ring-focus-ring focus:ring-offset-2"
+                  )}
+                  aria-label={`${item.title} - Opens in new tab`}
+                  title={item.title}
+                  onClick={playSound}
+                >
+                  <Icon size={20} strokeWidth={2.5} className="flex-shrink-0" />
+                  <span className="text-[10px] font-bold truncate w-full text-center leading-tight">
+                    {item.title.split(' ').slice(0, 2).join(' ')}
+                  </span>
+                </a>
+              );
+            }
             
             return (
               <NavLink
@@ -201,88 +276,23 @@ export function MobileBottomNav() {
                 to={item.url}
                 end={item.url === '/'}
                 className={cn(
-                  "flex flex-col items-center justify-center gap-1 p-2 rounded-lg transition-all duration-200 min-w-[56px]",
-                  active ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-primary/10",
+                  "flex flex-col items-center justify-center gap-1 p-2 rounded-lg transition-all duration-200 min-w-[64px] flex-1 max-w-[80px]",
+                  active ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-primary/20 active:bg-primary/30",
                   "focus:ring-2 focus:ring-focus-ring focus:ring-offset-2"
                 )}
                 aria-label={item.title}
+                title={item.title}
+                onClick={playSound}
               >
-                <Icon size={20} strokeWidth={2.5} />
-                <span className="text-xs font-bold truncate max-w-[50px]">
-                  {item.title.split(' ')[0]}
+                <Icon size={20} strokeWidth={2.5} className="flex-shrink-0" />
+                <span className="text-[10px] font-bold truncate w-full text-center leading-tight">
+                  {item.title.split(' ').slice(0, 2).join(' ')}
                 </span>
               </NavLink>
             );
           })}
-          
-          {/* More Button */}
-          <button
-            onClick={() => setShowMore(!showMore)}
-            className={cn(
-              "flex flex-col items-center justify-center gap-1 p-2 rounded-lg transition-all duration-200 min-w-[56px]",
-              showMore ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-primary/10",
-              "focus:ring-2 focus:ring-focus-ring focus:ring-offset-2"
-            )}
-            aria-label="More menu"
-            aria-expanded={showMore}
-          >
-            {showMore ? <X size={20} strokeWidth={2.5} /> : <Menu size={20} strokeWidth={2.5} />}
-            <span className="text-xs font-bold">More</span>
-          </button>
         </div>
       </nav>
-
-      {/* More Menu Overlay */}
-      {showMore && (
-        <div 
-          className="lg:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-sm animate-fade-in"
-          onClick={() => setShowMore(false)}
-        >
-          <div className="flex flex-col items-center justify-center h-full space-y-4 p-8">
-            {secondaryItems.map((item) => {
-              const Icon = item.icon;
-              
-              return item.external ? (
-                <a
-                  key={item.title}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 w-full max-w-md p-4 bg-card border-4 border-foreground hover:bg-primary/10 transition-all duration-200 focus:ring-4 focus:ring-focus-ring"
-                  onClick={() => setShowMore(false)}
-                >
-                  <Icon size={32} strokeWidth={2.5} className="text-accent" />
-                  <div className="flex-1">
-                    <span className="font-bold text-lg">{item.title}</span>
-                    {item.comingSoon && (
-                      <span className="ml-2 inline-flex items-center gap-1 text-xs bg-accent text-accent-foreground px-2 py-1 font-bold">
-                        COMING SOON
-                      </span>
-                    )}
-                  </div>
-                </a>
-              ) : (
-                <NavLink
-                  key={item.title}
-                  to={item.url}
-                  className="flex items-center gap-4 w-full max-w-md p-4 bg-card border-4 border-foreground hover:bg-primary/10 transition-all duration-200 focus:ring-4 focus:ring-focus-ring"
-                  onClick={() => setShowMore(false)}
-                >
-                  <Icon size={32} strokeWidth={2.5} className="text-accent" />
-                  <div className="flex-1">
-                    <span className="font-bold text-lg">{item.title}</span>
-                    {item.comingSoon && (
-                      <span className="ml-2 inline-flex items-center gap-1 text-xs bg-accent text-accent-foreground px-2 py-1 font-bold">
-                        COMING SOON
-                      </span>
-                    )}
-                  </div>
-                </NavLink>
-              );
-            })}
-          </div>
-        </div>
-      )}
     </>
   );
 }
