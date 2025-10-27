@@ -170,7 +170,7 @@ function HomePage() {
                 >
                   NEW
                 </span>
-                <h4 className="text-xl font-bold mb-2 text-foreground">9.6X ROI with WRITER</h4>
+                <h4 className="text-xl font-bold mb-2 text-foreground">8.6X ROI with WRITER</h4>
                 <p className="text-muted-foreground mb-4">
                   Led the platform discovery, roll out, and scale up of WRITER at Qualcomm Technologies.
                 </p>
