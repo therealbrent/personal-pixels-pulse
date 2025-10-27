@@ -1,47 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Home, Briefcase, Mic, FileText, Search, X, LucideIcon } from 'lucide-react';
+import { Search, X, ChevronRight, ExternalLink as ExternalLinkIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useCommandPaletteSound } from '@/hooks/useCommandPaletteSound';
-
-interface CommandItem {
-  id: string;
-  title: string;
-  url: string;
-  icon: LucideIcon;
-  keywords?: string[];
-}
-
-const commands: CommandItem[] = [
-  {
-    id: 'home',
-    title: 'Home',
-    url: '/',
-    icon: Home,
-    keywords: ['home', 'start', 'main', 'index'],
-  },
-  {
-    id: 'leadership',
-    title: 'Leadership',
-    url: '/leadership',
-    icon: Briefcase,
-    keywords: ['leadership', 'principles', 'management', 'lead'],
-  },
-  {
-    id: 'speaking',
-    title: 'Speaking',
-    url: '/speaking',
-    icon: Mic,
-    keywords: ['speaking', 'talks', 'presentations', 'media', 'speeches'],
-  },
-  {
-    id: 'llms',
-    title: 'LLMs.txt',
-    url: '/llms.txt',
-    icon: FileText,
-    keywords: ['llms', 'llm', 'txt', 'ai', 'models'],
-  },
-];
+import { commandPaletteData, CommandItem } from '@/data/commandPaletteData';
 
 interface CommandPaletteProps {
   isOpen: boolean;
@@ -61,13 +23,17 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
   useEffect(() => {
     const stored = localStorage.getItem('recentPages');
     if (stored) {
-      setRecentPages(JSON.parse(stored));
+      try {
+        setRecentPages(JSON.parse(stored));
+      } catch {
+        setRecentPages([]);
+      }
     }
   }, []);
 
   useEffect(() => {
     if (isOpen && location.pathname) {
-      const recent = [...new Set([location.pathname, ...recentPages])].slice(0, 3);
+      const recent = [...new Set([location.pathname, ...recentPages])].slice(0, 5);
       setRecentPages(recent);
       localStorage.setItem('recentPages', JSON.stringify(recent));
     }
@@ -82,14 +48,47 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
     }
   }, [isOpen]);
 
-  // Fuzzy search
-  const filteredCommands = commands.filter((cmd) => {
-    if (!query) return true;
-    const searchText = query.toLowerCase();
-    const titleMatch = cmd.title.toLowerCase().includes(searchText);
-    const keywordMatch = cmd.keywords?.some((kw) => kw.includes(searchText));
-    return titleMatch || keywordMatch;
-  });
+  // Fuzzy search with scoring
+  const filteredCommands = commandPaletteData
+    .map((cmd) => {
+      if (!query) return { cmd, score: 0 };
+      
+      const searchText = query.toLowerCase();
+      let score = 0;
+      
+      // Title match (highest weight)
+      const titleLower = cmd.title.toLowerCase();
+      if (titleLower === searchText) score += 100;
+      else if (titleLower.startsWith(searchText)) score += 50;
+      else if (titleLower.includes(searchText)) score += 25;
+      
+      // Keyword match
+      const keywordMatch = cmd.keywords?.some((kw) => kw.includes(searchText));
+      if (keywordMatch) score += 15;
+      
+      // Description match
+      if (cmd.description?.toLowerCase().includes(searchText)) score += 10;
+      
+      // Badge match
+      if (cmd.badge?.toLowerCase().includes(searchText)) score += 8;
+      
+      // Type match
+      if (cmd.type === searchText) score += 5;
+      
+      return { cmd, score };
+    })
+    .filter(({ score }) => !query || score > 0)
+    .sort((a, b) => {
+      // Sort by score, then by type priority (page > section > action > external)
+      if (b.score !== a.score) return b.score - a.score;
+      
+      const typePriority = { page: 4, section: 3, action: 2, external: 1 };
+      const aPriority = typePriority[a.cmd.type] || 0;
+      const bPriority = typePriority[b.cmd.type] || 0;
+      return bPriority - aPriority;
+    })
+    .map(({ cmd }) => cmd)
+    .slice(0, 12); // Limit results
 
   // Keyboard navigation
   useEffect(() => {
@@ -109,7 +108,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
       } else if (e.key === 'Enter') {
         e.preventDefault();
         if (filteredCommands[selectedIndex]) {
-          handleSelect(filteredCommands[selectedIndex].url);
+          handleSelect(filteredCommands[selectedIndex]);
         }
       } else if (e.key === 'Escape') {
         e.preventDefault();
@@ -121,9 +120,15 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
     return () => window.removeEventListener('keydown', handler);
   }, [isOpen, filteredCommands, selectedIndex]);
 
-  const handleSelect = (url: string) => {
+  const handleSelect = (item: CommandItem) => {
     playSelect();
-    navigate(url);
+    
+    if (item.type === 'external') {
+      window.open(item.url, '_blank', 'noopener,noreferrer');
+    } else {
+      navigate(item.url);
+    }
+    
     onClose();
   };
 
@@ -145,7 +150,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
 
       {/* Palette */}
       <div 
-        className="fixed top-[20vh] left-1/2 -translate-x-1/2 w-full max-w-2xl z-50 animate-scale-in"
+        className="fixed top-[15vh] left-1/2 -translate-x-1/2 w-full max-w-3xl z-50 animate-scale-in"
         role="dialog"
         aria-modal="true"
         aria-label="Command palette"
@@ -162,7 +167,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
                 setQuery(e.target.value);
                 setSelectedIndex(0);
               }}
-              placeholder="Search pages..."
+              placeholder="Search pages, sections, and more..."
               className="flex-1 bg-transparent text-foreground text-lg outline-none placeholder:text-muted-foreground"
               aria-label="Search command palette"
             />
@@ -176,10 +181,10 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
           </div>
 
           {/* Results */}
-          <div className="max-h-[400px] overflow-y-auto">
+          <div className="max-h-[500px] overflow-y-auto">
             {filteredCommands.length === 0 ? (
               <div className="p-8 text-center text-muted-foreground">
-                No results found for "{query}"
+                {query ? `No results found for "${query}"` : 'Start typing to search...'}
               </div>
             ) : (
               <div className="py-2">
@@ -187,48 +192,76 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
                   const Icon = cmd.icon;
                   const isSelected = index === selectedIndex;
                   const isRecent = recentPages.includes(cmd.url);
+                  const isExternal = cmd.type === 'external';
 
                   return (
                     <button
                       key={cmd.id}
-                      onClick={() => handleSelect(cmd.url)}
+                      onClick={() => handleSelect(cmd)}
                       className={cn(
-                        "w-full flex items-center gap-4 px-4 py-3 text-left transition-colors",
+                        "w-full flex items-center gap-4 px-4 py-3 text-left transition-colors group",
                         isSelected 
-                          ? "bg-primary text-primary-foreground" 
+                          ? "bg-accent text-accent-foreground" 
                           : "hover:bg-muted",
                         "focus:outline-none focus:ring-2 focus:ring-focus-ring focus:ring-inset"
                       )}
                       aria-selected={isSelected}
                     >
                       <Icon 
-                        size={24} 
+                        size={20} 
                         className={cn(
                           "flex-shrink-0",
-                          isSelected ? "text-primary-foreground" : "text-accent"
+                          isSelected ? "text-accent-foreground" : "text-accent"
                         )}
+                        strokeWidth={2.5}
                       />
                       <div className="flex-1 min-w-0">
-                        <div className="font-bold text-base truncate">
-                          {cmd.title}
+                        <div className="flex items-center gap-2">
+                          <span className="font-bold text-base truncate">
+                            {cmd.title}
+                          </span>
+                          {isExternal && (
+                            <ExternalLinkIcon size={14} className="flex-shrink-0" />
+                          )}
                         </div>
-                        <div className={cn(
-                          "text-sm truncate",
-                          isSelected ? "text-primary-foreground/70" : "text-muted-foreground"
-                        )}>
-                          {cmd.url}
-                        </div>
+                        {cmd.description && (
+                          <div className={cn(
+                            "text-xs truncate mt-0.5",
+                            isSelected ? "text-accent-foreground/70" : "text-muted-foreground"
+                          )}>
+                            {cmd.description}
+                          </div>
+                        )}
                       </div>
-                      {isRecent && (
-                        <span className={cn(
-                          "text-xs font-semibold px-2 py-1 rounded",
-                          isSelected 
-                            ? "bg-primary-foreground/20 text-primary-foreground" 
-                            : "bg-accent/20 text-accent"
-                        )}>
-                          RECENT
-                        </span>
-                      )}
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        {cmd.badge && (
+                          <span className={cn(
+                            "text-[10px] font-bold px-2 py-1 rounded border-2",
+                            isSelected 
+                              ? "border-accent-foreground/30 text-accent-foreground" 
+                              : "border-foreground/30 text-muted-foreground"
+                          )}>
+                            {cmd.badge}
+                          </span>
+                        )}
+                        {isRecent && !cmd.badge && (
+                          <span className={cn(
+                            "text-[10px] font-bold px-2 py-1 rounded",
+                            isSelected 
+                              ? "bg-accent-foreground/20 text-accent-foreground" 
+                              : "bg-accent/20 text-accent"
+                          )}>
+                            RECENT
+                          </span>
+                        )}
+                        <ChevronRight 
+                          size={16} 
+                          className={cn(
+                            "transition-transform duration-200",
+                            isSelected && "translate-x-1"
+                          )}
+                        />
+                      </div>
                     </button>
                   );
                 })}
@@ -242,7 +275,10 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
               <span><kbd className="px-2 py-1 bg-background border-2 border-foreground rounded font-mono">↑↓</kbd> Navigate</span>
               <span><kbd className="px-2 py-1 bg-background border-2 border-foreground rounded font-mono">↵</kbd> Select</span>
             </div>
-            <span><kbd className="px-2 py-1 bg-background border-2 border-foreground rounded font-mono">ESC</kbd> Close</span>
+            <div className="flex items-center gap-2">
+              <span className="hidden sm:inline">{filteredCommands.length} results</span>
+              <span><kbd className="px-2 py-1 bg-background border-2 border-foreground rounded font-mono">ESC</kbd> Close</span>
+            </div>
           </div>
         </div>
       </div>
