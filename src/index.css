@@ -448,4 +448,15 @@ All colors MUST be HSL with AAA contrast ratios.
       transform: none !important;
     }
   }
+
+  /* Radiate animation for FAB */
+  @keyframes radiate {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--accent) / 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 8px hsl(var(--accent) / 0),
+                  0 0 0 16px hsl(var(--accent) / 0);
+    }
+  }
 }

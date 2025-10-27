@@ -19,6 +19,7 @@ import { LazyImage } from './components/LazyImage';
 import SEO from './components/SEO';
 import { CommandPalette } from './components/CommandPalette';
 import { AmbientContextBar } from './components/AmbientContextBar';
+import { CommandFAB } from './components/CommandFAB';
 import { useKeyboardShortcut } from './hooks/useKeyboardShortcut';
 import { useCommandPaletteSound } from './hooks/useCommandPaletteSound';
 
@@ -611,10 +612,11 @@ function AppContent() {
   return (
     <>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col w-full bg-background pb-16 lg:pb-0">
+      <div className="min-h-screen flex flex-col w-full bg-background">
         <Header />
+        <CommandFAB onOpenCommandPalette={openCommandPalette} />
         <AmbientContextBar onOpenCommandPalette={openCommandPalette} />
-        <main id="main-content" className="flex-1 pt-0 lg:pt-[60px]">
+        <main id="main-content" className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/llms.txt" element={<LLMSTextPage />} />
