@@ -57,13 +57,10 @@ export function CommandFAB({ onOpenCommandPalette }: CommandFABProps) {
         className="transition-transform duration-300 group-hover:scale-110"
       />
       
-      {/* Keyboard Shortcut */}
-      <div className="flex flex-col items-center gap-0.5">
-        <span className="text-xs font-black leading-none">
-          {isMac ? '⌘' : 'Ctrl'}
-        </span>
-        <span className="text-xs font-black leading-none">K</span>
-      </div>
+      {/* Menu Label */}
+      <span className="text-xs font-black leading-none tracking-tight">
+        MENU
+      </span>
 
       {/* Geometric accent */}
       <div 
