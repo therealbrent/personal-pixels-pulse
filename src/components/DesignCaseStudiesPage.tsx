@@ -17,7 +17,7 @@ const blinkTilesImage = '/lovable-uploads/67c141a7-043c-48a7-bd50-4a7ba6ff4ad5.p
 
 export default function DesignCaseStudiesPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden page-transition pb-20 lg:pb-0">
       <SEO 
         title="Design Case Studies | Marketing + UX Strategy by Brent Summers"
         description="Communicating the value of design is a unique challenge. Here's how I did it — thrice!"

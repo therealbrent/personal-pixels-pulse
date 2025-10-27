@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
+import { SidebarTrigger } from './ui/sidebar';
+import { Menu } from 'lucide-react';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-background shadow-neo-md w-full" role="banner" aria-label="Site header">
+    <header className="sticky top-0 z-50 bg-background shadow-neo-md w-full border-b-4 border-foreground" role="banner" aria-label="Site header">
       {/* Skip to content link for accessibility */}
       <a 
         href="#main-content" 
@@ -14,17 +16,22 @@ export default function Header() {
 
       <nav className="w-full" role="navigation" aria-label="Main navigation">
         <div className="flex items-center justify-between h-20 px-4 max-w-7xl mx-auto">
-          {/* Left: BRENT SUMMERS - Home Link */}
-          <Link 
-            to="/" 
-            className="text-2xl md:text-3xl font-black text-primary-text hover:text-primary-text/80 transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] flex items-center"
-            role="banner"
-            aria-label="Navigate to home page"
-          >
-            BRENT SUMMERS
-          </Link>
+          {/* Left: Sidebar Toggle (Desktop only) + BRENT SUMMERS */}
+          <div className="flex items-center gap-4">
+            <SidebarTrigger className="hidden lg:flex h-10 w-10 items-center justify-center border-2 border-foreground hover:bg-primary/10 transition-colors focus:ring-2 focus:ring-focus-ring" aria-label="Toggle sidebar navigation">
+              <Menu size={20} strokeWidth={2.5} />
+            </SidebarTrigger>
+            
+            <Link 
+              to="/" 
+              className="text-2xl md:text-3xl font-black text-primary-text hover:text-primary-text/80 transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] flex items-center"
+              aria-label="Navigate to home page"
+            >
+              BRENT SUMMERS
+            </Link>
+          </div>
 
-          {/* Right: Navigation Links */}
+          {/* Right: LLMs.txt Link */}
           <div className="flex items-center gap-4">
             <a 
               href="/llms.txt" 

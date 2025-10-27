@@ -8,7 +8,7 @@ import SEO from './SEO';
 
 export default function SpeakingMediaPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground page-transition pb-20 lg:pb-0">
       <SEO 
         title="Brent Summers, Keynote Speaker | Bio + Headshot + Media Archive"
         description="Explore presentations, podcasts, panels, and interviews with Brent Summers"

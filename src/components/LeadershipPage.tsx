@@ -552,7 +552,7 @@ const ContactSection: React.FC = () => (
 // Main Leadership page component
 const LeadershipPage: React.FC = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen page-transition pb-20 lg:pb-0">
       <SEO 
         title="Leadership Principles | Brent Summers"
         description="Explore leadership principles for bridging vision and execution through empathy, data, and long-term transformation."

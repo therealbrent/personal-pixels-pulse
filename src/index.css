@@ -219,10 +219,26 @@ All colors MUST be HSL with AAA contrast ratios.
   }
 }
 
-/* Performance-optimized CSS with reduced animation complexity */
+  /* Performance-optimized CSS with reduced animation complexity */
 @layer utilities {
   .container {
     @apply max-w-7xl mx-auto;
+  }
+  
+  /* Page transition animations */
+  @keyframes page-enter {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .page-transition {
+    animation: page-enter 0.3s ease-out;
   }
   
   /* Accessibility-focused animations with prefers-reduced-motion support */
