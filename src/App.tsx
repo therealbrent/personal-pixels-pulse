@@ -17,6 +17,10 @@ import LeadershipPage from './components/LeadershipPage';
 import DesignerInResidencePage from './components/DesignerInResidencePage';
 import { LazyImage } from './components/LazyImage';
 import SEO from './components/SEO';
+import { CommandPalette } from './components/CommandPalette';
+import { AmbientContextBar } from './components/AmbientContextBar';
+import { useKeyboardShortcut } from './hooks/useKeyboardShortcut';
+import { useCommandPaletteSound } from './hooks/useCommandPaletteSound';
 
 interface CaseStudyCardProps {
   title: string;
@@ -592,13 +596,25 @@ function ScrollToTop() {
   return null;
 }
 
-export default function App() {
+function AppContent() {
+  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
+  const { playOpen } = useCommandPaletteSound();
+
+  const openCommandPalette = () => {
+    playOpen();
+    setIsCommandPaletteOpen(true);
+  };
+
+  // ⌘K / Ctrl+K shortcut
+  useKeyboardShortcut('k', openCommandPalette, { ctrl: true, meta: true });
+
   return (
-    <Router>
+    <>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col w-full bg-background">
+      <div className="min-h-screen flex flex-col w-full bg-background pb-16 lg:pb-0">
         <Header />
-        <main id="main-content" className="flex-1">
+        <AmbientContextBar onOpenCommandPalette={openCommandPalette} />
+        <main id="main-content" className="flex-1 pt-0 lg:pt-[60px]">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/llms.txt" element={<LLMSTextPage />} />
@@ -611,6 +627,18 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      <CommandPalette 
+        isOpen={isCommandPaletteOpen} 
+        onClose={() => setIsCommandPaletteOpen(false)} 
+      />
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
