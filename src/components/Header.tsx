@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import { SidebarTrigger } from './ui/sidebar';
-import { Menu } from 'lucide-react';
 
 export default function Header() {
   return (
@@ -16,12 +14,8 @@ export default function Header() {
 
       <nav className="w-full" role="navigation" aria-label="Main navigation">
         <div className="flex items-center justify-between h-20 px-4 max-w-7xl mx-auto">
-          {/* Left: Sidebar Toggle (Desktop only) + BRENT SUMMERS */}
+          {/* Left: BRENT SUMMERS */}
           <div className="flex items-center gap-4">
-            <SidebarTrigger className="hidden lg:flex h-10 w-10 items-center justify-center border-2 border-foreground hover:bg-primary/10 transition-colors focus:ring-2 focus:ring-focus-ring" aria-label="Toggle sidebar navigation">
-              <Menu size={20} strokeWidth={2.5} />
-            </SidebarTrigger>
-            
             <Link 
               to="/" 
               className="text-2xl md:text-3xl font-black text-primary-text hover:text-primary-text/80 transition-colors focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] flex items-center"

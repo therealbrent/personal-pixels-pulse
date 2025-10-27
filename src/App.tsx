@@ -17,8 +17,6 @@ import LeadershipPage from './components/LeadershipPage';
 import DesignerInResidencePage from './components/DesignerInResidencePage';
 import { LazyImage } from './components/LazyImage';
 import SEO from './components/SEO';
-import { SidebarProvider } from './components/ui/sidebar';
-import { StudioSidebar, MobileBottomNav } from './components/StudioSidebar';
 
 interface CaseStudyCardProps {
   title: string;
@@ -41,7 +39,7 @@ function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground page-transition pb-20 lg:pb-0">
+    <div className="min-h-screen bg-background text-foreground page-transition">
       <SEO 
         title="Brent Summers, AI-Powered Marketing Leader & Strategist"
         description="Transformational leader combining strategic vision, technical implementation, and behavior change."
@@ -598,33 +596,21 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <SidebarProvider defaultOpen={true}>
-        <div className="min-h-screen flex w-full bg-background">
-          {/* Desktop Sidebar - hidden on mobile */}
-          <div className="hidden lg:block">
-            <StudioSidebar />
-          </div>
-          
-          <div className="flex-1 flex flex-col w-full">
-            <Header />
-            <main id="main-content" className="flex-1">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/llms.txt" element={<LLMSTextPage />} />
-                <Route path="/speaking" element={<SpeakingMediaPage />} />
-                <Route path="/speaking-media" element={<Navigate to="/speaking" replace />} />
-                <Route path="/design-case-studies" element={<DesignCaseStudiesPage />} />
-                <Route path="/leadership" element={<LeadershipPage />} />
-                <Route path="/designer-in-residence" element={<DesignerInResidencePage />} />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
-          
-          {/* Mobile Bottom Navigation - only visible on mobile */}
-          <MobileBottomNav />
-        </div>
-      </SidebarProvider>
+      <div className="min-h-screen flex flex-col w-full bg-background">
+        <Header />
+        <main id="main-content" className="flex-1">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/llms.txt" element={<LLMSTextPage />} />
+            <Route path="/speaking" element={<SpeakingMediaPage />} />
+            <Route path="/speaking-media" element={<Navigate to="/speaking" replace />} />
+            <Route path="/design-case-studies" element={<DesignCaseStudiesPage />} />
+            <Route path="/leadership" element={<LeadershipPage />} />
+            <Route path="/designer-in-residence" element={<DesignerInResidencePage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }

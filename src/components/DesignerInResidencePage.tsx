@@ -3,7 +3,7 @@ import SEO from './SEO';
 
 export default function DesignerInResidencePage() {
   return (
-    <div className="min-h-screen bg-background text-foreground pb-20 lg:pb-0">
+    <div className="min-h-screen bg-background text-foreground">
       <SEO 
         title="Designer in Residence - Brent Summers"
         description="Join Brent Summers' exclusive design mentorship program. Coming soon."
