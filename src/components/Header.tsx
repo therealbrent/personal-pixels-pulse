@@ -34,7 +34,7 @@ export default function Header() {
           <div className="flex items-center gap-4 relative group">
             <Link 
               to="/" 
-              className="text-2xl md:text-3xl font-black text-primary-text hover:text-primary transition-all duration-300 focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] flex items-center relative"
+              className="text-2xl md:text-3xl font-black text-foreground hover:text-primary transition-all duration-300 focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] flex items-center relative"
               aria-label="Navigate to home page"
             >
               BRENT SUMMERS

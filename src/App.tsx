@@ -66,7 +66,7 @@ function HomePage() {
               <div className="absolute bottom-0 left-0 w-full h-8 bg-accent/70 -z-10 transform -skew-x-6" aria-hidden="true"></div>
             </span>
             {" "}MARKETING
-            <span className="block text-primary-text">LEADER</span>
+            <span className="block text-primary">LEADER</span>
           </h1>
           
           <div className="bg-secondary p-6 border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300 mb-8">
