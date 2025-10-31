@@ -61,6 +61,14 @@ export default function SpeakingMediaPage() {
                   <p className="text-xs font-bold text-foreground/60">ANA • 2025</p>
                 </div>
 
+                {/* AI Champion's Playbook */}
+                <div className="bg-background border-2 border-foreground shadow-neo-sm p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-foreground line-clamp-2">
+                    The AI Champion's Playbook
+                  </h4>
+                  <p className="text-xs font-bold text-foreground/60">AI Leaders Forum (NYC) • 2025</p>
+                </div>
+
                 {/* Conference Talk 1 */}
                 <div 
                   onClick={() => window.open('https://www.youtube.com/watch?v=eEbuoK5DS30', '_blank')}
