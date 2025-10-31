@@ -29,7 +29,7 @@ export default function Footer() {
             {/* Leadership */}
             <a 
               href="/leadership" 
-              className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-secondary hover:text-secondary-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group"
+              className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-secondary hover:text-secondary-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group relative"
             >
               <div className="absolute top-2 right-2 w-4 h-4 bg-background/30 group-hover:bg-background transform rotate-45"></div>
               <h4 className="text-xl font-bold mb-2">LEADERSHIP</h4>
@@ -39,9 +39,9 @@ export default function Footer() {
             {/* Speaking & Media */}
             <a 
               href="/speaking-media" 
-              className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-accent hover:text-accent-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group"
+              className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-accent hover:text-accent-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group relative"
             >
-              <div className="absolute top-2 right-2 w-4 h-4 bg-background/30 group-hover:bg-background transform rotate-45"></div>
+              <div className="absolute bottom-2 left-2 w-6 h-6 bg-background/30 group-hover:bg-background transform -rotate-12"></div>
               <h4 className="text-xl font-bold mb-2">SPEAKING & MEDIA</h4>
               <p className="text-sm opacity-80">Talks, interviews, and media appearances</p>
             </a>
@@ -50,12 +50,13 @@ export default function Footer() {
               <ExternalLink
                 href="https://contentstrategy.substack.com/"
                 variant="primary"
-                className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-primary hover:text-primary-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group no-underline"
+                className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-primary hover:text-primary-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group no-underline relative"
                 showIcon={false}
               >
+                <div className="absolute top-2 left-2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[12px] border-b-background/30 group-hover:border-b-background"></div>
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-bold text-xl">FULL STACK CONTENT</h4>
-                  <Icon name="plus" size={20} className="transform group-hover:rotate-12 transition-transform" />
+                  <Icon name="external-link" size={20} className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </div>
                 <p className="text-sm opacity-80">Newsletter about content strategy</p>
               </ExternalLink>
@@ -64,12 +65,13 @@ export default function Footer() {
             <ExternalLink
               href="https://in200max.com/"
               variant="destructive"
-              className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-destructive hover:text-destructive-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group no-underline"
+              className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-destructive hover:text-destructive-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group no-underline relative"
               showIcon={false}
             >
+              <div className="absolute bottom-3 right-3 w-3 h-8 bg-background/30 group-hover:bg-background transform skew-x-12"></div>
               <div className="flex items-center justify-between mb-2">
                 <h4 className="font-bold text-xl">200 MAX</h4>
-                <Icon name="star" size={20} className="transform group-hover:rotate-45 transition-transform" />
+                <Icon name="external-link" size={20} className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </div>
               <p className="text-sm opacity-80">Maximum clarity. Minimal fluff. Actionable insights in fewer than 200 words.</p>
             </ExternalLink>
