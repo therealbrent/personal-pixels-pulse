@@ -25,7 +25,17 @@ export default function Footer() {
           </div>
           
           {/* Neo-brutalist link layout */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {/* Leadership */}
+            <a 
+              href="/leadership" 
+              className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-secondary hover:text-secondary-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group"
+            >
+              <div className="absolute top-2 right-2 w-4 h-4 bg-background/30 group-hover:bg-background transform rotate-45"></div>
+              <h4 className="text-xl font-bold mb-2">LEADERSHIP</h4>
+              <p className="text-sm opacity-80">Spotting trends, leading teams, and building new capabilities</p>
+            </a>
+
             {/* Speaking & Media */}
             <a 
               href="/speaking-media" 
