@@ -45,7 +45,7 @@ export default function DesignerInResidencePage() {
               </p>
               
               <p className="text-lg md:text-xl text-foreground leading-relaxed mt-6">
-                For Qualcomm, this means earlier access to top talent, co-branded visibility in the San Diego innovation community, and new perspectives on how to operationalize AI adoption. I'll be feeding insights from this residency into our AI-powered marketing transformation.
+                For Qualcomm Technologies, this means earlier access to top talent, co-branded visibility in the San Diego innovation community, and new perspectives on how to operationalize AI adoption. I'll be feeding insights from this residency into our AI-powered marketing transformation.
               </p>
             </div>
           </div>
