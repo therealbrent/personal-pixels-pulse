@@ -92,7 +92,7 @@ export default function SpeakingMediaPage() {
                     <h4 className="text-sm md:text-base font-black mb-1 text-primary group-hover:text-accent line-clamp-2 transition-colors">
                       Happier Humans, Better Business
                     </h4>
-                    <p className="text-xs font-bold text-foreground/60">AI Leaders Forum • 2025<br />San Diego Design Week • 2025</p>
+                    <p className="text-xs font-bold text-foreground/60">AI Leaders Forum (SF) • 2025<br />San Diego Design Week • 2025</p>
                   </div>
                   <Icon name="play" size={16} className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" />
                 </div>
