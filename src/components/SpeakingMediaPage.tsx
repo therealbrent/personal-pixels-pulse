@@ -69,6 +69,14 @@ export default function SpeakingMediaPage() {
                   <p className="text-xs font-bold text-foreground/60">AI Leaders Forum (NYC) • 2025</p>
                 </div>
 
+                {/* Frameworks and Free Tools */}
+                <div className="bg-background border-2 border-foreground shadow-neo-sm p-4">
+                  <h4 className="text-sm md:text-base font-black mb-1 text-foreground line-clamp-2">
+                    Frameworks and Free Tools to Improve Your UX Writing
+                  </h4>
+                  <p className="text-xs font-bold text-foreground/60">Bolder Design • 2025</p>
+                </div>
+
                 {/* Conference Talk 1 */}
                 <div 
                   onClick={() => window.open('https://www.youtube.com/watch?v=eEbuoK5DS30', '_blank')}
