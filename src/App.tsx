@@ -55,7 +55,7 @@ function HomePage() {
       />
 
       {/* Hero Section */}
-      <header id="home" className="h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-accent/20 via-primary/15 to-destructive/10 px-4">
+      <header id="home" className="h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-accent/20 via-primary/15 to-secondary/5 px-4">
         <div className="text-center max-w-4xl mx-auto">
           <p className="text-sm md:text-base text-muted-foreground mb-4 font-bold tracking-wide uppercase">
             This site was vibe coded
@@ -171,7 +171,7 @@ function HomePage() {
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <article className="bg-primary/10 p-6 border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300">
                 <span 
-                  className="inline-flex bg-destructive text-destructive-foreground px-3 py-1 text-sm font-semibold mb-3"
+                  className="inline-flex bg-accent text-accent-foreground px-3 py-1 text-sm font-semibold mb-3"
                   aria-label="New highlight"
                 >
                   NEW
@@ -203,7 +203,7 @@ function HomePage() {
                 <ExternalLink
                   href="https://www.youtube.com/watch?v=UYApYNEnaMM"
                   variant="secondary"
-                  className="border-4 border-secondary bg-transparent hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all duration-150 font-bold text-sm px-4 py-2 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center gap-2 no-underline"
+                  className="border-4 border-secondary bg-transparent hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-150 font-bold text-sm px-4 py-2 focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] inline-flex items-center gap-2 no-underline"
                 >
                   Watch Presentation
                 </ExternalLink>
@@ -215,14 +215,14 @@ function HomePage() {
 
       {/* Brutalist Separator - Zigzag Pattern */}
       <div className="relative overflow-hidden" role="presentation" aria-hidden="true">
-        <div className="h-20 bg-gradient-to-br from-accent via-destructive to-primary relative">
+        <div className="h-20 bg-gradient-to-br from-accent via-secondary to-primary relative">
           <div className="absolute inset-0 bg-background/30">
             <div className="h-full w-full bg-gradient-to-t from-foreground/10 to-transparent"></div>
           </div>
           {/* Decorative shapes that spill outside bounds */}
           <div className="absolute -top-3 left-8 w-12 h-16 bg-accent border-2 border-foreground transform -skew-y-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "2px", ["--p-y" as any]: "-2px", ["--p-rot" as any]: "3deg" }}></div>
           <div className="absolute top-2 left-24 w-8 h-8 bg-primary border-2 border-foreground transform rotate-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "3px", ["--p-y" as any]: "2px", ["--p-rot" as any]: "4deg" }}></div>
-          <div className="absolute -bottom-2 left-40 w-16 h-6 bg-destructive border-2 border-foreground transform skew-x-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "-2px", ["--p-y" as any]: "2px", ["--p-rot" as any]: "-3deg" }}></div>
+          <div className="absolute -bottom-2 left-40 w-16 h-6 bg-secondary border-2 border-foreground transform skew-x-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "-2px", ["--p-y" as any]: "2px", ["--p-rot" as any]: "-3deg" }}></div>
           <div className="absolute top-1 right-32 w-6 h-24 bg-secondary border-2 border-foreground transform rotate-30 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "-3px", ["--p-y" as any]: "-1px", ["--p-rot" as any]: "3deg" }}></div>
           <div className="absolute -bottom-4 right-16 w-10 h-10 bg-accent border-2 border-foreground transform -rotate-30 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "3px", ["--p-y" as any]: "-2px", ["--p-rot" as any]: "-4deg" }}></div>
           <div className="absolute -top-2 right-4 w-14 h-14 bg-primary border-4 border-foreground transform rotate-45 transform-gpu will-change-[transform] transition-transform duration-300 ease-out hover:animate-parallax-hover motion-reduce:hover:animate-none motion-reduce:transition-none" style={{ ["--p-x" as any]: "4px", ["--p-y" as any]: "-3px", ["--p-rot" as any]: "5deg" }}></div>
