@@ -101,7 +101,12 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: "presentation",
     title: "The UX Flywheel",
     date: "2020-01-01", // TODO: Provide more specific date if available
-    venue: ["Convey UX", "San Diego Digital Designers", "MarcomCentral User Conference"],
+    venue: [
+      "Convey UX (Seattle) ",
+      "San Diego Digital Designers",
+      "MarcomCentral User Conference (San Diego)",
+      "Masters of Marketing (Vritual)",
+    ],
     videoUrl: "https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp",
     topics: ["UX", "Strategy"],
   },
@@ -110,7 +115,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: "presentation",
     title: "Frameworks and Free Tools to Improve Your UX Writing",
     date: "2020-01-01", // TODO: Provide more specific date if available
-    venue: "Bolder Design",
+    venue: "Bolder Design (Virtual)",
     topics: ["UX", "Content"],
   },
 
@@ -122,7 +127,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: "podcast",
     title: "Balancing Quantitative and Qualitative Perspectives in UX Strategy",
     date: "2020-01-01", // TODO: Provide more specific date if available
-    venue: "Convey UX",
+    venue: "Convey UX (Seattle)",
     videoUrl: "https://youtu.be/s827NVsQXS4?si=8JP9q_-fhSDMs_8_",
     topics: ["UX", "Strategy"],
   },
