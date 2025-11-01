@@ -66,6 +66,15 @@ export default {
 				border: 'hsl(var(--sidebar-border))',
 				ring: 'hsl(var(--sidebar-ring))'
 			},
+			/* Neo-brutalist extended colors */
+			cobalt: {
+				DEFAULT: 'hsl(var(--cobalt))',
+				foreground: 'hsl(var(--cobalt-foreground))'
+			},
+			oxblood: {
+				DEFAULT: 'hsl(var(--destructive))',
+				foreground: 'hsl(var(--destructive-foreground))'
+			},
 			/* Accessibility-focused color additions */
 			focus: {
 				ring: 'hsl(var(--focus-ring))',
