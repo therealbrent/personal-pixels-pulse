@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Icon } from './components/ui/icon';
 import { BrutalistButton } from './components/ui/BrutalistButton';
@@ -320,7 +320,7 @@ function HomePage() {
 
                     <div>
                       <h4 className="text-xl font-bold mb-3 text-primary-text">Beyond the day job</h4>
-                      <p>I am an ambassador for the San Diego / Tijuana design community, contributing to initiatives that shaped our region's recognition as World Design Capital 2024. I'm also an active member of San Diego Experience Design Professionals, where I participate in meetups and mentorship.</p>
+                      <p>In October 2025, I accepted UC San Diego's invitation to become <Link to="/designer-in-residence" className="text-primary hover:text-primary/80 underline font-semibold">Designer in Residence</Link>. As a member of this industry affiliate program, I will mentor students, co-lead design programs, and connect academic research back to enterprise challenges.</p>
                     </div>
                   </>
                 )}
