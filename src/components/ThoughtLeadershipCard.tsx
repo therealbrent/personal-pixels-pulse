@@ -65,9 +65,9 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       <article
         onClick={isClickable ? handleClick : undefined}
         style={{ animationDelay: staggerDelay }}
-        className={`bg-background border-4 border-foreground shadow-neo-md p-6 md:p-8 ${styles.hoverBg} ${
+        className={`md:col-span-2 bg-background border-4 border-foreground shadow-neo-md p-6 md:p-8 ${styles.hoverBg} ${
           isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
-        } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2`}
+        } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative`}
         aria-label={`Article: ${item.title} featured in ${item.publication}`}
         tabIndex={isClickable ? 0 : undefined}
         role={isClickable ? 'button' : 'article'}
@@ -78,8 +78,15 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           }
         } : undefined}
       >
+        {/* Clickable indicator */}
+        {isClickable && (
+          <div className="absolute top-4 right-4 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+            <Icon name="external-link" size={20} className={`text-foreground ${styles.hoverText}`} />
+          </div>
+        )}
+        
         <div className="mb-3">
-          <span className="text-xs font-black text-foreground tracking-wider uppercase group-hover:text-primary-foreground/90 transition-colors" aria-label={`Published in ${item.publication}`}>
+          <span className="text-xs font-black text-foreground tracking-wider uppercase group-hover:text-current transition-colors" aria-label={`Published in ${item.publication}`}>
             {item.publication}
           </span>
         </div>
@@ -87,12 +94,12 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           {item.title}
         </h3>
         {item.quote && (
-          <blockquote className={`mb-4 border-l-4 border-foreground ${styles.hoverBorder} pl-4 italic text-foreground group-hover:text-primary-foreground/95 text-sm md:text-base leading-relaxed transition-all duration-300`}>
+          <blockquote className={`mb-4 border-l-4 border-foreground ${styles.hoverBorder} pl-4 italic text-foreground group-hover:text-current text-sm md:text-base leading-relaxed transition-all duration-300`}>
             {item.quote}
           </blockquote>
         )}
         {isClickable && (
-          <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1`}>
+          <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
             Read Article
             <Icon name="chevron-right" size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </span>
@@ -106,7 +113,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
     <article
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
-      className={`bg-background border-2 border-foreground shadow-neo-sm p-4 min-h-[120px] flex flex-col justify-between ${styles.hoverBg} ${
+      className={`bg-background border-2 border-foreground shadow-neo-sm p-4 min-h-[140px] flex flex-col justify-between ${styles.hoverBg} ${
         isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor} relative` : 'transition-all duration-300 relative'
       } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
@@ -119,11 +126,18 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         }
       } : undefined}
     >
-      <div className={hasVideo ? 'pr-14' : ''}>
-        <h3 className={`text-sm md:text-base font-black mb-2 text-foreground leading-snug line-clamp-2 ${styles.hoverText} transition-colors`}>
+      {/* Clickable indicator for non-video cards */}
+      {isClickable && !hasVideo && (
+        <div className="absolute top-3 right-3 opacity-30 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+          <Icon name="external-link" size={16} className={`text-foreground ${styles.hoverText}`} />
+        </div>
+      )}
+      
+      <div className={hasVideo ? 'pr-16' : isClickable ? 'pr-8' : ''}>
+        <h3 className={`text-sm md:text-base font-black mb-2 text-foreground leading-snug line-clamp-3 ${styles.hoverText} transition-colors`}>
           {item.title}
         </h3>
-        <p className={`text-xs font-bold text-foreground ${styles.hoverText} transition-colors`}>
+        <p className={`text-xs font-bold text-foreground group-hover:text-current transition-colors`}>
           {item.venue || item.publication}
           {item.description && ` • ${item.description}`}
         </p>

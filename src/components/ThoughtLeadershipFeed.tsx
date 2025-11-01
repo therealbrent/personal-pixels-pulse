@@ -40,7 +40,8 @@ export default function ThoughtLeadershipFeed() {
         {/* Feed Grid */}
         <div 
           id="thought-leadership-grid" 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-max"
+          style={{ gridAutoFlow: 'dense' }}
           role="region"
           aria-live="polite"
           aria-label={`Showing ${items.length} ${activeFilter === 'all' ? '' : activeFilter} items`}
