@@ -46,7 +46,11 @@ All colors MUST be HSL with AAA contrast ratios.
     --input: 40 33% 97%;
     --ring: 43 100% 52%; /* Mustard ring */
 
-    /* Focus states - Cobalt Blue #2962FF for cold tension */
+    /* Cobalt Blue #2962FF - Cold tension, navigation highlights */
+    --cobalt: 220 100% 59%;
+    --cobalt-foreground: 0 0% 100%; /* White text on Cobalt */
+    
+    /* Focus states */
     --focus-ring: 220 100% 59%;
     --focus-offset: 40 33% 97%;
 
@@ -101,7 +105,11 @@ All colors MUST be HSL with AAA contrast ratios.
     --input: 0 0% 15%;
     --ring: 43 84% 60%;
 
-    /* Focus states - Cobalt Blue for dark mode */
+    /* Cobalt Blue for dark mode */
+    --cobalt: 220 100% 65%;
+    --cobalt-foreground: 0 0% 100%;
+    
+    /* Focus states */
     --focus-ring: 220 100% 65%;
     --focus-offset: 0 0% 8%;
     --sidebar-background: 0 0% 5%;
