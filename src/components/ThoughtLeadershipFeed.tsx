@@ -29,20 +29,20 @@ export default function ThoughtLeadershipFeed() {
 
   const getItemHoverBg = (type: ContentType) => {
     switch (type) {
-      case 'presentation': return 'hover:bg-background';
-      case 'podcast': return 'hover:bg-secondary';
-      case 'panel': return 'hover:bg-accent';
-      case 'article': return 'hover:bg-primary';
+      case 'article': return 'hover:bg-primary'; // Yellow
+      case 'presentation': return 'hover:bg-cobalt'; // Blue
+      case 'panel': return 'hover:bg-secondary'; // Pink
+      case 'podcast': return 'hover:bg-oxblood'; // Crimson
       default: return 'hover:bg-background';
     }
   };
 
   const getItemHoverText = (type: ContentType) => {
     switch (type) {
-      case 'presentation': return 'hover:text-foreground';
-      case 'podcast': return 'hover:text-secondary-foreground';
-      case 'panel': return 'hover:text-accent-foreground';
-      case 'article': return 'hover:text-primary-foreground';
+      case 'article': return 'hover:text-primary-foreground'; // Yellow
+      case 'presentation': return 'hover:text-cobalt-foreground'; // Blue
+      case 'panel': return 'hover:text-secondary-foreground'; // Pink
+      case 'podcast': return 'hover:text-oxblood-foreground'; // Crimson
       default: return 'hover:text-foreground';
     }
   };
