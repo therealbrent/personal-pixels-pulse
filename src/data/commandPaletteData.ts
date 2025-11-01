@@ -69,62 +69,6 @@ export const commandPaletteData: CommandItem[] = [
     description: 'Machine-readable site information',
   },
 
-  // ===== LEVEL 2: LEADERSHIP PAGE SECTIONS =====
-  {
-    id: 'leadership-principles',
-    title: 'Leadership Principles',
-    url: '/leadership#principles',
-    icon: Lightbulb,
-    type: 'section',
-    keywords: ['principles', 'philosophy', 'values', 'beliefs'],
-    description: 'Core leadership principles',
-  },
-  {
-    id: 'empathy-innovation',
-    title: 'Empathy Fuels Innovation',
-    url: '/leadership#empathy',
-    icon: Lightbulb,
-    type: 'section',
-    keywords: ['empathy', 'innovation', 'users', 'understanding'],
-    description: 'Leadership principle',
-  },
-  {
-    id: 'transformation-land',
-    title: 'Transformation Must Land',
-    url: '/leadership#transformation',
-    icon: Lightbulb,
-    type: 'section',
-    keywords: ['transformation', 'change', 'implementation', 'execution'],
-    description: 'Leadership principle',
-  },
-  {
-    id: 'data-decisions',
-    title: 'Data Earns Decisions',
-    url: '/leadership#data',
-    icon: Lightbulb,
-    type: 'section',
-    keywords: ['data', 'decisions', 'evidence', 'metrics'],
-    description: 'Leadership principle',
-  },
-  {
-    id: 'collaboration',
-    title: 'Collaboration Multiplies Force',
-    url: '/leadership#collaboration',
-    icon: Lightbulb,
-    type: 'section',
-    keywords: ['collaboration', 'teamwork', 'silos', 'together'],
-    description: 'Leadership principle',
-  },
-  {
-    id: 'long-game',
-    title: 'Play the Long Game',
-    url: '/leadership#long-game',
-    icon: Lightbulb,
-    type: 'section',
-    keywords: ['long', 'game', 'strategy', 'future', 'sustainable'],
-    description: 'Leadership principle',
-  },
-
   // ===== LEVEL 2: SPEAKING PAGE SECTIONS =====
   {
     id: 'presentations',
