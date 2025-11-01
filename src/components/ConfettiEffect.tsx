@@ -104,7 +104,7 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
           color: brutalColors[Math.floor(Math.random() * brutalColors.length)],
           delay: Math.random() * 0.2,
           shape,
-          zIndex: Math.floor(Math.random() * 5) + 1, // Random layering 1-5
+          zIndex: Math.floor(Math.random() * 20) + 40, // Random layering 40-59 (some behind modal at z-50, some in front)
           borderWidth: Math.random() > 0.5 ? 4 : 6, // Brutalist thick borders
         };
       });
@@ -127,7 +127,7 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
 
   return (
     <div 
-      className="fixed inset-0 pointer-events-none z-[51] overflow-hidden"
+      className="fixed inset-0 pointer-events-none overflow-hidden"
       aria-hidden="true"
     >
       <div 
