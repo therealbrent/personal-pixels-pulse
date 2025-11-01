@@ -92,7 +92,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: "presentation",
     title: "Use Science to Write Better Copy",
     date: "2020-01-01", // TODO: Provide more specific date if available
-    venue: "Product-Led Growth Conference",
+    venue: "Product-Led Growth Conference (Virtual)",
     videoUrl: "https://www.youtube.com/watch?v=GRdx9R2B7iQ&t=1s",
     topics: ["UX", "Content"],
   },
