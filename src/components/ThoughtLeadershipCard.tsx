@@ -146,15 +146,15 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       {/* Clickable indicator for non-video cards */}
       {isClickable && !hasVideo && (
         <div className="absolute top-3 right-3 opacity-30 group-hover:opacity-100 transition-opacity" aria-hidden="true">
-          <Icon name="external-link" size={16} className={`text-foreground ${styles.hoverText} transition-colors`} />
+          <Icon name="external-link" size={16} className="text-foreground group-hover:text-white transition-colors" />
         </div>
       )}
       
       <div className={hasVideo ? 'pr-16' : isClickable ? 'pr-8' : ''}>
-        <h3 className={`text-sm md:text-base font-black mb-2 text-foreground leading-snug line-clamp-3 ${styles.hoverText} transition-colors`}>
+        <h3 className="text-sm md:text-base font-black mb-2 text-foreground group-hover:text-white leading-snug line-clamp-3 transition-colors">
           {item.title}
         </h3>
-        <p className={`text-xs font-bold text-foreground ${styles.hoverText} transition-colors`}>
+        <p className="text-xs font-bold text-foreground group-hover:text-white transition-colors">
           {item.venue || item.publication}
           {item.description && ` • ${item.description}`}
         </p>
