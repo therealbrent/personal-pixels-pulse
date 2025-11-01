@@ -27,32 +27,33 @@ export default function ThoughtLeadershipFeed() {
     { value: 'article', label: 'Media Features' },
   ];
 
-  const getItemBgColor = (type: ContentType) => {
+  const getItemHoverBg = (type: ContentType) => {
     switch (type) {
-      case 'presentation': return 'bg-background';
-      case 'podcast': return 'bg-secondary';
-      case 'panel': return 'bg-accent';
-      case 'article': return 'bg-primary';
-      default: return 'bg-background';
+      case 'presentation': return 'hover:bg-background';
+      case 'podcast': return 'hover:bg-secondary';
+      case 'panel': return 'hover:bg-accent';
+      case 'article': return 'hover:bg-primary';
+      default: return 'hover:bg-background';
     }
   };
 
-  const getItemTextColor = (type: ContentType) => {
+  const getItemHoverText = (type: ContentType) => {
     switch (type) {
-      case 'presentation': return 'text-foreground';
-      case 'podcast': return 'text-secondary-foreground';
-      case 'panel': return 'text-accent-foreground';
-      case 'article': return 'text-primary-foreground';
-      default: return 'text-foreground';
+      case 'presentation': return 'hover:text-foreground';
+      case 'podcast': return 'hover:text-secondary-foreground';
+      case 'panel': return 'hover:text-accent-foreground';
+      case 'article': return 'hover:text-primary-foreground';
+      default: return 'hover:text-foreground';
     }
   };
 
-  const renderItem = (item: ThoughtLeadershipItem) => {
-    const bgColor = getItemBgColor(item.type);
-    const textColor = getItemTextColor(item.type);
+  const renderItem = (item: ThoughtLeadershipItem, index: number) => {
+    const hoverBg = getItemHoverBg(item.type);
+    const hoverText = getItemHoverText(item.type);
     const hasVideo = !!item.videoUrl;
     const hasUrl = !!item.url;
     const isClickable = hasVideo || hasUrl;
+    const staggerDelay = `${index * 50}ms`;
     
     const handleClick = () => {
       if (hasVideo) {
@@ -68,29 +69,26 @@ export default function ThoughtLeadershipFeed() {
         <div
           key={item.id}
           onClick={isClickable ? handleClick : undefined}
-          className={`${bgColor} border-4 border-foreground shadow-neo-md p-6 md:p-8 ${
-            isClickable ? 'cursor-pointer hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-neo-sm transition-all duration-200' : ''
-          } group`}
+          style={{ animationDelay: staggerDelay }}
+          className={`bg-background border-4 border-foreground shadow-neo-md p-6 md:p-8 ${hoverBg} ${
+            isClickable ? 'cursor-pointer hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-neo-sm' : ''
+          } transition-all duration-300 animate-fade-in group`}
         >
           <div className="mb-3">
-            <span className="text-xs font-black text-primary-foreground/60 tracking-wider uppercase">
+            <span className="text-xs font-black text-foreground/60 tracking-wider uppercase group-hover:text-primary-foreground/60 transition-colors">
               {item.publication}
             </span>
           </div>
-          <h3 className={`text-lg md:text-xl font-black mb-4 ${textColor} leading-tight ${
-            isClickable ? 'group-hover:text-accent transition-colors' : ''
-          }`}>
+          <h3 className={`text-lg md:text-xl font-black mb-4 text-foreground leading-tight ${hoverText} transition-colors`}>
             {item.title}
           </h3>
           {item.quote && (
-            <blockquote className={`mb-4 border-l-4 border-primary-foreground/40 pl-4 italic ${textColor}/80 text-sm md:text-base leading-relaxed ${
-              isClickable ? 'group-hover:border-accent transition-colors' : ''
-            }`}>
+            <blockquote className="mb-4 border-l-4 border-foreground/40 group-hover:border-accent pl-4 italic text-foreground/80 text-sm md:text-base leading-relaxed transition-colors">
               {item.quote}
             </blockquote>
           )}
           {isClickable && (
-            <span className={`${textColor} group-hover:text-accent font-bold underline text-sm transition-colors`}>
+            <span className="text-foreground group-hover:text-accent font-bold underline text-sm transition-colors">
               Read Article
             </span>
           )}
@@ -103,27 +101,35 @@ export default function ThoughtLeadershipFeed() {
       <div
         key={item.id}
         onClick={isClickable ? handleClick : undefined}
-        className={`${bgColor} border-2 border-foreground shadow-neo-sm p-4 min-h-[100px] flex flex-col justify-between ${
-          isClickable ? 'cursor-pointer hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs transition-all duration-200 relative' : ''
-        } group`}
+        style={{ animationDelay: staggerDelay }}
+        className={`bg-background border-2 border-foreground shadow-neo-sm p-4 min-h-[100px] flex flex-col justify-between ${hoverBg} ${
+          isClickable ? 'cursor-pointer hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-xs relative' : ''
+        } transition-all duration-300 animate-fade-in group`}
       >
-        <div className={isClickable ? 'pr-8' : ''}>
-          <h3 className={`text-sm md:text-base font-black mb-2 ${textColor} line-clamp-2 ${
-            isClickable ? 'group-hover:text-accent transition-colors' : ''
-          }`}>
+        <div className={isClickable ? 'pr-12' : ''}>
+          <h3 className={`text-sm md:text-base font-black mb-2 text-foreground line-clamp-2 ${hoverText} transition-colors`}>
             {item.title}
           </h3>
-          <p className={`text-xs font-bold ${textColor}/60`}>
+          <p className="text-xs font-bold text-foreground/60 group-hover:text-foreground/80 transition-colors">
             {item.venue || item.publication}
             {item.description && ` • ${item.description}`}
           </p>
         </div>
         {hasVideo && (
-          <Icon 
-            name="play" 
-            size={16} 
-            className="absolute bottom-4 right-4 text-primary group-hover:text-accent transition-all duration-200" 
-          />
+          <div className="absolute bottom-4 right-4">
+            <div className="relative">
+              {/* Pulsing glow effect */}
+              <div className="absolute inset-0 bg-accent rounded-full blur-md opacity-60 animate-pulse" />
+              {/* Play button */}
+              <div className="relative bg-accent rounded-full p-2 group-hover:scale-110 transition-transform duration-200">
+                <Icon 
+                  name="play" 
+                  size={20} 
+                  className="text-accent-foreground fill-accent-foreground" 
+                />
+              </div>
+            </div>
+          </div>
         )}
       </div>
     );
@@ -183,7 +189,7 @@ export default function ThoughtLeadershipFeed() {
 
         {/* Feed Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {items.map(renderItem)}
+          {items.map((item, index) => renderItem(item, index))}
         </div>
 
         {/* Empty State */}
