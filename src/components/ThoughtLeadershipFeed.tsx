@@ -38,7 +38,13 @@ export default function ThoughtLeadershipFeed() {
         />
 
         {/* Feed Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div 
+          id="thought-leadership-grid" 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+          role="region"
+          aria-live="polite"
+          aria-label={`Showing ${items.length} ${activeFilter === 'all' ? '' : activeFilter} items`}
+        >
           {items.map((item, index) => (
             <ThoughtLeadershipCard key={item.id} item={item} index={index} />
           ))}

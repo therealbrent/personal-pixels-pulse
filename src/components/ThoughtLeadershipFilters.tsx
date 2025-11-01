@@ -57,7 +57,7 @@ export default function ThoughtLeadershipFilters({
   return (
     <>
       {/* Desktop Tabs */}
-      <div className="hidden md:flex gap-2 mb-8 flex-wrap">
+      <nav className="hidden md:flex gap-3 mb-8 flex-wrap" role="tablist" aria-label="Content type filters">
         {filterOptions.map(({ value, label }) => {
           const colors = tabColors[value];
           const isActive = activeFilter === value;
@@ -66,38 +66,38 @@ export default function ThoughtLeadershipFilters({
             <button
               key={value}
               onClick={() => onFilterChange(value)}
-              style={isActive ? undefined : {
-                ['--hover-bg' as string]: `hsl(var(--${value === 'article' ? 'primary' : value === 'presentation' ? 'cobalt' : value === 'podcast' ? 'destructive' : 'accent'}))`
-              }}
-              className={`px-6 py-3 font-black text-sm border-2 border-foreground transition-all duration-200 ${
+              role="tab"
+              aria-selected={isActive}
+              aria-controls="thought-leadership-grid"
+              className={`px-6 py-3 font-black text-sm border-4 border-foreground transition-all duration-200 shadow-neo-sm focus:ring-4 focus:ring-focus-ring focus:ring-offset-2 ${
                 isActive
-                  ? `${colors.bg} ${colors.text} shadow-neo-sm translate-x-[2px] translate-y-[2px]`
-                  : `bg-background text-foreground shadow-neo-md hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-sm ${colors.bg.replace('bg-', 'hover:bg-')} ${colors.text.replace('text-', 'hover:text-')}`
+                  ? `${colors.bg} ${colors.text} translate-x-[2px] translate-y-[2px] shadow-none`
+                  : `bg-background text-foreground hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none ${colors.bg.replace('bg-', 'hover:bg-')} ${colors.text.replace('text-', 'hover:text-')}`
               }`}
-              aria-pressed={isActive}
-              aria-label={`Filter by ${label}`}
             >
               {label}
             </button>
           );
         })}
-      </div>
+      </nav>
 
       {/* Mobile Dropdown */}
       <div className="md:hidden mb-8">
+        <label htmlFor="content-filter" className="sr-only">Filter content by type</label>
         <Select value={activeFilter} onValueChange={(value) => onFilterChange(value as FilterType)}>
           <SelectTrigger 
-            className="w-full border-2 border-foreground bg-background text-foreground font-black shadow-neo-sm"
-            aria-label="Filter content by type"
+            id="content-filter"
+            className="w-full border-4 border-foreground bg-background text-foreground font-black shadow-neo-sm focus:ring-4 focus:ring-focus-ring"
+            aria-label="Content type filter"
           >
             <SelectValue placeholder="Filter by type" />
           </SelectTrigger>
-          <SelectContent className="bg-background border-2 border-foreground z-50">
+          <SelectContent className="bg-background border-4 border-foreground z-50 shadow-neo-lg">
             {filterOptions.map(({ value, label }) => (
               <SelectItem 
                 key={value} 
                 value={value}
-                className="font-bold cursor-pointer hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                className="font-bold cursor-pointer hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground py-3 border-b-2 border-foreground/10 last:border-0"
               >
                 {label}
               </SelectItem>
