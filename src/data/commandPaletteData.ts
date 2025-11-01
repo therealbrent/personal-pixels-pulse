@@ -69,37 +69,7 @@ export const commandPaletteData: CommandItem[] = [
     description: 'Machine-readable site information',
   },
 
-  // ===== LEVEL 2: SPEAKING PAGE SECTIONS =====
-  {
-    id: 'presentations',
-    title: 'Conference Presentations',
-    url: '/speaking#presentations',
-    icon: Play,
-    type: 'section',
-    keywords: ['presentations', 'conferences', 'talks', 'keynote'],
-    description: 'Speaking at conferences',
-  },
-  {
-    id: 'podcasts',
-    title: 'Podcast Appearances',
-    url: '/speaking#podcasts',
-    icon: MessageSquare,
-    type: 'section',
-    keywords: ['podcast', 'podcasts', 'interviews', 'audio'],
-    description: 'Podcast guest appearances',
-  },
-
   // ===== LEVEL 3: SPECIFIC TALKS & PRESENTATIONS =====
-  {
-    id: 'talk-ana-2025',
-    title: 'Next-Generation Marketing: How AI is Used at Qualcomm',
-    url: '/speaking#ana-2025',
-    icon: Play,
-    type: 'section',
-    keywords: ['ana', 'qualcomm', 'ai', 'marketing', '2025'],
-    description: 'ANA Conference 2025',
-    badge: 'ANA 2025',
-  },
   {
     id: 'talk-webit-2025',
     title: 'Beyond Buzzwords: Real AI, Real Marketing, Real Results',
