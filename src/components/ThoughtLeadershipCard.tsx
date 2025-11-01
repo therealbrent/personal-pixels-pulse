@@ -81,7 +81,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         {/* Clickable indicator */}
         {isClickable && (
           <div className="absolute top-4 right-4 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
-            <Icon name="external-link" size={20} className={`text-foreground ${styles.hoverText}`} />
+            <Icon name="external-link" size={20} className={`text-foreground ${styles.hoverText} transition-colors`} />
           </div>
         )}
         
@@ -111,7 +111,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
             <div className="flex-shrink-0 mt-2">
               <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
                 Read Article
-                <Icon name="chevron-right" size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                <Icon name="chevron-right" size={14} className={`${styles.hoverText} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
               </span>
             </div>
           )}
@@ -141,7 +141,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       {/* Clickable indicator for non-video cards */}
       {isClickable && !hasVideo && (
         <div className="absolute top-3 right-3 opacity-30 group-hover:opacity-100 transition-opacity" aria-hidden="true">
-          <Icon name="external-link" size={16} className={`text-foreground ${styles.hoverText}`} />
+          <Icon name="external-link" size={16} className={`text-foreground ${styles.hoverText} transition-colors`} />
         </div>
       )}
       
@@ -162,7 +162,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
               <Icon 
                 name="play" 
                 size={20} 
-                className="text-foreground fill-foreground ml-1" 
+                className={`text-foreground fill-foreground ${styles.hoverText} ml-1 transition-colors`}
               />
             </div>
             {/* Pulsing indicator */}
