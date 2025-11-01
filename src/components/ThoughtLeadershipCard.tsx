@@ -162,12 +162,12 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       {hasVideo && (
         <div className="absolute bottom-3 right-3" aria-hidden="true">
           <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
-            {/* Brutalist play button with hard shadow and color inversion on hover */}
-            <div className={`absolute inset-0 ${styles.glowColor} group-hover:bg-background border-4 border-foreground shadow-neo-sm group-hover:shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
+            {/* Brutalist play button with color inversion on hover */}
+            <div className={`absolute inset-0 bg-background group-hover:${styles.glowColor} border-4 border-foreground shadow-neo-sm group-hover:shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
               <Icon 
                 name="play" 
                 size={20} 
-                className={`text-foreground fill-foreground group-hover:${styles.iconColor} group-hover:fill-current group-hover:rotate-90 ml-1 transition-all duration-300`}
+                className={`${styles.iconColor} fill-current group-hover:text-foreground group-hover:fill-foreground group-hover:rotate-90 ml-1 transition-all duration-300`}
               />
             </div>
           </div>
