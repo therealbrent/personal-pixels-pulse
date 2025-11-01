@@ -103,9 +103,9 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2020-01-01", // TODO: Provide more specific date if available
     venue: [
       "Convey UX (Seattle) ",
-      "San Diego Digital Designers",
       "MarcomCentral User Conference (San Diego)",
       "Masters of Marketing (Virtual)",
+      "San Diego Digital Designers",
     ],
     videoUrl: "https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp",
     topics: ["UX", "Strategy"],
