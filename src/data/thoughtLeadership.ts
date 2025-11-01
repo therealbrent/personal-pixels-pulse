@@ -105,7 +105,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
       "Convey UX (Seattle) ",
       "San Diego Digital Designers",
       "MarcomCentral User Conference (San Diego)",
-      "Masters of Marketing (Vritual)",
+      "Masters of Marketing (Virtual)",
     ],
     videoUrl: "https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp",
     topics: ["UX", "Strategy"],
