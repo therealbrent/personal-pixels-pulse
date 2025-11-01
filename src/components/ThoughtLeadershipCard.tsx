@@ -12,6 +12,7 @@ const contentTypeStyles: Record<ContentType, {
   hoverText: string;
   hoverBorder: string;
   glowColor: string;
+  iconColor: string;
   shadowColor: string;
 }> = {
   article: {
@@ -19,6 +20,7 @@ const contentTypeStyles: Record<ContentType, {
     hoverText: 'group-hover:!text-foreground', // Onyx on Mustard
     hoverBorder: 'group-hover:!border-primary',
     glowColor: 'bg-primary',
+    iconColor: 'text-primary',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--primary))]'
   },
   presentation: {
@@ -26,6 +28,7 @@ const contentTypeStyles: Record<ContentType, {
     hoverText: 'group-hover:!text-white', // White on Cobalt
     hoverBorder: 'group-hover:!border-cobalt',
     glowColor: 'bg-cobalt',
+    iconColor: 'text-cobalt',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--cobalt))]'
   },
   panel: {
@@ -33,6 +36,7 @@ const contentTypeStyles: Record<ContentType, {
     hoverText: 'group-hover:!text-white', // White on Hot Pink
     hoverBorder: 'group-hover:!border-accent',
     glowColor: 'bg-accent',
+    iconColor: 'text-accent',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--accent))]'
   },
   podcast: {
@@ -40,6 +44,7 @@ const contentTypeStyles: Record<ContentType, {
     hoverText: 'group-hover:!text-background', // Off-white on Oxblood
     hoverBorder: 'group-hover:!border-oxblood',
     glowColor: 'bg-oxblood',
+    iconColor: 'text-oxblood',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--destructive))]'
   }
 };
@@ -156,13 +161,13 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       </div>
       {hasVideo && (
         <div className="absolute bottom-3 right-3" aria-hidden="true">
-          <div className="relative w-12 h-12">
-            {/* Brutalist play button with hard shadow */}
-            <div className={`absolute inset-0 ${styles.glowColor} border-4 border-foreground shadow-neo-sm group-hover:shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
+          <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+            {/* Brutalist play button with hard shadow and color inversion on hover */}
+            <div className={`absolute inset-0 ${styles.glowColor} group-hover:bg-background border-4 border-foreground shadow-neo-sm group-hover:shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
               <Icon 
                 name="play" 
                 size={20} 
-                className={`text-foreground fill-foreground ${styles.hoverText} ml-1 transition-colors`}
+                className={`text-foreground fill-foreground group-hover:${styles.iconColor} group-hover:fill-current group-hover:rotate-90 ml-1 transition-all duration-300`}
               />
             </div>
           </div>
