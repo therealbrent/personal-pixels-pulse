@@ -2,9 +2,14 @@ import { Button } from './ui/button';
 import { LazyImage } from './LazyImage';
 
 export default function BiographyHeadshot() {
+  // High-res version for download
+  const highResHeadshot = '/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png';
+  // Compressed preview for fast loading
+  const previewHeadshot = '/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a-preview.png';
+  
   const handleDownloadHeadshot = () => {
     const link = document.createElement('a');
-    link.href = '/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png';
+    link.href = highResHeadshot;
     link.download = 'brent-summers-headshot.png';
     document.body.appendChild(link);
     link.click();
@@ -33,9 +38,9 @@ export default function BiographyHeadshot() {
           <div className="flex-shrink-0 w-full sm:w-56 lg:w-44 mx-auto lg:mx-0">
             {/* Bulletproof container - zero gaps possible */}
             <div className="border-4 border-foreground bg-background shadow-neo-sm overflow-hidden">
-              {/* Image with forced exact fit - no gaps */}
+              {/* Image with forced exact fit - no gaps - using compressed preview */}
               <img 
-                src="/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png" 
+                src={previewHeadshot}
                 alt="Professional headshot of Brent Summers" 
                 className="w-full h-auto block m-0 p-0 border-0"
                 style={{ display: 'block', margin: 0, padding: 0, border: 'none', verticalAlign: 'top' }}
