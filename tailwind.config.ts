@@ -133,28 +133,32 @@ export default {
 						transform: 'translate(0, 0) rotate(0deg) scale(1)',
 						opacity: '1'
 					},
-					'10%': {
-						transform: 'translate(calc(var(--drift-x, 0) * 8vw + var(--wobble, 1) * 2vw), -50vh) rotate(calc(var(--rotation-speed, 540deg) * 0.1)) scale(1.15)',
+					'8%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 5vw + var(--wobble, 1) * 1.5vw), -40vh) rotate(calc(var(--rotation-speed, 540deg) * 0.08)) scale(1.12)',
 						opacity: '1'
 					},
-					'20%': {
-						transform: 'translate(calc(var(--drift-x, 0) * 15vw - var(--wobble, 1) * 3vw), -70vh) rotate(calc(var(--rotation-speed, 540deg) * 0.2)) scale(1.05)',
+					'16%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 12vw - var(--wobble, 1) * 2vw), -65vh) rotate(calc(var(--rotation-speed, 540deg) * 0.16)) scale(1.08)',
 						opacity: '1'
 					},
-					'40%': {
-						transform: 'translate(calc(var(--drift-x, 0) * 35vw * var(--spread-multiplier, 1) + var(--wobble, 1) * 4vw), 10vh) rotate(calc(var(--rotation-speed, 540deg) * 0.4)) scale(1)',
+					'28%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 22vw + var(--wobble, 1) * 2.5vw), -75vh) rotate(calc(var(--rotation-speed, 540deg) * 0.28)) scale(1.02)',
 						opacity: '1'
 					},
-					'60%': {
-						transform: 'translate(calc(var(--drift-x, 0) * 55vw * var(--spread-multiplier, 1) - var(--wobble, 1) * 3vw), 50vh) rotate(calc(var(--rotation-speed, 540deg) * 0.6)) scale(0.95)',
+					'45%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 40vw * var(--spread-multiplier, 1) - var(--wobble, 1) * 2vw), 5vh) rotate(calc(var(--rotation-speed, 540deg) * 0.45)) scale(0.98)',
 						opacity: '1'
 					},
-					'80%': {
-						transform: 'translate(calc(var(--drift-x, 0) * 75vw * var(--spread-multiplier, 1) + var(--wobble, 1) * 2vw), 90vh) rotate(calc(var(--rotation-speed, 540deg) * 0.8)) scale(0.85)',
-						opacity: '0.8'
+					'65%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 62vw * var(--spread-multiplier, 1) + var(--wobble, 1) * 1.5vw), 55vh) rotate(calc(var(--rotation-speed, 540deg) * 0.65)) scale(0.92)',
+						opacity: '0.95'
+					},
+					'85%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 82vw * var(--spread-multiplier, 1) - var(--wobble, 1) * 1vw), 95vh) rotate(calc(var(--rotation-speed, 540deg) * 0.85)) scale(0.82)',
+						opacity: '0.7'
 					},
 					'100%': {
-						transform: 'translate(calc(var(--drift-x, 0) * 95vw * var(--spread-multiplier, 1)), 130vh) rotate(var(--rotation-speed, 540deg)) scale(0.7)',
+						transform: 'translate(calc(var(--drift-x, 0) * 98vw * var(--spread-multiplier, 1)), 135vh) rotate(var(--rotation-speed, 540deg)) scale(0.7)',
 						opacity: '0'
 					}
 				},
@@ -174,7 +178,7 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'confetti-physics': 'confetti-physics 4.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+				'confetti-physics': 'confetti-physics 4.7s cubic-bezier(0.33, 0.01, 0.48, 1) forwards',
 				'parallax-hover': 'parallax-hover 0.3s ease-out forwards'
 			}
 		}

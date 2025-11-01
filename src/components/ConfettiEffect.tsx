@@ -18,9 +18,10 @@ interface ConfettiEffectProps {
   origin?: { x: number; y: number };
   onComplete?: () => void;
   layerZIndex?: number; // Z-index for the entire layer
+  soundVariant?: number; // Unique sound per case study
 }
 
-function ConfettiEffect({ isActive, origin, onComplete, layerZIndex = 60 }: ConfettiEffectProps) {
+function ConfettiEffect({ isActive, origin, onComplete, layerZIndex = 60, soundVariant = 0 }: ConfettiEffectProps) {
   const [confetti, setConfetti] = useState<ConfettiPiece[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const audioContextRef = useRef<AudioContext | null>(null);
@@ -53,8 +54,17 @@ function ConfettiEffect({ isActive, origin, onComplete, layerZIndex = 60 }: Conf
         const ctx = audioContextRef.current;
         const now = ctx.currentTime;
         
-        // Create a fun ascending celebration tone (C5, E5, G5 major chord)
-        const frequencies = [523.25, 659.25, 783.99];
+        // Create unique celebration tones per case study
+        const soundVariations = [
+          [523.25, 659.25, 783.99], // C5, E5, G5 (major chord - bright)
+          [440.00, 554.37, 659.25], // A4, C#5, E5 (major chord - warm)
+          [493.88, 622.25, 739.99], // B4, D#5, F#5 (major chord - uplifting)
+          [587.33, 739.99, 880.00], // D5, F#5, A5 (major chord - triumphant)
+          [392.00, 493.88, 587.33], // G4, B4, D5 (major chord - grounded)
+          [349.23, 440.00, 523.25], // F4, A4, C5 (major chord - melodic)
+        ];
+        
+        const frequencies = soundVariations[soundVariant % soundVariations.length];
         
         frequencies.forEach((freq, index) => {
           const oscillator = ctx.createOscillator();
