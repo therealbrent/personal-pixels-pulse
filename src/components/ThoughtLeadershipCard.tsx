@@ -65,7 +65,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       <article
         onClick={isClickable ? handleClick : undefined}
         style={{ animationDelay: staggerDelay }}
-        className={`md:col-span-2 bg-background border-4 border-foreground shadow-neo-md p-6 md:p-8 ${styles.hoverBg} ${
+        className={`md:col-span-2 bg-background border-4 border-foreground shadow-neo-md ${styles.hoverBg} ${
           isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
         } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative`}
         aria-label={`Article: ${item.title} featured in ${item.publication}`}
@@ -85,25 +85,37 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           </div>
         )}
         
-        <div className="mb-3">
-          <span className="text-xs font-black text-foreground tracking-wider uppercase group-hover:text-current transition-colors" aria-label={`Published in ${item.publication}`}>
-            {item.publication}
-          </span>
+        {/* Stacked content with consistent spacing */}
+        <div className="flex flex-col gap-4 p-6 md:p-8">
+          {/* Publication tag */}
+          <div className="flex-shrink-0">
+            <span className="text-xs font-black text-foreground tracking-wider uppercase group-hover:text-current transition-colors" aria-label={`Published in ${item.publication}`}>
+              {item.publication}
+            </span>
+          </div>
+          
+          {/* Title */}
+          <h3 className={`text-lg md:text-2xl font-black text-foreground leading-tight ${styles.hoverText} transition-colors`}>
+            {item.title}
+          </h3>
+          
+          {/* Quote */}
+          {item.quote && (
+            <blockquote className={`border-l-4 border-foreground ${styles.hoverBorder} pl-4 italic text-foreground group-hover:text-current text-sm md:text-base leading-relaxed transition-all duration-300`}>
+              {item.quote}
+            </blockquote>
+          )}
+          
+          {/* CTA */}
+          {isClickable && (
+            <div className="flex-shrink-0 mt-2">
+              <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
+                Read Article
+                <Icon name="chevron-right" size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </span>
+            </div>
+          )}
         </div>
-        <h3 className={`text-lg md:text-xl font-black mb-4 text-foreground leading-tight ${styles.hoverText} transition-colors`}>
-          {item.title}
-        </h3>
-        {item.quote && (
-          <blockquote className={`mb-4 border-l-4 border-foreground ${styles.hoverBorder} pl-4 italic text-foreground group-hover:text-current text-sm md:text-base leading-relaxed transition-all duration-300`}>
-            {item.quote}
-          </blockquote>
-        )}
-        {isClickable && (
-          <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
-            Read Article
-            <Icon name="chevron-right" size={14} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-          </span>
-        )}
       </article>
     );
   }
