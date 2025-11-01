@@ -15,29 +15,29 @@ const contentTypeStyles: Record<ContentType, {
   shadowColor: string;
 }> = {
   article: {
-    hoverBg: 'hover:bg-primary',
-    hoverText: 'hover:text-primary-foreground',
+    hoverBg: 'group-hover:bg-primary',
+    hoverText: 'group-hover:text-primary-foreground',
     hoverBorder: 'group-hover:border-primary',
     glowColor: 'bg-primary',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--primary))]'
   },
   presentation: {
-    hoverBg: 'hover:bg-cobalt',
-    hoverText: 'hover:text-cobalt-foreground',
+    hoverBg: 'group-hover:bg-cobalt',
+    hoverText: 'group-hover:text-cobalt-foreground',
     hoverBorder: 'group-hover:border-cobalt',
     glowColor: 'bg-cobalt',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--cobalt))]'
   },
   panel: {
-    hoverBg: 'hover:bg-accent',
-    hoverText: 'hover:text-accent-foreground',
+    hoverBg: 'group-hover:bg-accent',
+    hoverText: 'group-hover:text-accent-foreground',
     hoverBorder: 'group-hover:border-accent',
     glowColor: 'bg-accent',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--accent))]'
   },
   podcast: {
-    hoverBg: 'hover:bg-oxblood',
-    hoverText: 'hover:text-oxblood-foreground',
+    hoverBg: 'group-hover:bg-oxblood',
+    hoverText: 'group-hover:text-oxblood-foreground',
     hoverBorder: 'group-hover:border-oxblood',
     glowColor: 'bg-oxblood',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--destructive))]'
