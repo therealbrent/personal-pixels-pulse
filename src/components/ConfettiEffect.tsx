@@ -22,7 +22,7 @@ interface ConfettiEffectProps {
 function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
   const [confetti, setConfetti] = useState<ConfettiPiece[]>([]);
   const [isVisible, setIsVisible] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
 
   // Brutalist color palette
   const brutalColors = [
@@ -43,18 +43,41 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
 
   useEffect(() => {
     if (isActive) {
-      // Play celebration sound
+      // Play celebration sound using Web Audio API
       try {
-        if (!audioRef.current) {
-          audioRef.current = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSx+zPDTgjMGHm7A7+OZSA0PVqzn77BdGAU+ltryy3klBih4yO/VhzcGHW/A6uOcSg4MW6vm8bViFgpDm9/wuWUeBCh6yu7UiDcHImjA5+GXTgsQWa7l77dlGQc6ktXwzn4pBSF0xO7YijkHH27A6uGZTQwPWKzm8bNhFwo/mdvvuWgdBSl9y+3SizcGIm3A6N+dUA0OWKrl77RfFgo+mdrwvGodBiiByu3UiDUGH2u/6+GWUwwQV63l8bNeFwtBmNvvvWscBCl+yuzSizcGImzA6d+YUAoOV6zl8LJfFws/mtvvvGobBih9yuvUiTYGIWu86eKXSw0QVqrm8bBdGAk+ltrzwGgcBSh/zOzTiDQGH2m96+KYSgwQVazl8bNfFwtAmdvvvGobBil9yuzSizcGImzA6d+YUAsPV6zm8LJfGAs/mtvvvGkcBih9yuvUiTYGIWq+6eKXSw0QVqvl8bBeFgtAmdvvvGgcBih/y+zTiDUFIGi96+KXTQ0PVqzl8LNeGAs+l9vvvWkcBil9yuzTiTQGH2i/7OKYTA0PVqvl8bJfFwtBmNvvvGgcBSh+y+zSiTUGIWm96+KYTA0PVqzl8LJeGAo+l9vvvGkcBid+zOzTiTUGH2i/7OOXTAwQVazl8bNfFgtAmdvvvGgdBSh+y+zSiTUGIWm+6+KYTA0PVqvl8bJeGAo+l9vvvGkcBih+zOzTiTQGH2e/7eSZSw0QVqzl8LNeGAs/mNvvvGgdBSh+yuzTiTUFIGi/7OKYTA0PVqzl8LJeGAo+l9vvvWkdBSh+yuzTiTUGH2i/7OKYTA0PVqzl8LJeGAo+l9vvvWkdBSh+yuzTiTUGH2i/7OKYTA0PVqzl8LJeGAo+l9vvvGkdBSd+yuzTiTYGH2i+7OKYTA0PVqvl8LJeGAo+l9vvvGkdBSh+yuzTiTUGH2i/7OKYTA0PVqvl8LJeGAo+l9vvvGkdBSd+yuzTiTYGH2i+7OKYTA0PVqvl8LJeGAo+l9vvvGkdBSd+yuzTiTYGH2i+7OKYTA0PVqvl8LJeGAo+l9vvvGkdBSh+yuzTiTUGH2i/7OKYTA0PVqvl8LJeGAo+l9vvvGkdBSh+yuzTiTUGH2i/7OKYTA0PVqvl8LJeGAo+l9vvvGkdBSh+yuzTiTUGH2i/7OKYTA0PVqvl8LJeGAo+l9vvvGkdBSh+yuzTiTUGH2i/7OKYTA0PVqvl8LJeGAo+l9vvvGkdBSh+yuzTiTUGH2i/7OKYTA0PVqvl8LJeGAo+l9vvvGkdBSh+yuzTiTUGH2i/7OKYTA0PVqvl8LJeGAo+l9vvvGkdBSh+yuzTiTUGH2i/7OKYTA0PVqvl8LJeGA==');
-          audioRef.current.volume = 0.3;
+        if (!audioContextRef.current) {
+          audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
         }
-        audioRef.current.currentTime = 0;
-        audioRef.current.play().catch(() => {
-          // Silently fail if audio is blocked
+        
+        const ctx = audioContextRef.current;
+        const now = ctx.currentTime;
+        
+        // Create a fun ascending celebration tone (C5, E5, G5 major chord)
+        const frequencies = [523.25, 659.25, 783.99];
+        
+        frequencies.forEach((freq, index) => {
+          const oscillator = ctx.createOscillator();
+          const gainNode = ctx.createGain();
+          
+          oscillator.connect(gainNode);
+          gainNode.connect(ctx.destination);
+          
+          oscillator.frequency.value = freq;
+          oscillator.type = 'sine';
+          
+          const startTime = now + (index * 0.08);
+          const duration = 0.15;
+          
+          gainNode.gain.setValueAtTime(0, startTime);
+          gainNode.gain.linearRampToValueAtTime(0.15, startTime + 0.01);
+          gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
+          
+          oscillator.start(startTime);
+          oscillator.stop(startTime + duration);
         });
       } catch (error) {
-        // Audio not supported or blocked
+        // Web Audio API not supported
+        console.log('Audio playback not available');
       }
 
       // Responsive particle count for performance
