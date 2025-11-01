@@ -133,20 +133,28 @@ export default {
 						transform: 'translate(0, 0) rotate(0deg) scale(1)',
 						opacity: '1'
 					},
-					'15%': {
-						transform: 'translate(calc(var(--drift-x, 0) * 10vw), -60vh) rotate(calc(var(--rotation-speed, 540deg) * 0.15)) scale(1.1)',
+					'10%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 8vw + var(--wobble, 1) * 2vw), -50vh) rotate(calc(var(--rotation-speed, 540deg) * 0.1)) scale(1.15)',
 						opacity: '1'
 					},
-					'25%': {
-						transform: 'translate(calc(var(--drift-x, 0) * 15vw), -65vh) rotate(calc(var(--rotation-speed, 540deg) * 0.25)) scale(1)',
+					'20%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 15vw - var(--wobble, 1) * 3vw), -70vh) rotate(calc(var(--rotation-speed, 540deg) * 0.2)) scale(1.05)',
 						opacity: '1'
 					},
-					'75%': {
-						transform: 'translate(calc(var(--drift-x, 0) * 70vw * var(--spread-multiplier, 1)), 80vh) rotate(calc(var(--rotation-speed, 540deg) * 0.75)) scale(0.9)',
+					'40%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 35vw * var(--spread-multiplier, 1) + var(--wobble, 1) * 4vw), 10vh) rotate(calc(var(--rotation-speed, 540deg) * 0.4)) scale(1)',
 						opacity: '1'
+					},
+					'60%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 55vw * var(--spread-multiplier, 1) - var(--wobble, 1) * 3vw), 50vh) rotate(calc(var(--rotation-speed, 540deg) * 0.6)) scale(0.95)',
+						opacity: '1'
+					},
+					'80%': {
+						transform: 'translate(calc(var(--drift-x, 0) * 75vw * var(--spread-multiplier, 1) + var(--wobble, 1) * 2vw), 90vh) rotate(calc(var(--rotation-speed, 540deg) * 0.8)) scale(0.85)',
+						opacity: '0.8'
 					},
 					'100%': {
-						transform: 'translate(calc(var(--drift-x, 0) * 90vw * var(--spread-multiplier, 1)), 120vh) rotate(var(--rotation-speed, 540deg)) scale(0.7)',
+						transform: 'translate(calc(var(--drift-x, 0) * 95vw * var(--spread-multiplier, 1)), 130vh) rotate(var(--rotation-speed, 540deg)) scale(0.7)',
 						opacity: '0'
 					}
 				},
