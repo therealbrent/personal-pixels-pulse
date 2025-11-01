@@ -40,15 +40,15 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: 'ana-2025',
     type: 'presentation',
     title: 'Next-Generation Marketing: How AI is Used at Qualcomm Technologies',
-    date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
-    venue: 'ANA',
+    date: '2025-09-11'
+    venue: 'ANA (Los Angeles)',
     topics: ['AI', 'Marketing']
   },
   {
     id: 'ai-champions-playbook-2025',
     type: 'presentation',
     title: "The AI Champion's Playbook",
-    date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
+    date: '2025-05-04', 
     venue: 'AI Leaders Forum (NYC)',
     topics: ['AI', 'Leadership']
   },
@@ -56,16 +56,16 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: 'sdxd-enterprise-ai-2025',
     type: 'presentation',
     title: 'On Enterprise Generative AI Adoption',
-    date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
-    venue: 'SDXD',
+    date: '2025-05-21'
+    venue: 'SDXD (San Diego)',
     topics: ['AI', 'Enterprise']
   },
   {
     id: 'webit-2025',
     type: 'presentation',
     title: 'Beyond buzzwords: Real AI, real marketing, real results',
-    date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
-    venue: 'Webit',
+    date: '2025-06-26'
+    venue: 'Webit (Sofia)',
     videoUrl: 'https://www.youtube.com/watch?v=eEbuoK5DS30',
     topics: ['AI', 'Marketing']
   },
@@ -82,7 +82,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: 'five-tips-ai-marketing-2025',
     type: 'presentation',
     title: "Five Tips to Avoid Generative AI Buyer's Remorse",
-    date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
+    date: '2025-05-23'
     venue: 'AI x Marketing Summit',
     videoUrl: 'https://youtu.be/d3A-gHkwiBE?si=ecXBZYUpq_StpVs2&t=1',
     topics: ['AI', 'Marketing']
@@ -134,24 +134,24 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: 'ai-create-2025',
     type: 'panel',
     title: 'How AI is Shaping Creative Futures',
-    date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
-    venue: 'AI Create',
+    date: '2025-09-07'
+    venue: 'AI Create (San Diego)',
     topics: ['AI', 'Design']
   },
   {
     id: '6sense-breakthrough-2025',
     type: 'panel',
     title: 'Tangy Twists and Pipeline Wins: Expert Insights with a Sour Kick',
-    date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
-    venue: '6sense Breakthrough',
+    date: '2025-11-12'
+    venue: 'Breakthrough (Las Vegas)',
     topics: ['Marketing']
   },
   {
     id: 'power-of-brand-2025',
     type: 'panel',
     title: 'The Power of Brand',
-    date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
-    venue: 'San Diego Design Week',
+    date: '2025-09-19'
+    venue: 'Qualcomm (San Diego)',
     description: 'Moderator',
     topics: ['Design', 'Branding']
   },
@@ -160,7 +160,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: 'panel',
     title: 'UC Irvine presents Exploring Design & Ethics',
     date: '2022-01-01', // TODO: Provide more specific date if available
-    venue: 'Good Cause',
+    venue: 'Good Cause (Virtual)',
     description: 'Moderator',
     topics: ['Design', 'Ethics']
   },
@@ -169,7 +169,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: 'panel',
     title: 'General Motors presents Exploring Diversity + Design',
     date: '2021-01-01', // TODO: Provide more specific date if available
-    venue: 'Good Cause',
+    venue: 'Good Cause (Virtual)',
     description: 'Moderator',
     topics: ['Design', 'Diversity']
   },
@@ -178,7 +178,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: 'panel',
     title: 'Exploring Data Privacy & Artificial Intelligence in UX',
     date: '2020-01-01', // TODO: Provide more specific date if available
-    venue: 'SDXD',
+    venue: 'SDXD (San Diego)',
     description: 'Moderator',
     topics: ['UX', 'AI', 'Privacy']
   },
@@ -187,7 +187,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: 'panel',
     title: 'Interview Olympics',
     date: '2019-01-01', // TODO: Provide more specific date if available
-    venue: 'SDXD',
+    venue: 'SDXD (San Diego)',
     topics: ['UX', 'Hiring']
   },
   {
@@ -195,7 +195,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: 'panel',
     title: "Strategic Interviews: The Hiring Manager's Perspective",
     date: '2019-01-01', // TODO: Provide more specific date if available
-    venue: 'SDXD',
+    venue: 'SDXD (San Diego)',
     topics: ['UX', 'Hiring']
   },
   {
@@ -203,7 +203,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: 'panel',
     title: 'How to Get Hired for a UX Design Role',
     date: '2015-01-01', // TODO: Provide more specific date if available
-    venue: 'UCSD',
+    venue: 'UC San Diego',
     description: 'Moderator',
     topics: ['UX', 'Career']
   },
@@ -215,7 +215,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: 'cionews-qualcomm-ai-playbook',
     type: 'article',
     title: "Why Qualcomm's Playbook For Scaling AI Starts With Intention -- And Ends With A Human",
-    date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
+    date: '2025-10-23'
     publication: 'CIO News',
     quote: "We expect a human to verify the facts, citations, decisions—and the underlying strategy. Is it ethical? Does it adhere to our Responsible AI Principles and policies? That's the bar.",
     url: 'https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers',
@@ -226,7 +226,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: 'smartsuite-edge-ai-sustainability',
     type: 'article',
     title: "Why the next wave of AI opportunities isn't in the cloud, it's on the edge",
-    date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
+    date: '2025-05-20'
     publication: 'SmartSuite',
     quote: "As someone committed to sustainability, I believe in the transformative potential of AI—but must also acknowledge the challenges it poses to a sustainable future.",
     url: 'https://www.smartsuite.com/news/qualcomm-technologies-leads-edge-ai-sustainability-brent-summers',
@@ -236,7 +236,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: 'cmswire-customer-centric',
     type: 'article',
     title: 'Customer-Centric Companies Sweat the Details',
-    date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
+    date: '2016-03-17'
     publication: 'CMS Wire',
     quote: "Customer's perceptions will change along the way as they become more familiar with your company's products and services. Every single touchpoint is a chance to delight or disappoint.",
     url: 'https://www.cmswire.com/customer-experience/customer-centric-companies-sweat-the-details/',
@@ -246,7 +246,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: 'aidatapress-cloud-to-device',
     type: 'article',
     title: 'From Cloud to Device, Qualcomm Exec Explains Why AI Business Models Are Coming Down to Earth',
-    date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
+    date: '2025-10-23'
     publication: 'AI Data Press',
     quote: "Whenever latency matters, the edge is usually the better choice. If the data is sensitive or you don't want it traveling through the cloud, the edge is the right place for it. That is where you can ensure not just security but true privacy.",
     url: 'https://www.aidatapress.com/news/cloud-on-device-ai-edge-brent-summers-qualcomm-technologies',
@@ -256,7 +256,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: 'uxmag-proto-personas',
     type: 'article',
     title: 'Revisiting Proto-Personas for Executive Alignment',
-    date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
+    date: '2014-07-10'
     publication: 'UX Magazine',
     quote: "We use proto-personas as a way of gaining alignment among our project sponsors and striking the right balance of focus between organizational and user needs.",
     url: 'https://uxmag.com/articles/revisiting-proto-personas-for-executive-alignment',
