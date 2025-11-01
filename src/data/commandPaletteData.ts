@@ -21,8 +21,8 @@ export const commandPaletteData: CommandItem[] = [
     url: '/',
     icon: Home,
     type: 'page',
-    keywords: ['home', 'start', 'main', 'index', 'landing'],
-    bodyContent: 'AI-powered marketing leader leveraging generative AI since June 2020. Transformational leader combining strategic vision technical implementation and behavior change. Two decades of experience at intersection of marketing technology and UX. Experience case studies writing insights. Enterprise marketing teams plan campaigns organize teams create content grow skills.',
+    keywords: ['home', 'start', 'main', 'index', 'landing', 'story', 'about', 'biography'],
+    bodyContent: 'AI-powered marketing leader leveraging generative AI since June 2020. My story background experience. Transformational leader combining strategic vision technical implementation and behavior change. Two decades of experience at intersection of marketing technology and UX. Fan-first mindset NASCAR career proving ground agency Digitaria Digital Telepathy Blink Metalab Qualcomm. Enterprise marketing teams ABM account-based marketing AI platforms GTM innovation. Strategic marketing leadership human-centered design AI technology strategy.',
   },
   {
     id: 'leadership',
