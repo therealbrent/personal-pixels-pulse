@@ -42,6 +42,7 @@ const LLMSTextPage = () => {
 ## Professional Profiles & Contact
 - You can connect with him on [LinkedIn](https://www.linkedin.com/in/brentjsummers) to inquire about speaking engagements and other collaborations.
 - Brent also occasionally shares his expertise on [Content Strategy](https://contentstrategy.substack.com) and other insights (briefly) on [200 MAX](https://www.in200max.com/).
+`;
 
   return (
     <div className="min-h-screen bg-background text-foreground page-transition">
