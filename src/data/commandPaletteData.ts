@@ -73,6 +73,7 @@ export const commandPaletteData: CommandItem[] = [
     type: 'page',
     keywords: ['llms', 'llm', 'txt', 'ai', 'models', 'machine readable'],
     description: 'Machine-readable site information',
+    bodyContent: 'Machine-readable site information for AI models LLMs large language models structured data. About expertise skills key projects achievements professional profiles contact. Enterprise AI platforms GTM innovation ABM account-based marketing WRITER Qualcomm.',
   },
 
   // ===== LEVEL 3: SPECIFIC TALKS & PRESENTATIONS =====
@@ -82,9 +83,10 @@ export const commandPaletteData: CommandItem[] = [
     url: 'https://www.youtube.com/watch?v=eEbuoK5DS30',
     icon: Play,
     type: 'external',
-    keywords: ['webit', 'ai', 'marketing', 'results', '2025'],
+    keywords: ['webit', 'ai', 'marketing', 'results', '2025', 'conference', 'presentation'],
     description: 'Webit Conference 2025',
     badge: 'Video',
+    bodyContent: 'Webit conference 2025 presentation keynote AI marketing results real world implementation practical strategies buzzwords cutting through hype actionable insights enterprise adoption.',
   },
   {
     id: 'talk-happier-humans',
@@ -92,9 +94,10 @@ export const commandPaletteData: CommandItem[] = [
     url: 'https://youtu.be/ApLKfzjaN3Y',
     icon: Play,
     type: 'external',
-    keywords: ['humans', 'business', 'ai', 'leaders', 'forum', '2025'],
+    keywords: ['humans', 'business', 'ai', 'leaders', 'forum', '2025', 'happiness', 'wellbeing'],
     description: 'AI Leaders Forum 2025',
     badge: 'Video',
+    bodyContent: 'AI leaders forum 2025 happier humans better business employee wellbeing productivity satisfaction workplace culture human-centered AI implementation people first technology adoption.',
   },
   {
     id: 'talk-buyer-remorse',
@@ -102,9 +105,10 @@ export const commandPaletteData: CommandItem[] = [
     url: 'https://youtu.be/d3A-gHkwiBE',
     icon: Play,
     type: 'external',
-    keywords: ['ai', 'buyer', 'remorse', 'tips', 'generative'],
+    keywords: ['ai', 'buyer', 'remorse', 'tips', 'generative', 'purchasing', 'vendor', 'selection'],
     description: 'Conference presentation',
     badge: 'Video',
+    bodyContent: 'AI marketing summit May 2025 five tips avoid generative AI buyers remorse Qualcomm AI adoption journey practical strategies integrating AI workflows control quality pitfalls deliver value day one vendor selection purchasing decisions.',
   },
   {
     id: 'talk-ux-flywheel',
@@ -112,9 +116,10 @@ export const commandPaletteData: CommandItem[] = [
     url: 'https://www.youtube.com/watch?v=UYApYNEnaMM',
     icon: Play,
     type: 'external',
-    keywords: ['ux', 'flywheel', 'framework', 'marketing', 'design'],
+    keywords: ['ux', 'flywheel', 'framework', 'marketing', 'design', 'funnel', 'alternative', 'user-centered'],
     description: 'Iconic presentation on user-centered marketing',
     badge: 'Video',
+    bodyContent: 'UX flywheel Blink UX San Diego digital designers user-centered alternative marketing funnel compelling definition strategy framework customer journey user experience design thinking momentum growth.',
   },
 
   // ===== LEVEL 3: CASE STUDIES =====
@@ -124,9 +129,10 @@ export const commandPaletteData: CommandItem[] = [
     url: 'https://writer.com/blog/qualcomm-customer-story/',
     icon: Award,
     type: 'external',
-    keywords: ['qualcomm', 'writer', 'roi', 'case', 'study', 'ai'],
+    keywords: ['qualcomm', 'writer', 'roi', 'case', 'study', 'ai', 'success', 'implementation'],
     description: 'AI platform implementation success',
     badge: 'External',
+    bodyContent: 'Qualcomm WRITER case study 8.6x ROI platform discovery roll out scale up generative AI 350 active users 85% weekly engagement 2400 hours saved monthly productivity employee satisfaction marketing legal analytics success story.',
   },
 
   // ===== LEVEL 3: SOCIAL & CONTACT =====
@@ -136,9 +142,10 @@ export const commandPaletteData: CommandItem[] = [
     url: 'https://www.linkedin.com/in/brentjsummers/',
     icon: Linkedin,
     type: 'external',
-    keywords: ['linkedin', 'profile', 'social', 'connect'],
+    keywords: ['linkedin', 'profile', 'social', 'connect', 'network', 'professional'],
     description: 'Connect on LinkedIn',
     badge: 'Social',
+    bodyContent: 'Connect LinkedIn professional network Brent Summers profile career experience endorsements recommendations connections collaborate speaking engagements partnerships.',
   },
   {
     id: 'twitter',
@@ -146,9 +153,10 @@ export const commandPaletteData: CommandItem[] = [
     url: 'https://x.com/brentsummers',
     icon: Twitter,
     type: 'external',
-    keywords: ['twitter', 'x', 'social', 'tweets'],
+    keywords: ['twitter', 'x', 'social', 'tweets', 'updates', 'thoughts'],
     description: 'Follow on Twitter/X',
     badge: 'Social',
+    bodyContent: 'Follow Twitter X social media updates thoughts insights Brent Summers tweets commentary AI marketing technology design real-time engagement conversations.',
   },
   {
     id: 'github',
@@ -156,9 +164,10 @@ export const commandPaletteData: CommandItem[] = [
     url: 'https://github.com/therealbrent',
     icon: Github,
     type: 'external',
-    keywords: ['github', 'code', 'projects', 'developer'],
+    keywords: ['github', 'code', 'projects', 'developer', 'repositories', 'open source'],
     description: 'View GitHub projects',
     badge: 'Social',
+    bodyContent: 'GitHub profile code projects repositories developer Brent Summers open source contributions technical work vibe coding experiments portfolio website development.',
   },
   {
     id: 'schedule-call',
@@ -166,9 +175,10 @@ export const commandPaletteData: CommandItem[] = [
     url: 'https://outlook.office.com/bookwithme/user/f752142364414ef39fe29066ebb21219%40qti.qualcomm.com?anonymous&ismsaljsauthenabled=true',
     icon: Calendar,
     type: 'external',
-    keywords: ['schedule', 'call', 'meeting', 'book', 'calendar', 'appointment'],
+    keywords: ['schedule', 'call', 'meeting', 'book', 'calendar', 'appointment', 'consult', 'speak'],
     description: 'Book time to connect',
     badge: 'External',
+    bodyContent: 'Schedule call meeting appointment book time connect consultation speaking engagement collaboration partnership advisory discussion strategy session calendar availability.',
   },
 
   // ===== LEVEL 3: NEWSLETTERS & PROJECTS =====
@@ -178,9 +188,10 @@ export const commandPaletteData: CommandItem[] = [
     url: 'https://contentstrategy.substack.com/',
     icon: Mail,
     type: 'external',
-    keywords: ['newsletter', 'content', 'strategy', 'substack', 'full', 'stack'],
+    keywords: ['newsletter', 'content', 'strategy', 'substack', 'full', 'stack', 'writing', 'insights'],
     description: 'Newsletter about content strategy',
     badge: 'Newsletter',
+    bodyContent: 'Full stack content newsletter substack content strategy writing insights Brent Summers expertise marketing content creation editorial planning strategic communications storytelling.',
   },
   {
     id: '200-max',
@@ -188,8 +199,9 @@ export const commandPaletteData: CommandItem[] = [
     url: 'https://in200max.com/',
     icon: Award,
     type: 'external',
-    keywords: ['200', 'max', 'insights', 'writing'],
+    keywords: ['200', 'max', 'insights', 'writing', 'brief', 'concise', 'clarity'],
     description: 'Maximum clarity in 200 words',
     badge: 'Project',
+    bodyContent: '200 MAX maximum clarity 200 words insights writing project brief concise clear communication distilled wisdom focused thoughts essential ideas brevity precision.',
   },
 ];
