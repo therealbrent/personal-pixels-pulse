@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Search, X, ChevronRight, ExternalLink as ExternalLinkIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useCommandPaletteSound } from '@/hooks/useCommandPaletteSound';
-import { commandPaletteData, CommandItem } from '@/data/commandPaletteData';
+import { allCommandPaletteData, CommandItem } from '@/data/commandPaletteData';
 
 interface CommandPaletteProps {
   isOpen: boolean;
@@ -49,7 +49,7 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
   }, [isOpen]);
 
   // Fuzzy search with scoring
-  const filteredCommands = commandPaletteData
+  const filteredCommands = allCommandPaletteData
     .map((cmd) => {
       if (!query) return { cmd, score: 0 };
       

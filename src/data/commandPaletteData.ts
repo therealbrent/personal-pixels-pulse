@@ -1,5 +1,6 @@
-import { Home, Briefcase, Mic, FileText, Palette, Users, Lightbulb, Play, Award, MessageSquare, Linkedin, Twitter, Github, Mail, Calendar } from 'lucide-react';
+import { Home, Briefcase, Mic, FileText, Palette, Users, Lightbulb, Play, Award, MessageSquare, Linkedin, Twitter, Github, Mail, Calendar, Tag } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
+import { thoughtLeadershipData } from './thoughtLeadership';
 
 export interface CommandItem {
   id: string;
@@ -205,3 +206,28 @@ export const commandPaletteData: CommandItem[] = [
     bodyContent: '200 MAX maximum clarity 200 words insights writing project brief concise clear communication distilled wisdom focused thoughts essential ideas brevity precision.',
   },
 ];
+
+// ===== DYNAMIC: THOUGHT LEADERSHIP TOPICS =====
+// Extract unique topics from thought leadership data
+const uniqueTopics = Array.from(
+  new Set(
+    thoughtLeadershipData
+      .flatMap(item => item.topics || [])
+  )
+).sort();
+
+// Generate command items for each topic
+const topicCommands: CommandItem[] = uniqueTopics.map(topic => ({
+  id: `topic-${topic.toLowerCase().replace(/\s+/g, '-')}`,
+  title: `Topic: ${topic}`,
+  url: `/speaking?topic=${encodeURIComponent(topic)}`,
+  icon: Tag,
+  type: 'section' as const,
+  keywords: ['topic', 'filter', topic.toLowerCase()],
+  description: `Filter thought leadership by ${topic}`,
+  badge: 'Topic',
+  bodyContent: `${topic} topic filter thought leadership presentations podcasts panels articles speaking engagements`,
+}));
+
+// Combine static and dynamic commands
+export const allCommandPaletteData = [...commandPaletteData, ...topicCommands];

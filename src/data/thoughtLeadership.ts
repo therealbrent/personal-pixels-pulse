@@ -296,6 +296,14 @@ export const getFeaturedThoughtLeadership = () => {
   return getSortedThoughtLeadership().filter((item) => item.featured);
 };
 
+// Helper function to filter by topic
+export const getThoughtLeadershipByTopic = (topic: string) => {
+  const sorted = getSortedThoughtLeadership();
+  return sorted.filter((item) => 
+    item.topics?.some((t) => t.toLowerCase() === topic.toLowerCase())
+  );
+};
+
 // Helper function to group by year
 export const getThoughtLeadershipByYear = () => {
   const sorted = getSortedThoughtLeadership();

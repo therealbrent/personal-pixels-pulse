@@ -1,8 +1,11 @@
+import { useSearchParams } from 'react-router-dom';
 import BiographyHeadshot from './BiographyHeadshot';
 import SEO from './SEO';
 import ThoughtLeadershipFeed from './ThoughtLeadershipFeed';
 
 export default function SpeakingMediaPage() {
+  const [searchParams] = useSearchParams();
+  const topicFilter = searchParams.get('topic') || undefined;
   return (
     <div className="min-h-screen bg-background text-foreground page-transition">
       <SEO 
@@ -29,7 +32,7 @@ export default function SpeakingMediaPage() {
         <BiographyHeadshot />
 
         {/* Thought Leadership Feed */}
-        <ThoughtLeadershipFeed />
+        <ThoughtLeadershipFeed topicFilter={topicFilter} />
       </main>
     </div>
   );
