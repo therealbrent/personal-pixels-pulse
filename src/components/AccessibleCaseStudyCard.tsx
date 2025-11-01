@@ -128,6 +128,7 @@ function AccessibleCaseStudyCard({
         onComplete={() => {}} 
         layerZIndex={40}
         soundVariant={cardIndex}
+        playSound={false}
       />
       
       {/* Foreground confetti layer - in front of modal */}
@@ -137,6 +138,7 @@ function AccessibleCaseStudyCard({
         onComplete={() => setShowConfetti(false)} 
         layerZIndex={60}
         soundVariant={cardIndex}
+        playSound={true}
       />
     </Dialog>
   );

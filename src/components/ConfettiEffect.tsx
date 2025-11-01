@@ -19,9 +19,10 @@ interface ConfettiEffectProps {
   onComplete?: () => void;
   layerZIndex?: number; // Z-index for the entire layer
   soundVariant?: number; // Unique sound per case study
+  playSound?: boolean; // Only one layer should play sound
 }
 
-function ConfettiEffect({ isActive, origin, onComplete, layerZIndex = 60, soundVariant = 0 }: ConfettiEffectProps) {
+function ConfettiEffect({ isActive, origin, onComplete, layerZIndex = 60, soundVariant = 0, playSound = true }: ConfettiEffectProps) {
   const [confetti, setConfetti] = useState<ConfettiPiece[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const audioContextRef = useRef<AudioContext | null>(null);
@@ -45,50 +46,52 @@ function ConfettiEffect({ isActive, origin, onComplete, layerZIndex = 60, soundV
 
   useEffect(() => {
     if (isActive) {
-      // Play celebration sound using Web Audio API
-      try {
-        if (!audioContextRef.current) {
-          audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+      // Play celebration sound using Web Audio API (only if enabled for this layer)
+      if (playSound) {
+        try {
+          if (!audioContextRef.current) {
+            audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+          }
+          
+          const ctx = audioContextRef.current;
+          const now = ctx.currentTime;
+          
+          // Create unique celebration tones per case study
+          const soundVariations = [
+            [523.25, 659.25, 783.99], // C5, E5, G5 (major chord - bright)
+            [440.00, 554.37, 659.25], // A4, C#5, E5 (major chord - warm)
+            [493.88, 622.25, 739.99], // B4, D#5, F#5 (major chord - uplifting)
+            [587.33, 739.99, 880.00], // D5, F#5, A5 (major chord - triumphant)
+            [392.00, 493.88, 587.33], // G4, B4, D5 (major chord - grounded)
+            [349.23, 440.00, 523.25], // F4, A4, C5 (major chord - melodic)
+          ];
+          
+          const frequencies = soundVariations[soundVariant % soundVariations.length];
+          
+          frequencies.forEach((freq, index) => {
+            const oscillator = ctx.createOscillator();
+            const gainNode = ctx.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(ctx.destination);
+            
+            oscillator.frequency.value = freq;
+            oscillator.type = 'sine';
+            
+            const startTime = now + (index * 0.08);
+            const duration = 0.15;
+            
+            gainNode.gain.setValueAtTime(0, startTime);
+            gainNode.gain.linearRampToValueAtTime(0.15, startTime + 0.01);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
+            
+            oscillator.start(startTime);
+            oscillator.stop(startTime + duration);
+          });
+        } catch (error) {
+          // Web Audio API not supported
+          console.log('Audio playback not available');
         }
-        
-        const ctx = audioContextRef.current;
-        const now = ctx.currentTime;
-        
-        // Create unique celebration tones per case study
-        const soundVariations = [
-          [523.25, 659.25, 783.99], // C5, E5, G5 (major chord - bright)
-          [440.00, 554.37, 659.25], // A4, C#5, E5 (major chord - warm)
-          [493.88, 622.25, 739.99], // B4, D#5, F#5 (major chord - uplifting)
-          [587.33, 739.99, 880.00], // D5, F#5, A5 (major chord - triumphant)
-          [392.00, 493.88, 587.33], // G4, B4, D5 (major chord - grounded)
-          [349.23, 440.00, 523.25], // F4, A4, C5 (major chord - melodic)
-        ];
-        
-        const frequencies = soundVariations[soundVariant % soundVariations.length];
-        
-        frequencies.forEach((freq, index) => {
-          const oscillator = ctx.createOscillator();
-          const gainNode = ctx.createGain();
-          
-          oscillator.connect(gainNode);
-          gainNode.connect(ctx.destination);
-          
-          oscillator.frequency.value = freq;
-          oscillator.type = 'sine';
-          
-          const startTime = now + (index * 0.08);
-          const duration = 0.15;
-          
-          gainNode.gain.setValueAtTime(0, startTime);
-          gainNode.gain.linearRampToValueAtTime(0.15, startTime + 0.01);
-          gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
-          
-          oscillator.start(startTime);
-          oscillator.stop(startTime + duration);
-        });
-      } catch (error) {
-        // Web Audio API not supported
-        console.log('Audio playback not available');
       }
 
       // Responsive particle count for performance (split between two layers)
