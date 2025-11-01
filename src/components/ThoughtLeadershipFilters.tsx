@@ -53,6 +53,26 @@ const getTabClasses = (value: FilterType, isActive: boolean) => {
   }
 };
 
+// Dropdown item color mappings
+const getDropdownItemClasses = (value: FilterType) => {
+  const baseClasses = "font-bold cursor-pointer py-3 border-b-2 border-foreground/10 last:border-0";
+  
+  switch (value) {
+    case 'all':
+      return `${baseClasses} bg-[#262626] text-white hover:bg-[#262626] hover:text-white focus:bg-[#262626] focus:text-white`;
+    case 'panel':
+      return `${baseClasses} bg-[#FF1392] text-white hover:bg-[#FF1392] hover:text-white focus:bg-[#FF1392] focus:text-white`;
+    case 'article':
+      return `${baseClasses} bg-[#FFBA08] text-[#262626] hover:bg-[#FFBA08] hover:text-[#262626] focus:bg-[#FFBA08] focus:text-[#262626]`;
+    case 'podcast':
+      return `${baseClasses} bg-[#7A1E1C] text-white hover:bg-[#7A1E1C] hover:text-white focus:bg-[#7A1E1C] focus:text-white`;
+    case 'presentation':
+      return `${baseClasses} bg-[#2962FF] text-white hover:bg-[#2962FF] hover:text-white focus:bg-[#2962FF] focus:text-white`;
+    default:
+      return baseClasses;
+  }
+};
+
 export default function ThoughtLeadershipFilters({
   activeFilter,
   onFilterChange,
@@ -96,7 +116,7 @@ export default function ThoughtLeadershipFilters({
               <SelectItem 
                 key={value} 
                 value={value}
-                className="font-bold cursor-pointer hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground py-3 border-b-2 border-foreground/10 last:border-0"
+                className={getDropdownItemClasses(value)}
               >
                 {label}
               </SelectItem>
