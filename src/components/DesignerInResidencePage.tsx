@@ -39,13 +39,9 @@ export default function DesignerInResidencePage() {
             {/* Divider Line (responsive width) */}
             <div className="w-16 md:w-24 h-0.5 md:h-1 bg-foreground mb-6 md:mb-8" aria-hidden="true" />
             
-            <div className="max-w-3xl space-y-4 md:space-y-6">
+            <div className="max-w-3xl">
               <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
                 In <span className="font-bold text-primary">October 2025</span>, I accepted UCSD's invitation to this industry affiliate program where I'll mentor students, co-lead design programs, and connect academic research back to enterprise challenges.
-              </p>
-              
-              <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
-                For Qualcomm Technologies, this means earlier access to top talent, co-branded visibility in the San Diego innovation community, and new perspectives on how to operationalize AI adoption. I'll be feeding insights from this residency into our AI-powered marketing transformation.
               </p>
             </div>
           </div>
