@@ -16,29 +16,29 @@ const contentTypeStyles: Record<ContentType, {
 }> = {
   article: {
     hoverBg: 'group-hover:bg-primary',
-    hoverText: 'group-hover:text-primary-foreground',
-    hoverBorder: 'group-hover:border-primary',
+    hoverText: 'group-hover:!text-foreground', // Onyx on Mustard
+    hoverBorder: 'group-hover:!border-primary',
     glowColor: 'bg-primary',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--primary))]'
   },
   presentation: {
     hoverBg: 'group-hover:bg-cobalt',
-    hoverText: 'group-hover:text-cobalt-foreground',
-    hoverBorder: 'group-hover:border-cobalt',
+    hoverText: 'group-hover:!text-white', // White on Cobalt
+    hoverBorder: 'group-hover:!border-cobalt',
     glowColor: 'bg-cobalt',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--cobalt))]'
   },
   panel: {
     hoverBg: 'group-hover:bg-accent',
-    hoverText: 'group-hover:text-accent-foreground',
-    hoverBorder: 'group-hover:border-accent',
+    hoverText: 'group-hover:!text-white', // White on Hot Pink
+    hoverBorder: 'group-hover:!border-accent',
     glowColor: 'bg-accent',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--accent))]'
   },
   podcast: {
     hoverBg: 'group-hover:bg-oxblood',
-    hoverText: 'group-hover:text-oxblood-foreground',
-    hoverBorder: 'group-hover:border-oxblood',
+    hoverText: 'group-hover:!text-background', // Off-white on Oxblood
+    hoverBorder: 'group-hover:!border-oxblood',
     glowColor: 'bg-oxblood',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--destructive))]'
   }

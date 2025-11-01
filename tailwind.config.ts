@@ -8,6 +8,21 @@ export default {
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
 	],
+	safelist: [
+		// Neo-brutalist color variants for thought leadership cards
+		'group-hover:bg-primary',
+		'group-hover:bg-cobalt',
+		'group-hover:bg-accent',
+		'group-hover:bg-oxblood',
+		'group-hover:text-primary-foreground',
+		'group-hover:text-cobalt-foreground',
+		'group-hover:text-accent-foreground',
+		'group-hover:text-oxblood-foreground',
+		'group-hover:border-primary',
+		'group-hover:border-cobalt',
+		'group-hover:border-accent',
+		'group-hover:border-oxblood',
+	],
 	prefix: "",
 	theme: {
 		container: {
