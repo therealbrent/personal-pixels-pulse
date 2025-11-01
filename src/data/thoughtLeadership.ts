@@ -18,7 +18,7 @@ export interface ThoughtLeadershipItem {
   date: string; // YYYY-MM-DD format for sorting
   
   // Common fields
-  venue?: string; // For presentations/panels: "ANA Conference", "SDXD"
+  venue?: string | string[]; // For presentations/panels: "ANA Conference" or ["SDXD", "Convey UX"]
   publication?: string; // For articles: "CIO News", "SmartSuite"
   
   // Optional fields
@@ -74,7 +74,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: 'presentation',
     title: 'Happier Humans, Better Business',
     date: 'TODO: ADD DATE', // TODO: Provide date in YYYY-MM-DD format
-    venue: 'AI Leaders Forum (SF) • San Diego Design Week',
+    venue: ['AI Leaders Forum (SF)', 'San Diego Design Week'],
     videoUrl: 'https://youtu.be/ApLKfzjaN3Y',
     topics: ['AI', 'UX', 'Business']
   },
@@ -101,7 +101,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: 'presentation',
     title: 'The UX Flywheel',
     date: '2020-01-01', // TODO: Provide more specific date if available
-    venue: 'Convey UX • San Diego Digital Designers • MarcomCentral User Conference',
+    venue: ['Convey UX', 'San Diego Digital Designers', 'MarcomCentral User Conference'],
     videoUrl: 'https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp',
     topics: ['UX', 'Strategy']
   },

@@ -155,7 +155,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           {item.title}
         </h3>
         <p className="text-xs font-bold text-foreground group-hover:text-white transition-colors">
-          {item.venue || item.publication}
+          {Array.isArray(item.venue) ? item.venue.join(' • ') : (item.venue || item.publication)}
           {item.description && ` • ${item.description}`}
         </p>
       </div>
