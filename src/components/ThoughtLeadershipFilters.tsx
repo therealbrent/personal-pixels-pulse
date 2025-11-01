@@ -54,35 +54,22 @@ const getTabClasses = (value: FilterType, isActive: boolean) => {
 };
 
 // Dropdown item color mappings for mobile
-const getDropdownItemClasses = (value: FilterType, isActive: boolean) => {
+const getDropdownItemClasses = (value: FilterType) => {
   const baseClasses = "font-bold cursor-pointer py-3 border-b-2 border-foreground/10 last:border-0";
   
-  if (isActive) {
-    switch (value) {
-      case 'all':
-        return `${baseClasses} bg-foreground text-background`;
-      case 'article':
-        return `${baseClasses} bg-primary text-primary-foreground`;
-      case 'presentation':
-        return `${baseClasses} bg-cobalt text-white`;
-      case 'panel':
-        return `${baseClasses} bg-accent text-white`;
-      case 'podcast':
-        return `${baseClasses} bg-oxblood text-white`;
-    }
-  } else {
-    switch (value) {
-      case 'all':
-        return `${baseClasses} hover:bg-foreground hover:text-background focus:bg-foreground focus:text-background`;
-      case 'article':
-        return `${baseClasses} hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground`;
-      case 'presentation':
-        return `${baseClasses} hover:bg-cobalt hover:text-white focus:bg-cobalt focus:text-white`;
-      case 'panel':
-        return `${baseClasses} hover:bg-accent hover:text-white focus:bg-accent focus:text-white`;
-      case 'podcast':
-        return `${baseClasses} hover:bg-oxblood hover:text-white focus:bg-oxblood focus:text-white`;
-    }
+  switch (value) {
+    case 'all':
+      return `${baseClasses} data-[state=checked]:bg-foreground data-[state=checked]:text-background data-[highlighted]:bg-foreground data-[highlighted]:text-background`;
+    case 'article':
+      return `${baseClasses} data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[highlighted]:bg-primary data-[highlighted]:text-primary-foreground`;
+    case 'presentation':
+      return `${baseClasses} data-[state=checked]:bg-cobalt data-[state=checked]:text-white data-[highlighted]:bg-cobalt data-[highlighted]:text-white`;
+    case 'panel':
+      return `${baseClasses} data-[state=checked]:bg-accent data-[state=checked]:text-white data-[highlighted]:bg-accent data-[highlighted]:text-white`;
+    case 'podcast':
+      return `${baseClasses} data-[state=checked]:bg-oxblood data-[state=checked]:text-white data-[highlighted]:bg-oxblood data-[highlighted]:text-white`;
+    default:
+      return baseClasses;
   }
 };
 
@@ -125,18 +112,15 @@ export default function ThoughtLeadershipFilters({
             <SelectValue placeholder="Filter by type" />
           </SelectTrigger>
           <SelectContent className="bg-background border-4 border-foreground z-50 shadow-neo-lg">
-            {filterOptions.map(({ value, label }) => {
-              const isActive = activeFilter === value;
-              return (
-                <SelectItem 
-                  key={value} 
-                  value={value}
-                  className={getDropdownItemClasses(value, isActive)}
-                >
-                  {label}
-                </SelectItem>
-              );
-            })}
+            {filterOptions.map(({ value, label }) => (
+              <SelectItem 
+                key={value} 
+                value={value}
+                className={getDropdownItemClasses(value)}
+              >
+                {label}
+              </SelectItem>
+            ))}
           </SelectContent>
         </Select>
       </div>
