@@ -106,7 +106,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           
           {/* Quote */}
           {item.quote && (
-            <blockquote className={`border-l-4 border-foreground ${styles.hoverBorder} pl-4 italic text-foreground ${styles.hoverText} text-sm md:text-base leading-relaxed transition-all duration-300`}>
+            <blockquote className={`border-l-4 border-foreground pl-4 italic text-foreground ${styles.hoverText} text-sm md:text-base leading-relaxed transition-colors duration-300`}>
               {item.quote}
             </blockquote>
           )}
