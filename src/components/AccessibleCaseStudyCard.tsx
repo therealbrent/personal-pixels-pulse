@@ -121,10 +121,20 @@ function AccessibleCaseStudyCard({
         </div>
       </DialogContent>
       
+      {/* Background confetti layer - behind modal */}
+      <ConfettiEffect 
+        isActive={showConfetti} 
+        origin={origin ?? undefined}
+        onComplete={() => {}} 
+        layerZIndex={40}
+      />
+      
+      {/* Foreground confetti layer - in front of modal */}
       <ConfettiEffect 
         isActive={showConfetti} 
         origin={origin ?? undefined}
         onComplete={() => setShowConfetti(false)} 
+        layerZIndex={60}
       />
     </Dialog>
   );

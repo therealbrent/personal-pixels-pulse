@@ -17,9 +17,10 @@ interface ConfettiEffectProps {
   isActive: boolean;
   origin?: { x: number; y: number };
   onComplete?: () => void;
+  layerZIndex?: number; // Z-index for the entire layer
 }
 
-function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
+function ConfettiEffect({ isActive, origin, onComplete, layerZIndex = 60 }: ConfettiEffectProps) {
   const [confetti, setConfetti] = useState<ConfettiPiece[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const audioContextRef = useRef<AudioContext | null>(null);
@@ -80,12 +81,12 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
         console.log('Audio playback not available');
       }
 
-      // Responsive particle count for performance
+      // Responsive particle count for performance (split between two layers)
       const getParticleCount = () => {
         const width = window.innerWidth;
-        if (width < 640) return 20; // Mobile
-        if (width < 1024) return 30; // Tablet
-        return 40; // Desktop
+        if (width < 640) return 10; // Mobile - half of 20
+        if (width < 1024) return 15; // Tablet - half of 30
+        return 20; // Desktop - half of 40
       };
 
       // Generate confetti pieces
@@ -104,7 +105,7 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
           color: brutalColors[Math.floor(Math.random() * brutalColors.length)],
           delay: Math.random() * 0.2,
           shape,
-          zIndex: Math.floor(Math.random() * 40) + 40, // Random layering 40-79 (mix behind z-50 modal and in front)
+          zIndex: 1, // Relative z-index within this layer (all pieces in same layer)
           borderWidth: Math.random() > 0.5 ? 4 : 6, // Brutalist thick borders
         };
       });
@@ -127,7 +128,8 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
 
   return (
     <div 
-      className="fixed inset-0 pointer-events-none z-[60] overflow-hidden"
+      className="fixed inset-0 pointer-events-none overflow-hidden"
+      style={{ zIndex: layerZIndex }}
       aria-hidden="true"
     >
       <div 
