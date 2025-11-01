@@ -156,7 +156,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       </div>
       {hasVideo && (
         <div className="absolute bottom-3 right-3" aria-hidden="true">
-          <div className="relative w-14 h-14">
+          <div className="relative w-12 h-12">
             {/* Brutalist play button with hard shadow */}
             <div className={`absolute inset-0 ${styles.glowColor} border-4 border-foreground shadow-neo-sm group-hover:shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
               <Icon 
@@ -165,8 +165,6 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
                 className={`text-foreground fill-foreground ${styles.hoverText} ml-1 transition-colors`}
               />
             </div>
-            {/* Pulsing indicator */}
-            <div className={`absolute -top-1 -right-1 w-3 h-3 ${styles.glowColor} border-2 border-foreground rounded-full animate-pulse`} />
           </div>
         </div>
       )}
