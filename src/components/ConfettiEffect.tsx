@@ -127,7 +127,7 @@ function ConfettiEffect({ isActive, origin, onComplete }: ConfettiEffectProps) {
 
   return (
     <div 
-      className="fixed inset-0 pointer-events-none overflow-hidden"
+      className="fixed inset-0 pointer-events-none z-[60] overflow-hidden"
       aria-hidden="true"
     >
       <div 
