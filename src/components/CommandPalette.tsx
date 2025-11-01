@@ -72,6 +72,9 @@ export function CommandPalette({ isOpen, onClose }: CommandPaletteProps) {
       // Badge match
       if (cmd.badge?.toLowerCase().includes(searchText)) score += 8;
       
+      // Body content match (indexed but not displayed)
+      if (cmd.bodyContent?.toLowerCase().includes(searchText)) score += 12;
+      
       // Type match
       if (cmd.type === searchText) score += 5;
       

@@ -10,6 +10,7 @@ export interface CommandItem {
   type: 'page' | 'section' | 'action' | 'external';
   description?: string;
   badge?: string;
+  bodyContent?: string; // Indexed for search but not displayed
 }
 
 export const commandPaletteData: CommandItem[] = [
@@ -21,6 +22,7 @@ export const commandPaletteData: CommandItem[] = [
     icon: Home,
     type: 'page',
     keywords: ['home', 'start', 'main', 'index', 'landing'],
+    bodyContent: 'AI-powered marketing leader leveraging generative AI since June 2020. Transformational leader combining strategic vision technical implementation and behavior change. Two decades of experience at intersection of marketing technology and UX. Experience case studies writing insights. Enterprise marketing teams plan campaigns organize teams create content grow skills.',
   },
   {
     id: 'leadership',
@@ -30,6 +32,7 @@ export const commandPaletteData: CommandItem[] = [
     type: 'page',
     keywords: ['leadership', 'principles', 'management', 'lead', 'vision'],
     description: 'Leadership principles and philosophy',
+    bodyContent: 'Leadership that spans vision and execution. Spotting trends and building bridges that unlock capability. Empathy fuels innovation understanding users customers teammates progress. Transformation must land ideas shift reality make big bets tangible. Data earns decisions gut sparks ideas evidence unlocks investment trust. Collaboration multiplies force silos kill momentum break them down. Play the long game today wins compound tomorrow advantage.',
   },
   {
     id: 'speaking',
@@ -39,6 +42,7 @@ export const commandPaletteData: CommandItem[] = [
     type: 'page',
     keywords: ['speaking', 'talks', 'presentations', 'media', 'speeches', 'keynote'],
     description: 'Speaking engagements and media appearances',
+    bodyContent: 'Share stories strategic frameworks lessons learned from two decades leading change. Conference presentations podcasts panels interviews. Global stages to local meetups wherever marketing technology and design collide. Biography headshot media archive book for your next event.',
   },
   {
     id: 'design-case-studies',
@@ -48,6 +52,7 @@ export const commandPaletteData: CommandItem[] = [
     type: 'page',
     keywords: ['design', 'case', 'studies', 'portfolio', 'work', 'projects', 'ux'],
     description: 'Design and UX case studies',
+    bodyContent: 'Real projects technology implementations recognizable brands. User experience design strategy enterprise solutions digital transformation customer journey mapping responsive design cloud computing.',
   },
   {
     id: 'designer-in-residence',
@@ -58,6 +63,7 @@ export const commandPaletteData: CommandItem[] = [
     keywords: ['designer', 'residence', 'mentorship', 'program'],
     description: 'Design mentorship program',
     badge: 'Coming Soon',
+    bodyContent: 'UC San Diego industry affiliate program mentor students co-lead design programs connect academic research enterprise challenges. October 2025 invitation design education teaching collaboration university.',
   },
   {
     id: 'llms',
