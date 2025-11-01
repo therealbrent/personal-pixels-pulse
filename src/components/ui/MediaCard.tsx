@@ -65,8 +65,8 @@ export const MediaCard: React.FC<MediaCardProps> = ({
           
           {/* Category Overlay */}
           {category && (
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
-              <div className="absolute bottom-4 left-4 right-4 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
+              <div className="absolute bottom-4 left-4 right-4 text-background">
                 <div className="bg-accent px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
                   {category}
                 </div>
@@ -79,8 +79,8 @@ export const MediaCard: React.FC<MediaCardProps> = ({
           
           {/* Icon Overlays */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            {showPlayIcon && <Icon name="play" size={32} className="text-white drop-shadow-neo-lg" />}
-            {showExternalIcon && <Icon name="external-link" size={32} className="text-white drop-shadow-neo-lg" />}
+            {showPlayIcon && <Icon name="play" size={32} className="text-background drop-shadow-neo-lg" />}
+            {showExternalIcon && <Icon name="external-link" size={32} className="text-background drop-shadow-neo-lg" />}
           </div>
 
           {/* Corner Play Icon for Media */}

@@ -174,7 +174,7 @@ export default function DesignCaseStudiesPage() {
                 <p className="font-bold text-lg md:text-xl">
                   Digital Telepathy (Acquired by ServiceNow, 2017)
                 </p>
-                <p className="text-white/90 text-base md:text-lg mt-2">
+                <p className="text-secondary-foreground/90 text-base md:text-lg mt-2">
                   Long-form, flagship case studies from projects I led circa 2014
                 </p>
               </div>
@@ -205,19 +205,19 @@ export default function DesignCaseStudiesPage() {
                       <div className="absolute top-4 right-4 w-8 h-8 bg-accent opacity-0 group-hover:opacity-80 transition-all duration-300 transform rotate-45 group-hover:rotate-12" aria-hidden="true"></div>
                       <div className="absolute bottom-6 left-6 w-6 h-6 border-2 border-primary opacity-0 group-hover:opacity-90 transition-all duration-500 transform group-hover:rotate-45" aria-hidden="true"></div>
                       
-                      {/* Context Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
-                        <div className="absolute bottom-4 left-4 right-4 text-white">
-                          <div className="bg-accent px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
-                            TRAVEL • STARTUP
-                          </div>
-                          <p className="text-sm leading-tight">Interactive prototype capturing the spirit of exploration</p>
-                        </div>
-                      </div>
-                      
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <Icon name="external-link" size={32} className="text-white drop-shadow-neo-lg" />
-                      </div>
+          {/* Context Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
+            <div className="absolute bottom-4 left-4 right-4 text-background">
+              <div className="bg-accent px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
+                TRAVEL • STARTUP
+              </div>
+              <p className="text-sm leading-tight">Interactive prototype capturing the spirit of exploration</p>
+            </div>
+          </div>
+          
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <Icon name="external-link" size={32} className="text-background drop-shadow-neo-lg" />
+          </div>
                     </div>
                     <div className="p-6">
                       <h3 className="text-2xl font-bold mb-4 text-primary-text group-hover:text-primary-text/80 transition-colors">Adventure.com</h3>
@@ -273,8 +273,8 @@ export default function DesignCaseStudiesPage() {
                       <div className="absolute bottom-4 right-4 w-8 h-8 border-2 border-secondary opacity-0 group-hover:opacity-90 transition-all duration-300 transform group-hover:rotate-45" aria-hidden="true"></div>
                       
                       {/* Context Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
-                        <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-4 left-4 right-4 text-background">
                           <div className="bg-destructive px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
                             ENTERPRISE • PLATFORM
                           </div>
@@ -283,7 +283,7 @@ export default function DesignCaseStudiesPage() {
                       </div>
                       
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <Icon name="external-link" size={32} className="text-white drop-shadow-neo-lg" />
+                        <Icon name="external-link" size={32} className="text-background drop-shadow-neo-lg" />
                       </div>
                     </div>
                     <div className="p-6">
@@ -347,8 +347,8 @@ export default function DesignCaseStudiesPage() {
                       <div className="absolute bottom-4 left-4 w-4 h-4 bg-secondary opacity-0 group-hover:opacity-60 transition-all duration-400 transform rotate-45" aria-hidden="true"></div>
                       
                       {/* Context Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="absolute bottom-3 left-3 right-3 text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-3 left-3 right-3 text-background">
                           <div className="bg-primary text-primary-foreground px-2 py-1 text-xs font-bold inline-block transform -skew-x-12">
                             TILES LAYOUT
                           </div>
@@ -370,8 +370,8 @@ export default function DesignCaseStudiesPage() {
                       <div className="absolute bottom-6 right-4 w-6 h-6 border-2 border-secondary opacity-0 group-hover:opacity-60 transition-all duration-400 transform group-hover:-rotate-45" aria-hidden="true"></div>
                       
                       {/* Context Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="absolute bottom-3 left-3 right-3 text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-3 left-3 right-3 text-background">
                           <div className="bg-primary text-primary-foreground px-2 py-1 text-xs font-bold inline-block transform -skew-x-12">
                             CATALOG VIEW
                           </div>
@@ -397,7 +397,7 @@ export default function DesignCaseStudiesPage() {
               
               <div className="bg-destructive text-destructive-foreground p-4 md:p-6 border-2 border-foreground mb-6 md:mb-8">
                 <p className="font-bold text-lg md:text-xl">Metalab</p>
-                <p className="text-white/90 text-base md:text-lg mt-2">
+                <p className="text-destructive-foreground/90 text-base md:text-lg mt-2">
                   Visual presentation format matches brand personality
                 </p>
               </div>
@@ -435,8 +435,8 @@ export default function DesignCaseStudiesPage() {
                       <div className="absolute bottom-8 left-8 w-6 h-6 bg-accent opacity-0 group-hover:opacity-70 transition-all duration-400 transform group-hover:rotate-90" aria-hidden="true"></div>
                       
                       {/* Context Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
-                        <div className="absolute bottom-6 left-6 right-6 text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-6 left-6 right-6 text-background">
                           <div className="bg-destructive px-3 py-1 text-sm font-bold inline-block transform -skew-x-12 mb-2">
                             PRODUCT • DESIGN
                           </div>
@@ -445,7 +445,7 @@ export default function DesignCaseStudiesPage() {
                       </div>
                       
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <Icon name="external-link" size={32} className="text-white drop-shadow-neo-lg" />
+                        <Icon name="external-link" size={32} className="text-background drop-shadow-neo-lg" />
                       </div>
                     </div>
                   </a>

@@ -78,14 +78,14 @@ const HeroSection: React.FC = () => (
     />
     
     <div className="text-center max-w-6xl mx-auto relative z-10">
-      <h1 className="text-5xl md:text-8xl lg:text-9xl font-black mb-8 leading-[0.85] tracking-tight">
+          <h1 className="text-5xl md:text-8xl lg:text-9xl font-black mb-8 leading-[0.85] tracking-tight">
         <span className="block text-background drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
           LEADERSHIP THAT SPANS
         </span>
         <span className="block mt-4 drop-shadow-[4px_4px_0px_hsl(var(--foreground))]">
-          <span style={{ color: 'hsl(43, 100%, 52%)' }}>VISION</span>
+          <span className="text-primary">VISION</span>
           <span className="text-background"> & </span>
-          <span style={{ color: 'hsl(220, 100%, 59%)' }}>EXECUTION</span>
+          <span className="text-[hsl(var(--cobalt))]">EXECUTION</span>
         </span>
       </h1>
       
@@ -175,7 +175,7 @@ const StructuralBeam: React.FC<StructuralBeamProps> = ({
           )}
         >
           {/* Always visible headline - no obstructing number */}
-          <h3 className="text-base font-black leading-tight text-white transform -rotate-90 whitespace-nowrap uppercase tracking-tight">
+          <h3 className="text-base font-black leading-tight text-background transform -rotate-90 whitespace-nowrap uppercase tracking-tight">
             {condensed}
           </h3>
         </div>
@@ -353,10 +353,10 @@ const BridgeConstructionSection: React.FC = () => {
             {/* Bridge span visualization */}
             <div className="relative mb-16 max-w-4xl mx-auto">
               <div className="flex justify-between items-center mb-12">
-                <div className="text-3xl font-black drop-shadow-[2px_2px_0px_hsl(var(--foreground))]" style={{ color: 'hsl(43, 100%, 52%)' }}>
+                <div className="text-3xl font-black drop-shadow-[2px_2px_0px_hsl(var(--foreground))] text-primary">
                   VISION
                 </div>
-                <div className="text-3xl font-black drop-shadow-[2px_2px_0px_hsl(var(--foreground))]" style={{ color: 'hsl(220, 100%, 59%)' }}>
+                <div className="text-3xl font-black drop-shadow-[2px_2px_0px_hsl(var(--foreground))] text-[hsl(var(--cobalt))]">
                   EXECUTION
                 </div>
               </div>
@@ -365,12 +365,10 @@ const BridgeConstructionSection: React.FC = () => {
               <div className="relative w-full h-3 mb-8">
                 {/* Foundation anchors - solid colors, no gradient */}
                 <div 
-                  className="absolute left-0 top-0 w-8 h-8 border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))]"
-                  style={{ backgroundColor: 'hsl(43, 100%, 52%)' }}
+                  className="absolute left-0 top-0 w-8 h-8 border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))] bg-primary"
                 />
                 <div 
-                  className="absolute right-0 top-0 w-8 h-8 border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))]"
-                  style={{ backgroundColor: 'hsl(220, 100%, 59%)' }}
+                  className="absolute right-0 top-0 w-8 h-8 border-4 border-foreground -mt-2 shadow-[4px_4px_0px_hsl(var(--foreground))] bg-[hsl(var(--cobalt))]"
                 />
                 
                 {/* Progressive gradient bridge deck - starts from zero, more yellow/blue */}
@@ -438,25 +436,25 @@ const BridgeConstructionSection: React.FC = () => {
               >
                 {activeBeam >= principlesData.length - 1 && expandedBeam !== null ? (
                   <div className="text-center">
-                    <h3 className="text-2xl md:text-4xl font-black mb-4 text-white tracking-tight">
+                    <h3 className="text-2xl md:text-4xl font-black mb-4 text-background tracking-tight">
                       {principlesData[expandedBeam].condensed}
                     </h3>
-                    <p className="text-lg md:text-xl font-bold text-white">
+                    <p className="text-lg md:text-xl font-bold text-background">
                       {principlesData[expandedBeam].fullText}
                     </p>
                   </div>
                 ) : activeBeam >= principlesData.length - 1 ? (
                   <div className="text-center">
-                    <h3 className="text-2xl md:text-4xl font-black text-white tracking-tight">
+                    <h3 className="text-2xl md:text-4xl font-black text-background tracking-tight">
                       CLICK A PILLAR TO EXPLORE
                     </h3>
                   </div>
                 ) : (
                   <div className="text-center">
-                    <h3 className="text-2xl md:text-4xl font-black mb-4 text-white tracking-tight">
+                    <h3 className="text-2xl md:text-4xl font-black mb-4 text-background tracking-tight">
                       {principlesData[activeBeam].title.toUpperCase()}
                     </h3>
-                    <p className="text-lg md:text-xl font-bold text-white">
+                    <p className="text-lg md:text-xl font-bold text-background">
                       {principlesData[activeBeam].fullText}
                     </p>
                   </div>
