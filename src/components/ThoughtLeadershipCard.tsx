@@ -101,24 +101,26 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         <h3 className={`text-sm md:text-base font-black mb-2 text-foreground line-clamp-2 ${styles.hoverText} transition-colors`}>
           {item.title}
         </h3>
-        <p className={`text-xs font-bold text-foreground/60 group-hover:text-opacity-90 transition-colors ${styles.hoverText.replace('hover:', 'group-hover:')}`}>
+        <p className={`text-xs font-bold text-foreground ${styles.hoverText} transition-colors`}>
           {item.venue || item.publication}
           {item.description && ` • ${item.description}`}
         </p>
       </div>
       {hasVideo && (
         <div className="absolute bottom-4 right-4" aria-label="Video available">
-          <div className="relative">
-            {/* Pulsing glow effect in content type color */}
-            <div className={`absolute inset-0 ${styles.glowColor} rounded-full blur-md opacity-60 animate-pulse`} />
-            {/* Play button */}
-            <div className={`relative ${styles.glowColor} rounded-full p-2 group-hover:scale-110 transition-transform duration-200`}>
-              <Icon 
-                name="play" 
-                size={20} 
-                className="text-foreground fill-foreground" 
-                aria-hidden="true"
-              />
+          <div className="relative w-12 h-12">
+            {/* Outer pulsing ring */}
+            <div className={`absolute inset-0 ${styles.glowColor} rounded-full opacity-30 animate-pulse`} />
+            {/* Inner solid background */}
+            <div className={`absolute inset-2 ${styles.glowColor} rounded-full group-hover:scale-110 transition-all duration-200 border-2 border-foreground shadow-neo-xs`}>
+              <div className="w-full h-full flex items-center justify-center">
+                <Icon 
+                  name="play" 
+                  size={16} 
+                  className="text-foreground fill-foreground ml-0.5" 
+                  aria-hidden="true"
+                />
+              </div>
             </div>
           </div>
         </div>
