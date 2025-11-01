@@ -21,31 +21,35 @@ interface ThoughtLeadershipFiltersProps {
 }
 
 // Tab color mappings matching content types
-const tabColors: Record<FilterType, { bg: string; text: string; border: string }> = {
-  all: {
-    bg: 'bg-accent',
-    text: 'text-accent-foreground',
-    border: 'border-foreground'
-  },
-  article: {
-    bg: 'bg-primary',
-    text: 'text-primary-foreground',
-    border: 'border-foreground'
-  },
-  presentation: {
-    bg: 'bg-cobalt',
-    text: 'text-cobalt-foreground',
-    border: 'border-foreground'
-  },
-  panel: {
-    bg: 'bg-accent',
-    text: 'text-accent-foreground',
-    border: 'border-foreground'
-  },
-  podcast: {
-    bg: 'bg-oxblood',
-    text: 'text-oxblood-foreground',
-    border: 'border-foreground'
+const getTabClasses = (value: FilterType, isActive: boolean) => {
+  const baseClasses = "px-6 py-3 font-black text-sm border-4 border-foreground transition-all duration-200 shadow-neo-sm focus:ring-4 focus:ring-focus-ring focus:ring-offset-2";
+  
+  if (isActive) {
+    switch (value) {
+      case 'all':
+        return `${baseClasses} bg-accent text-accent-foreground translate-x-[2px] translate-y-[2px] shadow-none`;
+      case 'article':
+        return `${baseClasses} bg-primary text-primary-foreground translate-x-[2px] translate-y-[2px] shadow-none`;
+      case 'presentation':
+        return `${baseClasses} bg-cobalt text-white translate-x-[2px] translate-y-[2px] shadow-none`;
+      case 'panel':
+        return `${baseClasses} bg-accent text-accent-foreground translate-x-[2px] translate-y-[2px] shadow-none`;
+      case 'podcast':
+        return `${baseClasses} bg-oxblood text-white translate-x-[2px] translate-y-[2px] shadow-none`;
+    }
+  } else {
+    switch (value) {
+      case 'all':
+        return `${baseClasses} bg-background text-foreground hover:bg-accent hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
+      case 'article':
+        return `${baseClasses} bg-background text-foreground hover:bg-primary hover:text-foreground hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
+      case 'presentation':
+        return `${baseClasses} bg-background text-foreground hover:bg-cobalt hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
+      case 'panel':
+        return `${baseClasses} bg-background text-foreground hover:bg-accent hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
+      case 'podcast':
+        return `${baseClasses} bg-background text-foreground hover:bg-oxblood hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
+    }
   }
 };
 
@@ -59,7 +63,6 @@ export default function ThoughtLeadershipFilters({
       {/* Desktop Tabs */}
       <nav className="hidden md:flex gap-3 mb-8 flex-wrap" role="tablist" aria-label="Content type filters">
         {filterOptions.map(({ value, label }) => {
-          const colors = tabColors[value];
           const isActive = activeFilter === value;
           
           return (
@@ -69,11 +72,7 @@ export default function ThoughtLeadershipFilters({
               role="tab"
               aria-selected={isActive}
               aria-controls="thought-leadership-grid"
-              className={`px-6 py-3 font-black text-sm border-4 border-foreground transition-all duration-200 shadow-neo-sm focus:ring-4 focus:ring-focus-ring focus:ring-offset-2 ${
-                isActive
-                  ? `${colors.bg} ${colors.text} translate-x-[2px] translate-y-[2px] shadow-none`
-                  : `bg-background text-foreground hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none ${colors.bg.replace('bg-', 'hover:bg-')} ${colors.text.replace('text-', 'hover:text-')}`
-              }`}
+              className={getTabClasses(value, isActive)}
             >
               {label}
             </button>
