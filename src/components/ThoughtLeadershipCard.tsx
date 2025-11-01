@@ -164,11 +164,18 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
             {/* Brutalist play button with color inversion on hover */}
             <div className={`absolute inset-0 ${styles.glowColor} group-hover:bg-background border-4 border-foreground shadow-neo-sm group-hover:shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
-              <Icon 
-                name="play" 
-                size={20} 
-                className={`text-white fill-white group-hover:${styles.iconColor} group-hover:fill-current group-hover:rotate-90 ml-1 transition-all duration-300`}
-              />
+              <div className="relative ml-1">
+                <Icon 
+                  name="play" 
+                  size={20} 
+                  className="text-white fill-white group-hover:opacity-0 transition-all duration-300 group-hover:rotate-90"
+                />
+                <Icon 
+                  name="play" 
+                  size={20} 
+                  className={`absolute inset-0 ${styles.iconColor} fill-current opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:rotate-90`}
+                />
+              </div>
             </div>
           </div>
         </div>
