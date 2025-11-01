@@ -276,7 +276,7 @@ function HomePage() {
                   <div className="text-center">
                     <button 
                       onClick={() => setShowFullStory(true)}
-                      className="bg-primary text-primary-foreground font-semibold px-6 py-3 transform hover:scale-105 transition-transform"
+                      className="bg-primary text-primary-foreground font-semibold px-6 py-3 border-4 border-foreground shadow-neo-sm hover:shadow-neo-xs hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150"
                     >
                       Keep reading...
                     </button>
