@@ -1,6 +1,4 @@
 import { useEffect } from 'react';
-import Header from './Header';
-import Footer from './Footer';
 
 const LLMSTextPage = () => {
   useEffect(() => {
@@ -72,9 +70,7 @@ const LLMSTextPage = () => {
 - Brent also occassionally shares his expertise on [Content Strategy](https://contentstrategy.substack.com) and other insights (briefly) on [200 MAX](https://www.in200max.com/).`;
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header />
-      
+    <div className="min-h-screen bg-background text-foreground page-transition">
       <main id="main-content" className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="border-4 border-foreground bg-card p-8 font-mono whitespace-pre-wrap text-sm leading-relaxed">
@@ -82,8 +78,6 @@ const LLMSTextPage = () => {
           </div>
         </div>
       </main>
-      
-      <Footer />
     </div>
   );
 };
