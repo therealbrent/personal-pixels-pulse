@@ -8,35 +8,35 @@ interface ThoughtLeadershipCardProps {
 
 // Content type style mappings using design system
 const contentTypeStyles: Record<ContentType, {
-  hoverBg: string;
+  cardHoverBg: string;
   hoverText: string;
   hoverBorder: string;
   glowColor: string;
   shadowColor: string;
 }> = {
   article: {
-    hoverBg: 'group-hover:bg-primary',
+    cardHoverBg: 'hover:bg-primary',
     hoverText: 'group-hover:!text-foreground', // Onyx on Mustard
     hoverBorder: 'group-hover:!border-primary',
     glowColor: 'bg-primary',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--primary))]'
   },
   presentation: {
-    hoverBg: 'group-hover:bg-cobalt',
+    cardHoverBg: 'hover:bg-cobalt',
     hoverText: 'group-hover:!text-white', // White on Cobalt
     hoverBorder: 'group-hover:!border-cobalt',
     glowColor: 'bg-cobalt',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--cobalt))]'
   },
   panel: {
-    hoverBg: 'group-hover:bg-accent',
+    cardHoverBg: 'hover:bg-accent',
     hoverText: 'group-hover:!text-white', // White on Hot Pink
     hoverBorder: 'group-hover:!border-accent',
     glowColor: 'bg-accent',
     shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--accent))]'
   },
   podcast: {
-    hoverBg: 'group-hover:bg-oxblood',
+    cardHoverBg: 'hover:bg-oxblood',
     hoverText: 'group-hover:!text-background', // Off-white on Oxblood
     hoverBorder: 'group-hover:!border-oxblood',
     glowColor: 'bg-oxblood',
@@ -65,7 +65,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       <article
         onClick={isClickable ? handleClick : undefined}
         style={{ animationDelay: staggerDelay }}
-        className={`md:col-span-2 bg-background border-4 border-foreground shadow-neo-md ${styles.hoverBg} ${
+        className={`md:col-span-2 bg-background border-4 border-foreground shadow-neo-md ${styles.cardHoverBg} ${
           isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
         } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative`}
         aria-label={`Article: ${item.title} featured in ${item.publication}`}
@@ -125,7 +125,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
     <article
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
-      className={`bg-background border-2 border-foreground shadow-neo-sm p-4 min-h-[140px] flex flex-col justify-between ${styles.hoverBg} ${
+      className={`bg-background border-2 border-foreground shadow-neo-sm p-4 min-h-[140px] flex flex-col justify-between ${styles.cardHoverBg} ${
         isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor} relative` : 'transition-all duration-300 relative'
       } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
