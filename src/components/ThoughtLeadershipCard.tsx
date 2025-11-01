@@ -41,7 +41,7 @@ const contentTypeStyles: Record<ContentType, {
   },
   podcast: {
     cardHoverBg: 'hover:bg-oxblood',
-    hoverText: 'group-hover:!text-background', // Off-white on Oxblood
+    hoverText: 'group-hover:!text-white', // White on Oxblood
     hoverBorder: 'group-hover:!border-oxblood',
     glowColor: 'bg-oxblood',
     iconColor: 'text-oxblood',
