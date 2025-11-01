@@ -89,7 +89,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         <div className="flex flex-col gap-4 p-6 md:p-8">
           {/* Publication tag */}
           <div className="flex-shrink-0">
-            <span className="text-xs font-black text-foreground tracking-wider uppercase group-hover:text-current transition-colors" aria-label={`Published in ${item.publication}`}>
+            <span className={`text-xs font-black text-foreground tracking-wider uppercase ${styles.hoverText} transition-colors`} aria-label={`Published in ${item.publication}`}>
               {item.publication}
             </span>
           </div>
@@ -101,7 +101,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           
           {/* Quote */}
           {item.quote && (
-            <blockquote className={`border-l-4 border-foreground ${styles.hoverBorder} pl-4 italic text-foreground group-hover:text-current text-sm md:text-base leading-relaxed transition-all duration-300`}>
+            <blockquote className={`border-l-4 border-foreground ${styles.hoverBorder} pl-4 italic text-foreground ${styles.hoverText} text-sm md:text-base leading-relaxed transition-all duration-300`}>
               {item.quote}
             </blockquote>
           )}
@@ -149,7 +149,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         <h3 className={`text-sm md:text-base font-black mb-2 text-foreground leading-snug line-clamp-3 ${styles.hoverText} transition-colors`}>
           {item.title}
         </h3>
-        <p className={`text-xs font-bold text-foreground group-hover:text-current transition-colors`}>
+        <p className={`text-xs font-bold text-foreground ${styles.hoverText} transition-colors`}>
           {item.venue || item.publication}
           {item.description && ` • ${item.description}`}
         </p>
