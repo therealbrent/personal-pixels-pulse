@@ -27,28 +27,61 @@ const getTabClasses = (value: FilterType, isActive: boolean) => {
   if (isActive) {
     switch (value) {
       case 'all':
-        return `${baseClasses} bg-accent text-accent-foreground translate-x-[2px] translate-y-[2px] shadow-none`;
+        return `${baseClasses} bg-foreground text-background translate-x-[2px] translate-y-[2px] shadow-none`;
       case 'article':
         return `${baseClasses} bg-primary text-primary-foreground translate-x-[2px] translate-y-[2px] shadow-none`;
       case 'presentation':
         return `${baseClasses} bg-cobalt text-white translate-x-[2px] translate-y-[2px] shadow-none`;
       case 'panel':
-        return `${baseClasses} bg-accent text-accent-foreground translate-x-[2px] translate-y-[2px] shadow-none`;
+        return `${baseClasses} bg-accent text-white translate-x-[2px] translate-y-[2px] shadow-none`;
       case 'podcast':
         return `${baseClasses} bg-oxblood text-white translate-x-[2px] translate-y-[2px] shadow-none`;
     }
   } else {
     switch (value) {
       case 'all':
-        return `${baseClasses} bg-background text-foreground hover:bg-accent hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
+        return `${baseClasses} bg-background text-foreground hover:bg-foreground hover:text-background hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
       case 'article':
-        return `${baseClasses} bg-background text-foreground hover:bg-primary hover:text-foreground hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
+        return `${baseClasses} bg-background text-foreground hover:bg-primary hover:text-primary-foreground hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
       case 'presentation':
         return `${baseClasses} bg-background text-foreground hover:bg-cobalt hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
       case 'panel':
         return `${baseClasses} bg-background text-foreground hover:bg-accent hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
       case 'podcast':
         return `${baseClasses} bg-background text-foreground hover:bg-oxblood hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
+    }
+  }
+};
+
+// Dropdown item color mappings for mobile
+const getDropdownItemClasses = (value: FilterType, isActive: boolean) => {
+  const baseClasses = "font-bold cursor-pointer py-3 border-b-2 border-foreground/10 last:border-0";
+  
+  if (isActive) {
+    switch (value) {
+      case 'all':
+        return `${baseClasses} bg-foreground text-background`;
+      case 'article':
+        return `${baseClasses} bg-primary text-primary-foreground`;
+      case 'presentation':
+        return `${baseClasses} bg-cobalt text-white`;
+      case 'panel':
+        return `${baseClasses} bg-accent text-white`;
+      case 'podcast':
+        return `${baseClasses} bg-oxblood text-white`;
+    }
+  } else {
+    switch (value) {
+      case 'all':
+        return `${baseClasses} hover:bg-foreground hover:text-background focus:bg-foreground focus:text-background`;
+      case 'article':
+        return `${baseClasses} hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground`;
+      case 'presentation':
+        return `${baseClasses} hover:bg-cobalt hover:text-white focus:bg-cobalt focus:text-white`;
+      case 'panel':
+        return `${baseClasses} hover:bg-accent hover:text-white focus:bg-accent focus:text-white`;
+      case 'podcast':
+        return `${baseClasses} hover:bg-oxblood hover:text-white focus:bg-oxblood focus:text-white`;
     }
   }
 };
@@ -92,15 +125,18 @@ export default function ThoughtLeadershipFilters({
             <SelectValue placeholder="Filter by type" />
           </SelectTrigger>
           <SelectContent className="bg-background border-4 border-foreground z-50 shadow-neo-lg">
-            {filterOptions.map(({ value, label }) => (
-              <SelectItem 
-                key={value} 
-                value={value}
-                className="font-bold cursor-pointer hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground py-3 border-b-2 border-foreground/10 last:border-0"
-              >
-                {label}
-              </SelectItem>
-            ))}
+            {filterOptions.map(({ value, label }) => {
+              const isActive = activeFilter === value;
+              return (
+                <SelectItem 
+                  key={value} 
+                  value={value}
+                  className={getDropdownItemClasses(value, isActive)}
+                >
+                  {label}
+                </SelectItem>
+              );
+            })}
           </SelectContent>
         </Select>
       </div>
