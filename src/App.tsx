@@ -65,18 +65,18 @@ function HomePage() {
               AI-POWERED
             </span>
             
-            <span className="block relative inline-block my-2">
-              <span className="relative inline-block px-4 py-2" style={{ backgroundColor: '#FF1392', color: '#FFFFFF' }}>
+            <span className="block my-2">
+              <span className="inline-block px-4 py-2" style={{ backgroundColor: '#FF1392', color: '#FFFFFF' }}>
                 MARKETER
               </span>
             </span>
-            <span className="block relative inline-block my-2">
-              <span className="relative inline-block px-4 py-2 bg-primary text-foreground">
+            <span className="block my-2">
+              <span className="inline-block px-4 py-2 bg-primary text-foreground">
                 DESIGNER
               </span>
             </span>
-            <span className="block relative inline-block my-2">
-              <span className="relative inline-block px-4 py-2 bg-cobalt text-white">
+            <span className="block my-2">
+              <span className="inline-block px-4 py-2 bg-cobalt text-white">
                 STRATEGIST
               </span>
             </span>
