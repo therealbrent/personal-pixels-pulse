@@ -154,10 +154,16 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         <h3 className="text-sm md:text-base font-black mb-2 text-foreground group-hover:text-white leading-snug line-clamp-3 transition-colors">
           {item.title}
         </h3>
-        <p className="text-xs font-bold text-foreground group-hover:text-white transition-colors">
-          {Array.isArray(item.venue) ? item.venue.join(' • ') : (item.venue || item.publication)}
-          {item.description && ` • ${item.description}`}
-        </p>
+        <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors">
+          {Array.isArray(item.venue) ? (
+            item.venue.map((v, i) => (
+              <div key={i}>{v}</div>
+            ))
+          ) : (
+            <div>{item.venue || item.publication}</div>
+          )}
+          {item.description && <div>{item.description}</div>}
+        </div>
       </div>
       {hasVideo && (
         <div className="absolute bottom-3 right-3" aria-hidden="true">
