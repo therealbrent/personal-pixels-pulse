@@ -60,7 +60,7 @@ function HomePage() {
           <p className="text-sm md:text-base text-muted-foreground mb-4 font-bold tracking-wide uppercase">
             This site was vibe coded
           </p>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
             <span className="block text-foreground mb-4">
               AI-POWERED
             </span>
