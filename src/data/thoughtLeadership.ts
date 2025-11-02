@@ -48,7 +48,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: "ai-champions-playbook-2025",
     type: "presentation",
     title: "The AI Champion's Playbook",
-    date: "2025-05-04",
+    date: "2025-11-04",
     venue: "AI Leaders Forum (NYC)",
     topics: ["AI", "Leadership"],
   },
@@ -299,9 +299,7 @@ export const getFeaturedThoughtLeadership = () => {
 // Helper function to filter by topic
 export const getThoughtLeadershipByTopic = (topic: string) => {
   const sorted = getSortedThoughtLeadership();
-  return sorted.filter((item) => 
-    item.topics?.some((t) => t.toLowerCase() === topic.toLowerCase())
-  );
+  return sorted.filter((item) => item.topics?.some((t) => t.toLowerCase() === topic.toLowerCase()));
 };
 
 // Helper function to group by year
