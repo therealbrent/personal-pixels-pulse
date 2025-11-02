@@ -50,25 +50,34 @@ export function CommandFAB({ onOpenCommandPalette }: CommandFABProps) {
       }}
       aria-label={`Open command palette (${isMac ? '⌘K' : 'Ctrl+K'})`}
     >
-      {/* Command Icon */}
-      <Command 
-        size={28} 
-        strokeWidth={2.5}
-        className="transition-transform duration-300 group-hover:scale-110"
-      />
+      {/* Command Icon - OS-specific or Menu icon */}
+      {isMac ? (
+        <Command 
+          size={28} 
+          strokeWidth={2.5}
+          className="transition-transform duration-300 group-hover:scale-110"
+          aria-hidden="true"
+        />
+      ) : (
+        <div className="flex flex-col gap-1 transition-transform duration-300 group-hover:scale-110" aria-hidden="true">
+          <div className="w-6 h-[3px] bg-accent-foreground rounded-sm" />
+          <div className="w-6 h-[3px] bg-accent-foreground rounded-sm" />
+          <div className="w-6 h-[3px] bg-accent-foreground rounded-sm" />
+        </div>
+      )}
       
       {/* Menu Label */}
       <span className="text-xs font-black leading-none tracking-tight">
         MENU
       </span>
 
-      {/* Geometric accents - matching header style */}
+      {/* Geometric accents - Hot Pink + Onyx clash */}
       <div 
-        className="absolute top-2 left-2 w-3 h-3 bg-primary border-2 border-foreground rotate-45 opacity-70"
+        className="absolute top-2 left-2 w-3 h-3 bg-cobalt border-2 border-accent-foreground rotate-45 opacity-80"
         aria-hidden="true"
       />
       <div 
-        className="absolute bottom-3 right-2 w-2 h-2 border-2 border-primary-foreground -rotate-12 opacity-50"
+        className="absolute bottom-3 right-2 w-2 h-2 bg-accent-foreground border-2 border-accent-foreground -rotate-12 opacity-60"
         aria-hidden="true"
       />
     </button>
