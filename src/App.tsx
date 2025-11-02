@@ -60,13 +60,23 @@ function HomePage() {
           <p className="text-sm md:text-base text-muted-foreground mb-4 font-bold tracking-wide uppercase">
             This site was vibe coded
           </p>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 text-foreground tracking-tight">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 tracking-tight">
             <span className="relative inline-block">
-              AI-POWERED
-              <div className="absolute bottom-0 left-0 w-full h-8 bg-accent/70 -z-10 transform -skew-x-6" aria-hidden="true"></div>
+              <span className="relative inline-block px-4 py-2 bg-secondary text-secondary-foreground transform -skew-x-3">
+                MARKETER
+              </span>
             </span>
-            {" "}MARKETING
-            <span className="block text-primary">LEADER</span>
+            <span className="block relative inline-block my-2">
+              <span className="relative inline-block px-4 py-2 bg-primary text-foreground transform skew-x-2">
+                DESIGNER
+              </span>
+            </span>
+            <span className="block relative inline-block">
+              <span className="relative inline-block px-4 py-2 bg-cobalt text-white transform -skew-x-3">
+                STRATEGIST
+              </span>
+            </span>
+            <span className="block text-foreground mt-4">LEADER</span>
           </h1>
           
           <div className="bg-secondary p-6 border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300 mb-8">
