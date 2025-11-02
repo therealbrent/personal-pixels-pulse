@@ -162,7 +162,11 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           ) : (
             <div>{item.venue || item.publication}</div>
           )}
-          {item.description && <div>{item.description}</div>}
+          {item.description === "Moderator" && (
+            <div className="text-cobalt group-hover:text-white transition-colors font-black mt-1">
+              MODERATOR
+            </div>
+          )}
         </div>
       </div>
       {hasVideo && (
