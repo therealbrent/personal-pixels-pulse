@@ -61,23 +61,27 @@ function HomePage() {
             This site was vibe coded
           </p>
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 tracking-tight">
-            <span className="block relative inline-block mb-2">
+            <span className="block text-foreground mb-4">
+              AI-POWERED
+            </span>
+            
+            <span className="block relative inline-block my-2">
               <span className="relative inline-block px-4 py-2" style={{ backgroundColor: '#FF1392', color: '#FFFFFF' }}>
                 MARKETER
               </span>
             </span>
             <span className="block relative inline-block my-2">
-              <span className="relative inline-block px-4 py-2 bg-primary text-foreground transform skew-x-2">
+              <span className="relative inline-block px-4 py-2 bg-primary text-foreground">
                 DESIGNER
               </span>
             </span>
             <span className="block relative inline-block my-2">
-              <span className="relative inline-block px-4 py-2 bg-cobalt text-white transform -skew-x-3">
+              <span className="relative inline-block px-4 py-2 bg-cobalt text-white">
                 STRATEGIST
               </span>
             </span>
-            <span className="block text-foreground mt-4">
-              AI-POWERED LEADER
+            <span className="block text-foreground mt-2">
+              LEADER
             </span>
           </h1>
           
