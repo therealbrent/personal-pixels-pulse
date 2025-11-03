@@ -55,36 +55,53 @@ function HomePage() {
       />
 
       {/* Hero Section */}
-      <header id="home" className="h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-accent/20 via-primary/15 to-secondary/5 px-4">
-        <div className="text-center max-w-4xl mx-auto">
-          <p className="text-sm md:text-base text-muted-foreground mb-4 font-bold tracking-wide uppercase">
-            This site was vibe coded
-          </p>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-            <span className="block text-foreground mb-4">
+      <header id="home" className="h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-accent/20 via-primary/15 to-secondary/5 px-4 overflow-hidden">
+        {/* Decorative geometric elements */}
+        <div className="absolute top-20 left-10 w-24 h-24 border-8 border-accent/30 rotate-12 hidden lg:block" aria-hidden="true"></div>
+        <div className="absolute bottom-32 right-16 w-32 h-32 bg-cobalt/20 -rotate-6 hidden lg:block" aria-hidden="true"></div>
+        <div className="absolute top-1/3 right-1/4 w-16 h-16 border-8 border-oxblood/40 rotate-45 hidden md:block" aria-hidden="true"></div>
+        
+        <div className="text-center max-w-5xl mx-auto relative z-10">
+          <div className="inline-block mb-6 px-6 py-2 border-4 border-foreground bg-background transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+            <p className="text-xs md:text-sm text-foreground font-black tracking-widest uppercase">
+              This site was vibe coded
+            </p>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-none">
+            <span className="block text-foreground mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
               AI-POWERED
             </span>
             
-            <span className="block text-foreground mt-2">
-              LEADER
+            <span className="block relative inline-block animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <span className="inline-block px-8 py-4 bg-accent text-foreground border-8 border-foreground transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 shadow-[8px_8px_0px_0px_rgba(38,38,38,1)]">
+                LEADER
+              </span>
             </span>
           </h1>
           
-          <div className="bg-secondary p-6 border-4 border-foreground transform rotate-1 hover:rotate-0 transition-transform duration-300 mb-8">
-            <p className="text-xl md:text-2xl font-semibold text-secondary-foreground">
-              Leveraging Generative AI Since June 2020
-            </p>
-            <p className="text-lg md:text-xl text-secondary-foreground/80 mt-2">
-              AI • User Experience • GTM Innovation
-            </p>
+          <div className="max-w-2xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className="bg-secondary p-8 border-6 border-foreground transform -rotate-1 hover:rotate-0 transition-all duration-300 shadow-[12px_12px_0px_0px_rgba(38,38,38,0.3)]">
+              <p className="text-xl md:text-3xl font-black text-secondary-foreground leading-tight">
+                Leveraging Generative AI Since June 2020
+              </p>
+              <div className="flex justify-center items-center gap-3 mt-4">
+                <span className="inline-block w-3 h-3 bg-foreground"></span>
+                <p className="text-base md:text-xl font-bold text-secondary-foreground/90">
+                  AI • User Experience • GTM Innovation
+                </p>
+                <span className="inline-block w-3 h-3 bg-foreground"></span>
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12 animate-fade-in" style={{ animationDelay: '0.7s' }}>
             <BrutalistButton
               variant="primary"
               size="lg"
               onClick={() => scrollToSection('work')}
               aria-label="Navigate to my work section"
+              className="shadow-[6px_6px_0px_0px_rgba(38,38,38,1)] hover:shadow-[8px_8px_0px_0px_rgba(38,38,38,1)]"
             >
               Explore My Work
             </BrutalistButton>
@@ -93,10 +110,10 @@ function HomePage() {
 
         <button 
           onClick={() => scrollToSection('work')} 
-          className="absolute bottom-8 animate-bounce focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 min-h-[44px] min-w-[44px]"
+          className="absolute bottom-8 animate-bounce focus:ring-4 focus:ring-accent focus:ring-offset-2 min-h-[44px] min-w-[44px] hover:scale-110 transition-transform"
           aria-label="Scroll down to view my work"
         >
-          <Icon name="arrow-down" size={32} className="text-muted-foreground" />
+          <Icon name="arrow-down" size={32} className="text-foreground" />
         </button>
       </header>
 
