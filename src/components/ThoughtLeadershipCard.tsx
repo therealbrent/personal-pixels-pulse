@@ -99,40 +99,40 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         )}
         
         {/* Stacked content with consistent spacing */}
-        <div className="flex flex-col gap-4 p-6 md:p-8">
-          {/* Publication tag and date */}
-          <div className="flex-shrink-0 flex items-center justify-between gap-4">
+        <div className="flex flex-col h-full p-6 md:p-8">
+          {/* Publication tag */}
+          <div className="flex-shrink-0 mb-4">
             <span className={`text-xs font-black text-foreground tracking-wider uppercase ${styles.hoverText} transition-colors`} aria-label={`Published in ${item.publication}`}>
               {item.publication}
             </span>
-            {formattedDate && (
-              <span className={`text-xs font-bold text-foreground/70 ${styles.hoverText} transition-colors`} aria-label={`Published ${formattedDate}`}>
-                {formattedDate}
-              </span>
-            )}
           </div>
           
           {/* Title */}
-          <h3 className={`text-lg md:text-2xl font-black text-foreground leading-tight ${styles.hoverText} transition-colors`}>
+          <h3 className={`text-lg md:text-2xl font-black text-foreground leading-tight mb-4 ${styles.hoverText} transition-colors`}>
             {item.title}
           </h3>
           
           {/* Quote */}
           {item.quote && (
-            <blockquote className={`border-l-4 border-foreground pl-4 italic text-foreground ${styles.hoverText} text-sm md:text-base leading-relaxed transition-colors duration-300`}>
+            <blockquote className={`border-l-4 border-foreground pl-4 italic text-foreground ${styles.hoverText} text-sm md:text-base leading-relaxed mb-4 flex-grow transition-colors duration-300`}>
               {item.quote}
             </blockquote>
           )}
           
-          {/* CTA */}
-          {isClickable && (
-            <div className="flex-shrink-0 mt-2">
-              <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
+          {/* Bottom row: Date and CTA */}
+          <div className="flex items-center justify-between gap-4 mt-auto pt-4 border-t-2 border-foreground/20">
+            {formattedDate && (
+              <span className={`text-xs font-bold text-foreground/70 ${styles.hoverText} transition-colors`} aria-label={`Published ${formattedDate}`}>
+                {formattedDate}
+              </span>
+            )}
+            {isClickable && (
+              <span className={`text-foreground ${styles.hoverText} font-black underline text-xs transition-colors inline-flex items-center gap-1 focus:underline ml-auto`}>
                 Read Article
                 <Icon name="chevron-right" size={14} className={`${styles.hoverText} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
               </span>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </article>
     );
@@ -143,7 +143,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
     <article
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
-      className={`bg-background border-2 border-foreground shadow-neo-sm p-4 min-h-[140px] flex flex-col justify-between ${styles.cardHoverBg} ${
+      className={`bg-background border-2 border-foreground shadow-neo-sm p-4 min-h-[180px] flex flex-col ${styles.cardHoverBg} ${
         isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor} relative` : 'transition-all duration-300 relative'
       } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
@@ -163,55 +163,56 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       )}
       
-      <div className={hasVideo ? 'pr-16' : isClickable ? 'pr-8' : ''}>
-        <h3 className="text-sm md:text-base font-black mb-2 text-foreground group-hover:text-white leading-snug line-clamp-3 transition-colors">
+      {/* Main content area */}
+      <div className="flex-grow mb-3">
+        <h3 className="text-sm md:text-base font-black mb-3 text-foreground group-hover:text-white leading-snug line-clamp-2 transition-colors">
           {item.title}
         </h3>
-        <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors space-y-1">
-          <div className="flex items-center justify-between gap-2">
-            <div className="flex-1">
-              {Array.isArray(item.venue) ? (
-                item.venue.map((v, i) => (
-                  <div key={i}>{v}</div>
-                ))
-              ) : (
-                <div>{item.venue || item.publication}</div>
-              )}
-            </div>
-            {formattedDate && (
-              <div className="text-foreground/70 group-hover:text-white/80 transition-colors whitespace-nowrap">
-                {formattedDate}
-              </div>
-            )}
-          </div>
+        <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors">
+          {Array.isArray(item.venue) ? (
+            item.venue.map((v, i) => (
+              <div key={i} className="mb-1">{v}</div>
+            ))
+          ) : (
+            <div className="mb-1">{item.venue || item.publication}</div>
+          )}
           {item.description === "Moderator" && (
-            <div className="text-accent group-hover:text-white transition-colors font-black">
+            <div className="text-accent group-hover:text-white transition-colors font-black mt-2">
               MODERATOR
             </div>
           )}
         </div>
       </div>
-      {hasVideo && (
-        <div className="absolute bottom-3 right-3" aria-hidden="true">
-          <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
-            {/* Brutalist play button with color inversion on hover */}
-            <div className={`absolute inset-0 ${styles.glowColor} group-hover:bg-background border-4 border-foreground shadow-neo-sm group-hover:shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
-              <div className="relative ml-1">
-                <Icon 
-                  name="play" 
-                  size={20} 
-                  className="text-white fill-white group-hover:opacity-0 transition-all duration-300 group-hover:rotate-90"
-                />
-                <Icon 
-                  name="play" 
-                  size={20} 
-                  className={`absolute inset-0 ${styles.iconColor} fill-current opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:rotate-90`}
-                />
+      
+      {/* Bottom row: Date and optional video button */}
+      <div className="flex items-center justify-between pt-3 border-t-2 border-foreground/20 mt-auto">
+        {formattedDate && (
+          <span className="text-xs font-bold text-foreground/70 group-hover:text-white/80 transition-colors" aria-label={`Date: ${formattedDate}`}>
+            {formattedDate}
+          </span>
+        )}
+        {hasVideo && (
+          <div className="ml-auto" aria-hidden="true">
+            <div className="relative w-10 h-10 group-hover:scale-110 transition-transform duration-300">
+              {/* Brutalist play button with color inversion on hover */}
+              <div className={`absolute inset-0 ${styles.glowColor} group-hover:bg-background border-2 border-foreground shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
+                <div className="relative ml-0.5">
+                  <Icon 
+                    name="play" 
+                    size={16} 
+                    className="text-white fill-white group-hover:opacity-0 transition-all duration-300"
+                  />
+                  <Icon 
+                    name="play" 
+                    size={16} 
+                    className={`absolute inset-0 ${styles.iconColor} fill-current opacity-0 group-hover:opacity-100 transition-all duration-300`}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </article>
   );
 }
