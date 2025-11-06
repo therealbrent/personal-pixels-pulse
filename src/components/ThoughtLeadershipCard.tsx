@@ -56,6 +56,14 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
   const isClickable = hasVideo || hasUrl;
   const staggerDelay = `${index * 50}ms`;
   
+  // Format date
+  const formatDate = (dateStr: string) => {
+    if (!dateStr || dateStr.includes('TODO')) return null;
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  };
+  const formattedDate = formatDate(item.date);
+  
   const handleClick = () => {
     if (hasVideo) {
       window.open(item.videoUrl, '_blank');
@@ -92,11 +100,16 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         
         {/* Stacked content with consistent spacing */}
         <div className="flex flex-col gap-4 p-6 md:p-8">
-          {/* Publication tag */}
-          <div className="flex-shrink-0">
+          {/* Publication tag and date */}
+          <div className="flex-shrink-0 flex items-center justify-between gap-4">
             <span className={`text-xs font-black text-foreground tracking-wider uppercase ${styles.hoverText} transition-colors`} aria-label={`Published in ${item.publication}`}>
               {item.publication}
             </span>
+            {formattedDate && (
+              <span className={`text-xs font-bold text-foreground/70 ${styles.hoverText} transition-colors`} aria-label={`Published ${formattedDate}`}>
+                {formattedDate}
+              </span>
+            )}
           </div>
           
           {/* Title */}
@@ -154,16 +167,25 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         <h3 className="text-sm md:text-base font-black mb-2 text-foreground group-hover:text-white leading-snug line-clamp-3 transition-colors">
           {item.title}
         </h3>
-        <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors">
-          {Array.isArray(item.venue) ? (
-            item.venue.map((v, i) => (
-              <div key={i}>{v}</div>
-            ))
-          ) : (
-            <div>{item.venue || item.publication}</div>
-          )}
+        <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors space-y-1">
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex-1">
+              {Array.isArray(item.venue) ? (
+                item.venue.map((v, i) => (
+                  <div key={i}>{v}</div>
+                ))
+              ) : (
+                <div>{item.venue || item.publication}</div>
+              )}
+            </div>
+            {formattedDate && (
+              <div className="text-foreground/70 group-hover:text-white/80 transition-colors whitespace-nowrap">
+                {formattedDate}
+              </div>
+            )}
+          </div>
           {item.description === "Moderator" && (
-            <div className="text-accent group-hover:text-white transition-colors font-black mt-1">
+            <div className="text-accent group-hover:text-white transition-colors font-black">
               MODERATOR
             </div>
           )}
