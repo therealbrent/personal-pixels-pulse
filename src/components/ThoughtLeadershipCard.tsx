@@ -144,8 +144,8 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
       className={`bg-background border-2 border-foreground shadow-neo-sm p-4 min-h-[180px] flex flex-col ${styles.cardHoverBg} ${
-        isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor} relative` : 'transition-all duration-300 relative'
-      } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2`}
+        isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor}` : 'transition-all duration-300'
+      } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
       tabIndex={isClickable ? 0 : undefined}
       role={isClickable ? 'button' : 'article'}
@@ -156,15 +156,35 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         }
       } : undefined}
     >
-      {/* Clickable indicator for non-video cards */}
+      {/* Clickable indicator for non-video cards - top right corner */}
       {isClickable && !hasVideo && (
         <div className="absolute top-3 right-3 opacity-30 group-hover:opacity-100 transition-opacity" aria-hidden="true">
           <Icon name="external-link" size={16} className="text-foreground group-hover:text-white transition-colors" />
         </div>
       )}
       
-      {/* Main content area */}
-      <div className="flex-grow mb-3">
+      {/* Video indicator - top right corner */}
+      {hasVideo && (
+        <div className="absolute top-3 right-3 opacity-60 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+          <div className="relative w-8 h-8 group-hover:scale-110 transition-transform duration-300">
+            <div className={`w-full h-full ${styles.glowColor} group-hover:bg-background border-2 border-foreground flex items-center justify-center transition-all duration-200`}>
+              <Icon 
+                name="play" 
+                size={14} 
+                className="text-white group-hover:opacity-0 transition-opacity duration-300 ml-0.5"
+              />
+              <Icon 
+                name="play" 
+                size={14} 
+                className={`absolute ${styles.iconColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-0.5`}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {/* Main content area - with padding to avoid overlap with indicators */}
+      <div className={`flex-grow mb-3 ${isClickable ? 'pr-10' : ''}`}>
         <h3 className="text-sm md:text-base font-black mb-3 text-foreground group-hover:text-white leading-snug line-clamp-2 transition-colors">
           {item.title}
         </h3>
@@ -184,33 +204,12 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       </div>
       
-      {/* Bottom row: Date and optional video button */}
-      <div className="flex items-center justify-between pt-3 border-t-2 border-foreground/20 mt-auto">
+      {/* Bottom row: Date only - consistent across all card types */}
+      <div className="pt-3 border-t-2 border-foreground/20 mt-auto">
         {formattedDate && (
           <span className="text-xs font-bold text-foreground/70 group-hover:text-white/80 transition-colors" aria-label={`Date: ${formattedDate}`}>
             {formattedDate}
           </span>
-        )}
-        {hasVideo && (
-          <div className="ml-auto" aria-hidden="true">
-            <div className="relative w-10 h-10 group-hover:scale-110 transition-transform duration-300">
-              {/* Brutalist play button with color inversion on hover */}
-              <div className={`absolute inset-0 ${styles.glowColor} group-hover:bg-background border-2 border-foreground shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
-                <div className="relative ml-0.5">
-                  <Icon 
-                    name="play" 
-                    size={16} 
-                    className="text-white fill-white group-hover:opacity-0 transition-all duration-300"
-                  />
-                  <Icon 
-                    name="play" 
-                    size={16} 
-                    className={`absolute inset-0 ${styles.iconColor} fill-current opacity-0 group-hover:opacity-100 transition-all duration-300`}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
         )}
       </div>
     </article>
