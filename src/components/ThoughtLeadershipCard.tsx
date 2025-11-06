@@ -184,8 +184,8 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       </div>
       
-      {/* Bottom row: Date and optional CTA - consistent with article layout */}
-      <div className="flex items-center justify-between gap-4 pt-3 border-t-2 border-foreground/20 mt-auto">
+      {/* Bottom row: Date and CTA - matches article card layout exactly */}
+      <div className="flex items-center justify-between gap-4 mt-auto pt-4 border-t-2 border-foreground/20">
         {formattedDate && (
           <span className="text-xs font-bold text-foreground/70 group-hover:text-white/80 transition-colors" aria-label={`Date: ${formattedDate}`}>
             {formattedDate}
