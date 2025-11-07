@@ -207,7 +207,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: "how-to-get-hired-2015",
     type: "panel",
     title: "How to Get Hired for a UX Design Role",
-    date: "2015-03-013", // TODO: Provide more specific date if available
+    date: "2015-01-01", // TODO: Provide more specific date if available
     venue: "UC San Diego",
     description: "Moderator",
     topics: ["UX", "Career"],
@@ -271,17 +271,6 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
       "We use proto-personas as a way of gaining alignment among our project sponsors and striking the right balance of focus between organizational and user needs.",
     url: "https://uxmag.com/articles/revisiting-proto-personas-for-executive-alignment",
     topics: ["UX", "Strategy"],
-  },
-  {
-    id: "olark-predictions-2016",
-    type: "article",
-    title: "3 Predictions for 2016: Technology Meets Customer Experience",
-    date: "2016-01-06", //
-    publication: "UX Magazine",
-    quote:
-      "By creating content  people actually want to engage with, brands increase their likelihood of reaching  more potential consumers on mainstream sites.",
-    url: "https://blog.olark.com/3-predictions-for-2016-technology-meets-customer-experience",
-    topics: ["Technology", "Marketing"],
   },
 ];
 
