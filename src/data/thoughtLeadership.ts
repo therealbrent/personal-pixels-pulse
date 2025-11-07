@@ -272,6 +272,17 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     url: "https://uxmag.com/articles/revisiting-proto-personas-for-executive-alignment",
     topics: ["UX", "Strategy"],
   },
+  {
+    id: "olark-predictions",
+    type: "article",
+    title: "3 Predictions for 2016: Technology Meets Customer Experience",
+    date: "2016-01-05",
+    publication: "Speak: A blog by Olark",
+    quote:
+      "By creating content  people actually want to engage with, brands increase their likelihood of reaching  more potential consumers on mainstream sites.",
+    url: "https://blog.olark.com/3-predictions-for-2016-technology-meets-customer-experience",
+    topics: ["Technology", "Marketing"],
+  },
 ];
 
 // Helper function to sort by date (newest first)
