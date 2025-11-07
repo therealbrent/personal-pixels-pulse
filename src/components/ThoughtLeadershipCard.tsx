@@ -99,16 +99,16 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         )}
         
         {/* Content area */}
-        <div className="flex flex-col gap-4 p-6 md:p-8 pb-4">
+        <div className="p-6 md:p-8">
           {/* Publication tag */}
-          <div className="flex-shrink-0">
+          <div className="mb-4">
             <span className={`text-xs font-black text-foreground tracking-wider uppercase ${styles.hoverText} transition-colors`} aria-label={`Published in ${item.publication}`}>
               {item.publication}
             </span>
           </div>
           
           {/* Title */}
-          <h3 className={`text-lg md:text-2xl font-black text-foreground leading-tight ${styles.hoverText} transition-colors`}>
+          <h3 className={`text-lg md:text-2xl font-black text-foreground leading-tight mb-4 ${styles.hoverText} transition-colors`}>
             {item.title}
           </h3>
           
@@ -125,13 +125,11 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         
         {/* Bottom section with date and CTA */}
         <div className="flex items-center justify-between px-6 md:px-8 py-4">
-          {formattedDate && (
-            <span className={`text-xs font-bold text-foreground/70 ${styles.hoverText} transition-colors`} aria-label={`Published ${formattedDate}`}>
-              {formattedDate}
-            </span>
-          )}
+          <div className="text-xs font-bold text-foreground/60 group-hover:text-white/70 transition-colors">
+            {formattedDate || '\u00A0'}
+          </div>
           {isClickable && (
-            <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
+            <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1`}>
               Read Article
               <Icon name="chevron-right" size={14} className={`${styles.hoverText} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
             </span>
@@ -146,7 +144,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
     <article
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
-      className={`bg-background border-2 border-foreground shadow-neo-sm flex flex-col ${styles.cardHoverBg} ${
+      className={`bg-background border-2 border-foreground shadow-neo-sm flex flex-col relative ${styles.cardHoverBg} ${
         isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor}` : 'transition-all duration-300'
       } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
@@ -172,7 +170,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           {item.title}
         </h3>
         <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors space-y-1">
-          <div className="flex-1">
+          <div>
             {Array.isArray(item.venue) ? (
               item.venue.map((v, i) => (
                 <div key={i}>{v}</div>
@@ -194,14 +192,12 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       
       {/* Bottom section with date and CTA */}
       <div className="flex items-center justify-between px-4 py-3">
-        {formattedDate && (
-          <span className="text-xs font-bold text-foreground/70 group-hover:text-white/80 transition-colors">
-            {formattedDate}
-          </span>
-        )}
+        <div className="text-xs font-bold text-foreground/60 group-hover:text-white/70 transition-colors">
+          {formattedDate || '\u00A0'}
+        </div>
         {isClickable && (
           <span className={`text-foreground ${styles.hoverText} font-black underline text-xs transition-colors inline-flex items-center gap-1`}>
-            {hasVideo ? 'Watch Video' : 'Read Article'}
+            {hasVideo ? 'Watch Video' : 'View'}
             <Icon name="chevron-right" size={12} className={`${styles.hoverText} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
           </span>
         )}
