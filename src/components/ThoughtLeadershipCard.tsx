@@ -1,6 +1,5 @@
 import { Icon } from './ui/icon';
 import type { ThoughtLeadershipItem, ContentType } from '@/data/thoughtLeadership';
-import { format, parseISO } from 'date-fns';
 
 interface ThoughtLeadershipCardProps {
   item: ThoughtLeadershipItem;
@@ -57,11 +56,6 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
   const isClickable = hasVideo || hasUrl;
   const staggerDelay = `${index * 50}ms`;
   
-  // Format date for display (e.g., "Sep 2025")
-  const formattedDate = item.date.includes('TODO') 
-    ? 'Date TBD' 
-    : format(parseISO(item.date), 'MMM yyyy');
-  
   const handleClick = () => {
     if (hasVideo) {
       window.open(item.videoUrl, '_blank');
@@ -116,25 +110,15 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
               {item.quote}
             </blockquote>
           )}
-        </div>
-        
-        {/* Bottom section with date and CTA */}
-        <div className="border-t-2 border-foreground/20 p-6 md:p-8 pt-4 flex items-center justify-between gap-4">
-          {/* Date */}
-          <time 
-            dateTime={item.date} 
-            className={`text-sm font-bold text-foreground/60 ${styles.hoverText} transition-colors flex-shrink-0`}
-            aria-label={`Published ${formattedDate}`}
-          >
-            {formattedDate}
-          </time>
           
           {/* CTA */}
           {isClickable && (
-            <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
-              Read Article
-              <Icon name="chevron-right" size={14} className={`${styles.hoverText} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
-            </span>
+            <div className="flex-shrink-0 mt-2">
+              <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
+                Read Article
+                <Icon name="chevron-right" size={14} className={`${styles.hoverText} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
+              </span>
+            </div>
           )}
         </div>
       </article>
@@ -146,10 +130,10 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
     <article
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
-      className={`bg-background border-2 border-foreground shadow-neo-sm flex flex-col ${styles.cardHoverBg} ${
+      className={`bg-background border-2 border-foreground shadow-neo-sm p-4 min-h-[140px] flex flex-col justify-between ${styles.cardHoverBg} ${
         isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor} relative` : 'transition-all duration-300 relative'
       } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2`}
-      aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}. ${formattedDate}`}
+      aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
       tabIndex={isClickable ? 0 : undefined}
       role={isClickable ? 'button' : 'article'}
       onKeyDown={isClickable ? (e) => {
@@ -159,77 +143,53 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         }
       } : undefined}
     >
-      {/* Main content area */}
-      <div className="p-4 flex-grow">
-        {/* Clickable indicator for non-video cards */}
-        {isClickable && !hasVideo && (
-          <div className="absolute top-3 right-3 opacity-30 group-hover:opacity-100 transition-opacity" aria-hidden="true">
-            <Icon name="external-link" size={16} className="text-foreground group-hover:text-white transition-colors" />
-          </div>
-        )}
-        
-        <div className={hasVideo ? 'pr-16' : isClickable ? 'pr-8' : ''}>
-          <h3 className="text-sm md:text-base font-black mb-2 text-foreground group-hover:text-white leading-snug line-clamp-3 transition-colors">
-            {item.title}
-          </h3>
-          <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors">
-            {Array.isArray(item.venue) ? (
-              item.venue.map((v, i) => (
-                <div key={i}>{v}</div>
-              ))
-            ) : (
-              <div>{item.venue || item.publication}</div>
-            )}
-            {item.description === "Moderator" && (
-              <div className="text-accent group-hover:text-white transition-colors font-black mt-1">
-                MODERATOR
-              </div>
-            )}
-          </div>
+      {/* Clickable indicator for non-video cards */}
+      {isClickable && !hasVideo && (
+        <div className="absolute top-3 right-3 opacity-30 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+          <Icon name="external-link" size={16} className="text-foreground group-hover:text-white transition-colors" />
         </div>
-        
-        {hasVideo && (
-          <div className="absolute bottom-3 right-3" aria-hidden="true">
-            <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
-              {/* Brutalist play button with color inversion on hover */}
-              <div className={`absolute inset-0 ${styles.glowColor} group-hover:bg-background border-4 border-foreground shadow-neo-sm group-hover:shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
-                <div className="relative ml-1">
-                  <Icon 
-                    name="play" 
-                    size={20} 
-                    className="text-white fill-white group-hover:opacity-0 transition-all duration-300 group-hover:rotate-90"
-                  />
-                  <Icon 
-                    name="play" 
-                    size={20} 
-                    className={`absolute inset-0 ${styles.iconColor} fill-current opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:rotate-90`}
-                  />
-                </div>
+      )}
+      
+      <div className={hasVideo ? 'pr-16' : isClickable ? 'pr-8' : ''}>
+        <h3 className="text-sm md:text-base font-black mb-2 text-foreground group-hover:text-white leading-snug line-clamp-3 transition-colors">
+          {item.title}
+        </h3>
+        <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors">
+          {Array.isArray(item.venue) ? (
+            item.venue.map((v, i) => (
+              <div key={i}>{v}</div>
+            ))
+          ) : (
+            <div>{item.venue || item.publication}</div>
+          )}
+          {item.description === "Moderator" && (
+            <div className="text-accent group-hover:text-white transition-colors font-black mt-1">
+              MODERATOR
+            </div>
+          )}
+        </div>
+      </div>
+      {hasVideo && (
+        <div className="absolute bottom-3 right-3" aria-hidden="true">
+          <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+            {/* Brutalist play button with color inversion on hover */}
+            <div className={`absolute inset-0 ${styles.glowColor} group-hover:bg-background border-4 border-foreground shadow-neo-sm group-hover:shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
+              <div className="relative ml-1">
+                <Icon 
+                  name="play" 
+                  size={20} 
+                  className="text-white fill-white group-hover:opacity-0 transition-all duration-300 group-hover:rotate-90"
+                />
+                <Icon 
+                  name="play" 
+                  size={20} 
+                  className={`absolute inset-0 ${styles.iconColor} fill-current opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:rotate-90`}
+                />
               </div>
             </div>
           </div>
-        )}
-      </div>
-      
-      {/* Bottom section with date and CTA */}
-      <div className="border-t-2 border-foreground/20 px-4 py-3 flex items-center justify-between gap-2">
-        {/* Date */}
-        <time 
-          dateTime={item.date} 
-          className="text-xs font-bold text-foreground/60 group-hover:text-white/80 transition-colors flex-shrink-0"
-          aria-label={`Published ${formattedDate}`}
-        >
-          {formattedDate}
-        </time>
-        
-        {/* CTA */}
-        {isClickable && (
-          <span className="text-foreground group-hover:text-white font-black underline text-xs transition-colors inline-flex items-center gap-1 whitespace-nowrap">
-            {hasVideo ? 'Watch' : 'View'}
-            <Icon name="chevron-right" size={12} className="group-hover:translate-x-1 transition-all" aria-hidden="true" />
-          </span>
-        )}
-      </div>
+        </div>
+      )}
     </article>
   );
 }
