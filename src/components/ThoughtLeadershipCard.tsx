@@ -76,10 +76,10 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       <article
         onClick={isClickable ? handleClick : undefined}
         style={{ animationDelay: staggerDelay }}
-        className={`md:col-span-2 bg-background border-4 border-foreground shadow-neo-md flex flex-col ${styles.cardHoverBg} ${
+        className={`md:col-span-2 bg-background border-4 border-foreground shadow-neo-md ${styles.cardHoverBg} ${
           isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
         } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative`}
-        aria-label={`Article: ${item.title} featured in ${item.publication}. ${formattedDate}`}
+        aria-label={`Article: ${item.title} featured in ${item.publication}`}
         tabIndex={isClickable ? 0 : undefined}
         role={isClickable ? 'button' : 'article'}
         onKeyDown={isClickable ? (e) => {
@@ -91,13 +91,13 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       >
         {/* Clickable indicator */}
         {isClickable && (
-          <div className="absolute top-6 right-6 md:top-8 md:right-8 opacity-40 group-hover:opacity-100 transition-opacity z-10" aria-hidden="true">
+          <div className="absolute top-4 right-4 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
             <Icon name="external-link" size={20} className={`text-foreground ${styles.hoverText} transition-colors`} />
           </div>
         )}
         
-        {/* Main content */}
-        <div className="flex flex-col gap-4 p-6 md:p-8 flex-grow">
+        {/* Stacked content with consistent spacing */}
+        <div className="flex flex-col gap-4 p-6 md:p-8">
           {/* Publication tag */}
           <div className="flex-shrink-0">
             <span className={`text-xs font-black text-foreground tracking-wider uppercase ${styles.hoverText} transition-colors`} aria-label={`Published in ${item.publication}`}>
@@ -118,12 +118,12 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           )}
         </div>
         
-        {/* Bottom section with date and CTA - consistent with compact cards */}
-        <div className="border-t-2 border-foreground/20 px-6 md:px-8 py-4 flex items-center justify-between gap-4">
+        {/* Bottom section with date and CTA */}
+        <div className="border-t-2 border-foreground/20 p-6 md:p-8 pt-4 flex items-center justify-between gap-4">
           {/* Date */}
           <time 
             dateTime={item.date} 
-            className="text-sm font-bold text-foreground/60 group-hover:text-foreground transition-colors flex-shrink-0"
+            className={`text-sm font-bold text-foreground/60 ${styles.hoverText} transition-colors flex-shrink-0`}
             aria-label={`Published ${formattedDate}`}
           >
             {formattedDate}
@@ -131,9 +131,9 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           
           {/* CTA */}
           {isClickable && (
-            <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1`}>
+            <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
               Read Article
-              <Icon name="chevron-right" size={14} className="group-hover:translate-x-1 transition-all" aria-hidden="true" />
+              <Icon name="chevron-right" size={14} className={`${styles.hoverText} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
             </span>
           )}
         </div>
@@ -146,9 +146,9 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
     <article
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
-      className={`bg-background border-4 border-foreground shadow-neo-sm flex flex-col ${styles.cardHoverBg} ${
-        isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor}` : 'transition-all duration-300'
-      } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative`}
+      className={`bg-background border-2 border-foreground shadow-neo-sm flex flex-col ${styles.cardHoverBg} ${
+        isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor} relative` : 'transition-all duration-300 relative'
+      } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}. ${formattedDate}`}
       tabIndex={isClickable ? 0 : undefined}
       role={isClickable ? 'button' : 'article'}
@@ -159,36 +159,16 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         }
       } : undefined}
     >
-      {/* Video indicator in top right */}
-      {hasVideo && (
-        <div className="absolute top-4 right-4 z-10" aria-hidden="true">
-          <div className="relative w-10 h-10 group-hover:scale-110 transition-transform duration-300">
-            <div className={`absolute inset-0 ${styles.glowColor} group-hover:bg-background border-4 border-foreground shadow-neo-xs transition-all duration-200 flex items-center justify-center`}>
-              <Icon 
-                name="play" 
-                size={16} 
-                className="text-white fill-white group-hover:opacity-0 transition-all duration-200"
-              />
-              <Icon 
-                name="play" 
-                size={16} 
-                className={`absolute inset-0 m-auto ${styles.iconColor} fill-current opacity-0 group-hover:opacity-100 transition-all duration-200`}
-              />
-            </div>
-          </div>
-        </div>
-      )}
-      
-      {/* External link indicator for non-video cards */}
-      {isClickable && !hasVideo && (
-        <div className="absolute top-4 right-4 opacity-40 group-hover:opacity-100 transition-opacity z-10" aria-hidden="true">
-          <Icon name="external-link" size={16} className="text-foreground group-hover:text-white transition-colors" />
-        </div>
-      )}
-      
-      {/* Main content */}
+      {/* Main content area */}
       <div className="p-4 flex-grow">
-        <div className={isClickable ? 'pr-12' : ''}>
+        {/* Clickable indicator for non-video cards */}
+        {isClickable && !hasVideo && (
+          <div className="absolute top-3 right-3 opacity-30 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+            <Icon name="external-link" size={16} className="text-foreground group-hover:text-white transition-colors" />
+          </div>
+        )}
+        
+        <div className={hasVideo ? 'pr-16' : isClickable ? 'pr-8' : ''}>
           <h3 className="text-sm md:text-base font-black mb-2 text-foreground group-hover:text-white leading-snug line-clamp-3 transition-colors">
             {item.title}
           </h3>
@@ -207,14 +187,36 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
             )}
           </div>
         </div>
+        
+        {hasVideo && (
+          <div className="absolute bottom-3 right-3" aria-hidden="true">
+            <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+              {/* Brutalist play button with color inversion on hover */}
+              <div className={`absolute inset-0 ${styles.glowColor} group-hover:bg-background border-4 border-foreground shadow-neo-sm group-hover:shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
+                <div className="relative ml-1">
+                  <Icon 
+                    name="play" 
+                    size={20} 
+                    className="text-white fill-white group-hover:opacity-0 transition-all duration-300 group-hover:rotate-90"
+                  />
+                  <Icon 
+                    name="play" 
+                    size={20} 
+                    className={`absolute inset-0 ${styles.iconColor} fill-current opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:rotate-90`}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
       
-      {/* Bottom section with date and CTA - consistent with article cards */}
-      <div className="border-t-2 border-foreground/20 px-4 py-4 flex items-center justify-between gap-2">
+      {/* Bottom section with date and CTA */}
+      <div className="border-t-2 border-foreground/20 px-4 py-3 flex items-center justify-between gap-2">
         {/* Date */}
         <time 
           dateTime={item.date} 
-          className="text-xs font-bold text-foreground/60 group-hover:text-white transition-colors flex-shrink-0"
+          className="text-xs font-bold text-foreground/60 group-hover:text-white/80 transition-colors flex-shrink-0"
           aria-label={`Published ${formattedDate}`}
         >
           {formattedDate}
