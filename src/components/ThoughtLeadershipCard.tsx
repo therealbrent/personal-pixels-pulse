@@ -56,14 +56,6 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
   const isClickable = hasVideo || hasUrl;
   const staggerDelay = `${index * 50}ms`;
   
-  // Format date
-  const formatDate = (dateStr: string) => {
-    if (!dateStr || dateStr.includes('TODO')) return null;
-    const date = new Date(dateStr);
-    return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-  };
-  const formattedDate = formatDate(item.date);
-  
   const handleClick = () => {
     if (hasVideo) {
       window.open(item.videoUrl, '_blank');
@@ -98,17 +90,17 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           </div>
         )}
         
-        {/* Content area */}
-        <div className="p-6 md:p-8">
+        {/* Stacked content with consistent spacing */}
+        <div className="flex flex-col gap-4 p-6 md:p-8">
           {/* Publication tag */}
-          <div className="mb-4">
+          <div className="flex-shrink-0">
             <span className={`text-xs font-black text-foreground tracking-wider uppercase ${styles.hoverText} transition-colors`} aria-label={`Published in ${item.publication}`}>
               {item.publication}
             </span>
           </div>
           
           {/* Title */}
-          <h3 className={`text-lg md:text-2xl font-black text-foreground leading-tight mb-4 ${styles.hoverText} transition-colors`}>
+          <h3 className={`text-lg md:text-2xl font-black text-foreground leading-tight ${styles.hoverText} transition-colors`}>
             {item.title}
           </h3>
           
@@ -118,21 +110,15 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
               {item.quote}
             </blockquote>
           )}
-        </div>
-        
-        {/* Gray horizontal rule */}
-        <div className="border-t-2 border-foreground/20" />
-        
-        {/* Bottom section with date and CTA */}
-        <div className="flex items-center justify-between px-6 md:px-8 py-4">
-          <div className="text-xs font-bold text-foreground/60 group-hover:text-white/70 transition-colors">
-            {formattedDate || '\u00A0'}
-          </div>
+          
+          {/* CTA */}
           {isClickable && (
-            <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1`}>
-              Read Article
-              <Icon name="chevron-right" size={14} className={`${styles.hoverText} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
-            </span>
+            <div className="flex-shrink-0 mt-2">
+              <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
+                Read Article
+                <Icon name="chevron-right" size={14} className={`${styles.hoverText} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
+              </span>
+            </div>
           )}
         </div>
       </article>
@@ -144,8 +130,8 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
     <article
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
-      className={`bg-background border-2 border-foreground shadow-neo-sm flex flex-col relative ${styles.cardHoverBg} ${
-        isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor}` : 'transition-all duration-300'
+      className={`bg-background border-2 border-foreground shadow-neo-sm p-4 min-h-[140px] flex flex-col justify-between ${styles.cardHoverBg} ${
+        isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor} relative` : 'transition-all duration-300 relative'
       } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
       tabIndex={isClickable ? 0 : undefined}
@@ -157,51 +143,53 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         }
       } : undefined}
     >
-      {/* Clickable indicator */}
-      {isClickable && (
+      {/* Clickable indicator for non-video cards */}
+      {isClickable && !hasVideo && (
         <div className="absolute top-3 right-3 opacity-30 group-hover:opacity-100 transition-opacity" aria-hidden="true">
           <Icon name="external-link" size={16} className="text-foreground group-hover:text-white transition-colors" />
         </div>
       )}
       
-      {/* Content area */}
-      <div className="p-4 pr-8">
+      <div className={hasVideo ? 'pr-16' : isClickable ? 'pr-8' : ''}>
         <h3 className="text-sm md:text-base font-black mb-2 text-foreground group-hover:text-white leading-snug line-clamp-3 transition-colors">
           {item.title}
         </h3>
-        <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors space-y-1">
-          <div>
-            {Array.isArray(item.venue) ? (
-              item.venue.map((v, i) => (
-                <div key={i}>{v}</div>
-              ))
-            ) : (
-              <div>{item.venue || item.publication}</div>
-            )}
-          </div>
+        <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors">
+          {Array.isArray(item.venue) ? (
+            item.venue.map((v, i) => (
+              <div key={i}>{v}</div>
+            ))
+          ) : (
+            <div>{item.venue || item.publication}</div>
+          )}
           {item.description === "Moderator" && (
-            <div className="text-accent group-hover:text-white transition-colors font-black">
+            <div className="text-accent group-hover:text-white transition-colors font-black mt-1">
               MODERATOR
             </div>
           )}
         </div>
       </div>
-      
-      {/* Gray horizontal rule */}
-      <div className="border-t-2 border-foreground/20" />
-      
-      {/* Bottom section with date and CTA */}
-      <div className="flex items-center justify-between px-4 py-3">
-        <div className="text-xs font-bold text-foreground/60 group-hover:text-white/70 transition-colors">
-          {formattedDate || '\u00A0'}
+      {hasVideo && (
+        <div className="absolute bottom-3 right-3" aria-hidden="true">
+          <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+            {/* Brutalist play button with color inversion on hover */}
+            <div className={`absolute inset-0 ${styles.glowColor} group-hover:bg-background border-4 border-foreground shadow-neo-sm group-hover:shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
+              <div className="relative ml-1">
+                <Icon 
+                  name="play" 
+                  size={20} 
+                  className="text-white fill-white group-hover:opacity-0 transition-all duration-300 group-hover:rotate-90"
+                />
+                <Icon 
+                  name="play" 
+                  size={20} 
+                  className={`absolute inset-0 ${styles.iconColor} fill-current opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:rotate-90`}
+                />
+              </div>
+            </div>
+          </div>
         </div>
-        {isClickable && (
-          <span className={`text-foreground ${styles.hoverText} font-black underline text-xs transition-colors inline-flex items-center gap-1`}>
-            {hasVideo ? 'Watch Video' : 'View'}
-            <Icon name="chevron-right" size={12} className={`${styles.hoverText} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
-          </span>
-        )}
-      </div>
+      )}
     </article>
   );
 }
