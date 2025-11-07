@@ -187,14 +187,14 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       {/* Bottom row: Date and CTA - matches article card layout exactly */}
       <div className="flex items-center justify-between gap-4 mt-auto pt-4 border-t-2 border-foreground/20">
         {formattedDate && (
-          <span className="text-xs font-bold text-foreground/70 group-hover:text-white/80 transition-colors" aria-label={`Date: ${formattedDate}`}>
+          <span className={`text-xs font-bold text-foreground/70 ${styles.hoverText} transition-colors`} aria-label={`Date: ${formattedDate}`}>
             {formattedDate}
           </span>
         )}
         {hasVideo && (
-          <span className="text-foreground group-hover:text-white font-black underline text-xs transition-colors inline-flex items-center gap-1 ml-auto">
+          <span className={`text-foreground ${styles.hoverText} font-black underline text-xs transition-colors inline-flex items-center gap-1 focus:underline ml-auto`}>
             Watch Video
-            <Icon name="chevron-right" size={14} className="group-hover:translate-x-1 transition-all" aria-hidden="true" />
+            <Icon name="chevron-right" size={14} className={`${styles.hoverText} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
           </span>
         )}
       </div>
