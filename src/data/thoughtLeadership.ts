@@ -203,11 +203,18 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     venue: "SDXD (San Diego)",
     topics: ["UX", "Hiring"],
   },
+    id: "olark-predictions-2016",
+    type: "article",
+    title: "3 Predictions for 2016: Technology Meets Customer Experience",
+    date: "2016-01-06", // TODO: Provide more specific date if available
+    venue: "UC San Diego",
+    description: "Moderator",
+    topics: ["UX", "Career"],
   {
     id: "how-to-get-hired-2015",
     type: "panel",
     title: "How to Get Hired for a UX Design Role",
-    date: "2015-01-01", // TODO: Provide more specific date if available
+    date: "2015-03-013", // TODO: Provide more specific date if available
     venue: "UC San Diego",
     description: "Moderator",
     topics: ["UX", "Career"],
