@@ -120,7 +120,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           )}
           
           {/* Bottom row: Date and CTA */}
-          <div className="flex items-center justify-between gap-4 mt-auto pt-4 border-t-2 border-foreground/20">
+          <div className="flex items-center justify-between gap-4 mt-auto pt-4 border-t-2 border-foreground">
             {formattedDate && (
               <span className={`text-xs font-bold text-foreground/70 ${styles.hoverText} transition-colors`} aria-label={`Published ${formattedDate}`}>
                 {formattedDate}
@@ -185,7 +185,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       </div>
       
       {/* Bottom row: Date and CTA - matches article card layout exactly */}
-      <div className="flex items-center justify-between gap-4 mt-auto pt-4 border-t-2 border-foreground/20">
+      <div className="flex items-center justify-between gap-4 mt-auto pt-4 border-t-2 border-foreground">
         {formattedDate && (
           <span className={`text-xs font-bold text-foreground/70 ${styles.hoverText} transition-colors`} aria-label={`Date: ${formattedDate}`}>
             {formattedDate}
