@@ -253,7 +253,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   {
     id: "aidatapress-cloud-to-device",
     type: "article",
-    title: "From Cloud to Device, Qualcomm Exec Explains Why AI Business Models Are Coming Down to Earth",
+    title: "From Cloud to Device, Why AI Business Models Are Coming Down to Earth",
     date: "2025-10-23",
     publication: "AI Data Press",
     quote:
