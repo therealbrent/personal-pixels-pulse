@@ -37,6 +37,14 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // PRESENTATIONS
   // ==========================================
   {
+    id: "ana-abm-2025",
+    type: "presentation",
+    title: "Future-Proofing Your ABM Strategy",
+    date: "2025-12-10",
+    venue: "ANA (Virtual)",
+    topics: ["ABM", "AI"],
+  },
+  {
     id: "ana-2025",
     type: "presentation",
     title: "Next-Generation Marketing: How AI is Used at Qualcomm Technologies",
