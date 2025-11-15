@@ -2,6 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 import BiographyHeadshot from './BiographyHeadshot';
 import SEO from './SEO';
 import ThoughtLeadershipFeed from './ThoughtLeadershipFeed';
+import FeaturedThoughtLeadership from './FeaturedThoughtLeadership';
 
 export default function SpeakingMediaPage() {
   const [searchParams] = useSearchParams();
@@ -30,6 +31,9 @@ export default function SpeakingMediaPage() {
 
         {/* Biography and Headshot */}
         <BiographyHeadshot />
+
+        {/* Featured Thought Leadership */}
+        <FeaturedThoughtLeadership />
 
         {/* Thought Leadership Feed */}
         <ThoughtLeadershipFeed topicFilter={topicFilter} />

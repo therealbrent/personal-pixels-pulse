@@ -26,6 +26,7 @@ export interface ThoughtLeadershipItem {
   quote?: string; // For articles - pull quote from the piece
   url?: string; // External link (article, video, audio)
   videoUrl?: string; // For presentations with video
+  image?: string; // For featured items - hero image
 
   // Metadata
   topics?: string[]; // ["AI", "Marketing", "UX"] - for future filtering
@@ -67,6 +68,8 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2025-05-21",
     venue: "SDXD (San Diego)",
     topics: ["AI", "Enterprise"],
+    featured: true,
+    image: "/src/assets/placeholder-3.jpg",
   },
   {
     id: "webit-2025",
@@ -76,6 +79,8 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     venue: "Webit (Sofia)",
     videoUrl: "https://www.youtube.com/watch?v=eEbuoK5DS30",
     topics: ["AI", "Marketing"],
+    featured: true,
+    image: "/src/assets/placeholder-2.jpg",
   },
   {
     id: "happier-humans-2025",
@@ -85,7 +90,8 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     venue: ["AI Leaders Forum (SF)", "San Diego Design Week"],
     videoUrl: "https://youtu.be/ApLKfzjaN3Y",
     topics: ["AI", "UX", "Business"],
-    featured: true, // Mark as featured if you want it prominently displayed
+    featured: true,
+    image: "/src/assets/placeholder-1.jpg",
   },
   {
     id: "five-tips-ai-marketing-2025",
