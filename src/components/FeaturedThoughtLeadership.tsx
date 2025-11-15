@@ -1,4 +1,4 @@
-import { getFeaturedThoughtLeadership } from '@/data/thoughtLeadership';
+import { getFeaturedThoughtLeadership, type ContentType } from '@/data/thoughtLeadership';
 import { Icon } from '@/components/ui/icon';
 import {
   Carousel,
@@ -7,6 +7,34 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+
+// Content type style mappings - matching the archive
+const contentTypeStyles: Record<ContentType, {
+  cardBg: string;
+  textColor: string;
+  borderColor: string;
+}> = {
+  article: {
+    cardBg: 'bg-primary',
+    textColor: 'text-foreground', // Onyx on Mustard
+    borderColor: 'border-primary',
+  },
+  presentation: {
+    cardBg: 'bg-cobalt',
+    textColor: 'text-white', // White on Cobalt
+    borderColor: 'border-cobalt',
+  },
+  panel: {
+    cardBg: 'bg-accent',
+    textColor: 'text-white', // White on Hot Pink
+    borderColor: 'border-accent',
+  },
+  podcast: {
+    cardBg: 'bg-oxblood',
+    textColor: 'text-white', // White on Oxblood
+    borderColor: 'border-oxblood',
+  }
+};
 
 export default function FeaturedThoughtLeadership() {
   const featuredItems = getFeaturedThoughtLeadership();
@@ -42,6 +70,7 @@ export default function FeaturedThoughtLeadership() {
               const hasVideo = !!item.videoUrl;
               const clickUrl = hasVideo ? item.videoUrl : item.url;
               const venueText = Array.isArray(item.venue) ? item.venue[0] : item.venue;
+              const styles = contentTypeStyles[item.type];
 
               return (
                 <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
@@ -52,36 +81,34 @@ export default function FeaturedThoughtLeadership() {
                     className="group block h-full"
                     aria-label={`${item.title} at ${venueText}`}
                   >
-                    <article className="h-full border-4 border-foreground bg-primary shadow-neo-md hover:shadow-neo-xs hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-200 overflow-hidden relative">
+                    <article className={`h-full border-4 border-foreground ${styles.cardBg} shadow-neo-md hover:shadow-neo-xs hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-200 overflow-hidden relative`}>
                       {/* External Link Indicator */}
                       <div className="absolute top-5 right-5 z-10 opacity-40 group-hover:opacity-100 transition-opacity">
-                        <Icon name="external-link" size={16} className="text-foreground group-hover:text-white transition-colors" />
+                        <Icon name="external-link" size={16} className={`${styles.textColor} transition-colors`} />
                       </div>
 
                       {/* Image */}
-                      {item.image && (
-                        <div className="relative aspect-video overflow-hidden border-b-4 border-foreground">
-                          <img
-                            src={item.image}
-                            alt=""
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        </div>
-                      )}
+                      <div className="relative aspect-video overflow-hidden border-b-4 border-foreground">
+                        <img
+                          src={item.image}
+                          alt=""
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
 
                       {/* Content */}
                       <div className="p-6 flex flex-col gap-3">
                         {/* Venue */}
                         {venueText && (
-                          <div className="text-xs font-black tracking-wider text-primary-foreground/80 group-hover:text-white transition-colors uppercase">
+                          <div className={`text-xs font-black tracking-wider ${styles.textColor} opacity-80 transition-colors uppercase`}>
                             {venueText}
                           </div>
                         )}
 
                         {/* Title */}
-                        <h3 className="text-xl md:text-2xl font-black text-primary-foreground group-hover:text-white transition-colors leading-tight line-clamp-3">
+                        <h3 className={`text-xl md:text-2xl font-black ${styles.textColor} transition-colors leading-tight line-clamp-3`}>
                           {item.title}
                         </h3>
 
@@ -101,12 +128,12 @@ export default function FeaturedThoughtLeadership() {
 
                         {/* CTA */}
                         <div className="mt-auto pt-4">
-                          <span className="text-primary-foreground group-hover:text-white font-black underline text-sm transition-colors inline-flex items-center gap-1">
+                          <span className={`${styles.textColor} font-black underline text-sm transition-colors inline-flex items-center gap-1`}>
                             {hasVideo ? 'Watch Video' : 'View Content'}
                             <Icon 
                               name="chevron-right" 
                               size={14} 
-                              className="group-hover:text-white group-hover:translate-x-1 transition-all" 
+                              className={`${styles.textColor} group-hover:translate-x-1 transition-all`}
                               aria-hidden="true" 
                             />
                           </span>
