@@ -180,6 +180,14 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     topics: ["Design", "Ethics"],
   },
   {
+    id: "dfa-design-ambassadors",
+    type: "panel",
+    title: "Design Ambassadors Summit",
+    date: "2023-03-13",
+    venue: "Urban Discovery Academy (San Diego)",
+    topics: ["Design", "Enterprise"],
+  },
+  {
     id: "gm-diversity-design-2021",
     type: "panel",
     title: "General Motors presents Exploring Diversity + Design",
