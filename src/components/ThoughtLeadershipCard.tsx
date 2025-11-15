@@ -159,31 +159,10 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         }
       } : undefined}
     >
-      {/* Clickable indicators - top right */}
-      {isClickable && !hasVideo && (
-        <div className="absolute top-5 right-5 opacity-30 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+      {/* Clickable indicator - top right */}
+      {isClickable && (
+        <div className="absolute top-5 right-5 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
           <Icon name="external-link" size={16} className="text-foreground group-hover:text-white transition-colors" />
-        </div>
-      )}
-      
-      {hasVideo && (
-        <div className="absolute top-5 right-5" aria-hidden="true">
-          <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
-            <div className={`absolute inset-0 ${styles.glowColor} group-hover:bg-background border-4 border-foreground shadow-neo-sm group-hover:shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
-              <div className="relative ml-1">
-                <Icon 
-                  name="play" 
-                  size={20} 
-                  className="text-white fill-white group-hover:opacity-0 transition-all duration-300 group-hover:rotate-90"
-                />
-                <Icon 
-                  name="play" 
-                  size={20} 
-                  className={`absolute inset-0 ${styles.iconColor} fill-current opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:rotate-90`}
-                />
-              </div>
-            </div>
-          </div>
         </div>
       )}
 
@@ -221,8 +200,18 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
 
         {/* Moderator badge */}
         {item.description === "Moderator" && (
-          <div className="text-accent group-hover:text-white transition-colors font-black text-xs tracking-wider">
+          <div className="text-accent group-hover:text-white transition-colors font-black text-xs tracking-wider mb-3">
             MODERATOR
+          </div>
+        )}
+
+        {/* CTA */}
+        {isClickable && (
+          <div>
+            <span className={`text-foreground group-hover:text-white font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
+              {hasVideo ? 'Watch Video' : 'View Content'}
+              <Icon name="chevron-right" size={14} className="group-hover:text-white group-hover:translate-x-1 transition-all" aria-hidden="true" />
+            </span>
           </div>
         )}
       </div>
