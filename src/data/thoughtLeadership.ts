@@ -85,6 +85,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     venue: ["AI Leaders Forum (SF)", "San Diego Design Week"],
     videoUrl: "https://youtu.be/ApLKfzjaN3Y",
     topics: ["AI", "UX", "Business"],
+    featured: true, // Mark as featured if you want it prominently displayed
   },
   {
     id: "five-tips-ai-marketing-2025",
@@ -150,6 +151,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2025-09-07",
     venue: "AI Create (San Diego)",
     topics: ["AI", "Design"],
+    featured: true, // Mark as featured if you want it prominently displayed
   },
   {
     id: "6sense-breakthrough-2025",
