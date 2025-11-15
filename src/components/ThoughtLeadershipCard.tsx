@@ -83,7 +83,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         style={{ animationDelay: staggerDelay }}
         className={`md:col-span-2 bg-background border-4 border-foreground shadow-neo-md ${styles.cardHoverBg} ${
           isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
-        } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative`}
+        } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden`}
         aria-label={`Article: ${item.title} featured in ${item.publication}`}
         tabIndex={isClickable ? 0 : undefined}
         role={isClickable ? 'button' : 'article'}
@@ -95,39 +95,34 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         } : undefined}
       >
         {/* Date - top left */}
-        <div className="absolute top-4 left-4 text-[10px] font-black text-foreground tracking-wider uppercase" aria-label={`Date: ${item.date}`}>
+        <div className="absolute top-5 left-5 text-[10px] font-black text-foreground tracking-widest uppercase opacity-60" aria-label={`Date: ${item.date}`}>
           {formatDate(item.date)}
         </div>
 
-        {/* Featured corner triangle - lower right */}
-        {item.featured && (
-          <div className="absolute bottom-0 right-0 w-0 h-0 border-l-[40px] border-l-transparent border-b-[40px] border-b-accent" aria-label="Featured content" />
-        )}
-
         {/* Clickable indicator */}
         {isClickable && (
-          <div className="absolute top-4 right-4 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+          <div className="absolute top-5 right-5 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
             <Icon name="external-link" size={20} className={`text-foreground ${styles.hoverText} transition-colors`} />
           </div>
         )}
         
-        {/* Stacked content with consistent spacing */}
-        <div className="flex flex-col gap-4 p-6 md:p-8 pt-10">
-          {/* Publication tag */}
+        {/* Content with proper hierarchy */}
+        <div className="flex flex-col gap-5 p-8 pt-14">
+          {/* Title - most prominent */}
+          <h3 className={`text-xl md:text-3xl font-black text-foreground leading-tight ${styles.hoverText} transition-colors`}>
+            {item.title}
+          </h3>
+
+          {/* Publication - secondary */}
           <div className="flex-shrink-0">
-            <span className={`text-xs font-black text-foreground tracking-wider uppercase ${styles.hoverText} transition-colors`} aria-label={`Published in ${item.publication}`}>
+            <span className={`text-xs font-black text-foreground tracking-wider uppercase opacity-80 ${styles.hoverText} transition-colors`} aria-label={`Published in ${item.publication}`}>
               {item.publication}
             </span>
           </div>
           
-          {/* Title */}
-          <h3 className={`text-lg md:text-2xl font-black text-foreground leading-tight ${styles.hoverText} transition-colors`}>
-            {item.title}
-          </h3>
-          
-          {/* Quote */}
+          {/* Quote - tertiary */}
           {item.quote && (
-            <blockquote className={`border-l-4 border-foreground pl-4 italic text-foreground ${styles.hoverText} text-sm md:text-base leading-relaxed transition-colors duration-300`}>
+            <blockquote className={`border-l-4 border-foreground pl-4 italic text-foreground ${styles.hoverText} text-base md:text-lg leading-relaxed transition-colors duration-300 opacity-90`}>
               {item.quote}
             </blockquote>
           )}
@@ -151,9 +146,9 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
     <article
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
-      className={`bg-background border-2 border-foreground shadow-neo-sm p-4 min-h-[140px] flex flex-col justify-between ${styles.cardHoverBg} ${
-        isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor} relative` : 'transition-all duration-300 relative'
-      } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2`}
+      className={`bg-background border-4 border-foreground shadow-neo-sm ${styles.cardHoverBg} ${
+        isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor}` : 'transition-all duration-300'
+      } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden min-h-[160px] flex flex-col`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
       tabIndex={isClickable ? 0 : undefined}
       role={isClickable ? 'button' : 'article'}
@@ -165,27 +160,26 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       } : undefined}
     >
       {/* Date - top left */}
-      <div className="absolute top-3 left-3 text-[9px] font-black text-foreground tracking-wider uppercase" aria-label={`Date: ${item.date}`}>
+      <div className="absolute top-4 left-4 text-[10px] font-black text-foreground tracking-widest uppercase opacity-60" aria-label={`Date: ${item.date}`}>
         {formatDate(item.date)}
       </div>
 
-      {/* Featured corner triangle - lower right */}
-      {item.featured && (
-        <div className="absolute bottom-0 right-0 w-0 h-0 border-l-[32px] border-l-transparent border-b-[32px] border-b-accent" aria-label="Featured content" />
-      )}
-
       {/* Clickable indicator for non-video cards */}
       {isClickable && !hasVideo && (
-        <div className="absolute top-3 right-3 opacity-30 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+        <div className="absolute top-4 right-4 opacity-30 group-hover:opacity-100 transition-opacity" aria-hidden="true">
           <Icon name="external-link" size={16} className="text-foreground group-hover:text-white transition-colors" />
         </div>
       )}
       
-      <div className={`pt-6 ${hasVideo ? 'pr-16' : isClickable ? 'pr-8' : ''}`}>
-        <h3 className="text-sm md:text-base font-black mb-2 text-foreground group-hover:text-white leading-snug line-clamp-3 transition-colors">
+      {/* Content with proper hierarchy and flex-grow to push play button down */}
+      <div className={`pt-10 px-5 pb-5 flex-grow flex flex-col gap-2 ${hasVideo ? 'pr-16' : isClickable ? 'pr-10' : ''}`}>
+        {/* Title - most prominent */}
+        <h3 className="text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors">
           {item.title}
         </h3>
-        <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors">
+        
+        {/* Venue/Publication - secondary */}
+        <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mt-auto">
           {Array.isArray(item.venue) ? (
             item.venue.map((v, i) => (
               <div key={i}>{v}</div>
@@ -194,16 +188,17 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
             <div>{item.venue || item.publication}</div>
           )}
           {item.description === "Moderator" && (
-            <div className="text-accent group-hover:text-white transition-colors font-black mt-1">
+            <div className="text-accent group-hover:text-white transition-colors font-black mt-1 tracking-wider">
               MODERATOR
             </div>
           )}
         </div>
       </div>
+
+      {/* Play button - positioned absolutely at bottom right */}
       {hasVideo && (
-        <div className="absolute bottom-3 right-3" aria-hidden="true">
+        <div className="absolute bottom-4 right-4" aria-hidden="true">
           <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
-            {/* Brutalist play button with color inversion on hover */}
             <div className={`absolute inset-0 ${styles.glowColor} group-hover:bg-background border-4 border-foreground shadow-neo-sm group-hover:shadow-neo-xs group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200 flex items-center justify-center`}>
               <div className="relative ml-1">
                 <Icon 
