@@ -151,7 +151,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2025-09-07",
     venue: "AI Create (San Diego)",
     topics: ["AI", "Design"],
-    featured: true, // Mark as featured if you want it prominently displayed
+    featured: true,
   },
   {
     id: "6sense-breakthrough-2025",
@@ -186,6 +186,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2023-03-13",
     venue: "Urban Discovery Academy (San Diego)",
     topics: ["Design", "Enterprise"],
+    featured: true,
   },
   {
     id: "gm-diversity-design-2021",
