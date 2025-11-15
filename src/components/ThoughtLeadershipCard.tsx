@@ -75,24 +75,6 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
     }
   };
 
-  // Featured corner fold component
-  const FeaturedCornerFold = () => {
-    if (!item.featured) return null;
-    
-    return (
-      <div 
-        className="absolute top-0 right-0 w-20 h-20 md:w-[80px] md:h-[80px] overflow-hidden pointer-events-none z-10"
-        aria-label="Featured content"
-      >
-        <div className="absolute top-0 right-0 w-full h-full origin-top-right transform rotate-45 translate-x-[35%] -translate-y-[35%] bg-cobalt border-4 border-foreground transition-all duration-300 group-hover:rotate-[57deg] group-hover:scale-110 shadow-neo-sm">
-          <div className="absolute inset-0 flex items-center justify-center transform -rotate-45 translate-y-6 md:translate-y-7">
-            <span className="text-2xl md:text-3xl" role="img" aria-label="Featured star">⭐</span>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   // Article card - larger format with quotes
   if (item.type === 'article') {
     return (
@@ -112,9 +94,6 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           }
         } : undefined}
       >
-        {/* Featured corner fold */}
-        <FeaturedCornerFold />
-        
         {/* Clickable indicator */}
         {isClickable && (
           <div className="absolute top-6 right-6 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
@@ -180,9 +159,6 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         }
       } : undefined}
     >
-      {/* Featured corner fold */}
-      <FeaturedCornerFold />
-      
       {/* Clickable indicators - top right */}
       {isClickable && !hasVideo && (
         <div className="absolute top-5 right-5 opacity-30 group-hover:opacity-100 transition-opacity" aria-hidden="true">
