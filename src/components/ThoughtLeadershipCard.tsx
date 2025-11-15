@@ -1,10 +1,21 @@
 import { Icon } from './ui/icon';
 import type { ThoughtLeadershipItem, ContentType } from '@/data/thoughtLeadership';
+import { format } from 'date-fns';
 
 interface ThoughtLeadershipCardProps {
   item: ThoughtLeadershipItem;
   index: number;
 }
+
+// Format date as MMM YY (e.g., "NOV 25")
+const formatDate = (dateString: string) => {
+  try {
+    const date = new Date(dateString);
+    return format(date, 'MMM yy').toUpperCase();
+  } catch {
+    return '';
+  }
+};
 
 // Content type style mappings using design system
 const contentTypeStyles: Record<ContentType, {
@@ -83,6 +94,16 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           }
         } : undefined}
       >
+        {/* Date - top left */}
+        <div className="absolute top-4 left-4 text-[10px] font-black text-foreground tracking-wider uppercase" aria-label={`Date: ${item.date}`}>
+          {formatDate(item.date)}
+        </div>
+
+        {/* Featured corner triangle - lower right */}
+        {item.featured && (
+          <div className="absolute bottom-0 right-0 w-0 h-0 border-l-[40px] border-l-transparent border-b-[40px] border-b-accent" aria-label="Featured content" />
+        )}
+
         {/* Clickable indicator */}
         {isClickable && (
           <div className="absolute top-4 right-4 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
@@ -91,7 +112,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         )}
         
         {/* Stacked content with consistent spacing */}
-        <div className="flex flex-col gap-4 p-6 md:p-8">
+        <div className="flex flex-col gap-4 p-6 md:p-8 pt-10">
           {/* Publication tag */}
           <div className="flex-shrink-0">
             <span className={`text-xs font-black text-foreground tracking-wider uppercase ${styles.hoverText} transition-colors`} aria-label={`Published in ${item.publication}`}>
@@ -143,6 +164,16 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         }
       } : undefined}
     >
+      {/* Date - top left */}
+      <div className="absolute top-3 left-3 text-[9px] font-black text-foreground tracking-wider uppercase" aria-label={`Date: ${item.date}`}>
+        {formatDate(item.date)}
+      </div>
+
+      {/* Featured corner triangle - lower right */}
+      {item.featured && (
+        <div className="absolute bottom-0 right-0 w-0 h-0 border-l-[32px] border-l-transparent border-b-[32px] border-b-accent" aria-label="Featured content" />
+      )}
+
       {/* Clickable indicator for non-video cards */}
       {isClickable && !hasVideo && (
         <div className="absolute top-3 right-3 opacity-30 group-hover:opacity-100 transition-opacity" aria-hidden="true">
@@ -150,7 +181,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       )}
       
-      <div className={hasVideo ? 'pr-16' : isClickable ? 'pr-8' : ''}>
+      <div className={`pt-6 ${hasVideo ? 'pr-16' : isClickable ? 'pr-8' : ''}`}>
         <h3 className="text-sm md:text-base font-black mb-2 text-foreground group-hover:text-white leading-snug line-clamp-3 transition-colors">
           {item.title}
         </h3>
