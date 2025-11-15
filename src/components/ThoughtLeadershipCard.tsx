@@ -102,34 +102,34 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         )}
         
         {/* Content stacked in order with consistent left alignment */}
-        <div className="flex flex-col gap-4 p-6 pr-12">
+        <div className="flex flex-col p-6 pr-12">
           {/* DATE */}
-          <div className="text-[10px] font-black text-foreground tracking-widest uppercase opacity-60" aria-label={`Date: ${item.date}`}>
+          <div className="text-[10px] font-black text-foreground tracking-widest uppercase opacity-60 mb-5" aria-label={`Date: ${item.date}`}>
             {formatDate(item.date)}
           </div>
 
           {/* PUBLICATION */}
           {item.publication && (
-            <div className={`text-xs font-black text-foreground tracking-wider uppercase opacity-80 ${styles.hoverText} transition-colors`} aria-label={`Published in ${item.publication}`}>
+            <div className={`text-xs font-black text-foreground tracking-wider uppercase opacity-80 ${styles.hoverText} transition-colors mb-3`} aria-label={`Published in ${item.publication}`}>
               {item.publication}
             </div>
           )}
           
           {/* TITLE */}
-          <h3 className={`text-xl md:text-3xl font-black text-foreground leading-tight ${styles.hoverText} transition-colors`}>
+          <h3 className={`text-xl md:text-3xl font-black text-foreground leading-tight ${styles.hoverText} transition-colors mb-4`}>
             {item.title}
           </h3>
           
           {/* QUOTE */}
           {item.quote && (
-            <blockquote className={`border-l-4 border-foreground pl-4 italic text-foreground ${styles.hoverText} text-base md:text-lg leading-relaxed transition-colors duration-300 opacity-90`}>
+            <blockquote className={`border-l-4 border-foreground pl-4 italic text-foreground ${styles.hoverText} text-base md:text-lg leading-relaxed transition-colors duration-300 opacity-90 mb-6`}>
               {item.quote}
             </blockquote>
           )}
           
           {/* CTA */}
           {isClickable && (
-            <div className="mt-2">
+            <div>
               <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
                 Read Article
                 <Icon name="chevron-right" size={14} className={`${styles.hoverText} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
@@ -188,15 +188,15 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       )}
 
       {/* Content stacked in order with consistent left alignment */}
-      <div className="flex flex-col gap-3 p-5 pr-16">
+      <div className="flex flex-col p-5 pr-16">
         {/* DATE */}
-        <div className="text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors" aria-label={`Date: ${item.date}`}>
+        <div className="text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors mb-4" aria-label={`Date: ${item.date}`}>
           {formatDate(item.date)}
         </div>
 
         {/* VENUE */}
         {item.venue && (
-          <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80">
+          <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2">
             {Array.isArray(item.venue) ? (
               item.venue.map((v, i) => (
                 <div key={i}>{v}</div>
@@ -209,13 +209,13 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
 
         {/* PUBLICATION (for items without venue) */}
         {!item.venue && item.publication && (
-          <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80">
+          <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2">
             {item.publication}
           </div>
         )}
         
         {/* TITLE */}
-        <h3 className="text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors">
+        <h3 className="text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors mb-3">
           {item.title}
         </h3>
 
