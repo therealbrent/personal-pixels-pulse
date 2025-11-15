@@ -225,6 +225,18 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // ARTICLES / MEDIA FEATURES
   // ==========================================
   {
+    id: "forbes-writer-ai-leaders-forum",
+    type: "article",
+    title: "What Writer’s AI Leaders Forum Revealed About Enterprise AI",
+    date: "2025-11-08",
+    publication: "Forbes",
+    quote:
+      "After Summers conducted his initial Writer pilot, 100% of the users wanted to adopt the platform full-time. Today, 85% engage with Writer weekly, with 60% using it multiple times per week.",
+    url: "https://www.forbes.com/sites/stevenwolfepereira/2025/11/08/what-writers-ai-leaders-forum-revealed-about-enterprise-ai/",
+    topics: ["AI", "Leadership"],
+    featured: true, // Mark as featured if you want it prominently displayed
+  },
+  {
     id: "cionews-qualcomm-ai-playbook",
     type: "article",
     title: "Why Qualcomm's Playbook For Scaling AI Starts With Intention -- And Ends With A Human",
@@ -246,6 +258,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
       "As someone committed to sustainability, I believe in the transformative potential of AI—but must also acknowledge the challenges it poses to a sustainable future.",
     url: "https://www.smartsuite.com/news/qualcomm-technologies-leads-edge-ai-sustainability-brent-summers",
     topics: ["AI", "Sustainability"],
+    featured: false, // Mark as featured if you want it prominently displayed
   },
   {
     id: "cmswire-customer-centric",
@@ -257,6 +270,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
       "Customer's perceptions will change along the way as they become more familiar with your company's products and services. Every single touchpoint is a chance to delight or disappoint.",
     url: "https://www.cmswire.com/customer-experience/customer-centric-companies-sweat-the-details/",
     topics: ["UX", "Customer Experience"],
+    featured: false, // Mark as featured if you want it prominently displayed
   },
   {
     id: "aidatapress-cloud-to-device",
@@ -268,6 +282,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
       "Whenever latency matters, the edge is usually the better choice. If the data is sensitive or you don't want it traveling through the cloud, the edge is the right place for it. That is where you can ensure not just security but true privacy.",
     url: "https://www.aidatapress.com/news/cloud-on-device-ai-edge-brent-summers-qualcomm-technologies",
     topics: ["AI", "Privacy", "Technology"],
+    featured: false, // Mark as featured if you want it prominently displayed
   },
   {
     id: "uxmag-proto-personas",
@@ -279,6 +294,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
       "We use proto-personas as a way of gaining alignment among our project sponsors and striking the right balance of focus between organizational and user needs.",
     url: "https://uxmag.com/articles/revisiting-proto-personas-for-executive-alignment",
     topics: ["UX", "Strategy"],
+    featured: false, // Mark as featured if you want it prominently displayed
   },
   {
     id: "olark-predictions",
@@ -290,6 +306,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
       "By creating content  people actually want to engage with, brands increase their likelihood of reaching  more potential consumers on mainstream sites.",
     url: "https://blog.olark.com/3-predictions-for-2016-technology-meets-customer-experience",
     topics: ["Technology", "Marketing"],
+    featured: false, // Mark as featured if you want it prominently displayed
   },
 ];
 
