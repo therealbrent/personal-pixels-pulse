@@ -175,19 +175,19 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
 
         {/* VENUE */}
         {item.venue && (
-          <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight pl-0 ml-0">
+          <p className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight m-0 p-0">
             {Array.isArray(item.venue) 
               ? item.venue.map(v => v.trim()).join(' • ')
               : item.venue
             }
-          </div>
+          </p>
         )}
 
         {/* PUBLICATION (for items without venue) */}
         {!item.venue && item.publication && (
-          <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight pl-0 ml-0">
+          <p className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight m-0 p-0">
             {item.publication}
-          </div>
+          </p>
         )}
         
         {/* TITLE */}
