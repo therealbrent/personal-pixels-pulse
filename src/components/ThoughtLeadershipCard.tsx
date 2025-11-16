@@ -175,19 +175,17 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
 
         {/* VENUE */}
         {item.venue && (
-          <>
+          <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2">
             {Array.isArray(item.venue) ? (
               item.venue.map((v, i) => (
-                <div key={i} className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-1">
-                  {v}
+                <div key={i} className="leading-tight">
+                  {v.trim()}
                 </div>
               ))
             ) : (
-              <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2">
-                {item.venue}
-              </div>
+              item.venue
             )}
-          </>
+          </div>
         )}
 
         {/* PUBLICATION (for items without venue) */}

@@ -111,7 +111,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "The UX Flywheel",
     date: "2020-01-01", // TODO: Provide more specific date if available
     venue: [
-      "Convey UX (Seattle) ",
+      "Convey UX (Seattle)",
       "MarcomCentral User Conference (San Diego)",
       "Masters of Marketing (Virtual)",
       "San Diego Digital Designers",
