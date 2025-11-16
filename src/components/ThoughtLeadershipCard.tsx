@@ -180,19 +180,19 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       )}
 
-      <div className="flex flex-col p-4 pr-10 sm:p-5 sm:pr-16">
+      <div className="flex flex-col p-4 pr-10 sm:p-5 sm:pr-16 text-left">
         {/* DATE */}
         {formattedDate && (
-          <div className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors mb-3 sm:mb-4" aria-label={`Date: ${item.date}`}>
+          <div className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors mb-3 sm:mb-4 text-left" aria-label={`Date: ${item.date}`}>
             {formattedDate}
           </div>
         )}
 
         {/* VENUE OR PUBLICATION - Single unified rendering */}
         {displayLabel && (
-          <span className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight block w-full" style={{ textIndent: '0', paddingLeft: '0', marginLeft: '0' }}>
+          <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight text-left" style={{ margin: 0, padding: 0, textIndent: 0 }}>
             {displayLabel}
-          </span>
+          </div>
         )}
         
         {/* TITLE */}
