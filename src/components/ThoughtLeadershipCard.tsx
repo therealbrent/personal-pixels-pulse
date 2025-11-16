@@ -17,6 +17,15 @@ const formatDate = (dateString: string) => {
   }
 };
 
+// Normalize venue to always be a string for consistent rendering
+const formatVenue = (venue: string | string[] | undefined): string => {
+  if (!venue) return '';
+  if (Array.isArray(venue)) {
+    return venue.map(v => v.trim()).join(' • ');
+  }
+  return venue.trim();
+};
+
 // Content type style mappings using design system
 const contentTypeStyles: Record<ContentType, {
   cardHoverBg: string;
@@ -66,6 +75,11 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
   const hasUrl = !!item.url;
   const isClickable = hasVideo || hasUrl;
   const staggerDelay = `${index * 50}ms`;
+  
+  // Normalize data at the top for consistent rendering
+  const formattedDate = formatDate(item.date);
+  const formattedVenue = formatVenue(item.venue);
+  const displayLabel = formattedVenue || item.publication || '';
   
   const handleClick = () => {
     if (hasVideo) {
@@ -166,28 +180,19 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       )}
 
-      {/* Content stacked in order with consistent left alignment */}
       <div className="flex flex-col p-4 pr-10 sm:p-5 sm:pr-16">
         {/* DATE */}
-        <div className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors mb-3 sm:mb-4" aria-label={`Date: ${item.date}`}>
-          {formatDate(item.date)}
-        </div>
-
-        {/* VENUE */}
-        {item.venue && (
-          <p className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight m-0 p-0">
-            {Array.isArray(item.venue) 
-              ? item.venue.map(v => v.trim()).join(' • ')
-              : item.venue
-            }
-          </p>
+        {formattedDate && (
+          <div className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors mb-3 sm:mb-4" aria-label={`Date: ${item.date}`}>
+            {formattedDate}
+          </div>
         )}
 
-        {/* PUBLICATION (for items without venue) */}
-        {!item.venue && item.publication && (
-          <p className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight m-0 p-0">
-            {item.publication}
-          </p>
+        {/* VENUE OR PUBLICATION - Single unified rendering */}
+        {displayLabel && (
+          <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight text-left">
+            {displayLabel}
+          </div>
         )}
         
         {/* TITLE */}
