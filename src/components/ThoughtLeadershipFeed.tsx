@@ -35,7 +35,7 @@ export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadership
   return (
     <section className="mb-12 sm:mb-16">
       {/* Header */}
-      <div className="max-w-7xl mx-auto bg-primary border-4 sm:border-6 md:border-8 border-foreground shadow-neo-xl p-4 sm:p-6 md:p-8 mb-0">
+      <div className="max-w-7xl mx-auto bg-primary border-4 md:border-8 border-foreground shadow-neo-xl p-4 sm:p-6 md:p-8 mb-0">
         <h2 className="text-xl sm:text-2xl md:text-4xl font-black mb-2 sm:mb-3 text-primary-foreground leading-tight">
           {topicFilter ? `TOPIC: ${topicFilter.toUpperCase()}` : 'THOUGHT LEADERSHIP ARCHIVE'}
         </h2>
@@ -48,7 +48,7 @@ export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadership
       </div>
 
       {/* Filters & Content Container */}
-      <div className="max-w-7xl mx-auto bg-background border-4 sm:border-6 md:border-8 border-foreground shadow-neo-xl border-t-0 p-4 sm:p-6 md:p-8">
+      <div className="max-w-7xl mx-auto bg-background border-4 md:border-8 border-foreground shadow-neo-xl border-t-0 p-4 sm:p-6 md:p-8">
         {!topicFilter && (
           <ThoughtLeadershipFilters
             activeFilter={activeFilter}
