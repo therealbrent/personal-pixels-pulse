@@ -180,7 +180,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       )}
 
-      <div className="flex flex-col p-4 pr-10 sm:p-5 sm:pr-16">
+      <div className="flex flex-col p-3 pr-10 sm:p-4 sm:pr-16">
         {/* DATE */}
         {formattedDate && (
           <div className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors mb-3 sm:mb-4" aria-label={`Date: ${item.date}`}>
