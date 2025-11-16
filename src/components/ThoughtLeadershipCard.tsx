@@ -81,17 +81,6 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
   const formattedVenue = formatVenue(item.venue);
   const displayLabel = formattedVenue || item.publication || '';
   
-  // Debug logging for problematic cards
-  if (item.id === 'happier-humans-2025' || item.id === 'use-science-copy-2020') {
-    console.log(`Card ${item.id}:`, {
-      venue: item.venue,
-      formattedVenue,
-      displayLabel,
-      displayLabelLength: displayLabel.length,
-      displayLabelCharCodes: Array.from(displayLabel).map(c => c.charCodeAt(0))
-    });
-  }
-  
   const handleClick = () => {
     if (hasVideo) {
       window.open(item.videoUrl, '_blank');
@@ -199,9 +188,9 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           </div>
         )}
 
-        {/* VENUE OR PUBLICATION - Using exact same structure as DATE */}
+        {/* VENUE OR PUBLICATION - Force uppercase like DATE */}
         {displayLabel && (
-          <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight" style={{ listStyle: 'none', listStyleType: 'none', display: 'block' }}>
+          <div className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider uppercase opacity-80 transition-colors mb-2">
             {displayLabel}
           </div>
         )}
