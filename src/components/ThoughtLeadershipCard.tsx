@@ -21,7 +21,7 @@ const formatDate = (dateString: string) => {
 const formatVenue = (venue: string | string[] | undefined): string => {
   if (!venue) return '';
   if (Array.isArray(venue)) {
-    return venue.map(v => v.trim()).join(' • ');
+    return venue.map(v => v.trim()).join(', ');
   }
   return venue.trim();
 };
