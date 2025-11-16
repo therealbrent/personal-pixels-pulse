@@ -81,6 +81,17 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
   const formattedVenue = formatVenue(item.venue);
   const displayLabel = formattedVenue || item.publication || '';
   
+  // Debug logging for problematic cards
+  if (item.id === 'happier-humans-2025' || item.id === 'use-science-copy-2020') {
+    console.log(`Card ${item.id}:`, {
+      venue: item.venue,
+      formattedVenue,
+      displayLabel,
+      displayLabelLength: displayLabel.length,
+      displayLabelCharCodes: Array.from(displayLabel).map(c => c.charCodeAt(0))
+    });
+  }
+  
   const handleClick = () => {
     if (hasVideo) {
       window.open(item.videoUrl, '_blank');
@@ -180,19 +191,19 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       )}
 
-      <div style={{ display: 'flex', flexDirection: 'column', padding: '16px', paddingRight: '40px', textAlign: 'left', alignItems: 'flex-start' }}>
+      <div className="flex flex-col p-4 pr-10 sm:p-5 sm:pr-16">
         {/* DATE */}
         {formattedDate && (
-          <div className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors" style={{ marginBottom: '12px', textAlign: 'left', padding: 0, margin: '0 0 12px 0' }} aria-label={`Date: ${item.date}`}>
+          <div className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors mb-3 sm:mb-4" aria-label={`Date: ${item.date}`}>
             {formattedDate}
           </div>
         )}
 
-        {/* VENUE OR PUBLICATION - Completely reset */}
+        {/* VENUE OR PUBLICATION - Using exact same structure as DATE */}
         {displayLabel && (
-          <p className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80" style={{ margin: '0 0 8px 0', padding: 0, textIndent: 0, textAlign: 'left', lineHeight: '1.4', width: '100%', boxSizing: 'border-box' }}>
+          <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight">
             {displayLabel}
-          </p>
+          </div>
         )}
         
         {/* TITLE */}
