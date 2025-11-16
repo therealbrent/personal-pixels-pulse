@@ -17,13 +17,13 @@ export default function SpeakingMediaPage() {
         canonicalUrl="/speaking"
       />
 
-      <main id="main-content" className="container mx-auto px-4 py-12 lg:py-20">
+      <main id="main-content" className="container mx-auto px-3 sm:px-4 md:px-6 py-8 sm:py-12 lg:py-20">
         {/* Hero Section - Neo-Brutalist */}
-        <header className="text-center mb-12">
-          <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-8 text-foreground transform hover:skew-x-1 transition-transform duration-300">
+        <header className="text-center mb-8 sm:mb-12">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl font-black tracking-tight mb-4 sm:mb-6 md:mb-8 text-foreground transform hover:skew-x-1 transition-transform duration-300">
             SPEAKING
           </h1>
-          <p className="text-xl md:text-2xl font-bold text-foreground/90 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl font-bold text-foreground/90 max-w-4xl mx-auto leading-relaxed px-2 sm:px-0">
             I share stories, strategic frameworks and lessons learned from two decades of leading change.
           </p>
         </header>

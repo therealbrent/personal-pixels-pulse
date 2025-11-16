@@ -33,13 +33,13 @@ export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadership
   ];
 
   return (
-    <section className="mb-16">
+    <section className="mb-12 sm:mb-16">
       {/* Header */}
-      <div className="max-w-7xl mx-auto bg-primary border-8 border-foreground shadow-neo-xl p-6 md:p-8 mb-0">
-        <h2 className="text-2xl md:text-4xl font-black mb-3 text-primary-foreground leading-tight">
+      <div className="max-w-7xl mx-auto bg-primary border-4 sm:border-6 md:border-8 border-foreground shadow-neo-xl p-4 sm:p-6 md:p-8 mb-0">
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-black mb-2 sm:mb-3 text-primary-foreground leading-tight">
           {topicFilter ? `TOPIC: ${topicFilter.toUpperCase()}` : 'THOUGHT LEADERSHIP ARCHIVE'}
         </h2>
-        <p className="text-lg md:text-xl font-bold text-primary-foreground/90 leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl font-bold text-primary-foreground/90 leading-relaxed">
           {topicFilter 
             ? `Filtering content tagged with "${topicFilter}"` 
             : 'Global stages to local meetups. Wherever marketing, technology, and design collide.'
@@ -48,7 +48,7 @@ export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadership
       </div>
 
       {/* Filters & Content Container */}
-      <div className="max-w-7xl mx-auto bg-background border-8 border-foreground shadow-neo-xl border-t-0 p-6 md:p-8">
+      <div className="max-w-7xl mx-auto bg-background border-4 sm:border-6 md:border-8 border-foreground shadow-neo-xl border-t-0 p-4 sm:p-6 md:p-8">
         {!topicFilter && (
           <ThoughtLeadershipFilters
             activeFilter={activeFilter}
@@ -60,7 +60,7 @@ export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadership
         {/* Feed Grid */}
         <div 
           id="thought-leadership-grid" 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-max"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 auto-rows-max"
           style={{ gridAutoFlow: 'dense' }}
           role="region"
           aria-live="polite"

@@ -17,17 +17,17 @@ export default function BiographyHeadshot() {
   };
 
   return (
-    <section id="biography" className="mb-20">
+    <section id="biography" className="mb-12 sm:mb-16 md:mb-20">
       {/* Single bounding box with deep dropshadow */}
-      <div className="max-w-7xl mx-auto bg-background border-8 border-foreground shadow-neo-xl p-8 md:p-12">
-        <h2 className="text-4xl md:text-6xl font-black mb-8 text-center text-foreground transform hover:skew-y-1 transition-transform duration-300">
+      <div className="max-w-7xl mx-auto bg-background border-4 sm:border-6 md:border-8 border-foreground shadow-neo-xl p-4 sm:p-6 md:p-8 lg:p-12">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 sm:mb-8 text-center text-foreground transform hover:skew-y-1 transition-transform duration-300">
           BIOGRAPHY & HEADSHOT
         </h2>
         
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-16 items-start">
           {/* Text content */}
           <div className="flex-1 text-left lg:pr-8">
-            <div className="space-y-6 text-foreground text-lg font-semibold leading-relaxed">
+            <div className="space-y-4 sm:space-y-6 text-foreground text-base sm:text-lg font-semibold leading-relaxed">
               <p>
                 Brent Summers is an AI-powered marketing leader. At Qualcomm Technologies, Brent leads AI Platforms & GTM Innovation which is a hybrid function combining strategic vision, technical implementation, and behavior change. He has deployed more than 20 AI agents which are embedded, governed, and scaled across the global marketing team. For instance, WRITER has delivered an impressive 8.6x ROI with 85% of users active every week.
               </p>
@@ -35,9 +35,9 @@ export default function BiographyHeadshot() {
           </div>
           
           {/* Zero-gap headshot + button unit */}
-          <div className="flex-shrink-0 w-full sm:w-56 lg:w-44 mx-auto lg:mx-0">
+          <div className="flex-shrink-0 w-48 sm:w-56 lg:w-44 mx-auto lg:mx-0">
             {/* Bulletproof container - zero gaps possible */}
-            <div className="border-4 border-foreground bg-background shadow-neo-sm overflow-hidden">
+            <div className="border-3 sm:border-4 border-foreground bg-background shadow-neo-sm overflow-hidden">
               {/* Image with forced exact fit - no gaps - using compressed preview */}
               <img 
                 src={previewHeadshot}
@@ -52,7 +52,7 @@ export default function BiographyHeadshot() {
               {/* Button directly attached - zero gap */}
               <Button 
                 onClick={handleDownloadHeadshot}
-                className="w-full bg-accent text-accent-foreground border-0 rounded-none hover:bg-accent/90 transition-colors duration-150 text-xs font-black py-2 px-3 m-0"
+                className="w-full bg-accent text-accent-foreground border-0 rounded-none hover:bg-accent/90 transition-colors duration-150 text-[10px] sm:text-xs font-black py-2 px-2 sm:px-3 m-0"
                 style={{ margin: 0, borderRadius: 0 }}
               >
                 DOWNLOAD HEADSHOT
