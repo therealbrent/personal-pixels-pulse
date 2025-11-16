@@ -201,7 +201,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
 
         {/* VENUE OR PUBLICATION - Using exact same structure as DATE */}
         {displayLabel && (
-          <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight">
+          <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight" style={{ listStyle: 'none', listStyleType: 'none', display: 'block' }}>
             {displayLabel}
           </div>
         )}
