@@ -19,7 +19,7 @@ export default function BiographyHeadshot() {
   return (
     <section id="biography" className="mb-12 sm:mb-16 md:mb-20">
       {/* Single bounding box with deep dropshadow */}
-      <div className="max-w-7xl mx-auto bg-background border-4 sm:border-6 md:border-8 border-foreground shadow-neo-xl p-4 sm:p-6 md:p-8 lg:p-12">
+      <div className="max-w-7xl mx-auto bg-background border-4 md:border-8 border-foreground shadow-neo-xl p-4 sm:p-6 md:p-8 lg:p-12">
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 sm:mb-8 text-center text-foreground transform hover:skew-y-1 transition-transform duration-300">
           BIOGRAPHY & HEADSHOT
         </h2>
@@ -37,7 +37,7 @@ export default function BiographyHeadshot() {
           {/* Zero-gap headshot + button unit */}
           <div className="flex-shrink-0 w-48 sm:w-56 lg:w-44 mx-auto lg:mx-0">
             {/* Bulletproof container - zero gaps possible */}
-            <div className="border-3 sm:border-4 border-foreground bg-background shadow-neo-sm overflow-hidden">
+            <div className="border-2 sm:border-4 border-foreground bg-background shadow-neo-sm overflow-hidden">
               {/* Image with forced exact fit - no gaps - using compressed preview */}
               <img 
                 src={previewHeadshot}
