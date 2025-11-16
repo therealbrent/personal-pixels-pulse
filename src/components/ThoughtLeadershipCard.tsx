@@ -81,7 +81,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       <article
         onClick={isClickable ? handleClick : undefined}
         style={{ animationDelay: staggerDelay }}
-        className={`md:col-span-2 bg-background border-4 border-foreground shadow-neo-md ${styles.cardHoverBg} ${
+        className={`md:col-span-2 bg-background border-3 sm:border-4 border-foreground shadow-neo-md ${styles.cardHoverBg} ${
           isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
         } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden`}
         aria-label={`Article: ${item.title} featured in ${item.publication}`}
@@ -96,13 +96,13 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       >
         {/* Clickable indicator */}
         {isClickable && (
-          <div className="absolute top-6 right-6 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
-            <Icon name="external-link" size={20} className={`text-foreground ${styles.hoverText} transition-colors`} />
+          <div className="absolute top-4 right-4 sm:top-6 sm:right-6 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+            <Icon name="external-link" size={16} className={`text-foreground ${styles.hoverText} transition-colors sm:w-5 sm:h-5`} />
           </div>
         )}
         
         {/* Content stacked in order with consistent left alignment */}
-        <div className="flex flex-col p-6 pr-12">
+        <div className="flex flex-col p-4 pr-10 sm:p-6 sm:pr-12">
           {/* DATE */}
           <div className="text-[10px] font-black text-foreground tracking-widest uppercase opacity-60 mb-5" aria-label={`Date: ${item.date}`}>
             {formatDate(item.date)}
@@ -146,9 +146,9 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
     <article
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
-      className={`bg-background border-4 border-foreground shadow-neo-sm ${styles.cardHoverBg} ${
+      className={`bg-background border-3 sm:border-4 border-foreground shadow-neo-sm ${styles.cardHoverBg} ${
         isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor}` : 'transition-all duration-300'
-      } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden min-h-[160px]`}
+      } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden min-h-[140px] sm:min-h-[160px]`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
       tabIndex={isClickable ? 0 : undefined}
       role={isClickable ? 'button' : 'article'}
@@ -161,21 +161,21 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
     >
       {/* Clickable indicator - top right */}
       {isClickable && (
-        <div className="absolute top-5 right-5 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
-          <Icon name="external-link" size={16} className="text-foreground group-hover:text-white transition-colors" />
+        <div className="absolute top-3 right-3 sm:top-5 sm:right-5 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+          <Icon name="external-link" size={14} className="text-foreground group-hover:text-white transition-colors sm:w-4 sm:h-4" />
         </div>
       )}
 
       {/* Content stacked in order with consistent left alignment */}
-      <div className="flex flex-col p-5 pr-16">
+      <div className="flex flex-col p-4 pr-10 sm:p-5 sm:pr-16">
         {/* DATE */}
-        <div className="text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors mb-4" aria-label={`Date: ${item.date}`}>
+        <div className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors mb-3 sm:mb-4" aria-label={`Date: ${item.date}`}>
           {formatDate(item.date)}
         </div>
 
         {/* VENUE */}
         {item.venue && (
-          <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2">
+          <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2">
             {Array.isArray(item.venue) ? (
               item.venue.map((v, i) => (
                 <div key={i}>{v}</div>
@@ -188,29 +188,29 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
 
         {/* PUBLICATION (for items without venue) */}
         {!item.venue && item.publication && (
-          <div className="text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2">
+          <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2">
             {item.publication}
           </div>
         )}
         
         {/* TITLE */}
-        <h3 className="text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors mb-3">
+        <h3 className="text-sm sm:text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors mb-2 sm:mb-3">
           {item.title}
         </h3>
 
         {/* Moderator badge */}
         {item.description === "Moderator" && (
-          <div className="text-accent group-hover:text-white transition-colors font-black text-xs tracking-wider mb-3">
-            MODERATOR
+          <div className="inline-flex items-center bg-foreground text-background px-2 py-0.5 sm:px-2.5 sm:py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-wider mb-2 sm:mb-3 group-hover:bg-white group-hover:text-foreground transition-colors">
+            <span>Moderator</span>
           </div>
         )}
 
         {/* CTA */}
         {isClickable && (
           <div>
-            <span className={`text-foreground group-hover:text-white font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
+            <span className={`text-foreground group-hover:text-white font-black underline text-xs sm:text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
               {hasVideo ? 'Watch Video' : 'View Content'}
-              <Icon name="chevron-right" size={14} className="group-hover:text-white group-hover:translate-x-1 transition-all" aria-hidden="true" />
+              <Icon name="chevron-right" size={12} className="group-hover:text-white group-hover:translate-x-1 transition-all sm:w-3.5 sm:h-3.5" aria-hidden="true" />
             </span>
           </div>
         )}
