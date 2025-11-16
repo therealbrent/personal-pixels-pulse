@@ -178,7 +178,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight">
             {Array.isArray(item.venue) 
               ? item.venue.map(v => v.trim()).join(' • ')
-              : item.venue
+              : item.venue.trim()
             }
           </div>
         )}
