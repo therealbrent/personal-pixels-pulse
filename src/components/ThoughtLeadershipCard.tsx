@@ -188,9 +188,9 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           </div>
         )}
 
-        {/* VENUE OR PUBLICATION - Force uppercase like DATE */}
+        {/* VENUE OR PUBLICATION */}
         {displayLabel && (
-          <div className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider uppercase opacity-80 transition-colors mb-2">
+          <div className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors mb-2">
             {displayLabel}
           </div>
         )}
