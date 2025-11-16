@@ -190,9 +190,9 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
 
         {/* VENUE OR PUBLICATION - Single unified rendering */}
         {displayLabel && (
-          <div className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight text-left block indent-0 p-0 m-0 ml-0 pl-0">
+          <span className="text-[10px] sm:text-xs font-bold text-foreground group-hover:text-white transition-colors opacity-80 mb-2 leading-tight block w-full" style={{ textIndent: '0', paddingLeft: '0', marginLeft: '0' }}>
             {displayLabel}
-          </div>
+          </span>
         )}
         
         {/* TITLE */}
