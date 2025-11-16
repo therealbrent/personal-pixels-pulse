@@ -147,7 +147,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
       className={`bg-background border-2 sm:border-4 border-foreground shadow-neo-sm ${styles.cardHoverBg} ${
-        isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] ${styles.shadowColor}` : 'transition-all duration-300'
+        isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
       } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden min-h-[140px] sm:min-h-[160px]`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
       tabIndex={isClickable ? 0 : undefined}
