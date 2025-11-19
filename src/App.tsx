@@ -338,7 +338,7 @@ function HomePage() {
 
                     <div>
                       <h4 className="text-xl font-bold mb-3 text-primary-text">Beyond the day job</h4>
-                      <p>In October 2025, I accepted UC San Diego's invitation to become <Link to="/designer-in-residence" className="text-primary hover:text-primary/80 underline font-semibold">Designer in Residence</Link>. As a member of this industry affiliate program, I will mentor students, co-lead design programs, and connect academic research back to enterprise challenges.</p>
+                      <p>In October 2025, I accepted UC San Diego's invitation to become <Link to="/designer-in-residence" className="text-primary hover:text-primary/80 underline font-semibold inline-flex items-center gap-1">Designer-in-Residence<Icon name="external-link" size={16} /></Link>. As a member of this industry affiliate program, I will mentor students, co-lead design programs, and connect academic research back to enterprise challenges.</p>
                     </div>
                   </>
                 )}
