@@ -279,49 +279,27 @@ export default function CareerTimeline() {
         role="list"
         aria-label="Career timeline entries"
       >
-        {/* Year Axis */}
-        <div 
-          className="relative" 
-          style={{ height: `${timeScale.totalHeight}px` }}
-          aria-label="Timeline years"
-        >
-          {timeScale.years.map(({ year, position }) => (
-            <div
-              key={year}
-              className="absolute right-0 font-black text-2xl text-foreground"
-              style={{ top: `${position}px` }}
-              aria-label={`Year ${year}`}
-            >
-              {year}
-            </div>
-          ))}
-        </div>
+          {/* Year Labels */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 pointer-events-none">
+            {timeScale.years.map(({ year, position }) => (
+              <div
+                key={year}
+                className="absolute left-0 transform -translate-y-1/2"
+                style={{ top: `${position}px` }}
+              >
+                <span className="text-sm font-bold text-muted-foreground uppercase tracking-wider">
+                  {year}
+                </span>
+              </div>
+            ))}
+          </div>
 
-        {/* Accent Bar with Stripes */}
+        {/* Simplified Accent Bar */}
         <div className="relative" style={{ height: `${timeScale.totalHeight}px` }}>
           <div
-            className="w-full h-full bg-primary relative overflow-hidden"
-            style={{
-              backgroundImage: `repeating-linear-gradient(
-                45deg,
-                hsl(var(--primary)),
-                hsl(var(--primary)) 10px,
-                hsl(var(--primary) / 0.8) 10px,
-                hsl(var(--primary) / 0.8) 20px
-              )`,
-            }}
+            className="w-full h-full bg-border"
             aria-hidden="true"
-          >
-            {/* Rotated Label */}
-            <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap origin-center"
-              style={{ transform: 'translateX(-50%) translateY(-50%) rotate(-90deg)' }}
-            >
-              <span className="text-xs font-black uppercase tracking-widest text-foreground">
-                Career Timeline
-              </span>
-            </div>
-          </div>
+          />
         </div>
 
         {/* Timeline Cards with Absolute Positioning */}
