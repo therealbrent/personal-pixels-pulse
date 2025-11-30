@@ -116,7 +116,36 @@ export const careerTimeline: CareerRole[] = [
       },
     ],
   },
-
+  {
+    id: "marketing-segment",
+    type: "role",
+    company: "Segment",
+    title: "Director of Content Marketing",
+    employmentType: "Full-time",
+    startDate: "2015-11",
+    endDate: "2016-08",
+    description:
+      "Joined as Segment’s first marketing leader at Series A to define a new software category — Customer Data Platform (CDP) — and build the marketing foundation for scale. Balanced strategy with execution in a player-coach role, shaping the brand, product GTM, and team culture.",
+    contributions: [
+      "Key achievement or responsibility #1",
+      "Key achievement or responsibility #2",
+      "Key achievement or responsibility #3",
+    ],
+    projects: [
+      {
+        name: "Project Mango",
+        description: "Corporate rebrand",
+      },
+      {
+        name: "This Year in Books",
+        description: "Amazon Publishing",
+      },
+      {
+        name: "Sumo Logic",
+        description: "Rebrand + CMS Build",
+      },
+    ],
+  },
   {
     id: "consultant",
     type: "role",
