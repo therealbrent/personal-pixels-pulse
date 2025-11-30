@@ -94,7 +94,7 @@ export const careerTimeline: CareerRole[] = [
     title: "Director of Marketing",
     employmentType: "Full-time",
     startDate: "2023-01",
-    endDate: "Present",
+    endDate: "2020-08",
     description: "Add your role description here. Describe your key responsibilities and impact.",
     contributions: [
       "Key achievement or responsibility #1",
@@ -103,8 +103,16 @@ export const careerTimeline: CareerRole[] = [
     ],
     projects: [
       {
-        name: "Project Name",
-        description: "Brief project description",
+        name: "Project Mango",
+        description: "Corporate rebrand",
+      },
+      {
+        name: "This Year in Books",
+        description: "Amazon Publishing",
+      },
+      {
+        name: "Sumo Logic",
+        description: "Rebrand + CMS Build",
       },
     ],
   },
