@@ -168,7 +168,6 @@ export const careerTimeline: CareerRole[] = [
       },
     ],
   },
-    },
   {
     id: "digitaria",
     type: "role",
@@ -191,7 +190,7 @@ export const careerTimeline: CareerRole[] = [
       },
     ],
   },
-    {
+  {
     id: "tickets",
     type: "role",
     company: "Tickets.com",
@@ -219,14 +218,13 @@ export const careerTimeline: CareerRole[] = [
         name: "Town Ballroom",
         description: "Deployed new box office software.",
       },
-      },
       {
         name: "Tulsia Performing Arts Center",
         description: "Deployed new box office software.",
       },
     ],
   },
-    {
+  {
     id: "nascar",
     type: "role",
     company: "NASCAR",
