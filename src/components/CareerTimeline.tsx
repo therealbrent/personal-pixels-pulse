@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { careerTimeline, calculateDuration, CareerRole } from '@/data/careerTimeline';
 import CareerTimelineCard from './CareerTimelineCard';
 import CareerDetailModal from './CareerDetailModal';
@@ -14,33 +14,99 @@ export default function CareerTimeline() {
     return dateB.getTime() - dateA.getTime();
   });
 
-  // Extract unique years for the axis
-  const years = Array.from(
-    new Set(
-      sortedTimeline.flatMap((role) => {
-        const startYear = new Date(role.startDate).getFullYear();
-        const endYear =
-          role.endDate === 'Present'
-            ? new Date().getFullYear()
-            : new Date(role.endDate).getFullYear();
-        const yearRange = [];
-        for (let year = startYear; year <= endYear; year++) {
-          yearRange.push(year);
+  // Calculate time scale and positioning
+  const timeScale = useMemo(() => {
+    // Find earliest and latest dates
+    const dates = sortedTimeline.flatMap(role => [
+      new Date(role.startDate),
+      role.endDate === 'Present' ? new Date() : new Date(role.endDate)
+    ]);
+    
+    const earliestDate = new Date(Math.min(...dates.map(d => d.getTime())));
+    const latestDate = new Date(Math.max(...dates.map(d => d.getTime())));
+    
+    // Calculate total months in timeline
+    const totalMonths = (latestDate.getFullYear() - earliestDate.getFullYear()) * 12 
+      + (latestDate.getMonth() - earliestDate.getMonth());
+    
+    // Pixels per month
+    const PIXELS_PER_MONTH = 8;
+    const totalHeight = totalMonths * PIXELS_PER_MONTH;
+    
+    // Calculate position for a given date
+    const getPosition = (date: Date) => {
+      const monthsFromStart = (date.getFullYear() - earliestDate.getFullYear()) * 12 
+        + (date.getMonth() - earliestDate.getMonth());
+      return monthsFromStart * PIXELS_PER_MONTH;
+    };
+    
+    // Generate year markers
+    const years: Array<{ year: number; position: number }> = [];
+    for (let year = latestDate.getFullYear(); year >= earliestDate.getFullYear(); year--) {
+      const yearDate = new Date(year, 0, 1); // January 1st of each year
+      years.push({
+        year,
+        position: getPosition(yearDate)
+      });
+    }
+    
+    return {
+      earliestDate,
+      latestDate,
+      totalHeight,
+      getPosition,
+      years
+    };
+  }, [sortedTimeline]);
+
+  // Calculate positions and handle overlaps
+  const positionedRoles = useMemo(() => {
+    return sortedTimeline.map(role => {
+      const startDate = new Date(role.startDate);
+      const endDate = role.endDate === 'Present' ? new Date() : new Date(role.endDate);
+      const top = timeScale.getPosition(startDate);
+      const bottom = timeScale.getPosition(endDate);
+      const height = Math.max(bottom - top, role.type === 'education' ? 0 : 120);
+      
+      return {
+        role,
+        top,
+        height,
+        startDate,
+        endDate
+      };
+    });
+  }, [sortedTimeline, timeScale]);
+
+  // Detect overlapping roles and assign columns
+  const rolesWithColumns = useMemo(() => {
+    return positionedRoles.map((current, index) => {
+      if (current.role.type === 'education') {
+        return { ...current, column: 0 };
+      }
+      
+      // Check for overlaps with previous roles
+      let column = 0;
+      const currentEnd = current.top + current.height;
+      
+      for (let i = 0; i < index; i++) {
+        const other = positionedRoles[i];
+        if (other.role.type === 'education') continue;
+        
+        const otherEnd = other.top + other.height;
+        
+        // Check if they overlap
+        const overlaps = (current.top < otherEnd) && (currentEnd > other.top);
+        
+        if (overlaps) {
+          column = 1; // Move to second column if overlap detected
+          break;
         }
-        return yearRange;
-      })
-    )
-  ).sort((a, b) => b - a);
-
-  // Calculate card heights based on duration (minimum height for visibility)
-  const MIN_HEIGHT = 120;
-  const MONTH_HEIGHT = 8;
-
-  const getCardHeight = (role: CareerRole) => {
-    if (role.type === 'education') return 0; // Education markers don't need height
-    const months = calculateDuration(role.startDate, role.endDate);
-    return Math.max(MIN_HEIGHT, months * MONTH_HEIGHT);
-  };
+      }
+      
+      return { ...current, column };
+    });
+  }, [positionedRoles]);
 
   const handleRoleClick = (role: CareerRole, index: number) => {
     setSelectedRole(role);
@@ -67,16 +133,20 @@ export default function CareerTimeline() {
     <>
       <div className="grid grid-cols-[80px_12px_1fr] gap-4 lg:gap-6 max-w-5xl mx-auto">
         {/* Year Axis */}
-        <div className="flex flex-col items-end gap-16 pt-2">
-          {years.map((year) => (
-            <div key={year} className="font-black text-2xl text-foreground">
+        <div className="relative" style={{ height: `${timeScale.totalHeight}px` }}>
+          {timeScale.years.map(({ year, position }) => (
+            <div
+              key={year}
+              className="absolute right-0 font-black text-2xl text-foreground"
+              style={{ top: `${position}px` }}
+            >
               {year}
             </div>
           ))}
         </div>
 
         {/* Accent Bar with Stripes */}
-        <div className="relative">
+        <div className="relative" style={{ height: `${timeScale.totalHeight}px` }}>
           <div
             className="w-full h-full bg-primary relative overflow-hidden"
             style={{
@@ -101,15 +171,24 @@ export default function CareerTimeline() {
           </div>
         </div>
 
-        {/* Timeline Cards */}
-        <div className="space-y-4">
-          {sortedTimeline.map((role, index) => (
-            <CareerTimelineCard
+        {/* Timeline Cards with Absolute Positioning */}
+        <div className="relative" style={{ height: `${timeScale.totalHeight}px` }}>
+          {rolesWithColumns.map(({ role, top, height, column }, index) => (
+            <div
               key={role.id}
-              role={role}
-              height={getCardHeight(role)}
-              onClick={() => handleRoleClick(role, index)}
-            />
+              className="absolute transition-all duration-300"
+              style={{
+                top: `${top}px`,
+                left: column === 1 ? '52%' : '0',
+                width: column === 1 ? '46%' : '100%',
+              }}
+            >
+              <CareerTimelineCard
+                role={role}
+                height={height}
+                onClick={() => handleRoleClick(role, index)}
+              />
+            </div>
           ))}
         </div>
       </div>
