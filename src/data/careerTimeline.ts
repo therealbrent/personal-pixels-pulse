@@ -245,6 +245,7 @@ export const careerTimeline: CareerRole[] = [
         description: "Project Decription",
       },
     ],
+  },
   {
     id: "lighthouse",
     type: "role",
