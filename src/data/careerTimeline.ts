@@ -266,8 +266,7 @@ export const careerTimeline: CareerRole[] = [
     title: "Product Strategy Certificate",
     startDate: "2020",
     endDate: "2020",
-    description:
-      "This program equips learners to think like the CEO of a product or service - focusing on a cradle-to-grave approach for managing and optimizing the life of a product or service.",
+    description: "This program equips learners to think like the CEO of a product or service - focusing on a cradle-to-grave approach for managing and optimizing the life of a product or service.",
     contributions: [],
   },
   {
