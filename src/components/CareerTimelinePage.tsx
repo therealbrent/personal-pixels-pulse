@@ -1,7 +1,12 @@
 import SEO from './SEO';
 import CareerTimeline from './CareerTimeline';
+import ErrorBoundary from './ErrorBoundary';
+import KeyboardShortcutsHelp from './KeyboardShortcutsHelp';
+import { useState } from 'react';
 
 export default function CareerTimelinePage() {
+  const [showShortcuts, setShowShortcuts] = useState(false);
+
   return (
     <>
       <SEO
@@ -12,6 +17,8 @@ export default function CareerTimelinePage() {
         ogImage="/og-images/career.png"
         canonicalUrl="/career"
       />
+
+      <KeyboardShortcutsHelp />
 
       <main className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-12 sm:py-16 lg:py-20">
@@ -25,10 +32,12 @@ export default function CareerTimelinePage() {
             </p>
           </header>
 
-          {/* Timeline Section */}
-          <section aria-label="Career timeline">
-            <CareerTimeline />
-          </section>
+          {/* Timeline Section with Error Boundary */}
+          <ErrorBoundary>
+            <section aria-label="Career timeline">
+              <CareerTimeline />
+            </section>
+          </ErrorBoundary>
         </div>
       </main>
     </>
