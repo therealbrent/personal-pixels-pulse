@@ -8,3 +8,4 @@ export { default as ConfettiEffect } from './ConfettiEffect';
 export { default as LLMSTextPage } from './LLMSTextPage';
 export { default as SpeakingMediaPage } from './SpeakingMediaPage';
 export { default as DesignCaseStudiesPage } from './DesignCaseStudiesPage';
+export { default as CareerTimelinePage } from './CareerTimelinePage';

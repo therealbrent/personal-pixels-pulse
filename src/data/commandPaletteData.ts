@@ -76,6 +76,16 @@ export const commandPaletteData: CommandItem[] = [
     description: 'Machine-readable site information',
     bodyContent: 'Machine-readable site information for AI models LLMs large language models structured data. About expertise skills key projects achievements professional profiles contact. Enterprise AI platforms GTM innovation ABM account-based marketing WRITER Qualcomm.',
   },
+  {
+    id: 'career',
+    title: 'Career Timeline',
+    url: '/career',
+    icon: Briefcase,
+    type: 'page',
+    keywords: ['career', 'timeline', 'history', 'experience', 'work', 'roles', 'jobs'],
+    description: 'Interactive career journey timeline',
+    bodyContent: 'Career timeline professional journey roles experience work history companies positions achievements contributions projects education interactive visualization chronological career path progression.',
+  },
 
   // ===== LEVEL 3: SPECIFIC TALKS & PRESENTATIONS =====
   {
