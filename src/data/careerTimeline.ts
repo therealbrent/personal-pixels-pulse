@@ -245,6 +245,49 @@ export const careerTimeline: CareerRole[] = [
         description: "Project Decription",
       },
     ],
+  {
+    id: "lighthouse",
+    type: "role",
+    company: "Lighthouse Title",
+    title: "Systems Analyst",
+    employmentType: "Full-time",
+    startDate: "2002-10",
+    endDate: "2004-06",
+    description:
+      "I managed a team of Producers and led a strategic account.",
+    contributions: [
+      "Key achievement or responsibility #1",
+      "Key achievement or responsibility #2",
+      "Key achievement or responsibility #3",
+    ],
+    projects: [
+      {
+        name: "Project Name",
+        description: "Project Decription",
+      },
+    ],
+  },
+    {
+    id: "eckerd",
+    type: "role",
+    company: "Eckerd (acq by Rite-Aid)",
+    title: "Photo Lab Manager",
+    employmentType: "Full-time",
+    startDate: "1999-12",
+    endDate: "2003-06",
+    description:
+      "I managed a team of Producers and led a strategic account.",
+    contributions: [
+      "Key achievement or responsibility #1",
+      "Key achievement or responsibility #2",
+      "Key achievement or responsibility #3",
+    ],
+    projects: [
+      {
+        name: "Project Name",
+        description: "Project Decription",
+      },
+    ],
   },
   {
     id: "consultant",
