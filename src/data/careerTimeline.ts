@@ -178,7 +178,65 @@ export const careerTimeline: CareerRole[] = [
     startDate: "2011-07",
     endDate: "2013-04",
     description:
-      "I managed a team of Producers and led a strategic account.": [
+      "I managed a team of Producers and led a strategic account.",
+    contributions: [
+      "Key achievement or responsibility #1",
+      "Key achievement or responsibility #2",
+      "Key achievement or responsibility #3",
+    ],
+    projects: [
+      {
+        name: "Project Name",
+        description: "Project Decription",
+      },
+    ],
+  },
+    {
+    id: "tickets",
+    type: "role",
+    company: "Tickets.com",
+    title: "Service Delivery Project Manager",
+    employmentType: "Full-time",
+    startDate: "2010-08",
+    endDate: "2011-07",
+    description:
+      "I managed a team of Producers and led a strategic account.",
+    contributions: [
+      "Key achievement or responsibility #1",
+      "Key achievement or responsibility #2",
+      "Key achievement or responsibility #3",
+    ],
+    projects: [
+      {
+        name: "Oakland A's",
+        description: "Deployed new box office software.",
+      },
+      {
+        name: "The Palladium",
+        description: "Deployed new box office software.",
+      },
+      {
+        name: "Town Ballroom",
+        description: "Deployed new box office software.",
+      },
+      },
+      {
+        name: "Tulsia Performing Arts Center",
+        description: "Deployed new box office software.",
+      },
+    ],
+  },
+    {
+    id: "nascar",
+    type: "role",
+    company: "NASCAR",
+    title: "Business Analyst",
+    employmentType: "Full-time",
+    startDate: "2004-06",
+    endDate: "2010-08",
+    description:
+      "I managed a team of Producers and led a strategic account.",
+    contributions: [
       "Key achievement or responsibility #1",
       "Key achievement or responsibility #2",
       "Key achievement or responsibility #3",
