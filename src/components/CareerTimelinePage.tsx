@@ -1,12 +1,8 @@
 import SEO from './SEO';
 import CareerTimeline from './CareerTimeline';
 import ErrorBoundary from './ErrorBoundary';
-import KeyboardShortcutsHelp from './KeyboardShortcutsHelp';
-import { useState } from 'react';
 
 export default function CareerTimelinePage() {
-  const [showShortcuts, setShowShortcuts] = useState(false);
-
   return (
     <>
       <SEO
@@ -18,21 +14,19 @@ export default function CareerTimelinePage() {
         canonicalUrl="/career"
       />
 
-      <KeyboardShortcutsHelp />
-
       <main className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-12 sm:py-16 lg:py-20">
           {/* Page Header */}
-          <header className="mb-12 lg:mb-16">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-foreground mb-4 uppercase tracking-tight">
+          <header className="mb-12 lg:mb-16 max-w-4xl mx-auto">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-foreground mb-6 uppercase tracking-tight">
               Career Timeline
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl">
+            <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl leading-relaxed">
               My professional journey through design leadership, product management, and building impactful user experiences.
             </p>
           </header>
 
-          {/* Timeline Section with Error Boundary */}
+          {/* Timeline Section */}
           <ErrorBoundary>
             <section aria-label="Career timeline">
               <CareerTimeline />
