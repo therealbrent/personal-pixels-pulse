@@ -147,6 +147,50 @@ export const careerTimeline: CareerRole[] = [
     ],
   },
   {
+    id: "dt",
+    type: "role",
+    company: "Telepathy Design (acq by ServiceNow)",
+    title: "Marketing Director",
+    employmentType: "Full-time",
+    startDate: "2013-04",
+    endDate: "2015-11",
+    description:
+      "I wore multiple hats to deliver exceptional results in marketing, content leadership, and account strategy. Through content marketing and strategic partnerships, our in-house marketing team catapulted the agency’s profile to new heights and scale lead generation, while also driving client satisfaction as a trusted advisor.",
+    contributions: [
+      "Key achievement or responsibility #1",
+      "Key achievement or responsibility #2",
+      "Key achievement or responsibility #3",
+    ],
+    projects: [
+      {
+        name: "Project Name",
+        description: "Project Decription",
+      },
+    ],
+  },
+    },
+  {
+    id: "digitaria",
+    type: "role",
+    company: "Digitaria",
+    title: "Executive Producer",
+    employmentType: "Full-time",
+    startDate: "2011-07",
+    endDate: "2013-04",
+    description:
+      "I managed a team of Producers and led a strategic account.": [
+      "Key achievement or responsibility #1",
+      "Key achievement or responsibility #2",
+      "Key achievement or responsibility #3",
+    ],
+    projects: [
+      {
+        name: "Project Name",
+        description: "Project Decription",
+      },
+    ],
+  },
+  {
     id: "consultant",
     type: "role",
     company: "Brent Summers Marketing & UX Consulting",
