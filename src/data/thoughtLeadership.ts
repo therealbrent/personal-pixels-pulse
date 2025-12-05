@@ -26,6 +26,7 @@ export interface ThoughtLeadershipItem {
   quote?: string; // For articles - pull quote from the piece
   url?: string; // External link (article, video, audio)
   videoUrl?: string; // For presentations with video
+  imageUrl?: string; // Optional image for card
 
   // Metadata
   topics?: string[]; // ["AI", "Marketing", "UX"] - for future filtering
@@ -59,6 +60,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2025-11-04",
     venue: "AI Leaders Forum (SF)",
     videoUrl: "https://www.youtube.com/watch?v=Y8RHToB_Rtc",
+    imageUrl: "/lovable-uploads/ailf-sf.png",
     topics: ["AI", "Leadership"],
   },
   {
@@ -162,6 +164,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     venue: "Breakthrough (Las Vegas)",
     topics: ["Marketing"],
     videoUrl: "https://fast.wistia.net/embed/iframe/t8xiz5vncz?autoPlay=1",
+    imageUrl: "/lovable-uploads/breakthrough.png",
   },
   {
     id: "power-of-brand-2025",
