@@ -180,36 +180,43 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       )}
 
-      <div className="flex flex-col p-3 pr-10 sm:p-4 sm:pr-16">
-        {/* DATE */}
-        {formattedDate && (
-          <div className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors mb-3 sm:mb-4" aria-label={`Date: ${item.date}`}>
-            {formattedDate}
+      <div className="flex flex-col justify-between h-full p-3 pr-10 sm:p-4 sm:pr-16">
+        {/* Top section - fixed height meta info */}
+        <div>
+          {/* DATE - always reserve space */}
+          <div className="h-4 sm:h-5 mb-2">
+            {formattedDate && (
+              <div className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors" aria-label={`Date: ${item.date}`}>
+                {formattedDate}
+              </div>
+            )}
           </div>
-        )}
 
-        {/* VENUE OR PUBLICATION */}
-        {displayLabel && (
-          <div className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors mb-3 sm:mb-4">
-            {displayLabel}
+          {/* VENUE OR PUBLICATION - always reserve space */}
+          <div className="h-4 sm:h-5 mb-2">
+            {displayLabel && (
+              <div className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors line-clamp-1">
+                {displayLabel}
+              </div>
+            )}
           </div>
-        )}
-        
-        {/* TITLE */}
-        <h3 className="text-sm sm:text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors mb-2 sm:mb-3">
-          {item.title}
-        </h3>
+          
+          {/* TITLE */}
+          <h3 className="text-sm sm:text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors mb-2 sm:mb-3">
+            {item.title}
+          </h3>
 
-        {/* Moderator badge */}
-        {item.description === "Moderator" && (
-          <div className="inline-flex items-center bg-foreground text-background px-2 py-0.5 sm:px-2.5 sm:py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-wider mb-2 sm:mb-3 group-hover:bg-white group-hover:text-foreground transition-colors">
-            <span>Moderator</span>
-          </div>
-        )}
+          {/* Moderator badge */}
+          {item.description === "Moderator" && (
+            <div className="inline-flex items-center bg-foreground text-background px-2 py-0.5 sm:px-2.5 sm:py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-wider mb-2 sm:mb-3 group-hover:bg-white group-hover:text-foreground transition-colors">
+              <span>Moderator</span>
+            </div>
+          )}
+        </div>
 
-        {/* CTA */}
+        {/* Bottom section - CTA pinned to bottom */}
         {isClickable && (
-          <div>
+          <div className="mt-auto pt-2">
             <span className={`text-foreground group-hover:text-white font-black underline text-xs sm:text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
               {hasVideo ? 'Watch Video' : 'View Content'}
               <Icon name="chevron-right" size={12} className="group-hover:text-white group-hover:translate-x-1 transition-all sm:w-3.5 sm:h-3.5" aria-hidden="true" />
