@@ -95,12 +95,12 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       <article
         onClick={isClickable ? handleClick : undefined}
         style={{ animationDelay: staggerDelay }}
-        className={`md:col-span-2 bg-background border-2 sm:border-4 border-foreground shadow-neo-md ${styles.cardHoverBg} ${
+        className={`block md:col-span-2 bg-background border-2 sm:border-4 border-foreground shadow-neo-md ${styles.cardHoverBg} ${
           isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
         } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden`}
         aria-label={`Article: ${item.title} featured in ${item.publication}`}
         tabIndex={isClickable ? 0 : undefined}
-        role={isClickable ? 'button' : 'article'}
+        role={isClickable ? 'button' : undefined}
         onKeyDown={isClickable ? (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -159,13 +159,13 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
   return (
     <article
       onClick={isClickable ? handleClick : undefined}
-      style={{ animationDelay: staggerDelay, margin: 0, padding: 0 }}
-      className={`box-border bg-background border-2 sm:border-4 border-foreground shadow-neo-sm ${styles.cardHoverBg} ${
+      style={{ animationDelay: staggerDelay }}
+      className={`block bg-background border-2 sm:border-4 border-foreground shadow-neo-sm ${styles.cardHoverBg} ${
         isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
       } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden min-h-[140px] sm:min-h-[160px]`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
       tabIndex={isClickable ? 0 : undefined}
-      role={isClickable ? 'button' : 'article'}
+      role={isClickable ? 'button' : undefined}
       onKeyDown={isClickable ? (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
