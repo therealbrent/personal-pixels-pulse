@@ -180,11 +180,11 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       )}
 
-      <div className="flex flex-col justify-between h-full pl-4 pt-4 pb-4 pr-10 sm:pr-16">
+      <div className="flex flex-col justify-between h-full p-4 pr-10 sm:pr-16 ml-0">
         {/* Top section - fixed height meta info */}
-        <div>
+        <div className="ml-0 pl-0">
           {/* DATE - always reserve space */}
-          <div className="min-h-4 sm:min-h-5 mb-2">
+          <div className="min-h-4 sm:min-h-5 mb-2 ml-0 pl-0">
             {formattedDate && (
               <p className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors m-0 p-0" aria-label={`Date: ${item.date}`}>
                 {formattedDate}
@@ -193,7 +193,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           </div>
 
           {/* VENUE OR PUBLICATION - always reserve space */}
-          <div className="min-h-4 sm:min-h-5 mb-2">
+          <div className="min-h-4 sm:min-h-5 mb-2 ml-0 pl-0">
             {displayLabel && (
               <p className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors line-clamp-1 m-0 p-0">
                 {displayLabel}
