@@ -116,7 +116,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         )}
         
         {/* Content stacked in order with consistent left alignment */}
-        <div className="flex flex-col p-4 pr-10 sm:p-6 sm:pr-12">
+        <div className="flex flex-col p-4 pr-10 sm:pr-12">
           {/* DATE */}
           <div className="text-[10px] font-black text-foreground tracking-widest uppercase opacity-60 mb-5" aria-label={`Date: ${item.date}`}>
             {formatDate(item.date)}
@@ -180,7 +180,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       )}
 
-      <div className="flex flex-col justify-between h-full p-3 pr-10 sm:p-4 sm:pr-16">
+      <div className="flex flex-col justify-between h-full p-4 pr-10 sm:pr-16">
         {/* Top section - fixed height meta info */}
         <div>
           {/* DATE - always reserve space */}
