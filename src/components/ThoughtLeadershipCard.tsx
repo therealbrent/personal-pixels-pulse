@@ -95,7 +95,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       <article
         onClick={isClickable ? handleClick : undefined}
         style={{ animationDelay: staggerDelay }}
-        className={`block md:col-span-2 bg-background border-2 sm:border-4 border-foreground shadow-neo-md ${styles.cardHoverBg} ${
+        className={`block bg-background border-2 sm:border-4 border-foreground shadow-neo-md ${styles.cardHoverBg} ${
           isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
         } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden`}
         aria-label={`Article: ${item.title} featured in ${item.publication}`}
