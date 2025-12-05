@@ -156,13 +156,15 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
   }
 
   // Compact card for presentations, podcasts, panels
+  const hasImage = !!item.imageUrl;
+  
   return (
     <article
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
       className={`block bg-background border-2 sm:border-4 border-foreground shadow-neo-sm ${styles.cardHoverBg} ${
         isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
-      } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden min-h-[140px] sm:min-h-[160px]`}
+      } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden ${hasImage ? '' : 'min-h-[140px] sm:min-h-[160px]'}`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
       tabIndex={isClickable ? 0 : undefined}
       role={isClickable ? 'button' : undefined}
@@ -174,14 +176,26 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       } : undefined}
       data-item-id={item.id}
     >
+      {/* Image section */}
+      {hasImage && (
+        <div className="w-full aspect-video overflow-hidden border-b-2 sm:border-b-4 border-foreground">
+          <img 
+            src={item.imageUrl} 
+            alt={`${item.title} at ${formattedVenue || item.publication}`}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
+        </div>
+      )}
+
       {/* Clickable indicator - top right */}
-      {isClickable && (
+      {isClickable && !hasImage && (
         <div className="absolute top-3 right-3 sm:top-5 sm:right-5 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
           <Icon name="external-link" size={14} className="text-foreground group-hover:text-white transition-colors sm:w-4 sm:h-4" />
         </div>
       )}
 
-      <div className="p-4 pr-10 sm:pr-16">
+      <div className={`p-4 ${hasImage ? '' : 'pr-10 sm:pr-16'}`}>
         {/* DATE */}
         <div className="min-h-4 sm:min-h-5 mb-2">
           {formattedDate && (
