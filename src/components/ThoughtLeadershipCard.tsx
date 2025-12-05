@@ -160,7 +160,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
     <article
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
-      className={`m-0 bg-background border-2 sm:border-4 border-foreground shadow-neo-sm ${styles.cardHoverBg} ${
+      className={`bg-background border-2 sm:border-4 border-foreground shadow-neo-sm ${styles.cardHoverBg} ${
         isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
       } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden min-h-[140px] sm:min-h-[160px]`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
@@ -180,29 +180,29 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       )}
 
-      <div className="flex flex-col justify-between h-full pl-4 pt-4 pb-4 pr-10 sm:pr-16 items-start text-left">
+      <div className="flex flex-col justify-between h-full p-4 pr-10 sm:pr-16">
         {/* Top section - fixed height meta info */}
-        <div className="ml-0 pl-0">
+        <div>
           {/* DATE - always reserve space */}
-          <div className="min-h-4 sm:min-h-5 mb-2 ml-0 pl-0">
+          <div className="min-h-4 sm:min-h-5 mb-2">
             {formattedDate && (
-              <p className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors m-0 p-0" aria-label={`Date: ${item.date}`}>
+              <p className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors" aria-label={`Date: ${item.date}`}>
                 {formattedDate}
               </p>
             )}
           </div>
 
           {/* VENUE OR PUBLICATION - always reserve space */}
-          <div className="min-h-4 sm:min-h-5 mb-2 ml-0 pl-0">
+          <div className="min-h-4 sm:min-h-5 mb-2">
             {displayLabel && (
-              <p className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors line-clamp-1 m-0 p-0">
+              <p className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors line-clamp-1">
                 {displayLabel}
               </p>
             )}
           </div>
           
           {/* TITLE */}
-          <h3 className="text-sm sm:text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors mt-0 ml-0 mr-0 mb-2 sm:mb-3 p-0">
+          <h3 className="text-sm sm:text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors mb-2 sm:mb-3">
             {item.title}
           </h3>
 
