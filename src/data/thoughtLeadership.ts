@@ -57,7 +57,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: "presentation",
     title: "The AI Champion's Playbook",
     date: "2025-11-04",
-    venue: "AI Leaders Forum (NYC)",
+    venue: "AI Leaders Forum (SF)",
     videoUrl: "https://www.youtube.com/watch?v=Y8RHToB_Rtc",
     topics: ["AI", "Leadership"],
   },
@@ -83,7 +83,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: "presentation",
     title: "Happier Humans, Better Business",
     date: "2025-06-01",
-    venue: ["AI Leaders Forum (SF)", "San Diego Design Week"],
+    venue: ["AI Leaders Forum (NYC)", "San Diego Design Week"],
     videoUrl: "https://youtu.be/ApLKfzjaN3Y",
     topics: ["AI", "UX", "Business"],
     featured: true, // Mark as featured if you want it prominently displayed
