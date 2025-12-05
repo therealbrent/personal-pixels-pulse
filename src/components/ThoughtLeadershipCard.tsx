@@ -130,13 +130,13 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           )}
           
           {/* TITLE */}
-          <h3 className={`text-xl md:text-3xl font-black text-foreground leading-tight ${styles.hoverText} transition-colors mb-4`}>
+          <h3 className={`text-base sm:text-lg md:text-xl font-black text-foreground leading-tight ${styles.hoverText} transition-colors mb-3`}>
             {item.title}
           </h3>
           
           {/* QUOTE */}
           {item.quote && (
-            <blockquote className={`border-l-4 border-foreground pl-4 italic text-foreground ${styles.hoverText} text-base md:text-lg leading-relaxed transition-colors duration-300 opacity-90 mb-6`}>
+            <blockquote className={`border-l-4 border-foreground pl-3 italic text-foreground ${styles.hoverText} text-sm md:text-base leading-relaxed transition-colors duration-300 opacity-90 mb-4`}>
               {item.quote}
             </blockquote>
           )}
