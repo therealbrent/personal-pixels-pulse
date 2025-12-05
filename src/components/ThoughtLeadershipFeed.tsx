@@ -57,18 +57,27 @@ export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadership
           />
         )}
 
-        {/* Feed Grid */}
-        <div 
-          id="thought-leadership-grid" 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 auto-rows-max"
-          style={{ gridAutoFlow: 'dense' }}
-          role="region"
-          aria-live="polite"
-          aria-label={`Showing ${items.length} ${activeFilter === 'all' ? '' : activeFilter} items`}
-        >
-          {items.map((item, index) => (
-            <ThoughtLeadershipCard key={item.id} item={item} index={index} />
-          ))}
+        {/* Feed Grid with debug alignment guides */}
+        <div className="relative">
+          {/* Debug vertical alignment guides - remove after verification */}
+          <div className="absolute inset-0 pointer-events-none z-10 grid md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" aria-hidden="true">
+            <div className="border-l-2 border-accent/30 ml-4"></div>
+            <div className="border-l-2 border-accent/30 ml-4"></div>
+            <div className="border-l-2 border-accent/30 ml-4 hidden lg:block"></div>
+          </div>
+          
+          <div 
+            id="thought-leadership-grid" 
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 auto-rows-max"
+            style={{ gridAutoFlow: 'dense' }}
+            role="region"
+            aria-live="polite"
+            aria-label={`Showing ${items.length} ${activeFilter === 'all' ? '' : activeFilter} items`}
+          >
+            {items.map((item, index) => (
+              <ThoughtLeadershipCard key={item.id} item={item} index={index} />
+            ))}
+          </div>
         </div>
 
         {/* Empty State */}
