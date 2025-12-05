@@ -181,43 +181,40 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       )}
 
-      <div className="flex flex-col justify-between h-full p-4 pr-10 sm:pr-16" style={{ margin: 0 }}>
-        {/* Top section - fixed height meta info */}
-        <div>
-          {/* DATE - always reserve space */}
-          <div className="min-h-4 sm:min-h-5 mb-2">
-            {formattedDate && (
-              <p className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors" aria-label={`Date: ${item.date}`}>
-                {formattedDate}
-              </p>
-            )}
-          </div>
-
-          {/* VENUE OR PUBLICATION - always reserve space */}
-          <div className="min-h-4 sm:min-h-5 mb-2">
-            {displayLabel && (
-              <p className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors line-clamp-1">
-                {displayLabel}
-              </p>
-            )}
-          </div>
-          
-          {/* TITLE */}
-          <h3 className="text-sm sm:text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors mb-2 sm:mb-3">
-            {item.title}
-          </h3>
-
-          {/* Moderator badge */}
-          {item.description === "Moderator" && (
-            <div className="inline-flex items-center bg-foreground text-background px-2 py-0.5 sm:px-2.5 sm:py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-wider mb-2 sm:mb-3 group-hover:bg-white group-hover:text-foreground transition-colors">
-              <span>Moderator</span>
-            </div>
+      <div className="p-4 pr-10 sm:pr-16">
+        {/* DATE */}
+        <div className="min-h-4 sm:min-h-5 mb-2">
+          {formattedDate && (
+            <p className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors" aria-label={`Date: ${item.date}`}>
+              {formattedDate}
+            </p>
           )}
         </div>
 
-        {/* Bottom section - CTA pinned to bottom */}
+        {/* VENUE OR PUBLICATION */}
+        <div className="min-h-4 sm:min-h-5 mb-2">
+          {displayLabel && (
+            <p className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors line-clamp-1">
+              {displayLabel}
+            </p>
+          )}
+        </div>
+        
+        {/* TITLE */}
+        <h3 className="text-sm sm:text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors mb-2 sm:mb-3">
+          {item.title}
+        </h3>
+
+        {/* Moderator badge */}
+        {item.description === "Moderator" && (
+          <div className="inline-flex items-center bg-foreground text-background px-2 py-0.5 sm:px-2.5 sm:py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-wider mb-2 sm:mb-3 group-hover:bg-white group-hover:text-foreground transition-colors">
+            <span>Moderator</span>
+          </div>
+        )}
+
+        {/* CTA */}
         {isClickable && (
-          <div className="mt-auto pt-2">
+          <div className="pt-2">
             <span className={`text-foreground group-hover:text-white font-black underline text-xs sm:text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
               {hasVideo ? 'Watch Video' : 'View Content'}
               <Icon name="chevron-right" size={12} className="group-hover:text-white group-hover:translate-x-1 transition-all sm:w-3.5 sm:h-3.5" aria-hidden="true" />
