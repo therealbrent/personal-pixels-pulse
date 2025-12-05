@@ -180,7 +180,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       )}
 
-      <div className="flex flex-col justify-between h-full p-4 pr-10 sm:p-4 sm:pr-16">
+      <div className="flex flex-col justify-between h-full pl-4 pt-4 pb-4 pr-10 sm:pr-16">
         {/* Top section - fixed height meta info */}
         <div>
           {/* DATE - always reserve space */}
