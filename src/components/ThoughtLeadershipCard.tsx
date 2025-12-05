@@ -180,29 +180,29 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         </div>
       )}
 
-      <div className="flex flex-col justify-between h-full p-4 pr-10 sm:pr-16">
+      <div className="flex flex-col justify-between h-full p-4 pr-10 sm:p-4 sm:pr-16">
         {/* Top section - fixed height meta info */}
         <div>
           {/* DATE - always reserve space */}
-          <div className="h-4 sm:h-5 mb-2">
+          <div className="min-h-4 sm:min-h-5 mb-2">
             {formattedDate && (
-              <div className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors" aria-label={`Date: ${item.date}`}>
+              <p className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors m-0 p-0" aria-label={`Date: ${item.date}`}>
                 {formattedDate}
-              </div>
+              </p>
             )}
           </div>
 
           {/* VENUE OR PUBLICATION - always reserve space */}
-          <div className="h-4 sm:h-5 mb-2">
+          <div className="min-h-4 sm:min-h-5 mb-2">
             {displayLabel && (
-              <div className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors line-clamp-1">
+              <p className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors line-clamp-1 m-0 p-0">
                 {displayLabel}
-              </div>
+              </p>
             )}
           </div>
           
           {/* TITLE */}
-          <h3 className="text-sm sm:text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors mb-2 sm:mb-3">
+          <h3 className="text-sm sm:text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors mt-0 ml-0 mr-0 mb-2 sm:mb-3 p-0">
             {item.title}
           </h3>
 
