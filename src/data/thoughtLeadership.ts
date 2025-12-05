@@ -160,6 +160,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2025-11-12",
     venue: "Breakthrough (Las Vegas)",
     topics: ["Marketing"],
+    videoUrl: "https://fast.wistia.net/embed/iframe/t8xiz5vncz?autoPlay=1",
   },
   {
     id: "power-of-brand-2025",
