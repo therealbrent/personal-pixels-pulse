@@ -58,6 +58,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "The AI Champion's Playbook",
     date: "2025-11-04",
     venue: "AI Leaders Forum (NYC)",
+    videoUrl: "https://www.youtube.com/watch?v=Y8RHToB_Rtc",
     topics: ["AI", "Leadership"],
   },
   {
