@@ -59,11 +59,11 @@ export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadership
 
         {/* Feed Grid with debug alignment guides */}
         <div className="relative">
-          {/* Debug vertical alignment guides - border(4px) + padding(16px) = 20px offset */}
+        {/* Debug vertical alignment guides - mobile: border(2px) + padding(16px) = 18px, desktop: border(4px) + padding(16px) = 20px */}
           <div className="absolute inset-0 pointer-events-none z-10 grid md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" aria-hidden="true">
-            <div className="border-l-4 border-accent" style={{ marginLeft: '20px' }}></div>
-            <div className="border-l-4 border-cobalt" style={{ marginLeft: '20px' }}></div>
-            <div className="border-l-4 border-primary hidden lg:block" style={{ marginLeft: '20px' }}></div>
+            <div className="border-l-4 border-accent ml-[18px] sm:ml-[20px]"></div>
+            <div className="border-l-4 border-cobalt ml-[18px] sm:ml-[20px]"></div>
+            <div className="border-l-4 border-primary hidden lg:block ml-[18px] sm:ml-[20px]"></div>
           </div>
           
           <div 
