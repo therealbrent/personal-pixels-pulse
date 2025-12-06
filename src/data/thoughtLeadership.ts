@@ -89,6 +89,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2025-06-01",
     venue: ["AI Leaders Forum (NYC)", "San Diego Design Week"],
     videoUrl: "https://youtu.be/ApLKfzjaN3Y",
+    imageUrl: "/lovable-uploads/ailf-nyc.png",
     topics: ["AI", "UX", "Business"],
     featured: true, // Mark as featured if you want it prominently displayed
   },
@@ -99,6 +100,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2025-05-23",
     venue: "AI x Marketing Summit",
     videoUrl: "https://youtu.be/d3A-gHkwiBE?si=ecXBZYUpq_StpVs2&t=1",
+    imageUrl: "/lovable-uploads/buyers-remorse.png",
     topics: ["AI", "Marketing"],
   },
   {
