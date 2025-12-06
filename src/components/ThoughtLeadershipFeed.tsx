@@ -27,7 +27,6 @@ export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadership
   const filterOptions: { value: FilterType; label: string }[] = [
     { value: 'all', label: 'All' },
     { value: 'presentation', label: 'Presentations' },
-    { value: 'podcast', label: 'Podcasts' },
     { value: 'panel', label: 'Panels' },
     { value: 'article', label: 'Media Features' },
   ];
