@@ -143,6 +143,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2020-01-01", // TODO: Provide more specific date if available
     venue: "Convey UX (Seattle)",
     videoUrl: "https://youtu.be/s827NVsQXS4?si=8JP9q_-fhSDMs_8_",
+    imageUrl: "/lovable-uploads/ux-insights-podcast.webp",
     topics: ["UX", "Strategy"],
   },
 
