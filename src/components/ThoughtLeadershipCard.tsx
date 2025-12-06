@@ -17,13 +17,13 @@ const formatDate = (dateString: string) => {
   }
 };
 
-// Normalize venue to always be a string for consistent rendering
-const formatVenue = (venue: string | string[] | undefined): string => {
-  if (!venue) return '';
+// Normalize venue to array for stacked rendering
+const getVenueArray = (venue: string | string[] | undefined): string[] => {
+  if (!venue) return [];
   if (Array.isArray(venue)) {
-    return venue.map(v => v.trim()).join(', ');
+    return venue.map(v => v.trim());
   }
-  return venue.trim();
+  return [venue.trim()];
 };
 
 // Content type style mappings using design system
@@ -78,8 +78,8 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
   
   // Normalize data at the top for consistent rendering
   const formattedDate = formatDate(item.date);
-  const formattedVenue = formatVenue(item.venue);
-  const displayLabel = formattedVenue || item.publication || '';
+  const venueArray = getVenueArray(item.venue);
+  const hasMultipleVenues = venueArray.length > 1;
   
   const handleClick = () => {
     if (hasVideo) {
@@ -181,7 +181,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         <div className="w-full aspect-video overflow-hidden border-b-2 sm:border-b-4 border-foreground">
           <img 
             src={item.imageUrl} 
-            alt={`${item.title} at ${formattedVenue || item.publication}`}
+            alt={`${item.title} at ${venueArray.join(', ') || item.publication}`}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
@@ -205,13 +205,21 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           )}
         </div>
 
-        {/* VENUE OR PUBLICATION */}
-        <div className="min-h-4 sm:min-h-5 mb-2">
-          {displayLabel && (
+        {/* VENUE OR PUBLICATION - stacked if multiple venues */}
+        <div className="mb-2">
+          {venueArray.length > 0 ? (
+            <div className="flex flex-col">
+              {venueArray.map((venue, idx) => (
+                <p key={idx} className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors">
+                  {venue}
+                </p>
+              ))}
+            </div>
+          ) : item.publication ? (
             <p className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors line-clamp-1">
-              {displayLabel}
+              {item.publication}
             </p>
-          )}
+          ) : null}
         </div>
         
         {/* TITLE */}
