@@ -214,15 +214,6 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     featured: true,
   },
   {
-    id: "gm-diversity-design-2021",
-    type: "panel",
-    title: "General Motors presents Exploring Diversity + Design",
-    date: "2021-01-01", // TODO: Provide more specific date if available
-    venue: "Good Cause (Virtual)",
-    description: "Moderator",
-    topics: ["Design", "Diversity"],
-  },
-  {
     id: "data-privacy-ai-2020",
     type: "panel",
     title: "Exploring Data Privacy & Artificial Intelligence in UX",
