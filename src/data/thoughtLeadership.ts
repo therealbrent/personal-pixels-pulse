@@ -209,6 +209,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "Design Ambassadors Summit",
     date: "2023-03-13",
     venue: "Urban Discovery Academy (San Diego)",
+    imageUrl: "/lovable-uploads/design-summit.jpeg",
     topics: ["Design", "Enterprise"],
     featured: true,
   },
