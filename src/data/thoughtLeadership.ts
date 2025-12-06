@@ -89,6 +89,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "On Enterprise Generative AI Adoption",
     date: "2025-05-21",
     venue: "SDXD (San Diego)",
+    imageUrl: "/lovable-uploads/sdxd-lightning.avif",
     topics: ["AI", "Enterprise"],
   },
   {
