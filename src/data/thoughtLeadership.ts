@@ -218,6 +218,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2020-01-01", // TODO: Provide more specific date if available
     venue: "SDXD (San Diego)",
     description: "Moderator",
+    imageUrl: "/lovable-uploads/data-privacy.avif",
     topics: ["UX", "AI", "Privacy"],
   },
   {
