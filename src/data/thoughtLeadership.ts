@@ -235,6 +235,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "Strategic Interviews: The Hiring Manager's Perspective",
     date: "2019-01-01", // TODO: Provide more specific date if available
     venue: "SDXD (San Diego)",
+    imageUrl: "/lovable-uploads/strategic-interviews.avif",
     topics: ["UX", "Hiring"],
   },
   {
