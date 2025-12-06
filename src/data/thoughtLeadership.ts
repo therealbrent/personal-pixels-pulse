@@ -99,7 +99,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2025-06-26",
     venue: "Webit (Sofia)",
     videoUrl: "https://www.youtube.com/watch?v=eEbuoK5DS30",
-    imageUrl: "/lovable-uploads/webit.jpg",
+    imageUrl: "/lovable-uploads/webit-2025.jpg",
     topics: ["AI", "Marketing"],
   },
   {
