@@ -38,6 +38,16 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // PRESENTATIONS
   // ==========================================
   {
+    id: "convey-ux-podcast-2020",
+    type: "panel",
+    title: "Balancing Quantitative and Qualitative Perspectives in UX Strategy",
+    date: "2020-01-01", // TODO: Provide more specific date if available
+    venue: "Convey UX (Seattle)",
+    videoUrl: "https://slideslive.com/38925088/balancing-quantitative-and-qualitative-perspectives-in-ux-strategy",
+    imageUrl: "/lovable-uploads/ux-insights-podcast.webp",
+    topics: ["UX", "Strategy"],
+  },
+  {
     id: "ana-abm-2025",
     type: "presentation",
     title: "Future-Proofing Your ABM Strategy",
