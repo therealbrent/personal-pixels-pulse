@@ -117,7 +117,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: "five-tips-ai-marketing-2025",
     type: "presentation",
     title: "Five Tips to Avoid Generative AI Buyer's Remorse",
-    date: "2025-05-23",
+    date: "2025-04-23",
     venue: "AI x Marketing Summit (SF)",
     videoUrl: "https://youtu.be/d3A-gHkwiBE?si=ecXBZYUpq_StpVs2&t=1",
     imageUrl: "/lovable-uploads/buyers-remorse.png",
