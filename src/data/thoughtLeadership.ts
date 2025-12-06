@@ -155,6 +155,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "How AI is Shaping Creative Futures",
     date: "2025-09-07",
     venue: "AI Create (San Diego)",
+    imageUrl: "/lovable-uploads/ai-create.jpeg",
     topics: ["AI", "Design"],
     featured: true,
   },
