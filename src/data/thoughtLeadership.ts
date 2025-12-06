@@ -108,7 +108,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2025-06-01",
     venue: ["AI Leaders Forum (NYC)", "San Diego Design Week"],
     videoUrl: "https://youtu.be/ApLKfzjaN3Y",
-    imageUrl: "/lovable-uploads/happier-humans.jpeg",
+    imageUrl: "/lovable-uploads/happier-humans.png",
     topics: ["AI", "UX", "Business"],
     featured: true, // Mark as featured if you want it prominently displayed
   },
