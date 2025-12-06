@@ -182,7 +182,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     venue: "Breakthrough (Las Vegas)",
     topics: ["Marketing"],
     videoUrl: "https://fast.wistia.net/embed/iframe/t8xiz5vncz?autoPlay=1",
-    imageUrl: "/lovable-uploads/breakthrough.png",
+    imageUrl: "/lovable-uploads/breakthrough-tangy-twists.png",
   },
   {
     id: "power-of-brand-2025",
