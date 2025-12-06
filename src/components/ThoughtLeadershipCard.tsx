@@ -1,6 +1,7 @@
 import { Icon } from './ui/icon';
 import type { ThoughtLeadershipItem, ContentType } from '@/data/thoughtLeadership';
-import { format } from 'date-fns';
+import { format, isFuture, parseISO } from 'date-fns';
+import { useRef, useState, useEffect } from 'react';
 
 interface ThoughtLeadershipCardProps {
   item: ThoughtLeadershipItem;
@@ -69,6 +70,45 @@ const contentTypeStyles: Record<ContentType, {
   }
 };
 
+// Coming Soon tag component with viewport animation
+const ComingSoonTag = () => {
+  const tagRef = useRef<HTMLSpanElement>(null);
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    const tag = tagRef.current;
+    if (!tag) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Activate when element is near center (40%-60% of viewport)
+        const rect = entry.boundingClientRect;
+        const viewportCenter = window.innerHeight / 2;
+        const elementCenter = rect.top + rect.height / 2;
+        const distanceFromCenter = Math.abs(viewportCenter - elementCenter);
+        const threshold = window.innerHeight * 0.3;
+        
+        setIsActive(entry.isIntersecting && distanceFromCenter < threshold);
+      },
+      { threshold: [0, 0.5, 1], rootMargin: '-20% 0px -20% 0px' }
+    );
+
+    observer.observe(tag);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <span
+      ref={tagRef}
+      className={`inline-block bg-accent text-white px-2 py-0.5 text-[9px] sm:text-[10px] font-black uppercase tracking-wider transition-transform duration-300 ${
+        isActive ? 'animate-wiggle scale-110' : ''
+      }`}
+    >
+      Coming Soon
+    </span>
+  );
+};
+
 export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadershipCardProps) {
   const styles = contentTypeStyles[item.type];
   const hasVideo = !!item.videoUrl;
@@ -80,6 +120,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
   const formattedDate = formatDate(item.date);
   const venueArray = getVenueArray(item.venue);
   const hasMultipleVenues = venueArray.length > 1;
+  const isFutureEvent = isFuture(parseISO(item.date));
   
   const handleClick = () => {
     if (hasVideo) {
@@ -226,6 +267,13 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         <h3 className="text-sm sm:text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors mb-2 sm:mb-3">
           {item.title}
         </h3>
+
+        {/* Coming Soon tag for future events */}
+        {isFutureEvent && (
+          <div className="mb-2 sm:mb-3">
+            <ComingSoonTag />
+          </div>
+        )}
 
         {/* Moderator badge */}
         {item.description === "Moderator" && (

@@ -128,6 +128,20 @@ export default {
 						height: '0'
 					}
 				},
+				'wiggle': {
+					'0%, 100%': {
+						transform: 'rotate(-2deg) scale(1)'
+					},
+					'25%': {
+						transform: 'rotate(2deg) scale(1.05)'
+					},
+					'50%': {
+						transform: 'rotate(-2deg) scale(1.1)'
+					},
+					'75%': {
+						transform: 'rotate(2deg) scale(1.05)'
+					}
+				},
 				'confetti-physics': {
 					'0%': {
 						transform: 'translate(0, 0) rotate(0deg) scale(1)',
@@ -178,6 +192,7 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
+				'wiggle': 'wiggle 0.5s ease-in-out infinite',
 				'confetti-physics': 'confetti-physics 4.7s cubic-bezier(0.33, 0.01, 0.48, 1) forwards',
 				'parallax-hover': 'parallax-hover 0.3s ease-out forwards'
 			}
