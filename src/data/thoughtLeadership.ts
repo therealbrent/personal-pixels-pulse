@@ -51,6 +51,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "Next-Generation Marketing: How AI is Used at Qualcomm Technologies",
     date: "2025-09-11",
     venue: "ANA (Los Angeles)",
+    imageUrl: "/lovable-uploads/ana-la.jpeg",
     topics: ["AI", "Marketing"],
   },
   {
