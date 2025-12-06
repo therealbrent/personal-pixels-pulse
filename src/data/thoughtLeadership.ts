@@ -43,6 +43,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "Interrupting Microaggressions with Workplace Intervention",
     date: "2022-11-01", // TODO: Provide more specific date if available
     venue: "Out & Equal (Las Vegas)",
+    imageUrl: "/lovable-uploads/outequal.jpeg",
     topics: ["LGBT"],
   },
   {
