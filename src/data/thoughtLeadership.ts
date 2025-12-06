@@ -222,14 +222,6 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     topics: ["UX", "AI", "Privacy"],
   },
   {
-    id: "interview-olympics-2019",
-    type: "panel",
-    title: "Interview Olympics",
-    date: "2019-01-01", // TODO: Provide more specific date if available
-    venue: "SDXD (San Diego)",
-    topics: ["UX", "Hiring"],
-  },
-  {
     id: "strategic-interviews-2019",
     type: "panel",
     title: "Strategic Interviews: The Hiring Manager's Perspective",
