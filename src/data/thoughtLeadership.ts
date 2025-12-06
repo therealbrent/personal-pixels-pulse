@@ -38,6 +38,14 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // PRESENTATIONS
   // ==========================================
   {
+    id: "out-equal",
+    type: "presentation",
+    title: "Interrupting Microaggressions with Workplace Intervention",
+    date: "2022-11-01", // TODO: Provide more specific date if available
+    venue: "Out & Equal (Las Vegas)",
+    topics: ["LGBT"],
+  },
+  {
     id: "convey-ux-podcast-2020",
     type: "panel",
     title: "Balancing Quantitative and Qualitative Perspectives in UX Strategy",
