@@ -134,7 +134,6 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "Frameworks and Free Tools to Improve Your UX Writing",
     date: "2020-01-01", // TODO: Provide more specific date if available
     venue: "Bolder Design (Virtual)",
-    imageUrl: "/lovable-uploads/frameworks-free-tools.avif",
     topics: ["UX", "Content"],
   },
 
