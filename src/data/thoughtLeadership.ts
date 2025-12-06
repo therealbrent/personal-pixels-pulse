@@ -207,7 +207,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: "dfa-design-ambassadors",
     type: "panel",
     title: "Design Ambassadors Summit",
-    date: "2023-03-13",
+    date: "2023-11-11",
     venue: "Urban Discovery Academy (San Diego)",
     imageUrl: "/lovable-uploads/design-summit.jpeg",
     topics: ["Design", "Enterprise"],
