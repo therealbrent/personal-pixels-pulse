@@ -151,17 +151,6 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // ==========================================
   // PODCASTS
   // ==========================================
-  {
-    id: "convey-ux-podcast-2020",
-    type: "podcast",
-    title: "Balancing Quantitative and Qualitative Perspectives in UX Strategy",
-    date: "2020-01-01", // TODO: Provide more specific date if available
-    venue: "Convey UX (Seattle)",
-    videoUrl: "https://youtu.be/s827NVsQXS4?si=8JP9q_-fhSDMs_8_",
-    imageUrl: "/lovable-uploads/ux-insights-podcast.webp",
-    topics: ["UX", "Strategy"],
-  },
-
   // ==========================================
   // PANELS
   // ==========================================
