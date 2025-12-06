@@ -50,7 +50,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: "convey-ux-podcast-2020",
     type: "panel",
     title: "Balancing Quantitative and Qualitative Perspectives in UX Strategy",
-    date: "2020-01-01", // TODO: Provide more specific date if available
+    date: "2020-03-03",
     venue: "Convey UX (Seattle)",
     videoUrl: "https://slideslive.com/38925088/balancing-quantitative-and-qualitative-perspectives-in-ux-strategy",
     imageUrl: "/lovable-uploads/ux-insights-podcast.webp",
