@@ -110,6 +110,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2020-01-01", // TODO: Provide more specific date if available
     venue: "Product-Led Growth Conference (Virtual)",
     videoUrl: "https://www.youtube.com/watch?v=GRdx9R2B7iQ&t=1s",
+    imageUrl: "/lovable-uploads/use-science.png",
     topics: ["UX", "Content"],
   },
   {
