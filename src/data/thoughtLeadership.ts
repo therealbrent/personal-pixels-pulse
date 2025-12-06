@@ -178,6 +178,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2025-09-19",
     venue: "Qualcomm (San Diego)",
     description: "Moderator",
+    imageUrl: "/lovable-uploads/qualcomm-brand.jpeg",
     topics: ["Design", "Branding"],
   },
   {
