@@ -78,6 +78,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2025-06-26",
     venue: "Webit (Sofia)",
     videoUrl: "https://www.youtube.com/watch?v=eEbuoK5DS30",
+    imageUrl: "/lovable-uploads/webit.png",
     topics: ["AI", "Marketing"],
   },
   {
@@ -120,6 +121,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
       "San Diego Digital Designers",
     ],
     videoUrl: "https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp",
+    imageUrl: "/lovable-uploads/ux-flywheel.png",
     topics: ["UX", "Strategy"],
   },
   {
