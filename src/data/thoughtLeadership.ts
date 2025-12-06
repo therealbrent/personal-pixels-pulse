@@ -248,6 +248,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2015-01-01", // TODO: Provide more specific date if available
     venue: "UC San Diego",
     description: "Moderator",
+    imageUrl: "/lovable-uploads/uxsd.png",
     topics: ["UX", "Career"],
   },
 
