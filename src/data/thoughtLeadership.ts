@@ -145,7 +145,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
       "San Diego Digital Designers",
     ],
     videoUrl: "https://youtu.be/UYApYNEnaMM?si=v3IsSc6R50rZeVlp",
-    imageUrl: "/lovable-uploads/ux-flywheel.png",
+    imageUrl: "/lovable-uploads/ux-flywheel-content.png",
     topics: ["UX", "Strategy"],
   },
   {
