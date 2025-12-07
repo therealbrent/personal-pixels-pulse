@@ -1,9 +1,16 @@
 import { useState, useEffect } from 'react';
-import { getThoughtLeadershipByType, getThoughtLeadershipByTopic, getSortedThoughtLeadership, type ContentType } from '@/data/thoughtLeadership';
+import { getThoughtLeadershipByType, getThoughtLeadershipByTopic, getThoughtLeadershipByIds, type ContentType } from '@/data/thoughtLeadership';
 import ThoughtLeadershipCard from './ThoughtLeadershipCard';
 import ThoughtLeadershipFilters from './ThoughtLeadershipFilters';
 
 type FilterType = ContentType | 'all';
+
+// Featured item IDs
+const FEATURED_IDS = [
+  'convey-ux-podcast-2020',
+  'ai-champions-playbook-2025',
+  'ux-flywheel-2020',
+];
 
 interface ThoughtLeadershipFeedProps {
   topicFilter?: string;
@@ -11,6 +18,9 @@ interface ThoughtLeadershipFeedProps {
 
 export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadershipFeedProps) {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
+  
+  // Get featured items
+  const featuredItems = getThoughtLeadershipByIds(FEATURED_IDS);
   
   // Get items based on topic or type filter
   let items = topicFilter 
@@ -48,6 +58,19 @@ export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadership
 
       {/* Filters & Content Container */}
       <div className="max-w-7xl mx-auto bg-background border-4 md:border-8 border-foreground shadow-neo-xl border-t-0 p-4 sm:p-6 md:p-8">
+        
+        {/* Featured Row */}
+        {!topicFilter && (
+          <div className="mb-6">
+            <h3 className="text-sm font-black uppercase tracking-wider text-foreground/60 mb-3">Featured</h3>
+            <div className="grid md:grid-cols-3 gap-3 sm:gap-4">
+              {featuredItems.map((item, index) => (
+                <ThoughtLeadershipCard key={item.id} item={item} index={index} />
+              ))}
+            </div>
+          </div>
+        )}
+
         {!topicFilter && (
           <ThoughtLeadershipFilters
             activeFilter={activeFilter}

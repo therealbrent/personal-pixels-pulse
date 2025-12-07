@@ -354,6 +354,11 @@ export const getFeaturedThoughtLeadership = () => {
   return getSortedThoughtLeadership().filter((item) => item.featured);
 };
 
+// Helper function to get items by IDs
+export const getThoughtLeadershipByIds = (ids: string[]) => {
+  return ids.map((id) => thoughtLeadershipData.find((item) => item.id === id)).filter(Boolean) as ThoughtLeadershipItem[];
+};
+
 // Helper function to filter by topic
 export const getThoughtLeadershipByTopic = (topic: string) => {
   const sorted = getSortedThoughtLeadership();
