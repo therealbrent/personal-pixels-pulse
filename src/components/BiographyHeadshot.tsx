@@ -5,7 +5,7 @@ export default function BiographyHeadshot() {
   // High-res version for download
   const highResHeadshot = '/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png';
   // Compressed preview for fast loading
-  const previewHeadshot = '/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a-preview.png';
+  const previewHeadshot = '/lovable-uploads/brent-summers-headshot-min.png';
   
   const handleDownloadHeadshot = () => {
     const link = document.createElement('a');
