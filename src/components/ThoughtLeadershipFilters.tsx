@@ -81,7 +81,7 @@ export default function ThoughtLeadershipFilters({
   return (
     <>
       {/* Desktop Tabs */}
-      <nav className="hidden md:flex gap-3 mb-8 flex-wrap" role="tablist" aria-label="Content type filters">
+      <nav className="hidden md:flex gap-3 flex-wrap" role="tablist" aria-label="Content type filters">
         {filterOptions.map(({ value, label }) => {
           const isActive = activeFilter === value;
           
@@ -101,7 +101,7 @@ export default function ThoughtLeadershipFilters({
       </nav>
 
       {/* Mobile Dropdown */}
-      <div className="md:hidden mb-8">
+      <div className="md:hidden">
         <label htmlFor="content-filter" className="sr-only">Filter content by type</label>
         <Select value={activeFilter} onValueChange={(value) => onFilterChange(value as FilterType)}>
           <SelectTrigger 
