@@ -72,11 +72,19 @@ export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadership
         )}
 
         {!topicFilter && (
-          <ThoughtLeadershipFilters
-            activeFilter={activeFilter}
-            onFilterChange={setActiveFilter}
-            filterOptions={filterOptions}
-          />
+          <div className="mb-8">
+            {/* Divider with label */}
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-1 bg-foreground flex-1"></div>
+              <h3 className="text-sm font-black uppercase tracking-widest text-foreground px-2">Filter by Type</h3>
+              <div className="h-1 bg-foreground flex-1"></div>
+            </div>
+            <ThoughtLeadershipFilters
+              activeFilter={activeFilter}
+              onFilterChange={setActiveFilter}
+              filterOptions={filterOptions}
+            />
+          </div>
         )}
 
         {/* Feed Grid */}
