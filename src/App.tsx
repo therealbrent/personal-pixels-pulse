@@ -118,6 +118,22 @@ function HomePage() {
         </button>
       </header>
 
+      {/* As Seen In Press Bar */}
+      <section aria-label="Featured press mentions" className="bg-foreground py-6 border-y-8 border-accent">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12">
+            <span className="text-xs font-black uppercase tracking-widest text-background/60">As Seen In</span>
+            <div className="flex items-center gap-6 sm:gap-10 md:gap-16">
+              <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background tracking-tight hover:text-accent transition-colors">Forbes</span>
+              <span className="w-2 h-2 bg-accent rotate-45" aria-hidden="true"></span>
+              <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background tracking-tight hover:text-accent transition-colors">UX Magazine</span>
+              <span className="w-2 h-2 bg-accent rotate-45" aria-hidden="true"></span>
+              <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background tracking-tight hover:text-accent transition-colors">CIO News</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Work Section */}
       <main id="main-content">
       <section id="work" className="py-16">
