@@ -6,6 +6,7 @@ import { useRef, useState, useEffect } from 'react';
 interface ThoughtLeadershipCardProps {
   item: ThoughtLeadershipItem;
   index: number;
+  featured?: boolean;
 }
 
 // Format date as MMM YY (e.g., "NOV 25")
@@ -109,7 +110,7 @@ const ComingSoonTag = () => {
   );
 };
 
-export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadershipCardProps) {
+export default function ThoughtLeadershipCard({ item, index, featured = false }: ThoughtLeadershipCardProps) {
   const styles = contentTypeStyles[item.type];
   const hasVideo = !!item.videoUrl;
   const hasUrl = !!item.url;
@@ -136,7 +137,11 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       <article
         onClick={isClickable ? handleClick : undefined}
         style={{ animationDelay: staggerDelay }}
-        className={`block bg-background border-2 sm:border-4 border-foreground shadow-neo-md ${styles.cardHoverBg} ${
+        className={`block border-2 sm:border-4 border-foreground shadow-neo-md ${styles.cardHoverBg} ${
+          featured 
+            ? 'bg-primary' 
+            : 'bg-background'
+        } ${
           isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
         } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden`}
         aria-label={`Article: ${item.title} featured in ${item.publication}`}
@@ -152,32 +157,34 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
         {/* Clickable indicator */}
         {isClickable && (
           <div className="absolute top-4 right-4 sm:top-6 sm:right-6 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
-            <Icon name="external-link" size={16} className={`text-foreground ${styles.hoverText} transition-colors sm:w-5 sm:h-5`} />
+            <Icon name="external-link" size={16} className={`${featured ? 'text-foreground' : 'text-foreground'} ${styles.hoverText} transition-colors sm:w-5 sm:h-5`} />
           </div>
         )}
         
         {/* Content stacked in order with consistent left alignment */}
         <div className="flex flex-col p-4 pr-10 sm:pr-12">
-          {/* DATE */}
-          <div className="text-[10px] font-black text-foreground tracking-widest uppercase opacity-60 mb-5" aria-label={`Date: ${item.date}`}>
-            {formatDate(item.date)}
-          </div>
+          {/* DATE - hidden for featured */}
+          {!featured && (
+            <div className="text-[10px] font-black text-foreground tracking-widest uppercase opacity-60 mb-5" aria-label={`Date: ${item.date}`}>
+              {formatDate(item.date)}
+            </div>
+          )}
 
           {/* PUBLICATION */}
           {item.publication && (
-            <div className={`text-xs font-black text-foreground tracking-wider uppercase opacity-80 ${styles.hoverText} transition-colors mb-3`} aria-label={`Published in ${item.publication}`}>
+            <div className={`text-xs font-black tracking-wider uppercase mb-3 ${featured ? 'text-foreground/80' : 'text-foreground opacity-80'} ${styles.hoverText} transition-colors`} aria-label={`Published in ${item.publication}`}>
               {item.publication}
             </div>
           )}
           
           {/* TITLE */}
-          <h3 className={`text-base sm:text-lg md:text-xl font-black text-foreground leading-tight ${styles.hoverText} transition-colors mb-3`}>
+          <h3 className={`text-base sm:text-lg md:text-xl font-black leading-tight transition-colors mb-3 ${featured ? 'text-foreground' : 'text-foreground'} ${styles.hoverText}`}>
             {item.title}
           </h3>
           
           {/* QUOTE */}
           {item.quote && (
-            <blockquote className={`border-l-4 border-foreground pl-3 italic text-foreground ${styles.hoverText} text-sm md:text-base leading-relaxed transition-colors duration-300 opacity-90 mb-4`}>
+            <blockquote className={`border-l-4 border-foreground pl-3 italic text-sm md:text-base leading-relaxed transition-colors duration-300 opacity-90 mb-4 ${featured ? 'text-foreground' : 'text-foreground'} ${styles.hoverText}`}>
               {item.quote}
             </blockquote>
           )}
@@ -185,7 +192,7 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
           {/* CTA */}
           {isClickable && (
             <div>
-              <span className={`text-foreground ${styles.hoverText} font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline`}>
+              <span className={`font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline ${featured ? 'text-foreground' : 'text-foreground'} ${styles.hoverText}`}>
                 Read Article
                 <Icon name="chevron-right" size={14} className={`${styles.hoverText} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
               </span>
@@ -203,7 +210,11 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
     <article
       onClick={isClickable ? handleClick : undefined}
       style={{ animationDelay: staggerDelay }}
-      className={`block bg-background border-2 sm:border-4 border-foreground shadow-neo-sm ${styles.cardHoverBg} ${
+      className={`block border-2 sm:border-4 border-foreground shadow-neo-sm ${styles.cardHoverBg} ${
+        featured 
+          ? 'bg-primary' 
+          : 'bg-background'
+      } ${
         isClickable ? `cursor-pointer transition-all duration-300 hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}` : 'transition-all duration-300'
       } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden ${hasImage ? '' : 'min-h-[140px] sm:min-h-[160px]'}`}
       aria-label={`${item.type}: ${item.title} at ${item.venue || item.publication}${hasVideo ? ' - Video available' : ''}`}
@@ -232,39 +243,43 @@ export default function ThoughtLeadershipCard({ item, index }: ThoughtLeadership
       {/* Clickable indicator - top right */}
       {isClickable && !hasImage && (
         <div className="absolute top-3 right-3 sm:top-5 sm:right-5 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
-          <Icon name="external-link" size={14} className="text-foreground group-hover:text-white transition-colors sm:w-4 sm:h-4" />
+          <Icon name="external-link" size={14} className={`${featured ? 'text-foreground' : 'text-foreground'} group-hover:text-white transition-colors sm:w-4 sm:h-4`} />
         </div>
       )}
 
       <div className={`p-4 ${hasImage ? '' : 'pr-10 sm:pr-16'}`}>
-        {/* DATE */}
-        <div className="min-h-4 sm:min-h-5 mb-2">
-          {formattedDate && (
-            <p className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors" aria-label={`Date: ${item.date}`}>
-              {formattedDate}
-            </p>
-          )}
-        </div>
+        {/* DATE - hidden for featured */}
+        {!featured && (
+          <div className="min-h-4 sm:min-h-5 mb-2">
+            {formattedDate && (
+              <p className="text-[9px] sm:text-[10px] font-black text-foreground group-hover:text-white tracking-widest uppercase opacity-60 transition-colors" aria-label={`Date: ${item.date}`}>
+                {formattedDate}
+              </p>
+            )}
+          </div>
+        )}
 
-        {/* VENUE OR PUBLICATION - stacked if multiple venues */}
-        <div className="mb-2">
-          {venueArray.length > 0 ? (
-            <div className="flex flex-col">
-              {venueArray.map((venue, idx) => (
-                <p key={idx} className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors">
-                  {venue}
-                </p>
-              ))}
-            </div>
-          ) : item.publication ? (
-            <p className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors line-clamp-1">
-              {item.publication}
-            </p>
-          ) : null}
-        </div>
+        {/* VENUE OR PUBLICATION - hidden for featured */}
+        {!featured && (
+          <div className="mb-2">
+            {venueArray.length > 0 ? (
+              <div className="flex flex-col">
+                {venueArray.map((venue, idx) => (
+                  <p key={idx} className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors">
+                    {venue}
+                  </p>
+                ))}
+              </div>
+            ) : item.publication ? (
+              <p className="text-[10px] sm:text-xs font-black text-foreground group-hover:text-white tracking-wider opacity-80 transition-colors line-clamp-1">
+                {item.publication}
+              </p>
+            ) : null}
+          </div>
+        )}
         
         {/* TITLE */}
-        <h3 className="text-sm sm:text-base md:text-lg font-black text-foreground group-hover:text-white leading-tight transition-colors mb-2 sm:mb-3">
+        <h3 className={`text-sm sm:text-base md:text-lg font-black leading-tight transition-colors mb-2 sm:mb-3 ${featured ? 'text-foreground' : 'text-foreground'} group-hover:text-white`}>
           {item.title}
         </h3>
 
