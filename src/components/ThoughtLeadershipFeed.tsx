@@ -65,7 +65,7 @@ export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadership
             <h3 className="text-sm font-black uppercase tracking-wider text-foreground/60 mb-3">Featured</h3>
             <div className="grid md:grid-cols-3 gap-3 sm:gap-4">
               {featuredItems.map((item, index) => (
-                <ThoughtLeadershipCard key={item.id} item={item} index={index} />
+                <ThoughtLeadershipCard key={item.id} item={item} index={index} featured />
               ))}
             </div>
           </div>
