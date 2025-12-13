@@ -95,19 +95,29 @@ export default function CareerTimeline() {
       .sort((a, b) => b.startTime - a.startTime); // Sort by most recent first
 
     // Assign rows to handle overlaps (within same category: consulting or full-time)
+    // Check VISUAL overlap based on left position + width, not just time
     const assignedRoles: typeof roles = [];
     
     for (const role of roles) {
       let assignedRow = 0;
       let foundRow = false;
       
+      const roleLeft = role.left;
+      const roleRight = role.left + role.width;
+      
       while (!foundRow) {
         // Only check overlaps with roles in the same category (above or below line)
-        const overlapsInRow = assignedRoles.filter(r => 
-          r.row === assignedRow && 
-          r.isConsulting === role.isConsulting &&
-          !(role.startTime >= r.endTime || role.endTime <= r.startTime)
-        );
+        // Use visual positions (left/width) to detect overlap, not time
+        const overlapsInRow = assignedRoles.filter(r => {
+          if (r.row !== assignedRow || r.isConsulting !== role.isConsulting) {
+            return false;
+          }
+          const rLeft = r.left;
+          const rRight = r.left + r.width;
+          // Visual overlap: NOT (role ends before r starts OR role starts after r ends)
+          // Add small gap (4px) to ensure cards don't touch
+          return !(roleRight <= rLeft - 4 || roleLeft >= rRight + 4);
+        });
         
         if (overlapsInRow.length === 0) {
           foundRow = true;
