@@ -188,7 +188,20 @@ export default function CareerTimeline() {
   };
 
   return (
-    <div className="w-full py-8">
+    <div className="w-full py-8 relative">
+      {/* Coming Soon Watermark */}
+      <div 
+        className="absolute inset-0 flex items-center justify-center z-50 pointer-events-none select-none"
+        aria-hidden="true"
+      >
+        <span 
+          className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-black uppercase tracking-tighter text-foreground/10 whitespace-nowrap -rotate-12"
+          style={{ textShadow: '0 0 0 transparent' }}
+        >
+          COMING SOON
+        </span>
+      </div>
+      
       <div className="container mx-auto px-4">
         {/* Legend */}
         <div className="flex gap-6 mb-6 flex-wrap">
