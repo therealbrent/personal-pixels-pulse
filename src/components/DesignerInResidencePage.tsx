@@ -4,10 +4,10 @@ export default function DesignerInResidencePage() {
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
       <SEO 
-        title="Designer in Residence - Brent Summers"
-        description="UCSD industry affiliate program where Brent mentors students, co-leads design programs, and connects academic research to enterprise challenges."
-        ogTitle="Designer in Residence - Brent Summers"
-        ogDescription="UCSD industry affiliate program connecting academic research to enterprise AI challenges."
+        title="UCSD Designer-in-Residence | Brent Summers, Marketing Leader at Qualcomm"
+        description="In this volunteer role, I mentor students, participate in design programs and connect academic research to enterprise challenges."
+        ogTitle="Brent Summers, UCSD Designer-in-Residence"
+        ogDescription="Engaging with the community as part of my professional development at Qualcomm Technologies."
         canonicalUrl="/designer-in-residence"
       />
 
