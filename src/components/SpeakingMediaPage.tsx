@@ -11,7 +11,7 @@ export default function SpeakingMediaPage() {
       <SEO 
         title="Brent Summers, Keynote Speaker | Bio + Headshot + Media Archive"
         description="Explore presentations, podcasts, panels, and interviews with Brent Summers"
-        ogTitle="Book Brent for Your Next Event"
+        ogTitle="Brent Summers, Marketing Leader & Keynote Speaker"
         ogDescription="I share stories, strategic frameworks, and lessons from two decades of leading change."
         ogImage="/og-images/speaking.png"
         canonicalUrl="/speaking"
