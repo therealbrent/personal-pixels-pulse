@@ -1,7 +1,7 @@
 import { useState, useMemo, lazy, Suspense, useRef, useEffect } from 'react';
 import { careerTimeline, CareerRole } from '@/data/careerTimeline';
 import { cn } from '@/lib/utils';
-import { Briefcase, GraduationCap, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const RoleDetailDrawer = lazy(() => import('./RoleDetailDrawer'));
 
@@ -64,16 +64,23 @@ export default function CareerTimeline() {
     return { earliestDate, latestDate, totalWidth, getPosition, years };
   }, []);
 
-  // Position roles and assign rows based on overlaps
+  const isConsulting = (role: CareerRole) => {
+    return role.employmentType === 'Freelance' || role.employmentType === 'Contract' || role.isFreelance;
+  };
+
+  // Position roles and assign rows based on overlaps (separate rows for consulting vs full-time)
   const positionedRoles = useMemo(() => {
     const roles = careerTimeline
       .filter(role => role.type === 'role')
       .map(role => {
         const start = parseDate(role.startDate);
         const end = parseDate(role.endDate);
-        const left = timeScale.getPosition(start);
-        const right = timeScale.getPosition(end);
-        const width = Math.max(right - left, CARD_MIN_WIDTH);
+        // Flip: position from the right (latest date) instead of left
+        const leftFromStart = timeScale.getPosition(start);
+        const rightFromStart = timeScale.getPosition(end);
+        // Invert positions so recent is on left
+        const left = timeScale.totalWidth - rightFromStart;
+        const width = Math.max(rightFromStart - leftFromStart, CARD_MIN_WIDTH);
 
         return {
           ...role,
@@ -81,12 +88,13 @@ export default function CareerTimeline() {
           width,
           startTime: start.getTime(),
           endTime: end.getTime(),
-          row: 0 // Will be assigned
+          row: 0, // Will be assigned
+          isConsulting: isConsulting(role)
         };
       })
-      .sort((a, b) => a.startTime - b.startTime);
+      .sort((a, b) => b.startTime - a.startTime); // Sort by most recent first
 
-    // Assign rows to handle overlaps
+    // Assign rows to handle overlaps (within same category: consulting or full-time)
     const assignedRoles: typeof roles = [];
     
     for (const role of roles) {
@@ -94,8 +102,10 @@ export default function CareerTimeline() {
       let foundRow = false;
       
       while (!foundRow) {
+        // Only check overlaps with roles in the same category (above or below line)
         const overlapsInRow = assignedRoles.filter(r => 
           r.row === assignedRow && 
+          r.isConsulting === role.isConsulting &&
           !(role.startTime >= r.endTime || role.endTime <= r.startTime)
         );
         
@@ -113,8 +123,11 @@ export default function CareerTimeline() {
     return assignedRoles;
   }, [timeScale]);
 
-  const maxRow = useMemo(() => Math.max(...positionedRoles.map(r => r.row)), [positionedRoles]);
-  const contentHeight = (maxRow + 1) * ROW_HEIGHT + TIMELINE_TRACK_HEIGHT + 80;
+  const maxRowAbove = useMemo(() => Math.max(0, ...positionedRoles.filter(r => !r.isConsulting).map(r => r.row)), [positionedRoles]);
+  const maxRowBelow = useMemo(() => Math.max(0, ...positionedRoles.filter(r => r.isConsulting).map(r => r.row)), [positionedRoles]);
+  const heightAbove = (maxRowAbove + 1) * ROW_HEIGHT;
+  const heightBelow = (maxRowBelow + 1) * ROW_HEIGHT;
+  const contentHeight = heightAbove + TIMELINE_TRACK_HEIGHT + heightBelow + 40;
 
   const selectedRole = selectedRoleIndex !== null ? positionedRoles[selectedRoleIndex] : null;
 
@@ -162,10 +175,6 @@ export default function CareerTimeline() {
     const startStr = startDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
     const endStr = end === 'Present' ? 'Present' : parseDate(end).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
     return `${startStr} — ${endStr}`;
-  };
-
-  const isConsulting = (role: CareerRole) => {
-    return role.employmentType === 'Freelance' || role.employmentType === 'Contract' || role.isFreelance;
   };
 
   return (
@@ -238,16 +247,16 @@ export default function CareerTimeline() {
               <div 
                 className="absolute left-0 right-0 bg-primary border-y-4 border-foreground"
                 style={{ 
-                  bottom: 0,
+                  top: `${heightAbove}px`,
                   height: `${TIMELINE_TRACK_HEIGHT}px`
                 }}
               >
-                {/* Year Markers */}
+                {/* Year Markers - flipped */}
                 {timeScale.years.map(({ year, position }) => (
                   <div
                     key={year}
                     className="absolute flex flex-col items-center"
-                    style={{ left: `${position}px` }}
+                    style={{ left: `${timeScale.totalWidth - position}px` }}
                   >
                     {/* Tick mark */}
                     <div className="w-1 h-4 bg-foreground absolute -top-4" />
@@ -261,44 +270,35 @@ export default function CareerTimeline() {
 
               {/* Role Cards */}
               {positionedRoles.map((role, index) => {
-                const consulting = isConsulting(role);
+                const consulting = role.isConsulting;
+                // Position: above line for full-time, below line for consulting
+                const verticalPosition = consulting
+                  ? heightAbove + TIMELINE_TRACK_HEIGHT + 16 + role.row * ROW_HEIGHT
+                  : heightAbove - ROW_HEIGHT - role.row * ROW_HEIGHT + 20;
+                
                 return (
                   <button
                     key={role.id}
                     onClick={() => setSelectedRoleIndex(index)}
                     className={cn(
-                      'absolute p-4 text-left group',
+                      'absolute p-3 text-left group',
                       'border-4 border-foreground',
                       'transition-all duration-200',
-                      'hover:-translate-y-1',
                       'focus:outline-none focus:ring-4 focus:ring-cobalt focus:ring-offset-2',
                       'animate-fade-in',
                       consulting 
-                        ? 'bg-destructive text-destructive-foreground hover:shadow-[0_4px_0_0_hsl(var(--foreground))]'
-                        : 'bg-accent text-accent-foreground hover:shadow-[0_4px_0_0_hsl(var(--foreground))]'
+                        ? 'bg-destructive text-destructive-foreground hover:translate-y-1 hover:shadow-[0_-4px_0_0_hsl(var(--foreground))]'
+                        : 'bg-accent text-accent-foreground hover:-translate-y-1 hover:shadow-[0_4px_0_0_hsl(var(--foreground))]'
                     )}
                     style={{
                       left: `${role.left}px`,
-                      bottom: `${TIMELINE_TRACK_HEIGHT + 16 + role.row * ROW_HEIGHT}px`,
+                      top: `${verticalPosition}px`,
                       width: `${role.width}px`,
                       minWidth: `${CARD_MIN_WIDTH}px`,
                       animationDelay: `${index * 30}ms`
                     }}
                     aria-label={`${role.title} at ${role.company}. ${formatDateRange(role.startDate, role.endDate)}. Click for details.`}
                   >
-                    {/* Icon */}
-                    <div 
-                      className={cn(
-                        'w-8 h-8 border-2 flex items-center justify-center mb-2',
-                        consulting 
-                          ? 'border-destructive-foreground bg-destructive-foreground/20'
-                          : 'border-accent-foreground bg-accent-foreground/20'
-                      )}
-                      aria-hidden="true"
-                    >
-                      <Briefcase className="w-4 h-4" />
-                    </div>
-
                     {/* Content */}
                     <div className="space-y-1">
                       <h3 className="text-sm font-black uppercase tracking-tight leading-tight line-clamp-2">
@@ -313,23 +313,39 @@ export default function CareerTimeline() {
                     </div>
 
                     {/* Connector to timeline */}
-                    <div 
-                      className="absolute left-6 w-0.5 bg-foreground"
-                      style={{
-                        bottom: `-${16 + role.row * ROW_HEIGHT}px`,
-                        height: `${12 + role.row * ROW_HEIGHT}px`
-                      }}
-                    />
-                    {/* Dot at timeline */}
-                    <div 
-                      className={cn(
-                        'absolute left-4 w-4 h-4 rounded-full border-2 border-foreground',
-                        consulting ? 'bg-destructive' : 'bg-accent'
-                      )}
-                      style={{
-                        bottom: `-${20 + role.row * ROW_HEIGHT}px`
-                      }}
-                    />
+                    {consulting ? (
+                      <>
+                        <div 
+                          className="absolute left-6 w-0.5 bg-foreground"
+                          style={{
+                            top: `-${16 + role.row * ROW_HEIGHT}px`,
+                            height: `${12 + role.row * ROW_HEIGHT}px`
+                          }}
+                        />
+                        <div 
+                          className="absolute left-4 w-4 h-4 rounded-full border-2 border-foreground bg-destructive"
+                          style={{
+                            top: `-${20 + role.row * ROW_HEIGHT}px`
+                          }}
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <div 
+                          className="absolute left-6 w-0.5 bg-foreground"
+                          style={{
+                            bottom: `-${16 + role.row * ROW_HEIGHT}px`,
+                            height: `${12 + role.row * ROW_HEIGHT}px`
+                          }}
+                        />
+                        <div 
+                          className="absolute left-4 w-4 h-4 rounded-full border-2 border-foreground bg-accent"
+                          style={{
+                            bottom: `-${20 + role.row * ROW_HEIGHT}px`
+                          }}
+                        />
+                      </>
+                    )}
                   </button>
                 );
               })}
