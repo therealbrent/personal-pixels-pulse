@@ -9,7 +9,7 @@ const pages = {
   '/': {
     title: 'Brent Summers, AI-Powered Marketing Leader & Strategist',
     description: 'Transformational leader combining strategic vision, technical implementation, and behavior change.',
-    ogTitle: 'Meet Brent Summers: AI-Powered Marketing Leader, Leveraging Ge',
+    ogTitle: 'Meet Brent Summers: AI-Powered Marketing Leader',
     ogDescription: "I'm here to transform how enterprise marketing teams plan campaigns, organize teams, create content, and grow skills.",
     ogImage: 'https://brentsummers.com/og-images/home.png',
   },
@@ -33,6 +33,27 @@ const pages = {
     ogTitle: 'Three Agencies. Three Archives. Three Angles.',
     ogDescription: 'Curious about communicating the value of design? Get inspired by these case studies.',
     ogImage: 'https://brentsummers.com/og-images/design-case-studies.png',
+  },
+  '/career': {
+    title: 'Career Timeline | Brent Summers',
+    description: 'Explore the career journey of Brent Summers across marketing, design, and technology leadership roles.',
+    ogTitle: 'Career Timeline | Brent Summers',
+    ogDescription: 'Two decades of marketing and design leadership experience.',
+    ogImage: 'https://brentsummers.com/og-images/home.png',
+  },
+  '/llms': {
+    title: 'LLMs.txt | Brent Summers',
+    description: 'Machine-readable profile for LLMs and AI assistants about Brent Summers.',
+    ogTitle: 'LLMs.txt | Brent Summers',
+    ogDescription: 'Machine-readable profile for AI assistants.',
+    ogImage: 'https://brentsummers.com/og-images/home.png',
+  },
+  '/designer-in-residence': {
+    title: 'Designer-in-Residence | UCSD × Industry Partner Program',
+    description: 'Coming soon: Designer-in-Residence program bridging industry and academia.',
+    ogTitle: 'Designer-in-Residence | Brent Summers',
+    ogDescription: 'UCSD × Industry Partner Program - Coming Soon',
+    ogImage: 'https://brentsummers.com/og-images/home.png',
   },
 };
 
