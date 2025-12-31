@@ -375,6 +375,17 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     featured: false,
   },
   {
+    id: "usertesting-ux-investment-2025",
+    type: "writing",
+    title: "Is User Experience worth the investment? [INFOGRAPHIC]",
+    date: "2025-08-04",
+    publication: "User Testing",
+    url: "https://www.usertesting.com/blog/ux-investment-infographic",
+    imageUrl: "/lovable-uploads/roi-ux-investment.webp",
+    topics: ["UX", "Business"],
+    featured: false,
+  },
+  {
     id: "blink-evidence-driven-design-2018",
     type: "writing",
     title: "How Evidence-driven Design Supports Innovation",
