@@ -227,8 +227,20 @@ export default function ThoughtLeadershipCard({ item, index, featured = false }:
           {/* QUOTE */}
           {item.quote && (
             <blockquote className={`border-l-4 ${featured ? 'border-current' : 'border-foreground'} pl-3 italic text-sm md:text-base leading-relaxed transition-colors duration-300 opacity-90 mb-4 ${textColorClass} ${hoverTextClass}`}>
-              {item.quote}
+              "{item.quote}"
             </blockquote>
+          )}
+          
+          {/* Ghost-written badge */}
+          {item.ghostWritten && (
+            <div className={`inline-flex items-center gap-1.5 px-2 py-0.5 text-[9px] sm:text-[10px] font-black uppercase tracking-wider mb-3 transition-colors ${
+              featured 
+                ? 'bg-foreground/20 text-current' 
+                : 'bg-foreground/10 text-foreground/70 group-hover:bg-white/20 group-hover:text-white/90'
+            }`}>
+              <Icon name="edit" size={10} aria-hidden="true" />
+              <span>Ghost-written</span>
+            </div>
           )}
           
           {/* CTA */}

@@ -31,6 +31,7 @@ export interface ThoughtLeadershipItem {
   // Metadata
   topics?: string[]; // ["AI", "Marketing", "UX"] - for future filtering
   featured?: boolean; // Set true for 2-3 most important items
+  ghostWritten?: boolean; // Set true for ghost-written content
 }
 
 export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
@@ -374,6 +375,8 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     url: "https://www.qualcomm.com/news/onq/2023/05/for-pcs-one-little-part-can-make-a-green-difference",
     topics: ["Sustainability", "Technology"],
     featured: false,
+    ghostWritten: true,
+    quote: "Did you know approximately 15% of the total carbon footprint of personal computers is generated during use-phase due to electricity consumption?",
   },
   {
     id: "usertesting-ux-investment-2015",
