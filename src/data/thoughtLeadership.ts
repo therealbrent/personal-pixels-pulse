@@ -356,6 +356,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     url: "https://www.qualcomm.com/news/onq/2025/01/unleash-your-teams-potential-with-enterprise-ai-software-powered-by-snapdragon-processors",
     topics: ["AI", "Enterprise"],
     featured: false,
+    quote: "IDC predicts that 57 million AI PC units will be shipped this year alone, and by 2028, AI PCs will represent 92% of all PC shipments worldwide.",
   },
   {
     id: "onq-snapdragon-x-series-2025",
