@@ -165,6 +165,7 @@ export default function ThoughtLeadershipCard({ item, index, featured = false }:
     
     const textColorClass = featured ? styles.featuredText : 'text-foreground';
     const hoverTextClass = featured ? '' : styles.hoverText;
+    const hasImage = !!item.imageUrl;
     
     return (
       <article
@@ -173,7 +174,7 @@ export default function ThoughtLeadershipCard({ item, index, featured = false }:
         className={`block border-2 sm:border-4 border-foreground shadow-neo-md ${articleClasses} ${
           isClickable ? 'cursor-pointer transition-all duration-300' : 'transition-all duration-300'
         } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden`}
-        aria-label={`Article: ${item.title} featured in ${item.publication}`}
+        aria-label={`${item.type === 'writing' ? 'Writing' : 'Article'}: ${item.title} featured in ${item.publication}`}
         tabIndex={isClickable ? 0 : undefined}
         role={isClickable ? 'button' : undefined}
         onKeyDown={isClickable ? (e) => {
@@ -183,15 +184,27 @@ export default function ThoughtLeadershipCard({ item, index, featured = false }:
           }
         } : undefined}
       >
+        {/* Image section for writing cards with images */}
+        {hasImage && (
+          <div className="w-full aspect-video overflow-hidden border-b-2 sm:border-b-4 border-foreground">
+            <img 
+              src={item.imageUrl} 
+              alt={`${item.title} - ${item.publication}`}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+          </div>
+        )}
+
         {/* Clickable indicator */}
-        {isClickable && (
+        {isClickable && !hasImage && (
           <div className="absolute top-4 right-4 sm:top-6 sm:right-6 opacity-40 group-hover:opacity-100 transition-opacity" aria-hidden="true">
             <Icon name="external-link" size={16} className={`${textColorClass} ${hoverTextClass} transition-colors sm:w-5 sm:h-5`} />
           </div>
         )}
         
         {/* Content stacked in order with consistent left alignment */}
-        <div className="flex flex-col p-4 pr-10 sm:pr-12">
+        <div className={`flex flex-col p-4 ${hasImage ? '' : 'pr-10 sm:pr-12'}`}>
           {/* DATE - hidden for featured */}
           {!featured && (
             <div className="text-[10px] font-black text-foreground tracking-widest uppercase opacity-60 mb-5" aria-label={`Date: ${item.date}`}>
