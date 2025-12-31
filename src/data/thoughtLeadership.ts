@@ -9,7 +9,7 @@
  * 5. The feed will auto-sort by date (newest first)
  */
 
-export type ContentType = "presentation" | "podcast" | "panel" | "article";
+export type ContentType = "presentation" | "podcast" | "panel" | "article" | "writing";
 
 export interface ThoughtLeadershipItem {
   id: string; // Unique identifier (lowercase, hyphenated)
@@ -328,7 +328,41 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
       "By creating content  people actually want to engage with, brands increase their likelihood of reaching  more potential consumers on mainstream sites.",
     url: "https://blog.olark.com/3-predictions-for-2016-technology-meets-customer-experience",
     topics: ["Technology", "Marketing"],
-    featured: false, // Mark as featured if you want it prominently displayed
+    featured: false,
+  },
+
+  // ==========================================
+  // WRITING (Bylined articles)
+  // ==========================================
+  {
+    id: "onq-reduce-it-costs-2025",
+    type: "writing",
+    title: "Reduce IT costs and extend device lifespan with Snapdragon and Windows 11",
+    date: "2025-04-10",
+    publication: "ONQ Blog",
+    url: "https://www.qualcomm.com/news/onq/2025/04/reduce-it-costs-and-extend-device-lifespan-with-snapdragon-and-windows-11",
+    topics: ["Technology", "Enterprise"],
+    featured: false,
+  },
+  {
+    id: "onq-unleash-team-potential-2025",
+    type: "writing",
+    title: "Unleash your team's potential with enterprise AI software powered by Snapdragon processors",
+    date: "2025-01-21",
+    publication: "ONQ Blog",
+    url: "https://www.qualcomm.com/news/onq/2025/01/unleash-your-teams-potential-with-enterprise-ai-software-powered-by-snapdragon-processors",
+    topics: ["AI", "Enterprise"],
+    featured: false,
+  },
+  {
+    id: "onq-snapdragon-x-series-2025",
+    type: "writing",
+    title: "Snapdragon X Series: A new era for enterprise efficiency",
+    date: "2025-01-02",
+    publication: "ONQ Blog",
+    url: "https://www.qualcomm.com/news/onq/2025/01/snapdragon-x-series-a-new-era-for-enterprise-efficiency",
+    topics: ["Technology", "Enterprise"],
+    featured: false,
   },
 ];
 

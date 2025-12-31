@@ -39,6 +39,7 @@ export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadership
     { value: 'presentation', label: 'Presentations' },
     { value: 'panel', label: 'Panels' },
     { value: 'article', label: 'Media Features' },
+    { value: 'writing', label: 'Writing' },
   ];
 
   return (
