@@ -345,6 +345,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     url: "https://www.qualcomm.com/news/onq/2025/04/reduce-it-costs-and-extend-device-lifespan-with-snapdragon-and-windows-11",
     topics: ["Technology", "Enterprise"],
     featured: false,
+    quote: "Snapdragon's power management and performance provide a seamless and reliable user experience, making it an excellent choice for most business users.",
   },
   {
     id: "onq-unleash-team-potential-2025",
