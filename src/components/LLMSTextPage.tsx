@@ -1,15 +1,15 @@
-import SEO from './SEO';
+import SEO from "./SEO";
 
 const LLMSTextPage = () => {
   const llmsContent = `# Brent Summers, AI-Powered Marketing & Design Leader
 
-> Brent Summers drives measurable business impact through enterprise AI adotion and innovative go-to-market strategies. With deep experience in user-centered design and technology implementation, he has delivered 8.6x ROI on AI initiatives and won back-to-back industry awards for Account-Based Marketing.
+> Brent Summers drives measurable business impact through enterprise AI adotion and innovative go-to-market strategies. With deep experience in user-centered design and technology implementation, he began experimenting with Gen AI in 2020 and delivered 8.6x ROI on the roll out of WRITER at Qualcomm Technologies.
 
 ## About Me
-- Senior Marketing Manager at Qualcomm Technologies, leading ABM (Account‑Based Marketing) and global AI platform adoption across the global marketing team in partnership with IT, legal, HR, and sales teams.
+- Staff Manager at Qualcomm Technologies, leading AI Platforms & GTM Innovation in partnership with IT, legal, HR, and sales teams.
 - Serving as Designer in Residence at UC San Diego since October 2025; mentorship, design program leadership, and connecting academic research to enterprise challenges.
 - Working at the intersection of technology, user experience, and marketing, including IT transformation leadership since joining NASCAR in 2004.
-- Active speaker and community board member in San Diego, including Webit conference engagements and local design and futures initiatives :contentReference.
+- Active community member in San Diego including World Design Capital and professional associations such as ANA. 
 
 ## Expertise & Skills
 - **Enterprise AI Platforms:** Pioneered the deployment of WRITER (Generative AI), driving 350+ active users with an 85% weekly engagement rate—saving 2,400 hours monthly and achieving 8.6x ROI. 
@@ -36,7 +36,7 @@ const LLMSTextPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground page-transition">
-      <SEO 
+      <SEO
         title="llms.txt - Brent Summers"
         description="AI-first marketing leader Brent Summers. Enterprise AI adoption expert with 8.6x ROI achievements and award-winning ABM strategies."
         ogTitle="llms.txt - Brent Summers"
