@@ -367,6 +367,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     url: "https://www.qualcomm.com/news/onq/2025/01/snapdragon-x-series-a-new-era-for-enterprise-efficiency",
     topics: ["Technology", "Enterprise"],
     featured: false,
+    quote: "More than 30 Copilot+PCs powered by Snapdragon processors are available globally from top manufacturer including Dell, HP, Lenovo, and Surface.",
   },
   {
     id: "onq-green-difference-2023",
