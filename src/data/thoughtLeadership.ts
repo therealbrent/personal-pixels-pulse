@@ -382,7 +382,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2015-08-04",
     publication: "User Testing",
     url: "https://www.usertesting.com/blog/ux-investment-infographic",
-    imageUrl: "/lovable-uploads/roi-ux-investment.webp",
+    imageUrl: "/lovable-uploads/roi-ux-investment.jpg",
     topics: ["UX", "Business"],
     featured: false,
   },
