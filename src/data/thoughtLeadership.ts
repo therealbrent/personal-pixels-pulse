@@ -364,6 +364,26 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     topics: ["Technology", "Enterprise"],
     featured: false,
   },
+  {
+    id: "onq-green-difference-2023",
+    type: "writing",
+    title: "For PCs, one little part can make a green difference",
+    date: "2023-05-18",
+    publication: "ONQ Blog",
+    url: "https://www.qualcomm.com/news/onq/2023/05/for-pcs-one-little-part-can-make-a-green-difference",
+    topics: ["Sustainability", "Technology"],
+    featured: false,
+  },
+  {
+    id: "blink-evidence-driven-design-2018",
+    type: "writing",
+    title: "How Evidence-driven Design Supports Innovation",
+    date: "2018-01-02",
+    publication: "Blink Blog",
+    url: "https://blinkux.com/ideas/evidence-driven-design-supports-innovation",
+    topics: ["UX", "Design"],
+    featured: false,
+  },
 ];
 
 // Helper function to sort by date (newest first)
