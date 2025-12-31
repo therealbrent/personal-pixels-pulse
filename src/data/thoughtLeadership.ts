@@ -62,6 +62,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "Future-Proofing Your ABM Strategy",
     date: "2025-12-10",
     venue: "ANA (Virtual)",
+    imageUrl: "/lovable-uploads/future-proof-abm.jpg",
     topics: ["ABM", "AI"],
   },
   {
