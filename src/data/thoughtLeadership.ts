@@ -395,6 +395,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     url: "https://blinkux.com/ideas/evidence-driven-design-supports-innovation",
     topics: ["UX", "Design"],
     featured: false,
+    quote: "At Blink, we believe every interaction can be made meaningful if designed with a deep understanding of human behavior. The evidence we uncover through research drives our design process.",
   },
 ];
 
