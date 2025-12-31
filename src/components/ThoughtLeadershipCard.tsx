@@ -227,7 +227,7 @@ export default function ThoughtLeadershipCard({ item, index, featured = false }:
           {/* QUOTE */}
           {item.quote && (
             <blockquote className={`border-l-4 ${featured ? 'border-current' : 'border-foreground'} pl-3 italic text-sm md:text-base leading-relaxed transition-colors duration-300 opacity-90 mb-4 ${textColorClass} ${hoverTextClass}`}>
-              "{item.quote}"
+              {item.quote}
             </blockquote>
           )}
           
