@@ -20,7 +20,7 @@ const pages = {
     ogDescription: 'Spotting trends and building bridges that unlock capability',
     ogImage: 'https://brentsummers.com/og-images/leadership.png',
   },
-  '/speaking': {
+  '/insights': {
     title: 'Brent Summers, Keynote Speaker | Bio + Headshot + Media Archive',
     description: 'Explore presentations, podcasts, panels, and interviews with Brent Summers',
     ogTitle: 'Book Brent for Your Next Event',
