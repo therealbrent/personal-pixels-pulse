@@ -36,6 +36,8 @@ const getTabClasses = (value: FilterType, isActive: boolean) => {
         return `${baseClasses} bg-accent text-white translate-x-[2px] translate-y-[2px] shadow-none`;
       case 'podcast':
         return `${baseClasses} bg-oxblood text-white translate-x-[2px] translate-y-[2px] shadow-none`;
+      case 'writing':
+        return `${baseClasses} bg-oxblood text-white translate-x-[2px] translate-y-[2px] shadow-none`;
     }
   } else {
     switch (value) {
@@ -48,6 +50,8 @@ const getTabClasses = (value: FilterType, isActive: boolean) => {
       case 'panel':
         return `${baseClasses} bg-background text-foreground hover:bg-accent hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
       case 'podcast':
+        return `${baseClasses} bg-background text-foreground hover:bg-oxblood hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
+      case 'writing':
         return `${baseClasses} bg-background text-foreground hover:bg-oxblood hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
     }
   }
@@ -67,6 +71,8 @@ const getDropdownItemClasses = (value: FilterType) => {
     case 'panel':
       return `${baseClasses} data-[state=checked]:bg-accent data-[state=checked]:text-white data-[highlighted]:bg-accent data-[highlighted]:text-white`;
     case 'podcast':
+      return `${baseClasses} data-[state=checked]:bg-oxblood data-[state=checked]:text-white data-[highlighted]:bg-oxblood data-[highlighted]:text-white`;
+    case 'writing':
       return `${baseClasses} data-[state=checked]:bg-oxblood data-[state=checked]:text-white data-[highlighted]:bg-oxblood data-[highlighted]:text-white`;
     default:
       return baseClasses;

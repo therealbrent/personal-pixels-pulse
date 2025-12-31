@@ -83,6 +83,17 @@ const contentTypeStyles: Record<ContentType, {
     featuredBg: 'bg-oxblood',
     featuredText: 'text-white',
     featuredHoverShadow: 'hover:shadow-[8px_8px_0px_0px_hsl(var(--foreground))]'
+  },
+  writing: {
+    cardHoverBg: 'hover:bg-oxblood',
+    hoverText: 'group-hover:!text-white', // White on Crimson/Oxblood
+    hoverBorder: 'group-hover:!border-oxblood',
+    glowColor: 'bg-oxblood',
+    iconColor: 'text-oxblood',
+    shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--oxblood))]',
+    featuredBg: 'bg-oxblood',
+    featuredText: 'text-white',
+    featuredHoverShadow: 'hover:shadow-[8px_8px_0px_0px_hsl(var(--foreground))]'
   }
 };
 
@@ -146,8 +157,8 @@ export default function ThoughtLeadershipCard({ item, index, featured = false }:
     }
   };
 
-  // Article card - larger format with quotes
-  if (item.type === 'article') {
+  // Article and Writing cards - larger format with optional quotes
+  if (item.type === 'article' || item.type === 'writing') {
     const articleClasses = featured
       ? `${styles.featuredBg} ${styles.featuredHoverShadow} hover:-translate-y-1`
       : `bg-background ${styles.cardHoverBg} hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}`;
