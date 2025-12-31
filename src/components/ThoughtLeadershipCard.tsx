@@ -205,12 +205,12 @@ export default function ThoughtLeadershipCard({ item, index, featured = false }:
         
         {/* Content stacked in order with consistent left alignment */}
         <div className={`flex flex-col p-4 ${hasImage ? '' : 'pr-10 sm:pr-12'}`}>
-          {/* DATE - hidden for featured */}
-          {!featured && (
-            <div className="text-[10px] font-black text-foreground tracking-widest uppercase opacity-60 mb-5" aria-label={`Date: ${item.date}`}>
-              {formatDate(item.date)}
-            </div>
-          )}
+        {/* DATE - hidden for featured */}
+        {!featured && (
+          <div className={`text-[10px] font-black tracking-widest uppercase mb-5 text-foreground opacity-60 ${hoverTextClass} group-hover:opacity-100 transition-all`} aria-label={`Date: ${item.date}`}>
+            {formatDate(item.date)}
+          </div>
+        )}
 
           {/* PUBLICATION */}
           {item.publication && (
