@@ -77,6 +77,16 @@ export const commandPaletteData: CommandItem[] = [
     bodyContent: 'Machine-readable site information for AI models LLMs large language models structured data. About expertise skills key projects achievements professional profiles contact. Enterprise AI platforms GTM innovation ABM account-based marketing WRITER Qualcomm.',
   },
   {
+    id: 'vibes',
+    title: 'Vibes',
+    url: '/vibes',
+    icon: Lightbulb,
+    type: 'page',
+    keywords: ['vibes', 'vibe coding', 'experiments', 'prototypes', 'projects', 'armcompatible', 'earthquake', 'snapdragon'],
+    description: 'Vibe-coded experimental projects',
+    bodyContent: 'Experimental projects built with vibe coding. Fast prototypes bold ideas proof-of-concepts. ArmCompatible.com Earthquake Replay Snapdragon Ecosystem Map.',
+  },
+  {
     id: 'career',
     title: 'Career Timeline',
     url: '/career',
