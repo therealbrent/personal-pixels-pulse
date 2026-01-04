@@ -67,7 +67,7 @@ export default function VibesPage() {
               My Vibes
             </h1>
             <p className="text-lg md:text-xl text-foreground/80 mt-4 max-w-2xl">
-              Experimental projects built with vibe coding. Fast prototypes, bold ideas, and proof-of-concepts.
+              Thanks for checking out my Vibes. These are personal side projects that I built while learning to vibe code with Lovable.
             </p>
           </div>
         </section>
