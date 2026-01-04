@@ -6,6 +6,8 @@ interface VibeProject {
   id: string;
   title: string;
   description: string;
+  image?: string;
+  url?: string;
 }
 
 const vibeProjects: VibeProject[] = [
@@ -13,16 +15,22 @@ const vibeProjects: VibeProject[] = [
     id: 'armcompatible',
     title: 'ArmCompatible.com',
     description: 'A comprehensive compatibility checker for Arm-based devices. Helps users verify software and hardware compatibility before making the switch.',
+    image: '/lovable-uploads/vibes-arm-compatible.png',
+    url: 'https://armcompatible.com/',
   },
   {
     id: 'earthquake-replay',
     title: 'Earthquake Replay',
     description: 'Interactive visualization of historical seismic events. Experience earthquake data through immersive replay and analysis tools.',
+    image: '/lovable-uploads/vibes-earthquake-replay.png',
+    url: 'https://earthquake-replay.lovable.app/',
   },
   {
     id: 'snapdragon-ecosystem',
     title: 'Snapdragon Ecosystem Map',
     description: 'Visual exploration of the Snapdragon platform ecosystem. Discover partnerships, integrations, and the breadth of Qualcomm technology.',
+    image: '/lovable-uploads/vibes-snapdragon-ecosystem.png',
+    url: 'https://every-day-brilliance.lovable.app/',
   },
   {
     id: 'tbd-1',
@@ -68,29 +76,53 @@ export default function VibesPage() {
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {vibeProjects.map((project) => (
-                <Card
-                  key={project.id}
-                  variant="brutalist-hover"
-                  className="overflow-hidden"
-                >
-                  <AspectRatio ratio={16 / 9}>
-                    <div className="w-full h-full bg-muted flex items-center justify-center border-b-4 border-foreground">
-                      <span className="text-muted-foreground text-sm font-mono">
-                        16:9 Screenshot
-                      </span>
-                    </div>
-                  </AspectRatio>
-                  <CardContent className="p-4 md:p-6">
-                    <h2 className="text-xl md:text-2xl font-bold text-primary mb-2">
-                      {project.title}
-                    </h2>
-                    <p className="text-muted-foreground text-sm md:text-base">
-                      {project.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+              {vibeProjects.map((project) => {
+                const content = (
+                  <>
+                    <AspectRatio ratio={16 / 9}>
+                      {project.image ? (
+                        <img
+                          src={project.image}
+                          alt={`${project.title} screenshot`}
+                          className="w-full h-full object-cover object-top border-b-4 border-foreground"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-muted flex items-center justify-center border-b-4 border-foreground">
+                          <span className="text-muted-foreground text-sm font-mono">
+                            Coming Soon
+                          </span>
+                        </div>
+                      )}
+                    </AspectRatio>
+                    <CardContent className="p-4 md:p-6">
+                      <h2 className="text-xl md:text-2xl font-bold text-primary mb-2">
+                        {project.title}
+                      </h2>
+                      <p className="text-muted-foreground text-sm md:text-base">
+                        {project.description}
+                      </p>
+                    </CardContent>
+                  </>
+                );
+
+                return project.url ? (
+                  <a
+                    key={project.id}
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Card variant="brutalist-hover" className="overflow-hidden h-full">
+                      {content}
+                    </Card>
+                  </a>
+                ) : (
+                  <Card key={project.id} variant="brutalist-hover" className="overflow-hidden">
+                    {content}
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
