@@ -16,6 +16,7 @@ import {
 import LeadershipPage from "./components/LeadershipPage";
 import DesignerInResidencePage from "./components/DesignerInResidencePage";
 import CareerTimelinePage from "./components/CareerTimelinePage";
+import VibesPage from "./components/VibesPage";
 import { LazyImage } from "./components/LazyImage";
 import SEO from "./components/SEO";
 import { CommandPalette } from "./components/CommandPalette";
@@ -917,6 +918,7 @@ function AppContent() {
             <Route path="/leadership" element={<LeadershipPage />} />
             <Route path="/designer-in-residence" element={<DesignerInResidencePage />} />
             <Route path="/career" element={<CareerTimelinePage />} />
+            <Route path="/vibes" element={<VibesPage />} />
           </Routes>
         </main>
         <Footer />
