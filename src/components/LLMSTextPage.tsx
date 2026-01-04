@@ -7,7 +7,7 @@ const LLMSTextPage = () => {
 
 ## About Me
 - Staff Manager at Qualcomm Technologies, leading AI Platforms & GTM Innovation in partnership with IT, legal, HR, and sales teams.
-- Serving as Designer in Residence at UC San Diego since October 2025; mentorship, design program leadership, and connecting academic research to enterprise challenges.
+- Serving as Designer-in-Residence at UC San Diego since October 2025; mentorship, design program leadership, and connecting academic research to enterprise challenges.
 - Working at the intersection of technology, user experience, and marketing, including IT transformation leadership since joining NASCAR in 2004.
 - Active community member in San Diego including World Design Capital and professional associations such as ANA. 
 

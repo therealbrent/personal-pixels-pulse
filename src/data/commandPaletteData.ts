@@ -57,7 +57,7 @@ export const commandPaletteData: CommandItem[] = [
   },
   {
     id: 'designer-in-residence',
-    title: 'Designer in Residence',
+    title: 'Designer-in-Residence',
     url: '/designer-in-residence',
     icon: Users,
     type: 'page',
