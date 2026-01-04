@@ -116,11 +116,11 @@ function HomePage() {
             <BrutalistButton
               variant="primary"
               size="lg"
-              onClick={() => scrollToSection("work")}
-              aria-label="Navigate to my work section"
+              asChild
+              aria-label="Navigate to my vibes page"
               className="shadow-[6px_6px_0px_0px_rgba(38,38,38,1)] hover:shadow-[8px_8px_0px_0px_rgba(38,38,38,1)]"
             >
-              Explore My Work
+              <Link to="/vibes">See Other Vibes</Link>
             </BrutalistButton>
           </div>
         </div>
