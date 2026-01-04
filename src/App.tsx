@@ -498,7 +498,7 @@ function HomePage() {
                             to="/designer-in-residence"
                             className="text-primary hover:text-primary/80 underline font-semibold"
                           >
-                            Designer in Residence
+                            Designer-in-Residence
                           </Link>
                           . As a member of this industry affiliate program, I will mentor students, co-lead design
                           programs, and connect academic research back to enterprise challenges.
