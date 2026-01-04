@@ -53,7 +53,7 @@ export default function VibesPage() {
   return (
     <>
       <SEO
-        title="Vibes | Brent Summers"
+        title="My Vibes | Brent Summers"
         description="Vibe-coded projects and experimental builds by Brent Summers."
         ogImage="/og-images/home.png"
         canonicalUrl="/vibes"
@@ -64,7 +64,7 @@ export default function VibesPage() {
         <section className="bg-primary py-16 md:py-24 border-b-4 border-foreground">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-6xl font-black text-foreground uppercase tracking-tight">
-              Vibes
+              My Vibes
             </h1>
             <p className="text-lg md:text-xl text-foreground/80 mt-4 max-w-2xl">
               Experimental projects built with vibe coding. Fast prototypes, bold ideas, and proof-of-concepts.
