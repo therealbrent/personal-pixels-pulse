@@ -63,7 +63,6 @@ export const commandPaletteData: CommandItem[] = [
     type: 'page',
     keywords: ['designer', 'residence', 'mentorship', 'program'],
     description: 'Design mentorship program',
-    badge: 'Coming Soon',
     bodyContent: 'UC San Diego industry affiliate program mentor students co-lead design programs connect academic research enterprise challenges. October 2025 invitation design education teaching collaboration university.',
   },
   {
