@@ -130,7 +130,7 @@ export default function DesignerInResidencePage() {
           </h2>
           
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            {/* Contribution 1 */}
+            {/* Contribution 1 - Student Mentorship */}
             <div className="bg-background text-foreground border-4 border-primary p-6 md:p-8 relative">
               <div className="w-14 h-14 bg-primary border-4 border-foreground flex items-center justify-center mb-6 -mt-12 md:-mt-14 shadow-neo-sm">
                 <Users className="w-7 h-7 text-foreground" aria-hidden="true" />
@@ -138,12 +138,17 @@ export default function DesignerInResidencePage() {
               <h3 className="text-xl md:text-2xl font-black mb-3">
                 Student Mentorship
               </h3>
-              <p className="text-base text-foreground/80 leading-relaxed">
+              <p className="text-base text-foreground/80 leading-relaxed mb-4">
                 Office hours, portfolio reviews, and career guidance for the next generation of designers.
               </p>
+              <div className="border-t-2 border-foreground/20 pt-4 mt-auto">
+                <p className="text-sm font-bold text-foreground">Wednesdays 3:00pm – 5:00pm</p>
+                <p className="text-sm text-foreground/70">Design & Innovation Building</p>
+                <p className="text-sm text-foreground/70">Room 361</p>
+              </div>
             </div>
 
-            {/* Contribution 2 */}
+            {/* Contribution 2 - Guest Lectures */}
             <div className="bg-background text-foreground border-4 border-primary p-6 md:p-8 relative">
               <div className="w-14 h-14 bg-accent border-4 border-foreground flex items-center justify-center mb-6 -mt-12 md:-mt-14 shadow-neo-sm">
                 <Mic2 className="w-7 h-7 text-background" aria-hidden="true" />
@@ -151,12 +156,22 @@ export default function DesignerInResidencePage() {
               <h3 className="text-xl md:text-2xl font-black mb-3">
                 Guest Lectures
               </h3>
-              <p className="text-base text-foreground/80 leading-relaxed">
+              <p className="text-base text-foreground/80 leading-relaxed mb-2">
                 Supporting the programming for Design@Large for Spring 2026.
               </p>
+              <p className="text-sm text-foreground/60 mb-4">Topic TBA</p>
+              <a 
+                href="https://designlab.ucsd.edu/education/design-at-large/index.html" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-bold text-accent hover:text-primary transition-colors"
+              >
+                Learn more
+                <ExternalLink className="w-3 h-3" aria-hidden="true" />
+              </a>
             </div>
 
-            {/* Contribution 3 */}
+            {/* Contribution 3 - Bridging Industry & Academia */}
             <div className="bg-background text-foreground border-4 border-primary p-6 md:p-8 relative">
               <div className="w-14 h-14 bg-cobalt border-4 border-foreground flex items-center justify-center mb-6 -mt-12 md:-mt-14 shadow-neo-sm">
                 <Handshake className="w-7 h-7 text-background" aria-hidden="true" />
