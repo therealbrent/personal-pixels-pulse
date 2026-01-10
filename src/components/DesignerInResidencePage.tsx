@@ -25,7 +25,7 @@ export default function DesignerInResidencePage() {
             <div className="absolute -top-2 -right-2 md:-top-3 md:-right-3 w-10 h-10 md:w-16 md:h-16 bg-accent border-2 md:border-4 border-foreground" aria-hidden="true" />
             
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-black mb-6 md:mb-10 text-foreground leading-tight">
-              Designer in<br />Residence
+              UC San Diego<br />Designer-in-Residence
             </h1>
             
             {/* Divider Line (responsive width) */}
@@ -40,7 +40,7 @@ export default function DesignerInResidencePage() {
 
           {/* Bottom Accent Block (responsive) */}
           <div className="mt-6 md:mt-8 inline-block bg-foreground text-background px-4 md:px-6 py-2 md:py-3 text-sm md:text-base font-bold border-2 md:border-4 border-foreground transform -rotate-1 hover:rotate-0 transition-transform">
-            UCSD × Industry Partner Program
+            Industry Affiliate Program
           </div>
         </div>
       </section>
