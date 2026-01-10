@@ -76,36 +76,35 @@ export default function DesignerInResidencePage() {
       {/* Why Section */}
       <section className="py-12 md:py-20 px-4">
         <div className="container mx-auto max-w-5xl">
+          <h2 className="text-2xl md:text-4xl font-black text-foreground mb-6 md:mb-10">
+            Why I Do This
+          </h2>
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            {/* Why Card 1 - The Mission */}
+            {/* Why Card 1 - Paying It Forward */}
             <Card variant="brutalist" className="relative overflow-visible">
               <div className="absolute -top-3 -left-3 w-12 h-12 bg-accent border-4 border-foreground flex items-center justify-center">
                 <Target className="w-6 h-6 text-background" aria-hidden="true" />
               </div>
               <CardContent className="p-6 md:p-8 pt-10 md:pt-12">
-                <h2 className="text-2xl md:text-3xl font-black text-foreground mb-4">
-                  Why I Do This
-                </h2>
-                <p className="text-base md:text-lg text-foreground leading-relaxed mb-4">
-                  <span className="font-bold text-primary">Because my job is to ship innovation.</span> Volunteering is how I make sure it's the <em>right</em> kind.
-                </p>
                 <p className="text-base md:text-lg text-foreground leading-relaxed">
-                  I give my time to help teams turn good intentions into useful, human-centered outcomes.
+                  I volunteer because it's part of the{' '}
+                  <span className="font-bold text-accent">talent flywheel</span>: you share what you know, you learn what you don't, and everyone moves faster. I've benefitted from people who did that for me. This is me{' '}
+                  <span className="font-bold text-cobalt">paying it forward</span>.
                 </p>
               </CardContent>
             </Card>
 
-            {/* Why Card 2 - The Selfish Reason */}
+            {/* Why Card 2 - Shipping Innovation */}
             <Card variant="brutalist" className="relative overflow-visible bg-primary/10">
               <div className="absolute -top-3 -right-3 w-12 h-12 bg-foreground border-4 border-foreground flex items-center justify-center">
                 <Sparkles className="w-6 h-6 text-primary" aria-hidden="true" />
               </div>
               <CardContent className="p-6 md:p-8">
-                <h3 className="text-xl md:text-2xl font-black text-foreground mb-4">
-                  Selfishly...
-                </h3>
                 <p className="text-base md:text-lg text-foreground leading-relaxed">
-                  It keeps my edge sharp. New rooms, new problems, new perspectives. That's where better leaders (and better products) get made.
+                  I volunteer because{' '}
+                  <span className="font-bold text-primary">my job is to ship innovation</span>. It forces fresh reps in unfamiliar contexts. New rooms, new problems, new perspectives. That's how{' '}
+                  <span className="font-bold text-oxblood">better leaders</span>{' '}
+                  get made.
                 </p>
               </CardContent>
             </Card>
