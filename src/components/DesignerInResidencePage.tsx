@@ -8,6 +8,7 @@ export default function DesignerInResidencePage() {
         description="In this volunteer role, I mentor students, participate in design programs and connect academic research to enterprise challenges."
         ogTitle="Brent Summers, UCSD Designer-in-Residence"
         ogDescription="Engaging with the community as part of my professional development at Qualcomm Technologies."
+        ogImage="/og-images/designer-in-residence.png"
         canonicalUrl="/designer-in-residence"
       />
 
