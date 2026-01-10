@@ -24,15 +24,19 @@ export default function DesignerInResidencePage() {
           <div className="bg-primary/10 border-2 md:border-4 border-foreground p-6 md:p-10 lg:p-12 shadow-neo-md md:shadow-neo-lg relative">
             <div className="absolute -top-2 -right-2 md:-top-3 md:-right-3 w-10 h-10 md:w-16 md:h-16 bg-accent border-2 md:border-4 border-foreground" aria-hidden="true" />
             
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-black mb-6 md:mb-10 text-foreground leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-black mb-4 md:mb-6 text-foreground leading-tight">
               UC San Diego<br />Designer-in-Residence
             </h1>
+            
+            <p className="text-lg md:text-xl lg:text-2xl font-bold text-foreground/80 mb-6 md:mb-8 max-w-2xl">
+              Developing leadership skills while sharing expertise with the next generation of design talent.
+            </p>
             
             <div className="w-16 md:w-24 h-0.5 md:h-1 bg-foreground mb-6 md:mb-8" aria-hidden="true" />
             
             <div className="max-w-3xl">
               <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
-                In <span className="font-bold text-primary">October 2025</span>, I accepted UCSD's invitation to this industry affiliate program where I'll mentor students, co-lead design programs, and connect academic research back to enterprise challenges.
+                In <span className="font-bold text-primary">October 2025</span>, I accepted UCSD's invitation to join their Designer-in-Residence program—mentoring students, co-leading design programs, and connecting academic research to enterprise challenges. My day job is Head of AI Platforms & GTM Innovation at Qualcomm Technologies. This residency is how I stress-test that work against fresh perspectives—and give back to the community that shaped me.
               </p>
             </div>
           </div>
@@ -56,8 +60,11 @@ export default function DesignerInResidencePage() {
               <h2 className="text-2xl md:text-4xl font-black text-foreground mb-4 md:mb-6">
                 About The Design Lab
               </h2>
-              <p className="text-base md:text-lg text-foreground leading-relaxed mb-6">
+              <p className="text-base md:text-lg text-foreground leading-relaxed mb-4">
                 The Design Lab at UC San Diego is an anchor design institution within the San Diego-Tijuana region that pairs design education and research with community needs to create positive, impactful real-world solutions and design-driven innovations.
+              </p>
+              <p className="text-base md:text-lg text-foreground leading-relaxed mb-6">
+                The Lab's focus on human-centered innovation aligns directly with my approach to enterprise AI—technology should serve people, not the other way around.
               </p>
               <a 
                 href="https://designlab.ucsd.edu/about/index.html" 
@@ -65,7 +72,7 @@ export default function DesignerInResidencePage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-foreground text-background px-4 py-2 font-bold border-4 border-foreground hover:bg-primary hover:text-foreground transition-colors"
               >
-                Learn more about the lab
+                Learn about the lab
                 <ExternalLink className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
