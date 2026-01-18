@@ -1,7 +1,7 @@
 import { Building2, Users, Mic2, Handshake, ExternalLink, Sparkles, Target } from 'lucide-react';
 import SEO from './SEO';
 import { Card, CardContent } from './ui/card';
-
+import mentorshipQrCode from '@/assets/mentorship-qrcode.png';
 export default function DesignerInResidencePage() {
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
@@ -147,7 +147,7 @@ export default function DesignerInResidencePage() {
             How I'm Contributing
           </h2>
           
-          {/* Student Mentorship - Full Width with Calendar */}
+          {/* Student Mentorship - Full Width with QR Code */}
           <div className="bg-background text-foreground border-4 border-primary p-6 md:p-8 relative mb-6 md:mb-8">
             <div className="w-14 h-14 bg-primary border-4 border-foreground flex items-center justify-center mb-6 -mt-12 md:-mt-14 shadow-neo-sm">
               <Users className="w-7 h-7 text-foreground" aria-hidden="true" />
@@ -155,28 +155,49 @@ export default function DesignerInResidencePage() {
             <h3 className="text-xl md:text-2xl font-black mb-3">
               Student Mentorship
             </h3>
-            <p className="text-base text-foreground/80 leading-relaxed mb-4">
+            <p className="text-base text-foreground/80 leading-relaxed mb-6">
               Office hours, portfolio reviews, and career guidance for the next generation of designers.
             </p>
-            <div className="border-t-2 border-foreground/20 pt-4 mb-6 space-y-4">
+            
+            {/* Two-column layout: Availability + QR Code */}
+            <div className="grid md:grid-cols-[1fr_auto] gap-6 md:gap-8 items-start">
+              {/* Left: Availability & CTA */}
               <div>
-                <p className="text-sm font-bold text-foreground">Wednesdays 3:00pm – 5:00pm</p>
-                <p className="text-sm text-foreground/70">Design & Innovation Building</p>
-                <p className="text-sm text-foreground/70">Room 361</p>
+                <div className="border-t-2 border-foreground/20 pt-4 mb-6 space-y-4">
+                  <div>
+                    <p className="text-sm font-bold text-foreground">Wednesdays 3:00pm – 5:00pm</p>
+                    <p className="text-sm text-foreground/70">Design & Innovation Building</p>
+                    <p className="text-sm text-foreground/70">Room 361</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-foreground">Fridays 7:30am – 9:00am</p>
+                    <p className="text-sm text-foreground/70">Virtual Meetings</p>
+                  </div>
+                </div>
+                <a
+                  href="https://calendar.app.google/ZMJpgxZazGUJQUT9A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-accent text-background font-black text-lg md:text-xl px-8 py-4 border-4 border-foreground shadow-neo hover:shadow-neo-lg hover:-translate-y-1 transition-all"
+                >
+                  Schedule an Appointment
+                </a>
               </div>
-              <div>
-                <p className="text-sm font-bold text-foreground">Fridays 7:30am – 9:00am</p>
-                <p className="text-sm text-foreground/70">Virtual Meetings</p>
+              
+              {/* Right: QR Code */}
+              <div className="flex flex-col items-center">
+                <div className="bg-white p-3 border-4 border-foreground shadow-neo-sm">
+                  <img 
+                    src={mentorshipQrCode} 
+                    alt="Scan QR code to schedule an appointment"
+                    className="w-28 h-28 md:w-36 md:h-36"
+                  />
+                </div>
+                <p className="text-xs text-foreground/60 mt-2 text-center font-medium">
+                  Scan to book
+                </p>
               </div>
             </div>
-            <a
-              href="https://calendar.app.google/ZMJpgxZazGUJQUT9A"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-accent text-background font-black text-lg md:text-xl px-8 py-4 border-4 border-foreground shadow-neo hover:shadow-neo-lg hover:-translate-y-1 transition-all"
-            >
-              Schedule an Appointment
-            </a>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
