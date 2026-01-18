@@ -25,7 +25,15 @@ export default function DesignerInResidencePage() {
             <div className="absolute -top-2 -right-2 md:-top-3 md:-right-3 w-10 h-10 md:w-16 md:h-16 bg-accent border-2 md:border-4 border-foreground" aria-hidden="true" />
             
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-black mb-4 md:mb-6 text-foreground leading-tight">
-              UC San Diego<br />Designer-in-Residence
+              UC San Diego<br />
+              <a 
+                href="https://designlab.ucsd.edu/people/designers-in-residence.html" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors underline decoration-4 underline-offset-4"
+              >
+                Designer-in-Residence
+              </a>
             </h1>
             
             <p className="text-lg md:text-xl lg:text-2xl font-bold text-foreground/80 mb-6 md:mb-8 max-w-2xl">
