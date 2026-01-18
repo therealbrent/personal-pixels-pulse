@@ -152,29 +152,25 @@ export default function DesignerInResidencePage() {
             <div className="w-14 h-14 bg-primary border-4 border-foreground flex items-center justify-center mb-6 -mt-12 md:-mt-14 shadow-neo-sm">
               <Users className="w-7 h-7 text-foreground" aria-hidden="true" />
             </div>
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-              <div>
-                <h3 className="text-xl md:text-2xl font-black mb-3">
-                  Student Mentorship
-                </h3>
-                <p className="text-base text-foreground/80 leading-relaxed mb-4">
-                  Office hours, portfolio reviews, and career guidance for the next generation of designers.
-                </p>
-                <div className="border-t-2 border-foreground/20 pt-4">
-                  <p className="text-sm font-bold text-foreground">Wednesdays 3:00pm – 5:00pm</p>
-                  <p className="text-sm text-foreground/70">Design & Innovation Building</p>
-                  <p className="text-sm text-foreground/70">Room 361</p>
-                </div>
-              </div>
-              <div className="border-4 border-foreground">
-                <iframe
-                  src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1D0m6GFgJC4W2HOD2ZTc64oIJNE0OaZdAZt2wSp8cBrKOv5mOsCNiYjBofUeEejo0L591IZ5dj?gv=true"
-                  title="Book a mentorship appointment"
-                  className="w-full h-[400px] md:h-[500px]"
-                  loading="lazy"
-                />
-              </div>
+            <h3 className="text-xl md:text-2xl font-black mb-3">
+              Student Mentorship
+            </h3>
+            <p className="text-base text-foreground/80 leading-relaxed mb-4">
+              Office hours, portfolio reviews, and career guidance for the next generation of designers.
+            </p>
+            <div className="border-t-2 border-foreground/20 pt-4 mb-6">
+              <p className="text-sm font-bold text-foreground">Wednesdays 3:00pm – 5:00pm</p>
+              <p className="text-sm text-foreground/70">Design & Innovation Building</p>
+              <p className="text-sm text-foreground/70">Room 361</p>
             </div>
+            <a
+              href="https://calendar.app.google/ZMJpgxZazGUJQUT9A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-accent text-background font-black text-lg md:text-xl px-8 py-4 border-4 border-foreground shadow-neo hover:shadow-neo-lg hover:-translate-y-1 transition-all"
+            >
+              Schedule an Appointment
+            </a>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
