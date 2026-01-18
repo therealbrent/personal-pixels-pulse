@@ -178,7 +178,7 @@ export default function DesignerInResidencePage() {
                   href="https://calendar.app.google/ZMJpgxZazGUJQUT9A"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-accent text-background font-black text-lg md:text-xl px-8 py-4 border-4 border-foreground shadow-neo hover:shadow-neo-lg hover:-translate-y-1 transition-all"
+                  className="inline-block bg-accent text-background font-black text-base md:text-xl px-5 md:px-8 py-3 md:py-4 border-2 md:border-4 border-foreground shadow-neo hover:shadow-neo-lg hover:-translate-y-1 transition-all"
                 >
                   Schedule an Appointment
                 </a>
