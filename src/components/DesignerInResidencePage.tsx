@@ -111,10 +111,7 @@ export default function DesignerInResidencePage() {
               </div>
               <CardContent className="p-6 md:p-8">
                 <p className="text-base md:text-lg text-foreground leading-relaxed">
-                  I volunteer because{' '}
-                  <span className="font-bold text-primary">my job is to ship innovation</span>. It forces fresh reps in unfamiliar contexts. New rooms, new problems, new perspectives. That's how{' '}
-                  <span className="font-bold text-oxblood">better leaders</span>{' '}
-                  get made.
+                  I volunteer because my job is to ship innovation. This residency forces fresh reps in unfamiliar contexts. New rooms, new problems, new perspectives. That's how better leaders get made.
                 </p>
               </CardContent>
             </Card>
