@@ -64,11 +64,14 @@ export default function DesignerInResidencePage() {
                 About The Design Lab
               </h2>
               <p className="text-base md:text-lg text-foreground leading-relaxed mb-6">
-                The Design Lab at UC San Diego is an anchor design institution within the San Diego-Tijuana region. The Lab's mission to foster{' '}
-                <span className="font-bold text-primary">design-driven transformation</span>{' '}
-                aligns well with my approach to AI in the enterprise:{' '}
-                <span className="font-bold text-primary">educating leaders, imagining alternative futures, and equipping people</span>{' '}
-                with the knowledge, tools, and opportunities to our most pressing challenges.
+                The{' '}
+                <span className="font-bold text-primary">UC San Diego Design Lab</span>{' '}
+                is a leading design institution in the San Diego–Tijuana region. Its mission—
+                <span className="font-bold text-accent">fostering design-driven transformation</span>
+                —maps closely to how I approach enterprise AI:{' '}
+                <span className="font-bold text-oxblood">educate leaders, imagine better futures, and equip people</span>{' '}
+                with the{' '}
+                <span className="font-bold text-cobalt">tools and support to solve real, high-stakes problems</span>.
               </p>
               <a 
                 href="https://designlab.ucsd.edu/about/index.html" 
