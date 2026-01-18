@@ -158,10 +158,16 @@ export default function DesignerInResidencePage() {
             <p className="text-base text-foreground/80 leading-relaxed mb-4">
               Office hours, portfolio reviews, and career guidance for the next generation of designers.
             </p>
-            <div className="border-t-2 border-foreground/20 pt-4 mb-6">
-              <p className="text-sm font-bold text-foreground">Wednesdays 3:00pm – 5:00pm</p>
-              <p className="text-sm text-foreground/70">Design & Innovation Building</p>
-              <p className="text-sm text-foreground/70">Room 361</p>
+            <div className="border-t-2 border-foreground/20 pt-4 mb-6 space-y-4">
+              <div>
+                <p className="text-sm font-bold text-foreground">Wednesdays 3:00pm – 5:00pm</p>
+                <p className="text-sm text-foreground/70">Design & Innovation Building</p>
+                <p className="text-sm text-foreground/70">Room 361</p>
+              </div>
+              <div>
+                <p className="text-sm font-bold text-foreground">Fridays 7:30am – 9:00am</p>
+                <p className="text-sm text-foreground/70">Virtual Meetings</p>
+              </div>
             </div>
             <a
               href="https://calendar.app.google/ZMJpgxZazGUJQUT9A"
