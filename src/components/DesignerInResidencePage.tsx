@@ -19,9 +19,9 @@ export default function DesignerInResidencePage() {
       <div className="hidden lg:block absolute top-20 left-0 w-24 h-24 border-4 border-foreground transform -rotate-6 -translate-x-12 opacity-30" aria-hidden="true" />
 
       {/* Hero Section */}
-      <section className="relative py-12 md:py-20 lg:py-32 px-4">
+      <section className="relative py-12 md:py-20 lg:py-32 px-3 md:px-4">
         <div className="container mx-auto max-w-5xl">
-          <div className="bg-primary/10 border-2 md:border-4 border-foreground p-6 md:p-10 lg:p-12 shadow-neo-md md:shadow-neo-lg relative">
+          <div className="bg-primary/10 border-2 md:border-4 border-foreground p-4 md:p-10 lg:p-12 shadow-neo-md md:shadow-neo-lg relative">
             <div className="absolute -top-2 -right-2 md:-top-3 md:-right-3 w-10 h-10 md:w-16 md:h-16 bg-accent border-2 md:border-4 border-foreground" aria-hidden="true" />
             
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-black mb-4 md:mb-6 text-foreground leading-tight">
