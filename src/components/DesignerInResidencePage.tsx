@@ -44,7 +44,7 @@ export default function DesignerInResidencePage() {
             
             <div className="max-w-3xl space-y-4">
               <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
-                In <span className="font-bold text-primary">October 2025</span>, I accepted an invitation to serve as Designer-in-Residence. I said yes because I believe design is a force that shapes how organizations imagine, decide, and act.
+                In <span className="font-bold text-primary">October 2025</span>, I accepted an invitation to serve as <a href="https://designlab.ucsd.edu/people/designers-in-residence.html" target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-2 hover:text-accent transition-colors">Designer-in-Residence</a>. I said yes because I believe design is a force that shapes how organizations imagine, decide, and act.
               </p>
               <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
                 My day job is Head of AI Platforms & GTM Innovation at Qualcomm Technologies. This residency is how I stress-test that work against fresh perspectives, and give back to the community that shaped me. I am mentoring students, co-leading design programs, and connecting academic research to enterprise challenges.
