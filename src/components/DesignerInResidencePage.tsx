@@ -36,16 +36,7 @@ export default function DesignerInResidencePage() {
             
             <div className="max-w-3xl space-y-4">
               <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
-                In <span className="font-bold text-primary">October 2025</span>, I accepted an invitation to serve as{' '}
-                <a 
-                  href="https://designlab.ucsd.edu/people/designers-in-residence.html" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="underline decoration-2 underline-offset-2 hover:text-accent transition-colors"
-                >
-                  Designer-in-Residence
-                </a>
-                . I said yes because I believe design is a force that shapes how organizations imagine, decide, and act.
+                In <span className="font-bold text-primary">October 2025</span>, I accepted an invitation to serve as <a href="https://designlab.ucsd.edu/people/designers-in-residence.html" target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-2 hover:text-accent transition-colors inline-flex items-baseline gap-0.5">Designer-in-Residence<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline ml-0.5 relative -top-0.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span className="sr-only">(opens in new tab)</span></a>. I said yes because I believe design is a force that shapes how organizations imagine, decide, and act.
               </p>
               <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
                 My day job is Head of AI Platforms & GTM Innovation at Qualcomm Technologies. This residency is how I stress-test that work against fresh perspectives, and give back to the community that shaped me. I am mentoring students, co-leading design programs, and connecting academic research to enterprise challenges.
