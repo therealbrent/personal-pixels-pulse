@@ -25,15 +25,7 @@ export default function DesignerInResidencePage() {
             <div className="absolute -top-2 -right-2 md:-top-3 md:-right-3 w-10 h-10 md:w-16 md:h-16 bg-accent border-2 md:border-4 border-foreground" aria-hidden="true" />
             
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-black mb-4 md:mb-6 text-foreground leading-tight">
-              UC San Diego<br />
-              <a 
-                href="https://designlab.ucsd.edu/people/designers-in-residence.html" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-accent transition-colors underline decoration-4 underline-offset-4"
-              >
-                Designer-in-Residence
-              </a>
+              UC San Diego<br />Designer-in-Residence
             </h1>
             
             <p className="text-lg md:text-xl lg:text-2xl font-bold text-foreground/80 mb-6 md:mb-8 max-w-2xl">
@@ -44,7 +36,16 @@ export default function DesignerInResidencePage() {
             
             <div className="max-w-3xl space-y-4">
               <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
-                In <span className="font-bold text-primary">October 2025</span>, I accepted an invitation to serve as <a href="https://designlab.ucsd.edu/people/designers-in-residence.html" target="_blank" rel="noopener noreferrer" className="underline decoration-2 underline-offset-2 hover:text-accent transition-colors">Designer-in-Residence</a>. I said yes because I believe design is a force that shapes how organizations imagine, decide, and act.
+                In <span className="font-bold text-primary">October 2025</span>, I accepted an invitation to serve as{' '}
+                <a 
+                  href="https://designlab.ucsd.edu/people/designers-in-residence.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="underline decoration-2 underline-offset-2 hover:text-accent transition-colors"
+                >
+                  Designer-in-Residence
+                </a>
+                . I said yes because I believe design is a force that shapes how organizations imagine, decide, and act.
               </p>
               <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
                 My day job is Head of AI Platforms & GTM Innovation at Qualcomm Technologies. This residency is how I stress-test that work against fresh perspectives, and give back to the community that shaped me. I am mentoring students, co-leading design programs, and connecting academic research to enterprise challenges.
