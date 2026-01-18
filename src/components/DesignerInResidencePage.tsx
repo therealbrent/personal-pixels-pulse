@@ -41,10 +41,13 @@ export default function DesignerInResidencePage() {
                   href="https://designlab.ucsd.edu/people/designers-in-residence.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline decoration-2 underline-offset-2 hover:text-accent transition-colors inline-flex items-center gap-1 leading-none"
+                  className="underline decoration-2 underline-offset-2 hover:text-accent transition-colors inline leading-none"
                 >
                   Designer-in-Residence
-                  <ExternalLink className="h-3 w-3 inline-block align-[-0.125em]" aria-hidden="true" />
+                  <ExternalLink
+                    className="h-3 w-3 inline align-[-0.125em]"
+                    aria-hidden="true"
+                  />
                   <span className="sr-only"> (opens in new tab)</span>
                 </a>
                 . I said yes because I believe design is a force that shapes how organizations imagine, decide, and act.
