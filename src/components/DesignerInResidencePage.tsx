@@ -102,8 +102,8 @@ export default function DesignerInResidencePage() {
               <CardContent className="p-6 md:p-8 pt-10 md:pt-12">
                 <p className="text-base md:text-lg text-foreground leading-relaxed">
                   I volunteer because it's part of the{' '}
-                  <span className="font-bold text-accent">talent flywheel</span>: you share what you know, you learn what you don't, and everyone moves faster. I've benefitted from people who did that for me. This is me{' '}
-                  <span className="font-bold text-cobalt">paying it forward</span>.
+                  <span className="font-bold text-primary">talent flywheel</span>: you share what you know, you learn what you don't, and everyone moves faster. I've benefited from people who did that for me. This is me{' '}
+                  <span className="font-bold text-accent">paying it forward</span>.
                 </p>
               </CardContent>
             </Card>
@@ -115,7 +115,10 @@ export default function DesignerInResidencePage() {
               </div>
               <CardContent className="p-6 md:p-8">
                 <p className="text-base md:text-lg text-foreground leading-relaxed">
-                  I volunteer because my job is to ship innovation. This residency forces fresh reps in unfamiliar contexts. New rooms, new problems, new perspectives. That's how better leaders get made.
+                  And honestly: my job is to ship innovation. This residency gives me fresh reps in unfamiliar contexts—
+                  <span className="font-bold text-oxblood">new problems, new constraints, new perspectives</span>. Students don't let you hide behind slideware. That's how I{' '}
+                  <span className="font-bold text-cobalt">sharpen my leadership</span>{' '}
+                  while giving back.
                 </p>
               </CardContent>
             </Card>
