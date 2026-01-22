@@ -165,7 +165,7 @@ export default function DesignerInResidencePage() {
               <div>
                 <div className="border-t-2 border-foreground/20 pt-4 mb-6 space-y-4">
                   <div>
-                    <p className="text-sm font-bold text-foreground">Wednesdays 3:00pm – 5:00pm</p>
+                    <p className="text-sm font-bold text-foreground">Wednesdays 3:00pm – 6:00pm</p>
                     <p className="text-sm text-foreground/70">Design & Innovation Building</p>
                     <p className="text-sm text-foreground/70">Room 361</p>
                   </div>
