@@ -48,7 +48,7 @@ export class SecurityMonitor {
   private logSecurityEvent(eventType: string, details: Record<string, any>): void {
     // In a production environment, you would send this to your security monitoring service
     // For now, we'll just log to console in development
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.warn(`[Security Event] ${eventType}:`, details);
     }
     
