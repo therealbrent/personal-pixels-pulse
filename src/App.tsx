@@ -920,6 +920,7 @@ function AppContent() {
             <Route path="/designer-in-residence" element={<DesignerInResidencePage />} />
             <Route path="/career" element={<CareerTimelinePage />} />
             <Route path="/vibes" element={<VibesPage />} />
+            <Route path="/home-v2" element={<HomeV2Page />} />
           </Routes>
         </main>
         <Footer />
