@@ -17,6 +17,7 @@ import LeadershipPage from "./components/LeadershipPage";
 import DesignerInResidencePage from "./components/DesignerInResidencePage";
 import CareerTimelinePage from "./components/CareerTimelinePage";
 import VibesPage from "./components/VibesPage";
+import HomeV2Page from "./components/HomeV2Page";
 import { LazyImage } from "./components/LazyImage";
 import SEO from "./components/SEO";
 import { CommandPalette } from "./components/CommandPalette";
