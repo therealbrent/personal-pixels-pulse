@@ -107,14 +107,14 @@ export default function HomeV2Page() {
         <ParallaxShape depth={0.45} className="absolute bottom-16 left-44 w-6 h-6 bg-foreground rotate-45 hidden lg:block" />
         <ParallaxShape depth={0.5} className="absolute bottom-40 left-72 w-16 h-10 border-4 border-secondary rotate-6 hidden lg:block" />
 
-        {/* Two-column layout */}
+        {/* Two-column layout: stacked on mobile, side-by-side on md+ */}
         <div className="container mx-auto px-4 md:px-8 relative z-10 w-full">
-          <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-end min-h-screen py-24 lg:py-16">
+          <div className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-10 lg:gap-12 items-end min-h-screen py-20 md:py-16 lg:py-16">
 
             {/* LEFT: Text */}
             <div className="flex flex-col justify-center">
               {/* Vibe-coded badge */}
-              <div className="inline-flex mb-6 w-fit animate-fade-in">
+              <div className="inline-flex mb-5 w-fit animate-fade-in">
                 <span className="px-4 py-1.5 border-4 border-foreground bg-background font-black text-xs uppercase tracking-widest text-foreground transform -rotate-1 hover:rotate-0 transition-transform duration-300 shadow-[3px_3px_0px_0px_rgba(38,38,38,1)]">
                   This site was 100% vibe coded
                 </span>
@@ -122,7 +122,7 @@ export default function HomeV2Page() {
 
               {/* H1 */}
               <h1
-                className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none mb-6 animate-fade-in"
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-black tracking-tighter leading-none mb-5 animate-fade-in"
                 style={{ animationDelay: '0.1s', color: '#262626' }}
               >
                 AI-POWERED
@@ -132,7 +132,7 @@ export default function HomeV2Page() {
 
               {/* Sub-headline */}
               <p
-                className="text-lg md:text-2xl font-black uppercase tracking-widest mb-3 animate-fade-in"
+                className="text-base sm:text-lg md:text-xl lg:text-2xl font-black uppercase tracking-widest mb-3 animate-fade-in"
                 style={{ animationDelay: '0.25s', color: '#262626' }}
               >
                 Leveraging Generative AI Since June 2020
@@ -140,7 +140,7 @@ export default function HomeV2Page() {
 
               {/* Pill tags */}
               <div
-                className="flex gap-3 items-center mb-10 flex-wrap animate-fade-in"
+                className="flex gap-3 items-center mb-7 flex-wrap animate-fade-in"
                 style={{ animationDelay: '0.35s' }}
               >
                 {['AI', 'UX', 'GTM Innovation'].map((t, i) => (
@@ -155,9 +155,42 @@ export default function HomeV2Page() {
                 ))}
               </div>
 
+              {/* ── Mobile/tablet headshot (shown below tags, hidden on lg+) ── */}
+              <div className="block md:hidden mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <div className="relative w-56 sm:w-64 mx-auto">
+                  {/* Annotation above the photo, centered */}
+                  <div className="flex justify-center mb-2">
+                    <Annotation text="That's me!" />
+                  </div>
+                  {/* Arrow pointing down */}
+                  <div className="flex justify-center mb-1">
+                    <svg width="24" height="20" viewBox="0 0 24 20" fill="none" aria-hidden="true">
+                      <path d="M12 2 L12 16" stroke="#262626" strokeWidth="2.5" strokeLinecap="round"/>
+                      <path d="M5 10 L12 18 L19 10" stroke="#262626" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  {/* Mustard slab + photo */}
+                  <div className="relative">
+                    <div
+                      className="absolute inset-x-0 bottom-0 border-4 border-foreground shadow-[6px_6px_0px_0px_rgba(38,38,38,1)]"
+                      style={{ background: '#FFBA08', height: '80%' }}
+                      aria-hidden="true"
+                    />
+                    <img
+                      src={headshotSrc}
+                      alt="Brent Summers, smiling, wearing glasses and a floral shirt"
+                      className="relative z-10 w-full object-contain object-bottom"
+                      style={{ maxHeight: '55vw' }}
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+              </div>
+
               {/* CTAs */}
               <div
-                className="flex flex-col sm:flex-row gap-4 mb-10 animate-fade-in"
+                className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in"
                 style={{ animationDelay: '0.45s' }}
               >
                 <BrutalistButton
@@ -205,10 +238,9 @@ export default function HomeV2Page() {
               </div>
             </div>
 
-            {/* RIGHT: Headshot – anchored to bottom so face stays visible */}
-            <div className="relative hidden lg:block self-end">
-              {/* "That's me!" annotation — positioned relative to the photo wrapper,
-                  near the face (roughly top 22% of the portrait image) */}
+            {/* RIGHT: Headshot — tablet (md) and desktop (lg+) only */}
+            <div className="relative hidden md:flex items-end self-end justify-center">
+              {/* "That's me!" annotation — locks to face area */}
               <div className="absolute -left-28 top-[14%] z-20 flex flex-col items-start gap-0.5">
                 <Annotation text="That's me!" />
                 <svg width="48" height="32" viewBox="0 0 48 32" fill="none" aria-hidden="true" className="ml-6">
@@ -218,8 +250,7 @@ export default function HomeV2Page() {
               </div>
 
               {/* Mustard slab + photo */}
-              <div className="relative w-72 xl:w-80 2xl:w-96">
-                {/* Mustard background slab – fills lower 80% */}
+              <div className="relative w-56 md:w-64 lg:w-72 xl:w-80 2xl:w-96">
                 <div
                   className="absolute inset-x-0 bottom-0 border-4 border-foreground shadow-[8px_8px_0px_0px_rgba(38,38,38,1)]"
                   style={{ background: '#FFBA08', height: '82%' }}
@@ -229,7 +260,7 @@ export default function HomeV2Page() {
                   src={headshotSrc}
                   alt="Brent Summers, smiling, wearing glasses and a floral shirt"
                   className="relative z-10 w-full object-contain object-bottom"
-                  style={{ maxHeight: '72vh' }}
+                  style={{ maxHeight: '65vh' }}
                   loading="eager"
                   decoding="async"
                 />
