@@ -167,6 +167,16 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // PANELS
   // ==========================================
   {
+    id: "design-at-large-spring-2026",
+    type: "panel",
+    title: "Designing AI: Shaping Human-Centered Futures",
+    date: "2026-04-26",
+    venue: "UC San Diego",
+    url: "https://designlab.ucsd.edu/education/design-at-large/index.html",
+    imageUrl: "/lovable-uploads/design-at-large-spring-2026.jpeg",
+    topics: ["AI", "Design"],
+  },
+  {
     id: "ai-create-2025",
     type: "panel",
     title: "How AI is Shaping Creative Futures",
