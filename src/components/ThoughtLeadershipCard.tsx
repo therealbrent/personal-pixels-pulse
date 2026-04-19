@@ -362,7 +362,7 @@ export default function ThoughtLeadershipCard({ item, index, featured = false }:
         {isClickable && (
           <div className="pt-2">
             <span className={`font-black underline text-xs sm:text-sm transition-colors inline-flex items-center gap-1 focus:underline ${textColorClass} ${hoverTextClass}`}>
-              {hasVideo ? 'Watch Video' : 'View Content'}
+              {hasVideo ? 'Watch Video' : 'Learn More'}
               <Icon name="chevron-right" size={12} className={`${hoverTextClass} group-hover:translate-x-1 transition-all sm:w-3.5 sm:h-3.5`} aria-hidden="true" />
             </span>
           </div>
