@@ -343,7 +343,7 @@ export default function ThoughtLeadershipCard({ item, index, featured = false }:
         </h3>
 
         {/* Coming Soon tag for future events */}
-        {isFutureEvent && (
+        {isFutureEvent && !item.hideComingSoon && (
           <div className="mb-2 sm:mb-3">
             <ComingSoonTag />
           </div>

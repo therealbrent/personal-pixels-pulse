@@ -28,6 +28,7 @@ export interface ThoughtLeadershipItem {
   videoUrl?: string; // For presentations with video
   imageUrl?: string; // Optional image for card
   ctaLabel?: string; // Optional override for the call-to-action button text
+  hideComingSoon?: boolean; // Suppress "Coming Soon" tag for future-dated items
 
   // Metadata
   topics?: string[]; // ["AI", "Marketing", "UX"] - for future filtering
@@ -184,8 +185,10 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "Designing AI: Shaping Human-Centered Futures",
     date: "2026-04-26",
     venue: "UC San Diego",
+    description: "Moderator",
     url: "https://designlab.ucsd.edu/education/design-at-large/index.html",
     imageUrl: "/lovable-uploads/design-at-large-spring-2026.jpeg",
+    hideComingSoon: true,
     topics: ["AI", "Design"],
   },
   {
