@@ -27,6 +27,7 @@ export interface ThoughtLeadershipItem {
   url?: string; // External link (article, video, audio)
   videoUrl?: string; // For presentations with video
   imageUrl?: string; // Optional image for card
+  ctaLabel?: string; // Optional override for the call-to-action button text
 
   // Metadata
   topics?: string[]; // ["AI", "Marketing", "UX"] - for future filtering
@@ -46,6 +47,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     venue: "B2B Forum (Boston)",
     url: "https://mpb2b.marketingprofs.com/program-overview/",
     imageUrl: "/lovable-uploads/b2b-forum-2026.png",
+    ctaLabel: "See Programming",
     topics: ["Marketing"],
   },
   {
