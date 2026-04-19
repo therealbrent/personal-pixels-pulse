@@ -46,7 +46,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     date: "2026-11-01",
     venue: "B2B Forum (Boston)",
     url: "https://mpb2b.marketingprofs.com/program-overview/",
-    imageUrl: "/lovable-uploads/b2b-forum-2026.png",
+    imageUrl: "/lovable-uploads/b2b-forum-2026.jpg",
     ctaLabel: "See Programming",
     topics: ["Marketing"],
   },
