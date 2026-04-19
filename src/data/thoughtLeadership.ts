@@ -249,6 +249,16 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // ARTICLES / MEDIA FEATURES
   // ==========================================
   {
+    id: "adobe-ai-sample-prompts-2026",
+    type: "article",
+    title: "AI-powered marketing: Sample prompts you can use today",
+    date: "2026-04-26",
+    publication: "Adobe",
+    quote: "Prompts are like magic spells — when you get them right, remarkable things can happen.",
+    url: "https://experienceleague.adobe.com/en/perspectives/ai-powered-marketing-sample-prompts-you-can-use-today",
+    topics: ["AI", "Marketing"],
+  },
+  {
     id: "adobe-ai-powered-marketing-2026",
     type: "article",
     title: "AI-powered marketing: Practical strategies you can use today",
