@@ -264,7 +264,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "AI-powered marketing: Practical strategies you can use today",
     date: "2026-04-26",
     publication: "Adobe",
-    quote: "AI is powering a once-in-a-generation transformation for how work gets done.",
+    quote: "AI is powering a once-in-a-generation transformation for how work gets done. It can handle the heavy lifting of data processing, pattern recognition, and repetitive tasks.",
     url: "https://experienceleague.adobe.com/en/perspectives/ai-powered-marketing-practical-strategies-you-can-use-today",
     topics: ["AI", "Marketing"],
   },
