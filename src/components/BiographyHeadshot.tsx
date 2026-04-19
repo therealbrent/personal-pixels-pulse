@@ -35,7 +35,7 @@ export default function BiographyHeadshot() {
                 Before Qualcomm, Brent built his career in UX and digital strategy including work that led to the creation of the UX Flywheel — a user-centered alternative to the marketing funnel. That background still shapes his point of view today: the best technology stories are also design stories, operating-model stories, and human stories.
               </p>
               <p>
-                A sought-after speaker and moderator, Brent speaks on AI adoption, modern B2B marketing, design, and transformation. He is known for making complex concepts feel tangible and credible by providing useful frameworks for tackling the messy middle between experimentation and scale.
+                A sought-after speaker and moderator, Brent speaks on AI adoption, modern B2B marketing, design, and transformation. He is known for making complex concepts feel tangible and credible by providing useful frameworks for tackling the messy middle between experimentation and scale. Brent is also a seven-time marathoner who brings the same endurance mindset to leadership and transformation.
               </p>
             </div>
           </div>
