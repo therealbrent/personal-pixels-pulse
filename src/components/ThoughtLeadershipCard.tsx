@@ -12,7 +12,9 @@ interface ThoughtLeadershipCardProps {
 // Format date as MMM YY (e.g., "NOV 25")
 const formatDate = (dateString: string) => {
   try {
-    const date = new Date(dateString);
+    // Parse as local date to avoid UTC timezone shifts (e.g., "2026-11-01" → Oct 31 in negative TZs)
+    const [year, month, day] = dateString.split('-').map(Number);
+    const date = new Date(year, (month || 1) - 1, day || 1);
     return format(date, 'MMM yy').toUpperCase();
   } catch {
     return '';
