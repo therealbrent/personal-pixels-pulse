@@ -254,7 +254,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "AI-powered marketing: Sample prompts you can use today",
     date: "2026-04-26",
     publication: "Adobe",
-    quote: "Prompts are like magic spells — when you get them right, remarkable things can happen.",
+    quote: "AI can be your tireless assistant, analyst, or production team. It handles tedious, repetitive, and data-heavy tasks so you can focus on storytelling, relationship building, positioning, and innovative thinking.",
     url: "https://experienceleague.adobe.com/en/perspectives/ai-powered-marketing-sample-prompts-you-can-use-today",
     topics: ["AI", "Marketing"],
   },
