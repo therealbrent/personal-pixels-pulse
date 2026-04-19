@@ -29,7 +29,13 @@ export default function BiographyHeadshot() {
           <div className="flex-1 text-left lg:pr-8">
             <div className="space-y-4 sm:space-y-6 text-foreground text-base sm:text-lg font-semibold leading-relaxed">
               <p>
-                Brent Summers is an AI-powered marketing leader. At Qualcomm Technologies, Brent leads AI Platforms & GTM Innovation which is a hybrid function combining strategic vision, technical implementation, and behavior change. He has deployed more than 20 AI agents which are embedded, governed, and scaled across the global marketing team. For instance, WRITER has delivered an impressive 8.6x ROI with 85% of users active every week.
+                Brent Summers is an AI-powered marketing leader who sits at the intersection of strategy, systems, and behavior change. At Qualcomm Technologies, he leads AI Platforms & GTM Innovation, helping turn generative AI from executive curiosity into enterprise capability. His work has helped drive 85% weekly active usage and an 8.6x ROI for WRITER, while also building account-based marketing programs that have influenced billions in pipeline. Brent's edge is practical transformation: connecting platforms, workflows, governance, and human adoption so that AI actually gets used.
+              </p>
+              <p>
+                Before Qualcomm, Brent built his career in UX and digital strategy including work that led to the creation of the UX Flywheel — a user-centered alternative to the marketing funnel. That background still shapes his point of view today: the best technology stories are also design stories, operating-model stories, and human stories.
+              </p>
+              <p>
+                A sought-after speaker and moderator, Brent speaks on AI adoption, modern B2B marketing, design, and transformation. He is known for making complex concepts feel tangible and credible by providing useful frameworks for tackling the messy middle between experimentation and scale.
               </p>
             </div>
           </div>
