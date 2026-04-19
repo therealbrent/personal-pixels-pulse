@@ -39,6 +39,16 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // PRESENTATIONS
   // ==========================================
   {
+    id: "b2b-forum-boston-2026",
+    type: "presentation",
+    title: "Details TBA",
+    date: "2026-11-01",
+    venue: "B2B Forum (Boston)",
+    url: "https://mpb2b.marketingprofs.com/program-overview/",
+    imageUrl: "/lovable-uploads/b2b-forum-2026.png",
+    topics: ["Marketing"],
+  },
+  {
     id: "out-equal",
     type: "presentation",
     title: "Interrupting Microaggressions with Workplace Intervention",
