@@ -31,12 +31,6 @@ export default function BiographyHeadshot() {
               <p>
                 Brent Summers is an AI-powered marketing leader who sits at the intersection of strategy, systems, and behavior change. At Qualcomm Technologies, he leads AI Platforms & GTM Innovation, helping turn generative AI from executive curiosity into enterprise capability. His work has helped drive 85% weekly active usage and an 8.6x ROI for WRITER, while also building account-based marketing programs that have influenced billions in pipeline. Brent's edge is practical transformation: connecting platforms, workflows, governance, and human adoption so that AI actually gets used.
               </p>
-              <p>
-                Before Qualcomm, Brent built his career in UX, technology, and digital strategy including award-winning work in editorial, responsive web design, and marketing campaigns. Eventually that led to the creation of the UX Flywheel — a user-centered alternative to the marketing funnel.
-              </p>
-              <p>
-                A sought-after speaker and moderator, Brent speaks on AI adoption, modern B2B marketing, design, and transformation. He is known for making complex concepts feel tangible by providing useful frameworks for rationalizing decisions, communicating strategy, and motivating teams. Brent is also a seven-time marathoner who brings the same endurance mindset to leadership and transformation.
-              </p>
             </div>
           </div>
           
