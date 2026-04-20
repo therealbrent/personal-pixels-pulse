@@ -212,7 +212,7 @@ export default function DesignerInResidencePage() {
               </h3>
               <p className="text-base text-foreground/80 leading-relaxed mb-3">
                 Supporting the programming for Design@Large Spring 2026. This semester's theme is{' '}
-                <span className="font-bold text-primary">"Designing AI: Shaping Human-Centered Futures."</span>
+                <span className="font-bold text-primary">“Designing AI: Shaping Human-Centered Futures.”</span>
               </p>
               <p className="text-base text-foreground/80 leading-relaxed mb-4">
                 I worked with Professor Nadir Weibel to develop the program and recruit speakers. The seminar runs weekly on Wednesdays at 4:00pm.
