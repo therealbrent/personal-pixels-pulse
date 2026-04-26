@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button } from './ui/button';
 import { LazyImage } from './LazyImage';
 
@@ -6,6 +7,8 @@ export default function BiographyHeadshot() {
   const highResHeadshot = '/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png';
   // Compressed preview for fast loading
   const previewHeadshot = '/lovable-uploads/brent-summers-headshot-min.png';
+
+  const [isExpanded, setIsExpanded] = useState(false);
   
   const handleDownloadHeadshot = () => {
     const link = document.createElement('a');
@@ -23,32 +26,94 @@ export default function BiographyHeadshot() {
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 sm:mb-8 text-center text-foreground transform hover:skew-y-1 transition-transform duration-300">
           BIOGRAPHY & HEADSHOT
         </h2>
+
+        {/* Short / Long toggle */}
+        <div
+          role="tablist"
+          aria-label="Biography length"
+          className="flex justify-center mb-6 sm:mb-8 border-4 border-foreground w-fit mx-auto shadow-neo-sm"
+        >
+          <button
+            type="button"
+            role="tab"
+            aria-selected={!isExpanded}
+            onClick={() => setIsExpanded(false)}
+            className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-black uppercase tracking-wider transition-colors min-h-[44px] ${
+              !isExpanded
+                ? 'bg-foreground text-background'
+                : 'bg-background text-foreground hover:bg-primary'
+            }`}
+          >
+            Short Bio
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={isExpanded}
+            onClick={() => setIsExpanded(true)}
+            className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-black uppercase tracking-wider transition-colors min-h-[44px] border-l-4 border-foreground ${
+              isExpanded
+                ? 'bg-foreground text-background'
+                : 'bg-background text-foreground hover:bg-primary'
+            }`}
+          >
+            Full Bio
+          </button>
+        </div>
         
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-16 items-start">
           {/* Text content */}
           <div className="flex-1 text-left lg:pr-8">
             <div className="space-y-4 sm:space-y-6 text-foreground text-base sm:text-lg font-semibold leading-relaxed">
-              <p>
-                Brent Summers makes AI feel less like magic and more like muscle. He is the person you call when a big idea has to survive contact with a complex organization. Brent makes it useful, measurable, and real.
-              </p>
-              <p>
-                As Head of AI Platforms & GTM Innovation at Qualcomm Technologies, Brent builds the operating models that turn generative AI from executive aspiration into everyday enterprise capability. His pioneering work helped establish Qualcomm's first approved enterprise generative AI platform, with adoption reaching 85% weekly active usage, approximately 2,400 hours saved per month, and an 8.6x ROI.
-              </p>
-              <p>
-                He secured alignment across marketing, IT, and legal, turning a single department's experiment into a company-wide operating model that CMO Don McGuire is calling “Human Led. AI Powered.” Beyond AI, his go-to-market work includes an account-based marketing program tied to billions in influenced revenue, recognized with back-to-back 6sense Breakthrough Awards for “One Revenue Team” in 2023 and “Ad Campaign of the Year” in 2024.
-              </p>
-              <p>
-                Known for creating frameworks that make ideas easier to see, shape, and ship, Brent created the Gen AI Use Case Canvas. The framework has been used more than 100 times at Qualcomm to define, pressure-test, and prepare AI use cases for implementation. It has been shared publicly on stages from Los Angeles to Sofia.
-              </p>
-              <p>
-                Brent's advantage comes from a career path that refused to stay in one lane. He left college early and spent nearly seven years in IT at NASCAR, where he learned to translate technical complexity for humans before moving through B2B marketing and UX. He started experimenting with generative AI in 2020, years before it became boardroom shorthand.
-              </p>
-              <p>
-                Brent's human-centered approach extends beyond Qualcomm. He is a Designer-in-Residence at the UC San Diego Design Lab, served as a Design Ambassador for World Design Capital 2024, and holds an executive education certificate from Northwestern University's Kellogg School of Management. A seven-time marathoner, he brings an endurance mindset to leadership and transformation.
-              </p>
-              <p>
-                He speaks from the messy middle because that is where the people are. Not yet convinced. Not yet comfortable. But willing, if someone meets them there. Brent believes the best transformations are designed with people, not handed to them. Because the distance between a bold idea and a changed organization is always human.
-              </p>
+              {!isExpanded ? (
+                <>
+                  <p>
+                    Brent Summers makes AI feel less like magic and more like muscle. He is the person you call when a big idea has to survive contact with a complex organization. Brent makes it useful, measurable, and real.
+                  </p>
+                  <p>
+                    As Head of AI Platforms & GTM Innovation at Qualcomm Technologies, he builds the operating models that turn generative AI from executive aspiration into everyday enterprise capability — driving 85% weekly active usage and an 8.6x ROI on Qualcomm's first approved enterprise GenAI platform.
+                  </p>
+                  <p>
+                    A seven-time marathoner and Designer-in-Residence at the UC San Diego Design Lab, Brent believes the best transformations are designed with people, not handed to them.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    Brent Summers makes AI feel less like magic and more like muscle. He is the person you call when a big idea has to survive contact with a complex organization. Brent makes it useful, measurable, and real.
+                  </p>
+                  <p>
+                    As Head of AI Platforms & GTM Innovation at Qualcomm Technologies, Brent builds the operating models that turn generative AI from executive aspiration into everyday enterprise capability. His pioneering work helped establish Qualcomm's first approved enterprise generative AI platform, with adoption reaching 85% weekly active usage, approximately 2,400 hours saved per month, and an 8.6x ROI.
+                  </p>
+                  <p>
+                    He secured alignment across marketing, IT, and legal, turning a single department's experiment into a company-wide operating model that CMO Don McGuire is calling “Human Led. AI Powered.” Beyond AI, his go-to-market work includes an account-based marketing program tied to billions in influenced revenue, recognized with back-to-back 6sense Breakthrough Awards for “One Revenue Team” in 2023 and “Ad Campaign of the Year” in 2024.
+                  </p>
+                  <p>
+                    Known for creating frameworks that make ideas easier to see, shape, and ship, Brent created the Gen AI Use Case Canvas. The framework has been used more than 100 times at Qualcomm to define, pressure-test, and prepare AI use cases for implementation. It has been shared publicly on stages from Los Angeles to Sofia.
+                  </p>
+                  <p>
+                    Brent's advantage comes from a career path that refused to stay in one lane. He left college early and spent nearly seven years in IT at NASCAR, where he learned to translate technical complexity for humans before moving through B2B marketing and UX. He started experimenting with generative AI in 2020, years before it became boardroom shorthand.
+                  </p>
+                  <p>
+                    Brent's human-centered approach extends beyond Qualcomm. He is a Designer-in-Residence at the UC San Diego Design Lab, served as a Design Ambassador for World Design Capital 2024, and holds an executive education certificate from Northwestern University's Kellogg School of Management. A seven-time marathoner, he brings an endurance mindset to leadership and transformation.
+                  </p>
+                  <p>
+                    He speaks from the messy middle because that is where the people are. Not yet convinced. Not yet comfortable. But willing, if someone meets them there. Brent believes the best transformations are designed with people, not handed to them. Because the distance between a bold idea and a changed organization is always human.
+                  </p>
+                </>
+              )}
+            </div>
+
+            <div className="mt-6">
+              <Button
+                onClick={() => setIsExpanded((v) => !v)}
+                variant="brutalist-accent"
+                className="text-xs sm:text-sm"
+                aria-expanded={isExpanded}
+                aria-controls="biography"
+              >
+                {isExpanded ? 'Show Short Bio ↑' : 'Read Full Bio ↓'}
+              </Button>
             </div>
           </div>
           
