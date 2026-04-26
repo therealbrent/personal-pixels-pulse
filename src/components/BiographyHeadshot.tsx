@@ -74,7 +74,7 @@ export default function BiographyHeadshot() {
                     As Head of AI Platforms & GTM Innovation at Qualcomm Technologies, he builds the operating models that turn generative AI from executive aspiration into everyday enterprise capability with adoption reaching 85% weekly active usage and an 8.6x ROI on Qualcomm's first approved enterprise GenAI platform.
                   </p>
                   <p>
-                    A seven-time marathoner and Designer-in-Residence at the UC San Diego Design Lab, Brent believes the best transformations are designed with people, not handed to them.
+                    A seven-time marathoner and Designer-in-Residence at the UC San Diego Design Lab, Brent believes the distance between a bold idea and a changed organization is always human.
                   </p>
                 </>
               ) : (
