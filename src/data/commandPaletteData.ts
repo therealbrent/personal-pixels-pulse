@@ -1,4 +1,4 @@
-import { Home, Briefcase, Mic, FileText, Palette, Users, Lightbulb, Play, Award, MessageSquare, Linkedin, Twitter, Github, Mail, Calendar, Tag } from 'lucide-react';
+import { Home, Briefcase, Mic, Palette, Users, Lightbulb, Play, Award, MessageSquare, Linkedin, Twitter, Github, Mail, Calendar, Tag } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 import { thoughtLeadershipData } from './thoughtLeadership';
 
@@ -64,16 +64,6 @@ export const commandPaletteData: CommandItem[] = [
     keywords: ['designer', 'residence', 'mentorship', 'program'],
     description: 'Design mentorship program',
     bodyContent: 'UC San Diego industry affiliate program mentor students co-lead design programs connect academic research enterprise challenges. October 2025 invitation design education teaching collaboration university.',
-  },
-  {
-    id: 'llms',
-    title: 'LLMs.txt',
-    url: '/llms.txt',
-    icon: FileText,
-    type: 'page',
-    keywords: ['llms', 'llm', 'txt', 'ai', 'models', 'machine readable'],
-    description: 'Machine-readable site information',
-    bodyContent: 'Machine-readable site information for AI models LLMs large language models structured data. About expertise skills key projects achievements professional profiles contact. Enterprise AI platforms GTM innovation ABM account-based marketing WRITER Qualcomm.',
   },
   {
     id: 'vibes',

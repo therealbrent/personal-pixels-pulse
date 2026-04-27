@@ -46,23 +46,6 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Right: LLMs.txt Link - Filled Mustard Button */}
-          <div className="flex items-center gap-4">
-            <a 
-              href="/llms.txt" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="relative text-lg md:text-xl font-bold text-primary-foreground bg-primary border-4 border-foreground px-6 py-3 hover:bg-primary/90 hover:shadow-neo-sm transition-all duration-200 focus:ring-4 focus:ring-focus-ring focus:ring-offset-4 min-h-[44px] flex items-center group overflow-visible"
-              aria-label="View LLMs.txt file - Opens in new tab"
-            >
-              LLMs.txt
-              {/* Hot Pink geometric overlay accent */}
-              <div 
-                className="absolute -top-2 -right-2 w-4 h-4 bg-accent border-2 border-foreground rotate-45 opacity-0 group-hover:opacity-90 transition-all duration-200"
-                aria-hidden="true"
-              />
-            </a>
-          </div>
         </div>
       </nav>
     </header>

@@ -7,7 +7,6 @@ import { MediaCard } from "./components/ui/MediaCard";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import {
-  LLMSTextPage,
   SpeakingMediaPage,
   DesignCaseStudiesPage,
   SlotMachine,
@@ -911,7 +910,6 @@ function AppContent() {
         <main id="main-content" className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/llms.txt" element={<LLMSTextPage />} />
             <Route path="/insights" element={<SpeakingMediaPage />} />
             <Route path="/speaking" element={<Navigate to="/insights" replace />} />
             <Route path="/speaking-media" element={<Navigate to="/insights" replace />} />
