@@ -66,16 +66,6 @@ export const commandPaletteData: CommandItem[] = [
     bodyContent: 'UC San Diego industry affiliate program mentor students co-lead design programs connect academic research enterprise challenges. October 2025 invitation design education teaching collaboration university.',
   },
   {
-    id: 'llms',
-    title: 'LLMs.txt',
-    url: '/llms.txt',
-    icon: FileText,
-    type: 'page',
-    keywords: ['llms', 'llm', 'txt', 'ai', 'models', 'machine readable'],
-    description: 'Machine-readable site information',
-    bodyContent: 'Machine-readable site information for AI models LLMs large language models structured data. About expertise skills key projects achievements professional profiles contact. Enterprise AI platforms GTM innovation ABM account-based marketing WRITER Qualcomm.',
-  },
-  {
     id: 'vibes',
     title: 'Vibes',
     url: '/vibes',
