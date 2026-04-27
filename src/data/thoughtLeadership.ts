@@ -274,6 +274,16 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // ARTICLES / MEDIA FEATURES
   // ==========================================
   {
+    id: "userled-ai-abm-2026",
+    type: "article",
+    title: "Data, Judgment and Direction — What Drives AI and ABM Success at Enterprise Scale",
+    date: "2026-04-01",
+    publication: "UserLed",
+    url: "https://www.youtube.com/watch?v=1rbEfzecgAg",
+    imageUrl: "/lovable-uploads/userled-ai-abm-2026.png",
+    topics: ["AI", "ABM"],
+  },
+  {
     id: "adobe-ai-sample-prompts-2026",
     type: "writing",
     title: "AI-powered marketing: Sample prompts you can use today",
