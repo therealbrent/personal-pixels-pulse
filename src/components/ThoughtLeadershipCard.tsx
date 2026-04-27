@@ -249,7 +249,7 @@ export default function ThoughtLeadershipCard({ item, index, featured = false }:
           {isClickable && (
             <div>
               <span className={`font-black underline text-sm transition-colors inline-flex items-center gap-1 focus:underline ${textColorClass} ${hoverTextClass}`}>
-                Read Article
+                {item.ctaLabel || 'Read Article'}
                 <Icon name="chevron-right" size={14} className={`${hoverTextClass} group-hover:translate-x-1 transition-all`} aria-hidden="true" />
               </span>
             </div>
