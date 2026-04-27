@@ -71,7 +71,7 @@ export default function BiographyHeadshot() {
                     Brent Summers makes AI feel less like magic and more like muscle. He is the person you call when a big idea has to survive contact with a complex organization. Brent makes it useful, measurable, and real.
                   </p>
                   <p>
-                    As Head of AI Platforms & GTM Innovation at Qualcomm Technologies, he builds the operating models that turn generative AI from executive aspiration into everyday enterprise capability with adoption reaching 85% weekly active usage and an 8.6x ROI on Qualcomm's first approved enterprise GenAI platform.
+                    As Head of AI Platforms & GTM Innovation at Qualcomm Technologies, he builds the operating models that executive aspiration into everyday enterprise capability. His pioneering work led to the first approved enterprise Gen AI platform at Qualcomm with an 8.6x ROI.
                   </p>
                   <p>
                     A seven-time marathoner and Designer-in-Residence at the UC San Diego Design Lab, Brent believes the distance between a bold idea and a changed organization is always human.
@@ -83,13 +83,13 @@ export default function BiographyHeadshot() {
                     Brent Summers makes AI feel less like magic and more like muscle. He is the person you call when a big idea has to survive contact with a complex organization. Brent makes it useful, measurable, and real.
                   </p>
                   <p>
-                    As Head of AI Platforms & GTM Innovation at Qualcomm Technologies, Brent builds the operating models that turn generative AI from executive aspiration into everyday enterprise capability. His pioneering work helped establish Qualcomm's first approved enterprise generative AI platform, with adoption reaching 85% weekly active usage, approximately 2,400 hours saved per month, and an 8.6x ROI.
+                    As Head of AI Platforms & GTM Innovation at Qualcomm Technologies, Brent builds the operating models that turn executive aspiration into everyday enterprise capability. His pioneering work helped establish Qualcomm's first approved enterprise generative AI platform, with adoption reaching 85% weekly active usage, 2,400 hours saved per month, and an 8.6x ROI.
                   </p>
                   <p>
                     He secured alignment across marketing, IT, and legal, turning a single department's experiment into a company-wide operating model that CMO Don McGuire is calling “Human Led. AI Powered.” Beyond AI, his go-to-market work includes an account-based marketing program tied to billions in influenced revenue, recognized with back-to-back 6sense Breakthrough Awards for “One Revenue Team” in 2023 and “Ad Campaign of the Year” in 2024.
                   </p>
                   <p>
-                    Known for creating frameworks that make ideas easier to see, shape, and ship, Brent created the Gen AI Use Case Canvas. The framework has been used more than 100 times at Qualcomm to define, pressure-test, and prepare AI use cases for implementation. It has been shared publicly on stages from Los Angeles to Sofia.
+                    Known for creating frameworks that make ideas easier to see, shape, and ship, Brent created the Gen AI Use Case Canvas. The framework has been used more than 100 times at Qualcomm to define, pressure-test, and prepare AI use cases for implementation. It has been shared publicly on stages from San Diego to Sofia.
                   </p>
                   <p>
                     Brent's advantage comes from a career path that refused to stay in one lane. He left college early and spent nearly seven years in IT at NASCAR, where he learned to translate technical complexity for humans before moving through B2B marketing and UX. He started experimenting with generative AI in 2020, years before it became boardroom shorthand.
@@ -98,7 +98,7 @@ export default function BiographyHeadshot() {
                     Brent's human-centered approach extends beyond Qualcomm. He is a Designer-in-Residence at the UC San Diego Design Lab, served as a Design Ambassador for World Design Capital 2024, and holds an executive education certificate from Northwestern University's Kellogg School of Management. A seven-time marathoner, he brings an endurance mindset to leadership and transformation.
                   </p>
                   <p>
-                    He speaks from the messy middle because that is where the people are. Not yet convinced. Not yet comfortable. But willing, if someone meets them there. Brent believes the best transformations are designed with people, not handed to them. Because the distance between a bold idea and a changed organization is always human.
+                    He speaks from the messy middle because the distance between a bold idea and a changed organization is always human.
                   </p>
                 </>
               )}
