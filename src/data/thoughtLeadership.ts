@@ -281,6 +281,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     publication: "UserLed",
     url: "https://www.youtube.com/watch?v=1rbEfzecgAg",
     imageUrl: "/lovable-uploads/userled-ai-abm-2026.png",
+    ctaLabel: "Watch Video",
     topics: ["AI", "ABM"],
   },
   {
