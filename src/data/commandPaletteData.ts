@@ -1,4 +1,4 @@
-import { Home, Briefcase, Mic, FileText, Palette, Users, Lightbulb, Play, Award, MessageSquare, Linkedin, Twitter, Github, Mail, Calendar, Tag } from 'lucide-react';
+import { Home, Briefcase, Mic, Palette, Users, Lightbulb, Play, Award, MessageSquare, Linkedin, Twitter, Github, Mail, Calendar, Tag } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 import { thoughtLeadershipData } from './thoughtLeadership';
 
