@@ -41,13 +41,6 @@ const pages = {
     ogDescription: 'Two decades of marketing and design leadership experience.',
     ogImage: 'https://brentsummers.com/og-images/home.png',
   },
-  '/llms': {
-    title: 'LLMs.txt | Brent Summers',
-    description: 'Machine-readable profile for LLMs and AI assistants about Brent Summers.',
-    ogTitle: 'LLMs.txt | Brent Summers',
-    ogDescription: 'Machine-readable profile for AI assistants.',
-    ogImage: 'https://brentsummers.com/og-images/home.png',
-  },
   '/designer-in-residence': {
     title: 'Designer-in-Residence | UCSD × Industry Partner Program',
     description: 'Coming soon: Designer-in-Residence program bridging industry and academia.',
