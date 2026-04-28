@@ -71,7 +71,7 @@ export default function BiographyHeadshot() {
                     Brent Summers is Head of AI Platforms & GTM Innovation at Qualcomm Technologies, where he makes AI feel less like magic and more like muscle. His work established Qualcomm's first approved enterprise generative AI platform, achieving 85% weekly active usage, 2,400 hours saved monthly, and an 8.6x ROI.
                   </p>
                   <p>
-                    Creator of the Gen AI Use Case Canvas, now used and taught across organizations from San Diego to Sofia, Brent is a Designer-in-Residence at the UC San Diego Design Lab and a Kellogg executive education alumnus. He speaks globally on human-centered AI adoption. Because the distance between a bold idea and a changed organization is always human.
+                    Brent is also a Designer-in-Residence at the UC San Diego Design Lab and holds a Product Strategy certificate from Northwestern University's Kellogg School of Management. He speaks from the messy middle of enterprise transformation, because the distance between a bold idea and a changed organization is always human.
                   </p>
                 </>
               ) : (
