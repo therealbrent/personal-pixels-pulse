@@ -98,6 +98,30 @@ export default function BiographyHeadshot() {
                     A seven-time marathoner, Brent brings an endurance mindset to leadership and transformation. He believes the distance between a bold idea and a changed organization is always human.
                   </p>
                 </>
+              ) && false ? null : isExpanded ? (
+                <>
+                  <p>
+                    Brent Summers makes AI feel less like magic and more like muscle. He speaks from the messy middle of enterprise transformation, where bold ideas meet governance, legacy systems, skeptical teams, and the very human work of change.
+                  </p>
+                  <p>
+                    As Head of AI Platforms & GTM Innovation at Qualcomm Technologies, Brent turns executive aspiration into everyday enterprise capability. His pioneering work helped establish Qualcomm's first approved enterprise generative AI platform, with adoption reaching 85% weekly active usage, 2,400 hours saved per month, and an 8.6x ROI. By securing alignment across marketing, IT, and legal, a single department's experiment has become a transformation effort that Qualcomm CMO Don McGuire has coined “Human Led. AI Powered.”
+                  </p>
+                  <p>
+                    His broader go-to-market work includes an account-based marketing program tied to billions in revenue and recognized with back-to-back 6sense Breakthrough Awards for “One Revenue Team” in 2023 and “Ad Campaign of the Year” in 2024.
+                  </p>
+                  <p>
+                    Known for frameworks that make ideas easier to see, shape, and ship, Brent created the Gen AI Use Case Canvas to define, pressure-test, and prepare AI use cases for implementation. Used more than 100 times at Qualcomm, the framework has also been shared publicly on stages from San Diego to Sofia.
+                  </p>
+                  <p>
+                    Brent's advantage comes from a career path that refused to stay in one lane. He left college early and spent nearly seven years in IT at NASCAR, where he learned to make complex systems work under real-world pressure. He moved to California in 2011, pivoted into marketing and UX, and began experimenting with generative AI in 2020 — years before it became boardroom shorthand.
+                  </p>
+                  <p>
+                    Brent's human-centered approach extends beyond Qualcomm, including his role as Designer-in-Residence at the UC San Diego Design Lab and as a Design Ambassador for World Design Capital 2024. He holds a Product Strategy certificate from Northwestern University's Kellogg School of Management.
+                  </p>
+                  <p>
+                    A seven-time marathoner, Brent brings an endurance mindset to leadership and transformation. He believes the distance between a bold idea and a changed organization is always human.
+                  </p>
+                </>
               )}
             </div>
 
