@@ -278,7 +278,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: "article",
     title: "Building AI literacy in the workplace",
     date: "2026-05-01",
-    publication: "CIO",
+    publication: "CIO (Sponsored)",
     quote: "AI literacy is about creating an awareness and understanding of AI: its capabilities, what it can do for us, and our responsibilities when using it.",
     url: "https://modernworkplace.cio.com/empowered-workforce/building-ai-literacy-in-the-workplace/",
     topics: ["AI", "Leadership"],
