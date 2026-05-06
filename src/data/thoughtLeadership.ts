@@ -274,6 +274,16 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // ARTICLES / MEDIA FEATURES
   // ==========================================
   {
+    id: "cio-ai-literacy-2026",
+    type: "article",
+    title: "Building AI literacy in the workplace",
+    date: "2026-05-01",
+    publication: "CIO",
+    quote: "AI literacy is about creating an awareness and understanding of AI: its capabilities, what it can do for us, and our responsibilities when using it.",
+    url: "https://modernworkplace.cio.com/empowered-workforce/building-ai-literacy-in-the-workplace/",
+    topics: ["AI", "Leadership"],
+  },
+  {
     id: "userled-ai-abm-2026",
     type: "article",
     title: "Data, Judgment and Direction — What Drives AI and ABM Success at Enterprise Scale",
