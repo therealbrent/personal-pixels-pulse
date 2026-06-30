@@ -9,6 +9,8 @@
  * 5. The feed will auto-sort by date (newest first)
  */
 
+import sportBeachImage from '../assets/Cannes_2026_-_Sport_Beach_-_Brent_Summers.png.asset.json';
+
 export type ContentType = "presentation" | "podcast" | "panel" | "article" | "writing";
 
 export interface ThoughtLeadershipItem {
@@ -273,6 +275,17 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // ==========================================
   // ARTICLES / MEDIA FEATURES
   // ==========================================
+  {
+    id: "sport-beach-sam-chotiner-2026",
+    type: "article",
+    title: "Brent Summers interviewed by Sam Chotiner",
+    date: "2026-06-26",
+    publication: "Sport Beach",
+    url: "https://www.youtube.com/watch?v=fIlAhPaO9EI",
+    imageUrl: sportBeachImage.url,
+    ctaLabel: "Watch Video",
+    topics: ["AI", "Marketing"],
+  },
   {
     id: "cio-ai-literacy-2026",
     type: "article",
