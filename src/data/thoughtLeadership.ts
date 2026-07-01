@@ -10,6 +10,7 @@
  */
 
 import sportBeachImage from '../assets/Cannes_2026_-_Sport_Beach_-_Brent_Summers.png.asset.json';
+import humansOfAIImage from '../assets/Humans_of_AI.png.asset.json';
 
 export type ContentType = "presentation" | "podcast" | "panel" | "article" | "writing";
 
@@ -285,6 +286,18 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     imageUrl: sportBeachImage.url,
     ctaLabel: "Watch Video",
     topics: ["AI", "Marketing"],
+  },
+  {
+    id: "humans-of-ai-brent-summers-2026",
+    type: "article",
+    title: "From magic to muscle: Qualcomm's Brent Summers on driving enterprise AI transformation",
+    date: "2026-06-26",
+    publication: "Humans of AI",
+    quote: "AI has more value when it's designed into a workflow as opposed to simply bolted on top.",
+    url: "https://www.youtube.com/watch?v=Dvan146syOM",
+    imageUrl: humansOfAIImage.url,
+    ctaLabel: "Watch Video",
+    topics: ["AI", "Leadership"],
   },
   {
     id: "cio-ai-literacy-2026",
