@@ -34,19 +34,19 @@ const PRESS_OUTLETS = [
 const SPEAKING_TOPICS = [
   {
     title: 'Human Led. AI Powered.',
-    body: 'Why enterprise AI transformation succeeds or fails on the human side — not the tech.',
+    body: 'Why enterprise AI transformation succeeds or fails on the human side. How a middle-manager became an AI champion by focusing on adoption, enablement, and evangelism.',
   },
   {
     title: 'The UX Flywheel: Design as a Growth Engine',
-    body: 'Why the highest-performing companies treat UX as a compounding business function — not a service desk.',
+    body: "A user-centered replacement for the marketing funnel. UX isn't a service desk — it's the engine that surfaces new opportunities, ships new products, and compounds customer lifetime value.",
   },
   {
     title: 'ABM: The Perfect Proving Ground for AI',
-    body: 'Account-based marketing is already data-driven, personalized, and full-funnel — making it the sharpest testbed for AI across the GTM motion.',
+    body: 'ABM combines complex data, repeatable workflows, cross-functional teams, and measurable business outcomes. AI can improve nearly every aspect of this GTM strategy — and be a model for the rest of the enterprise.',
   },
   {
     title: "The Boundary-Crosser's Advantage",
-    body: 'Why the next generation of marketing leaders will come from IT, design, and the shop floor — not the MBA track.',
+    body: "The next generation of leaders will come from IT, design, and the shop floor — not the MBA track. Individual contributors with enough ambition and cultural influence can out-deliver managers who aren't comfortable getting their hands dirty.",
   },
 ];
 
