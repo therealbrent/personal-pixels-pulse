@@ -37,16 +37,16 @@ const SPEAKING_TOPICS = [
     body: 'Why enterprise AI transformation succeeds or fails on the human side — not the tech.',
   },
   {
-    title: 'From Magic to Muscle',
-    body: 'Moving generative AI out of pilot theater and into everyday operating capability.',
+    title: 'The UX Flywheel: Design as a Growth Engine',
+    body: 'Why the highest-performing companies treat UX as a compounding business function — not a service desk.',
   },
   {
-    title: 'The Gen AI Use Case Canvas',
-    body: 'A framework to define, pressure-test, and ship AI use cases — used 100+ times at Qualcomm.',
+    title: 'ABM: The Perfect Proving Ground for AI',
+    body: 'Account-based marketing is already data-driven, personalized, and full-funnel — making it the sharpest testbed for AI across the GTM motion.',
   },
   {
-    title: 'Boundary-Crosser Leadership',
-    body: 'Building career leverage across marketing, technology, and design — without a linear resume.',
+    title: "The Boundary-Crosser's Advantage",
+    body: 'Why the next generation of marketing leaders will come from IT, design, and the shop floor — not the MBA track.',
   },
 ];
 
