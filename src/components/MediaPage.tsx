@@ -11,11 +11,8 @@ import { Icon } from './ui/icon';
 // These represent the strongest "executive brand" media moments.
 const FEATURED_PRESS_IDS = [
   'humans-of-ai-brent-summers-2026',
-  'cio-ai-literacy-2026',
-  'sport-beach-sam-chotiner-2026',
-  'userled-ai-abm-2026',
-  'ai-champions-playbook-2025',
   'convey-ux-podcast-2020',
+  'ux-flywheel-2020',
 ];
 
 // Wordmark press wall — publications & platforms where Brent's work has appeared.
@@ -177,14 +174,10 @@ export default function MediaPage() {
           <div className="max-w-7xl mx-auto">
             <div className="bg-cobalt border-4 md:border-8 border-foreground shadow-neo-xl p-4 sm:p-6 md:p-8">
               <h2 id="press-heading" className="text-xl sm:text-2xl md:text-4xl font-black text-white mb-2 sm:mb-3 leading-tight">
-                RECENT PRESS
+                FEATURED PRESS
               </h2>
               <p className="text-base sm:text-lg md:text-xl font-bold text-white/90 leading-relaxed">
-                Recent interviews, features, and appearances. Full history lives in the{' '}
-                <Link to="/insights" className="underline hover:text-primary transition-colors">
-                  archive
-                </Link>
-                .
+                Interviews and features to get to know me.
               </p>
             </div>
             <div className="bg-background border-4 md:border-8 border-foreground border-t-0 shadow-neo-xl p-4 sm:p-6 md:p-8">
