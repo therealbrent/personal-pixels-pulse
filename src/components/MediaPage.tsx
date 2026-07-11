@@ -18,18 +18,6 @@ const FEATURED_PRESS_IDS = [
   'ai-champions-playbook-2025',
 ];
 
-// Wordmark press wall — publications & platforms where Brent's work has appeared.
-const PRESS_OUTLETS = [
-  'Forbes',
-  'Adobe',
-  'CIO News',
-  'UX Magazine',
-  'WRITER',
-  '6sense',
-  'Humans of AI',
-  'User-Led',
-];
-
 // Speaking topics for press/booking inquiries.
 const SPEAKING_TOPICS = [
   {
@@ -71,21 +59,20 @@ export default function MediaPage() {
         {/* ============================================================ */}
         {/* HERO — Executive positioning / POV manifesto                  */}
         {/* ============================================================ */}
-        <header className="mb-10 sm:mb-14 md:mb-20">
+        <header className="mb-8 sm:mb-10 md:mb-14">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-block mb-4 sm:mb-6 px-4 py-1.5 border-4 border-foreground bg-background transform -rotate-1">
+            <div className="inline-block mb-3 sm:mb-4 px-3 py-1 border-4 border-foreground bg-background transform -rotate-1">
               <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-foreground">
                 Press & Media
               </p>
             </div>
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tight leading-none mb-6 sm:mb-8 uppercase">
-              <span className="block">Not the</span>
-              <span className="inline-block px-4 sm:px-6 py-1 sm:py-2 bg-accent text-white border-4 sm:border-8 border-foreground transform -rotate-2 my-2 sm:my-3 shadow-neo-md">
-                usual
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight leading-none mb-4 sm:mb-6 uppercase">
+              <span className="block">Human Led.</span>
+              <span className="inline-block px-3 sm:px-5 py-1 bg-accent text-white border-4 sm:border-8 border-foreground transform -rotate-2 mt-2 sm:mt-3 shadow-neo-md">
+                AI Powered.
               </span>
-              <span className="block">executive</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl font-bold text-foreground/90 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl font-bold text-foreground/90 leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8">
               A boundary-crosser at the intersection of{' '}
               <span className="bg-primary px-1.5">marketing</span>,{' '}
               <span className="bg-cobalt text-white px-1.5">technology</span>, and{' '}
@@ -93,6 +80,42 @@ export default function MediaPage() {
               scale, entrepreneurial instincts, and a career that never asked permission to
               switch lanes.
             </p>
+
+            {/* Stat Block */}
+            <dl className="grid grid-cols-2 md:grid-cols-4 gap-0 border-4 md:border-8 border-foreground shadow-neo-xl bg-background text-left">
+              <div className="bg-primary p-4 sm:p-5 border-r-0 md:border-r-4 border-b-4 md:border-b-0 border-foreground">
+                <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-foreground/70 mb-1">
+                  Onboarded to GenAI
+                </dt>
+                <dd className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground leading-none">
+                  350+
+                </dd>
+              </div>
+              <div className="bg-background p-4 sm:p-5 border-r-0 md:border-r-4 border-b-4 md:border-b-0 border-foreground">
+                <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-foreground/70 mb-1">
+                  Hours Reclaimed / Month
+                </dt>
+                <dd className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground leading-none">
+                  2,400
+                </dd>
+              </div>
+              <div className="bg-cobalt p-4 sm:p-5 border-r-0 md:border-r-4 border-b-4 md:border-b-0 border-foreground">
+                <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-white/80 mb-1">
+                  Years Leading Change
+                </dt>
+                <dd className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-none">
+                  20+
+                </dd>
+              </div>
+              <div className="bg-accent p-4 sm:p-5 border-foreground">
+                <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-white/90 mb-1">
+                  Industries Crossed
+                </dt>
+                <dd className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-none">
+                  6
+                </dd>
+              </div>
+            </dl>
           </div>
         </header>
 
@@ -146,14 +169,9 @@ export default function MediaPage() {
               </div>
             </div>
           </div>
-          {/* For Press callout — spans full POV width */}
-          <div className="max-w-6xl mx-auto border-4 md:border-8 border-t-0 border-foreground bg-foreground p-5 sm:p-6 md:p-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 shadow-neo-xl">
-            <div className="flex-shrink-0">
-              <span className="inline-block bg-accent text-white border-4 border-background px-3 py-1.5 text-[10px] sm:text-xs font-black tracking-widest uppercase transform -rotate-2">
-                For Press
-              </span>
-            </div>
-            <p className="text-sm sm:text-base md:text-lg font-bold text-background leading-relaxed flex-1">
+          {/* Press callout — spans full POV width */}
+          <div className="max-w-6xl mx-auto border-4 md:border-8 border-t-0 border-foreground bg-foreground p-5 sm:p-6 md:p-7 shadow-neo-xl">
+            <p className="text-sm sm:text-base md:text-lg font-bold text-background leading-relaxed">
               You can quote me on these topics. For fresh angles or exclusive commentary,{' '}
               <ExternalLink
                 href={BOOKING_URL}
@@ -168,35 +186,6 @@ export default function MediaPage() {
         </section>
 
         {/* ============================================================ */}
-        {/* AS SEEN IN — wordmark wall                                    */}
-        {/* ============================================================ */}
-        <section aria-label="Featured in" className="mb-12 sm:mb-16 md:mb-20">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="h-1 bg-foreground flex-1" aria-hidden="true" />
-              <h2 className="text-xs sm:text-sm font-black uppercase tracking-widest text-foreground px-2">
-                Featured In
-              </h2>
-              <div className="h-1 bg-foreground flex-1" aria-hidden="true" />
-            </div>
-            <div className="bg-foreground border-4 border-foreground py-6 sm:py-8 px-4 shadow-neo-md">
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:gap-x-10 md:gap-x-14">
-                {PRESS_OUTLETS.map((name, i) => (
-                  <div key={name} className="flex items-center gap-6 sm:gap-10 md:gap-14">
-                    <span className="text-xl sm:text-2xl md:text-3xl font-black text-background tracking-tight hover:text-primary transition-colors">
-                      {name}
-                    </span>
-                    {i < PRESS_OUTLETS.length - 1 && (
-                      <span className="w-2 h-2 bg-accent rotate-45 hidden sm:inline-block" aria-hidden="true" />
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ============================================================ */}
         {/* RECENT PRESS — curated cards                                  */}
         {/* ============================================================ */}
         <section aria-labelledby="press-heading" className="mb-12 sm:mb-16 md:mb-20">
@@ -206,7 +195,7 @@ export default function MediaPage() {
                 FEATURED PRESS
               </h2>
               <p className="text-base sm:text-lg md:text-xl font-bold text-white/90 leading-relaxed">
-                Interviews and features to get to know me.
+                Get to know me a little bit.
               </p>
             </div>
             <div className="bg-background border-4 md:border-8 border-foreground border-t-0 shadow-neo-xl p-4 sm:p-6 md:p-8">
