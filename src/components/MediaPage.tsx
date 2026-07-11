@@ -109,10 +109,10 @@ export default function MediaPage() {
               </div>
               <div className="bg-accent p-4 sm:p-5 border-foreground">
                 <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-white/90 mb-1">
-                  Industries Crossed
+                  College Degrees
                 </dt>
                 <dd className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-none">
-                  6
+                  0
                 </dd>
               </div>
             </dl>
