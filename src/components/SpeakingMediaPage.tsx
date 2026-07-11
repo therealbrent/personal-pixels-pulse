@@ -9,10 +9,10 @@ export default function SpeakingMediaPage() {
   return (
     <div className="min-h-screen bg-background text-foreground page-transition">
       <SEO 
-        title="Brent Summers, Keynote Speaker | Bio + Headshot + Media Archive"
-        description="Explore presentations, podcasts, panels, and interviews with Brent Summers"
-        ogTitle="Brent Summers, Marketing Leader & Keynote Speaker"
-        ogDescription="I share stories, strategic frameworks, and lessons from two decades of leading change."
+        title="Archive | Brent Summers — Talks, Interviews & Writing"
+        description="The full archive of Brent Summers' presentations, panels, podcasts, interviews, and writing from two decades of leading change."
+        ogTitle="Brent Summers — Archive of Talks, Interviews & Writing"
+        ogDescription="Two decades of presentations, panels, podcasts, and press. For current press kit, visit /media."
         ogImage="/og-images/speaking.png"
         canonicalUrl="/insights"
       />
@@ -21,10 +21,10 @@ export default function SpeakingMediaPage() {
         {/* Hero Section - Neo-Brutalist */}
         <header className="text-center mb-8 sm:mb-12">
           <h1 className="text-4xl sm:text-5xl md:text-8xl font-black tracking-tight mb-4 sm:mb-6 md:mb-8 text-foreground transform hover:skew-x-1 transition-transform duration-300">
-            INSIGHTS
+            ARCHIVE
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-bold text-foreground/90 max-w-4xl mx-auto leading-relaxed px-2 sm:px-0">
-            I share stories, strategic frameworks and lessons learned from two decades of leading change.
+            Two decades of talks, interviews, panels, and writing. Looking for a current press kit? Visit the <a href="/media" className="underline hover:text-accent transition-colors">Media page</a>.
           </p>
         </header>
 
