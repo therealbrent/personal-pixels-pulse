@@ -7,6 +7,7 @@ interface ThoughtLeadershipCardProps {
   item: ThoughtLeadershipItem;
   index: number;
   featured?: boolean;
+  hideDate?: boolean;
 }
 
 // Format date as MMM YY (e.g., "NOV 25")
@@ -138,7 +139,7 @@ const ComingSoonTag = () => {
   );
 };
 
-export default function ThoughtLeadershipCard({ item, index, featured = false }: ThoughtLeadershipCardProps) {
+export default function ThoughtLeadershipCard({ item, index, featured = false, hideDate = false }: ThoughtLeadershipCardProps) {
   const styles = contentTypeStyles[item.type];
   const hasVideo = !!item.videoUrl;
   const hasUrl = !!item.url;
@@ -208,7 +209,7 @@ export default function ThoughtLeadershipCard({ item, index, featured = false }:
         {/* Content stacked in order with consistent left alignment */}
         <div className={`flex flex-col p-4 ${hasImage ? '' : 'pr-10 sm:pr-12'}`}>
         {/* DATE - hidden for featured */}
-        {!featured && (
+        {!featured && !hideDate && (
           <div className={`text-[10px] font-black tracking-widest uppercase mb-5 text-foreground opacity-60 ${hoverTextClass} group-hover:opacity-100 transition-all`} aria-label={`Date: ${item.date}`}>
             {formatDate(item.date)}
           </div>
@@ -308,7 +309,7 @@ export default function ThoughtLeadershipCard({ item, index, featured = false }:
 
       <div className={`p-4 ${hasImage ? '' : 'pr-10 sm:pr-16'}`}>
         {/* DATE - hidden for featured */}
-        {!featured && (
+        {!featured && !hideDate && (
           <div className="min-h-4 sm:min-h-5 mb-2">
             {formattedDate && (
               <p className={`text-[9px] sm:text-[10px] font-black tracking-widest uppercase opacity-60 transition-colors ${textColorClass} ${hoverTextClass}`} aria-label={`Date: ${item.date}`}>
