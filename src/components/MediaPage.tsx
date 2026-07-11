@@ -257,8 +257,7 @@ export default function MediaPage() {
                     variant="primary"
                     className="inline-flex items-center gap-2 bg-primary text-foreground border-4 border-primary hover:bg-accent hover:text-white hover:border-accent transition-all duration-150 font-black text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 no-underline min-h-[44px]"
                   >
-                    <Icon name="calendar" size={18} aria-hidden="true" />
-                    Schedule a Call
+                    Schedule a Call →
                   </ExternalLink>
                 </div>
               </div>
