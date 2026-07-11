@@ -51,7 +51,7 @@ const SPEAKING_TOPICS = [
 ];
 
 const BOOKING_URL =
-  'https://outlook.office.com/bookwithme/user/f752142364414ef39fe29066ebb21219%40qti.qualcomm.com?anonymous&ismsaljsauthenabled=true';
+  'https://calendar.app.google/FMaEpgaVGdfxpQQN9';
 
 export default function MediaPage() {
   const pressItems = getThoughtLeadershipByIds(FEATURED_PRESS_IDS);

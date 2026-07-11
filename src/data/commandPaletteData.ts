@@ -192,7 +192,7 @@ export const commandPaletteData: CommandItem[] = [
   {
     id: 'schedule-call',
     title: 'Schedule a Call',
-    url: 'https://outlook.office.com/bookwithme/user/f752142364414ef39fe29066ebb21219%40qti.qualcomm.com?anonymous&ismsaljsauthenabled=true',
+    url: 'https://calendar.app.google/FMaEpgaVGdfxpQQN9',
     icon: Calendar,
     type: 'external',
     keywords: ['schedule', 'call', 'meeting', 'book', 'calendar', 'appointment', 'consult', 'speak'],
