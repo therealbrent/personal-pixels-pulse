@@ -15,6 +15,7 @@ import {
 import LeadershipPage from "./components/LeadershipPage";
 import DesignerInResidencePage from "./components/DesignerInResidencePage";
 import CareerTimelinePage from "./components/CareerTimelinePage";
+import MediaPage from "./components/MediaPage";
 import VibesPage from "./components/VibesPage";
 import HomeV2Page from "./components/HomeV2Page";
 import { LazyImage } from "./components/LazyImage";
@@ -910,6 +911,7 @@ function AppContent() {
         <main id="main-content" className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/media" element={<MediaPage />} />
             <Route path="/insights" element={<SpeakingMediaPage />} />
             <Route path="/speaking" element={<Navigate to="/insights" replace />} />
             <Route path="/speaking-media" element={<Navigate to="/insights" replace />} />

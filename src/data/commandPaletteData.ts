@@ -1,4 +1,4 @@
-import { Home, Briefcase, Mic, Palette, Users, Lightbulb, Play, Award, MessageSquare, Linkedin, Twitter, Github, Mail, Calendar, Tag } from 'lucide-react';
+import { Home, Briefcase, Mic, Palette, Users, Lightbulb, Play, Award, MessageSquare, Linkedin, Twitter, Github, Mail, Calendar, Tag, Newspaper } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 import { thoughtLeadershipData } from './thoughtLeadership';
 
@@ -36,14 +36,24 @@ export const commandPaletteData: CommandItem[] = [
     bodyContent: 'Leadership that spans vision and execution. Spotting trends and building bridges that unlock capability. Empathy fuels innovation understanding users customers teammates progress. Transformation must land ideas shift reality make big bets tangible. Data earns decisions gut sparks ideas evidence unlocks investment trust. Collaboration multiplies force silos kill momentum break them down. Play the long game today wins compound tomorrow advantage.',
   },
   {
+    id: 'media',
+    title: 'Media',
+    url: '/media',
+    icon: Newspaper,
+    type: 'page',
+    keywords: ['media', 'press', 'press kit', 'journalists', 'interview', 'booking', 'bio', 'headshot', 'reporter'],
+    description: 'Press kit, bio, headshot & booking',
+    bodyContent: 'Press and media kit for journalists producers podcast hosts. Bio short long headshot download boilerplate speaking topics booking calendar interviews podcasts keynotes. Executive leader boundary crosser marketing technology creative atypical career path optimistic entrepreneurial thought leader walks the walk.',
+  },
+  {
     id: 'insights',
-    title: 'Insights',
+    title: 'Archive',
     url: '/insights',
     icon: Mic,
     type: 'page',
-    keywords: ['insights', 'speaking', 'talks', 'presentations', 'media', 'speeches', 'keynote', 'writing', 'articles'],
-    description: 'Insights, speaking engagements and media appearances',
-    bodyContent: 'Share stories strategic frameworks lessons learned from two decades leading change. Conference presentations podcasts panels interviews articles writing. Global stages to local meetups wherever marketing technology and design collide. Biography headshot media archive book for your next event.',
+    keywords: ['archive', 'insights', 'speaking', 'talks', 'presentations', 'speeches', 'keynote', 'writing', 'articles', 'history'],
+    description: 'Full archive of talks, interviews & writing',
+    bodyContent: 'Archive of two decades of thought leadership. Conference presentations podcasts panels interviews articles writing. Global stages to local meetups wherever marketing technology and design collide. Complete history of talks and appearances.',
   },
   {
     id: 'design-case-studies',
