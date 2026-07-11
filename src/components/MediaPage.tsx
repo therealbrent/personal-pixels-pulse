@@ -103,7 +103,7 @@ export default function MediaPage() {
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-0 border-4 md:border-8 border-foreground shadow-neo-xl">
             <div className="bg-primary p-6 sm:p-8 border-r-0 md:border-r-4 border-b-4 md:border-b-0 border-foreground">
               <h2 id="pov-heading" className="text-2xl sm:text-3xl md:text-4xl font-black uppercase leading-tight text-foreground">
-                Point of View
+                My Takes
               </h2>
               <p className="mt-3 text-sm sm:text-base font-bold text-foreground/80 leading-relaxed">
                 Three things I believe, on the record.
@@ -115,8 +115,10 @@ export default function MediaPage() {
                   01 — On AI
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  AI has more value when it's designed into a workflow than bolted on top.
-                  Magic doesn't scale. Muscle does.
+                  "We onboarded 350+ people to generative AI at Qualcomm Technologies and
+                  clawed back 2,400 hours a month. That didn't happen because the tech was
+                  magic — it happened because we designed it into the workflow. Magic doesn't
+                  scale. Muscle does."
                 </p>
               </div>
               <div>
@@ -124,8 +126,9 @@ export default function MediaPage() {
                   02 — On Leadership
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  The distance between a bold idea and a changed organization is always human.
-                  Governance, empathy, and repetition are the real transformation stack.
+                  "The distance between a bold idea and a changed organization is always
+                  human. Transformation isn't a technology problem. It's a human one. Change
+                  is facilitated by empathy, clarity, repetition, and governance."
                 </p>
               </div>
               <div>
@@ -133,8 +136,25 @@ export default function MediaPage() {
                   03 — On Career
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  I never finished college. I did seven years in IT at NASCAR before pivoting
-                  into marketing and UX. Atypical paths compound. Optimism is a strategy.
+                  "I didn't finish college and I spent several years in IT at NASCAR before I
+                  moved into marketing. I've built my career by crossing lines other people
+                  were told to respect. Collaboration is a competitive advantage."
+                </p>
+              </div>
+              <div className="pt-4 sm:pt-5 border-t-4 border-foreground">
+                <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-accent mb-1">
+                  For Press
+                </p>
+                <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
+                  You can quote me on these topics. For fresh angles or exclusive commentary,{' '}
+                  <ExternalLink
+                    href={BOOKING_URL}
+                    variant="primary"
+                    className="underline decoration-4 decoration-accent underline-offset-4 hover:bg-accent hover:text-white transition-colors"
+                  >
+                    book a call
+                  </ExternalLink>
+                  .
                 </p>
               </div>
             </div>
