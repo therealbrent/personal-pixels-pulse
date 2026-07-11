@@ -141,10 +141,9 @@ export default function MediaPage() {
                   01 — On AI
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  &ldquo;We onboarded 350+ people to generative AI at Qualcomm Technologies and
-                  clawed back 2,400 hours a month. That didn't happen because the tech was
-                  magic — it happened because we designed it into the workflow. Magic doesn't
-                  scale. Muscle does.&rdquo;
+                  &ldquo;We onboarded 350+ people to generative AI at Qualcomm Technologies
+                  and clawed back 2,400 hours a month. That didn't happen because the tech
+                  was magic. It happened because we designed it into the workflow.&rdquo;
                 </p>
               </div>
               <div>
@@ -152,9 +151,9 @@ export default function MediaPage() {
                   02 — On Leadership
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  &ldquo;The distance between a bold idea and a changed organization is always
-                  human. Transformation isn't a technology problem. It's a human one. Change
-                  is facilitated by empathy, clarity, repetition, and governance.&rdquo;
+                  &ldquo;The distance between a bold idea and a changed organization is
+                  always human. Transformation isn't a technology problem. It's a human one
+                  that is achieved with empathy, clarity, and relentless repetition.&rdquo;
                 </p>
               </div>
               <div>
@@ -162,9 +161,10 @@ export default function MediaPage() {
                   03 — On Career
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  &ldquo;I didn't finish college and I spent several years in IT at NASCAR before I
-                  moved into marketing. I've built my career by crossing lines other people
-                  were told to respect. Collaboration is a competitive advantage.&rdquo;
+                  &ldquo;Zero college degrees. Six years wiring ins IT at NASCAR before I
+                  ever touched marketing. I believe the next generation of leaders will
+                  come from the shop floor, the help desk, and the studio. Not an MBA
+                  program.&rdquo;
                 </p>
               </div>
             </div>
