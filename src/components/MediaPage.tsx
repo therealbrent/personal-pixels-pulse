@@ -115,10 +115,10 @@ export default function MediaPage() {
                   01 — On AI
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  "We onboarded 350+ people to generative AI at Qualcomm Technologies and
+                  &ldquo;We onboarded 350+ people to generative AI at Qualcomm Technologies and
                   clawed back 2,400 hours a month. That didn't happen because the tech was
                   magic — it happened because we designed it into the workflow. Magic doesn't
-                  scale. Muscle does."
+                  scale. Muscle does.&rdquo;
                 </p>
               </div>
               <div>
@@ -126,9 +126,9 @@ export default function MediaPage() {
                   02 — On Leadership
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  "The distance between a bold idea and a changed organization is always
+                  &ldquo;The distance between a bold idea and a changed organization is always
                   human. Transformation isn't a technology problem. It's a human one. Change
-                  is facilitated by empathy, clarity, repetition, and governance."
+                  is facilitated by empathy, clarity, repetition, and governance.&rdquo;
                 </p>
               </div>
               <div>
@@ -136,28 +136,31 @@ export default function MediaPage() {
                   03 — On Career
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  "I didn't finish college and I spent several years in IT at NASCAR before I
+                  &ldquo;I didn't finish college and I spent several years in IT at NASCAR before I
                   moved into marketing. I've built my career by crossing lines other people
-                  were told to respect. Collaboration is a competitive advantage."
-                </p>
-              </div>
-              <div className="pt-4 sm:pt-5 border-t-4 border-foreground">
-                <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-accent mb-1">
-                  For Press
-                </p>
-                <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  You can quote me on these topics. For fresh angles or exclusive commentary,{' '}
-                  <ExternalLink
-                    href={BOOKING_URL}
-                    variant="primary"
-                    className="underline decoration-4 decoration-accent underline-offset-4 hover:bg-accent hover:text-white transition-colors"
-                  >
-                    book a call
-                  </ExternalLink>
-                  .
+                  were told to respect. Collaboration is a competitive advantage.&rdquo;
                 </p>
               </div>
             </div>
+          </div>
+          {/* For Press callout — spans full POV width */}
+          <div className="max-w-6xl mx-auto border-4 md:border-8 border-t-0 border-foreground bg-foreground p-5 sm:p-6 md:p-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 shadow-neo-xl">
+            <div className="flex-shrink-0">
+              <span className="inline-block bg-accent text-white border-4 border-background px-3 py-1.5 text-[10px] sm:text-xs font-black tracking-widest uppercase transform -rotate-2">
+                For Press
+              </span>
+            </div>
+            <p className="text-sm sm:text-base md:text-lg font-bold text-background leading-relaxed flex-1">
+              You can quote me on these topics. For fresh angles or exclusive commentary,{' '}
+              <ExternalLink
+                href={BOOKING_URL}
+                variant="primary"
+                className="text-primary underline decoration-4 decoration-primary underline-offset-4 hover:text-accent hover:decoration-accent transition-colors"
+              >
+                book a call
+              </ExternalLink>
+              .
+            </p>
           </div>
         </section>
 
