@@ -18,18 +18,6 @@ const FEATURED_PRESS_IDS = [
   'ai-champions-playbook-2025',
 ];
 
-// Wordmark press wall — publications & platforms where Brent's work has appeared.
-const PRESS_OUTLETS = [
-  'Forbes',
-  'Adobe',
-  'CIO News',
-  'UX Magazine',
-  'WRITER',
-  '6sense',
-  'Humans of AI',
-  'User-Led',
-];
-
 // Speaking topics for press/booking inquiries.
 const SPEAKING_TOPICS = [
   {
