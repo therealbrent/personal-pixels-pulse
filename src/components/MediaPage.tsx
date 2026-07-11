@@ -186,7 +186,7 @@ export default function MediaPage() {
             <div className="bg-background border-4 md:border-8 border-foreground border-t-0 shadow-neo-xl p-4 sm:p-6 md:p-8">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 items-start">
                 {pressItems.map((item, idx) => (
-                  <ThoughtLeadershipCard key={item.id} item={item} index={idx} />
+                  <ThoughtLeadershipCard key={item.id} item={item} index={idx} hideDate />
                 ))}
               </div>
               <div className="mt-6 sm:mt-8 text-center">
