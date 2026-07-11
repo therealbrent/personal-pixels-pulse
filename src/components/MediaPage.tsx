@@ -46,7 +46,7 @@ const SPEAKING_TOPICS = [
   },
   {
     title: "The Boundary-Crosser's Advantage",
-    body: "The next generation of leaders will come from IT, design, and the shop floor — not the MBA track. Individual contributors with enough ambition and cultural influence can out-deliver managers who aren't comfortable getting their hands dirty.",
+    body: "The next generation of leaders will come from IT, design, and the shop floor — not the MBA track. Individual contributors with enough ambition and cultural influence can out-deliver leaders who've lost touch with the work.",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function MediaPage() {
     <div className="min-h-screen bg-background text-foreground page-transition">
       <SEO
         title="Brent Summers | Press & Media Kit"
-        description="Press kit for journalists and producers: bio, headshot, speaking topics, and recent features with Brent Summers — AI-powered marketing leader at Qualcomm."
+        description="Press kit for journalists and producers: bio, headshot, speaking topics, and recent features with Brent Summers — AI-powered marketing leader at Qualcomm Technologies."
         ogTitle="Brent Summers — Press & Media Kit"
         ogDescription="Bio, headshot, boilerplate, and booking for reporters, podcast hosts, and event producers."
         ogImage="/og-images/speaking.png"
@@ -107,6 +107,9 @@ export default function MediaPage() {
               </h2>
               <p className="mt-3 text-sm sm:text-base font-bold text-foreground/80 leading-relaxed">
                 Three things I believe, on the record.
+              </p>
+              <p className="mt-3 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-foreground/60 leading-relaxed">
+                Personal views. Not official Qualcomm statements.
               </p>
             </div>
             <div className="md:col-span-2 bg-background p-6 sm:p-8 space-y-5 sm:space-y-6">
