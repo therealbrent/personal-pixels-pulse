@@ -58,10 +58,10 @@ export default function MediaPage() {
                 Press & Media
               </p>
             </div>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight leading-none mb-4 sm:mb-6 uppercase">
-              <span className="block">Human Led.</span>
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight leading-[1.05] mb-4 sm:mb-6 uppercase">
+              <span className="block">Don't Sell People AI.</span>
               <span className="inline-block px-3 sm:px-5 py-1 bg-accent text-white border-4 sm:border-8 border-foreground transform -rotate-2 mt-2 sm:mt-3 shadow-neo-md">
-                AI Powered.
+                Design It Into Their Work.
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl font-bold text-foreground/90 leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8">
@@ -451,6 +451,16 @@ export default function MediaPage() {
                     </p>
                   </article>
                 ))}
+              </div>
+
+              {/* What I Won't Speak To — scope guardrails for producers */}
+              <div className="border-4 border-foreground bg-background p-5 sm:p-6 md:p-7 mb-8 sm:mb-10 shadow-neo-sm">
+                <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-accent mb-2">
+                  What I Won't Speak To
+                </p>
+                <p className="text-sm sm:text-base md:text-lg font-bold text-foreground leading-relaxed">
+                  Model benchmarks. Vendor comparisons. Predictions about AGI timelines. Anything requiring me to speak for Qualcomm officially.
+                </p>
               </div>
 
               {/* Booking CTA block */}
