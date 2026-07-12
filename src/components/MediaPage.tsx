@@ -72,16 +72,6 @@ export default function MediaPage() {
             </p>
 
             {/* Press Kit CTA */}
-            <div className="mb-6 sm:mb-8 flex justify-center">
-              <ExternalLink
-                href={PRESS_KIT_URL}
-                variant="primary"
-                className="inline-flex items-center justify-center gap-2 bg-accent text-white border-4 border-foreground hover:bg-foreground hover:text-primary transition-all duration-150 font-black text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 no-underline min-h-[44px] shadow-neo-md hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
-              >
-                View Press Kit
-              </ExternalLink>
-            </div>
-
             {/* Stat Block */}
             <dl className="grid grid-cols-1 md:grid-cols-3 gap-0 border-4 md:border-8 border-foreground shadow-neo-xl bg-background text-left overflow-hidden">
               <div className="bg-primary p-4 sm:p-5 md:border-r-4 border-b-4 md:border-b-0 border-foreground">
