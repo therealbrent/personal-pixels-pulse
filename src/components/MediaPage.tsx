@@ -278,7 +278,7 @@ export default function MediaPage() {
                     variant="primary"
                     className="inline-flex items-center justify-center gap-2 bg-background text-foreground border-4 border-primary hover:bg-primary hover:text-foreground transition-all duration-150 font-black text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 no-underline min-h-[44px]"
                   >
-                    Download Press Kit ↓
+                    View Press Kit ↗
                   </ExternalLink>
                 </div>
               </div>
