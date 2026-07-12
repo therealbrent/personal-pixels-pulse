@@ -20,10 +20,10 @@ export default function SpeakingMediaPage() {
         {/* Hero Section - Neo-Brutalist */}
         <header className="text-center mb-8 sm:mb-12">
           <h1 className="text-4xl sm:text-5xl md:text-8xl font-black tracking-tight mb-4 sm:mb-6 md:mb-8 text-foreground transform hover:skew-x-1 transition-transform duration-300">
-            ARCHIVE
+            IDEAS IN PUBLIC
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-bold text-foreground/90 max-w-4xl mx-auto leading-relaxed px-2 sm:px-0">
-            Two decades of talks, interviews, panels, and writing. Looking for a current press kit? Visit the <a href="/media" className="underline hover:text-accent transition-colors">Media page</a>.
+            Sharing hard-learned lessons, strategic frameworks, and field-tested ideas.
           </p>
         </header>
 
