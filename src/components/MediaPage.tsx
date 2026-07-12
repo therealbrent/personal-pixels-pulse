@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import SEO from './SEO';
 import BiographyHeadshot from './BiographyHeadshot';
 import ThoughtLeadershipCard from './ThoughtLeadershipCard';
-import { getThoughtLeadershipByIds } from '@/data/thoughtLeadership';
+import { getThoughtLeadershipByIds, thoughtLeadershipData } from '@/data/thoughtLeadership';
 import { BrutalistButton } from './ui/BrutalistButton';
 import { ExternalLink } from './ui/ExternalLink';
 import { Icon } from './ui/icon';
@@ -46,6 +46,9 @@ const PRESS_KIT_URL =
 
 export default function MediaPage() {
   const pressItems = getThoughtLeadershipByIds(FEATURED_PRESS_IDS);
+  const speakingEngagementCount = thoughtLeadershipData.filter((i) =>
+    ['presentation', 'panel', 'podcast'].includes(i.type)
+  ).length;
 
   return (
     <div className="min-h-screen bg-background text-foreground page-transition">
@@ -115,10 +118,10 @@ export default function MediaPage() {
               </div>
               <div className="bg-cobalt p-4 sm:p-5 border-r-4 md:border-r-4 border-foreground">
                 <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-white/80 mb-1">
-                  Conference Appearances
+                  Speaking Engagements
                 </dt>
                 <dd className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-none">
-                  10+
+                  {speakingEngagementCount}
                 </dd>
               </div>
               <div className="bg-accent p-4 sm:p-5 border-foreground">
