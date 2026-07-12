@@ -158,8 +158,8 @@ export default function MediaPage() {
                   01 — Enterprise AI Adoption
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  &ldquo;The generative AI rollout I led at Qualcomm Technologies reached
-                  350+ users and is credited with roughly 2,400 hours saved every month.
+                  &ldquo;The generative AI rollout I helped lead at Qualcomm Technologies
+                  reached 350+ users and is credited with roughly 2,400 hours saved every month.
                   What the case study doesn't say is why it worked: we didn't sell people on AI. We
                   designed it into the work they were already doing.&rdquo;
                 </p>
