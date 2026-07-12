@@ -271,14 +271,14 @@ export default function MediaPage() {
                     variant="primary"
                     className="inline-flex items-center justify-center gap-2 bg-primary text-foreground border-4 border-primary hover:bg-accent hover:text-white hover:border-accent transition-all duration-150 font-black text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 no-underline min-h-[44px]"
                   >
-                    Schedule a Call →
+                    Schedule a Call
                   </ExternalLink>
                   <ExternalLink
                     href={PRESS_KIT_URL}
                     variant="primary"
                     className="inline-flex items-center justify-center gap-2 bg-background text-foreground border-4 border-primary hover:bg-primary hover:text-foreground transition-all duration-150 font-black text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 no-underline min-h-[44px]"
                   >
-                    View Press Kit ↗
+                    View Press Kit
                   </ExternalLink>
                 </div>
               </div>
