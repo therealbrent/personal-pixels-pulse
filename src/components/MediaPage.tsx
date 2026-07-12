@@ -155,8 +155,8 @@ export default function MediaPage() {
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
                   &ldquo;The distance between a bold idea and a changed organization is
-                  always human. Transformation isn't a technology problem. It's a human one
-                  that is achieved with empathy, clarity, and relentless repetition.&rdquo;
+                  always human. Transformation requires empathy, clarity, and relentless
+                  repetition.&rdquo;
                 </p>
               </div>
               <div>
@@ -164,10 +164,9 @@ export default function MediaPage() {
                   03 — On Career
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  &ldquo;Zero college degrees. Six years wiring ins IT at NASCAR before I
+                  &ldquo;I have zero college degrees and spent six years in IT before I
                   ever touched marketing. I believe the next generation of leaders will
-                  come from the shop floor, the help desk, and the studio. Not an MBA
-                  program.&rdquo;
+                  come from the shop floor or the help desk. Not an MBA program.&rdquo;
                 </p>
               </div>
             </div>
