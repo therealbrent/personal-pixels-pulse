@@ -394,7 +394,7 @@ export default function MediaPage() {
               {/* Full archive link */}
               <div className="text-center pt-2">
                 <BrutalistButton variant="secondary" asChild aria-label="View full archive of talks, interviews and writing">
-                  <Link to="/insights">Browse the Full Archive →</Link>
+                  <Link to="/archive">Browse the Full Archive →</Link>
                 </BrutalistButton>
               </div>
 
