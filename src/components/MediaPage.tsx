@@ -212,10 +212,10 @@ export default function MediaPage() {
             {/* Section header */}
             <div className="bg-foreground border-4 md:border-8 border-foreground shadow-neo-xl p-4 sm:p-6 md:p-8">
               <h2 id="press-tiered-heading" className="text-xl sm:text-2xl md:text-4xl font-black text-background mb-2 sm:mb-3 leading-tight uppercase">
-                Featured Press
+                Featured Media
               </h2>
               <p className="text-base sm:text-lg md:text-xl font-bold text-background/90 leading-relaxed">
-                Recent features across national business press, trade media, and long-form podcasts.
+                Selected interviews, coverage, podcasts, and published commentary.
               </p>
             </div>
 
@@ -223,7 +223,7 @@ export default function MediaPage() {
               {/* Tier 1 — Tentpole (hero card) */}
               <div>
                 <span className="inline-block mb-3 sm:mb-4 px-2 py-1 bg-accent text-white text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
-                  Tier 1 — Tentpole
+                  Featured
                 </span>
                 <article className="grid md:grid-cols-5 border-4 border-foreground bg-background shadow-neo-md hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200">
                   <div className="md:col-span-2 bg-primary p-5 sm:p-6 md:p-8 border-b-4 md:border-b-0 md:border-r-4 border-foreground flex flex-col justify-center min-h-[180px] sm:min-h-[220px]">
@@ -261,7 +261,7 @@ export default function MediaPage() {
               {/* Tier 2 — Majors (2 medium cards) */}
               <div>
                 <span className="inline-block mb-3 sm:mb-4 px-2 py-1 bg-cobalt text-white text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
-                  Tier 2 — Majors
+                  Selected Interviews
                 </span>
                 <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
                   {/* CIO News */}
@@ -335,7 +335,7 @@ export default function MediaPage() {
               {/* Tier 3 — Supporting (compact strip) */}
               <div>
                 <span className="inline-block mb-3 sm:mb-4 px-2 py-1 bg-foreground text-primary text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
-                  Tier 3 — Supporting
+                  Additional Coverage and Writing
                 </span>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                   {[
