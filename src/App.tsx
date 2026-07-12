@@ -912,9 +912,10 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/media" element={<MediaPage />} />
-            <Route path="/insights" element={<SpeakingMediaPage />} />
-            <Route path="/speaking" element={<Navigate to="/insights" replace />} />
-            <Route path="/speaking-media" element={<Navigate to="/insights" replace />} />
+            <Route path="/archive" element={<SpeakingMediaPage />} />
+            <Route path="/insights" element={<Navigate to="/archive" replace />} />
+            <Route path="/speaking" element={<Navigate to="/archive" replace />} />
+            <Route path="/speaking-media" element={<Navigate to="/archive" replace />} />
             <Route path="/design-case-studies" element={<DesignCaseStudiesPage />} />
             <Route path="/leadership" element={<LeadershipPage />} />
             <Route path="/designer-in-residence" element={<DesignerInResidencePage />} />
