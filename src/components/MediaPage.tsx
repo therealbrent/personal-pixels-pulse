@@ -155,7 +155,7 @@ export default function MediaPage() {
             <div className="md:col-span-2 bg-background p-6 sm:p-8 space-y-5 sm:space-y-6">
               <div>
                 <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-accent mb-1">
-                  01 — On AI
+                  01 — Enterprise AI Adoption
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
                   &ldquo;The generative AI rollout I led at Qualcomm Technologies reached
@@ -176,7 +176,7 @@ export default function MediaPage() {
               </div>
               <div>
                 <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-cobalt mb-1">
-                  02 — On Leadership
+                  02 — Change Management
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
                   &ldquo;The distance between a bold idea and a changed organization is
@@ -186,7 +186,7 @@ export default function MediaPage() {
               </div>
               <div>
                 <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-oxblood mb-1">
-                  03 — On Career
+                  03 — Unconventional Paths
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
                   &ldquo;I have zero college degrees and spent six years in IT before I
