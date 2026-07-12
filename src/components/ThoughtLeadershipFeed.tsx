@@ -38,6 +38,8 @@ export default function ThoughtLeadershipFeed({ topicFilter }: ThoughtLeadership
     { value: 'all', label: 'All' },
     { value: 'presentation', label: 'Presentations' },
     { value: 'panel', label: 'Panels' },
+    { value: 'interview', label: 'Interviews' },
+    { value: 'podcast', label: 'Podcasts' },
     { value: 'article', label: 'Media Features' },
     { value: 'writing', label: 'Writing' },
   ];
