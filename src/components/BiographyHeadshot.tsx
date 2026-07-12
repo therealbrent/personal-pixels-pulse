@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Button } from './ui/button';
 import { LazyImage } from './LazyImage';
 
+const PRESS_KIT_URL =
+  'https://drive.google.com/drive/folders/1_FtkrMYllWpWcanGL3oQTy6B0xmbcZwI?usp=sharing';
+
 export default function BiographyHeadshot() {
   // High-res version for download
   const highResHeadshot = '/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png';
@@ -137,6 +140,15 @@ export default function BiographyHeadshot() {
               >
                 DOWNLOAD HEADSHOT
               </Button>
+              <a
+                href={PRESS_KIT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-foreground text-background border-0 hover:bg-foreground/90 transition-colors duration-150 text-[10px] sm:text-xs font-black py-2 px-2 sm:px-3 no-underline"
+                style={{ margin: 0, borderRadius: 0 }}
+              >
+                DOWNLOAD PRESS KIT ↗
+              </a>
             </div>
           </div>
         </div>

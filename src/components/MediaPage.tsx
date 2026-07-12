@@ -41,6 +41,9 @@ const SPEAKING_TOPICS = [
 const BOOKING_URL =
   'https://calendar.app.google/FMaEpgaVGdfxpQQN9';
 
+const PRESS_KIT_URL =
+  'https://drive.google.com/drive/folders/1_FtkrMYllWpWcanGL3oQTy6B0xmbcZwI?usp=sharing';
+
 export default function MediaPage() {
   const pressItems = getThoughtLeadershipByIds(FEATURED_PRESS_IDS);
 
@@ -262,13 +265,20 @@ export default function MediaPage() {
                     Book Brent for an interview, podcast, or keynote.
                   </h3>
                 </div>
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 flex flex-col sm:flex-row gap-3">
                   <ExternalLink
                     href={BOOKING_URL}
                     variant="primary"
-                    className="inline-flex items-center gap-2 bg-primary text-foreground border-4 border-primary hover:bg-accent hover:text-white hover:border-accent transition-all duration-150 font-black text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 no-underline min-h-[44px]"
+                    className="inline-flex items-center justify-center gap-2 bg-primary text-foreground border-4 border-primary hover:bg-accent hover:text-white hover:border-accent transition-all duration-150 font-black text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 no-underline min-h-[44px]"
                   >
                     Schedule a Call →
+                  </ExternalLink>
+                  <ExternalLink
+                    href={PRESS_KIT_URL}
+                    variant="primary"
+                    className="inline-flex items-center justify-center gap-2 bg-background text-foreground border-4 border-primary hover:bg-primary hover:text-foreground transition-all duration-150 font-black text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 no-underline min-h-[44px]"
+                  >
+                    Download Press Kit ↓
                   </ExternalLink>
                 </div>
               </div>
