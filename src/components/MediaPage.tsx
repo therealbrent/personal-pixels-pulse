@@ -4,7 +4,6 @@ import BiographyHeadshot from './BiographyHeadshot';
 import { thoughtLeadershipData } from '@/data/thoughtLeadership';
 import { BrutalistButton } from './ui/BrutalistButton';
 import { ExternalLink } from './ui/ExternalLink';
-import { Icon } from './ui/icon';
 
 // Speaking topics for press/booking inquiries.
 const SPEAKING_TOPICS = [
