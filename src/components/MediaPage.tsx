@@ -233,7 +233,7 @@ export default function MediaPage() {
                   </div>
                   <div className="md:col-span-3 p-5 sm:p-6 md:p-8">
                     <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-accent mb-2">
-                      The Takeaway
+                      Successful Pilot
                     </p>
                     <h3 className="text-lg sm:text-xl md:text-2xl font-black text-foreground leading-tight mb-3">
                       What Writer's AI Leaders Forum Revealed About Enterprise AI
@@ -273,7 +273,7 @@ export default function MediaPage() {
                     </div>
                     <div className="p-4 sm:p-5 flex-1 flex flex-col">
                       <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-cobalt mb-2">
-                        Reaches the exact buyer
+                        Human-Centered Transformation
                       </p>
                       <h3 className="text-base sm:text-lg font-black text-foreground leading-tight mb-3">
                         Why Qualcomm's Playbook For Scaling AI Starts With Intention — And Ends With A Human
@@ -306,7 +306,7 @@ export default function MediaPage() {
                     </div>
                     <div className="p-4 sm:p-5 flex-1 flex flex-col">
                       <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-accent mb-2">
-                        On the record, long-form
+                        Maximizing Value
                       </p>
                       <h3 className="text-base sm:text-lg font-black text-foreground leading-tight mb-3">
                         From Magic to Muscle: Driving Enterprise AI Transformation
