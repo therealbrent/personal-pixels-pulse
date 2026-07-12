@@ -65,12 +65,11 @@ export default function MediaPage() {
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl font-bold text-foreground/90 leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8">
-              A boundary-crosser at the intersection of{' '}
-              <span className="bg-primary px-1.5">marketing</span>,{' '}
-              <span className="bg-cobalt text-white px-1.5">technology</span>, and{' '}
-              <span className="bg-accent text-white px-1.5">creative</span>. Enterprise
-              scale, entrepreneurial instincts, and a career that never asked permission to
-              switch lanes.
+              That's the principle behind an enterprise AI rollout that reached{' '}
+              <span className="bg-primary px-1.5">350+ users</span> and saved{' '}
+              <span className="bg-cobalt text-white px-1.5">2,400 hours a month</span> at
+              Qualcomm Technologies — and the argument I bring to the{' '}
+              <span className="bg-accent text-white px-1.5">page, the stage, and the mic</span>.
             </p>
 
             {/* Press Kit CTA */}
