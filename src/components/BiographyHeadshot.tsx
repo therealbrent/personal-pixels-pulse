@@ -1,26 +1,14 @@
 import { useState } from 'react';
 import { Button } from './ui/button';
-import { LazyImage } from './LazyImage';
 
 const PRESS_KIT_URL =
   'https://drive.google.com/drive/folders/1_FtkrMYllWpWcanGL3oQTy6B0xmbcZwI?usp=sharing';
 
 export default function BiographyHeadshot() {
-  // High-res version for download
-  const highResHeadshot = '/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png';
   // Compressed preview for fast loading
   const previewHeadshot = '/lovable-uploads/brent-summers-headshot-min.png';
 
   const [isExpanded, setIsExpanded] = useState(false);
-  
-  const handleDownloadHeadshot = () => {
-    const link = document.createElement('a');
-    link.href = highResHeadshot;
-    link.download = 'brent-summers-headshot.png';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <section id="biography" className="mb-12 sm:mb-16 md:mb-20">
@@ -133,18 +121,11 @@ export default function BiographyHeadshot() {
               />
               
               {/* Button directly attached - zero gap */}
-              <Button 
-                onClick={handleDownloadHeadshot}
-                className="w-full bg-accent text-accent-foreground border-0 rounded-none hover:bg-accent/90 transition-colors duration-150 text-[10px] sm:text-xs font-black py-2 px-2 sm:px-3 m-0"
-                style={{ margin: 0, borderRadius: 0 }}
-              >
-                DOWNLOAD HEADSHOT
-              </Button>
               <a
                 href={PRESS_KIT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center bg-foreground text-background border-0 hover:bg-foreground/90 transition-colors duration-150 text-[10px] sm:text-xs font-black py-2 px-2 sm:px-3 no-underline"
+                className="block w-full text-center bg-accent text-accent-foreground border-0 hover:bg-accent/90 transition-colors duration-150 text-[10px] sm:text-xs font-black py-2 px-2 sm:px-3 no-underline"
                 style={{ margin: 0, borderRadius: 0 }}
               >
                 VIEW PRESS KIT ↗
