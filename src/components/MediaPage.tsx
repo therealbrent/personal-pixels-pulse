@@ -34,7 +34,7 @@ const SPEAKING_TOPICS = [
   },
   {
     title: "The Boundary-Crosser's Advantage",
-    body: "The next generation of leaders won't come from the MBA track. Instead they'll emerge from IT, design, and the shop floor. With AI, ambitious individual contributors can garner influence and out-deliver leaders who've lost touch with the work.",
+    body: "Practical tips for collaborating across functions, translating competing priorities, and making cross-functional impact visible. Learn to become the connective tissue that turns specialized expertise into coordinated action.",
   },
 ];
 
