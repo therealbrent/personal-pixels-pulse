@@ -135,6 +135,14 @@ export default function MediaPage() {
               <p className="mt-3 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-foreground/60 leading-relaxed">
                 Personal views. Not official Qualcomm statements.
               </p>
+              <div className="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t-4 border-foreground">
+                <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-foreground mb-2">
+                  What I Won't Speak To
+                </p>
+                <p className="text-sm sm:text-base font-bold text-foreground/85 leading-relaxed">
+                  Model benchmarks. Vendor comparisons. Predictions about AGI timelines. Anything requiring me to speak for Qualcomm officially.
+                </p>
+              </div>
             </div>
             <div className="md:col-span-2 bg-background p-6 sm:p-8 space-y-5 sm:space-y-6">
               <div>
@@ -451,15 +459,6 @@ export default function MediaPage() {
                 ))}
               </div>
 
-              {/* What I Won't Speak To — scope guardrails for producers */}
-              <div className="border-4 border-foreground bg-background p-5 sm:p-6 md:p-7 mb-8 sm:mb-10 shadow-neo-sm">
-                <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-accent mb-2">
-                  What I Won't Speak To
-                </p>
-                <p className="text-sm sm:text-base md:text-lg font-bold text-foreground leading-relaxed">
-                  Model benchmarks. Vendor comparisons. Predictions about AGI timelines. Anything requiring me to speak for Qualcomm officially.
-                </p>
-              </div>
 
               {/* Booking CTA block */}
               <div className="bg-foreground border-4 border-foreground p-5 sm:p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 sm:gap-6">
