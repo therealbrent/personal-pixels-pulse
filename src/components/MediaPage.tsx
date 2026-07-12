@@ -486,7 +486,7 @@ export default function MediaPage() {
 
               {/* Qualcomm-related inquiries routing */}
               <p className="mt-4 sm:mt-5 text-[11px] sm:text-xs font-bold uppercase tracking-widest text-foreground/60 leading-relaxed">
-                For inquiries that materially involve Qualcomm's name, programs, or metrics, please route through{' '}
+                For inquiries that involve Qualcomm, please route through{' '}
                 <ExternalLink
                   href="https://www.qualcomm.com/company/contact/media"
                   variant="primary"
@@ -494,7 +494,7 @@ export default function MediaPage() {
                 >
                   Qualcomm Corporate Communications
                 </ExternalLink>
-                {' '}first.
+                .
               </p>
             </div>
           </div>
