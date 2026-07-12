@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from './ui/button';
+import { Icon } from './ui/icon';
 
 const PRESS_KIT_URL =
   'https://drive.google.com/drive/folders/1_FtkrMYllWpWcanGL3oQTy6B0xmbcZwI?usp=sharing';
@@ -125,10 +126,11 @@ export default function BiographyHeadshot() {
                 href={PRESS_KIT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center justify-center text-center bg-accent text-accent-foreground border-0 hover:bg-accent/90 transition-colors duration-150 text-[10px] sm:text-xs font-black py-2 px-2 sm:px-3 no-underline min-h-[40px]"
+                className="flex w-full items-center justify-center gap-1.5 text-center bg-accent text-accent-foreground border-0 hover:bg-accent/90 transition-colors duration-150 text-[10px] sm:text-xs font-black py-2 px-2 sm:px-3 no-underline min-h-[40px]"
                 style={{ margin: 0, borderRadius: 0 }}
               >
-                VIEW PRESS KIT ↗
+                VIEW PRESS KIT
+                <Icon name="external-link" size={12} />
               </a>
             </div>
           </div>
