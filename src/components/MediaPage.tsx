@@ -417,6 +417,13 @@ export default function MediaPage() {
                 </div>
               </div>
 
+              {/* Full archive link */}
+              <div className="text-center pt-2">
+                <BrutalistButton variant="secondary" asChild aria-label="View full archive of talks, interviews and writing">
+                  <Link to="/insights">Browse the Full Archive →</Link>
+                </BrutalistButton>
+              </div>
+
               {/* Rights & permissions line */}
               <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-foreground/60 border-t-4 border-foreground pt-4">
                 Headshot and bio cleared for editorial use. For broadcast or sponsored contexts, contact{' '}
