@@ -36,13 +36,13 @@ export default function Footer() {
               <p className="text-sm opacity-80">Spotting trends, leading teams, and building new capabilities</p>
             </a>
 
-            {/* Speaking & Media */}
+            {/* Press & Media */}
             <a 
-              href="/speaking-media" 
+              href="/media" 
               className="block bg-background/10 text-background border-2 border-background/30 p-6 transform hover:bg-accent hover:text-accent-foreground hover:border-background hover:border-4 hover:scale-105 transition-all duration-300 hover:shadow-lg group relative"
             >
               <div className="absolute bottom-2 left-2 w-6 h-6 bg-background/30 group-hover:bg-background transform -rotate-12"></div>
-              <h4 className="text-xl font-bold mb-2">SPEAKING & MEDIA</h4>
+              <h4 className="text-xl font-bold mb-2">PRESS & MEDIA</h4>
               <p className="text-sm opacity-80">Talks, interviews, and media appearances</p>
             </a>
 
