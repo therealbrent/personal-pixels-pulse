@@ -249,7 +249,7 @@ export default function MediaPage() {
                       variant="primary"
                       className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline"
                     >
-                      Read on Forbes
+                      Read
                     </ExternalLink>
                   </div>
                 </article>
@@ -289,7 +289,7 @@ export default function MediaPage() {
                         variant="primary"
                         className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-cobalt transition-colors no-underline self-start"
                       >
-                        Read on CIO News
+                        Read
                       </ExternalLink>
                     </div>
                   </article>
@@ -322,7 +322,7 @@ export default function MediaPage() {
                         variant="primary"
                         className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
                       >
-                        Watch Episode
+                        Watch
                       </ExternalLink>
                     </div>
                   </article>
