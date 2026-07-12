@@ -217,12 +217,9 @@ export default function MediaPage() {
             <div className="bg-background border-4 md:border-8 border-foreground border-t-0 shadow-neo-xl p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
               {/* Tier 1 — Tentpole (hero card) */}
               <div>
-                <div className="flex items-center gap-3 mb-3 sm:mb-4">
-                  <span className="inline-block px-2 py-1 bg-accent text-white text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
-                    Tier 1 — Tentpole
-                  </span>
-                  <div className="flex-1 h-1 bg-foreground" />
-                </div>
+                <span className="inline-block mb-3 sm:mb-4 px-2 py-1 bg-accent text-white text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
+                  Tier 1 — Tentpole
+                </span>
                 <article className="grid md:grid-cols-5 border-4 border-foreground bg-background shadow-neo-md hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200">
                   <div className="md:col-span-2 bg-primary p-5 sm:p-6 md:p-8 border-b-4 md:border-b-0 md:border-r-4 border-foreground flex flex-col justify-center min-h-[180px] sm:min-h-[220px]">
                     <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-foreground/70 mb-2">
@@ -245,13 +242,13 @@ export default function MediaPage() {
                     <h3 className="text-lg sm:text-xl md:text-2xl font-black text-foreground leading-tight mb-3">
                       What Writer's AI Leaders Forum Revealed About Enterprise AI
                     </h3>
-                    <p className="text-sm sm:text-base font-semibold text-foreground/80 leading-relaxed italic border-l-4 border-accent pl-3 mb-4">
+                    <p className="text-sm sm:text-base font-semibold text-foreground/80 leading-relaxed italic mb-4">
                       &ldquo;After Summers conducted his initial Writer pilot, 100% of the users wanted to adopt the platform full-time.&rdquo;
                     </p>
                     <ExternalLink
                       href="https://www.forbes.com/sites/stevenwolfepereira/2025/11/08/what-writers-ai-leaders-forum-revealed-about-enterprise-ai/"
                       variant="primary"
-                      className="inline-block text-xs sm:text-sm font-black uppercase tracking-widest text-foreground border-b-4 border-accent hover:text-accent transition-colors no-underline"
+                      className="inline-block text-xs sm:text-sm font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline"
                     >
                       Read on Forbes →
                     </ExternalLink>
@@ -261,12 +258,9 @@ export default function MediaPage() {
 
               {/* Tier 2 — Majors (2 medium cards) */}
               <div>
-                <div className="flex items-center gap-3 mb-3 sm:mb-4">
-                  <span className="inline-block px-2 py-1 bg-cobalt text-white text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
-                    Tier 2 — Majors
-                  </span>
-                  <div className="flex-1 h-1 bg-foreground" />
-                </div>
+                <span className="inline-block mb-3 sm:mb-4 px-2 py-1 bg-cobalt text-white text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
+                  Tier 2 — Majors
+                </span>
                 <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
                   {/* CIO News */}
                   <article className="border-4 border-foreground bg-background shadow-neo-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200 flex flex-col">
@@ -288,13 +282,13 @@ export default function MediaPage() {
                       <h3 className="text-base sm:text-lg font-black text-foreground leading-tight mb-3">
                         Why Qualcomm's Playbook For Scaling AI Starts With Intention — And Ends With A Human
                       </h3>
-                      <p className="text-xs sm:text-sm font-semibold text-foreground/80 leading-relaxed italic border-l-4 border-cobalt pl-3 mb-4 flex-1">
+                      <p className="text-xs sm:text-sm font-semibold text-foreground/80 leading-relaxed italic mb-4 flex-1">
                         &ldquo;We expect a human to verify the facts, citations, decisions — and the underlying strategy.&rdquo;
                       </p>
                       <ExternalLink
                         href="https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers"
                         variant="primary"
-                        className="inline-block text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground border-b-4 border-cobalt hover:text-cobalt transition-colors no-underline self-start"
+                        className="inline-block text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-cobalt transition-colors no-underline self-start"
                       >
                         Read on CIO News →
                       </ExternalLink>
@@ -321,13 +315,13 @@ export default function MediaPage() {
                       <h3 className="text-base sm:text-lg font-black text-foreground leading-tight mb-3">
                         From Magic to Muscle: Driving Enterprise AI Transformation
                       </h3>
-                      <p className="text-xs sm:text-sm font-semibold text-foreground/80 leading-relaxed italic border-l-4 border-accent pl-3 mb-4 flex-1">
+                      <p className="text-xs sm:text-sm font-semibold text-foreground/80 leading-relaxed italic mb-4 flex-1">
                         A working conversation on how enterprise AI actually gets adopted — templates, office hours, change management.
                       </p>
                       <ExternalLink
                         href="https://www.youtube.com/watch?v=Dvan146syOM"
                         variant="primary"
-                        className="inline-block text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground border-b-4 border-accent hover:text-accent transition-colors no-underline self-start"
+                        className="inline-block text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
                       >
                         Watch Episode →
                       </ExternalLink>
@@ -338,12 +332,9 @@ export default function MediaPage() {
 
               {/* Tier 3 — Supporting (compact strip) */}
               <div>
-                <div className="flex items-center gap-3 mb-3 sm:mb-4">
-                  <span className="inline-block px-2 py-1 bg-foreground text-primary text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
-                    Tier 3 — Supporting
-                  </span>
-                  <div className="flex-1 h-1 bg-foreground" />
-                </div>
+                <span className="inline-block mb-3 sm:mb-4 px-2 py-1 bg-foreground text-primary text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
+                  Tier 3 — Supporting
+                </span>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                   {[
                     {
@@ -406,10 +397,9 @@ export default function MediaPage() {
                         <ExternalLink
                           href={item.url}
                           variant="primary"
-                          className="inline-flex items-center gap-1 text-[10px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
+                          className="inline-block text-[10px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
                         >
-                          <Icon name="external-link" className="w-3 h-3" />
-                          {item.cta}
+                          {item.cta} →
                         </ExternalLink>
                       </div>
                     </article>
@@ -425,7 +415,7 @@ export default function MediaPage() {
               </div>
 
               {/* Rights & permissions line */}
-              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-foreground/60 border-t-4 border-foreground pt-4">
+              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-foreground/60">
                 Headshot and bio cleared for editorial use. For broadcast or sponsored contexts, contact{' '}
                 <ExternalLink
                   href={BOOKING_URL}
