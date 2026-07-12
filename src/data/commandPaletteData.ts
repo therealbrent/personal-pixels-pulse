@@ -48,7 +48,7 @@ export const commandPaletteData: CommandItem[] = [
   {
     id: 'insights',
     title: 'Archive',
-    url: '/insights',
+    url: '/archive',
     icon: Mic,
     type: 'page',
     keywords: ['archive', 'insights', 'speaking', 'talks', 'presentations', 'speeches', 'keynote', 'writing', 'articles', 'history'],
@@ -239,7 +239,7 @@ const uniqueTopics = Array.from(
 const topicCommands: CommandItem[] = uniqueTopics.map(topic => ({
   id: `topic-${topic.toLowerCase().replace(/\s+/g, '-')}`,
   title: `Topic: ${topic}`,
-  url: `/insights?topic=${encodeURIComponent(topic)}`,
+  url: `/archive?topic=${encodeURIComponent(topic)}`,
   icon: Tag,
   type: 'section' as const,
   keywords: ['topic', 'filter', topic.toLowerCase()],

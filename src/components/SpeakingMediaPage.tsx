@@ -13,7 +13,7 @@ export default function SpeakingMediaPage() {
         ogTitle="Brent Summers — Archive of Talks, Interviews & Writing"
         ogDescription="Two decades of presentations, panels, podcasts, and press. For current press kit, visit /media."
         ogImage="/og-images/speaking.png"
-        canonicalUrl="/insights"
+        canonicalUrl="/archive"
       />
 
       <main id="main-content" className="container mx-auto px-3 sm:px-4 md:px-6 py-8 sm:py-12 lg:py-20">
