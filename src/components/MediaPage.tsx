@@ -4,6 +4,7 @@ import BiographyHeadshot from './BiographyHeadshot';
 import { thoughtLeadershipData } from '@/data/thoughtLeadership';
 import { BrutalistButton } from './ui/BrutalistButton';
 import { ExternalLink } from './ui/ExternalLink';
+import { Icon } from './ui/icon';
 
 // Speaking topics for press/booking inquiries.
 const SPEAKING_TOPICS = [
@@ -247,9 +248,10 @@ export default function MediaPage() {
                     <ExternalLink
                       href="https://www.forbes.com/sites/stevenwolfepereira/2025/11/08/what-writers-ai-leaders-forum-revealed-about-enterprise-ai/"
                       variant="primary"
-                      className="inline-block text-xs sm:text-sm font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline"
+                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline"
                     >
-                      Read on Forbes →
+                      Read on Forbes
+                      <Icon name="external-link" className="w-3.5 h-3.5" />
                     </ExternalLink>
                   </div>
                 </article>
@@ -287,9 +289,10 @@ export default function MediaPage() {
                       <ExternalLink
                         href="https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers"
                         variant="primary"
-                        className="inline-block text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-cobalt transition-colors no-underline self-start"
+                        className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-cobalt transition-colors no-underline self-start"
                       >
-                        Read on CIO News →
+                        Read on CIO News
+                        <Icon name="external-link" className="w-3 h-3" />
                       </ExternalLink>
                     </div>
                   </article>
@@ -320,9 +323,10 @@ export default function MediaPage() {
                       <ExternalLink
                         href="https://www.youtube.com/watch?v=Dvan146syOM"
                         variant="primary"
-                        className="inline-block text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
+                        className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
                       >
-                        Watch Episode →
+                        Watch Episode
+                        <Icon name="external-link" className="w-3 h-3" />
                       </ExternalLink>
                     </div>
                   </article>
@@ -396,9 +400,10 @@ export default function MediaPage() {
                         <ExternalLink
                           href={item.url}
                           variant="primary"
-                          className="inline-block text-[10px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
+                          className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
                         >
-                          {item.cta} →
+                          {item.cta}
+                          <Icon name="external-link" className="w-3 h-3" />
                         </ExternalLink>
                       </div>
                     </article>
