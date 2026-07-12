@@ -233,10 +233,7 @@ export default function MediaPage() {
                   </div>
                   <div className="md:col-span-3 p-5 sm:p-6 md:p-8">
                     <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-accent mb-2">
-                      Why this matters
-                    </p>
-                    <p className="text-xs sm:text-sm font-bold text-foreground/70 mb-3 leading-snug">
-                      National business press names me directly on enterprise AI adoption at Qualcomm.
+                      The Takeaway
                     </p>
                     <h3 className="text-lg sm:text-xl md:text-2xl font-black text-foreground leading-tight mb-3">
                       What Writer's AI Leaders Forum Revealed About Enterprise AI
