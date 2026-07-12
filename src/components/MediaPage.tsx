@@ -144,9 +144,18 @@ export default function MediaPage() {
                   01 — On AI
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  &ldquo;We onboarded 350+ people to generative AI at Qualcomm Technologies
-                  and clawed back 2,400 hours a month. That didn't happen because the tech
-                  was magic. It happened because we designed it into the workflow.&rdquo;
+                  &ldquo;The generative AI rollout I led at Qualcomm Technologies reached
+                  350+ users and is credited with roughly 2,400 hours saved every month.
+                  What the{' '}
+                  <ExternalLink
+                    href="https://writer.com/blog/qualcomm-customer-story/"
+                    variant="primary"
+                    className="underline decoration-2 underline-offset-4 hover:text-accent transition-colors"
+                  >
+                    case study
+                  </ExternalLink>
+                  {' '}doesn't say is why it worked: we didn't sell people on AI. We
+                  designed it into the work they were already doing.&rdquo;
                 </p>
               </div>
               <div>
