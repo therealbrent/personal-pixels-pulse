@@ -158,8 +158,8 @@ export default function MediaPage() {
                   01 — Enterprise AI Adoption
                 </p>
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
-                  &ldquo;The generative AI rollout I led at Qualcomm Technologies reached
-                  350+ users and is credited with roughly 2,400 hours saved every month.
+                  &ldquo;The generative AI rollout I helped lead at Qualcomm Technologies
+                  reached 350+ users and is credited with roughly 2,400 hours saved every month.
                   What the case study doesn't say is why it worked: we didn't sell people on AI. We
                   designed it into the work they were already doing.&rdquo;
                 </p>
@@ -241,6 +241,248 @@ export default function MediaPage() {
         </section>
 
         {/* ============================================================ */}
+        {/* FEATURED PRESS — TIERED (PROPOSED REDESIGN)                   */}
+        {/* ============================================================ */}
+        <section aria-labelledby="press-tiered-heading" className="mb-12 sm:mb-16 md:mb-20">
+          <div className="max-w-7xl mx-auto">
+            {/* Section header */}
+            <div className="bg-foreground border-4 md:border-8 border-foreground shadow-neo-xl p-4 sm:p-6 md:p-8">
+              <div className="flex flex-wrap items-center gap-2 mb-2 sm:mb-3">
+                <span className="inline-block px-2 py-0.5 border-2 border-primary bg-primary text-foreground text-[9px] sm:text-[10px] font-black tracking-widest uppercase">
+                  Proposed
+                </span>
+                <span className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-primary">
+                  V2 — Tiered
+                </span>
+              </div>
+              <h2 id="press-tiered-heading" className="text-xl sm:text-2xl md:text-4xl font-black text-background mb-2 sm:mb-3 leading-tight uppercase">
+                Featured Press
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl font-bold text-background/90 leading-relaxed">
+                Recent features across national business press, trade media, and long-form podcasts.
+              </p>
+            </div>
+
+            <div className="bg-background border-4 md:border-8 border-foreground border-t-0 shadow-neo-xl p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
+              {/* Tier 1 — Tentpole (hero card) */}
+              <div>
+                <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                  <span className="inline-block px-2 py-1 bg-accent text-white text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
+                    Tier 1 — Tentpole
+                  </span>
+                  <div className="flex-1 h-1 bg-foreground" />
+                </div>
+                <article className="grid md:grid-cols-5 border-4 border-foreground bg-background shadow-neo-md hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200">
+                  <div className="md:col-span-2 bg-primary p-5 sm:p-6 md:p-8 border-b-4 md:border-b-0 md:border-r-4 border-foreground flex flex-col justify-center min-h-[180px] sm:min-h-[220px]">
+                    <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-foreground/70 mb-2">
+                      National Business Press
+                    </p>
+                    <p className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-foreground leading-none tracking-tight">
+                      Forbes
+                    </p>
+                    <p className="mt-3 sm:mt-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-foreground/80">
+                      Nov 2025
+                    </p>
+                  </div>
+                  <div className="md:col-span-3 p-5 sm:p-6 md:p-8">
+                    <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-accent mb-2">
+                      Why this matters
+                    </p>
+                    <p className="text-xs sm:text-sm font-bold text-foreground/70 mb-3 leading-snug">
+                      National business press names me directly on enterprise AI adoption at Qualcomm.
+                    </p>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-black text-foreground leading-tight mb-3">
+                      What Writer's AI Leaders Forum Revealed About Enterprise AI
+                    </h3>
+                    <p className="text-sm sm:text-base font-semibold text-foreground/80 leading-relaxed italic border-l-4 border-accent pl-3 mb-4">
+                      &ldquo;After Summers conducted his initial Writer pilot, 100% of the users wanted to adopt the platform full-time.&rdquo;
+                    </p>
+                    <ExternalLink
+                      href="https://www.forbes.com/sites/stevenwolfepereira/2025/11/08/what-writers-ai-leaders-forum-revealed-about-enterprise-ai/"
+                      variant="primary"
+                      className="inline-block text-xs sm:text-sm font-black uppercase tracking-widest text-foreground border-b-4 border-accent hover:text-accent transition-colors no-underline"
+                    >
+                      Read on Forbes →
+                    </ExternalLink>
+                  </div>
+                </article>
+              </div>
+
+              {/* Tier 2 — Majors (2 medium cards) */}
+              <div>
+                <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                  <span className="inline-block px-2 py-1 bg-cobalt text-white text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
+                    Tier 2 — Majors
+                  </span>
+                  <div className="flex-1 h-1 bg-foreground" />
+                </div>
+                <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
+                  {/* CIO News */}
+                  <article className="border-4 border-foreground bg-background shadow-neo-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200 flex flex-col">
+                    <div className="bg-cobalt p-4 sm:p-5 border-b-4 border-foreground">
+                      <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-white/80 mb-1">
+                        Enterprise Trade Press
+                      </p>
+                      <p className="text-2xl sm:text-3xl font-black uppercase text-white leading-none tracking-tight">
+                        CIO News
+                      </p>
+                      <p className="mt-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/70">
+                        Oct 2025
+                      </p>
+                    </div>
+                    <div className="p-4 sm:p-5 flex-1 flex flex-col">
+                      <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-cobalt mb-2">
+                        Reaches the exact buyer
+                      </p>
+                      <h3 className="text-base sm:text-lg font-black text-foreground leading-tight mb-3">
+                        Why Qualcomm's Playbook For Scaling AI Starts With Intention — And Ends With A Human
+                      </h3>
+                      <p className="text-xs sm:text-sm font-semibold text-foreground/80 leading-relaxed italic border-l-4 border-cobalt pl-3 mb-4 flex-1">
+                        &ldquo;We expect a human to verify the facts, citations, decisions — and the underlying strategy.&rdquo;
+                      </p>
+                      <ExternalLink
+                        href="https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers"
+                        variant="primary"
+                        className="inline-block text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground border-b-4 border-cobalt hover:text-cobalt transition-colors no-underline self-start"
+                      >
+                        Read on CIO News →
+                      </ExternalLink>
+                    </div>
+                  </article>
+
+                  {/* Humans of AI */}
+                  <article className="border-4 border-foreground bg-background shadow-neo-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200 flex flex-col">
+                    <div className="bg-accent p-4 sm:p-5 border-b-4 border-foreground">
+                      <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-white/80 mb-1">
+                        Long-Form Podcast
+                      </p>
+                      <p className="text-2xl sm:text-3xl font-black uppercase text-white leading-none tracking-tight">
+                        Humans of AI
+                      </p>
+                      <p className="mt-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/80">
+                        Jun 2026
+                      </p>
+                    </div>
+                    <div className="p-4 sm:p-5 flex-1 flex flex-col">
+                      <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-accent mb-2">
+                        On the record, long-form
+                      </p>
+                      <h3 className="text-base sm:text-lg font-black text-foreground leading-tight mb-3">
+                        From Magic to Muscle: Driving Enterprise AI Transformation
+                      </h3>
+                      <p className="text-xs sm:text-sm font-semibold text-foreground/80 leading-relaxed italic border-l-4 border-accent pl-3 mb-4 flex-1">
+                        A working conversation on how enterprise AI actually gets adopted — templates, office hours, change management.
+                      </p>
+                      <ExternalLink
+                        href="https://www.youtube.com/watch?v=Dvan146syOM"
+                        variant="primary"
+                        className="inline-block text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground border-b-4 border-accent hover:text-accent transition-colors no-underline self-start"
+                      >
+                        Watch Episode →
+                      </ExternalLink>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              {/* Tier 3 — Supporting (compact strip) */}
+              <div>
+                <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                  <span className="inline-block px-2 py-1 bg-foreground text-primary text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
+                    Tier 3 — Supporting
+                  </span>
+                  <div className="flex-1 h-1 bg-foreground" />
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+                  {[
+                    {
+                      outlet: 'Sport Beach',
+                      context: 'On-camera interview at Cannes 2026',
+                      title: 'Interviewed by Sam Chotiner',
+                      url: 'https://www.youtube.com/watch?v=fIlAhPaO9EI',
+                      cta: 'Watch',
+                      bg: 'bg-primary',
+                      tx: 'text-foreground',
+                      sub: 'text-foreground/70',
+                    },
+                    {
+                      outlet: 'UserLed',
+                      context: 'Interview — AI + ABM at enterprise scale',
+                      title: 'Data, Judgment and Direction',
+                      url: 'https://www.youtube.com/watch?v=1rbEfzecgAg',
+                      cta: 'Watch',
+                      bg: 'bg-cobalt',
+                      tx: 'text-white',
+                      sub: 'text-white/70',
+                    },
+                    {
+                      outlet: 'CIO (Sponsored)',
+                      context: 'Feature — AI literacy in the workplace',
+                      title: 'Building AI Literacy in the Workplace',
+                      url: 'https://modernworkplace.cio.com/empowered-workforce/building-ai-literacy-in-the-workplace/',
+                      cta: 'Read',
+                      bg: 'bg-oxblood',
+                      tx: 'text-white',
+                      sub: 'text-white/70',
+                    },
+                    {
+                      outlet: 'Adobe',
+                      context: 'Bylined — practical AI marketing strategies',
+                      title: 'AI-Powered Marketing: Practical Strategies',
+                      url: 'https://experienceleague.adobe.com/en/perspectives/ai-powered-marketing-practical-strategies-you-can-use-today',
+                      cta: 'Read',
+                      bg: 'bg-accent',
+                      tx: 'text-white',
+                      sub: 'text-white/80',
+                    },
+                  ].map((item) => (
+                    <article
+                      key={item.outlet}
+                      className="border-4 border-foreground bg-background shadow-neo-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200 flex flex-col"
+                    >
+                      <div className={`${item.bg} p-3 sm:p-4 border-b-4 border-foreground`}>
+                        <p className={`text-lg sm:text-xl font-black uppercase ${item.tx} leading-none tracking-tight`}>
+                          {item.outlet}
+                        </p>
+                        <p className={`mt-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider ${item.sub}`}>
+                          {item.context}
+                        </p>
+                      </div>
+                      <div className="p-3 sm:p-4 flex-1 flex flex-col">
+                        <h3 className="text-sm sm:text-base font-black text-foreground leading-tight mb-3 flex-1">
+                          {item.title}
+                        </h3>
+                        <ExternalLink
+                          href={item.url}
+                          variant="primary"
+                          className="inline-flex items-center gap-1 text-[10px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
+                        >
+                          <Icon name="external-link" className="w-3 h-3" />
+                          {item.cta}
+                        </ExternalLink>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+
+              {/* Rights & permissions line */}
+              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-foreground/60 border-t-4 border-foreground pt-4">
+                Headshot and bio cleared for editorial use. For broadcast or sponsored contexts, contact{' '}
+                <ExternalLink
+                  href={BOOKING_URL}
+                  variant="primary"
+                  className="underline decoration-2 underline-offset-4 hover:text-accent transition-colors normal-case tracking-normal"
+                >
+                  book a call
+                </ExternalLink>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ============================================================ */}
         {/* PRESS KIT — Bio + Headshot                                    */}
         {/* ============================================================ */}
         <BiographyHeadshot />
@@ -306,6 +548,19 @@ export default function MediaPage() {
                   </ExternalLink>
                 </div>
               </div>
+
+              {/* Qualcomm-related inquiries routing */}
+              <p className="mt-4 sm:mt-5 text-[11px] sm:text-xs font-bold uppercase tracking-widest text-foreground/60 leading-relaxed">
+                For inquiries that materially involve Qualcomm's name, programs, or metrics, please route through{' '}
+                <ExternalLink
+                  href="https://www.qualcomm.com/company/contact/media"
+                  variant="primary"
+                  className="underline decoration-2 underline-offset-4 hover:text-accent transition-colors normal-case tracking-normal"
+                >
+                  Qualcomm Corporate Communications
+                </ExternalLink>
+                {' '}first.
+              </p>
             </div>
           </div>
         </section>
