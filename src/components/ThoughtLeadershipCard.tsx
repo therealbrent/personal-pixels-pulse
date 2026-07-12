@@ -87,6 +87,17 @@ const contentTypeStyles: Record<ContentType, {
     featuredText: 'text-white',
     featuredHoverShadow: 'hover:shadow-[8px_8px_0px_0px_hsl(var(--foreground))]'
   },
+  interview: {
+    cardHoverBg: 'hover:bg-foreground',
+    hoverText: 'group-hover:!text-background', // Off-white on Onyx
+    hoverBorder: 'group-hover:!border-foreground',
+    glowColor: 'bg-foreground',
+    iconColor: 'text-foreground',
+    shadowColor: 'group-hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))]',
+    featuredBg: 'bg-foreground',
+    featuredText: 'text-background',
+    featuredHoverShadow: 'hover:shadow-[8px_8px_0px_0px_hsl(var(--accent))]'
+  },
   writing: {
     cardHoverBg: 'hover:bg-oxblood',
     hoverText: 'group-hover:!text-white', // White on Crimson/Oxblood
