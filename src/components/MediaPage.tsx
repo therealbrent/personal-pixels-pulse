@@ -251,7 +251,6 @@ export default function MediaPage() {
                       className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline"
                     >
                       Read on Forbes
-                      <Icon name="external-link" className="w-3.5 h-3.5" />
                     </ExternalLink>
                   </div>
                 </article>
@@ -292,7 +291,6 @@ export default function MediaPage() {
                         className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-cobalt transition-colors no-underline self-start"
                       >
                         Read on CIO News
-                        <Icon name="external-link" className="w-3 h-3" />
                       </ExternalLink>
                     </div>
                   </article>
@@ -326,7 +324,6 @@ export default function MediaPage() {
                         className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
                       >
                         Watch Episode
-                        <Icon name="external-link" className="w-3 h-3" />
                       </ExternalLink>
                     </div>
                   </article>
@@ -403,7 +400,6 @@ export default function MediaPage() {
                           className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
                         >
                           {item.cta}
-                          <Icon name="external-link" className="w-3 h-3" />
                         </ExternalLink>
                       </div>
                     </article>
