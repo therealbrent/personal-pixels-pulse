@@ -172,7 +172,7 @@ export default function ThoughtLeadershipCard({ item, index, featured = false, h
   };
 
   // Article and Writing cards - larger format with optional quotes
-  if (item.type === 'article' || item.type === 'writing') {
+  if (item.type === 'article' || item.type === 'writing' || item.type === 'interview') {
     const articleClasses = featured
       ? `${styles.featuredBg} ${styles.featuredHoverShadow} hover:-translate-y-1`
       : `bg-background ${styles.cardHoverBg} hover:translate-x-[4px] hover:translate-y-[4px] ${styles.shadowColor}`;
@@ -188,7 +188,7 @@ export default function ThoughtLeadershipCard({ item, index, featured = false, h
         className={`block border-2 sm:border-4 border-foreground shadow-neo-md ${articleClasses} ${
           isClickable ? 'cursor-pointer transition-all duration-300' : 'transition-all duration-300'
         } animate-fade-in group focus-within:ring-4 focus-within:ring-focus-ring focus-within:ring-offset-2 relative overflow-hidden`}
-        aria-label={`${item.type === 'writing' ? 'Writing' : 'Article'}: ${item.title} featured in ${item.publication}`}
+        aria-label={`${item.type === 'writing' ? 'Writing' : item.type === 'interview' ? 'Interview' : 'Article'}: ${item.title} featured in ${item.publication}`}
         tabIndex={isClickable ? 0 : undefined}
         role={isClickable ? 'button' : undefined}
         onKeyDown={isClickable ? (e) => {
