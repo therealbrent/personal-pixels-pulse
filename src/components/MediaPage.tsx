@@ -83,8 +83,8 @@ export default function MediaPage() {
             </div>
 
             {/* Stat Block */}
-            <dl className="grid grid-cols-2 md:grid-cols-4 gap-0 border-4 md:border-8 border-foreground shadow-neo-xl bg-background text-left overflow-hidden">
-              <div className="bg-primary p-4 sm:p-5 border-r-4 border-b-4 md:border-b-0 border-foreground">
+            <dl className="grid grid-cols-1 md:grid-cols-3 gap-0 border-4 md:border-8 border-foreground shadow-neo-xl bg-background text-left overflow-hidden">
+              <div className="bg-primary p-4 sm:p-5 md:border-r-4 border-b-4 md:border-b-0 border-foreground">
                 <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-foreground/70 mb-1">
                   Years Leading Change
                 </dt>
@@ -98,14 +98,6 @@ export default function MediaPage() {
                 </dt>
                 <dd className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-none">
                   {speakingEngagementCount}
-                </dd>
-              </div>
-              <div className="bg-background p-4 sm:p-5 border-r-4 md:border-r-4 border-foreground">
-                <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-foreground/70 mb-1">
-                  Countries
-                </dt>
-                <dd className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground leading-none">
-                  3
                 </dd>
               </div>
               <div className="bg-accent p-4 sm:p-5 border-foreground">
