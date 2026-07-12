@@ -82,7 +82,7 @@ export default function MediaPage() {
             </p>
 
             {/* Stat Block */}
-            <dl className="grid grid-cols-2 md:grid-cols-4 gap-0 border-4 md:border-8 border-foreground shadow-neo-xl bg-background text-left">
+            <dl className="grid grid-cols-2 md:grid-cols-4 gap-0 border-4 md:border-8 border-foreground shadow-neo-xl bg-background text-left overflow-hidden">
               <div className="bg-primary p-4 sm:p-5 border-r-0 md:border-r-4 border-b-4 md:border-b-0 border-foreground">
                 <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-foreground/70 mb-1">
                   Onboarded to GenAI
