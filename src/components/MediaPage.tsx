@@ -281,6 +281,7 @@ export default function MediaPage() {
                     Download Press Kit ↓
                   </ExternalLink>
                 </div>
+              </div>
             </div>
           </div>
         </section>
