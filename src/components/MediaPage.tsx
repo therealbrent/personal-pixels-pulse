@@ -413,18 +413,6 @@ export default function MediaPage() {
                 </BrutalistButton>
               </div>
 
-              {/* Rights & permissions line */}
-              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-foreground/60">
-                Headshot and bio cleared for editorial use. For broadcast or sponsored contexts, contact{' '}
-                <ExternalLink
-                  href={BOOKING_URL}
-                  variant="primary"
-                  className="underline decoration-2 underline-offset-4 hover:text-accent transition-colors normal-case tracking-normal"
-                >
-                  book a call
-                </ExternalLink>
-                .
-              </p>
             </div>
           </div>
         </section>
