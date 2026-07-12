@@ -37,7 +37,7 @@ export const commandPaletteData: CommandItem[] = [
   },
   {
     id: 'media',
-    title: 'Media',
+    title: 'Press & Media',
     url: '/media',
     icon: Newspaper,
     type: 'page',
