@@ -104,10 +104,10 @@ export default function MediaPage() {
               </div>
               <div className="bg-cobalt p-4 sm:p-5 border-r-4 md:border-r-4 border-foreground">
                 <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-white/80 mb-1">
-                  Countries Spoken In
+                  Conference Appearances
                 </dt>
                 <dd className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-none">
-                  3
+                  10+
                 </dd>
               </div>
               <div className="bg-accent p-4 sm:p-5 border-foreground">
