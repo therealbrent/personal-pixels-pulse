@@ -58,7 +58,7 @@ export default function MediaPage() {
                 Press & Media
               </p>
             </div>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight leading-[1.05] mb-4 sm:mb-6 uppercase">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight leading-[1.05] mb-8 sm:mb-12 md:mb-16 uppercase">
               <span className="block">Don't Sell People AI.</span>
               <span className="inline-block px-3 sm:px-5 py-1 bg-accent text-white border-4 sm:border-8 border-foreground transform -rotate-2 mt-2 sm:mt-3 shadow-neo-md">
                 Design It Into Their Work.
