@@ -312,7 +312,7 @@ export default function MediaPage() {
                         From Magic to Muscle: Driving Enterprise AI Transformation
                       </h3>
                       <p className="text-xs sm:text-sm font-semibold text-foreground/80 leading-relaxed italic mb-4 flex-1">
-                        A working conversation on how enterprise AI actually gets adopted — templates, office hours, change management.
+                        &ldquo;AI creates more value when it is designed into the workflow—not simply bolted onto the work people already do.&rdquo;
                       </p>
                       <ExternalLink
                         href="https://www.youtube.com/watch?v=Dvan146syOM"
