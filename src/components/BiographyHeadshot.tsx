@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { Button } from './ui/button';
 import { Icon } from './ui/icon';
 
-const PRESS_KIT_URL =
-  'https://drive.google.com/drive/folders/1_FtkrMYllWpWcanGL3oQTy6B0xmbcZwI?usp=sharing';
+const HEADSHOT_HIRES_URL = '/lovable-uploads/brent-summers-headshot-min.png';
 
 export default function BiographyHeadshot() {
   // Compressed preview for fast loading
@@ -123,14 +122,13 @@ export default function BiographyHeadshot() {
               
               {/* Button directly attached - zero gap */}
               <a
-                href={PRESS_KIT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={HEADSHOT_HIRES_URL}
+                download="brent-summers-headshot.png"
                 className="flex w-full items-center justify-center gap-1.5 text-center bg-accent text-accent-foreground border-0 hover:bg-accent/90 transition-colors duration-150 text-[10px] sm:text-xs font-black py-2 px-2 sm:px-3 no-underline min-h-[40px]"
                 style={{ margin: 0, borderRadius: 0 }}
               >
-                VIEW PRESS KIT
-                <Icon name="external-link" size={12} />
+                DOWNLOAD HI-RES
+                <Icon name="download" size={12} />
               </a>
             </div>
           </div>
