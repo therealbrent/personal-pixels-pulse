@@ -146,16 +146,18 @@ export default function MediaPage() {
                 <p className="text-base sm:text-lg font-bold text-foreground leading-relaxed">
                   &ldquo;The generative AI rollout I led at Qualcomm Technologies reached
                   350+ users and is credited with roughly 2,400 hours saved every month.
-                  What the{' '}
+                  What the case study doesn't say is why it worked: we didn't sell people on AI. We
+                  designed it into the work they were already doing.&rdquo;
+                </p>
+                <p className="mt-2 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-foreground/60">
+                  Source:{' '}
                   <ExternalLink
                     href="https://writer.com/blog/qualcomm-customer-story/"
                     variant="primary"
-                    className="underline decoration-2 underline-offset-4 hover:text-accent transition-colors"
+                    className="underline decoration-2 underline-offset-4 hover:text-accent transition-colors normal-case"
                   >
-                    case study
+                    Qualcomm + WRITER case study
                   </ExternalLink>
-                  {' '}doesn't say is why it worked: we didn't sell people on AI. We
-                  designed it into the work they were already doing.&rdquo;
                 </p>
               </div>
               <div>
