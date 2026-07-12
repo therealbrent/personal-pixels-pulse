@@ -11,6 +11,7 @@
 
 import sportBeachImage from '../assets/Cannes_2026_-_Sport_Beach_-_Brent_Summers.png.asset.json';
 import humansOfAIImage from '../assets/Humans_of_AI.png.asset.json';
+import adobePodcastImage from '../assets/Adobe_Podcast_2026_-_Brent_Summers.png.asset.json';
 
 export type ContentType = "presentation" | "podcast" | "panel" | "interview" | "article" | "writing";
 
@@ -297,6 +298,17 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     imageUrl: humansOfAIImage.url,
     ctaLabel: "Watch Video",
     topics: ["AI", "Leadership"],
+  },
+  {
+    id: "adobe-thinking-with-ai-ep5-2026",
+    type: "podcast",
+    title: "From Idea to Adoption: Where AI Gets Real",
+    date: "2026-04-26",
+    publication: "Adobe",
+    url: "https://experienceleague.adobe.com/en/perspectives/thinking-with-ai-the-podcast?video=4",
+    imageUrl: adobePodcastImage.url,
+    ctaLabel: "Watch Episode",
+    topics: ["AI", "Adoption"],
   },
   {
     id: "cio-ai-literacy-2026",
