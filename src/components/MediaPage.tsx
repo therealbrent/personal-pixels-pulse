@@ -1,22 +1,10 @@
 import { Link } from 'react-router-dom';
 import SEO from './SEO';
 import BiographyHeadshot from './BiographyHeadshot';
-import ThoughtLeadershipCard from './ThoughtLeadershipCard';
-import { getThoughtLeadershipByIds, thoughtLeadershipData } from '@/data/thoughtLeadership';
+import { thoughtLeadershipData } from '@/data/thoughtLeadership';
 import { BrutalistButton } from './ui/BrutalistButton';
 import { ExternalLink } from './ui/ExternalLink';
 import { Icon } from './ui/icon';
-
-// Curated press hits — hand-picked from the Insights archive.
-// These represent the strongest "executive brand" media moments.
-const FEATURED_PRESS_IDS = [
-  'humans-of-ai-brent-summers-2026',
-  'convey-ux-podcast-2020',
-  'ux-flywheel-2020',
-  'forbes-writer-ai-leaders-forum',
-  '6sense-breakthrough-2025',
-  'ai-champions-playbook-2025',
-];
 
 // Speaking topics for press/booking inquiries.
 const SPEAKING_TOPICS = [
@@ -45,7 +33,6 @@ const PRESS_KIT_URL =
   'https://drive.google.com/drive/folders/1_FtkrMYllWpWcanGL3oQTy6B0xmbcZwI?usp=sharing';
 
 export default function MediaPage() {
-  const pressItems = getThoughtLeadershipByIds(FEATURED_PRESS_IDS);
   const speakingEngagementCount = thoughtLeadershipData.filter((i) =>
     ['presentation', 'panel', 'podcast', 'interview'].includes(i.type)
   ).length;
