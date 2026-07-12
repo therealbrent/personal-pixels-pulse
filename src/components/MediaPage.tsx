@@ -21,12 +21,12 @@ const FEATURED_PRESS_IDS = [
 // Speaking topics for press/booking inquiries.
 const SPEAKING_TOPICS = [
   {
-    title: 'Human Led. AI Powered.',
-    body: 'Why enterprise AI transformation succeeds or fails on the human side. How a middle-manager became an AI champion by focusing on adoption, enablement, and evangelism.',
+    title: "The AI Champion's Playbook",
+    body: 'How a middle-manager became an AI champion by focusing on adoption, enablement, and evangelism. And why enterprise AI transformation succeeds or fails on the human side.',
   },
   {
-    title: 'The UX Flywheel: Design as a Growth Engine',
-    body: "A user-centered replacement for the marketing funnel. UX isn't a service desk — it's the engine that surfaces new opportunities, ships new products, and compounds customer lifetime value.",
+    title: 'The UX Flywheel',
+    body: 'This is user-centered replacement for the classic funnel. User research is an insights engine that surfaces new opportunities, ships new products, and compounds customer lifetime value.',
   },
   {
     title: 'ABM: The Perfect Proving Ground for AI',
@@ -34,7 +34,7 @@ const SPEAKING_TOPICS = [
   },
   {
     title: "The Boundary-Crosser's Advantage",
-    body: "The next generation of leaders will come from IT, design, and the shop floor — not the MBA track. Individual contributors with enough ambition and cultural influence can out-deliver leaders who've lost touch with the work.",
+    body: "The next generation of leaders won't come from the MBA track. Instead they'll emerge from IT, design, and the shop floor. With AI, ambitious individual contributors can garner influence and out-deliver leaders who've lost touch with the work.",
   },
 ];
 
