@@ -1,22 +1,10 @@
 import { Link } from 'react-router-dom';
 import SEO from './SEO';
 import BiographyHeadshot from './BiographyHeadshot';
-import ThoughtLeadershipCard from './ThoughtLeadershipCard';
-import { getThoughtLeadershipByIds, thoughtLeadershipData } from '@/data/thoughtLeadership';
+import { thoughtLeadershipData } from '@/data/thoughtLeadership';
 import { BrutalistButton } from './ui/BrutalistButton';
 import { ExternalLink } from './ui/ExternalLink';
 import { Icon } from './ui/icon';
-
-// Curated press hits — hand-picked from the Insights archive.
-// These represent the strongest "executive brand" media moments.
-const FEATURED_PRESS_IDS = [
-  'humans-of-ai-brent-summers-2026',
-  'convey-ux-podcast-2020',
-  'ux-flywheel-2020',
-  'forbes-writer-ai-leaders-forum',
-  '6sense-breakthrough-2025',
-  'ai-champions-playbook-2025',
-];
 
 // Speaking topics for press/booking inquiries.
 const SPEAKING_TOPICS = [
@@ -45,7 +33,6 @@ const PRESS_KIT_URL =
   'https://drive.google.com/drive/folders/1_FtkrMYllWpWcanGL3oQTy6B0xmbcZwI?usp=sharing';
 
 export default function MediaPage() {
-  const pressItems = getThoughtLeadershipByIds(FEATURED_PRESS_IDS);
   const speakingEngagementCount = thoughtLeadershipData.filter((i) =>
     ['presentation', 'panel', 'podcast', 'interview'].includes(i.type)
   ).length;
@@ -213,48 +200,12 @@ export default function MediaPage() {
         </section>
 
         {/* ============================================================ */}
-        {/* RECENT PRESS — curated cards                                  */}
-        {/* ============================================================ */}
-        <section aria-labelledby="press-heading" className="mb-12 sm:mb-16 md:mb-20">
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-cobalt border-4 md:border-8 border-foreground shadow-neo-xl p-4 sm:p-6 md:p-8">
-              <h2 id="press-heading" className="text-xl sm:text-2xl md:text-4xl font-black text-white mb-2 sm:mb-3 leading-tight">
-                FEATURED PRESS
-              </h2>
-              <p className="text-base sm:text-lg md:text-xl font-bold text-white/90 leading-relaxed">
-                Get to know me a little bit.
-              </p>
-            </div>
-            <div className="bg-background border-4 md:border-8 border-foreground border-t-0 shadow-neo-xl p-4 sm:p-6 md:p-8">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 items-start">
-                {pressItems.map((item, idx) => (
-                  <ThoughtLeadershipCard key={item.id} item={item} index={idx} hideDate />
-                ))}
-              </div>
-              <div className="mt-6 sm:mt-8 text-center">
-                <BrutalistButton variant="secondary" asChild aria-label="View full archive of talks, interviews and writing">
-                  <Link to="/insights">Browse the Full Archive →</Link>
-                </BrutalistButton>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ============================================================ */}
-        {/* FEATURED PRESS — TIERED (PROPOSED REDESIGN)                   */}
+        {/* FEATURED PRESS — TIERED                                       */}
         {/* ============================================================ */}
         <section aria-labelledby="press-tiered-heading" className="mb-12 sm:mb-16 md:mb-20">
           <div className="max-w-7xl mx-auto">
             {/* Section header */}
             <div className="bg-foreground border-4 md:border-8 border-foreground shadow-neo-xl p-4 sm:p-6 md:p-8">
-              <div className="flex flex-wrap items-center gap-2 mb-2 sm:mb-3">
-                <span className="inline-block px-2 py-0.5 border-2 border-primary bg-primary text-foreground text-[9px] sm:text-[10px] font-black tracking-widest uppercase">
-                  Proposed
-                </span>
-                <span className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-primary">
-                  V2 — Tiered
-                </span>
-              </div>
               <h2 id="press-tiered-heading" className="text-xl sm:text-2xl md:text-4xl font-black text-background mb-2 sm:mb-3 leading-tight uppercase">
                 Featured Press
               </h2>
@@ -464,6 +415,13 @@ export default function MediaPage() {
                     </article>
                   ))}
                 </div>
+              </div>
+
+              {/* Full archive link */}
+              <div className="text-center pt-2">
+                <BrutalistButton variant="secondary" asChild aria-label="View full archive of talks, interviews and writing">
+                  <Link to="/insights">Browse the Full Archive →</Link>
+                </BrutalistButton>
               </div>
 
               {/* Rights & permissions line */}
