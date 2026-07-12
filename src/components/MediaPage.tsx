@@ -13,7 +13,7 @@ const FEATURED_PRESS_IDS = [
   'humans-of-ai-brent-summers-2026',
   'convey-ux-podcast-2020',
   'ux-flywheel-2020',
-  'usertesting-ux-investment-2015',
+  'forbes-writer-ai-leaders-forum',
   '6sense-breakthrough-2025',
   'ai-champions-playbook-2025',
 ];
