@@ -1,5 +1,4 @@
 import { useSearchParams } from 'react-router-dom';
-import BiographyHeadshot from './BiographyHeadshot';
 import SEO from './SEO';
 import ThoughtLeadershipFeed from './ThoughtLeadershipFeed';
 
@@ -27,9 +26,6 @@ export default function SpeakingMediaPage() {
             Two decades of talks, interviews, panels, and writing. Looking for a current press kit? Visit the <a href="/media" className="underline hover:text-accent transition-colors">Media page</a>.
           </p>
         </header>
-
-        {/* Biography and Headshot */}
-        <BiographyHeadshot />
 
         {/* Thought Leadership Feed */}
         <ThoughtLeadershipFeed topicFilter={topicFilter} />
