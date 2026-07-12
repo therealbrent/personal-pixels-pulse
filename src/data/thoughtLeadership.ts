@@ -278,7 +278,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // ==========================================
   {
     id: "sport-beach-sam-chotiner-2026",
-    type: "article",
+    type: "interview",
     title: "Brent Summers interviewed by Sam Chotiner",
     date: "2026-06-26",
     publication: "Sport Beach",
@@ -289,7 +289,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   },
   {
     id: "humans-of-ai-brent-summers-2026",
-    type: "article",
+    type: "podcast",
     title: "From magic to muscle: Qualcomm's Brent Summers on driving enterprise AI transformation",
     date: "2026-06-26",
     publication: "Humans of AI",
@@ -310,7 +310,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   },
   {
     id: "userled-ai-abm-2026",
-    type: "article",
+    type: "interview",
     title: "Data, Judgment and Direction — What Drives AI and ABM Success at Enterprise Scale",
     date: "2026-04-01",
     publication: "UserLed",
