@@ -338,7 +338,7 @@ export default function MediaPage() {
                   {[
                     {
                       outlet: 'Sport Beach',
-                      context: 'On-camera interview at Cannes 2026',
+                      context: 'Interview',
                       title: 'Interviewed by Sam Chotiner',
                       url: 'https://www.youtube.com/watch?v=fIlAhPaO9EI',
                       cta: 'Watch',
@@ -348,7 +348,7 @@ export default function MediaPage() {
                     },
                     {
                       outlet: 'UserLed',
-                      context: 'Interview — AI + ABM at enterprise scale',
+                      context: 'Interview',
                       title: 'Data, Judgment and Direction',
                       url: 'https://www.youtube.com/watch?v=1rbEfzecgAg',
                       cta: 'Watch',
@@ -358,7 +358,7 @@ export default function MediaPage() {
                     },
                     {
                       outlet: 'CIO (Sponsored)',
-                      context: 'Feature — AI literacy in the workplace',
+                      context: 'Feature',
                       title: 'Building AI Literacy in the Workplace',
                       url: 'https://modernworkplace.cio.com/empowered-workforce/building-ai-literacy-in-the-workplace/',
                       cta: 'Read',
@@ -368,7 +368,7 @@ export default function MediaPage() {
                     },
                     {
                       outlet: 'Adobe',
-                      context: 'Bylined — practical AI marketing strategies',
+                      context: 'Byline',
                       title: 'AI-Powered Marketing: Practical Strategies',
                       url: 'https://experienceleague.adobe.com/en/perspectives/ai-powered-marketing-practical-strategies-you-can-use-today',
                       cta: 'Read',
