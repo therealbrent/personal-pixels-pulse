@@ -1,26 +1,14 @@
 import { useState } from 'react';
 import { Button } from './ui/button';
-import { LazyImage } from './LazyImage';
 
 const PRESS_KIT_URL =
   'https://drive.google.com/drive/folders/1_FtkrMYllWpWcanGL3oQTy6B0xmbcZwI?usp=sharing';
 
 export default function BiographyHeadshot() {
-  // High-res version for download
-  const highResHeadshot = '/lovable-uploads/9959ce8e-73ea-47e3-bc81-9d168352a30a.png';
   // Compressed preview for fast loading
   const previewHeadshot = '/lovable-uploads/brent-summers-headshot-min.png';
 
   const [isExpanded, setIsExpanded] = useState(false);
-  
-  const handleDownloadHeadshot = () => {
-    const link = document.createElement('a');
-    link.href = highResHeadshot;
-    link.download = 'brent-summers-headshot.png';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <section id="biography" className="mb-12 sm:mb-16 md:mb-20">
