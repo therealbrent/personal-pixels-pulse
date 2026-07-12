@@ -125,7 +125,7 @@ export default function BiographyHeadshot() {
                 href={PRESS_KIT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center bg-accent text-accent-foreground border-0 hover:bg-accent/90 transition-colors duration-150 text-[10px] sm:text-xs font-black py-2 px-2 sm:px-3 no-underline"
+                className="flex w-full items-center justify-center text-center bg-accent text-accent-foreground border-0 hover:bg-accent/90 transition-colors duration-150 text-[10px] sm:text-xs font-black py-2 px-2 sm:px-3 no-underline min-h-[40px]"
                 style={{ margin: 0, borderRadius: 0 }}
               >
                 VIEW PRESS KIT ↗
