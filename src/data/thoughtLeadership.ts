@@ -401,7 +401,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   },
   {
     id: "uxmag-proto-personas",
-    type: "article",
+    type: "writing",
     title: "Revisiting Proto-Personas for Executive Alignment",
     date: "2014-07-10",
     publication: "UX Magazine",
@@ -413,7 +413,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   },
   {
     id: "olark-predictions",
-    type: "article",
+    type: "writing",
     title: "3 Predictions for 2016: Technology Meets Customer Experience",
     date: "2016-01-05",
     publication: "Speak: A blog by Olark",
