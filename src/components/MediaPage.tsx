@@ -68,8 +68,7 @@ export default function MediaPage() {
               That's the principle behind an enterprise AI rollout that reached{' '}
               <span className="bg-primary px-1.5">350+ users</span> and saved{' '}
               <span className="bg-cobalt text-white px-1.5">2,400 hours a month</span> at
-              Qualcomm Technologies — and the argument I bring to the{' '}
-              <span className="bg-accent text-white px-1.5">page, the stage, and the mic</span>.
+              Qualcomm Technologies — and the argument I bring to the page, the stage, and the mic.
             </p>
 
             {/* Press Kit CTA */}
