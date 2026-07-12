@@ -147,7 +147,7 @@ export default function BiographyHeadshot() {
                 className="block w-full text-center bg-foreground text-background border-0 hover:bg-foreground/90 transition-colors duration-150 text-[10px] sm:text-xs font-black py-2 px-2 sm:px-3 no-underline"
                 style={{ margin: 0, borderRadius: 0 }}
               >
-                DOWNLOAD PRESS KIT ↗
+                VIEW PRESS KIT ↗
               </a>
             </div>
           </div>
