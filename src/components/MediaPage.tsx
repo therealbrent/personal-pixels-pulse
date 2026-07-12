@@ -265,7 +265,6 @@ export default function MediaPage() {
                     Book Brent for an interview, podcast, or keynote.
                   </h3>
                 </div>
-                <div className="flex-shrink-0">
                 <div className="flex-shrink-0 flex flex-col sm:flex-row gap-3">
                   <ExternalLink
                     href={BOOKING_URL}
@@ -282,7 +281,6 @@ export default function MediaPage() {
                     Download Press Kit ↓
                   </ExternalLink>
                 </div>
-              </div>
             </div>
           </div>
         </section>
