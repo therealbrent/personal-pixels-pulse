@@ -457,7 +457,7 @@ export default function MediaPage() {
                           variant="primary"
                           className="inline-flex items-center gap-1 text-[10px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
                         >
-                          <Icon name="ExternalLink" className="w-3 h-3" />
+                          <Icon name="external-link" className="w-3 h-3" />
                           {item.cta}
                         </ExternalLink>
                       </div>
