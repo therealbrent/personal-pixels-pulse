@@ -36,6 +36,8 @@ const getTabClasses = (value: FilterType, isActive: boolean) => {
         return `${baseClasses} bg-accent text-white translate-x-[2px] translate-y-[2px] shadow-none`;
       case 'podcast':
         return `${baseClasses} bg-oxblood text-white translate-x-[2px] translate-y-[2px] shadow-none`;
+      case 'interview':
+        return `${baseClasses} bg-foreground text-background translate-x-[2px] translate-y-[2px] shadow-none`;
       case 'writing':
         return `${baseClasses} bg-oxblood text-white translate-x-[2px] translate-y-[2px] shadow-none`;
     }
@@ -51,6 +53,8 @@ const getTabClasses = (value: FilterType, isActive: boolean) => {
         return `${baseClasses} bg-background text-foreground hover:bg-accent hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
       case 'podcast':
         return `${baseClasses} bg-background text-foreground hover:bg-oxblood hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
+      case 'interview':
+        return `${baseClasses} bg-background text-foreground hover:bg-foreground hover:text-background hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
       case 'writing':
         return `${baseClasses} bg-background text-foreground hover:bg-oxblood hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none`;
     }
@@ -72,6 +76,8 @@ const getDropdownItemClasses = (value: FilterType) => {
       return `${baseClasses} data-[state=checked]:bg-accent data-[state=checked]:text-white data-[highlighted]:bg-accent data-[highlighted]:text-white`;
     case 'podcast':
       return `${baseClasses} data-[state=checked]:bg-oxblood data-[state=checked]:text-white data-[highlighted]:bg-oxblood data-[highlighted]:text-white`;
+    case 'interview':
+      return `${baseClasses} data-[state=checked]:bg-foreground data-[state=checked]:text-background data-[highlighted]:bg-foreground data-[highlighted]:text-background`;
     case 'writing':
       return `${baseClasses} data-[state=checked]:bg-oxblood data-[state=checked]:text-white data-[highlighted]:bg-oxblood data-[highlighted]:text-white`;
     default:

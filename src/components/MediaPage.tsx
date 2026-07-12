@@ -47,7 +47,7 @@ const PRESS_KIT_URL =
 export default function MediaPage() {
   const pressItems = getThoughtLeadershipByIds(FEATURED_PRESS_IDS);
   const speakingEngagementCount = thoughtLeadershipData.filter((i) =>
-    ['presentation', 'panel', 'podcast'].includes(i.type)
+    ['presentation', 'panel', 'podcast', 'interview'].includes(i.type)
   ).length;
 
   return (
