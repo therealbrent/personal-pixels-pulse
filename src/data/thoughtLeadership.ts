@@ -12,6 +12,7 @@
 import sportBeachImage from '../assets/Cannes_2026_-_Sport_Beach_-_Brent_Summers.png.asset.json';
 import humansOfAIImage from '../assets/Humans_of_AI.png.asset.json';
 import adobePodcastImage from '../assets/Adobe_Podcast_2026_-_Brent_Summers.png.asset.json';
+import adobeSkillExchangeImage from '../assets/Adobe_Skill_Exchange_2026.jpeg.asset.json';
 
 export type ContentType = "presentation" | "podcast" | "panel" | "interview" | "article" | "writing";
 
@@ -44,6 +45,17 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // ==========================================
   // PRESENTATIONS
   // ==========================================
+  {
+    id: "adobe-skill-exchange-2026",
+    type: "presentation",
+    title: "Defining Use Cases that are Ready to Build",
+    date: "2026-08-13",
+    venue: "Adobe Experience Makers: The Skill Exchange (Virtual)",
+    url: "https://reg.adobe.com/flow/adobe/skillx26/sessions/page/catalog/session/1780673724202001NBFy",
+    imageUrl: adobeSkillExchangeImage.url,
+    ctaLabel: "Register",
+    topics: ["AI", "Enterprise"],
+  },
   {
     id: "b2b-forum-boston-2026",
     type: "presentation",
