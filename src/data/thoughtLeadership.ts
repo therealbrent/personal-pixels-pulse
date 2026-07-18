@@ -304,7 +304,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     id: "humans-of-ai-brent-summers-2026",
     type: "podcast",
     title: "From magic to muscle: Qualcomm's Brent Summers on driving enterprise AI transformation",
-    date: "2026-06-26",
+    date: "2026-07-01",
     publication: "Humans of AI",
     url: "https://www.youtube.com/watch?v=Dvan146syOM",
     imageUrl: humansOfAIImage.url,
