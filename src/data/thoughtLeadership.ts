@@ -333,6 +333,15 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     topics: ["AI", "Leadership"],
   },
   {
+    id: "linkedin-sales-revenue-org-2026",
+    type: "article",
+    title: "What's going to separate a revenue organization that wins in the next few years from the ones that don't?",
+    date: "2026-07-17",
+    publication: "LinkedIn for Sales",
+    url: "https://www.linkedin.com/posts/whats-going-to-separate-a-revenue-organization-ugcPost-7483898308395094016-3gUC/",
+    topics: ["AI", "GTM"],
+  },
+  {
     id: "userled-ai-abm-2026",
     type: "interview",
     title: "Data, Judgment and Direction — What Drives AI and ABM Success at Enterprise Scale",
