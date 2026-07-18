@@ -228,7 +228,7 @@ export default function ThoughtLeadershipCard({ item, index, featured = false, h
 
           {/* PUBLICATION */}
           {item.publication && (
-            <div className={`text-xs font-black tracking-wider ${['Sport Beach', 'Adobe'].includes(item.publication) ? 'normal-case' : 'uppercase'} mb-3 ${textColorClass} opacity-80 ${hoverTextClass} transition-colors`} aria-label={`Published in ${item.publication}`}>
+            <div className={`text-xs font-black tracking-wider normal-case mb-3 ${textColorClass} opacity-80 ${hoverTextClass} transition-colors`} aria-label={`Published in ${item.publication}`}>
               {item.publication}
             </div>
           )}
