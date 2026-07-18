@@ -50,7 +50,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     type: "presentation",
     title: "Defining Use Cases that are Ready to Build",
     date: "2026-08-13",
-    venue: "Adobe Experience Makers: The Skill Exchange (Virtual)",
+    venue: "Adobe",
     url: "https://reg.adobe.com/flow/adobe/skillx26/sessions/page/catalog/session/1780673724202001NBFy",
     imageUrl: adobeSkillExchangeImage.url,
     ctaLabel: "Register",
