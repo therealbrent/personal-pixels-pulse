@@ -13,7 +13,7 @@ import sportBeachImage from '../assets/Cannes_2026_-_Sport_Beach_-_Brent_Summers
 import humansOfAIImage from '../assets/Humans_of_AI.png.asset.json';
 import adobePodcastImage from '../assets/Adobe_Podcast_2026_-_Brent_Summers.png.asset.json';
 import adobeSkillExchangeImage from '../assets/Adobe_Skill_Exchange_2026.jpeg.asset.json';
-import linkedInForSalesImage from '../assets/LinkedIn_for_Sales_Brent_Summers.png.asset.json';
+import linkedInForSalesImage from '../assets/LinkedIn_for_Sales_Brent_Summers_v2.png.asset.json';
 
 export type ContentType = "presentation" | "podcast" | "panel" | "interview" | "article" | "writing";
 
