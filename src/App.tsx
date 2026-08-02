@@ -18,6 +18,12 @@ import CareerTimelinePage from "./components/CareerTimelinePage";
 import MediaPage from "./components/MediaPage";
 import VibesPage from "./components/VibesPage";
 import HomeV2Page from "./components/HomeV2Page";
+import V2HomePage from "./components/v2/V2HomePage";
+import V2WorkPage from "./components/v2/V2WorkPage";
+import V2IdeasPage from "./components/v2/V2IdeasPage";
+import V2SpeakingPage from "./components/v2/V2SpeakingPage";
+import V2AboutPage from "./components/v2/V2AboutPage";
+import V2ContactPage from "./components/v2/V2ContactPage";
 import { LazyImage } from "./components/LazyImage";
 import SEO from "./components/SEO";
 import { CommandPalette } from "./components/CommandPalette";
@@ -892,6 +898,8 @@ function ScrollToTop() {
 function AppContent() {
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const { playOpen } = useCommandPaletteSound();
+  const { pathname } = useLocation();
+  const isV2 = pathname === "/v2" || pathname.startsWith("/v2/");
 
   const openCommandPalette = () => {
     playOpen();
@@ -905,9 +913,9 @@ function AppContent() {
     <>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col w-full bg-background">
-        <Header />
-        <CommandFAB onOpenCommandPalette={openCommandPalette} />
-        <AmbientContextBar onOpenCommandPalette={openCommandPalette} />
+        {!isV2 && <Header />}
+        {!isV2 && <CommandFAB onOpenCommandPalette={openCommandPalette} />}
+        {!isV2 && <AmbientContextBar onOpenCommandPalette={openCommandPalette} />}
         <main id="main-content" className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -922,9 +930,15 @@ function AppContent() {
             <Route path="/career" element={<CareerTimelinePage />} />
             <Route path="/vibes" element={<VibesPage />} />
             <Route path="/home-v2" element={<HomeV2Page />} />
+            <Route path="/v2" element={<V2HomePage />} />
+            <Route path="/v2/work" element={<V2WorkPage />} />
+            <Route path="/v2/ideas" element={<V2IdeasPage />} />
+            <Route path="/v2/speaking" element={<V2SpeakingPage />} />
+            <Route path="/v2/about" element={<V2AboutPage />} />
+            <Route path="/v2/contact" element={<V2ContactPage />} />
           </Routes>
         </main>
-        <Footer />
+        {!isV2 && <Footer />}
       </div>
       <CommandPalette isOpen={isCommandPaletteOpen} onClose={() => setIsCommandPaletteOpen(false)} />
     </>
