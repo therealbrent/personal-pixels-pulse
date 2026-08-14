@@ -231,16 +231,6 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     topics: ["AI"],
   },
   {
-    id: "ai-create-2025-dup-removed",
-    type: "panel",
-    title: "How AI is Shaping Creative Futures",
-    date: "2025-09-07",
-    venue: "AI Create (San Diego)",
-    imageUrl: "/lovable-uploads/ai-create.jpeg",
-    topics: ["AI", "Design"],
-    featured: true,
-  },
-  {
     id: "6sense-breakthrough-2025",
     type: "panel",
     title: "Tangy Twists and Pipeline Wins: Expert Insights with a Sour Kick",
