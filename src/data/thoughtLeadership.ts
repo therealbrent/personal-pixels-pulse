@@ -12,7 +12,7 @@
 import sportBeachImage from '../assets/Cannes_2026_-_Sport_Beach_-_Brent_Summers.png.asset.json';
 import humansOfAIImage from '../assets/Humans_of_AI.png.asset.json';
 import adobePodcastImage from '../assets/Adobe_Podcast_2026_-_Brent_Summers.png.asset.json';
-import adobeSkillExchangeImage from '../assets/Adobe_Skill_Exchange_2026.jpeg.asset.json';
+import adobeSkillExchangeImage from '../assets/Adobe_Skill_Exchange_2025.png.asset.json';
 import linkedInForSalesImage from '../assets/LinkedIn_for_Sales_Brent_Summers_v2.png.asset.json';
 import ipsosCannesImage from '../assets/Ipsos_at_Cannes_2026.png.asset.json';
 
@@ -53,9 +53,9 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "Defining Use Cases that are Ready to Build",
     date: "2026-08-13",
     venue: "Adobe",
-    url: "https://reg.adobe.com/flow/adobe/skillx26/sessions/page/catalog/session/1780673724202001NBFy",
+    url: "https://experienceleague.adobe.com/en/on-demand-events/gen-ai-use-cases-ready-to-build",
     imageUrl: adobeSkillExchangeImage.url,
-    ctaLabel: "Register",
+    ctaLabel: "Watch Video",
     topics: ["AI", "Enterprise"],
   },
   {
