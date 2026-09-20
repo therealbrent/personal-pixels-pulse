@@ -15,13 +15,16 @@ export default function CareerTimelinePage() {
       />
 
       <main className="min-h-screen bg-background">
-        <div className="container mx-auto px-4 py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-24">
           {/* Page Header */}
-          <header className="mb-12 lg:mb-16 max-w-4xl mx-auto">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-foreground mb-6 uppercase tracking-tight">
-              Career Timeline
+          <header className="mb-16 border-b-4 border-foreground pb-12 lg:mb-24 lg:pb-16">
+            <h1 className="max-w-5xl text-5xl font-black uppercase leading-[0.95] tracking-normal text-foreground sm:text-7xl lg:text-8xl">
+              Career
+              <span className="mt-3 block w-fit border-4 border-foreground bg-primary px-3 py-2 text-primary-foreground shadow-neo-lg sm:px-5">
+                Timeline
+              </span>
             </h1>
-            <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl leading-relaxed">
+            <p className="mt-10 max-w-3xl border-l-8 border-foreground pl-5 text-xl font-bold leading-relaxed text-foreground sm:text-2xl sm:pl-7">
               My professional journey through design leadership, product management, and building impactful user experiences.
             </p>
           </header>
