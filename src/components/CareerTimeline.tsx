@@ -1,397 +1,217 @@
-import { useState, useMemo, lazy, Suspense, useRef, useEffect } from 'react';
-import { careerTimeline, CareerRole } from '@/data/careerTimeline';
+import { lazy, Suspense, useMemo, useState } from 'react';
+import { ArrowUpRight, BriefcaseBusiness, GraduationCap } from 'lucide-react';
+import { careerTimeline, CareerRole, formatDateRange, formatDuration } from '@/data/careerTimeline';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const RoleDetailDrawer = lazy(() => import('./RoleDetailDrawer'));
 
-// Constants
-const PIXELS_PER_MONTH = 12;
-const CARD_MIN_WIDTH = 180;
-const ROW_HEIGHT = 140;
-const TIMELINE_TRACK_HEIGHT = 60;
+const isConsultingRole = (role: CareerRole) =>
+  role.employmentType === 'Freelance' || role.employmentType === 'Contract' || role.isFreelance;
+
+const markerStyles = [
+  'bg-accent',
+  'bg-cobalt',
+  'bg-primary',
+  'bg-destructive',
+];
+
+interface TimelineEntryProps {
+  role: CareerRole;
+  index: number;
+  onSelect: (role: CareerRole) => void;
+  education?: boolean;
+}
+
+function TimelineEntry({ role, index, onSelect, education = false }: TimelineEntryProps) {
+  const organization = education ? role.institution : role.company;
+  const visibleContributions = role.contributions.slice(0, 2);
+
+  return (
+    <article className="group relative pb-14 pl-9 last:pb-0 sm:pl-14 lg:pb-20 lg:pl-20">
+      <span
+        className={cn(
+          'absolute left-[-0.875rem] top-1 h-7 w-7 border-4 border-foreground sm:left-[-1.125rem] sm:h-9 sm:w-9',
+          education ? 'bg-background' : markerStyles[index % markerStyles.length]
+        )}
+        aria-hidden="true"
+      />
+
+      <div className="mb-4 flex flex-wrap items-center gap-3">
+        <span className="border-2 border-foreground bg-secondary px-3 py-1 text-xs font-black uppercase text-secondary-foreground sm:text-sm">
+          {formatDateRange(role.startDate, role.endDate)}
+        </span>
+        <span className="text-xs font-black uppercase text-muted-foreground sm:text-sm">
+          {formatDuration(role.startDate, role.endDate)}
+        </span>
+      </div>
+
+      <h3 className="max-w-4xl text-3xl font-black uppercase leading-[1.05] tracking-normal text-foreground transition-colors group-hover:text-primary-text sm:text-4xl lg:text-5xl">
+        {role.title}
+      </h3>
+      <p className="mt-2 text-lg font-black text-primary-text sm:text-xl">
+        {organization}
+      </p>
+
+      <div className="mt-6 border-4 border-foreground bg-card p-5 shadow-neo-lg transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 sm:p-7">
+        <div className="mb-5 flex flex-wrap items-center gap-2">
+          <span className="inline-flex items-center gap-2 bg-primary px-3 py-2 text-xs font-black uppercase text-primary-foreground">
+            {education ? (
+              <GraduationCap className="h-4 w-4" aria-hidden="true" />
+            ) : (
+              <BriefcaseBusiness className="h-4 w-4" aria-hidden="true" />
+            )}
+            {education ? 'Education' : role.employmentType}
+          </span>
+        </div>
+
+        <p className="max-w-3xl text-base leading-relaxed text-foreground sm:text-lg">
+          {role.description}
+        </p>
+
+        {visibleContributions.length > 0 && (
+          <ul className="mt-6 space-y-3 border-l-4 border-accent pl-5">
+            {visibleContributions.map((contribution) => (
+              <li key={contribution} className="font-bold leading-relaxed text-foreground">
+                {contribution}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {(role.contributions.length > 2 || (role.projects?.length ?? 0) > 0) && (
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() => onSelect(role)}
+            className="mt-7 h-auto rounded-none border-4 border-foreground bg-background px-5 py-3 font-black uppercase text-foreground shadow-neo-sm transition-all hover:translate-x-1 hover:translate-y-1 hover:bg-primary hover:text-primary-foreground hover:shadow-none"
+            aria-label={`View full details for ${role.title} at ${organization}`}
+          >
+            View details
+            <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
+          </Button>
+        )}
+      </div>
+    </article>
+  );
+}
 
 export default function CareerTimeline() {
-  const [selectedRoleIndex, setSelectedRoleIndex] = useState<number | null>(null);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [selectedRoleId, setSelectedRoleId] = useState<string | null>(null);
 
-  // Parse date from YYYY-MM format
-  const parseDate = (dateStr: string | 'Present'): Date => {
-    if (dateStr === 'Present') {
-      return new Date();
-    }
-    // Handle year-only format (e.g., "2020")
-    if (!dateStr.includes('-')) {
-      return new Date(parseInt(dateStr), 0);
-    }
-    const [year, month] = dateStr.split('-');
-    return new Date(parseInt(year), parseInt(month) - 1);
-  };
+  const { primaryRoles, consultingRoles, education, orderedEntries } = useMemo(() => {
+    const roles = careerTimeline.filter((role) => role.type === 'role');
+    const primary = roles.filter((role) => !isConsultingRole(role));
+    const consulting = roles.filter(isConsultingRole);
+    const schools = careerTimeline.filter((role) => role.type === 'education');
 
-  // Calculate timeline scale
-  const timeScale = useMemo(() => {
-    const roles = careerTimeline.filter(role => role.type === 'role');
-    const dates = roles.flatMap(role => [
-      parseDate(role.startDate),
-      parseDate(role.endDate)
-    ]);
-
-    const earliestDate = new Date(Math.min(...dates.map(d => d.getTime())));
-    const latestDate = new Date(Math.max(...dates.map(d => d.getTime())));
-
-    const totalMonths = (latestDate.getFullYear() - earliestDate.getFullYear()) * 12 
-      + (latestDate.getMonth() - earliestDate.getMonth()) + 1;
-    const totalWidth = totalMonths * PIXELS_PER_MONTH;
-
-    const getPosition = (date: Date) => {
-      const monthsFromStart = (date.getFullYear() - earliestDate.getFullYear()) * 12 
-        + (date.getMonth() - earliestDate.getMonth());
-      return monthsFromStart * PIXELS_PER_MONTH;
+    return {
+      primaryRoles: primary,
+      consultingRoles: consulting,
+      education: schools,
+      orderedEntries: [...primary, ...consulting, ...schools],
     };
-
-    // Generate year markers
-    const years: Array<{ year: number; position: number }> = [];
-    for (let year = earliestDate.getFullYear(); year <= latestDate.getFullYear(); year++) {
-      const yearDate = new Date(year, 0, 1);
-      years.push({
-        year,
-        position: getPosition(yearDate)
-      });
-    }
-
-    return { earliestDate, latestDate, totalWidth, getPosition, years };
   }, []);
 
-  const isConsulting = (role: CareerRole) => {
-    return role.employmentType === 'Freelance' || role.employmentType === 'Contract' || role.isFreelance;
-  };
+  const selectedRoleIndex = selectedRoleId
+    ? orderedEntries.findIndex((role) => role.id === selectedRoleId)
+    : -1;
+  const selectedRole = selectedRoleIndex >= 0 ? orderedEntries[selectedRoleIndex] : null;
 
-  // Position roles and assign rows based on overlaps (separate rows for consulting vs full-time)
-  const positionedRoles = useMemo(() => {
-    const roles = careerTimeline
-      .filter(role => role.type === 'role')
-      .map(role => {
-        const start = parseDate(role.startDate);
-        const end = parseDate(role.endDate);
-        // Flip: position from the right (latest date) instead of left
-        const leftFromStart = timeScale.getPosition(start);
-        const rightFromStart = timeScale.getPosition(end);
-        // Invert positions so recent is on left
-        const left = timeScale.totalWidth - rightFromStart;
-        const width = Math.max(rightFromStart - leftFromStart, CARD_MIN_WIDTH);
-
-        return {
-          ...role,
-          left,
-          width,
-          startTime: start.getTime(),
-          endTime: end.getTime(),
-          row: 0, // Will be assigned
-          isConsulting: isConsulting(role)
-        };
-      })
-      .sort((a, b) => b.startTime - a.startTime); // Sort by most recent first
-
-    // Assign rows to handle overlaps (within same category: consulting or full-time)
-    // Check VISUAL overlap based on left position + width, not just time
-    const assignedRoles: typeof roles = [];
-    
-    for (const role of roles) {
-      let assignedRow = 0;
-      let foundRow = false;
-      
-      const roleLeft = role.left;
-      const roleRight = role.left + role.width;
-      
-      while (!foundRow) {
-        // Only check overlaps with roles in the same category (above or below line)
-        // Use visual positions (left/width) to detect overlap, not time
-        const overlapsInRow = assignedRoles.filter(r => {
-          if (r.row !== assignedRow || r.isConsulting !== role.isConsulting) {
-            return false;
-          }
-          const rLeft = r.left;
-          const rRight = r.left + r.width;
-          // Visual overlap: NOT (role ends before r starts OR role starts after r ends)
-          // Add small gap (4px) to ensure cards don't touch
-          return !(roleRight <= rLeft - 4 || roleLeft >= rRight + 4);
-        });
-        
-        if (overlapsInRow.length === 0) {
-          foundRow = true;
-          role.row = assignedRow;
-        } else {
-          assignedRow++;
-        }
-      }
-      
-      assignedRoles.push(role);
-    }
-
-    return assignedRoles;
-  }, [timeScale]);
-
-  const maxRowAbove = useMemo(() => Math.max(0, ...positionedRoles.filter(r => !r.isConsulting).map(r => r.row)), [positionedRoles]);
-  const maxRowBelow = useMemo(() => Math.max(0, ...positionedRoles.filter(r => r.isConsulting).map(r => r.row)), [positionedRoles]);
-  const heightAbove = (maxRowAbove + 1) * ROW_HEIGHT;
-  const heightBelow = (maxRowBelow + 1) * ROW_HEIGHT;
-  const contentHeight = heightAbove + TIMELINE_TRACK_HEIGHT + heightBelow + 40;
-
-  const selectedRole = selectedRoleIndex !== null ? positionedRoles[selectedRoleIndex] : null;
-
-  const handleScroll = () => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    }
-  };
-
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      container.addEventListener('scroll', handleScroll);
-      handleScroll();
-      return () => container.removeEventListener('scroll', handleScroll);
-    }
-  }, []);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 400;
-      scrollContainerRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  const handleNext = () => {
-    if (selectedRoleIndex !== null && selectedRoleIndex < positionedRoles.length - 1) {
-      setSelectedRoleIndex(selectedRoleIndex + 1);
-    }
-  };
-
-  const handlePrevious = () => {
-    if (selectedRoleIndex !== null && selectedRoleIndex > 0) {
-      setSelectedRoleIndex(selectedRoleIndex - 1);
-    }
-  };
-
-  const formatDateRange = (start: string, end: string | 'Present') => {
-    const startDate = parseDate(start);
-    const startStr = startDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-    const endStr = end === 'Present' ? 'Present' : parseDate(end).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-    return `${startStr} — ${endStr}`;
+  const selectRole = (role: CareerRole) => setSelectedRoleId(role.id);
+  const selectByIndex = (index: number) => {
+    const role = orderedEntries[index];
+    if (role) setSelectedRoleId(role.id);
   };
 
   return (
-    <div className="w-full py-8 relative">
-      {/* Coming Soon Watermark */}
-      <div 
-        className="absolute inset-0 flex items-center justify-center z-50 pointer-events-none select-none"
-        aria-hidden="true"
-      >
-        <span 
-          className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-black uppercase tracking-tighter text-foreground/10 whitespace-nowrap -rotate-12"
-          style={{ textShadow: '0 0 0 transparent' }}
-        >
-          COMING SOON
-        </span>
-      </div>
-      
-      <div className="container mx-auto px-4">
-        {/* Legend */}
-        <div className="flex gap-6 mb-6 flex-wrap">
-          <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-accent border-2 border-foreground" />
-            <span className="text-sm font-bold uppercase tracking-wide text-foreground">Full-time</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-destructive border-2 border-foreground" />
-            <span className="text-sm font-bold uppercase tracking-wide text-foreground">Consulting</span>
-          </div>
+    <div className="w-full">
+      <section aria-labelledby="career-chapters-heading">
+        <div className="mb-10 flex items-end justify-between gap-6 border-b-4 border-foreground pb-5">
+          <h2 id="career-chapters-heading" className="text-2xl font-black uppercase tracking-normal text-foreground sm:text-3xl">
+            Career chapters
+          </h2>
+          <p className="hidden text-sm font-black uppercase text-muted-foreground sm:block">
+            Present → 1999
+          </p>
         </div>
 
-        {/* Scroll Controls */}
-        <div className="relative">
-          {/* Left Arrow */}
-          <button
-            onClick={() => scroll('left')}
-            disabled={!canScrollLeft}
-            className={cn(
-              'absolute left-0 top-1/2 -translate-y-1/2 z-20',
-              'w-12 h-12 flex items-center justify-center',
-              'bg-secondary text-secondary-foreground border-4 border-foreground',
-              'transition-all duration-200',
-              canScrollLeft 
-                ? 'hover:bg-primary hover:text-primary-foreground cursor-pointer' 
-                : 'opacity-30 cursor-not-allowed'
-            )}
-            aria-label="Scroll left"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
+        <div className="relative ml-3 border-l-4 border-foreground sm:ml-5 lg:ml-8">
+          {primaryRoles.map((role, index) => (
+            <TimelineEntry key={role.id} role={role} index={index} onSelect={selectRole} />
+          ))}
+        </div>
+      </section>
 
-          {/* Right Arrow */}
-          <button
-            onClick={() => scroll('right')}
-            disabled={!canScrollRight}
-            className={cn(
-              'absolute right-0 top-1/2 -translate-y-1/2 z-20',
-              'w-12 h-12 flex items-center justify-center',
-              'bg-secondary text-secondary-foreground border-4 border-foreground',
-              'transition-all duration-200',
-              canScrollRight 
-                ? 'hover:bg-primary hover:text-primary-foreground cursor-pointer' 
-                : 'opacity-30 cursor-not-allowed'
-            )}
-            aria-label="Scroll right"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
+      {consultingRoles.length > 0 && (
+        <section className="mt-20 border-y-4 border-foreground bg-destructive py-12 text-destructive-foreground sm:py-16" aria-labelledby="consulting-heading">
+          <div className="px-5 sm:px-8 lg:px-12">
+            <p className="text-sm font-black uppercase">Running in parallel</p>
+            <h2 id="consulting-heading" className="mt-2 text-4xl font-black uppercase leading-none tracking-normal sm:text-5xl">
+              Consulting practice
+            </h2>
 
-          {/* Scrollable Container */}
-          <div 
-            ref={scrollContainerRef}
-            className="overflow-x-auto overflow-y-hidden mx-14 scrollbar-thin"
-            style={{ scrollBehavior: 'smooth' }}
-          >
-            <div 
-              className="relative"
-              style={{ 
-                width: `${timeScale.totalWidth + 100}px`,
-                height: `${contentHeight}px`
-              }}
-            >
-              {/* Timeline Track - Mustard background with Onyx line */}
-              <div 
-                className="absolute left-0 right-0 bg-primary border-y-4 border-foreground"
-                style={{ 
-                  top: `${heightAbove}px`,
-                  height: `${TIMELINE_TRACK_HEIGHT}px`
-                }}
-              >
-                {/* Year Markers - flipped */}
-                {timeScale.years.map(({ year, position }) => (
-                  <div
-                    key={year}
-                    className="absolute flex flex-col items-center"
-                    style={{ left: `${timeScale.totalWidth - position}px` }}
-                  >
-                    {/* Tick mark */}
-                    <div className="w-1 h-4 bg-foreground absolute -top-4" />
-                    {/* Year label */}
-                    <span className="text-sm font-black text-foreground uppercase tracking-wide mt-3">
-                      {year}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Role Cards */}
-              {positionedRoles.map((role, index) => {
-                const consulting = role.isConsulting;
-                // Position: above line for full-time, below line for consulting
-                const verticalPosition = consulting
-                  ? heightAbove + TIMELINE_TRACK_HEIGHT + 16 + role.row * ROW_HEIGHT
-                  : heightAbove - ROW_HEIGHT - role.row * ROW_HEIGHT + 20;
-                
-                return (
-                  <button
-                    key={role.id}
-                    onClick={() => setSelectedRoleIndex(index)}
-                    className={cn(
-                      'absolute p-3 text-left group',
-                      'border-4 border-foreground',
-                      'transition-all duration-200',
-                      'focus:outline-none focus:ring-4 focus:ring-cobalt focus:ring-offset-2',
-                      'animate-fade-in',
-                      consulting 
-                        ? 'bg-destructive text-destructive-foreground hover:translate-y-1 hover:shadow-[0_-4px_0_0_hsl(var(--foreground))]'
-                        : 'bg-accent text-accent-foreground hover:-translate-y-1 hover:shadow-[0_4px_0_0_hsl(var(--foreground))]'
-                    )}
-                    style={{
-                      left: `${role.left}px`,
-                      top: `${verticalPosition}px`,
-                      width: `${role.width}px`,
-                      minWidth: `${CARD_MIN_WIDTH}px`,
-                      animationDelay: `${index * 30}ms`
-                    }}
-                    aria-label={`${role.title} at ${role.company}. ${formatDateRange(role.startDate, role.endDate)}. Click for details.`}
-                  >
-                    {/* Content */}
-                    <div className="space-y-1">
-                      <h3 className="text-sm font-black uppercase tracking-tight leading-tight line-clamp-2">
+            <div className="mt-8 grid gap-6">
+              {consultingRoles.map((role) => (
+                <article key={role.id} className="border-4 border-foreground bg-background p-6 text-foreground shadow-neo-lg sm:p-8">
+                  <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+                    <div className="max-w-3xl">
+                      <p className="text-sm font-black uppercase text-primary-text">
+                        {formatDateRange(role.startDate, role.endDate)} · {formatDuration(role.startDate, role.endDate)}
+                      </p>
+                      <h3 className="mt-3 text-3xl font-black uppercase leading-tight tracking-normal sm:text-4xl">
                         {role.title}
                       </h3>
-                      <p className="text-xs font-bold opacity-90 line-clamp-1">
-                        {role.company}
-                      </p>
-                      <p className="text-xs uppercase tracking-wider font-bold opacity-75">
-                        {formatDateRange(role.startDate, role.endDate)}
-                      </p>
+                      <p className="mt-2 text-lg font-bold">{role.company}</p>
+                      <p className="mt-5 text-base leading-relaxed sm:text-lg">{role.description}</p>
                     </div>
-
-                    {/* Connector to timeline */}
-                    {consulting ? (
-                      <>
-                        <div 
-                          className="absolute left-6 w-0.5 bg-foreground"
-                          style={{
-                            top: `-${16 + role.row * ROW_HEIGHT}px`,
-                            height: `${12 + role.row * ROW_HEIGHT}px`
-                          }}
-                        />
-                        <div 
-                          className="absolute left-4 w-4 h-4 rounded-full border-2 border-foreground bg-destructive"
-                          style={{
-                            top: `-${20 + role.row * ROW_HEIGHT}px`
-                          }}
-                        />
-                      </>
-                    ) : (
-                      <>
-                        <div 
-                          className="absolute left-6 w-0.5 bg-foreground"
-                          style={{
-                            bottom: `-${16 + role.row * ROW_HEIGHT}px`,
-                            height: `${12 + role.row * ROW_HEIGHT}px`
-                          }}
-                        />
-                        <div 
-                          className="absolute left-4 w-4 h-4 rounded-full border-2 border-foreground bg-accent"
-                          style={{
-                            bottom: `-${20 + role.row * ROW_HEIGHT}px`
-                          }}
-                        />
-                      </>
-                    )}
-                  </button>
-                );
-              })}
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() => selectRole(role)}
+                      className="h-auto shrink-0 self-start rounded-none border-4 border-foreground bg-primary px-5 py-3 font-black uppercase text-primary-foreground shadow-neo-sm transition-all hover:translate-x-1 hover:translate-y-1 hover:bg-primary hover:text-primary-foreground hover:shadow-none"
+                    >
+                      View details
+                      <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                    </Button>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
+        </section>
+      )}
+
+      <section className="mt-20" aria-labelledby="education-heading">
+        <div className="mb-10 border-b-4 border-foreground pb-5">
+          <p className="text-sm font-black uppercase text-primary-text">Formal learning</p>
+          <h2 id="education-heading" className="mt-2 text-4xl font-black uppercase leading-none tracking-normal text-foreground sm:text-5xl">
+            Education
+          </h2>
         </div>
 
-        {/* Scroll hint for mobile */}
-        <p className="text-center text-sm text-muted-foreground mt-4 md:hidden">
-          ← Swipe to explore timeline →
+        <div className="relative ml-3 border-l-4 border-foreground sm:ml-5 lg:ml-8">
+          {education.map((role, index) => (
+            <TimelineEntry key={role.id} role={role} index={index} onSelect={selectRole} education />
+          ))}
+        </div>
+      </section>
+
+      <div className="mt-20 border-t-4 border-foreground pt-8">
+        <p className="text-3xl font-black uppercase italic tracking-normal text-foreground sm:text-4xl">
+          The story continues.
         </p>
       </div>
 
-      {/* Detail Drawer */}
       <Suspense fallback={null}>
         <RoleDetailDrawer
           role={selectedRole}
-          isOpen={selectedRoleIndex !== null}
-          onClose={() => setSelectedRoleIndex(null)}
-          onNext={handleNext}
-          onPrevious={handlePrevious}
-          hasNext={selectedRoleIndex !== null && selectedRoleIndex < positionedRoles.length - 1}
-          hasPrevious={selectedRoleIndex !== null && selectedRoleIndex > 0}
+          isOpen={selectedRole !== null}
+          onClose={() => setSelectedRoleId(null)}
+          onNext={() => selectByIndex(selectedRoleIndex + 1)}
+          onPrevious={() => selectByIndex(selectedRoleIndex - 1)}
+          hasNext={selectedRoleIndex >= 0 && selectedRoleIndex < orderedEntries.length - 1}
+          hasPrevious={selectedRoleIndex > 0}
         />
       </Suspense>
     </div>
