@@ -61,10 +61,10 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   {
     id: "b2b-forum-boston-2026",
     type: "presentation",
-    title: "Details TBA",
+    title: "From Experiments to Infrastructure: How Qualcomm Technologies Built an AI-Powered Marketing Org",
     date: "2026-11-01",
     venue: "B2B Forum (Boston)",
-    url: "https://mpb2b.marketingprofs.com/program-overview/",
+    url: "https://mpb2b.marketingprofs.com/program/from-experiments-to-infrastructure-how-qualcomm-technologies-built-an-ai-first-marketing-org/",
     imageUrl: "/lovable-uploads/b2b-forum-2026.jpg",
     ctaLabel: "See Programming",
     topics: ["Marketing"],
