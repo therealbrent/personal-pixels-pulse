@@ -50,7 +50,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   {
     id: "adobe-skill-exchange-2026",
     type: "presentation",
-    title: "Defining Use Cases that are Ready to Build",
+    title: "Ingredients, Instructions, Equipment: Defining Gen AI Use Cases That Are Ready To Build",
     date: "2026-08-13",
     venue: "Adobe",
     url: "https://experienceleague.adobe.com/en/on-demand-events/gen-ai-use-cases-ready-to-build",
