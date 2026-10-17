@@ -35,9 +35,6 @@ const PRESS_KIT_URL =
 export default function MediaPage() {
   const today = new Date().toISOString().slice(0, 10);
   const speakingEngagementCount = countSpeakingEngagements(thoughtLeadershipData, today);
-  const upcomingAppearance = thoughtLeadershipData.find((item) =>
-    item.id === 'b2b-forum-boston-2026' && item.date > today
-  );
 
   return (
     <div className="min-h-screen bg-background text-foreground page-transition">
@@ -200,17 +197,6 @@ export default function MediaPage() {
         {/* ============================================================ */}
         {/* SPEAKING TOPICS + BOOKING CTA                                 */}
         {/* ============================================================ */}
-        {upcomingAppearance?.url && (
-          <aside aria-label="Upcoming speaking appearance" className="max-w-6xl mx-auto mb-8 border-y-4 border-foreground py-6 flex flex-col md:flex-row md:items-center gap-5 md:justify-between">
-            <div className="max-w-3xl">
-              <p className="text-xs font-black uppercase mb-2">Upcoming · November 2026 · B2B Forum</p>
-              <h2 className="text-xl sm:text-2xl font-black leading-tight">{upcomingAppearance.title}</h2>
-            </div>
-            <BrutalistButton asChild variant="secondary" className="self-start md:self-center shrink-0">
-              <ExternalLink href={upcomingAppearance.url} className="no-underline">View Program</ExternalLink>
-            </BrutalistButton>
-          </aside>
-        )}
 
         <section aria-labelledby="booking-heading" className="mb-12 sm:mb-16">
           <div className="max-w-7xl mx-auto">
