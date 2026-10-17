@@ -1,7 +1,7 @@
 import { describe, it as test } from 'node:test';
 import { strict as assert } from 'node:assert';
-import { countSpeakingEngagements } from './mediaSelection';
-import type { ThoughtLeadershipItem } from './thoughtLeadership';
+import { countSpeakingEngagements } from '../src/data/mediaSelection';
+import type { ThoughtLeadershipItem } from '../src/data/thoughtLeadership';
 
 const item = (overrides: Partial<ThoughtLeadershipItem>): ThoughtLeadershipItem => ({
   id: 'example', title: 'Example', type: 'presentation', date: '2026-06-01', ...overrides,
