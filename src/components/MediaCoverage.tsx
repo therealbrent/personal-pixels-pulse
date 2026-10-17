@@ -14,6 +14,11 @@ const formats: Record<string, string> = {
   'userled-ai-abm-2026': 'Video interview',
 };
 
+/** Media-page CTA overrides; the archive keeps its own labels for these items. */
+const ctaLabels: Record<string, string> = {
+  'linkedin-sales-revenue-org-2026': 'Watch',
+};
+
 function resolveItems(ids: string[]) {
   return ids.flatMap((id) => {
     const item = thoughtLeadershipData.find((entry) => entry.id === id);
@@ -25,10 +30,11 @@ function MediaAction({ item }: { item: ThoughtLeadershipItem }) {
   const href = item.videoUrl || item.url;
   if (!href) return null;
   const isVideo = ['presentation', 'panel', 'podcast', 'interview'].includes(item.type) && item.publication !== 'The Drum';
+  const label = ctaLabels[item.id] || (isVideo ? 'Watch' : 'Read');
   return (
     <BrutalistButton asChild variant="secondary" className="self-start mt-auto">
-      <ExternalLink href={href} className="no-underline" aria-label={`${isVideo ? 'Watch' : 'Read'}: ${item.title}`}>
-        {isVideo ? 'Watch' : 'Read'}
+      <ExternalLink href={href} className="no-underline" aria-label={`${label}: ${item.title}`}>
+        {label}
       </ExternalLink>
     </BrutalistButton>
   );
@@ -67,7 +73,7 @@ export default function MediaCoverage() {
             </div>
             <div className="p-5 sm:p-6 flex flex-col flex-1 items-start">
               <h3 className="text-xl sm:text-2xl font-black leading-tight mb-5">{item.title}</h3>
-              {item.id === 'forbes-writer-ai-leaders-forum' && item.quote && (
+              {item.quote && (
                 <blockquote className="border-l-4 border-primary pl-4 mb-6 text-sm sm:text-base font-semibold leading-relaxed">{item.quote}</blockquote>
               )}
               <MediaAction item={item} />
