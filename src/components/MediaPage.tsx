@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
 import SEO from './SEO';
 import BiographyHeadshot from './BiographyHeadshot';
 import { thoughtLeadershipData } from '@/data/thoughtLeadership';
+import { countSpeakingEngagements } from '@/data/mediaSelection';
+import MediaCoverage from './MediaCoverage';
 import { BrutalistButton } from './ui/BrutalistButton';
 import { ExternalLink } from './ui/ExternalLink';
 
@@ -32,9 +33,11 @@ const PRESS_KIT_URL =
   'https://drive.google.com/drive/folders/1_FtkrMYllWpWcanGL3oQTy6B0xmbcZwI?usp=sharing';
 
 export default function MediaPage() {
-  const speakingEngagementCount = thoughtLeadershipData.filter((i) =>
-    ['presentation', 'panel', 'podcast', 'interview'].includes(i.type)
-  ).length;
+  const today = new Date().toISOString().slice(0, 10);
+  const speakingEngagementCount = countSpeakingEngagements(thoughtLeadershipData, today);
+  const upcomingAppearance = thoughtLeadershipData.find((item) =>
+    item.id === 'b2b-forum-boston-2026' && item.date > today
+  );
 
   return (
     <div className="min-h-screen bg-background text-foreground page-transition">
@@ -58,16 +61,16 @@ export default function MediaPage() {
                 Press & Media
               </p>
             </div>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight leading-[1.05] mb-8 sm:mb-12 md:mb-16 uppercase">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-normal leading-[1.05] mb-8 sm:mb-12 md:mb-16 uppercase">
               <span className="block">Don't Sell People AI.</span>
-              <span className="inline-block px-3 sm:px-5 py-1 bg-accent text-white border-4 sm:border-8 border-foreground transform -rotate-2 mt-2 sm:mt-3 shadow-neo-md">
+              <span className="inline-block px-3 sm:px-5 py-1 bg-accent text-accent-foreground border-4 sm:border-8 border-foreground transform -rotate-2 mt-2 sm:mt-3 shadow-neo-md">
                 Design It Into Their Work.
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl font-bold text-foreground/90 leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8">
               That's the principle behind an enterprise AI rollout that reached{' '}
               <span className="bg-primary px-1.5">350+ users</span> and saved{' '}
-              <span className="bg-cobalt text-white px-1.5">2,400 hours a month</span> at
+              <span className="bg-cobalt text-cobalt-foreground px-1.5">2,400 hours a month</span> at
               Qualcomm Technologies — and the argument I bring to the page, the stage, and the mic.
             </p>
 
@@ -83,24 +86,27 @@ export default function MediaPage() {
                 </dd>
               </div>
               <div className="bg-cobalt p-4 sm:p-5 md:border-r-4 border-b-4 md:border-b-0 border-foreground">
-                <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-white/80 mb-1">
-                  Speaking Engagements
+                <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-cobalt-foreground mb-1">
+                  Talks & Panels
                 </dt>
-                <dd className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-none">
+                <dd className="text-2xl sm:text-3xl md:text-4xl font-black text-cobalt-foreground leading-none">
                   {speakingEngagementCount}
                 </dd>
+                <p className="mt-2 text-xs font-semibold text-cobalt-foreground">Completed appearances documented in the archive</p>
               </div>
               <div className="bg-accent p-4 sm:p-5 border-foreground">
-                <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-white/90 mb-1">
+                <dt className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-accent-foreground mb-1">
                   College Degrees
                 </dt>
-                <dd className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-none">
+                <dd className="text-2xl sm:text-3xl md:text-4xl font-black text-accent-foreground leading-none">
                   0
                 </dd>
               </div>
             </dl>
           </div>
         </header>
+
+        <MediaCoverage />
 
         {/* ============================================================ */}
         {/* POV — Why Brent, in his own words                             */}
@@ -114,7 +120,7 @@ export default function MediaPage() {
               <p className="mt-3 text-sm sm:text-base font-bold text-foreground/80 leading-relaxed">
                 Three things I believe, on the record.
               </p>
-              <p className="mt-3 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-foreground/60 leading-relaxed">
+              <p className="mt-3 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-foreground leading-relaxed">
                 Personal views. Not official Qualcomm statements.
               </p>
               <div className="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t-4 border-foreground">
@@ -137,7 +143,7 @@ export default function MediaPage() {
                   What the case study doesn't say is why it worked: we didn't sell people on AI. We
                   designed it into the work they were already doing.&rdquo;
                 </p>
-                <p className="mt-2 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-foreground/60">
+                <p className="mt-2 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-foreground">
                   Source:{' '}
                   <ExternalLink
                     href="https://writer.com/blog/qualcomm-customer-story/"
@@ -187,222 +193,6 @@ export default function MediaPage() {
         </section>
 
         {/* ============================================================ */}
-        {/* FEATURED PRESS — TIERED                                       */}
-        {/* ============================================================ */}
-        <section aria-labelledby="press-tiered-heading" className="mb-12 sm:mb-16 md:mb-20">
-          <div className="max-w-7xl mx-auto">
-            {/* Section header */}
-            <div className="bg-foreground border-4 md:border-8 border-foreground shadow-neo-xl p-4 sm:p-6 md:p-8">
-              <h2 id="press-tiered-heading" className="text-xl sm:text-2xl md:text-4xl font-black text-background mb-2 sm:mb-3 leading-tight uppercase">
-                Featured Media
-              </h2>
-              <p className="text-base sm:text-lg md:text-xl font-bold text-background/90 leading-relaxed">
-                Selected interviews, coverage, podcasts, and published commentary.
-              </p>
-            </div>
-
-            <div className="bg-background border-4 md:border-8 border-foreground border-t-0 shadow-neo-xl p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
-              {/* Tier 1 — Tentpole (hero card) */}
-              <div>
-                <span className="inline-block mb-3 sm:mb-4 px-2 py-1 bg-accent text-white text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
-                  Featured
-                </span>
-                <article className="grid md:grid-cols-5 border-4 border-foreground bg-background shadow-neo-md hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200">
-                  <div className="md:col-span-2 bg-primary p-5 sm:p-6 md:p-8 border-b-4 md:border-b-0 md:border-r-4 border-foreground flex flex-col justify-center min-h-[180px] sm:min-h-[220px]">
-                    <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-foreground/70 mb-2">
-                      National Business Press
-                    </p>
-                    <p className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-foreground leading-none tracking-tight">
-                      Forbes
-                    </p>
-                    <p className="mt-3 sm:mt-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-foreground/80">
-                      Nov 2025
-                    </p>
-                  </div>
-                  <div className="md:col-span-3 p-5 sm:p-6 md:p-8">
-                    <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-accent mb-2">
-                      Successful Pilot
-                    </p>
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-black text-foreground leading-tight mb-3">
-                      What Writer's AI Leaders Forum Revealed About Enterprise AI
-                    </h3>
-                    <p className="text-sm sm:text-base font-semibold text-foreground/80 leading-relaxed italic mb-4">
-                      &ldquo;After Summers conducted his initial Writer pilot, 100% of the users wanted to adopt the platform full-time.&rdquo;
-                    </p>
-                    <ExternalLink
-                      href="https://www.forbes.com/sites/stevenwolfepereira/2025/11/08/what-writers-ai-leaders-forum-revealed-about-enterprise-ai/"
-                      variant="primary"
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline"
-                    >
-                      Read
-                    </ExternalLink>
-                  </div>
-                </article>
-              </div>
-
-              {/* Tier 2 — Majors (2 medium cards) */}
-              <div>
-                <span className="inline-block mb-3 sm:mb-4 px-2 py-1 bg-cobalt text-white text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
-                  Selected Interviews
-                </span>
-                <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
-                  {/* CIO News */}
-                  <article className="border-4 border-foreground bg-background shadow-neo-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200 flex flex-col">
-                    <div className="bg-cobalt p-4 sm:p-5 border-b-4 border-foreground">
-                      <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-white/80 mb-1">
-                        Enterprise Trade Press
-                      </p>
-                      <p className="text-2xl sm:text-3xl font-black uppercase text-white leading-none tracking-tight">
-                        CIO News
-                      </p>
-                      <p className="mt-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/70">
-                        Oct 2025
-                      </p>
-                    </div>
-                    <div className="p-4 sm:p-5 flex-1 flex flex-col">
-                      <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-cobalt mb-2">
-                        Human-Centered Transformation
-                      </p>
-                      <h3 className="text-base sm:text-lg font-black text-foreground leading-tight mb-3">
-                        Why Qualcomm's Playbook For Scaling AI Starts With Intention — And Ends With A Human
-                      </h3>
-                      <p className="text-xs sm:text-sm font-semibold text-foreground/80 leading-relaxed italic mb-4 flex-1">
-                        &ldquo;We expect a human to verify the facts, citations, decisions — and the underlying strategy.&rdquo;
-                      </p>
-                      <ExternalLink
-                        href="https://www.cionews.com/post/qualcomm-enterprise-ai-strategy-oversight-brent-summers"
-                        variant="primary"
-                        className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-cobalt transition-colors no-underline self-start"
-                      >
-                        Read
-                      </ExternalLink>
-                    </div>
-                  </article>
-
-                  {/* Humans of AI */}
-                  <article className="border-4 border-foreground bg-background shadow-neo-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200 flex flex-col">
-                    <div className="bg-accent p-4 sm:p-5 border-b-4 border-foreground">
-                      <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-white/80 mb-1">
-                        Long-Form Podcast
-                      </p>
-                      <p className="text-2xl sm:text-3xl font-black uppercase text-white leading-none tracking-tight">
-                        Humans of AI
-                      </p>
-                      <p className="mt-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/80">
-                        Jun 2026
-                      </p>
-                    </div>
-                    <div className="p-4 sm:p-5 flex-1 flex flex-col">
-                      <p className="text-[10px] sm:text-xs font-black tracking-widest uppercase text-accent mb-2">
-                        Maximizing Value
-                      </p>
-                      <h3 className="text-base sm:text-lg font-black text-foreground leading-tight mb-3">
-                        From Magic to Muscle: Driving Enterprise AI Transformation
-                      </h3>
-                      <p className="text-xs sm:text-sm font-semibold text-foreground/80 leading-relaxed italic mb-4 flex-1">
-                        &ldquo;AI creates more value when it is designed into the workflow—not simply bolted onto the work people already do.&rdquo;
-                      </p>
-                      <ExternalLink
-                        href="https://www.youtube.com/watch?v=Dvan146syOM"
-                        variant="primary"
-                        className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
-                      >
-                        Watch
-                      </ExternalLink>
-                    </div>
-                  </article>
-                </div>
-              </div>
-
-              {/* Tier 3 — Supporting (compact strip) */}
-              <div>
-                <span className="inline-block mb-3 sm:mb-4 px-2 py-1 bg-foreground text-primary text-[10px] sm:text-xs font-black tracking-widest uppercase border-2 border-foreground">
-                  Additional Coverage and Writing
-                </span>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-                  {[
-                    {
-                      outlet: 'Sport Beach',
-                      context: 'Interview',
-                      title: 'Interviewed by Sam Chotiner',
-                      url: 'https://www.youtube.com/watch?v=fIlAhPaO9EI',
-                      cta: 'Watch',
-                      bg: 'bg-primary',
-                      tx: 'text-foreground',
-                      sub: 'text-foreground/70',
-                    },
-                    {
-                      outlet: 'UserLed',
-                      context: 'Interview',
-                      title: 'Data, Judgment and Direction',
-                      url: 'https://www.youtube.com/watch?v=1rbEfzecgAg',
-                      cta: 'Watch',
-                      bg: 'bg-cobalt',
-                      tx: 'text-white',
-                      sub: 'text-white/70',
-                    },
-                    {
-                      outlet: 'CIO (Sponsored)',
-                      context: 'Feature',
-                      title: 'Building AI Literacy in the Workplace',
-                      url: 'https://modernworkplace.cio.com/empowered-workforce/building-ai-literacy-in-the-workplace/',
-                      cta: 'Read',
-                      bg: 'bg-oxblood',
-                      tx: 'text-white',
-                      sub: 'text-white/70',
-                    },
-                    {
-                      outlet: 'Adobe',
-                      context: 'Byline',
-                      title: 'AI-Powered Marketing: Practical Strategies',
-                      url: 'https://experienceleague.adobe.com/en/perspectives/ai-powered-marketing-practical-strategies-you-can-use-today',
-                      cta: 'Read',
-                      bg: 'bg-accent',
-                      tx: 'text-white',
-                      sub: 'text-white/80',
-                    },
-                  ].map((item) => (
-                    <article
-                      key={item.outlet}
-                      className="border-4 border-foreground bg-background shadow-neo-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200 flex flex-col"
-                    >
-                      <div className={`${item.bg} p-3 sm:p-4 border-b-4 border-foreground`}>
-                        <p className={`text-lg sm:text-xl font-black uppercase ${item.tx} leading-none tracking-tight`}>
-                          {item.outlet}
-                        </p>
-                        <p className={`mt-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider ${item.sub}`}>
-                          {item.context}
-                        </p>
-                      </div>
-                      <div className="p-3 sm:p-4 flex-1 flex flex-col">
-                        <h3 className="text-sm sm:text-base font-black text-foreground leading-tight mb-3 flex-1">
-                          {item.title}
-                        </h3>
-                        <ExternalLink
-                          href={item.url}
-                          variant="primary"
-                          className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors no-underline self-start"
-                        >
-                          {item.cta}
-                        </ExternalLink>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-
-              {/* Full archive link */}
-              <div className="text-center pt-2">
-                <BrutalistButton variant="secondary" asChild aria-label="View full archive of talks, interviews and writing">
-                  <Link to="/archive">Browse the Full Archive →</Link>
-                </BrutalistButton>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* ============================================================ */}
         {/* PRESS KIT — Bio + Headshot                                    */}
         {/* ============================================================ */}
         <BiographyHeadshot />
@@ -410,13 +200,25 @@ export default function MediaPage() {
         {/* ============================================================ */}
         {/* SPEAKING TOPICS + BOOKING CTA                                 */}
         {/* ============================================================ */}
+        {upcomingAppearance?.url && (
+          <aside aria-label="Upcoming speaking appearance" className="max-w-6xl mx-auto mb-8 border-y-4 border-foreground py-6 flex flex-col md:flex-row md:items-center gap-5 md:justify-between">
+            <div className="max-w-3xl">
+              <p className="text-xs font-black uppercase mb-2">Upcoming · November 2026 · B2B Forum</p>
+              <h2 className="text-xl sm:text-2xl font-black leading-tight">{upcomingAppearance.title}</h2>
+            </div>
+            <BrutalistButton asChild variant="secondary" className="self-start md:self-center shrink-0">
+              <ExternalLink href={upcomingAppearance.url} className="no-underline">View Program</ExternalLink>
+            </BrutalistButton>
+          </aside>
+        )}
+
         <section aria-labelledby="booking-heading" className="mb-12 sm:mb-16">
           <div className="max-w-7xl mx-auto">
             <div className="bg-accent border-4 md:border-8 border-foreground shadow-neo-xl p-4 sm:p-6 md:p-8">
-              <h2 id="booking-heading" className="text-xl sm:text-2xl md:text-4xl font-black text-white mb-2 sm:mb-3 leading-tight">
+              <h2 id="booking-heading" className="text-xl sm:text-2xl md:text-4xl font-black text-accent-foreground mb-2 sm:mb-3 leading-tight">
                 SPEAKING TOPICS
               </h2>
-              <p className="text-base sm:text-lg md:text-xl font-bold text-white/95 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl font-bold text-accent-foreground leading-relaxed">
                 Four talks I can deliver as a keynote, panel, or podcast conversation.
               </p>
             </div>
@@ -453,13 +255,16 @@ export default function MediaPage() {
                   </h3>
                 </div>
                 <div className="flex-shrink-0 flex flex-col sm:flex-row gap-3">
+                  <BrutalistButton asChild variant="primary">
                   <ExternalLink
                     href={BOOKING_URL}
                     variant="primary"
-                    className="inline-flex items-center justify-center gap-2 bg-primary text-foreground border-4 border-primary hover:bg-accent hover:text-white hover:border-accent transition-all duration-150 font-black text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 no-underline min-h-[44px]"
+                    className="inline-flex items-center justify-center gap-2 bg-primary text-foreground border-4 border-primary hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-150 font-black text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 no-underline min-h-[44px]"
                   >
                     Schedule a Call
                   </ExternalLink>
+                  </BrutalistButton>
+                  <BrutalistButton asChild variant="secondary">
                   <ExternalLink
                     href={PRESS_KIT_URL}
                     variant="primary"
@@ -467,15 +272,16 @@ export default function MediaPage() {
                   >
                     View Press Kit
                   </ExternalLink>
+                  </BrutalistButton>
                 </div>
               </div>
 
               {/* Qualcomm-related inquiries routing */}
-              <p className="mt-4 sm:mt-5 text-[11px] sm:text-xs font-bold uppercase tracking-widest text-foreground/60 leading-relaxed">
+              <p className="mt-4 sm:mt-5 text-[11px] sm:text-xs font-bold uppercase tracking-widest text-foreground leading-relaxed">
                 For inquiries that involve Qualcomm, please route through{' '}
                 <a
                   href="mailto:corpcomm@qualcomm.com"
-                  className="underline decoration-2 underline-offset-4 hover:text-accent transition-colors normal-case tracking-normal text-primary"
+                  className="underline decoration-2 underline-offset-4 hover:text-accent transition-colors normal-case tracking-normal text-foreground"
                 >
                   Qualcomm Corporate Communications
                 </a>
