@@ -15,6 +15,7 @@ import adobePodcastImage from '../assets/Adobe_Podcast_2026_-_Brent_Summers.png.
 import adobeSkillExchangeImage from '../assets/Adobe_Skill_Exchange_2025.png.asset.json';
 import linkedInForSalesImage from '../assets/LinkedIn_for_Sales_Brent_Summers_v2.png.asset.json';
 import ipsosCannesImage from '../assets/Ipsos_at_Cannes_2026.png.asset.json';
+import theDrumJudgeImage from '../assets/The_Drum_Judge_of_the_Day_2026_-_Brent_Summers.avif.asset.json';
 
 export type ContentType = "presentation" | "podcast" | "panel" | "interview" | "article" | "writing";
 
@@ -302,6 +303,16 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
   // ==========================================
   // ARTICLES / MEDIA FEATURES
   // ==========================================
+  {
+    id: "the-drum-judge-of-the-day-2026",
+    type: "interview",
+    title: "AI shouldn’t erase productive friction",
+    date: "2026-10-16",
+    publication: "The Drum",
+    url: "https://www.thedrum.com/news/judge-of-the-day-brent-summers-says-ai-shouldn-t-erase-productive-friction",
+    imageUrl: theDrumJudgeImage.url,
+    topics: ["AI", "Marketing"],
+  },
   {
     id: "sport-beach-sam-chotiner-2026",
     type: "interview",
