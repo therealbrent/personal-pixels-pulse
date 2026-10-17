@@ -330,6 +330,7 @@ export const thoughtLeadershipData: ThoughtLeadershipItem[] = [
     title: "From magic to muscle: Qualcomm's Brent Summers on driving enterprise AI transformation",
     date: "2026-07-01",
     publication: "Humans of AI",
+    quote: "AI has more value when it's designed into a workflow as opposed to simply bolted on top.",
     url: "https://www.youtube.com/watch?v=Dvan146syOM",
     imageUrl: humansOfAIImage.url,
     ctaLabel: "Watch Video",
