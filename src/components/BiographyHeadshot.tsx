@@ -20,42 +20,44 @@ export default function BiographyHeadshot() {
 
         {/* Short / Long toggle */}
         <div
-          role="tablist"
+          role="group"
           aria-label="Biography length"
           className="flex justify-center mb-6 sm:mb-8 border-4 border-foreground w-fit mx-auto shadow-neo-sm"
         >
-          <button
+          <Button
             type="button"
-            role="tab"
-            aria-selected={!isExpanded}
+            variant="ghost"
+            aria-pressed={!isExpanded}
+            aria-controls="biography-content"
             onClick={() => setIsExpanded(false)}
-            className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-black uppercase tracking-wider transition-colors min-h-[44px] ${
+            className={`rounded-none px-4 sm:px-6 py-2 text-xs sm:text-sm font-black uppercase tracking-wider transition-colors min-h-[44px] ${
               !isExpanded
                 ? 'bg-foreground text-background'
                 : 'bg-background text-foreground hover:bg-primary'
             }`}
           >
             Short Bio
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
-            role="tab"
-            aria-selected={isExpanded}
+            variant="ghost"
+            aria-pressed={isExpanded}
+            aria-controls="biography-content"
             onClick={() => setIsExpanded(true)}
-            className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-black uppercase tracking-wider transition-colors min-h-[44px] border-l-4 border-foreground ${
+            className={`rounded-none px-4 sm:px-6 py-2 text-xs sm:text-sm font-black uppercase tracking-wider transition-colors min-h-[44px] border-l-4 border-foreground ${
               isExpanded
                 ? 'bg-foreground text-background'
                 : 'bg-background text-foreground hover:bg-primary'
             }`}
           >
             Full Bio
-          </button>
+          </Button>
         </div>
         
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-16 items-start">
           {/* Text content */}
           <div className="flex-1 text-left lg:pr-8">
-            <div className="space-y-4 sm:space-y-6 text-foreground text-base sm:text-lg font-semibold leading-relaxed">
+            <div id="biography-content" className="space-y-4 sm:space-y-6 text-foreground text-base sm:text-lg font-semibold leading-relaxed">
               {!isExpanded ? (
                 <>
                   <p>
@@ -98,7 +100,7 @@ export default function BiographyHeadshot() {
                 variant="brutalist-accent"
                 className="text-xs sm:text-sm"
                 aria-expanded={isExpanded}
-                aria-controls="biography"
+                aria-controls="biography-content"
               >
                 {isExpanded ? 'Show Short Bio ↑' : 'Read Full Bio ↓'}
               </Button>
